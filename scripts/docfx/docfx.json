@@ -4,9 +4,12 @@
     {
       "src": [
         {
-          "src": "../../../../wukong-csharp-mod/WukongMp.Sdk",
+          "src": "../../../../wukong-csharp-mod/WukongMp.Sdk/bin/Debug/netstandard2.0",
           "files": [
-            "**/*.csproj"
+            "ReadyM.Api.dll",
+            "ReadyM.Api.Multiplayer.dll",
+            "WukongMp.Api.dll",
+            "WukongMp.Sdk.dll"
           ]
         }
       ],

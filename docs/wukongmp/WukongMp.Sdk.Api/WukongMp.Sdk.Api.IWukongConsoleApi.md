@@ -9,7 +9,7 @@ public interface IWukongConsoleApi : IConsoleCommandRegistry
 
 #### Implements
 
-IConsoleCommandRegistry
+[IConsoleCommandRegistry](https://github.com/readycodeio/readym\-gameserver/blob/560262830b817fb255833bd96f0ed103b95f28b1/src/ReadyM.Api/Command/IConsoleCommandRegistry.cs)
 
 ## Methods
 
@@ -23,7 +23,7 @@ void AddCommand(string commandName, ConsoleCommand command, IEnumerable<string>?
 
 `commandName` [string](https://learn.microsoft.com/dotnet/api/system.string)
 
-`command` ConsoleCommand
+`command` [ConsoleCommand](https://github.com/readycodeio/readym\-gameserver/blob/560262830b817fb255833bd96f0ed103b95f28b1/src/ReadyM.Api/Command/ConsoleCommand.cs)
 
 `availableFirstParams` [IEnumerable](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable\-1)<[string](https://learn.microsoft.com/dotnet/api/system.string)\>?
 

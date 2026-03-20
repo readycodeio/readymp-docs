@@ -17,13 +17,13 @@ public static class WukongApi
 
 #### Inherited Members
 
-[object.Equals\(object\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\)), 
-[object.Equals\(object, object\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\-system\-object\)), 
-[object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode), 
 [object.GetType\(\)](https://learn.microsoft.com/dotnet/api/system.object.gettype), 
 [object.MemberwiseClone\(\)](https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone), 
-[object.ReferenceEquals\(object, object\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
-[object.ToString\(\)](https://learn.microsoft.com/dotnet/api/system.object.tostring)
+[object.ToString\(\)](https://learn.microsoft.com/dotnet/api/system.object.tostring), 
+[object.Equals\(object?\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\)), 
+[object.Equals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\-system\-object\)), 
+[object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
+[object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
 
 ## Properties
 
@@ -36,7 +36,7 @@ public static GameplayConfiguration Configuration { get; }
 
 #### Property Value
 
- GameplayConfiguration
+ [GameplayConfiguration](https://github.com/readycodeio/wukong\-csharp\-mod/blob/358610a12466810df8910d98ab9dcf381838f488/WukongMp.Api/Configuration/GameplayConfiguration.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Console"></a> Console
 
@@ -91,12 +91,12 @@ public static IWukongLocalApi Local { get; }
 ### <a id="WukongMp_Sdk_Api_WukongApi_Saves"></a> Saves
 
 ```csharp
-public static IWukongSaveRelay Saves { get; }
+public static IWukongSaveApi Saves { get; }
 ```
 
 #### Property Value
 
- IWukongSaveRelay
+ [IWukongSaveApi](https://github.com/readycodeio/wukong\-csharp\-mod/blob/358610a12466810df8910d98ab9dcf381838f488/WukongMp.Api/IWukongSaveApi.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Services"></a> Services
 
@@ -106,7 +106,7 @@ public static IDependencyContainer Services { get; }
 
 #### Property Value
 
- IDependencyContainer
+ [IDependencyContainer](https://github.com/readycodeio/wukong\-csharp\-mod/blob/358610a12466810df8910d98ab9dcf381838f488/WukongMp.Api/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Sync"></a> Sync
 

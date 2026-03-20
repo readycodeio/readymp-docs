@@ -37,7 +37,7 @@ IReadOnlyList<PlayerId> AreaPlayers { get; }
 
 #### Property Value
 
- [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist\-1)<PlayerId\>
+ [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist\-1)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/560262830b817fb255833bd96f0ed103b95f28b1/src/ReadyM.Api/Idents/PlayerId.cs)\>
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_CurrentAreaId"></a> CurrentAreaId
 
@@ -47,7 +47,7 @@ AreaId? CurrentAreaId { get; }
 
 #### Property Value
 
- AreaId?
+ [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/560262830b817fb255833bd96f0ed103b95f28b1/src/ReadyM.Api/Idents/AreaId.cs)?
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_InRoom"></a> InRoom
 
@@ -97,7 +97,7 @@ PlayerId? LocalPlayerId { get; }
 
 #### Property Value
 
- PlayerId?
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/560262830b817fb255833bd96f0ed103b95f28b1/src/ReadyM.Api/Idents/PlayerId.cs)?
 
 ## Methods
 
@@ -109,7 +109,7 @@ void GetDisconnectReasonAndInvoke(Action<DisconnectReason> callback)
 
 #### Parameters
 
-`callback` [Action](https://learn.microsoft.com/dotnet/api/system.action\-1)<DisconnectReason\>
+`callback` [Action](https://learn.microsoft.com/dotnet/api/system.action\-1)<[DisconnectReason](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/INetEventListener.cs)\>
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_GetPlayerEntityByActor_UnrealEngine_Engine_AActor_"></a> GetPlayerEntityByActor\(AActor\)
 
@@ -133,7 +133,7 @@ void SpawnEnemy(TamerKind kind, Vector3 position)
 
 #### Parameters
 
-`kind` TamerKind
+`kind` [TamerKind](https://github.com/readycodeio/wukong\-csharp\-mod/blob/358610a12466810df8910d98ab9dcf381838f488/WukongMp.Api/Configuration/TamerKind.cs)
 
 `position` [Vector3](https://learn.microsoft.com/dotnet/api/system.numerics.vector3)
 
@@ -151,7 +151,7 @@ bool TryGetPlayerInfoById(PlayerId player, out string? nickname, out int? team)
 
 #### Parameters
 
-`player` PlayerId
+`player` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/560262830b817fb255833bd96f0ed103b95f28b1/src/ReadyM.Api/Idents/PlayerId.cs)
 
 `nickname` [string](https://learn.microsoft.com/dotnet/api/system.string)?
 
