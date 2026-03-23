@@ -1,4 +1,4 @@
-# Custom Widgets
+# Custom widgets
 
 ---
 

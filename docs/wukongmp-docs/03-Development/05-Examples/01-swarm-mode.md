@@ -1,6 +1,4 @@
-# Swarm Mod
-
-The source code for this example mod is located at: **TODO**.
+# Swarm Mode
 
 The mod aims to provide an example of a simplest way to implement a new game mode in WukongMP.
 It registers a console command `/swarm_mode` which makes enemies spawn around the player in waves every few seconds.

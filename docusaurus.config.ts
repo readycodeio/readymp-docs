@@ -29,7 +29,7 @@ const config: Config = {
   organizationName: 'ReadyCode', // Usually your GitHub org/user name.
   projectName: 'ReadyMp', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -57,7 +57,7 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/readycodeio/readymp-docs/tree/main/docs/',
+          // editUrl: 'https://github.com/readycodeio/readymp-docs/tree/main/docs/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -74,15 +74,16 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo-dark.png',
     colorMode: {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'ReadyMp Docs',
+      title: 'Developer',
       logo: {
-        alt: 'ReadyMp Docs Logo',
-        src: 'img/logo.svg',
+        alt: 'ReadyM Logo',
+        src: 'img/logo-dark.png',
+        srcDark: 'img/logo.png',
       },
       items: [
         {
@@ -116,7 +117,7 @@ const config: Config = {
           items: [
             {
               label: 'WukongMP SDK',
-              to: '/docs/wukongmp-api-reference/WukongMp.Sdk',
+              to: '/docs/wukongmp-docs/what-is-wukong-mp',
             },
           ],
         },
@@ -140,6 +141,10 @@ const config: Config = {
         {
           title: 'More',
           items: [
+            {
+              label: 'Player Portal',
+              href: 'https://portal.ready.mp',
+            },
             {
               label: 'GitHub',
               href: 'https://github.com/readycodeio',

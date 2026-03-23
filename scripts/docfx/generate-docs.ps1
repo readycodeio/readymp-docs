@@ -28,7 +28,7 @@ Get-ChildItem -Path $docsSource -Filter *.md -File | ForEach-Object {
         return
     }
 
-    # fix first line
+    # fix title line
     $content[0] = $content[0] -replace '<a id="[^"]+"></a>\s*', ''
     $content[0] = $content[0] -replace '\\>', '>'
 

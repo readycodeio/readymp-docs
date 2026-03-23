@@ -1,7 +1,0 @@
-# Installation
-
-## Download
-
-## Configuration
-
-## Hosting
