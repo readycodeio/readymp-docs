@@ -1,6 +1,6 @@
-#  Delegate FieldSetterDelegate<TComponent, TValue>
+﻿# Delegate FieldSetterDelegate<TComponent, TValue>
 
-Namespace: [ReadyM.Api.Multiplayer.Mapping.Data](ReadyM.Api.Multiplayer.Mapping.Data.md)  
+Namespace: [ReadyM.Api.Multiplayer.Mapping.Data](../ReadyM.Api.Multiplayer.Mapping.Data/ReadyM.Api.Multiplayer.Mapping.Data.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -18,4 +18,5 @@ public delegate void FieldSetterDelegate<TComponent, in TValue>(ref TComponent c
 `TComponent` 
 
 `TValue` 
+
 

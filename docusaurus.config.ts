@@ -36,7 +36,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-Hans'],
+    locales: ['en'],
   },
 
   presets: [
@@ -47,8 +47,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/readycodeio/readymp-docs/tree/main/docs/',
+          // editUrl: 'https://github.com/readycodeio/readymp-docs/tree/main/docs/',
         },
         blog: {
           showReadingTime: true,
@@ -117,7 +116,7 @@ const config: Config = {
           items: [
             {
               label: 'WukongMP SDK',
-              to: '/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.WukongApi',
+              to: '/docs/wukongmp-api-reference/WukongMp.Sdk',
             },
           ],
         },
@@ -152,7 +151,7 @@ const config: Config = {
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      darkTheme: prismThemes.vsDark,
       additionalLanguages: ['csharp'],
     },
   } satisfies Preset.ThemeConfig,

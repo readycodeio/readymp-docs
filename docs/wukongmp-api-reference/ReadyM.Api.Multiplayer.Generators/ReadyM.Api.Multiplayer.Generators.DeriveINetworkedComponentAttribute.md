@@ -1,6 +1,6 @@
-#  Class DeriveINetworkedComponentAttribute
+﻿# Class DeriveINetworkedComponentAttribute
 
-Namespace: [ReadyM.Api.Multiplayer.Generators](ReadyM.Api.Multiplayer.Generators.md)  
+Namespace: [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -12,7 +12,7 @@ public sealed class DeriveINetworkedComponentAttribute : Attribute
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
 [Attribute](https://learn.microsoft.com/dotnet/api/system.attribute) ← 
-[DeriveINetworkedComponentAttribute](ReadyM.Api.Multiplayer.Generators.DeriveINetworkedComponentAttribute.md)
+[DeriveINetworkedComponentAttribute](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetworkedComponentAttribute.md)
 
 #### Inherited Members
 
@@ -83,4 +83,5 @@ public readonly SerializableMode Mode
 #### Field Value
 
  [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/7ea6bb407f79d097d03621b801187ecda7be41cc/src/ReadyM.Api/Serialization/SerializableMode.cs)
+
 

@@ -1,6 +1,6 @@
-#  Class ModBase
+﻿# Class ModBase
 
-Namespace: [WukongMp.Sdk](WukongMp.Sdk.md)  
+Namespace: [WukongMp.Sdk](../WukongMp.Sdk/WukongMp.Sdk.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public abstract class ModBase : ICSharpModExV2, ICSharpModEx, ICSharpMod
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[ModBase](WukongMp.Sdk.ModBase.md)
+[ModBase](../WukongMp.Sdk/WukongMp.Sdk.ModBase.md)
 
 #### Implements
 
@@ -105,7 +105,7 @@ public void Init()
 ### <a id="WukongMp_Sdk_ModBase_Initialize_WukongMp_Api_IDependencyContainer_"></a> Initialize\(IDependencyContainer\)
 
 ```csharp
-protected virtual void Initialize(IDependencyContainer services)
+protected abstract void Initialize(IDependencyContainer services)
 ```
 
 #### Parameters
@@ -137,4 +137,5 @@ public void SetLoggerFactory(ILoggerFactory loggerFactory)
 #### Parameters
 
 `loggerFactory` [ILoggerFactory](https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory)
+
 

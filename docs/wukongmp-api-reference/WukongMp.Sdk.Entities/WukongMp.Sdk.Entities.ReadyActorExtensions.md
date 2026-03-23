@@ -1,6 +1,6 @@
-#  Class ReadyActorExtensions
+﻿# Class ReadyActorExtensions
 
-Namespace: [WukongMp.Sdk.Entities](WukongMp.Sdk.Entities.md)  
+Namespace: [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public static class ReadyActorExtensions
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[ReadyActorExtensions](WukongMp.Sdk.Entities.ReadyActorExtensions.md)
+[ReadyActorExtensions](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyActorExtensions.md)
 
 #### Inherited Members
 
@@ -41,4 +41,5 @@ public static BGUCharacterCS? get_Pawn<TSelf>(TSelf obj) where TSelf : struct, I
 #### Type Parameters
 
 `TSelf` 
+
 

@@ -1,6 +1,6 @@
-#  Interface INetworkedComponent
+﻿# Interface INetworkedComponent
 
-Namespace: [ReadyM.Api.Multiplayer.ECS.Components](ReadyM.Api.Multiplayer.ECS.Components.md)  
+Namespace: [ReadyM.Api.Multiplayer.ECS.Components](../ReadyM.Api.Multiplayer.ECS.Components/ReadyM.Api.Multiplayer.ECS.Components.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -61,4 +61,5 @@ void WriteDelta(NetDataWriter writer)
 #### Parameters
 
 `writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+
 

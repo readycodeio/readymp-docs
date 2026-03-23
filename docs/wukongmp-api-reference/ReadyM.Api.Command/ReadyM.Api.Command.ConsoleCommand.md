@@ -1,6 +1,6 @@
-#  Struct ConsoleCommand
+﻿# Struct ConsoleCommand
 
-Namespace: [ReadyM.Api.Command](ReadyM.Api.Command.md)  
+Namespace: [ReadyM.Api.Command](../ReadyM.Api.Command/ReadyM.Api.Command.md)  
 Assembly: ReadyM.Api.dll  
 
 ```csharp
@@ -32,7 +32,7 @@ public ConsoleCommand(Delegate handler, int minArgCount, int? maxArgCount, IRead
 
 `maxArgCount` [int](https://learn.microsoft.com/dotnet/api/system.int32)?
 
-`args` [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist\-1)<[ConsoleCommand](ReadyM.Api.Command.ConsoleCommand.md).[ParamInfo](ReadyM.Api.Command.ConsoleCommand.ParamInfo.md)\>
+`args` [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[ConsoleCommand](../ReadyM.Api.Command/ReadyM.Api.Command.ConsoleCommand.md).[ParamInfo](../ReadyM.Api.Command/ReadyM.Api.Command.ConsoleCommand.ParamInfo.md)\>
 
 `repeatingParam` [Type](https://learn.microsoft.com/dotnet/api/system.type)?
 
@@ -88,7 +88,7 @@ public readonly IReadOnlyList<ConsoleCommand.ParamInfo> Parameters
 
 #### Field Value
 
- [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist\-1)<[ConsoleCommand](ReadyM.Api.Command.ConsoleCommand.md).[ParamInfo](ReadyM.Api.Command.ConsoleCommand.ParamInfo.md)\>
+ [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[ConsoleCommand](../ReadyM.Api.Command/ReadyM.Api.Command.ConsoleCommand.md).[ParamInfo](../ReadyM.Api.Command/ReadyM.Api.Command.ConsoleCommand.ParamInfo.md)\>
 
 ### <a id="ReadyM_Api_Command_ConsoleCommand_RepeatingParam"></a> RepeatingParam
 
@@ -116,7 +116,7 @@ public static ConsoleCommand Create(Delegate handler, bool isDebugOnly = false)
 
 #### Returns
 
- [ConsoleCommand](ReadyM.Api.Command.ConsoleCommand.md)
+ [ConsoleCommand](../ReadyM.Api.Command/ReadyM.Api.Command.ConsoleCommand.md)
 
 ### <a id="ReadyM_Api_Command_ConsoleCommand_Invoke_System_Collections_Generic_IReadOnlyList_System_Object__"></a> Invoke\(IReadOnlyList<object?\>\)
 
@@ -126,5 +126,6 @@ public void Invoke(IReadOnlyList<object?> args)
 
 #### Parameters
 
-`args` [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist\-1)<[object](https://learn.microsoft.com/dotnet/api/system.object)?\>
+`args` [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[object](https://learn.microsoft.com/dotnet/api/system.object)?\>
+
 

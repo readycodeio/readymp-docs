@@ -1,6 +1,6 @@
-#  Interface IWukongInputApi
+﻿# Interface IWukongInputApi
 
-Namespace: [WukongMp.Sdk.Api](WukongMp.Sdk.Api.md)  
+Namespace: [WukongMp.Sdk.Api](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
@@ -70,4 +70,5 @@ HotKeyItem RegisterKeyBind(ModifierKeys modifiers, Key key, Action action)
 #### Returns
 
  [HotKeyItem](https://github.com/readycodeio/embed\-csharp\-loader/blob/72a84f50456aa082e7ead2a681d861586cbde74c/CSharpModBase/Input/HotKeyItem.cs)
+
 

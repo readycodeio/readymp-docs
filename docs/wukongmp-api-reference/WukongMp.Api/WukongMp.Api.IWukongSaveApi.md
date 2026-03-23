@@ -1,6 +1,6 @@
-#  Interface IWukongSaveApi
+﻿# Interface IWukongSaveApi
 
-Namespace: [WukongMp.Api](WukongMp.Api.md)  
+Namespace: [WukongMp.Api](../WukongMp.Api/WukongMp.Api.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
@@ -21,7 +21,7 @@ Task<BlobInfo?> DownloadPlayerSaveAsync(CancellationToken ct = default)
 
 #### Returns
 
- [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task\-1)<[BlobInfo](WukongMp.Api.Https.BlobInfo.md)?\>
+ [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[BlobInfo](../WukongMp.Api.Https/WukongMp.Api.Https.BlobInfo.md)?\>
 
 ### <a id="WukongMp_Api_IWukongSaveApi_DownloadWorldSaveAsync_System_Threading_CancellationToken_"></a> DownloadWorldSaveAsync\(CancellationToken\)
 
@@ -35,7 +35,7 @@ Task<BlobInfo?> DownloadWorldSaveAsync(CancellationToken ct = default)
 
 #### Returns
 
- [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task\-1)<[BlobInfo](WukongMp.Api.Https.BlobInfo.md)?\>
+ [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[BlobInfo](../WukongMp.Api.Https/WukongMp.Api.Https.BlobInfo.md)?\>
 
 ### <a id="WukongMp_Api_IWukongSaveApi_UploadPlayerSaveAsync_System_Byte___System_Threading_CancellationToken_"></a> UploadPlayerSaveAsync\(byte\[\], CancellationToken\)
 
@@ -51,7 +51,7 @@ Task<bool> UploadPlayerSaveAsync(byte[] content, CancellationToken ct = default)
 
 #### Returns
 
- [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task\-1)<[bool](https://learn.microsoft.com/dotnet/api/system.boolean)\>
+ [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[bool](https://learn.microsoft.com/dotnet/api/system.boolean)\>
 
 ### <a id="WukongMp_Api_IWukongSaveApi_UploadWorldSaveAsync_System_Byte___System_Threading_CancellationToken_"></a> UploadWorldSaveAsync\(byte\[\], CancellationToken\)
 
@@ -67,5 +67,6 @@ Task<bool> UploadWorldSaveAsync(byte[] content, CancellationToken ct = default)
 
 #### Returns
 
- [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task\-1)<[bool](https://learn.microsoft.com/dotnet/api/system.boolean)\>
+ [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[bool](https://learn.microsoft.com/dotnet/api/system.boolean)\>
+
 

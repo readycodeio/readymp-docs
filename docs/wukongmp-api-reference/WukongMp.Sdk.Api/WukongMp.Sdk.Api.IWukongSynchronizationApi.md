@@ -1,6 +1,6 @@
-#  Interface IWukongSynchronizationApi
+﻿# Interface IWukongSynchronizationApi
 
-Namespace: [WukongMp.Sdk.Api](WukongMp.Sdk.Api.md)  
+Namespace: [WukongMp.Sdk.Api](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
@@ -17,7 +17,7 @@ EntityList<ReadyMainCharacter> AllMainCharacters { get; }
 
 #### Property Value
 
- [EntityList](WukongMp.Sdk.EntityList\-1.md)<[ReadyMainCharacter](WukongMp.Sdk.Entities.ReadyMainCharacter.md)\>
+ [EntityList](../WukongMp.Sdk/WukongMp.Sdk.EntityList-1.md)<[ReadyMainCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyMainCharacter.md)\>
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_AllTamers"></a> AllTamers
 
@@ -27,7 +27,7 @@ EntityList<ReadyTamer> AllTamers { get; }
 
 #### Property Value
 
- [EntityList](WukongMp.Sdk.EntityList\-1.md)<[ReadyTamer](WukongMp.Sdk.Entities.ReadyTamer.md)\>
+ [EntityList](../WukongMp.Sdk/WukongMp.Sdk.EntityList-1.md)<[ReadyTamer](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyTamer.md)\>
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_AreaPlayers"></a> AreaPlayers
 
@@ -37,7 +37,7 @@ IReadOnlyList<PlayerId> AreaPlayers { get; }
 
 #### Property Value
 
- [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist\-1)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/7ea6bb407f79d097d03621b801187ecda7be41cc/src/ReadyM.Api/Idents/PlayerId.cs)\>
+ [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/7ea6bb407f79d097d03621b801187ecda7be41cc/src/ReadyM.Api/Idents/PlayerId.cs)\>
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_CurrentAreaId"></a> CurrentAreaId
 
@@ -87,7 +87,7 @@ ReadyMainCharacter? LocalMainCharacter { get; }
 
 #### Property Value
 
- [ReadyMainCharacter](WukongMp.Sdk.Entities.ReadyMainCharacter.md)?
+ [ReadyMainCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyMainCharacter.md)?
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_LocalPlayerId"></a> LocalPlayerId
 
@@ -109,7 +109,7 @@ void GetDisconnectReasonAndInvoke(Action<DisconnectReason> callback)
 
 #### Parameters
 
-`callback` [Action](https://learn.microsoft.com/dotnet/api/system.action\-1)<[DisconnectReason](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/INetEventListener.cs)\>
+`callback` [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[DisconnectReason](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/INetEventListener.cs)\>
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_GetPlayerEntityByActor_UnrealEngine_Engine_AActor_"></a> GetPlayerEntityByActor\(AActor\)
 
@@ -123,7 +123,7 @@ ReadyMainCharacter? GetPlayerEntityByActor(AActor actor)
 
 #### Returns
 
- [ReadyMainCharacter](WukongMp.Sdk.Entities.ReadyMainCharacter.md)?
+ [ReadyMainCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyMainCharacter.md)?
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_SpawnEnemy_WukongMp_Api_Configuration_TamerKind_System_Numerics_Vector3_"></a> SpawnEnemy\(TamerKind, Vector3\)
 
@@ -160,4 +160,5 @@ bool TryGetPlayerInfoById(PlayerId player, out string? nickname, out int? team)
 #### Returns
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 

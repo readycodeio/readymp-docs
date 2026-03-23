@@ -1,6 +1,6 @@
-#  Class ServerRpcEventAttribute
+﻿# Class ServerRpcEventAttribute
 
-Namespace: [ReadyM.Api.Multiplayer](ReadyM.Api.Multiplayer.md)  
+Namespace: [ReadyM.Api.Multiplayer](../ReadyM.Api.Multiplayer.Mapping.Tags/ReadyM.Api.Multiplayer.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -12,7 +12,7 @@ public sealed class ServerRpcEventAttribute : Attribute
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
 [Attribute](https://learn.microsoft.com/dotnet/api/system.attribute) ← 
-[ServerRpcEventAttribute](ReadyM.Api.Multiplayer.ServerRpcEventAttribute.md)
+[ServerRpcEventAttribute](../ReadyM.Api.Multiplayer/ReadyM.Api.Multiplayer.ServerRpcEventAttribute.md)
 
 #### Inherited Members
 
@@ -71,4 +71,5 @@ public ServerRpcEventAttribute(string name)
 #### Parameters
 
 `name` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
 

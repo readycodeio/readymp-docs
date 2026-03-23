@@ -1,6 +1,6 @@
-#  Class BuiltinTexts
+﻿# Class BuiltinTexts
 
-Namespace: [WukongMp.Api.Resources](WukongMp.Api.Resources.md)  
+Namespace: [WukongMp.Api.Resources](../WukongMp.Api.Resources/WukongMp.Api.Resources.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public class BuiltinTexts
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[BuiltinTexts](WukongMp.Api.Resources.BuiltinTexts.md)
+[BuiltinTexts](../WukongMp.Api.Resources/WukongMp.Api.Resources.BuiltinTexts.md)
 
 #### Inherited Members
 
@@ -863,4 +863,5 @@ public static string YouAreReady { get; }
 #### Property Value
 
  [string](https://learn.microsoft.com/dotnet/api/system.string)
+
 

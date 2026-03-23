@@ -1,6 +1,6 @@
-#  Class PatchCategory
+﻿# Class PatchCategory
 
-Namespace: [WukongMp.Api.Configuration](WukongMp.Api.Configuration.md)  
+Namespace: [WukongMp.Api.Configuration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public static class PatchCategory
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[PatchCategory](WukongMp.Api.Configuration.PatchCategory.md)
+[PatchCategory](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.PatchCategory.md)
 
 #### Inherited Members
 
@@ -53,4 +53,5 @@ public const string Global = "Global"
 #### Field Value
 
  [string](https://learn.microsoft.com/dotnet/api/system.string)
+
 

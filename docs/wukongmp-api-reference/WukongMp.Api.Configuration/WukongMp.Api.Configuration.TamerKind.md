@@ -1,6 +1,6 @@
-#  Struct TamerKind
+﻿# Struct TamerKind
 
-Namespace: [WukongMp.Api.Configuration](WukongMp.Api.Configuration.md)  
+Namespace: [WukongMp.Api.Configuration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
@@ -9,7 +9,7 @@ public readonly struct TamerKind : IEquatable<TamerKind>
 
 #### Implements
 
-[IEquatable<TamerKind\>](https://learn.microsoft.com/dotnet/api/system.iequatable\-1)
+[IEquatable<TamerKind\>](https://learn.microsoft.com/dotnet/api/system.iequatable-1)
 
 #### Inherited Members
 
@@ -42,7 +42,7 @@ public bool Equals(TamerKind other)
 
 #### Parameters
 
-`other` [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+`other` [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 #### Returns
 
@@ -92,9 +92,9 @@ public static bool operator ==(TamerKind left, TamerKind right)
 
 #### Parameters
 
-`left` [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+`left` [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
-`right` [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+`right` [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 #### Returns
 
@@ -108,11 +108,12 @@ public static bool operator !=(TamerKind left, TamerKind right)
 
 #### Parameters
 
-`left` [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+`left` [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
-`right` [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+`right` [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 #### Returns
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 

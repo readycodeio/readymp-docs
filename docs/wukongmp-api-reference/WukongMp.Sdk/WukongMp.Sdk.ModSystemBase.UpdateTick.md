@@ -1,6 +1,6 @@
-#  Struct ModSystemBase.UpdateTick
+﻿# Struct ModSystemBase.UpdateTick
 
-Namespace: [WukongMp.Sdk](WukongMp.Sdk.md)  
+Namespace: [WukongMp.Sdk](../WukongMp.Sdk/WukongMp.Sdk.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
@@ -55,4 +55,5 @@ public readonly float time
 #### Field Value
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
+
 

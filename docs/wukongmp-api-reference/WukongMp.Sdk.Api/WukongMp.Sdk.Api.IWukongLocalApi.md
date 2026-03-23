@@ -1,6 +1,6 @@
-#  Interface IWukongLocalApi
+﻿# Interface IWukongLocalApi
 
-Namespace: [WukongMp.Sdk.Api](WukongMp.Sdk.Api.md)  
+Namespace: [WukongMp.Sdk.Api](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
@@ -94,4 +94,5 @@ void Wait(Task task)
 `task` [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task)
 
 The task to wait for.
+
 

@@ -1,6 +1,6 @@
-#  Delegate DataLoader<TComponent, TContext>
+﻿# Delegate DataLoader<TComponent, TContext>
 
-Namespace: [ReadyM.Api.Multiplayer.Mapping.Data](ReadyM.Api.Multiplayer.Mapping.Data.md)  
+Namespace: [ReadyM.Api.Multiplayer.Mapping.Data](../ReadyM.Api.Multiplayer.Mapping.Data/ReadyM.Api.Multiplayer.Mapping.Data.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -18,4 +18,5 @@ public delegate void DataLoader<TComponent, in TContext>(ref TComponent componen
 `TComponent` 
 
 `TContext` 
+
 

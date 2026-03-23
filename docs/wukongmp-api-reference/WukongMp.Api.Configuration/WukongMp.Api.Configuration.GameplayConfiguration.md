@@ -1,6 +1,6 @@
-#  Class GameplayConfiguration
+﻿# Class GameplayConfiguration
 
-Namespace: [WukongMp.Api.Configuration](WukongMp.Api.Configuration.md)  
+Namespace: [WukongMp.Api.Configuration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
@@ -11,7 +11,7 @@ public sealed class GameplayConfiguration
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[GameplayConfiguration](WukongMp.Api.Configuration.GameplayConfiguration.md)
+[GameplayConfiguration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.GameplayConfiguration.md)
 
 #### Inherited Members
 
@@ -107,4 +107,5 @@ public bool SyncTamerTeamFromGameToEcs { get; set; }
 #### Property Value
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 

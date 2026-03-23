@@ -1,6 +1,6 @@
-#  Class EcsExtensions
+﻿# Class EcsExtensions
 
-Namespace: [WukongMp.Api](WukongMp.Api.md)  
+Namespace: [WukongMp.Api](../WukongMp.Api/WukongMp.Api.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public static class EcsExtensions
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[EcsExtensions](WukongMp.Api.EcsExtensions.md)
+[EcsExtensions](../WukongMp.Api/WukongMp.Api.EcsExtensions.md)
 
 #### Inherited Members
 
@@ -41,4 +41,5 @@ public static T? GetComponent<T>(this BGUActorBaseCS actor) where T : UActorComp
 #### Type Parameters
 
 `T` 
+
 

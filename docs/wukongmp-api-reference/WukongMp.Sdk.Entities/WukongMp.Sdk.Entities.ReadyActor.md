@@ -1,16 +1,15 @@
-#  Struct ReadyActor
+﻿# Struct ReadyActor
 
-Namespace: [WukongMp.Sdk.Entities](WukongMp.Sdk.Entities.md)  
+Namespace: [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
-public readonly struct ReadyActor : IReadyEntity<ReadyActor>, IReadyConvertable<ReadyActor, ReadyObject>
+public readonly struct ReadyActor : IReadyEntity<ReadyActor>
 ```
 
 #### Implements
 
-[IReadyEntity<ReadyActor\>](WukongMp.Sdk.IReadyEntity\-1.md), 
-[IReadyConvertable<ReadyActor, ReadyObject\>](WukongMp.Sdk.IReadyConvertable\-2.md)
+[IReadyEntity<ReadyActor\>](../WukongMp.Sdk/WukongMp.Sdk.IReadyEntity-1.md)
 
 #### Inherited Members
 
@@ -35,11 +34,11 @@ public static explicit operator ReadyActor(ReadyObject obj)
 
 #### Parameters
 
-`obj` [ReadyObject](WukongMp.Sdk.Entities.ReadyObject.md)
+`obj` [ReadyObject](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyObject.md)
 
 #### Returns
 
- [ReadyActor](WukongMp.Sdk.Entities.ReadyActor.md)
+ [ReadyActor](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyActor.md)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyActor_op_Implicit_WukongMp_Sdk_Entities_ReadyActor__WukongMp_Sdk_Entities_ReadyObject"></a> implicit operator ReadyObject\(ReadyActor\)
 
@@ -49,9 +48,10 @@ public static implicit operator ReadyObject(ReadyActor actor)
 
 #### Parameters
 
-`actor` [ReadyActor](WukongMp.Sdk.Entities.ReadyActor.md)
+`actor` [ReadyActor](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyActor.md)
 
 #### Returns
 
- [ReadyObject](WukongMp.Sdk.Entities.ReadyObject.md)
+ [ReadyObject](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyObject.md)
+
 

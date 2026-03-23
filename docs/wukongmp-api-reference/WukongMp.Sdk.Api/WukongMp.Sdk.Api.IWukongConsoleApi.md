@@ -1,6 +1,6 @@
-#  Interface IWukongConsoleApi
+﻿# Interface IWukongConsoleApi
 
-Namespace: [WukongMp.Sdk.Api](WukongMp.Sdk.Api.md)  
+Namespace: [WukongMp.Sdk.Api](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
@@ -25,7 +25,7 @@ void AddCommand(string commandName, ConsoleCommand command, IEnumerable<string>?
 
 `command` [ConsoleCommand](https://github.com/readycodeio/readym\-gameserver/blob/7ea6bb407f79d097d03621b801187ecda7be41cc/src/ReadyM.Api/Command/ConsoleCommand.cs)
 
-`availableFirstParams` [IEnumerable](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable\-1)<[string](https://learn.microsoft.com/dotnet/api/system.string)\>?
+`availableFirstParams` [IEnumerable](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1)<[string](https://learn.microsoft.com/dotnet/api/system.string)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongConsoleApi_HasCommand_System_String_"></a> HasCommand\(string\)
 
@@ -50,4 +50,5 @@ void WriteConsoleMessage(string message)
 #### Parameters
 
 `message` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
 

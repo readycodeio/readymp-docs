@@ -13,8 +13,14 @@
           ]
         }
       ],
-      "dest": "api",
-      "outputFormat": "markdown"
+      "output": "api",
+      "outputFormat": "markdown",
+      "shouldSkipMarkup": true,
+      "disableGitFeatures": true,
+      "properties": {
+        "TargetFramework": "netstandard2.0"
+      },
+      "enumSortOrder": "declaringOrder"
     }
   ],
   "build": {
@@ -45,6 +51,9 @@
       "_appTitle": "WukongMP SDK",
       "_enableSearch": false,
       "pdf": false
-    }
+    },
+    "xref": [
+      "https://learn.microsoft.com/en-us/dotnet/.xrefmap.json"
+    ]
   }
 }

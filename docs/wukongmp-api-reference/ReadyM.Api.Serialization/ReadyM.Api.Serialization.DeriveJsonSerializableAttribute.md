@@ -1,6 +1,6 @@
-#  Class DeriveJsonSerializableAttribute
+﻿# Class DeriveJsonSerializableAttribute
 
-Namespace: [ReadyM.Api.Serialization](ReadyM.Api.Serialization.md)  
+Namespace: [ReadyM.Api.Serialization](../ReadyM.Api.Serialization/ReadyM.Api.Serialization.md)  
 Assembly: ReadyM.Api.dll  
 
 ```csharp
@@ -12,7 +12,7 @@ public sealed class DeriveJsonSerializableAttribute : Attribute
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
 [Attribute](https://learn.microsoft.com/dotnet/api/system.attribute) ← 
-[DeriveJsonSerializableAttribute](ReadyM.Api.Serialization.DeriveJsonSerializableAttribute.md)
+[DeriveJsonSerializableAttribute](../ReadyM.Api.Serialization/ReadyM.Api.Serialization.DeriveJsonSerializableAttribute.md)
 
 #### Inherited Members
 
@@ -70,7 +70,7 @@ public DeriveJsonSerializableAttribute(SerializableMode mode = SerializableMode.
 
 #### Parameters
 
-`mode` [SerializableMode](ReadyM.Api.Serialization.SerializableMode.md)
+`mode` [SerializableMode](../ReadyM.Api.Serialization/ReadyM.Api.Serialization.SerializableMode.md)
 
 ## Fields
 
@@ -82,5 +82,6 @@ public readonly SerializableMode Mode
 
 #### Field Value
 
- [SerializableMode](ReadyM.Api.Serialization.SerializableMode.md)
+ [SerializableMode](../ReadyM.Api.Serialization/ReadyM.Api.Serialization.SerializableMode.md)
+
 

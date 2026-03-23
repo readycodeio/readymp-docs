@@ -1,18 +1,15 @@
-#  Struct ReadyTamer
+﻿# Struct ReadyTamer
 
-Namespace: [WukongMp.Sdk.Entities](WukongMp.Sdk.Entities.md)  
+Namespace: [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
-public readonly struct ReadyTamer : IReadyEntity<ReadyTamer>, IReadyConvertable<ReadyTamer, ReadyCharacter>, IReadyConvertable<ReadyTamer, ReadyActor>, IReadyConvertable<ReadyTamer, ReadyObject>
+public readonly struct ReadyTamer : IReadyEntity<ReadyTamer>
 ```
 
 #### Implements
 
-[IReadyEntity<ReadyTamer\>](WukongMp.Sdk.IReadyEntity\-1.md), 
-[IReadyConvertable<ReadyTamer, ReadyCharacter\>](WukongMp.Sdk.IReadyConvertable\-2.md), 
-[IReadyConvertable<ReadyTamer, ReadyActor\>](WukongMp.Sdk.IReadyConvertable\-2.md), 
-[IReadyConvertable<ReadyTamer, ReadyObject\>](WukongMp.Sdk.IReadyConvertable\-2.md)
+[IReadyEntity<ReadyTamer\>](../WukongMp.Sdk/WukongMp.Sdk.IReadyEntity-1.md)
 
 #### Inherited Members
 
@@ -79,11 +76,11 @@ public static explicit operator ReadyTamer(ReadyObject obj)
 
 #### Parameters
 
-`obj` [ReadyObject](WukongMp.Sdk.Entities.ReadyObject.md)
+`obj` [ReadyObject](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyObject.md)
 
 #### Returns
 
- [ReadyTamer](WukongMp.Sdk.Entities.ReadyTamer.md)
+ [ReadyTamer](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyTamer.md)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyTamer_op_Explicit_WukongMp_Sdk_Entities_ReadyCharacter__WukongMp_Sdk_Entities_ReadyTamer"></a> explicit operator ReadyTamer\(ReadyCharacter\)
 
@@ -93,11 +90,11 @@ public static explicit operator ReadyTamer(ReadyCharacter character)
 
 #### Parameters
 
-`character` [ReadyCharacter](WukongMp.Sdk.Entities.ReadyCharacter.md)
+`character` [ReadyCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyCharacter.md)
 
 #### Returns
 
- [ReadyTamer](WukongMp.Sdk.Entities.ReadyTamer.md)
+ [ReadyTamer](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyTamer.md)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyTamer_op_Explicit_WukongMp_Sdk_Entities_ReadyActor__WukongMp_Sdk_Entities_ReadyTamer"></a> explicit operator ReadyTamer\(ReadyActor\)
 
@@ -107,11 +104,11 @@ public static explicit operator ReadyTamer(ReadyActor actor)
 
 #### Parameters
 
-`actor` [ReadyActor](WukongMp.Sdk.Entities.ReadyActor.md)
+`actor` [ReadyActor](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyActor.md)
 
 #### Returns
 
- [ReadyTamer](WukongMp.Sdk.Entities.ReadyTamer.md)
+ [ReadyTamer](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyTamer.md)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyTamer_op_Implicit_WukongMp_Sdk_Entities_ReadyTamer__WukongMp_Sdk_Entities_ReadyObject"></a> implicit operator ReadyObject\(ReadyTamer\)
 
@@ -121,11 +118,11 @@ public static implicit operator ReadyObject(ReadyTamer tamer)
 
 #### Parameters
 
-`tamer` [ReadyTamer](WukongMp.Sdk.Entities.ReadyTamer.md)
+`tamer` [ReadyTamer](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyTamer.md)
 
 #### Returns
 
- [ReadyObject](WukongMp.Sdk.Entities.ReadyObject.md)
+ [ReadyObject](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyObject.md)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyTamer_op_Implicit_WukongMp_Sdk_Entities_ReadyTamer__WukongMp_Sdk_Entities_ReadyCharacter"></a> implicit operator ReadyCharacter\(ReadyTamer\)
 
@@ -135,11 +132,11 @@ public static implicit operator ReadyCharacter(ReadyTamer tamer)
 
 #### Parameters
 
-`tamer` [ReadyTamer](WukongMp.Sdk.Entities.ReadyTamer.md)
+`tamer` [ReadyTamer](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyTamer.md)
 
 #### Returns
 
- [ReadyCharacter](WukongMp.Sdk.Entities.ReadyCharacter.md)
+ [ReadyCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyCharacter.md)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyTamer_op_Implicit_WukongMp_Sdk_Entities_ReadyTamer__WukongMp_Sdk_Entities_ReadyActor"></a> implicit operator ReadyActor\(ReadyTamer\)
 
@@ -149,9 +146,10 @@ public static implicit operator ReadyActor(ReadyTamer tamer)
 
 #### Parameters
 
-`tamer` [ReadyTamer](WukongMp.Sdk.Entities.ReadyTamer.md)
+`tamer` [ReadyTamer](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyTamer.md)
 
 #### Returns
 
- [ReadyActor](WukongMp.Sdk.Entities.ReadyActor.md)
+ [ReadyActor](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyActor.md)
+
 

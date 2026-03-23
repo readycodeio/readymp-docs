@@ -1,6 +1,6 @@
-#  Class Logging
+﻿# Class Logging
 
-Namespace: [WukongMp.Api](WukongMp.Api.md)  
+Namespace: [WukongMp.Api](../WukongMp.Api/WukongMp.Api.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public static class Logging
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[Logging](WukongMp.Api.Logging.md)
+[Logging](../WukongMp.Api/WukongMp.Api.Logging.md)
 
 #### Inherited Members
 
@@ -147,4 +147,5 @@ public static void LogWarning(string? message, params object?[] args)
 `message` [string](https://learn.microsoft.com/dotnet/api/system.string)?
 
 `args` [object](https://learn.microsoft.com/dotnet/api/system.object)?\[\]
+
 

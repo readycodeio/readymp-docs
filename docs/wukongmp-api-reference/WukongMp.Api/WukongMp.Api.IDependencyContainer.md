@@ -1,6 +1,6 @@
-#  Interface IDependencyContainer
+﻿# Interface IDependencyContainer
 
-Namespace: [WukongMp.Api](WukongMp.Api.md)  
+Namespace: [WukongMp.Api](../WukongMp.Api/WukongMp.Api.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
@@ -88,4 +88,5 @@ T Resolve<T>()
 #### Type Parameters
 
 `T` 
+
 

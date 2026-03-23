@@ -1,6 +1,6 @@
-#  Class IncludeSerializableAttribute
+﻿# Class IncludeSerializableAttribute
 
-Namespace: [ReadyM.Api.Multiplayer.Generators](ReadyM.Api.Multiplayer.Generators.md)  
+Namespace: [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -12,7 +12,7 @@ public sealed class IncludeSerializableAttribute : Attribute
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
 [Attribute](https://learn.microsoft.com/dotnet/api/system.attribute) ← 
-[IncludeSerializableAttribute](ReadyM.Api.Multiplayer.Generators.IncludeSerializableAttribute.md)
+[IncludeSerializableAttribute](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.IncludeSerializableAttribute.md)
 
 #### Inherited Members
 
@@ -67,4 +67,5 @@ public sealed class IncludeSerializableAttribute : Attribute
 ```csharp
 public IncludeSerializableAttribute()
 ```
+
 

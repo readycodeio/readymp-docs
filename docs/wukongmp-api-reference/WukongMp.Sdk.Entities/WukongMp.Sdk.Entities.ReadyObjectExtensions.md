@@ -1,6 +1,6 @@
-#  Class ReadyObjectExtensions
+﻿# Class ReadyObjectExtensions
 
-Namespace: [WukongMp.Sdk.Entities](WukongMp.Sdk.Entities.md)  
+Namespace: [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public static class ReadyObjectExtensions
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[ReadyObjectExtensions](WukongMp.Sdk.Entities.ReadyObjectExtensions.md)
+[ReadyObjectExtensions](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyObjectExtensions.md)
 
 #### Inherited Members
 
@@ -151,4 +151,5 @@ public static void set_Rotation<TSelf>(TSelf obj, Vector3 value) where TSelf : s
 #### Type Parameters
 
 `TSelf` 
+
 

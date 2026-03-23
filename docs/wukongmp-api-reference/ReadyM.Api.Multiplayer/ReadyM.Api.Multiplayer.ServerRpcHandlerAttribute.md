@@ -1,6 +1,6 @@
-#  Class ServerRpcHandlerAttribute
+﻿# Class ServerRpcHandlerAttribute
 
-Namespace: [ReadyM.Api.Multiplayer](ReadyM.Api.Multiplayer.md)  
+Namespace: [ReadyM.Api.Multiplayer](../ReadyM.Api.Multiplayer.Mapping.Tags/ReadyM.Api.Multiplayer.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -12,7 +12,7 @@ public sealed class ServerRpcHandlerAttribute : Attribute
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
 [Attribute](https://learn.microsoft.com/dotnet/api/system.attribute) ← 
-[ServerRpcHandlerAttribute](ReadyM.Api.Multiplayer.ServerRpcHandlerAttribute.md)
+[ServerRpcHandlerAttribute](../ReadyM.Api.Multiplayer/ReadyM.Api.Multiplayer.ServerRpcHandlerAttribute.md)
 
 #### Inherited Members
 
@@ -71,4 +71,5 @@ public ServerRpcHandlerAttribute(string name)
 #### Parameters
 
 `name` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
 

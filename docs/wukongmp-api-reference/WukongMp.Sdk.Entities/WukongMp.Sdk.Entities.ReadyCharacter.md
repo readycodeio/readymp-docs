@@ -1,17 +1,15 @@
-#  Struct ReadyCharacter
+﻿# Struct ReadyCharacter
 
-Namespace: [WukongMp.Sdk.Entities](WukongMp.Sdk.Entities.md)  
+Namespace: [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
-public readonly struct ReadyCharacter : IReadyEntity<ReadyCharacter>, IReadyConvertable<ReadyCharacter, ReadyActor>, IReadyConvertable<ReadyCharacter, ReadyObject>
+public readonly struct ReadyCharacter : IReadyEntity<ReadyCharacter>
 ```
 
 #### Implements
 
-[IReadyEntity<ReadyCharacter\>](WukongMp.Sdk.IReadyEntity\-1.md), 
-[IReadyConvertable<ReadyCharacter, ReadyActor\>](WukongMp.Sdk.IReadyConvertable\-2.md), 
-[IReadyConvertable<ReadyCharacter, ReadyObject\>](WukongMp.Sdk.IReadyConvertable\-2.md)
+[IReadyEntity<ReadyCharacter\>](../WukongMp.Sdk/WukongMp.Sdk.IReadyEntity-1.md)
 
 #### Inherited Members
 
@@ -36,11 +34,11 @@ public static explicit operator ReadyCharacter(ReadyObject obj)
 
 #### Parameters
 
-`obj` [ReadyObject](WukongMp.Sdk.Entities.ReadyObject.md)
+`obj` [ReadyObject](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyObject.md)
 
 #### Returns
 
- [ReadyCharacter](WukongMp.Sdk.Entities.ReadyCharacter.md)
+ [ReadyCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyCharacter.md)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyCharacter_op_Explicit_WukongMp_Sdk_Entities_ReadyActor__WukongMp_Sdk_Entities_ReadyCharacter"></a> explicit operator ReadyCharacter\(ReadyActor\)
 
@@ -50,11 +48,11 @@ public static explicit operator ReadyCharacter(ReadyActor actor)
 
 #### Parameters
 
-`actor` [ReadyActor](WukongMp.Sdk.Entities.ReadyActor.md)
+`actor` [ReadyActor](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyActor.md)
 
 #### Returns
 
- [ReadyCharacter](WukongMp.Sdk.Entities.ReadyCharacter.md)
+ [ReadyCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyCharacter.md)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyCharacter_op_Implicit_WukongMp_Sdk_Entities_ReadyCharacter__WukongMp_Sdk_Entities_ReadyObject"></a> implicit operator ReadyObject\(ReadyCharacter\)
 
@@ -64,11 +62,11 @@ public static implicit operator ReadyObject(ReadyCharacter character)
 
 #### Parameters
 
-`character` [ReadyCharacter](WukongMp.Sdk.Entities.ReadyCharacter.md)
+`character` [ReadyCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyCharacter.md)
 
 #### Returns
 
- [ReadyObject](WukongMp.Sdk.Entities.ReadyObject.md)
+ [ReadyObject](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyObject.md)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyCharacter_op_Implicit_WukongMp_Sdk_Entities_ReadyCharacter__WukongMp_Sdk_Entities_ReadyActor"></a> implicit operator ReadyActor\(ReadyCharacter\)
 
@@ -78,9 +76,10 @@ public static implicit operator ReadyActor(ReadyCharacter tamer)
 
 #### Parameters
 
-`tamer` [ReadyCharacter](WukongMp.Sdk.Entities.ReadyCharacter.md)
+`tamer` [ReadyCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyCharacter.md)
 
 #### Returns
 
- [ReadyActor](WukongMp.Sdk.Entities.ReadyActor.md)
+ [ReadyActor](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyActor.md)
+
 

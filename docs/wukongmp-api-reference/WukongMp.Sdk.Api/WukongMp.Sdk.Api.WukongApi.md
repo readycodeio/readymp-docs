@@ -1,6 +1,6 @@
-#  Class WukongApi
+﻿# Class WukongApi
 
-Namespace: [WukongMp.Sdk.Api](WukongMp.Sdk.Api.md)  
+Namespace: [WukongMp.Sdk.Api](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.md)  
 Assembly: WukongMp.Sdk.dll  
 
 The main entry point for accessing Wukong's API.
@@ -13,7 +13,7 @@ public static class WukongApi
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[WukongApi](WukongMp.Sdk.Api.WukongApi.md)
+[WukongApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.WukongApi.md)
 
 #### Inherited Members
 
@@ -46,7 +46,7 @@ public static IWukongConsoleApi Console { get; }
 
 #### Property Value
 
- [IWukongConsoleApi](WukongMp.Sdk.Api.IWukongConsoleApi.md)
+ [IWukongConsoleApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongConsoleApi.md)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Events"></a> Events
 
@@ -56,7 +56,7 @@ public static IWukongEventApi Events { get; }
 
 #### Property Value
 
- [IWukongEventApi](WukongMp.Sdk.Api.IWukongEventApi.md)
+ [IWukongEventApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongEventApi.md)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Files"></a> Files
 
@@ -66,7 +66,7 @@ public static IWukongFileApi Files { get; }
 
 #### Property Value
 
- [IWukongFileApi](WukongMp.Sdk.Api.IWukongFileApi.md)
+ [IWukongFileApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongFileApi.md)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Input"></a> Input
 
@@ -76,7 +76,7 @@ public static IWukongInputApi Input { get; }
 
 #### Property Value
 
- [IWukongInputApi](WukongMp.Sdk.Api.IWukongInputApi.md)
+ [IWukongInputApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi.md)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Local"></a> Local
 
@@ -86,7 +86,7 @@ public static IWukongLocalApi Local { get; }
 
 #### Property Value
 
- [IWukongLocalApi](WukongMp.Sdk.Api.IWukongLocalApi.md)
+ [IWukongLocalApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi.md)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Saves"></a> Saves
 
@@ -116,7 +116,7 @@ public static IWukongSynchronizationApi Sync { get; }
 
 #### Property Value
 
- [IWukongSynchronizationApi](WukongMp.Sdk.Api.IWukongSynchronizationApi.md)
+ [IWukongSynchronizationApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi.md)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Widgets"></a> Widgets
 
@@ -126,5 +126,6 @@ public static IWukongWidgetApi Widgets { get; }
 
 #### Property Value
 
- [IWukongWidgetApi](WukongMp.Sdk.Api.IWukongWidgetApi.md)
+ [IWukongWidgetApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongWidgetApi.md)
+
 

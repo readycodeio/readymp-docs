@@ -1,6 +1,6 @@
-#  Struct Field<TComponent, TValue>
+﻿# Struct Field<TComponent, TValue>
 
-Namespace: [ReadyM.Api.Multiplayer.Mapping.Data](ReadyM.Api.Multiplayer.Mapping.Data.md)  
+Namespace: [ReadyM.Api.Multiplayer.Mapping.Data](../ReadyM.Api.Multiplayer.Mapping.Data/ReadyM.Api.Multiplayer.Mapping.Data.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -34,13 +34,13 @@ public Field(int id, Func<TComponent, TValue> get, FieldSetterDelegate<TComponen
 
 `id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`get` [Func](https://learn.microsoft.com/dotnet/api/system.func\-2)<TComponent, TValue\>
+`get` [Func](https://learn.microsoft.com/dotnet/api/system.func-2)<TComponent, TValue\>
 
-`set` [FieldSetterDelegate](ReadyM.Api.Multiplayer.Mapping.Data.FieldSetterDelegate\-2.md)<TComponent, TValue\>
+`set` [FieldSetterDelegate](../ReadyM.Api.Multiplayer.Mapping.Data/ReadyM.Api.Multiplayer.Mapping.Data.FieldSetterDelegate-2.md)<TComponent, TValue\>
 
-`setFromApi` [FieldSetterDelegate](ReadyM.Api.Multiplayer.Mapping.Data.FieldSetterDelegate\-2.md)<TComponent, TValue\>
+`setFromApi` [FieldSetterDelegate](../ReadyM.Api.Multiplayer.Mapping.Data/ReadyM.Api.Multiplayer.Mapping.Data.FieldSetterDelegate-2.md)<TComponent, TValue\>
 
-`wasSetFromApi` [Func](https://learn.microsoft.com/dotnet/api/system.func\-2)<TComponent, [bool](https://learn.microsoft.com/dotnet/api/system.boolean)\>
+`wasSetFromApi` [Func](https://learn.microsoft.com/dotnet/api/system.func-2)<TComponent, [bool](https://learn.microsoft.com/dotnet/api/system.boolean)\>
 
 ## Methods
 
@@ -52,7 +52,7 @@ public Field<TComponent, TValue, TContext> In<TContext>()
 
 #### Returns
 
- [Field](ReadyM.Api.Multiplayer.Mapping.Data.Field\-3.md)<TComponent, TValue, TContext\>
+ [Field](../ReadyM.Api.Multiplayer.Mapping.Data/ReadyM.Api.Multiplayer.Mapping.Data.Field-3.md)<TComponent, TValue, TContext\>
 
 #### Type Parameters
 
@@ -68,9 +68,10 @@ public static implicit operator int(Field<TComponent, TValue> field)
 
 #### Parameters
 
-`field` [Field](ReadyM.Api.Multiplayer.Mapping.Data.Field\-2.md)<TComponent, TValue\>
+`field` [Field](../ReadyM.Api.Multiplayer.Mapping.Data/ReadyM.Api.Multiplayer.Mapping.Data.Field-2.md)<TComponent, TValue\>
 
 #### Returns
 
  [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
 

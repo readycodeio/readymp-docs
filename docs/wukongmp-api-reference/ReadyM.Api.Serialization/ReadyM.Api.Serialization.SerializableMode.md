@@ -1,6 +1,6 @@
-#  Enum SerializableMode
+﻿# Enum SerializableMode
 
-Namespace: [ReadyM.Api.Serialization](ReadyM.Api.Serialization.md)  
+Namespace: [ReadyM.Api.Serialization](../ReadyM.Api.Serialization/ReadyM.Api.Serialization.md)  
 Assembly: ReadyM.Api.dll  
 
 ```csharp
@@ -10,17 +10,18 @@ public enum SerializableMode : byte
 
 ## Fields
 
-`Default = 13` 
-
 `MapFields = 1` 
-
-`MapFieldsAndProperties = 3` 
-
-`MapInternal = 16` 
-
-`MapPrivate = 4` 
 
 `MapProperties = 2` 
 
+`MapFieldsAndProperties = 3` 
+
+`MapPrivate = 4` 
+
 `MapPublic = 8` 
+
+`MapInternal = 16` 
+
+`Default = 13` 
+
 

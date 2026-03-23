@@ -1,6 +1,6 @@
-#  Struct Field<TComponent, TValue, TContext>
+﻿# Struct Field<TComponent, TValue, TContext>
 
-Namespace: [ReadyM.Api.Multiplayer.Mapping.Data](ReadyM.Api.Multiplayer.Mapping.Data.md)  
+Namespace: [ReadyM.Api.Multiplayer.Mapping.Data](../ReadyM.Api.Multiplayer.Mapping.Data/ReadyM.Api.Multiplayer.Mapping.Data.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -36,11 +36,11 @@ public Field(int id, Func<TComponent, TValue> get, FieldSetterDelegate<TComponen
 
 `id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`get` [Func](https://learn.microsoft.com/dotnet/api/system.func\-2)<TComponent, TValue\>
+`get` [Func](https://learn.microsoft.com/dotnet/api/system.func-2)<TComponent, TValue\>
 
-`set` [FieldSetterDelegate](ReadyM.Api.Multiplayer.Mapping.Data.FieldSetterDelegate\-2.md)<TComponent, TValue\>
+`set` [FieldSetterDelegate](../ReadyM.Api.Multiplayer.Mapping.Data/ReadyM.Api.Multiplayer.Mapping.Data.FieldSetterDelegate-2.md)<TComponent, TValue\>
 
-`wasSetFromApi` [Func](https://learn.microsoft.com/dotnet/api/system.func\-2)<TComponent, [bool](https://learn.microsoft.com/dotnet/api/system.boolean)\>
+`wasSetFromApi` [Func](https://learn.microsoft.com/dotnet/api/system.func-2)<TComponent, [bool](https://learn.microsoft.com/dotnet/api/system.boolean)\>
 
 ## Operators
 
@@ -52,9 +52,10 @@ public static implicit operator int(Field<TComponent, TValue, TContext> field)
 
 #### Parameters
 
-`field` [Field](ReadyM.Api.Multiplayer.Mapping.Data.Field\-3.md)<TComponent, TValue, TContext\>
+`field` [Field](../ReadyM.Api.Multiplayer.Mapping.Data/ReadyM.Api.Multiplayer.Mapping.Data.Field-3.md)<TComponent, TValue, TContext\>
 
 #### Returns
 
  [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
 

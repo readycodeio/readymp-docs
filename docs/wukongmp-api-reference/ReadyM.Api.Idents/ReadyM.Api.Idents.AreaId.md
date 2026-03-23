@@ -1,6 +1,6 @@
-#  Struct AreaId
+﻿# Struct AreaId
 
-Namespace: [ReadyM.Api.Idents](ReadyM.Api.Idents.md)  
+Namespace: [ReadyM.Api.Idents](../ReadyM.Api.Idents/ReadyM.Api.Idents.md)  
 Assembly: ReadyM.Api.dll  
 
 ```csharp
@@ -11,7 +11,7 @@ public struct AreaId : INetSerializable, IEquatable<AreaId>
 #### Implements
 
 [INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs), 
-[IEquatable<AreaId\>](https://learn.microsoft.com/dotnet/api/system.iequatable\-1)
+[IEquatable<AreaId\>](https://learn.microsoft.com/dotnet/api/system.iequatable-1)
 
 #### Inherited Members
 
@@ -44,7 +44,7 @@ public static AreaId Invalid { get; }
 
 #### Property Value
 
- [AreaId](ReadyM.Api.Idents.AreaId.md)
+ [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
 
 ### <a id="ReadyM_Api_Idents_AreaId_Max"></a> Max
 
@@ -54,7 +54,7 @@ public static AreaId Max { get; }
 
 #### Property Value
 
- [AreaId](ReadyM.Api.Idents.AreaId.md)
+ [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
 
 ## Methods
 
@@ -76,7 +76,7 @@ public bool Equals(AreaId other)
 
 #### Parameters
 
-`other` [AreaId](ReadyM.Api.Idents.AreaId.md)
+`other` [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
 
 #### Returns
 
@@ -130,7 +130,7 @@ public static AreaId TextDeserialize(ref Utf8JsonReader reader, JsonSerializerOp
 
 #### Returns
 
- [AreaId](ReadyM.Api.Idents.AreaId.md)
+ [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
 
 ### <a id="ReadyM_Api_Idents_AreaId_TextSerialize_System_Text_Json_Utf8JsonWriter_ReadyM_Api_Idents_AreaId_System_Text_Json_JsonSerializerOptions_"></a> TextSerialize\(Utf8JsonWriter, AreaId, JsonSerializerOptions\)
 
@@ -142,7 +142,7 @@ public static void TextSerialize(Utf8JsonWriter writer, AreaId obj, JsonSerializ
 
 `writer` [Utf8JsonWriter](https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter)
 
-`obj` [AreaId](ReadyM.Api.Idents.AreaId.md)
+`obj` [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
 
 `options` [JsonSerializerOptions](https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions)
 
@@ -166,9 +166,9 @@ public static bool operator ==(AreaId left, AreaId right)
 
 #### Parameters
 
-`left` [AreaId](ReadyM.Api.Idents.AreaId.md)
+`left` [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
 
-`right` [AreaId](ReadyM.Api.Idents.AreaId.md)
+`right` [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
 
 #### Returns
 
@@ -182,11 +182,12 @@ public static bool operator !=(AreaId left, AreaId right)
 
 #### Parameters
 
-`left` [AreaId](ReadyM.Api.Idents.AreaId.md)
+`left` [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
 
-`right` [AreaId](ReadyM.Api.Idents.AreaId.md)
+`right` [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
 
 #### Returns
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 

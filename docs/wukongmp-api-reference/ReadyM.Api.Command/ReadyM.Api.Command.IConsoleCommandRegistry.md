@@ -1,6 +1,6 @@
-#  Interface IConsoleCommandRegistry
+﻿# Interface IConsoleCommandRegistry
 
-Namespace: [ReadyM.Api.Command](ReadyM.Api.Command.md)  
+Namespace: [ReadyM.Api.Command](../ReadyM.Api.Command/ReadyM.Api.Command.md)  
 Assembly: ReadyM.Api.dll  
 
 ```csharp
@@ -19,9 +19,9 @@ void AddCommand(string commandName, ConsoleCommand command, IEnumerable<string>?
 
 `commandName` [string](https://learn.microsoft.com/dotnet/api/system.string)
 
-`command` [ConsoleCommand](ReadyM.Api.Command.ConsoleCommand.md)
+`command` [ConsoleCommand](../ReadyM.Api.Command/ReadyM.Api.Command.ConsoleCommand.md)
 
-`availableFirstParams` [IEnumerable](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable\-1)<[string](https://learn.microsoft.com/dotnet/api/system.string)\>?
+`availableFirstParams` [IEnumerable](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1)<[string](https://learn.microsoft.com/dotnet/api/system.string)\>?
 
 ### <a id="ReadyM_Api_Command_IConsoleCommandRegistry_HasCommand_System_String_"></a> HasCommand\(string\)
 
@@ -36,4 +36,5 @@ bool HasCommand(string commandName)
 #### Returns
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 

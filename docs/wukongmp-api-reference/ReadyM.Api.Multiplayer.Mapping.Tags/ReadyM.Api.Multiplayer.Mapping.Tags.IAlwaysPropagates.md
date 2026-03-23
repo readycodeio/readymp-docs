@@ -1,6 +1,6 @@
-#  Interface IAlwaysPropagates
+﻿# Interface IAlwaysPropagates
 
-Namespace: [ReadyM.Api.Multiplayer.Mapping.Tags](ReadyM.Api.Multiplayer.Mapping.Tags.md)  
+Namespace: [ReadyM.Api.Multiplayer.Mapping.Tags](../ReadyM.Api.Multiplayer.Mapping.Tags/ReadyM.Api.Multiplayer.Mapping.Tags.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -9,5 +9,6 @@ public interface IAlwaysPropagates : IMappingContext<EmptyContext>
 
 #### Implements
 
-[IMappingContext<EmptyContext\>](ReadyM.Api.Multiplayer.Mapping.Tags.IMappingContext\-1.md)
+[IMappingContext<EmptyContext\>](../ReadyM.Api.Multiplayer.Mapping.Tags/ReadyM.Api.Multiplayer.Mapping.Tags.IMappingContext-1.md)
+
 

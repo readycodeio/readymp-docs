@@ -1,6 +1,6 @@
-#  Interface IDeltaEquatable<T>
+﻿# Interface IDeltaEquatable<T>
 
-Namespace: [ReadyM.Api.Serialization](ReadyM.Api.Serialization.md)  
+Namespace: [ReadyM.Api.Serialization](../ReadyM.Api.Serialization/ReadyM.Api.Serialization.md)  
 Assembly: ReadyM.Api.dll  
 
 ```csharp
@@ -28,4 +28,5 @@ bool DeltaEquals(T other, float delta)
 #### Returns
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 

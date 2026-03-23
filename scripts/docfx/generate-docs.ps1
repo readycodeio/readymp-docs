@@ -2,48 +2,106 @@
 $docsTarget = "../../docs/wukongmp-api-reference"
 
 # purge the source folder completely
-Remove-Item -Path $docsSource\* -Recurse -Force
+Remove-Item -Path "$docsSource\*" -Recurse -Force -ErrorAction SilentlyContinue
 
 docfx metadata
 
 # purge all .md files in the target directory recursively
-Get-ChildItem -Path $docsTarget -Filter *.md -Recurse | Remove-Item -Force
+Get-ChildItem -Path $docsTarget -Filter *.md -Recurse -File | Remove-Item -Force
 
 # remove all empty directories in the target directory recursively
-Get-ChildItem -Path $docsTarget -Directory -Recurse | Where-Object {
-    @(Get-ChildItem -Path $_.FullName -Recurse).Count -eq 0
-} | Remove-Item -Force
+Get-ChildItem -Path $docsTarget -Directory -Recurse |
+    Sort-Object FullName -Descending |
+    Where-Object { @(Get-ChildItem -Path $_.FullName -Force).Count -eq 0 } |
+    Remove-Item -Force
 
-# Copy all .md files from source to target, but rewrite the first line of each in such a way:
-# The first line of each files is a title like so: "# <a id="WukongMp_Sdk"></a> Namespace WukongMp.Sdk"
-# We need to remove the <a> tag and the id attribute, so that it becomes: "# Namespace WukongMp.Sdk"
-Get-ChildItem -Path $docsSource -Filter *.md | ForEach-Object {
+# build an index of source files -> namespace
+$fileNamespaceMap = @{}
+
+# copy all .md files from source to target, fixing title line and splitting by namespace
+Get-ChildItem -Path $docsSource -Filter *.md -File | ForEach-Object {
     Write-Host "Processing file: $($_.Name)"
-    
-    $content = Get-Content $_.FullName
-    $firstLine = $content[0]
-    $newFirstLine = $firstLine -replace '<a id="[^"]+"></a>', ''
-    $newFirstLine = $newFirstLine -replace '\\>', '>'
-    $content[0] = $newFirstLine
-    $newContent = $content -join "`n"
-    
-    # extract namespace from the file, which is the 3rd line of it.
-    # format: "Namespace: [WukongMp.Sdk.Entities](WukongMp.Sdk.Entities.md)"
-    # create the target directory if it doesn't exist
-    # place the .md file in that directory
-    
-    # if the 3rd line doesn't match the expected format, log a warning and skip the file
-    if ($content[2] -notmatch 'Namespace: .+') {
+
+    $content = Get-Content -Path $_.FullName -Encoding UTF8
+    if ($content.Count -lt 3) {
+        Write-Warning "File too short, skipping: $($_.FullName)"
         return
     }
-    
-    $namespace = $content[2] -replace 'Namespace: \[(.+?)\].+', '$1'
-    $targetDir = Join-Path $docsTarget $namespace
-    $targetPath = "$targetDir\$($_.Name)"
-    
-    if (-not (Test-Path $targetDir)) {
-        New-Item -ItemType Directory -Path $targetDir | Out-Null
+
+    # fix first line
+    $content[0] = $content[0] -replace '<a id="[^"]+"></a>\s*', ''
+    $content[0] = $content[0] -replace '\\>', '>'
+
+    # replace \- with - in all lines to fix escaped dashes in links
+    for ($i = 0; $i -lt $content.Count; $i++) {
+        $content[$i] = $content[$i] -replace '\\-(\d)', '-$1'
     }
 
-    Set-Content -Path $targetPath -Value $newContent
+    # extract namespace from 3rd line
+    if ($content[2] -notmatch '^Namespace:\s+\[(.+?)\]\([^)]+\)') {
+        # this is the namespace file, which just links to its members
+        $namespace = [System.IO.Path]::GetFileNameWithoutExtension($_.Name)
+
+        # the first line matches "# Namespace NamespaceName", we need to remove the word "Namespace" in there
+        $content[0] = $content[0] -replace '^# Namespace (.+)$', '# $1'
+    }
+
+    $namespace = $matches[1]
+    $fileNamespaceMap[$_.Name] = $namespace
+
+    $targetDir = Join-Path $docsTarget $namespace
+    $targetPath = Join-Path $targetDir $_.Name
+
+    if (-not (Test-Path $targetDir)) {
+        New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
+    }
+
+    Set-Content -Path $targetPath -Value $content -Encoding UTF8
+}
+
+# rewrite links after files have been moved into namespace folders
+Get-ChildItem -Path $docsTarget -Filter *.md -Recurse -File | ForEach-Object {
+    Write-Host "Rewriting links in file: $($_.FullName)"
+
+    $filePath = $_.FullName
+    $fileDir  = $_.DirectoryName
+    $content  = Get-Content -Path $filePath -Raw
+
+    $newContent = [regex]::Replace(
+        $content,
+        '\[([^\]]+)\]\(([^)]+)\)',
+        {
+            param($match)
+
+            $text = $match.Groups[1].Value
+            $link = $match.Groups[2].Value
+
+            # leave absolute URLs, anchors, mailto, and non-md links unchanged
+            if ($link -match '^(https?://|mailto:|#)' -or $link -notmatch '\.md($|#)') {
+                return $match.Value
+            }
+
+            # split file and anchor, if any
+            $parts = $link -split '#', 2
+            $linkFile = [System.IO.Path]::GetFileName($parts[0])
+            $anchor = if ($parts.Count -gt 1) { "#" + $parts[1] } else { "" }
+
+            if (-not $fileNamespaceMap.ContainsKey($linkFile)) {
+                Write-Warning "Target file not found in namespace map: $linkFile (from $filePath)"
+                return $match.Value
+            }
+
+            $targetNamespace = $fileNamespaceMap[$linkFile]
+            $targetRelativePath = Join-Path $targetNamespace $linkFile
+
+            # path is always ../namespace/file.md
+            $relativePath = Join-Path ".." $targetRelativePath
+            $relativePath = $relativePath -replace '\\', '/' # ensure URL format
+            $relativePath = $relativePath -replace '\\-', '-' # - is not escaped
+
+            return "[$text]($relativePath$anchor)"
+        }
+    )
+
+    Set-Content -Path $filePath -Value $newContent -Encoding UTF8
 }

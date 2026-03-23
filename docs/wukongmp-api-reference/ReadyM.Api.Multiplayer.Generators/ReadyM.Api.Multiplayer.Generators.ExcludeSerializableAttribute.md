@@ -1,6 +1,6 @@
-#  Class ExcludeSerializableAttribute
+﻿# Class ExcludeSerializableAttribute
 
-Namespace: [ReadyM.Api.Multiplayer.Generators](ReadyM.Api.Multiplayer.Generators.md)  
+Namespace: [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -12,7 +12,7 @@ public sealed class ExcludeSerializableAttribute : Attribute
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
 [Attribute](https://learn.microsoft.com/dotnet/api/system.attribute) ← 
-[ExcludeSerializableAttribute](ReadyM.Api.Multiplayer.Generators.ExcludeSerializableAttribute.md)
+[ExcludeSerializableAttribute](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.ExcludeSerializableAttribute.md)
 
 #### Inherited Members
 
@@ -67,4 +67,5 @@ public sealed class ExcludeSerializableAttribute : Attribute
 ```csharp
 public ExcludeSerializableAttribute()
 ```
+
 

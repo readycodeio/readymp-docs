@@ -1,6 +1,6 @@
-#  Struct EntityList<T>
+﻿# Struct EntityList<T>
 
-Namespace: [WukongMp.Sdk](WukongMp.Sdk.md)  
+Namespace: [WukongMp.Sdk](../WukongMp.Sdk/WukongMp.Sdk.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
@@ -13,7 +13,7 @@ public readonly struct EntityList<T> : IEnumerable<T>, IEnumerable where T : str
 
 #### Implements
 
-[IEnumerable<T\>](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable\-1), 
+[IEnumerable<T\>](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1), 
 [IEnumerable](https://learn.microsoft.com/dotnet/api/system.collections.ienumerable)
 
 #### Inherited Members
@@ -35,5 +35,6 @@ public IEnumerator<T> GetEnumerator()
 
 #### Returns
 
- [IEnumerator](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator\-1)<T\>
+ [IEnumerator](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1)<T\>
+
 

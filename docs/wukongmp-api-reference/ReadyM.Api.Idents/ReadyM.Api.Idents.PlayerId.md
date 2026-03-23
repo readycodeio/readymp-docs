@@ -1,6 +1,6 @@
-#  Struct PlayerId
+﻿# Struct PlayerId
 
-Namespace: [ReadyM.Api.Idents](ReadyM.Api.Idents.md)  
+Namespace: [ReadyM.Api.Idents](../ReadyM.Api.Idents/ReadyM.Api.Idents.md)  
 Assembly: ReadyM.Api.dll  
 
 ```csharp
@@ -11,7 +11,7 @@ public struct PlayerId : INetSerializable, IEquatable<PlayerId>
 #### Implements
 
 [INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs), 
-[IEquatable<PlayerId\>](https://learn.microsoft.com/dotnet/api/system.iequatable\-1)
+[IEquatable<PlayerId\>](https://learn.microsoft.com/dotnet/api/system.iequatable-1)
 
 #### Inherited Members
 
@@ -44,7 +44,7 @@ public static PlayerId Invalid { get; }
 
 #### Property Value
 
- [PlayerId](ReadyM.Api.Idents.PlayerId.md)
+ [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
 
 ### <a id="ReadyM_Api_Idents_PlayerId_Max"></a> Max
 
@@ -54,7 +54,7 @@ public static PlayerId Max { get; }
 
 #### Property Value
 
- [PlayerId](ReadyM.Api.Idents.PlayerId.md)
+ [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
 
 ### <a id="ReadyM_Api_Idents_PlayerId_RawValue"></a> RawValue
 
@@ -74,7 +74,7 @@ public static PlayerId Server { get; }
 
 #### Property Value
 
- [PlayerId](ReadyM.Api.Idents.PlayerId.md)
+ [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
 
 ## Methods
 
@@ -96,7 +96,7 @@ public bool Equals(PlayerId other)
 
 #### Parameters
 
-`other` [PlayerId](ReadyM.Api.Idents.PlayerId.md)
+`other` [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
 
 #### Returns
 
@@ -150,7 +150,7 @@ public static PlayerId TextDeserialize(ref Utf8JsonReader reader, JsonSerializer
 
 #### Returns
 
- [PlayerId](ReadyM.Api.Idents.PlayerId.md)
+ [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
 
 ### <a id="ReadyM_Api_Idents_PlayerId_TextSerialize_System_Text_Json_Utf8JsonWriter_ReadyM_Api_Idents_PlayerId_System_Text_Json_JsonSerializerOptions_"></a> TextSerialize\(Utf8JsonWriter, PlayerId, JsonSerializerOptions\)
 
@@ -162,7 +162,7 @@ public static void TextSerialize(Utf8JsonWriter writer, PlayerId obj, JsonSerial
 
 `writer` [Utf8JsonWriter](https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter)
 
-`obj` [PlayerId](ReadyM.Api.Idents.PlayerId.md)
+`obj` [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
 
 `options` [JsonSerializerOptions](https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions)
 
@@ -186,9 +186,9 @@ public static bool operator ==(PlayerId left, PlayerId right)
 
 #### Parameters
 
-`left` [PlayerId](ReadyM.Api.Idents.PlayerId.md)
+`left` [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
 
-`right` [PlayerId](ReadyM.Api.Idents.PlayerId.md)
+`right` [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
 
 #### Returns
 
@@ -202,11 +202,12 @@ public static bool operator !=(PlayerId left, PlayerId right)
 
 #### Parameters
 
-`left` [PlayerId](ReadyM.Api.Idents.PlayerId.md)
+`left` [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
 
-`right` [PlayerId](ReadyM.Api.Idents.PlayerId.md)
+`right` [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
 
 #### Returns
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 

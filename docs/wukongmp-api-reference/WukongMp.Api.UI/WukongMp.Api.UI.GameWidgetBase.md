@@ -1,6 +1,6 @@
-#  Class GameWidgetBase
+﻿# Class GameWidgetBase
 
-Namespace: [WukongMp.Api.UI](WukongMp.Api.UI.md)  
+Namespace: [WukongMp.Api.UI](../WukongMp.Api.UI/WukongMp.Api.UI.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public abstract class GameWidgetBase
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[GameWidgetBase](WukongMp.Api.UI.GameWidgetBase.md)
+[GameWidgetBase](../WukongMp.Api.UI/WukongMp.Api.UI.GameWidgetBase.md)
 
 #### Inherited Members
 
@@ -75,4 +75,5 @@ public virtual void SetVisibility(bool visible)
 #### Parameters
 
 `visible` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 

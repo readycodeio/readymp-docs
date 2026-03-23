@@ -1,6 +1,6 @@
-#  Struct BlobInfo
+﻿# Struct BlobInfo
 
-Namespace: [WukongMp.Api.Https](WukongMp.Api.Https.md)  
+Namespace: [WukongMp.Api.Https](../WukongMp.Api.Https/WukongMp.Api.Https.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
@@ -51,4 +51,5 @@ public string Name { get; }
 #### Property Value
 
  [string](https://learn.microsoft.com/dotnet/api/system.string)
+
 

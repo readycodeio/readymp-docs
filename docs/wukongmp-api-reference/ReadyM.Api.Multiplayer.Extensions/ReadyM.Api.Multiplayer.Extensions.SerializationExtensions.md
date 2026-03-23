@@ -1,6 +1,6 @@
-#  Class SerializationExtensions
+﻿# Class SerializationExtensions
 
-Namespace: [ReadyM.Api.Multiplayer.Extensions](ReadyM.Api.Multiplayer.Extensions.md)  
+Namespace: [ReadyM.Api.Multiplayer.Extensions](../ReadyM.Api.Multiplayer.ECS.Tags/ReadyM.Api.Multiplayer.Extensions.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public static class SerializationExtensions
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[SerializationExtensions](ReadyM.Api.Multiplayer.Extensions.SerializationExtensions.md)
+[SerializationExtensions](../ReadyM.Api.Multiplayer.Extensions/ReadyM.Api.Multiplayer.Extensions.SerializationExtensions.md)
 
 #### Inherited Members
 
@@ -47,4 +47,5 @@ public static void Serialize(this Vector3 vector, NetDataWriter writer)
 `vector` [Vector3](https://learn.microsoft.com/dotnet/api/system.numerics.vector3)
 
 `writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+
 

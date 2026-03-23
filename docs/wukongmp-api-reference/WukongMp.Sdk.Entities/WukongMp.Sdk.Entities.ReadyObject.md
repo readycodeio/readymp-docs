@@ -1,16 +1,15 @@
-#  Struct ReadyObject
+﻿# Struct ReadyObject
 
-Namespace: [WukongMp.Sdk.Entities](WukongMp.Sdk.Entities.md)  
+Namespace: [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
-public readonly struct ReadyObject : IReadyEntity<ReadyObject>, IReadyConvertable<ReadyObject, ReadyObject>
+public readonly struct ReadyObject : IReadyEntity<ReadyObject>
 ```
 
 #### Implements
 
-[IReadyEntity<ReadyObject\>](WukongMp.Sdk.IReadyEntity\-1.md), 
-[IReadyConvertable<ReadyObject, ReadyObject\>](WukongMp.Sdk.IReadyConvertable\-2.md)
+[IReadyEntity<ReadyObject\>](../WukongMp.Sdk/WukongMp.Sdk.IReadyEntity-1.md)
 
 #### Inherited Members
 
@@ -24,4 +23,5 @@ public readonly struct ReadyObject : IReadyEntity<ReadyObject>, IReadyConvertabl
 #### Extension Methods
 
 [ReadyObjectExtensions.SetLocationRotation<ReadyObject\>\(ReadyObject, Vector3, Vector3\)](WukongMp.Sdk.Entities.ReadyObjectExtensions.md\#WukongMp\_Sdk\_Entities\_ReadyObjectExtensions\_SetLocationRotation\_\_1\_\_\_0\_System\_Numerics\_Vector3\_System\_Numerics\_Vector3\_)
+
 

@@ -1,6 +1,6 @@
-#  Class GameUtils
+﻿# Class GameUtils
 
-Namespace: [WukongMp.Api.WukongUtils](WukongMp.Api.WukongUtils.md)  
+Namespace: [WukongMp.Api.WukongUtils](../WukongMp.Api.WukongUtils/WukongMp.Api.WukongUtils.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public static class GameUtils
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[GameUtils](WukongMp.Api.WukongUtils.GameUtils.md)
+[GameUtils](../WukongMp.Api.WukongUtils/WukongMp.Api.WukongUtils.GameUtils.md)
 
 #### Inherited Members
 
@@ -53,4 +53,5 @@ public static UWorld? GetWorld()
 #### Returns
 
  UWorld?
+
 

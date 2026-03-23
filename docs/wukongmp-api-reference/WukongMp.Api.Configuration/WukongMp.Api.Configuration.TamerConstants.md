@@ -1,6 +1,6 @@
-#  Class TamerConstants
+﻿# Class TamerConstants
 
-Namespace: [WukongMp.Api.Configuration](WukongMp.Api.Configuration.md)  
+Namespace: [WukongMp.Api.Configuration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public static class TamerConstants
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[TamerConstants](WukongMp.Api.Configuration.TamerConstants.md)
+[TamerConstants](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerConstants.md)
 
 #### Inherited Members
 
@@ -32,7 +32,7 @@ public static readonly TamerKind Acolyte
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_ApramanaBat"></a> ApramanaBat
 
@@ -42,7 +42,7 @@ public static readonly TamerKind ApramanaBat
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_AxeStalwart"></a> AxeStalwart
 
@@ -52,7 +52,7 @@ public static readonly TamerKind AxeStalwart
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_Bandit"></a> Bandit
 
@@ -62,7 +62,7 @@ public static readonly TamerKind Bandit
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_BawLangLang"></a> BawLangLang
 
@@ -72,7 +72,7 @@ public static readonly TamerKind BawLangLang
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_BlackBear"></a> BlackBear
 
@@ -82,7 +82,7 @@ public static readonly TamerKind BlackBear
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_BlackLoong"></a> BlackLoong
 
@@ -92,7 +92,7 @@ public static readonly TamerKind BlackLoong
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_BlackWind"></a> BlackWind
 
@@ -102,7 +102,7 @@ public static readonly TamerKind BlackWind
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_BladeMonk"></a> BladeMonk
 
@@ -112,7 +112,7 @@ public static readonly TamerKind BladeMonk
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_BlazeBone"></a> BlazeBone
 
@@ -122,7 +122,7 @@ public static readonly TamerKind BlazeBone
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_BossB"></a> BossB
 
@@ -132,7 +132,7 @@ public static readonly TamerKind BossB
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_BossC"></a> BossC
 
@@ -142,7 +142,7 @@ public static readonly TamerKind BossC
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_BullSergeant"></a> BullSergeant
 
@@ -152,7 +152,7 @@ public static readonly TamerKind BullSergeant
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_BullSoldier"></a> BullSoldier
 
@@ -162,7 +162,7 @@ public static readonly TamerKind BullSoldier
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_BullStalwart"></a> BullStalwart
 
@@ -172,7 +172,7 @@ public static readonly TamerKind BullStalwart
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_CrowDiviner"></a> CrowDiviner
 
@@ -182,7 +182,7 @@ public static readonly TamerKind CrowDiviner
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_CyanLoong"></a> CyanLoong
 
@@ -192,7 +192,7 @@ public static readonly TamerKind CyanLoong
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_DaSheng"></a> DaSheng
 
@@ -202,7 +202,7 @@ public static readonly TamerKind DaSheng
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_DaSheng2"></a> DaSheng2
 
@@ -212,7 +212,7 @@ public static readonly TamerKind DaSheng2
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_Dear"></a> Dear
 
@@ -222,7 +222,7 @@ public static readonly TamerKind Dear
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_EagleSoldier"></a> EagleSoldier
 
@@ -232,7 +232,7 @@ public static readonly TamerKind EagleSoldier
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_EarthRakshasa"></a> EarthRakshasa
 
@@ -242,7 +242,7 @@ public static readonly TamerKind EarthRakshasa
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_EarthWolf"></a> EarthWolf
 
@@ -252,7 +252,7 @@ public static readonly TamerKind EarthWolf
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_Erlang"></a> Erlang
 
@@ -262,7 +262,7 @@ public static readonly TamerKind Erlang
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_ErlangShen"></a> ErlangShen
 
@@ -272,7 +272,7 @@ public static readonly TamerKind ErlangShen
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_FatherOfStones"></a> FatherOfStones
 
@@ -282,7 +282,7 @@ public static readonly TamerKind FatherOfStones
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_GoldRhino"></a> GoldRhino
 
@@ -292,7 +292,7 @@ public static readonly TamerKind GoldRhino
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_GoreEye"></a> GoreEye
 
@@ -302,7 +302,7 @@ public static readonly TamerKind GoreEye
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_JackalSoldier"></a> JackalSoldier
 
@@ -312,7 +312,7 @@ public static readonly TamerKind JackalSoldier
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_JiaoLoong"></a> JiaoLoong
 
@@ -322,7 +322,7 @@ public static readonly TamerKind JiaoLoong
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_KangLoong"></a> KangLoong
 
@@ -332,7 +332,7 @@ public static readonly TamerKind KangLoong
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_KangStar"></a> KangStar
 
@@ -342,7 +342,7 @@ public static readonly TamerKind KangStar
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_LotusVision"></a> LotusVision
 
@@ -352,7 +352,7 @@ public static readonly TamerKind LotusVision
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_MacaqueChief"></a> MacaqueChief
 
@@ -362,7 +362,7 @@ public static readonly TamerKind MacaqueChief
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_MadTiger"></a> MadTiger
 
@@ -372,7 +372,7 @@ public static readonly TamerKind MadTiger
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_Mantis"></a> Mantis
 
@@ -382,7 +382,7 @@ public static readonly TamerKind Mantis
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_Martialist"></a> Martialist
 
@@ -392,7 +392,7 @@ public static readonly TamerKind Martialist
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_Monkey"></a> Monkey
 
@@ -402,7 +402,7 @@ public static readonly TamerKind Monkey
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_NonPure"></a> NonPure
 
@@ -412,7 +412,7 @@ public static readonly TamerKind NonPure
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_NonVoid"></a> NonVoid
 
@@ -422,7 +422,7 @@ public static readonly TamerKind NonVoid
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_PoisonChief"></a> PoisonChief
 
@@ -432,7 +432,7 @@ public static readonly TamerKind PoisonChief
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_RatCaptain"></a> RatCaptain
 
@@ -442,7 +442,7 @@ public static readonly TamerKind RatCaptain
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_RatSoldier"></a> RatSoldier
 
@@ -452,7 +452,7 @@ public static readonly TamerKind RatSoldier
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_RedBoy"></a> RedBoy
 
@@ -462,7 +462,7 @@ public static readonly TamerKind RedBoy
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_RedLoong"></a> RedLoong
 
@@ -472,7 +472,7 @@ public static readonly TamerKind RedLoong
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_SnakePatroller"></a> SnakePatroller
 
@@ -482,7 +482,7 @@ public static readonly TamerKind SnakePatroller
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_Spider"></a> Spider
 
@@ -492,7 +492,7 @@ public static readonly TamerKind Spider
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_Spider2"></a> Spider2
 
@@ -502,7 +502,7 @@ public static readonly TamerKind Spider2
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_StoneMonkey"></a> StoneMonkey
 
@@ -512,7 +512,7 @@ public static readonly TamerKind StoneMonkey
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_TigerVanguard"></a> TigerVanguard
 
@@ -522,7 +522,7 @@ public static readonly TamerKind TigerVanguard
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_TurtleTreasure"></a> TurtleTreasure
 
@@ -532,7 +532,7 @@ public static readonly TamerKind TurtleTreasure
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_WhitecladNoble"></a> WhitecladNoble
 
@@ -542,7 +542,7 @@ public static readonly TamerKind WhitecladNoble
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_WolfArcher"></a> WolfArcher
 
@@ -552,7 +552,7 @@ public static readonly TamerKind WolfArcher
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_WolfArcherMove"></a> WolfArcherMove
 
@@ -562,7 +562,7 @@ public static readonly TamerKind WolfArcherMove
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_WolfAssassin"></a> WolfAssassin
 
@@ -572,7 +572,7 @@ public static readonly TamerKind WolfAssassin
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_WolfGuardian"></a> WolfGuardian
 
@@ -582,7 +582,7 @@ public static readonly TamerKind WolfGuardian
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_WolfScout"></a> WolfScout
 
@@ -592,7 +592,7 @@ public static readonly TamerKind WolfScout
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_WolfSentinel"></a> WolfSentinel
 
@@ -602,7 +602,7 @@ public static readonly TamerKind WolfSentinel
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_WolfSoldier"></a> WolfSoldier
 
@@ -612,7 +612,7 @@ public static readonly TamerKind WolfSoldier
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_WolfStalwart"></a> WolfStalwart
 
@@ -622,7 +622,7 @@ public static readonly TamerKind WolfStalwart
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_WolfSwornsword"></a> WolfSwornsword
 
@@ -632,7 +632,7 @@ public static readonly TamerKind WolfSwornsword
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_YakshaArcher"></a> YakshaArcher
 
@@ -642,7 +642,7 @@ public static readonly TamerKind YakshaArcher
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_YakshaPatroller"></a> YakshaPatroller
 
@@ -652,7 +652,7 @@ public static readonly TamerKind YakshaPatroller
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_YellowLoong"></a> YellowLoong
 
@@ -662,7 +662,7 @@ public static readonly TamerKind YellowLoong
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_YellowSquire"></a> YellowSquire
 
@@ -672,7 +672,7 @@ public static readonly TamerKind YellowSquire
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_YellowWind"></a> YellowWind
 
@@ -682,7 +682,7 @@ public static readonly TamerKind YellowWind
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_YinTiger"></a> YinTiger
 
@@ -692,7 +692,7 @@ public static readonly TamerKind YinTiger
 
 #### Field Value
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ## Methods
 
@@ -708,7 +708,7 @@ public static TamerKind GetTamerKind(string? tamerName)
 
 #### Returns
 
- [TamerKind](WukongMp.Api.Configuration.TamerKind.md)
+ [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
 ### <a id="WukongMp_Api_Configuration_TamerConstants_IsValidTamerName_System_String_"></a> IsValidTamerName\(string\)
 
@@ -723,4 +723,5 @@ public static bool IsValidTamerName(string tamerName)
 #### Returns
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 

@@ -1,6 +1,6 @@
-#  Class ReadyCharacterExtensions
+﻿# Class ReadyCharacterExtensions
 
-Namespace: [WukongMp.Sdk.Entities](WukongMp.Sdk.Entities.md)  
+Namespace: [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public static class ReadyCharacterExtensions
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[ReadyCharacterExtensions](WukongMp.Sdk.Entities.ReadyCharacterExtensions.md)
+[ReadyCharacterExtensions](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyCharacterExtensions.md)
 
 #### Inherited Members
 
@@ -127,4 +127,5 @@ public static void set_HpMaxBase<TSelf>(TSelf obj, float value) where TSelf : st
 #### Type Parameters
 
 `TSelf` 
+
 

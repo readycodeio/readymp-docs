@@ -1,6 +1,6 @@
-#  Class ModSystemBase
+﻿# Class ModSystemBase
 
-Namespace: [WukongMp.Sdk](WukongMp.Sdk.md)  
+Namespace: [WukongMp.Sdk](../WukongMp.Sdk/WukongMp.Sdk.md)  
 Assembly: WukongMp.Sdk.dll  
 
 ```csharp
@@ -10,7 +10,7 @@ public abstract class ModSystemBase
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[ModSystemBase](WukongMp.Sdk.ModSystemBase.md)
+[ModSystemBase](../WukongMp.Sdk/WukongMp.Sdk.ModSystemBase.md)
 
 #### Inherited Members
 
@@ -40,5 +40,6 @@ protected abstract void OnUpdate(ModSystemBase.UpdateTick tick)
 
 #### Parameters
 
-`tick` [ModSystemBase](WukongMp.Sdk.ModSystemBase.md).[UpdateTick](WukongMp.Sdk.ModSystemBase.UpdateTick.md)
+`tick` [ModSystemBase](../WukongMp.Sdk/WukongMp.Sdk.ModSystemBase.md).[UpdateTick](../WukongMp.Sdk/WukongMp.Sdk.ModSystemBase.UpdateTick.md)
+
 

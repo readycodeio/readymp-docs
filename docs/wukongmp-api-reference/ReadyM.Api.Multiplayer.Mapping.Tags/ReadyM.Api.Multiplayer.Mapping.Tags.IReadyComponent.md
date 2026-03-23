@@ -1,6 +1,6 @@
-#  Interface IReadyComponent
+﻿# Interface IReadyComponent
 
-Namespace: [ReadyM.Api.Multiplayer.Mapping.Tags](ReadyM.Api.Multiplayer.Mapping.Tags.md)  
+Namespace: [ReadyM.Api.Multiplayer.Mapping.Tags](../ReadyM.Api.Multiplayer.Mapping.Tags/ReadyM.Api.Multiplayer.Mapping.Tags.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -40,4 +40,5 @@ void ClearApiFlag(int field)
 #### Parameters
 
 `field` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
 

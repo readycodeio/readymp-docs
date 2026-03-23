@@ -1,6 +1,6 @@
-#  Class RpcEventAttribute
+﻿# Class RpcEventAttribute
 
-Namespace: [ReadyM.Api.Multiplayer.Generators](ReadyM.Api.Multiplayer.Generators.md)  
+Namespace: [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
@@ -12,7 +12,7 @@ public sealed class RpcEventAttribute : Attribute
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
 [Attribute](https://learn.microsoft.com/dotnet/api/system.attribute) ← 
-[RpcEventAttribute](ReadyM.Api.Multiplayer.Generators.RpcEventAttribute.md)
+[RpcEventAttribute](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.RpcEventAttribute.md)
 
 #### Inherited Members
 
@@ -70,5 +70,6 @@ public RpcEventAttribute(RelayMode relayMode)
 
 #### Parameters
 
-`relayMode` [RelayMode](ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md)
+`relayMode` [RelayMode](../ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md)
+
 
