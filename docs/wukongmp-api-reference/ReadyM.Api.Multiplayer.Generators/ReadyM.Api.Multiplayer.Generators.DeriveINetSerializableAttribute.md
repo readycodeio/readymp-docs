@@ -1,18 +1,18 @@
-#  Class DeriveINetworkedComponentAttribute
+#  Class DeriveINetSerializableAttribute
 
 Namespace: [ReadyM.Api.Multiplayer.Generators](ReadyM.Api.Multiplayer.Generators.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
 [AttributeUsage(AttributeTargets.Struct)]
-public sealed class DeriveINetworkedComponentAttribute : Attribute
+public sealed class DeriveINetSerializableAttribute : Attribute
 ```
 
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
 [Attribute](https://learn.microsoft.com/dotnet/api/system.attribute) ← 
-[DeriveINetworkedComponentAttribute](ReadyM.Api.Multiplayer.Generators.DeriveINetworkedComponentAttribute.md)
+[DeriveINetSerializableAttribute](ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute.md)
 
 #### Inherited Members
 
@@ -62,19 +62,19 @@ public sealed class DeriveINetworkedComponentAttribute : Attribute
 
 ## Constructors
 
-### <a id="ReadyM_Api_Multiplayer_Generators_DeriveINetworkedComponentAttribute__ctor_ReadyM_Api_Serialization_SerializableMode_"></a> DeriveINetworkedComponentAttribute\(SerializableMode\)
+### <a id="ReadyM_Api_Multiplayer_Generators_DeriveINetSerializableAttribute__ctor_ReadyM_Api_Serialization_SerializableMode_"></a> DeriveINetSerializableAttribute\(SerializableMode\)
 
 ```csharp
-public DeriveINetworkedComponentAttribute(SerializableMode mode = SerializableMode.Default)
+public DeriveINetSerializableAttribute(SerializableMode mode = SerializableMode.Default)
 ```
 
 #### Parameters
 
-`mode` [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/560262830b817fb255833bd96f0ed103b95f28b1/src/ReadyM.Api/Serialization/SerializableMode.cs)
+`mode` [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/7ea6bb407f79d097d03621b801187ecda7be41cc/src/ReadyM.Api/Serialization/SerializableMode.cs)
 
 ## Fields
 
-### <a id="ReadyM_Api_Multiplayer_Generators_DeriveINetworkedComponentAttribute_Mode"></a> Mode
+### <a id="ReadyM_Api_Multiplayer_Generators_DeriveINetSerializableAttribute_Mode"></a> Mode
 
 ```csharp
 public readonly SerializableMode Mode
@@ -82,5 +82,5 @@ public readonly SerializableMode Mode
 
 #### Field Value
 
- [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/560262830b817fb255833bd96f0ed103b95f28b1/src/ReadyM.Api/Serialization/SerializableMode.cs)
+ [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/7ea6bb407f79d097d03621b801187ecda7be41cc/src/ReadyM.Api/Serialization/SerializableMode.cs)
 

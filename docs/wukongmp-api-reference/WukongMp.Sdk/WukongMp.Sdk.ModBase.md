@@ -110,7 +110,7 @@ protected virtual void Initialize(IDependencyContainer services)
 
 #### Parameters
 
-`services` [IDependencyContainer](https://github.com/readycodeio/wukong\-csharp\-mod/blob/358610a12466810df8910d98ab9dcf381838f488/WukongMp.Api/IDependencyContainer.cs)
+`services` [IDependencyContainer](https://github.com/readycodeio/wukong\-csharp\-mod/blob/1776b397cfe23c064b67330a6d29c8393b34064e/WukongMp.Api/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_ModBase_LateInit"></a> LateInit\(\)
 

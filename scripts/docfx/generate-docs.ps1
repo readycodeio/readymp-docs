@@ -1,5 +1,5 @@
 ﻿$docsSource = "./api"
-$docsTarget = "../../docs/wukongmp"
+$docsTarget = "../../docs/wukongmp-api-reference"
 
 # purge the source folder completely
 Remove-Item -Path $docsSource\* -Recurse -Force

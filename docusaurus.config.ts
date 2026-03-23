@@ -36,7 +36,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh-Hans'],
   },
 
   presets: [
@@ -88,7 +88,13 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'wukongMpSidebar',
+          sidebarId: 'wukongMpDocsSidebar',
+          position: 'left',
+          label: 'Docs',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'wukongMpApiSidebar',
           position: 'left',
           label: 'API Reference',
         },
@@ -111,7 +117,7 @@ const config: Config = {
           items: [
             {
               label: 'WukongMP SDK',
-              to: '/docs/wukongmp/WukongMp.Sdk.Api/WukongMp.Sdk.Api.WukongApi',
+              to: '/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.WukongApi',
             },
           ],
         },
