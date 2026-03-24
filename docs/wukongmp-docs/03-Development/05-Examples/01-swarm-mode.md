@@ -1,7 +1,7 @@
 # Swarm Mode
 
 The mod aims to provide an example of a simplest way to implement a new game mode in WukongMP.
-It registers a console command `/swarm_mode` which makes enemies spawn around the player in waves every few seconds.
+It registers a console command `swarm_mode` which makes enemies spawn around the player in waves every few seconds.
 The players are supposed to fight until they can't anymore, after which the mod will print the number of enemies summoned.
 
 ## Mod entry point
@@ -39,13 +39,9 @@ The `Initialize` method is the place to configure your mod. In this mod, we do a
             var alivePlayers = WukongApi.Sync.AllMainCharacters.Count(x => !x.IsDead);
 
             if (alivePlayers > 0)
-            {
                 WukongApi.Local.AddChatMessage($"Remaining players: {alivePlayers}", FLinearColor.Yellow);
-            }
             else
-            {
                 spawnSystem.Disable();
-            }
         };
     }
 }

@@ -1,0 +1,48 @@
+# Installation
+
+The WukongMP server is currently distributed in the following formats:
+
+- Binary package
+- Docker image **(coming soon)**
+
+## Download
+
+:::info[Work in progress]
+This feature is not documented yet.
+:::
+
+### Binary packages
+
+| Platform | Architecture | Download |
+| --- | --- | --- |
+| Windows | x64 | [Download for Windows](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-alpha.zip) |
+| Linux | x64 | [Download for Linux](#) |
+
+## Installation
+
+Extract the binary package to a location of your choice.
+
+After extraction, the directory structure should look like this:
+
+```text
+server/
+├── server.exe                 # Main server binary
+├── config.json                # Configuration file
+├── e_sqlite3.dll              # Dependency
+├── aspnetcorev2_inprocess.dll # Dependency
+└── wwwroot/                   # Admin panel assets
+```
+
+## First launch
+
+Start the server by running the `server.exe` binary.
+
+On first launch, the server creates a `data/` directory inside the server folder. 
+This directory contains the `web.db` database file, where persistent data is stored.
+
+The server listens on two ports:
+
+| Port | Protocol | Purpose |
+| --- | --- | --- |
+| 9050 | UDP | Game traffic (player connections, game state synchronization, etc.) |
+| 8900 | HTTP | [Admin panel](admin-panel) |
