@@ -1,29 +1,20 @@
 # 什么是 WukongMP？
 
-WukongMP is our community multiplayer project for **Black Myth: Wukong**. We
-built it to bring players together in shared multiplayer experiences, making it
-possible to explore the world in co-op, fight bosses with friends, and join
-custom community-run servers.
+WukongMP 是我们为 **《黑神话：悟空》**
+打造的社区多人项目。我们开发它的目标，是让玩家能够在共享的多人体验中相聚，使大家可以一起合作探索世界、与朋友并肩挑战 Boss，并加入由社区运营的自定义服务器。
 
-## What WukongMP is built for
+## WukongMP 的设计目标
 
-WukongMP is designed around community-powered multiplayer. With it, players can
-create and join custom servers, connect with one click through automatic mod
-sync, and launch dedicated servers through our built-in server tools. We also
-plan to expand the platform with custom game modes and fair play/security
-features.
+WukongMP
+围绕社区驱动的多人玩法而设计。借助它，玩家可以创建并加入自定义服务器，通过自动模组同步实现一键连接，并使用我们内置的服务器工具启动专用服务器。我们还计划继续扩展该平台，加入自定义游戏模式以及公平竞技
+/ 安全功能。
 
-## Why we are building it
+## 我们为什么要打造它
 
-Our goal with WukongMP is to turn a single-player experience into a moddable,
-community-driven multiplayer platform. We want to give players and creators the
-tools to build their own ways to play, share custom experiences, and grow
-communities around them. WukongMP is intended to help democratize custom
-multiplayer creation in a way similar to what FiveM did for *Grand Theft Auto
-V*.
+我们的目标，是把原本的单人体验转变为一个可模组化、由社区驱动的多人平台。我们希望为玩家和创作者提供工具，让他们能够打造属于自己的玩法、分享自定义体验，并围绕这些内容发展社区。WukongMP
+旨在以类似于 FiveM 对 *Grand Theft Auto V* 所做到的方式，推动自定义多人玩法的普及与民主化。
 
-## Current availability
+## 当前开放情况
 
-We are currently inviting players to sign up for SDK early access as we continue
-shaping the future of WukongMP with the community. WukongMP is not an official
-**Black Myth: Wukong** service and is not affiliated with Game Science.
+目前，我们正在邀请玩家报名申请 SDK 抢先体验，与社区一起继续塑造 WukongMP 的未来。WukongMP 并非 **《黑神话：悟空》**
+的官方服务，也与 Game Science 没有关联.
