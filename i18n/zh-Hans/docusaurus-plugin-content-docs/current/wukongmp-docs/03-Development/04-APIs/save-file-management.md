@@ -1,6 +1,7 @@
 # Save file management
 
-The WukongMP SDK allows for a few modes of operation when it comes to save files.
+The WukongMP SDK allows for a few modes of operation when it comes to save
+files.
 
 ## Loading save files
 
@@ -19,6 +20,7 @@ During the game, you may choose to:
 
 ---
 
-:::warning[Work in progress]
-This feature is under development and will be available in a future version of the SDK.
+:::warning[Work in progress]\
+This feature is under development and will be available in a future version of
+the SDK.\
 :::
