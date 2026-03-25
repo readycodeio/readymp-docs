@@ -1,0 +1,116 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Console commands
+
+The WukongMP SDK includes a command console accessible by pressing <kbd>F1</kbd> on your keyboard.
+
+## Keyboard shortcuts
+
+| Binding | Action |
+| --------|--------|
+| <kbd>TAB</kbd> | Auto-complete the selected command |
+| <kbd>Alt</kbd> + <kbd>↑</kbd> | Previous command |
+| <kbd>Alt</kbd> + <kbd>↓</kbd> | Next command |
+
+## Defining custom commands
+
+Use the [Console API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongConsoleApi.md) to define custom commands.
+
+
+### Register commands without parameters
+
+<Tabs>
+<TabItem value="code" label="Source code">
+
+```csharp
+void RebirthAtShrine() { ... }
+// ...
+{
+    WukongApi.Console.AddCommand("rebirth_shrine", ConsoleCommand.Create(RebirthAtShrine));
+}
+```
+
+</TabItem>
+<TabItem value="console" label="In-game console">
+
+
+```shell
+rebirth_shrine
+```
+
+</TabItem>
+</Tabs>
+
+### Require parameters
+
+The command parameters are deducted from the handler signature - supported types are `string`, `int`, `float`, `double`, and `bool`.
+Parameters can be optional, in which case a default value must be provided.
+
+<Tabs>
+<TabItem value="code" label="Source code">
+
+```csharp
+void TeleportToShrine(int shrine = 1001) { ... }
+// ...
+{
+    WukongApi.Console.AddCommand("teleport_shrine", ConsoleCommand.Create(TeleportToShrine));
+}
+```
+
+</TabItem>
+<TabItem value="console" label="In-game console">
+
+```shell
+teleport_shrine             # teleports to shrine 1001
+teleport_shrine 2005        # teleports to shrine 2005
+```
+
+</TabItem>
+</Tabs>
+
+### Define auto-completed paremeters
+
+You can define a list of parameter values that will be displayed when the command is typed in. These values will be selectable with arrow keys and auto-completeable with <kbd>TAB</kbd>.
+
+<Tabs>
+<TabItem value="code" label="Source code">
+
+```csharp
+IEnumerable<string> GetAllValidUnitNames() => ["wolf_soldier", "wolf_sentinel", "gold_rhino"];
+
+void SpawnMonster(string monsterType) { ... }
+// ...
+{
+    WukongApi.Console.AddCommand("spawn", ConsoleCommand.Create(SpawnMonster), GetAllValidUnitNames());
+}
+```
+
+</TabItem>
+<TabItem value="console" label="In-game console">
+
+Immediately upon finishing the command name, the available parameter values will be shown:
+
+```shell
+spawn
+//highlight-start
+wolf_soldier
+wolf_sentinel
+gold_rhino
+//highlight-end
+```
+
+The parameters are filtered by what's already been typed:
+
+```shell
+spawn wo
+//highlight-start
+wolf_soldier
+wolf_sentinel
+//highlight-end
+```
+
+---
+
+</TabItem>
+</Tabs>
