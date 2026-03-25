@@ -1,12 +1,16 @@
 # Swarm Mode
 
-The mod aims to provide an example of a simplest way to implement a new game mode in WukongMP.
-It registers a console command `swarm_mode` which makes enemies spawn around the player in waves every few seconds.
-The players are supposed to fight until they can't anymore, after which the mod will print the number of enemies summoned.
+The mod aims to provide an example of a simplest way to implement a new game
+mode in WukongMP. It registers a console command `swarm_mode` which makes
+enemies spawn around the player in waves every few seconds. The players are
+supposed to fight until they can't anymore, after which the mod will print the
+number of enemies summoned.
 
 ## Mod entry point
 
-In order to create a WukongMP mod, you must create a new C# library project referencing `WukongMp.Sdk.dll` and define a class derived from [ModBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase).
+In order to create a WukongMP mod, you must create a new C# library project
+referencing `WukongMp.Sdk.dll` and define a class derived from
+[ModBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase).
 
 At minimum, the mod must define its name and version number:
 
@@ -17,11 +21,14 @@ public class Mod : ModBase
     public override string Version => "1.0.0";
 ```
 
-The `Initialize` method is the place to configure your mod. In this mod, we do a few things:
+The `Initialize` method is the place to configure your mod. In this mod, we do a
+few things:
 
-1. Resolve `SpawnEnemySwarmSystem` from the dependency injection container - every system defined in your mod will be injected there.
+1. Resolve `SpawnEnemySwarmSystem` from the dependency injection container -
+   every system defined in your mod will be injected there.
 2. Register a console command `swarm_mode` which turns on our custom game mode.
-3. Subscribe to the `OnPlayerDead` event to turn it off when the last player dies.
+3. Subscribe to the `OnPlayerDead` event to turn it off when the last player
+   dies.
 
 ```csharp title="Mod.cs" showLineNumbers  
     protected override void Initialize(IDependencyContainer services)
@@ -49,7 +56,7 @@ The `Initialize` method is the place to configure your mod. In this mod, we do a
 
 ## Core gameplay loop
 
-The main logic of the mod is encapsulated in `SpawnEnemySwarmSystem`. 
+The main logic of the mod is encapsulated in `SpawnEnemySwarmSystem`.
 
 We begin by defining a few constants to configure the behavior of our system:
 
@@ -67,7 +74,9 @@ public sealed class SpawnEnemySwarmSystem : ModSystemBase
     private const float InitialDelay = 3.0f;
 ```
 
-Then - the methods for enabling and disabling the system. We use the [Local API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi) for showing message banners and adding messages to the chat window.
+Then - the methods for enabling and disabling the system. We use the [Local
+API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi)
+for showing message banners and adding messages to the chat window.
 
 
 ```csharp showLineNumbers=13 title="SpawnEnemySwarmSystem.cs"
@@ -94,8 +103,17 @@ Then - the methods for enabling and disabling the system. We use the [Local API]
     }
 ```
 
-All systems (classes derived from [ModSystemBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase)) expose an [OnUpdate](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase#-onupdateupdatetick) method which runs on every frame.
-We can use that to count the number of seconds since the last time we spawned enemies. When `_timeSinceLastSpawn` exceedes the threshold, we use the [Synchronization API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi) to spawn an enemy (Wolf Sentinel) a few times in a circle around the player. All available enemy types are defined in [TamerConstants](/docs/wukongmp-api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerConstants).
+All systems (classes derived from
+[ModSystemBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase))
+expose an
+[OnUpdate](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase#-onupdateupdatetick)
+method which runs on every frame. We can use that to count the number of seconds
+since the last time we spawned enemies. When `_timeSinceLastSpawn` exceedes the
+threshold, we use the [Synchronization
+API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi)
+to spawn an enemy (Wolf Sentinel) a few times in a circle around the player. All
+available enemy types are defined in
+[TamerConstants](/docs/wukongmp-api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerConstants).
 
 ```csharp showLineNumbers=35 title="SpawnEnemySwarmSystem.cs"
     protected override void OnUpdate(UpdateTick tick)
