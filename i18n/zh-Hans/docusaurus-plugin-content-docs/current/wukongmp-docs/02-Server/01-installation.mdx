@@ -6,10 +6,10 @@ The WukongMP server is currently distributed in the following formats:
 - Docker image **(coming soon)**
 
 ### Downloads
-| Platform | Architecture | Download |
-| --- | --- | --- |
-| Linux | x64 | [Download for Linux](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-alpha.zip) |
-| Windows | x64 | [Download for Windows](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-alpha.zip) |
+| Platform | Architecture | Download                                                                                                                 |
+| -------- | ------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| Linux    | x64          | [Download for Linux](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-alpha.zip) |
+| Windows  | x64          | [Download for Windows](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-alpha.zip) |
 
 ## Installation
 
@@ -30,12 +30,13 @@ server/
 
 Start the server by running the `server.exe` binary.
 
-On first launch, the server creates a `data/` directory inside the server folder. 
-This directory contains the `web.db` database file, where persistent data is stored.
+On first launch, the server creates a `data/` directory inside the server
+folder. This directory contains the `web.db` database file, where persistent
+data is stored.
 
 The server listens on the following ports:
 
-| Port | Protocol | Purpose |
-| --- | --- | --- |
-| 9050 | UDP | Game traffic (player connections, game state synchronization, etc.) |
-| 9050 | HTTP | [Admin panel](admin-panel) |
+| Port | Protocol | Purpose                                                             |
+| ---- | -------- | ------------------------------------------------------------------- |
+| 9050 | UDP      | Game traffic (player connections, game state synchronization, etc.) |
+| 9050 | HTTP     | [Admin panel](admin-panel)                                          |
