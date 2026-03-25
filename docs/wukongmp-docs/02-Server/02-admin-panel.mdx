@@ -1,7 +1,3 @@
-import setupPinImg from '/img/docs/admin-panel-setup-pin.png';
-import terminalImg from '/img/docs/admin-panel-terminal.png';
-import signInImg from '/img/docs/admin-panel-sign-in.png';
-
 # Admin panel
 
 The admin panel is available over HTTP on port `8900`.
@@ -27,7 +23,7 @@ $ ./server.exe
 Enter this PIN in the admin panel to begin the setup process.
 
 <img
-  src={setupPinImg}
+  src={require('/img/docs/admin-panel-setup-pin.png').default}
   width={500}
   alt="Setup PIN code view"
 />
@@ -37,7 +33,7 @@ Enter this PIN in the admin panel to begin the setup process.
 After entering the PIN, you will be asked to sign in with your ReadyM account.
 
 <img
-  src={signInImg}
+  src={require('/img/docs/admin-panel-sign-in.png').default}
   width={500}
   alt="Admin panel sign-in"
 />
@@ -51,6 +47,6 @@ Once authentication is successful, you will be redirected back to the admin pane
 After signing in, you can access the admin panel interface.
 
 <img
-  src={terminalImg}
+  src={require('/img/docs/admin-panel-terminal.png').default}
   alt="Admin panel terminal"
 />
