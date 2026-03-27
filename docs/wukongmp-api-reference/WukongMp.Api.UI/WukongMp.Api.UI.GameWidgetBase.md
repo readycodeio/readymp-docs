@@ -3,6 +3,8 @@
 Namespace: [WukongMp.Api.UI](../WukongMp.Api.UI/WukongMp.Api.UI.md)  
 Assembly: WukongMp.Api.dll  
 
+Base class for UI widgets defined in .pak files.
+
 ```csharp
 public abstract class GameWidgetBase
 ```
@@ -26,6 +28,8 @@ public abstract class GameWidgetBase
 
 ### <a id="WukongMp_Api_UI_GameWidgetBase__ctor_System_String_"></a> GameWidgetBase\(string\)
 
+Base class for UI widgets defined in .pak files.
+
 ```csharp
 protected GameWidgetBase(string path)
 ```
@@ -33,6 +37,8 @@ protected GameWidgetBase(string path)
 #### Parameters
 
 `path` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+The path to the widget, relative to the "Content/UI" folder in the .pak files. For example, for a widget located at "Content/UI/MyWidget.uasset", the path would be "MyWidget".
 
 ## Fields
 
@@ -50,11 +56,15 @@ protected UUserWidget? GameWidget
 
 ### <a id="WukongMp_Api_UI_GameWidgetBase_Deinitialize"></a> Deinitialize\(\)
 
+Removes the widget from the viewport and sets the reference to null.
+
 ```csharp
 public void Deinitialize()
 ```
 
 ### <a id="WukongMp_Api_UI_GameWidgetBase_Initialize"></a> Initialize\(\)
+
+Initializes the widget by trying to find it first, and if it doesn't exist, spawns a new one.
 
 ```csharp
 public void Initialize()
@@ -68,6 +78,9 @@ protected abstract void PostInitialize()
 
 ### <a id="WukongMp_Api_UI_GameWidgetBase_SetVisibility_System_Boolean_"></a> SetVisibility\(bool\)
 
+Set the visibility of the widget.
+This requires the widget to be initialized first, otherwise it will do nothing.
+
 ```csharp
 public virtual void SetVisibility(bool visible)
 ```
@@ -75,5 +88,7 @@ public virtual void SetVisibility(bool visible)
 #### Parameters
 
 `visible` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+Whether the widget should be visible or not.
 
 

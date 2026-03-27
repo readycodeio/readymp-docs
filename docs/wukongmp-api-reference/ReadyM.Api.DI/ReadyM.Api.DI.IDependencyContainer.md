@@ -1,7 +1,9 @@
 ﻿# Interface IDependencyContainer
 
-Namespace: [WukongMp.Api](../WukongMp.Api/WukongMp.Api.md)  
-Assembly: WukongMp.Api.dll  
+Namespace: [ReadyM.Api.DI](../ReadyM.Api.DI/ReadyM.Api.DI.md)  
+Assembly: ReadyM.Api.dll  
+
+Dependency injection container interface for registering and resolving services.
 
 ```csharp
 public interface IDependencyContainer
@@ -9,7 +11,7 @@ public interface IDependencyContainer
 
 ## Methods
 
-### <a id="WukongMp_Api_IDependencyContainer_RegisterSingleton__1"></a> RegisterSingleton<TService\>\(\)
+### <a id="ReadyM_Api_DI_IDependencyContainer_RegisterSingleton__1"></a> RegisterSingleton<TService\>\(\)
 
 ```csharp
 void RegisterSingleton<TService>()
@@ -19,7 +21,7 @@ void RegisterSingleton<TService>()
 
 `TService` 
 
-### <a id="WukongMp_Api_IDependencyContainer_RegisterSingleton__1___0_"></a> RegisterSingleton<TService\>\(TService\)
+### <a id="ReadyM_Api_DI_IDependencyContainer_RegisterSingleton__1___0_"></a> RegisterSingleton<TService\>\(TService\)
 
 ```csharp
 void RegisterSingleton<TService>(TService instance)
@@ -33,7 +35,7 @@ void RegisterSingleton<TService>(TService instance)
 
 `TService` 
 
-### <a id="WukongMp_Api_IDependencyContainer_RegisterSingleton__1_System_Type_"></a> RegisterSingleton<TService\>\(Type\)
+### <a id="ReadyM_Api_DI_IDependencyContainer_RegisterSingleton__1_System_Type_"></a> RegisterSingleton<TService\>\(Type\)
 
 ```csharp
 void RegisterSingleton<TService>(Type implementationType)
@@ -47,7 +49,7 @@ void RegisterSingleton<TService>(Type implementationType)
 
 `TService` 
 
-### <a id="WukongMp_Api_IDependencyContainer_RegisterSingleton__2"></a> RegisterSingleton<TService, TImplementation\>\(\)
+### <a id="ReadyM_Api_DI_IDependencyContainer_RegisterSingleton__2"></a> RegisterSingleton<TService, TImplementation\>\(\)
 
 ```csharp
 void RegisterSingleton<TService, TImplementation>() where TImplementation : TService
@@ -59,7 +61,7 @@ void RegisterSingleton<TService, TImplementation>() where TImplementation : TSer
 
 `TImplementation` 
 
-### <a id="WukongMp_Api_IDependencyContainer_RegisterSingleton__2___1_"></a> RegisterSingleton<TService, TImplementation\>\(TImplementation\)
+### <a id="ReadyM_Api_DI_IDependencyContainer_RegisterSingleton__2___1_"></a> RegisterSingleton<TService, TImplementation\>\(TImplementation\)
 
 ```csharp
 void RegisterSingleton<TService, TImplementation>(TImplementation instance) where TImplementation : TService
@@ -75,7 +77,7 @@ void RegisterSingleton<TService, TImplementation>(TImplementation instance) wher
 
 `TImplementation` 
 
-### <a id="WukongMp_Api_IDependencyContainer_Resolve__1"></a> Resolve<T\>\(\)
+### <a id="ReadyM_Api_DI_IDependencyContainer_Resolve__1"></a> Resolve<T\>\(\)
 
 ```csharp
 T Resolve<T>()

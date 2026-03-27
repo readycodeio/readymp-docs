@@ -70,7 +70,7 @@ public DeriveINetSerializableAttribute(SerializableMode mode = SerializableMode.
 
 #### Parameters
 
-`mode` [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/7ea6bb407f79d097d03621b801187ecda7be41cc/src/ReadyM.Api/Serialization/SerializableMode.cs)
+`mode` [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/00696f624f469568539043962995657719ef92c6/src/ReadyM.Api/Serialization/SerializableMode.cs)
 
 ## Fields
 
@@ -82,6 +82,6 @@ public readonly SerializableMode Mode
 
 #### Field Value
 
- [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/7ea6bb407f79d097d03621b801187ecda7be41cc/src/ReadyM.Api/Serialization/SerializableMode.cs)
+ [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/00696f624f469568539043962995657719ef92c6/src/ReadyM.Api/Serialization/SerializableMode.cs)
 
 

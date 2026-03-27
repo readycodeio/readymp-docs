@@ -1,10 +1,10 @@
-﻿# Struct BlobInfo
+﻿# Struct FileInfo
 
 Namespace: [WukongMp.Api.Https](../WukongMp.Api.Https/WukongMp.Api.Https.md)  
 Assembly: WukongMp.Api.dll  
 
 ```csharp
-public readonly struct BlobInfo
+public readonly struct FileInfo
 ```
 
 #### Inherited Members
@@ -18,10 +18,10 @@ public readonly struct BlobInfo
 
 ## Constructors
 
-### <a id="WukongMp_Api_Https_BlobInfo__ctor_System_String_System_Byte___"></a> BlobInfo\(string, byte\[\]\)
+### <a id="WukongMp_Api_Https_FileInfo__ctor_System_String_System_Byte___"></a> FileInfo\(string, byte\[\]\)
 
 ```csharp
-public BlobInfo(string name, byte[] content)
+public FileInfo(string name, byte[] content)
 ```
 
 #### Parameters
@@ -32,7 +32,9 @@ public BlobInfo(string name, byte[] content)
 
 ## Properties
 
-### <a id="WukongMp_Api_Https_BlobInfo_Content"></a> Content
+### <a id="WukongMp_Api_Https_FileInfo_Content"></a> Content
+
+The binary content of the file.
 
 ```csharp
 public byte[] Content { get; }
@@ -42,7 +44,9 @@ public byte[] Content { get; }
 
  [byte](https://learn.microsoft.com/dotnet/api/system.byte)\[\]
 
-### <a id="WukongMp_Api_Https_BlobInfo_Name"></a> Name
+### <a id="WukongMp_Api_Https_FileInfo_Name"></a> Name
+
+The name of the file.
 
 ```csharp
 public string Name { get; }

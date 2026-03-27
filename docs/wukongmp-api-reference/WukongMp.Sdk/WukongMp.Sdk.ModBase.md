@@ -102,7 +102,7 @@ public virtual object? GetReloadContext()
 public void Init()
 ```
 
-### <a id="WukongMp_Sdk_ModBase_Initialize_WukongMp_Api_IDependencyContainer_"></a> Initialize\(IDependencyContainer\)
+### <a id="WukongMp_Sdk_ModBase_Initialize_ReadyM_Api_DI_IDependencyContainer_"></a> Initialize\(IDependencyContainer\)
 
 ```csharp
 protected abstract void Initialize(IDependencyContainer services)
@@ -110,7 +110,7 @@ protected abstract void Initialize(IDependencyContainer services)
 
 #### Parameters
 
-`services` [IDependencyContainer](https://github.com/readycodeio/wukong\-csharp\-mod/blob/1776b397cfe23c064b67330a6d29c8393b34064e/WukongMp.Api/IDependencyContainer.cs)
+`services` [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/00696f624f469568539043962995657719ef92c6/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_ModBase_LateInit"></a> LateInit\(\)
 

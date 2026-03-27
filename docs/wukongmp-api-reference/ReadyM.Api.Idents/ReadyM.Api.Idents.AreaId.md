@@ -3,6 +3,10 @@
 Namespace: [ReadyM.Api.Idents](../ReadyM.Api.Idents/ReadyM.Api.Idents.md)  
 Assembly: ReadyM.Api.dll  
 
+Identifies an area within the game world.
+Areas can be main Chapter maps, sub-areas such as the Zodiac Village, or hidden boss arenas.
+If going somewhere requires a loading screen, it's probably a different area.
+
 ```csharp
 [DeriveJsonSerializable(SerializableMode.Default)]
 public struct AreaId : INetSerializable, IEquatable<AreaId>
@@ -26,6 +30,10 @@ public struct AreaId : INetSerializable, IEquatable<AreaId>
 
 ### <a id="ReadyM_Api_Idents_AreaId__ctor_System_UInt16_"></a> AreaId\(ushort\)
 
+Identifies an area within the game world.
+Areas can be main Chapter maps, sub-areas such as the Zodiac Village, or hidden boss arenas.
+If going somewhere requires a loading screen, it's probably a different area.
+
 ```csharp
 public AreaId(ushort id)
 ```
@@ -33,6 +41,8 @@ public AreaId(ushort id)
 #### Parameters
 
 `id` [ushort](https://learn.microsoft.com/dotnet/api/system.uint16)
+
+The underlying ID value. This is not guaranteed to be stable across game versions, and should not be used for anything other than debugging or logging purposes.
 
 ## Properties
 

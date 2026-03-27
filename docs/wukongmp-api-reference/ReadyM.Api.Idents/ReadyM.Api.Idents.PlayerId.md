@@ -58,6 +58,9 @@ public static PlayerId Max { get; }
 
 ### <a id="ReadyM_Api_Idents_PlayerId_RawValue"></a> RawValue
 
+Numeric identifier for a player. This can change over time, so it should not be used as a persistent identifier.
+Rely on the **PlayerId** as a unique identifier for the current session.
+
 ```csharp
 public ushort RawValue { get; }
 ```

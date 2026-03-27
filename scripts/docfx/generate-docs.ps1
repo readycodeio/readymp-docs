@@ -67,8 +67,18 @@ Get-ChildItem -Path $docsTarget -Filter *.md -Recurse -File | ForEach-Object {
     $fileDir  = $_.DirectoryName
     $content  = Get-Content -Path $filePath -Raw
 
-    $newContent = [regex]::Replace(
-        $content,
+    # replace all <xref href="ReadyM.Api.Idents.PlayerId" data-throw-if-not-resolved="false"></xref> with [PlayerId](ReadyM.Api.Idents.PlayerId.md)
+    $newContent = [regex]::Replace($content, '<xref\s+href="([^"]+)"[^>]*></xref>', {
+        param($match)
+
+        $target = $match.Groups[1].Value
+        # split by dot and take the last part as link text
+        $text = $target.Split('.')[-1]
+        return "**$text**" # bold the link text to make it stand out, since these are usually types or members
+    })
+
+    $newerContent = [regex]::Replace(
+        $newContent,
         '\[([^\]]+)\]\(([^)]+)\)',
         {
             param($match)
@@ -103,5 +113,5 @@ Get-ChildItem -Path $docsTarget -Filter *.md -Recurse -File | ForEach-Object {
         }
     )
 
-    Set-Content -Path $filePath -Value $newContent -Encoding UTF8
+    Set-Content -Path $filePath -Value $newerContent -Encoding UTF8
 }

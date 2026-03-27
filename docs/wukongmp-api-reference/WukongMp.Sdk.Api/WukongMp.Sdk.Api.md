@@ -9,6 +9,8 @@ Provides access to all of the various APIs and services that WukongMP offers.
 
 ### Interfaces
 
+ [IWukongConfigurationApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongConfigurationApi.md)
+
  [IWukongConsoleApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongConsoleApi.md)
 
  [IWukongEventApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongEventApi.md)

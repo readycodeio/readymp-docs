@@ -24,7 +24,7 @@ bool CanApplyInput()
 ### <a id="WukongMp_Sdk_Api_IWukongInputApi_RegisterGamePadBind_CSharpModBase_Input_GamePadButton_System_Action_"></a> RegisterGamePadBind\(GamePadButton, Action\)
 
 ```csharp
-HotKeyItem RegisterGamePadBind(GamePadButton button, Action action)
+void RegisterGamePadBind(GamePadButton button, Action action)
 ```
 
 #### Parameters
@@ -33,14 +33,10 @@ HotKeyItem RegisterGamePadBind(GamePadButton button, Action action)
 
 `action` [Action](https://learn.microsoft.com/dotnet/api/system.action)
 
-#### Returns
-
- [HotKeyItem](https://github.com/readycodeio/embed\-csharp\-loader/blob/72a84f50456aa082e7ead2a681d861586cbde74c/CSharpModBase/Input/HotKeyItem.cs)
-
 ### <a id="WukongMp_Sdk_Api_IWukongInputApi_RegisterKeyBind_CSharpModBase_Input_Key_System_Action_"></a> RegisterKeyBind\(Key, Action\)
 
 ```csharp
-HotKeyItem RegisterKeyBind(Key key, Action action)
+void RegisterKeyBind(Key key, Action action)
 ```
 
 #### Parameters
@@ -49,14 +45,10 @@ HotKeyItem RegisterKeyBind(Key key, Action action)
 
 `action` [Action](https://learn.microsoft.com/dotnet/api/system.action)
 
-#### Returns
-
- [HotKeyItem](https://github.com/readycodeio/embed\-csharp\-loader/blob/72a84f50456aa082e7ead2a681d861586cbde74c/CSharpModBase/Input/HotKeyItem.cs)
-
 ### <a id="WukongMp_Sdk_Api_IWukongInputApi_RegisterKeyBind_CSharpModBase_Input_ModifierKeys_CSharpModBase_Input_Key_System_Action_"></a> RegisterKeyBind\(ModifierKeys, Key, Action\)
 
 ```csharp
-HotKeyItem RegisterKeyBind(ModifierKeys modifiers, Key key, Action action)
+void RegisterKeyBind(ModifierKeys modifiers, Key key, Action action)
 ```
 
 #### Parameters
@@ -66,9 +58,5 @@ HotKeyItem RegisterKeyBind(ModifierKeys modifiers, Key key, Action action)
 `key` [Key](https://github.com/readycodeio/embed\-csharp\-loader/blob/72a84f50456aa082e7ead2a681d861586cbde74c/CSharpModBase/Input/Key.cs)
 
 `action` [Action](https://learn.microsoft.com/dotnet/api/system.action)
-
-#### Returns
-
- [HotKeyItem](https://github.com/readycodeio/embed\-csharp\-loader/blob/72a84f50456aa082e7ead2a681d861586cbde74c/CSharpModBase/Input/HotKeyItem.cs)
 
 

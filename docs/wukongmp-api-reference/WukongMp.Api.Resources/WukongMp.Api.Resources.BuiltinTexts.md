@@ -3,6 +3,8 @@
 Namespace: [WukongMp.Api.Resources](../WukongMp.Api.Resources/WukongMp.Api.Resources.md)  
 Assembly: WukongMp.Api.dll  
 
+A strongly-typed resource class, for looking up localized strings, etc.
+
 ```csharp
 public class BuiltinTexts
 ```
@@ -26,6 +28,8 @@ public class BuiltinTexts
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_AntiStallWarning"></a> AntiStallWarning
 
+Looks up a localized string similar to Engage!.
+
 ```csharp
 public static string AntiStallWarning { get; }
 ```
@@ -35,6 +39,8 @@ public static string AntiStallWarning { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_BlueTeam"></a> BlueTeam
+
+Looks up a localized string similar to Team Blue.
 
 ```csharp
 public static string BlueTeam { get; }
@@ -46,6 +52,8 @@ public static string BlueTeam { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_BotName"></a> BotName
 
+Looks up a localized string similar to Bot.
+
 ```csharp
 public static string BotName { get; }
 ```
@@ -55,6 +63,8 @@ public static string BotName { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CameraDownControls"></a> CameraDownControls
+
+Looks up a localized string similar to Q.
 
 ```csharp
 public static string CameraDownControls { get; }
@@ -66,6 +76,8 @@ public static string CameraDownControls { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CameraDownDescription"></a> CameraDownDescription
 
+Looks up a localized string similar to Down.
+
 ```csharp
 public static string CameraDownDescription { get; }
 ```
@@ -75,6 +87,8 @@ public static string CameraDownDescription { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CameraMoveControls"></a> CameraMoveControls
+
+Looks up a localized string similar to W S A D.
 
 ```csharp
 public static string CameraMoveControls { get; }
@@ -86,6 +100,8 @@ public static string CameraMoveControls { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CameraMoveDescription"></a> CameraMoveDescription
 
+Looks up a localized string similar to Move.
+
 ```csharp
 public static string CameraMoveDescription { get; }
 ```
@@ -95,6 +111,8 @@ public static string CameraMoveDescription { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CameraRotateControls"></a> CameraRotateControls
+
+Looks up a localized string similar to RMB.
 
 ```csharp
 public static string CameraRotateControls { get; }
@@ -106,6 +124,8 @@ public static string CameraRotateControls { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CameraRotateDescription"></a> CameraRotateDescription
 
+Looks up a localized string similar to Rotate.
+
 ```csharp
 public static string CameraRotateDescription { get; }
 ```
@@ -115,6 +135,8 @@ public static string CameraRotateDescription { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CameraSwitchControls"></a> CameraSwitchControls
+
+Looks up a localized string similar to ←/→.
 
 ```csharp
 public static string CameraSwitchControls { get; }
@@ -126,6 +148,8 @@ public static string CameraSwitchControls { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CameraSwitchDescription"></a> CameraSwitchDescription
 
+Looks up a localized string similar to Switch player.
+
 ```csharp
 public static string CameraSwitchDescription { get; }
 ```
@@ -135,6 +159,8 @@ public static string CameraSwitchDescription { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CameraUpControls"></a> CameraUpControls
+
+Looks up a localized string similar to E.
 
 ```csharp
 public static string CameraUpControls { get; }
@@ -146,6 +172,8 @@ public static string CameraUpControls { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CameraUpDescription"></a> CameraUpDescription
 
+Looks up a localized string similar to Up.
+
 ```csharp
 public static string CameraUpDescription { get; }
 ```
@@ -155,6 +183,8 @@ public static string CameraUpDescription { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_ChatHelperDescription"></a> ChatHelperDescription
+
+Looks up a localized string similar to ENTER - Type/Send   |   K - Hide/Show Chat.
 
 ```csharp
 public static string ChatHelperDescription { get; }
@@ -166,6 +196,8 @@ public static string ChatHelperDescription { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_ChatHelperNoSendDescription"></a> ChatHelperNoSendDescription
 
+Looks up a localized string similar to K - Hide/Show Event Log.
+
 ```csharp
 public static string ChatHelperNoSendDescription { get; }
 ```
@@ -175,6 +207,8 @@ public static string ChatHelperNoSendDescription { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CheatsAreDisabled"></a> CheatsAreDisabled
+
+Looks up a localized string similar to Cheats are disabled.
 
 ```csharp
 public static string CheatsAreDisabled { get; }
@@ -186,6 +220,8 @@ public static string CheatsAreDisabled { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CheatsDisabled"></a> CheatsDisabled
 
+Looks up a localized string similar to Cheats disabled.
+
 ```csharp
 public static string CheatsDisabled { get; }
 ```
@@ -195,6 +231,8 @@ public static string CheatsDisabled { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CheatsEnabled"></a> CheatsEnabled
+
+Looks up a localized string similar to Cheats enabled.
 
 ```csharp
 public static string CheatsEnabled { get; }
@@ -206,6 +244,8 @@ public static string CheatsEnabled { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CommandHelperDescription"></a> CommandHelperDescription
 
+Looks up a localized string similar to ENTER - Type   |   F1 - Hide/Show.
+
 ```csharp
 public static string CommandHelperDescription { get; }
 ```
@@ -215,6 +255,8 @@ public static string CommandHelperDescription { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_Connected"></a> Connected
+
+Looks up a localized string similar to Players in zone.
 
 ```csharp
 public static string Connected { get; }
@@ -226,6 +268,8 @@ public static string Connected { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_ConnectionRejectedByServer"></a> ConnectionRejectedByServer
 
+Looks up a localized string similar to Connection rejected by server.
+
 ```csharp
 public static string ConnectionRejectedByServer { get; }
 ```
@@ -235,6 +279,9 @@ public static string ConnectionRejectedByServer { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_Culture"></a> Culture
+
+Overrides the current thread's CurrentUICulture property for all
+resource lookups using this strongly typed resource class.
 
 ```csharp
 public static CultureInfo Culture { get; set; }
@@ -246,6 +293,8 @@ public static CultureInfo Culture { get; set; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_CustomSpiritCooldown"></a> CustomSpiritCooldown
 
+Looks up a localized string similar to {0} set spirit cooldown to {1} s.
+
 ```csharp
 public static string CustomSpiritCooldown { get; }
 ```
@@ -255,6 +304,8 @@ public static string CustomSpiritCooldown { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_Disconnected"></a> Disconnected
+
+Looks up a localized string similar to Disconnected.
 
 ```csharp
 public static string Disconnected { get; }
@@ -266,6 +317,8 @@ public static string Disconnected { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_ExecutionError"></a> ExecutionError
 
+Looks up a localized string similar to Execution error: {0}.
+
 ```csharp
 public static string ExecutionError { get; }
 ```
@@ -275,6 +328,8 @@ public static string ExecutionError { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_HintCommandsUse"></a> HintCommandsUse
+
+Looks up a localized string similar to Press F1 to use commands.
 
 ```csharp
 public static string HintCommandsUse { get; }
@@ -286,6 +341,8 @@ public static string HintCommandsUse { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InMultiplayer"></a> InMultiplayer
 
+Looks up a localized string similar to In Multiplayer Lobby.
+
 ```csharp
 public static string InMultiplayer { get; }
 ```
@@ -295,6 +352,8 @@ public static string InMultiplayer { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InfManaDisabled"></a> InfManaDisabled
+
+Looks up a localized string similar to {0} disabled infinite mana.
 
 ```csharp
 public static string InfManaDisabled { get; }
@@ -306,6 +365,8 @@ public static string InfManaDisabled { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InfManaEnabled"></a> InfManaEnabled
 
+Looks up a localized string similar to {0} enabled infinite mana.
+
 ```csharp
 public static string InfManaEnabled { get; }
 ```
@@ -315,6 +376,8 @@ public static string InfManaEnabled { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InfSpiritDisabled"></a> InfSpiritDisabled
+
+Looks up a localized string similar to {0} disabled infinite spirit energy.
 
 ```csharp
 public static string InfSpiritDisabled { get; }
@@ -326,6 +389,8 @@ public static string InfSpiritDisabled { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InfSpiritEnabled"></a> InfSpiritEnabled
 
+Looks up a localized string similar to {0} enabled infinite spirit energy.
+
 ```csharp
 public static string InfSpiritEnabled { get; }
 ```
@@ -335,6 +400,8 @@ public static string InfSpiritEnabled { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InfTransformDisabled"></a> InfTransformDisabled
+
+Looks up a localized string similar to {0} disabled infinite transform energy.
 
 ```csharp
 public static string InfTransformDisabled { get; }
@@ -346,6 +413,8 @@ public static string InfTransformDisabled { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InfTransformEnabled"></a> InfTransformEnabled
 
+Looks up a localized string similar to {0} enabled infinite transform energy.
+
 ```csharp
 public static string InfTransformEnabled { get; }
 ```
@@ -355,6 +424,8 @@ public static string InfTransformEnabled { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InfVesselDisabled"></a> InfVesselDisabled
+
+Looks up a localized string similar to {0} disabled infinite vessel energy.
 
 ```csharp
 public static string InfVesselDisabled { get; }
@@ -366,6 +437,8 @@ public static string InfVesselDisabled { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InfVesselEnabled"></a> InfVesselEnabled
 
+Looks up a localized string similar to {0} enabled infinite vessel energy.
+
 ```csharp
 public static string InfVesselEnabled { get; }
 ```
@@ -375,6 +448,8 @@ public static string InfVesselEnabled { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InstantCooldownDisabled"></a> InstantCooldownDisabled
+
+Looks up a localized string similar to {0} disabled instant skill cooldown.
 
 ```csharp
 public static string InstantCooldownDisabled { get; }
@@ -386,6 +461,8 @@ public static string InstantCooldownDisabled { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InstantCooldownEnabled"></a> InstantCooldownEnabled
 
+Looks up a localized string similar to {0} enabled instant skill cooldown.
+
 ```csharp
 public static string InstantCooldownEnabled { get; }
 ```
@@ -395,6 +472,8 @@ public static string InstantCooldownEnabled { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InvalidArgumentFormat"></a> InvalidArgumentFormat
+
+Looks up a localized string similar to Invalid argument format: {0}.
 
 ```csharp
 public static string InvalidArgumentFormat { get; }
@@ -406,6 +485,8 @@ public static string InvalidArgumentFormat { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InvalidArgumentType"></a> InvalidArgumentType
 
+Looks up a localized string similar to Invalid argument at index {0}. Expected {1}, got {2}.
+
 ```csharp
 public static string InvalidArgumentType { get; }
 ```
@@ -415,6 +496,8 @@ public static string InvalidArgumentType { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InvalidCommand"></a> InvalidCommand
+
+Looks up a localized string similar to Invalid command: {0}.
 
 ```csharp
 public static string InvalidCommand { get; }
@@ -426,6 +509,8 @@ public static string InvalidCommand { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InvalidCommandFormat"></a> InvalidCommandFormat
 
+Looks up a localized string similar to Invalid command format: {0}.
+
 ```csharp
 public static string InvalidCommandFormat { get; }
 ```
@@ -435,6 +520,8 @@ public static string InvalidCommandFormat { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InvalidCooldown"></a> InvalidCooldown
+
+Looks up a localized string similar to Invalid cooldown value.
 
 ```csharp
 public static string InvalidCooldown { get; }
@@ -446,6 +533,8 @@ public static string InvalidCooldown { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InvalidUnitName"></a> InvalidUnitName
 
+Looks up a localized string similar to Invalid unit name: {0}.
+
 ```csharp
 public static string InvalidUnitName { get; }
 ```
@@ -455,6 +544,8 @@ public static string InvalidUnitName { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_InvalidUnitsCount"></a> InvalidUnitsCount
+
+Looks up a localized string similar to Invalid number of units {0}.
 
 ```csharp
 public static string InvalidUnitsCount { get; }
@@ -466,6 +557,8 @@ public static string InvalidUnitsCount { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_JoinOtherPlayersToProceed"></a> JoinOtherPlayersToProceed
 
+Looks up a localized string similar to Join other players to proceed.
+
 ```csharp
 public static string JoinOtherPlayersToProceed { get; }
 ```
@@ -475,6 +568,8 @@ public static string JoinOtherPlayersToProceed { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_MasterClient"></a> MasterClient
+
+Looks up a localized string similar to Master client: {0}.
 
 ```csharp
 public static string MasterClient { get; }
@@ -486,6 +581,8 @@ public static string MasterClient { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_MissingPak"></a> MissingPak
 
+Looks up a localized string similar to WukongMP.pak is missing.
+
 ```csharp
 public static string MissingPak { get; }
 ```
@@ -495,6 +592,8 @@ public static string MissingPak { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_More"></a> More
+
+Looks up a localized string similar to more.
 
 ```csharp
 public static string More { get; }
@@ -506,6 +605,8 @@ public static string More { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_Ping"></a> Ping
 
+Looks up a localized string similar to Ping.
+
 ```csharp
 public static string Ping { get; }
 ```
@@ -515,6 +616,8 @@ public static string Ping { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PingUnits"></a> PingUnits
+
+Looks up a localized string similar to ms.
 
 ```csharp
 public static string PingUnits { get; }
@@ -526,6 +629,8 @@ public static string PingUnits { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PlayerCooldown"></a> PlayerCooldown
 
+Looks up a localized string similar to {0} set cooldown multiplier to {1}.
+
 ```csharp
 public static string PlayerCooldown { get; }
 ```
@@ -535,6 +640,8 @@ public static string PlayerCooldown { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PlayerGaveUp"></a> PlayerGaveUp
+
+Looks up a localized string similar to {0} gave up.
 
 ```csharp
 public static string PlayerGaveUp { get; }
@@ -546,6 +653,8 @@ public static string PlayerGaveUp { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PlayerIsNotReady"></a> PlayerIsNotReady
 
+Looks up a localized string similar to {0} is not ready.
+
 ```csharp
 public static string PlayerIsNotReady { get; }
 ```
@@ -555,6 +664,8 @@ public static string PlayerIsNotReady { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PlayerIsReady"></a> PlayerIsReady
+
+Looks up a localized string similar to {0} is ready.
 
 ```csharp
 public static string PlayerIsReady { get; }
@@ -566,6 +677,8 @@ public static string PlayerIsReady { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PlayerJoined"></a> PlayerJoined
 
+Looks up a localized string similar to {0} has joined!.
+
 ```csharp
 public static string PlayerJoined { get; }
 ```
@@ -575,6 +688,8 @@ public static string PlayerJoined { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PlayerKilledPlayer"></a> PlayerKilledPlayer
+
+Looks up a localized string similar to {0} killed {1}.
 
 ```csharp
 public static string PlayerKilledPlayer { get; }
@@ -586,6 +701,8 @@ public static string PlayerKilledPlayer { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PlayerLeft"></a> PlayerLeft
 
+Looks up a localized string similar to {0} has left!.
+
 ```csharp
 public static string PlayerLeft { get; }
 ```
@@ -595,6 +712,8 @@ public static string PlayerLeft { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PlayerRequestedRebirth"></a> PlayerRequestedRebirth
+
+Looks up a localized string similar to {0} requested rebirth.
 
 ```csharp
 public static string PlayerRequestedRebirth { get; }
@@ -606,6 +725,8 @@ public static string PlayerRequestedRebirth { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PlayerSpawned"></a> PlayerSpawned
 
+Looks up a localized string similar to {0} spawned {1} {2}.
+
 ```csharp
 public static string PlayerSpawned { get; }
 ```
@@ -615,6 +736,8 @@ public static string PlayerSpawned { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PressToBeNotReady"></a> PressToBeNotReady
+
+Looks up a localized string similar to Press J to be not ready.
 
 ```csharp
 public static string PressToBeNotReady { get; }
@@ -626,6 +749,8 @@ public static string PressToBeNotReady { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PressToBeReady"></a> PressToBeReady
 
+Looks up a localized string similar to Press J to be ready.
+
 ```csharp
 public static string PressToBeReady { get; }
 ```
@@ -635,6 +760,8 @@ public static string PressToBeReady { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PressToCancelMatch"></a> PressToCancelMatch
+
+Looks up a localized string similar to Press I to cancel match.
 
 ```csharp
 public static string PressToCancelMatch { get; }
@@ -646,6 +773,8 @@ public static string PressToCancelMatch { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PressToPlayWithBots"></a> PressToPlayWithBots
 
+Looks up a localized string similar to Press I to play with bots.
+
 ```csharp
 public static string PressToPlayWithBots { get; }
 ```
@@ -655,6 +784,8 @@ public static string PressToPlayWithBots { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_PressToSwitchTeam"></a> PressToSwitchTeam
+
+Looks up a localized string similar to Press L to switch team.
 
 ```csharp
 public static string PressToSwitchTeam { get; }
@@ -666,6 +797,8 @@ public static string PressToSwitchTeam { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_Ready"></a> Ready
 
+Looks up a localized string similar to Ready.
+
 ```csharp
 public static string Ready { get; }
 ```
@@ -675,6 +808,8 @@ public static string Ready { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_RedTeam"></a> RedTeam
+
+Looks up a localized string similar to Team Red.
 
 ```csharp
 public static string RedTeam { get; }
@@ -686,6 +821,8 @@ public static string RedTeam { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_ResourceManager"></a> ResourceManager
 
+Returns the cached ResourceManager instance used by this class.
+
 ```csharp
 public static ResourceManager ResourceManager { get; }
 ```
@@ -695,6 +832,8 @@ public static ResourceManager ResourceManager { get; }
  [ResourceManager](https://learn.microsoft.com/dotnet/api/system.resources.resourcemanager)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_RoundCount"></a> RoundCount
+
+Looks up a localized string similar to Round {0} of {1}.
 
 ```csharp
 public static string RoundCount { get; }
@@ -706,6 +845,8 @@ public static string RoundCount { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_RoundDraw"></a> RoundDraw
 
+Looks up a localized string similar to Round ended. Draw.
+
 ```csharp
 public static string RoundDraw { get; }
 ```
@@ -715,6 +856,8 @@ public static string RoundDraw { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_RoundEndedWinner"></a> RoundEndedWinner
+
+Looks up a localized string similar to Round ended. {0} won.
 
 ```csharp
 public static string RoundEndedWinner { get; }
@@ -726,6 +869,8 @@ public static string RoundEndedWinner { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_SeverePacketLossDetected"></a> SeverePacketLossDetected
 
+Looks up a localized string similar to Severe packet loss detected!.
+
 ```csharp
 public static string SeverePacketLossDetected { get; }
 ```
@@ -735,6 +880,8 @@ public static string SeverePacketLossDetected { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_SoftlockDetected"></a> SoftlockDetected
+
+Looks up a localized string similar to Softlock. Use /softlock command to respawn.
 
 ```csharp
 public static string SoftlockDetected { get; }
@@ -746,6 +893,8 @@ public static string SoftlockDetected { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_Spectators"></a> Spectators
 
+Looks up a localized string similar to Spectators.
+
 ```csharp
 public static string Spectators { get; }
 ```
@@ -755,6 +904,8 @@ public static string Spectators { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_StallingMessage"></a> StallingMessage
+
+Looks up a localized string similar to Stalling - losing HP.
 
 ```csharp
 public static string StallingMessage { get; }
@@ -766,6 +917,8 @@ public static string StallingMessage { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_StartingGame"></a> StartingGame
 
+Looks up a localized string similar to Starting PvP match.
+
 ```csharp
 public static string StartingGame { get; }
 ```
@@ -775,6 +928,8 @@ public static string StartingGame { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_TooFewArguments"></a> TooFewArguments
+
+Looks up a localized string similar to Too few arguments: min {0}, actual {1}.
 
 ```csharp
 public static string TooFewArguments { get; }
@@ -786,6 +941,8 @@ public static string TooFewArguments { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_TooManyArguments"></a> TooManyArguments
 
+Looks up a localized string similar to Too many arguments: max {0}, actual {1}.
+
 ```csharp
 public static string TooManyArguments { get; }
 ```
@@ -795,6 +952,8 @@ public static string TooManyArguments { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_TournamentDraw"></a> TournamentDraw
+
+Looks up a localized string similar to Draw.
 
 ```csharp
 public static string TournamentDraw { get; }
@@ -806,6 +965,8 @@ public static string TournamentDraw { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_TournamentEndedWinner"></a> TournamentEndedWinner
 
+Looks up a localized string similar to Winner: {0}.
+
 ```csharp
 public static string TournamentEndedWinner { get; }
 ```
@@ -815,6 +976,8 @@ public static string TournamentEndedWinner { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_UnrecognizedCommand"></a> UnrecognizedCommand
+
+Looks up a localized string similar to Unrecognized command: {0}.
 
 ```csharp
 public static string UnrecognizedCommand { get; }
@@ -826,6 +989,8 @@ public static string UnrecognizedCommand { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_WaitForEnd"></a> WaitForEnd
 
+Looks up a localized string similar to Wait for the match to end.
+
 ```csharp
 public static string WaitForEnd { get; }
 ```
@@ -835,6 +1000,8 @@ public static string WaitForEnd { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_WaitForOtherPlayers"></a> WaitForOtherPlayers
+
+Looks up a localized string similar to Wait for other players.
 
 ```csharp
 public static string WaitForOtherPlayers { get; }
@@ -846,6 +1013,8 @@ public static string WaitForOtherPlayers { get; }
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_WaitForOtherPlayersCount"></a> WaitForOtherPlayersCount
 
+Looks up a localized string similar to Wait for other players ({0}/{1}).
+
 ```csharp
 public static string WaitForOtherPlayersCount { get; }
 ```
@@ -855,6 +1024,8 @@ public static string WaitForOtherPlayersCount { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_YouAreReady"></a> YouAreReady
+
+Looks up a localized string similar to You are ready.
 
 ```csharp
 public static string YouAreReady { get; }

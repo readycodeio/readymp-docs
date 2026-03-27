@@ -2,8 +2,6 @@
 
 ### Namespaces
 
- [ReadyM.Api.Multiplayer.Extensions](../ReadyM.Api.Multiplayer.ECS.Tags/ReadyM.Api.Multiplayer.Extensions.md)
-
  [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)
 
 ### Classes

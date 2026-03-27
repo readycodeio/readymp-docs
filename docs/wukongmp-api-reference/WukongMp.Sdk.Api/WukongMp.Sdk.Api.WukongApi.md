@@ -30,13 +30,12 @@ public static class WukongApi
 ### <a id="WukongMp_Sdk_Api_WukongApi_Configuration"></a> Configuration
 
 ```csharp
-[Obsolete("TODO: Make a more centralized configuration system.")]
-public static GameplayConfiguration Configuration { get; }
+public static IWukongConfigurationApi Configuration { get; }
 ```
 
 #### Property Value
 
- [GameplayConfiguration](https://github.com/readycodeio/wukong\-csharp\-mod/blob/1776b397cfe23c064b67330a6d29c8393b34064e/WukongMp.Api/Configuration/GameplayConfiguration.cs)
+ [IWukongConfigurationApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongConfigurationApi.md)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Console"></a> Console
 
@@ -96,7 +95,7 @@ public static IWukongSaveApi Saves { get; }
 
 #### Property Value
 
- [IWukongSaveApi](https://github.com/readycodeio/wukong\-csharp\-mod/blob/1776b397cfe23c064b67330a6d29c8393b34064e/WukongMp.Api/IWukongSaveApi.cs)
+ [IWukongSaveApi](https://github.com/readycodeio/wukong\-csharp\-mod/blob/d10d73e7d8b9fef2a2b2ce1fdfea5d679fb07da0/WukongMp.Api/IWukongSaveApi.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Services"></a> Services
 
@@ -106,7 +105,7 @@ public static IDependencyContainer Services { get; }
 
 #### Property Value
 
- [IDependencyContainer](https://github.com/readycodeio/wukong\-csharp\-mod/blob/1776b397cfe23c064b67330a6d29c8393b34064e/WukongMp.Api/IDependencyContainer.cs)
+ [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/00696f624f469568539043962995657719ef92c6/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Sync"></a> Sync
 
