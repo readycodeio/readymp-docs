@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Installation
 
 The WukongMP server is currently distributed in the following formats:
@@ -17,7 +20,10 @@ Extract the binary package to a location of your choice.
 
 After extraction, the directory structure should look like this:
 
-```text
+<Tabs>
+<TabItem value="windows" label="Windows">
+
+```text title'
 server/
 ├── server.exe                 # Main server binary
 ├── config.json                # Configuration file
@@ -25,6 +31,20 @@ server/
 ├── aspnetcorev2_inprocess.dll # Dependency
 └── wwwroot/                   # Admin panel assets
 ```
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+```text title'
+server/
+├── server                     # Main server binary
+├── config.json                # Configuration file
+├── libe_sqlite3.so            # Dependency
+└── wwwroot/                   # Admin panel assets
+```
+
+</TabItem>
+</Tabs>
 
 ## First launch
 
