@@ -1,18 +1,12 @@
-import setupPinImg from '/img/docs/admin-panel-setup-pin.png'; import
-terminalImg from '/img/docs/admin-panel-terminal.png'; import signInImg from
-'/img/docs/admin-panel-sign-in.png';
-
 # Admin panel
 
 The admin panel is available over HTTP on port `9050`.
 
-If the server is running on your local machine, you can open it at
-http://localhost:9050.
+If the server is running on your local machine, you can open it at http://localhost:9050.
 
 ## First-time setup
 
-When launching the server for the first time, you will need to create an
-administrator account.
+When launching the server for the first time, you will need to create an administrator account.
 
 During startup, the server prints a one-time setup PIN in the console output:
 
@@ -29,9 +23,9 @@ $ ./server.exe
 Enter this PIN in the admin panel to begin the setup process.
 
 <img
-src={setupPinImg}
-width={500}
-alt="Setup PIN code view"
+  src={require('/img/docs/admin-panel-setup-pin.png').default}
+  width={500}
+  alt="Setup PIN code view"
 />
 
 ## Sign in with ReadyM
@@ -39,22 +33,20 @@ alt="Setup PIN code view"
 After entering the PIN, you will be asked to sign in with your ReadyM account.
 
 <img
-src={signInImg}
-width={500}
-alt="Admin panel sign-in"
+  src={require('/img/docs/admin-panel-sign-in.png').default}
+  width={500}
+  alt="Admin panel sign-in"
 />
 
-You will be redirected to the ReadyM authentication page, where you can enter
-your credentials.
+You will be redirected to the ReadyM authentication page, where you can enter your credentials.
 
-Once authentication is successful, you will be redirected back to the admin
-panel automatically.
+Once authentication is successful, you will be redirected back to the admin panel automatically.
 
 ## Admin panel interface
 
 After signing in, you can access the admin panel interface.
 
 <img
-src={terminalImg}
-alt="Admin panel terminal"
+  src={require('/img/docs/admin-panel-terminal.png').default}
+  alt="Admin panel terminal"
 />

@@ -1,8 +1,6 @@
 # Key bindings
 
-The [Input
-API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi.md)
-provides a way to register custom keyboard and controller bindings.
+The [Input API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi.md) provides a way to register custom keyboard and controller bindings.
 
 ## Examples
 
@@ -26,9 +24,7 @@ WukongApi.Input.RegisterKeyBind(ModifierKeys.Alt, Key.X, () =>
 
 ## Register controller bindings
 
-Use the
-[RegisterGamePadBind](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi#-registergamepadbindgamepadbutton-action)
-method to bind to one of the following buttons:
+Use the [RegisterGamePadBind](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi#-registergamepadbindgamepadbutton-action) method to bind to one of the following buttons:
 
 ```csharp
 public enum GamePadButton
@@ -59,10 +55,7 @@ public enum GamePadButton
 
 ## Using `CanApplyInput`
 
-Key bindings run every time a key is pressed, regardless of context. If you want
-to ensure that pressing 'K' when typing in chat will not trigger any command
-logic, gate it behind the call to
-[CanApplyInput](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi#-canapplyinput).
+Key bindings run every time a key is pressed, regardless of context. If you want to ensure that pressing 'K' when typing in chat will not trigger any command logic, gate it behind the call to [CanApplyInput](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi#-canapplyinput).
 
 ```csharp showLineNumbers
 WukongApi.Input.RegisterKeyBind(Key.K, () =>

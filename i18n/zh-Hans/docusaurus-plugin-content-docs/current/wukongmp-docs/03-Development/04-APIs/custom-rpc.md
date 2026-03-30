@@ -6,7 +6,7 @@ Modes](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM
 
 ---
 
-:::warning[Work in progress]\
+:::warning[Work in progress]
 This feature is under development and will be available in a future version of
-the SDK.\
+the SDK.
 :::
