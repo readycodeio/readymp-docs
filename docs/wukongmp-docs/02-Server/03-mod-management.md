@@ -24,15 +24,19 @@ mod_name.zip
 Upon connecting to the server, clients will automatically download and install any missing mods from the `mods/` directory, ensuring a seamless multiplayer experience.
 
 :::danger[Security notice]
+
 The early access version of the WukongMP SDK and server does not include any sandboxing or security mechanisms for mods.
 
 Only use mods from trusted sources, as they can execute arbitrary code on the client.
 
 Never run a server with untrusted mods, especially if the server is publicly accessible.
+
 :::
 
 ## Server-side mods
 
 :::warning[Work in progress]
+
 This feature is under development and will be available in a future version of the SDK.
+
 :::

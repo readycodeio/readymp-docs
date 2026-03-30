@@ -5,5 +5,7 @@ The WukongMP SDK allows for defining custom data components attached to entities
 ---
 
 :::warning[Work in progress]
+
 This feature is under development and will be available in a future version of the SDK.
+
 :::
