@@ -20,7 +20,7 @@ Extract the binary package to a location of your choice.
 
 After extraction, the directory structure should look like this:
 
-<Tabs>
+<Tabs groupId="os">
 <TabItem value="windows" label="Windows">
 
 ```text title'
@@ -29,6 +29,8 @@ server/
 ├── config.json                # Configuration file
 ├── e_sqlite3.dll              # Dependency
 ├── aspnetcorev2_inprocess.dll # Dependency
+├── mods/                      # Directory for mods (empty by default)
+├── saves/                     # Directory for game saves (empty by default)
 └── wwwroot/                   # Admin panel assets
 ```
 
@@ -40,6 +42,8 @@ server/
 ├── server                     # Main server binary
 ├── config.json                # Configuration file
 ├── libe_sqlite3.so            # Dependency
+├── mods/                      # Directory for mods (empty by default)
+├── saves/                     # Directory for game saves (empty by default)
 └── wwwroot/                   # Admin panel assets
 ```
 

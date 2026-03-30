@@ -1,6 +1,6 @@
 # Swarm Mode
 
-The mod aims to provide an example of a simplest way to implement a new game mode in WukongMP.
+The purpose of this mod is to provide an example of a simplest way to implement a new game mode in WukongMP.
 It registers a console command `swarm_mode` which makes enemies spawn around the player in waves every few seconds.
 The players are supposed to fight until they can't anymore, after which the mod will print the number of enemies summoned.
 
