@@ -1,8 +1,9 @@
-# Save files
+# 游戏存档文件
 
-WukongMP SDK allows for synchronizing player save data with the server using the [Save API](/docs/wukongmp-docs/Development/APIs/save-file-management).
+WukongMP SDK 允许使用 [Save
+API](/docs/wukongmp-docs/Development/APIs/save-file-management) 将玩家的存档数据同步到服务器。
 
-The save files are stored in the `saves/` directory on the server.
+存档文件存放在服务器上的 `saves/` 目录中。
 
 ```text title="Example save folder layout"
 saves
@@ -11,6 +12,8 @@ saves
 └── player_a246246929654f37aa0483e35be1b2cc.sav
 ```
 
-The main world save file, shared world state for all players, will be places in the `world.sav` file.
+主世界存档文件（所有玩家共享的世界状态）将放置在 `world.sav` 文件中。
 
-Save files belonging to individual players are stored in files with the following naming pattern: `player_GUID.sav`, where the [GUID](https://pl.wikipedia.org/wiki/Globally_Unique_Identifier) is provided by the ReadyM platform and unique for each player.
+属于各个玩家的保存文件存放在符合以下命名模式的文件中：`player_GUID.sav`，其中
+[GUID](https://pl.wikipedia.org/wiki/Globally_Unique_Identifier) 由 ReadyM
+平台提供，并且对每个玩家都是唯一的。

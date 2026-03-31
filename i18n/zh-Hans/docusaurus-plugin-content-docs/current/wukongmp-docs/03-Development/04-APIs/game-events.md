@@ -1,5 +1,7 @@
-# Game events
+# 游戏事件
 
-The WukongMP SDK provides means to react to the most common events in the game.
+WukongMP SDK 提供了在游戏中对最常见事件做出反应的方式。
 
-Refer to the [Events API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongEventApi.md) for a complete list.
+请参阅 [Events
+API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongEventApi.md)
+以获取完整列表。

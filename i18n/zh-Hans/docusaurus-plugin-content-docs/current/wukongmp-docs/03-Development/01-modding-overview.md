@@ -1,5 +1,7 @@
-# Modding overview
+# 模组概览
 
-:::info[Work in progress]
-This feature is not documented yet.
+:::info[正在进行中]
+
+此功能尚未在文档中说明。
+
 :::

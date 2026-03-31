@@ -1,18 +1,17 @@
-# Mod management
+# 模组管理
 
-Mod support is a core feature of WukongMP, allowing you to extend the functionality of your server with custom content.
+模组支持是 WukongMP 的核心功能，允许你通过自定义内容扩展服务器的功能。
 
-## Client-side mods
+## 客户端模组
 
-WukongMP supports automatic mod sync for clients connecting to the server.
-When a client connects, the server checks if the client has the required mods installed.
-If not, the [ReadyM Launcher](https://portal.ready.mp/pl/dashboard/launcher) will download and install the missing mods before they can join the game.
+WukongMP 支持对连接到服务器的客户端进行自动模组同步。客户端连接时，服务器会检查客户端是否安装了所需的模组。如果没有，[ReadyM
+Launcher](https://portal.ready.mp/pl/dashboard/launcher) 将下载并安装缺失的模组，才能加入游戏。
 
-To add a mod to your server, simply place the mod archive in the `mods/` directory.
+要将模组添加到服务器，请将模组归档放在 `mods/` 目录中。
 
-Mod archives are expected to be in ZIP format, with a `.zip` extension.
+模组归档应为 ZIP 格式，扩展名为 `.zip`。
 
-The expected structure of a mod is as follows:
+模组的预期结构如下：
 
 ```text title="Example mod archive layout"
 mod_name.zip
@@ -21,18 +20,22 @@ mod_name.zip
     └── other_files...  # Other files required by the mod (optional)
 ```
 
-Upon connecting to the server, clients will automatically download and install any missing mods from the `mods/` directory, ensuring a seamless multiplayer experience.
+连接到服务器时，客户端将自动从 `mods/` 目录下载并安装任何缺失的模组，确保无缝的多人游戏体验。
 
-:::danger[Security notice]
-The early access version of the WukongMP SDK and server does not include any sandboxing or security mechanisms for mods.
+:::danger[安全公告]
 
-Only use mods from trusted sources, as they can execute arbitrary code on the client.
+WukongMP SDK 和服务器的抢先体验版本不包含任何针对模组的沙箱或安全机制。
 
-Never run a server with untrusted mods, especially if the server is publicly accessible.
+仅使用来自可信来源的模组，因为它们可能在客户端执行任意代码。
+
+请勿在服务器上运行不可信的模组，尤其是在服务器对公众可访问时。
+
 :::
 
-## Server-side mods
+## 服务器端模组
 
-:::warning[Work in progress]
-This feature is under development and will be available in a future version of the SDK.
+:::warning[工作正在进行中]
+
+此功能正在开发中，未来的 SDK 版本中将提供。
+
 :::

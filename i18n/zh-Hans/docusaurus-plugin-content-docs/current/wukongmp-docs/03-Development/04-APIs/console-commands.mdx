@@ -2,27 +2,26 @@ import Tabs from '@theme/Tabs';
 
 import TabItem from '@theme/TabItem';
 
-# Console commands
+# 控制台命令
 
-The WukongMP SDK includes a command console accessible by pressing <kbd>F1</kbd>
-on your keyboard.
+WukongMP SDK 包含一个命令控制台，按下键盘上的 <kbd>F1</kbd> 即可访问。
 
-## Keyboard shortcuts
+## 键盘快捷键
 
-| Binding                       | Action                             |
-| ----------------------------- | ---------------------------------- |
-| <kbd>TAB</kbd>                | Auto-complete the selected command |
-| <kbd>Alt</kbd> + <kbd>↑</kbd> | Previous command                   |
-| <kbd>Alt</kbd> + <kbd>↓</kbd> | Next command                       |
+| 绑定                            | 操作          |
+| ----------------------------- | ----------- |
+| <kbd>TAB</kbd>                | 对所选命令进行自动完成 |
+| <kbd>Alt</kbd> + <kbd>↑</kbd> | 上一条命令       |
+| <kbd>Alt</kbd> + <kbd>↓</kbd> | 下一条命令       |
 
-## Defining custom commands
+## 定义自定义命令
 
-Use the [Console
+使用 [Console
 API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongConsoleApi.md)
-to define custom commands.
+来定义自定义命令。
 
 
-### Register commands without parameters
+### 注册没有参数的命令
 
 <Tabs>
 <TabItem value="code" label="Source code">
@@ -46,11 +45,10 @@ rebirth_shrine
 </TabItem>
 </Tabs>
 
-### Require parameters
+### 需要参数
 
-The command parameters are deducted from the handler signature - supported types
-are `string`, `int`, `float`, `double`, and `bool`. Parameters can be optional,
-in which case a default value must be provided.
+命令参数将从处理程序签名中推断——支持的类型包括 `string`、`int`、`float`、`double` 以及
+`bool`。参数可以是可选的，在这种情况下需要提供默认值。
 
 <Tabs>
 <TabItem value="code" label="Source code">
@@ -74,11 +72,9 @@ teleport_shrine 2005        # teleports to shrine 2005
 </TabItem>
 </Tabs>
 
-### Define auto-completed paremeters
+### 定义自动完成的参数
 
-You can define a list of parameter values that will be displayed when the
-command is typed in. These values will be selectable with arrow keys and
-auto-completeable with <kbd>TAB</kbd>.
+您可以定义在输入命令时将显示的一组参数值。这些值可以用箭头键进行选择，并可通过 <kbd>TAB</kbd> 自动完成。
 
 <Tabs>
 <TabItem value="code" label="Source code">
@@ -96,8 +92,7 @@ void SpawnMonster(string monsterType) { ... }
 </TabItem>
 <TabItem value="console" label="In-game console">
 
-Immediately upon finishing the command name, the available parameter values will
-be shown:
+在完成命令名称后，系统将立即显示可用的参数值：
 
 ```shell
 spawn
@@ -108,7 +103,7 @@ gold_rhino
 //highlight-end
 ```
 
-The parameters are filtered by what's already been typed:
+参数会根据已输入的内容进行筛选：
 
 ```shell
 spawn wo

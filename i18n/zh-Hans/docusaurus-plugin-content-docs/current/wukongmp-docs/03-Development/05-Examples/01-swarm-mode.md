@@ -1,14 +1,14 @@
-# Swarm Mode
+# 蜂群模式
 
-The purpose of this mod is to provide an example of a simplest way to implement a new game mode in WukongMP.
-It registers a console command `swarm_mode` which makes enemies spawn around the player in waves every few seconds.
-The players are supposed to fight until they can't anymore, after which the mod will print the number of enemies summoned.
+本模组的目的是提供在 WukongMP 中实现新游戏模式的最简单示例。它注册一个控制台命令
+`swarm_mode`，使敌人在每隔几秒钟的波次中在玩家周围刷出。玩家应一直战斗，直到再也打不过为止，之后模组将打印召唤的敌人数量。
 
-## Mod entry point
+## 模组入口点
 
-In order to create a WukongMP mod, you must create a new C# library project referencing `WukongMp.Sdk.dll` and define a class derived from [ModBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase).
+为了创建一个 WukongMP 模组，您必须创建一个新的 C# 类库项目，引用 `WukongMp.Sdk.dll`，并定义一个从
+[ModBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase) 派生的类。
 
-At minimum, the mod must define its name and version number:
+至少，该模组必须定义其名称和版本号：
 
 ```csharp title="Mod.cs"
 public class Mod : ModBase
@@ -17,11 +17,11 @@ public class Mod : ModBase
     public override string Version => "1.0.0";
 ```
 
-The `Initialize` method is the place to configure your mod. In this mod, we do a few things:
+`Initialize` 方法是配置模组的地方。在这个模组中，我们要做几件事：
 
-1. Resolve `SpawnEnemySwarmSystem` from the dependency injection container - every system defined in your mod will be injected there.
-2. Register a console command `swarm_mode` which turns on our custom game mode.
-3. Subscribe to the `OnPlayerDead` event to turn it off when the last player dies.
+1. 从依赖注入容器解析 `SpawnEnemySwarmSystem`——模组中定义的每个系统都会在那里被注入。
+2. 注册一个控制台命令 `swarm_mode`，用于开启我们自定义的游戏模式。
+3. 订阅 `OnPlayerDead` 事件，在最后一个玩家死亡时将其关闭。
 
 ```csharp title="Mod.cs" showLineNumbers  
     protected override void Initialize(IDependencyContainer services)
@@ -47,11 +47,11 @@ The `Initialize` method is the place to configure your mod. In this mod, we do a
 }
 ```
 
-## Core gameplay loop
+## 核心游戏循环
 
-The main logic of the mod is encapsulated in `SpawnEnemySwarmSystem`.
+模组的核心逻辑封装在 `SpawnEnemySwarmSystem`。
 
-We begin by defining a few constants to configure the behavior of our system:
+我们首先定义一些常量来配置系统的行为：
 
 ```csharp showLineNumbers title="SpawnEnemySwarmSystem.cs"
 public sealed class SpawnEnemySwarmSystem : ModSystemBase
@@ -67,7 +67,10 @@ public sealed class SpawnEnemySwarmSystem : ModSystemBase
     private const float InitialDelay = 3.0f;
 ```
 
-Then - the methods for enabling and disabling the system. We use the [Local API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi) for showing message banners and adding messages to the chat window.
+接下来是启用和禁用系统的方法。我们使用 [Local
+API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi)
+来显示消息横幅并向聊天窗口添加消息。
+
 
 ```csharp showLineNumbers=13 title="SpawnEnemySwarmSystem.cs"
     public void Enable()
@@ -93,8 +96,16 @@ Then - the methods for enabling and disabling the system. We use the [Local API]
     }
 ```
 
-All systems (classes derived from [ModSystemBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase)) expose an [OnUpdate](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase#-onupdateupdatetick) method which runs on every frame.
-We can use that to count the number of seconds since the last time we spawned enemies. When `_timeSinceLastSpawn` exceedes the threshold, we use the [Synchronization API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi) to spawn an enemy (Wolf Sentinel) a few times in a circle around the player. All available enemy types are defined in [TamerConstants](/docs/wukongmp-api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerConstants).
+所有系统（派生自
+[ModSystemBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase)
+的类）都暴露一个
+[OnUpdate](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase#-onupdateupdatetick)
+方法，该方法在每一帧运行。我们可以用它来计算自上次刷怪以来经过的秒数。当 `_timeSinceLastSpawn` 超过阈值时，我们使用
+[Synchronization
+API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi)
+在玩家周围以圆形分布刷出若干次敌人（Wolf Sentinel）。所有可用的敌人类型都在
+[TamerConstants](/docs/wukongmp-api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerConstants)
+中定义。
 
 ```csharp showLineNumbers=35 title="SpawnEnemySwarmSystem.cs"
     protected override void OnUpdate(UpdateTick tick)

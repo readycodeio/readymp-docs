@@ -1,14 +1,14 @@
-# Admin panel
+# 后台管理面板
 
-The admin panel is available over HTTP on port `9050`.
+后台管理面板通过 HTTP 在端口 `9050` 提供。
 
-If the server is running on your local machine, you can open it at http://localhost:9050.
+如果服务器在本地计算机上运行，您可以在 http://localhost:9050 打开它。
 
-## First-time setup
+## 首次设置
 
-When launching the server for the first time, you will need to create an administrator account.
+首次启动服务器时，您需要创建一个管理员账户。
 
-During startup, the server prints a one-time setup PIN in the console output:
+在启动时，服务器会在控制台输出中打印一个一次性设置 PIN 码：
 
 ```shell-session
 $ ./server.exe
@@ -20,33 +20,22 @@ $ ./server.exe
 [15:16:37 WRN] No admin users found. Admin setup PIN: 766596
 ```
 
-Enter this PIN in the admin panel to begin the setup process.
+在后台管理面板中输入此 PIN 以开始设置过程。
 
-<img
-  src={require('/img/docs/admin-panel-setup-pin.png').default}
-  width={500}
-  alt="Setup PIN code view"
-/>
+<img src="{require('/img/docs/admin-panel-setup-pin.png').default}" width="{500}" alt="设置 PIN 码视图" />
 
-## Sign in with ReadyM
+## 通过 ReadyM 登录
 
-After entering the PIN, you will be asked to sign in with your ReadyM account.
+输入 PIN 后，您将被要求使用 ReadyM 账户登录。
 
-<img
-  src={require('/img/docs/admin-panel-sign-in.png').default}
-  width={500}
-  alt="Admin panel sign-in"
-/>
+<img src="{require('/img/docs/admin-panel-sign-in.png').default}" width="{500}" alt="后台管理面板登录" />
 
-You will be redirected to the ReadyM authentication page, where you can enter your credentials.
+您将被重定向到 ReadyM 身份验证页面，在那里可以输入您的凭据。
 
-Once authentication is successful, you will be redirected back to the admin panel automatically.
+认证成功后，系统将自动将您重定向回后台管理面板。
 
-## Admin panel interface
+## 后台管理面板界面
 
-After signing in, you can access the admin panel interface.
+登录后，您可以访问后台管理面板界面。
 
-<img
-  src={require('/img/docs/admin-panel-terminal.png').default}
-  alt="Admin panel terminal"
-/>
+<img src="{require('/img/docs/admin-panel-terminal.png').default}" alt="后台管理面板终端" />

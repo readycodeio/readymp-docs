@@ -1,11 +1,11 @@
-# Custom components
+# 自定义组件
 
-The WukongMP SDK allows for defining custom data components attached to entities
-in the game. These can be anything from primitive values to complex structures.
+WukongMP SDK 允许在游戏中的实体上定义自定义数据组件。这些组件可以是从原始值到复杂结构的任何形式。
 
 ---
 
-:::warning[Work in progress]
-This feature is under development and will be available in a future version of
-the SDK.
+:::warning[工作正在进行中]
+
+此功能正在开发中，未来的 SDK 版本中将提供。
+
 :::

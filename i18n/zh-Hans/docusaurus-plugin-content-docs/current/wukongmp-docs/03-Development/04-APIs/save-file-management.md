@@ -1,24 +1,26 @@
-# Save file management
+# 存档管理
 
-The WukongMP SDK allows for a few modes of operation when it comes to save files.
+WukongMP SDK 在存档方面提供了几种操作模式。
 
-## Loading save files
+## 加载存档
 
-There are two main ways of obtaining a save file:
+获取存档有两种主要方式：
 
-1. You can load a save file from your single-player playthrough, or
-2. You can download the save file from the server you connect to
+1. 你可以从你的单人游戏中加载存档，或
+2. 你可以从你连接的服务器下载存档
 
-## Saving the game
+## 保存游戏
 
-During the game, you may choose to:
+在游戏过程中，你可以选择：
 
-1. Disregard saving the game completely, like in our PvP mod, or
-2. Upload the save file to the server you are playing on, or
-3. Place the save file in a local folder on your PC
+1. 完全不保存游戏，例如在我们的 PvP 模组中，或
+2. 将存档上传到你正在游玩的服务器，或
+3. 将存档放在你电脑的本地文件夹中
 
 ---
 
-:::warning[Work in progress]
-This feature is under development and will be available in a future version of the SDK.
+:::warning[工作正在进行中]
+
+此功能正在开发中，未来的 SDK 版本中将提供。
+
 :::

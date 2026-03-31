@@ -1,10 +1,12 @@
-# Key bindings
+# 按键绑定
 
-The [Input API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi.md) provides a way to register custom keyboard and controller bindings.
+[Input
+API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi.md)
+提供了一种注册自定义键盘和控制器绑定的方式。
 
-## Examples
+## 示例
 
-Define handlers that execute every time a key is pressed.
+定义在每次按下按键时执行的处理程序。
 
 ```csharp showLineNumbers
 WukongApi.Input.RegisterKeyBind(Key.F1, () =>
@@ -13,7 +15,7 @@ WukongApi.Input.RegisterKeyBind(Key.F1, () =>
 });
 ```
 
-## Specify modifier keys
+## 指定修饰键
 
 ```csharp showLineNumbers
 WukongApi.Input.RegisterKeyBind(ModifierKeys.Alt, Key.X, () =>
@@ -22,9 +24,11 @@ WukongApi.Input.RegisterKeyBind(ModifierKeys.Alt, Key.X, () =>
 });
 ```
 
-## Register controller bindings
+## 注册控制器绑定
 
-Use the [RegisterGamePadBind](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi#-registergamepadbindgamepadbutton-action) method to bind to one of the following buttons:
+使用
+[RegisterGamePadBind](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi#-registergamepadbindgamepadbutton-action)
+方法绑定到以下按钮之一：
 
 ```csharp
 public enum GamePadButton
@@ -53,9 +57,11 @@ public enum GamePadButton
 }
 ```
 
-## Using `CanApplyInput`
+## 使用 `CanApplyInput`
 
-Key bindings run every time a key is pressed, regardless of context. If you want to ensure that pressing 'K' when typing in chat will not trigger any command logic, gate it behind the call to [CanApplyInput](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi#-canapplyinput).
+按键绑定在每次按下按键时都会执行，与上下文无关。如果你希望在聊天输入时按下 'K' 不会触发任何命令逻辑，请将其通过对
+[CanApplyInput](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi#-canapplyinput)
+的调用进行过滤。
 
 ```csharp showLineNumbers
 WukongApi.Input.RegisterKeyBind(Key.K, () =>

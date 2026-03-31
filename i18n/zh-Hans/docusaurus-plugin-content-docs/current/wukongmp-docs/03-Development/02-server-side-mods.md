@@ -1,5 +1,7 @@
-# Server-side mods
+# 服务器端模组
 
-:::warning[Work in progress]
-This feature is under development and will be available in a future version of the SDK.
+:::warning[工作正在进行中]
+
+此功能正在开发中，未来的 SDK 版本中将提供。
+
 :::
