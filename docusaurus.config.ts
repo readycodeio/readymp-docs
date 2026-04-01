@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'ReadyM Docs',
-  tagline: 'Develop multiplayer experiences in your favourite games',
+  tagline: 'Build multiplayer experiences in your favourite games',
   favicon: 'img/favicon.ico',
 
   markdown: {
@@ -92,7 +92,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Developer',
+      title: 'Dev Portal',
       logo: {
         alt: 'ReadyM Logo',
         src: 'img/logo-dark.png',
@@ -132,22 +132,42 @@ const config: Config = {
               label: 'WukongMP SDK',
               to: '/docs/wukongmp-docs/what-is-wukong-mp',
             },
+            {
+              label: 'ReadyM FAQ',
+              href: 'https://www.ready.mp/faq',
+            }
           ],
         },
         {
           title: 'Community',
           items: [
             {
-              label: 'Discord',
-              href: 'https://discord.gg/wukongmp-readym-1278355057330618533',
+              label: 'WukongMP Discord',
+              href: 'https://discord.gg/wukongmp',
             },
             {
-              label: 'Youtube',
+              label: 'OblivionMP Discord',
+              href: 'https://discord.gg/obmp',
+            },
+            {
+              label: 'YouTube',
               href: 'https://www.youtube.com/@readymultiplayer',
             },
             {
-              label: 'Instagram',
-              href: 'https://www.instagram.com/ready_multiplayer',
+              label: 'BiliBili',
+              href: 'https://space.bilibili.com/3546825837513480',
+            },
+            {
+              label: 'TikTok',
+              href: 'https://www.tiktok.com/@ready.mp',
+            },
+            {
+              label: 'X',
+              href: 'https://x.com/readymod',
+            },
+            {
+              label: 'QQ',
+              href: 'https://pd.qq.com/g/pd30575984',
             }
           ],
         },
@@ -162,10 +182,18 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/readycodeio',
             },
+            {
+              label: 'WukongMP',
+              href: 'https://wukong.mp',
+            },
+            {
+              label: 'OblivionMP',
+              href: 'https://oblivion.mp',
+            }
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} ReadyCode, Inc.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ReadyCode Ltd (ReadyM team)`,
     },
     prism: {
       theme: prismThemes.github,
