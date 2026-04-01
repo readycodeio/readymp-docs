@@ -2,25 +2,28 @@
 sidebar_position: 1
 ---
 
-# Getting started
+# 快速入门
 
-The easiest way to get started with developing your own mods on top of the WukongMP SDK is to use the official [WukongMP mod template](https://github.com/readycodeio/wukongmp-mod-template).
+在 WukongMP SDK 上开始开发你自己的模组的最简单方式，是使用官方的 [WukongMP
+模组模板](https://github.com/readycodeio/wukongmp-mod-template)。
 
-Clone the repository and follow instructions provided in the [README](https://github.com/readycodeio/wukongmp-mod-template/blob/main/README.md) file.
+克隆仓库并按照
+[README](https://github.com/readycodeio/wukongmp-mod-template/blob/main/README.md)
+文件中提供的说明进行操作。
 
-## Feature status
+## 功能状态
 
-Right now you can develop mods that have access to game events, entity data (players, enemies), and can define custom commands and game logic systems.
+目前你可以开发对游戏事件、实体数据（玩家、敌人）有访问权限的模组，并且可以定义自定义命令和游戏逻辑系统。
 
-Support for arbitrary RPC calls and custom data sync is on the way.
+对任意 RPC 调用和自定义数据同步的支持正在实现中。
 
-Visit the [examples](/docs/category/mod-examples) page for some inspiration.
+请访问 [examples](/docs/category/mod-examples) 页面以获取灵感。
 
-| Feature  |  Status |
-|---|---|
-| Patching game code | :white_check_mark: [done](/docs/wukongmp-docs/Development/patching) |
-| Game event API | :white_check_mark: [done](/docs/wukongmp-docs/Development/APIs/game-events) |
-| Console command API | :white_check_mark: [done](/docs/wukongmp-docs/Development/APIs/console-commands) |
-| Save file API | :construction: [partial](/docs/wukongmp-docs/Development/APIs/save-file-management) |
-| Custom RPC | :soon: [in progress](/docs/wukongmp-docs/Development/APIs/custom-rpc) |
-| Custom data sync | :soon: [in progress](/docs/wukongmp-docs/Development/APIs/custom-components) |
+| 特性        | 状态                                                                               |
+| --------- | -------------------------------------------------------------------------------- |
+| 修改游戏代码    | :white_check_mark: [done](/docs/wukongmp-docs/Development/patching)              |
+| 游戏事件      | :white_check_mark: [done](/docs/wukongmp-docs/Development/APIs/game-events)      |
+| 控制台命令 API | :white_check_mark: [done](/docs/wukongmp-docs/Development/APIs/console-commands) |
+| 保存文件 API  | :construction: [部分](/docs/wukongmp-docs/Development/APIs/save-file-management)   |
+| 自定义 RPC   | :soon: [in progress](/docs/wukongmp-docs/Development/APIs/custom-rpc)            |
+| 自定义数据同步   | :soon: [in progress](/docs/wukongmp-docs/Development/APIs/custom-components)     |

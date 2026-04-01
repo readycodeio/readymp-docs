@@ -2,17 +2,23 @@
 sidebar_position: 2
 ---
 
-# Patching the game
+# 为游戏打补丁
 
-The WukongMP SDK is built on a custom fork of the [Harmony](https://github.com/pardeike/Harmony) library. While it supports most of the Hamony's API, there are some differences in how patches are discovered and enabled.
+WukongMP SDK 构建在对 [Harmony](https://github.com/pardeike/Harmony) 库的自定义分支之上。虽然它支持
+Harmony 的大部分 API，但在补丁的发现和启用方式上存在一些差异。
 
-In general, refer to the [official Harmony documentation](https://harmony.pardeike.net/articles/intro.html) when defining patches in your WukongMP mods.
+通常，在为你的 WukongMP 模组定义补丁时，请参考 [official Harmony
+documentation](https://harmony.pardeike.net/articles/intro.html)。
 
-Below are a few requirements that must be satisfied for patches to work correctly.
+以下是确保补丁正确工作所需满足的一些要求。
 
-## Categories are mandatory
+## 类别为必填项
 
-Each Harmony patch declared in your mod's code must be decorated with the [HarmonyPatchCategory](https://harmony.pardeike.net/api/HarmonyLib.HarmonyPatchCategory.html) attribute, with one of the constants defined in [PatchCategory](/docs/wukongmp-api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.PatchCategory), like so:
+你模组代码中声明的每个 Harmony 补丁都必须使用
+[HarmonyPatchCategory](https://harmony.pardeike.net/api/HarmonyLib.HarmonyPatchCategory.html)
+属性进行标记，并使用
+[PatchCategory](/docs/wukongmp-api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.PatchCategory)
+中定义的常量之一，如下所示：
 
 ```csharp title="Example patch"
 [HarmonyPatch(typeof(BPS_PlayerTeleportSystem), "OnPlayerTeleportTo")]
@@ -20,13 +26,18 @@ Each Harmony patch declared in your mod's code must be decorated with the [Harmo
 public static class PatchOnPlayerTeleportTo { ... }
 ```
 
-As of the current version of the SDK, only patches with the `PatchCategory.Global` or `PatchCategory.Connected` category are enabled at game start.
+在 SDK 的当前版本中，只有属于 `PatchCategory.Global` 或 `PatchCategory.Connected`
+类别的补丁在游戏启动时才会被启用。
 
-## Using [TargetMethod](https://harmony.pardeike.net/articles/patching-auxiliary.html#targetmethod)
+## 使用 [TargetMethod](https://harmony.pardeike.net/articles/patching-auxiliary.html#targetmethod)
 
-Sometimes you have to use the [TargetMethod](https://harmony.pardeike.net/articles/patching-auxiliary.html#targetmethod) method in your patch class to be able to patch a member of a `private` or `internal` class.
+有时你必须在补丁类中使用
+[TargetMethod](https://harmony.pardeike.net/articles/patching-auxiliary.html#targetmethod)
+方法，才能对 `private` 或 `internal` 类的成员进行补丁。
 
-In the WukongMP SDK's Harmony fork this method requires the [HarmonyTargetMethodHint](/docs/wukongmp-api-reference/PreludeLib.Attributes/PreludeLib.Attributes.HarmonyTargetMethodHint) attribute to be present. The first argument is the fully qualified class name. The second argument is the patched member name.
+在 WukongMP SDK 的 Harmony 分叉中，必须存在
+[HarmonyTargetMethodHint](/docs/wukongmp-api-reference/PreludeLib.Attributes/PreludeLib.Attributes.HarmonyTargetMethodHint)
+属性。第一个参数是完整限定类名，第二个参数是被补丁的成员名称。
 
 ```csharp title="Example: patching an internal class"
 [HarmonyPatch]
@@ -42,7 +53,12 @@ internal static class PatchComplexSkillDoInteractAction
 }
 ```
 
-Another use case for [TargetMethod](https://harmony.pardeike.net/articles/patching-auxiliary.html#targetmethod) are generic classes. In such cases, you must also decorate with [HarmonyTargetMethodHint](/docs/wukongmp-api-reference/PreludeLib.Attributes/PreludeLib.Attributes.HarmonyTargetMethodHint), providing the specialized class type and member name.
+另一个
+[TargetMethod](https://harmony.pardeike.net/articles/patching-auxiliary.html#targetmethod)
+的用例是通用类（泛型类）。在这种情况下，您还必须使用
+[HarmonyTargetMethodHint](/docs/wukongmp-api-reference/PreludeLib.Attributes/PreludeLib.Attributes.HarmonyTargetMethodHint)
+进行装饰，提供专门化的类类型和成员名称。\
+==WEBLATE_PART==
 
 ```csharp title="Example: Patching a generic class"
 [HarmonyPatch]
