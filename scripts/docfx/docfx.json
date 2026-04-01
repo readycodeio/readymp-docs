@@ -11,9 +11,16 @@
             "WukongMp.Api.dll",
             "WukongMp.Sdk.dll"
           ]
+        },
+        {
+          "src": "../../../../embed-csharp-loader/HarmonyPrepatcher/src/PreludeLib/bin/Release/netstandard2.0",
+          "files": [
+            "PreludeLib.dll"
+          ]
         }
       ],
       "output": "api",
+      "filter": "filter.yml",
       "outputFormat": "markdown",
       "shouldSkipMarkup": true,
       "disableGitFeatures": true,

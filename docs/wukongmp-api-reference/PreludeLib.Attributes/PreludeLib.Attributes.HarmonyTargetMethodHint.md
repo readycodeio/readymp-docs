@@ -1,18 +1,20 @@
-﻿# Class DeriveINetworkedComponentAttribute
+﻿# Class HarmonyTargetMethodHint
 
-Namespace: [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)  
-Assembly: ReadyM.Api.Multiplayer.dll  
+Namespace: [PreludeLib.Attributes](../PreludeLib.Attributes/PreludeLib.Attributes.md)  
+Assembly: PreludeLib.dll  
+
+When declaring a <a href="https://harmony.pardeike.net/articles/patching-auxiliary.html#targetmethod">TargetMethod</a> method in your patch class, you must decorate it with this attribute.
 
 ```csharp
-[AttributeUsage(AttributeTargets.Struct)]
-public sealed class DeriveINetworkedComponentAttribute : Attribute
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
+public class HarmonyTargetMethodHint : Attribute
 ```
 
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
 [Attribute](https://learn.microsoft.com/dotnet/api/system.attribute) ← 
-[DeriveINetworkedComponentAttribute](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetworkedComponentAttribute.md)
+[HarmonyTargetMethodHint](../PreludeLib.Attributes/PreludeLib.Attributes.HarmonyTargetMethodHint.md)
 
 #### Inherited Members
 
@@ -54,6 +56,7 @@ public sealed class DeriveINetworkedComponentAttribute : Attribute
 [Attribute.IsDefaultAttribute\(\)](https://learn.microsoft.com/dotnet/api/system.attribute.isdefaultattribute), 
 [Attribute.TypeId](https://learn.microsoft.com/dotnet/api/system.attribute.typeid), 
 [object.GetType\(\)](https://learn.microsoft.com/dotnet/api/system.object.gettype), 
+[object.MemberwiseClone\(\)](https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone), 
 [object.ToString\(\)](https://learn.microsoft.com/dotnet/api/system.object.tostring), 
 [object.Equals\(object?\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\)), 
 [object.Equals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\-system\-object\)), 
@@ -62,26 +65,67 @@ public sealed class DeriveINetworkedComponentAttribute : Attribute
 
 ## Constructors
 
-### <a id="ReadyM_Api_Multiplayer_Generators_DeriveINetworkedComponentAttribute__ctor_ReadyM_Api_Serialization_SerializableMode_"></a> DeriveINetworkedComponentAttribute\(SerializableMode\)
+### <a id="PreludeLib_Attributes_HarmonyTargetMethodHint__ctor_System_String_System_Type___"></a> HarmonyTargetMethodHint\(string, params Type\[\]\)
+
+Use this constructor when the <a href="https://harmony.pardeike.net/articles/annotations.html">HarmonyPatch</a> attribute on the patch class already specifies the declaring type.
 
 ```csharp
-public DeriveINetworkedComponentAttribute(SerializableMode mode = SerializableMode.Default)
+public HarmonyTargetMethodHint(string methodName, params Type[] args)
 ```
 
 #### Parameters
 
-`mode` [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/eeac82fd51ece0f45a955fd0c86037eb3c992eb8/src/ReadyM.Api/Serialization/SerializableMode.cs)
+`methodName` [string](https://learn.microsoft.com/dotnet/api/system.string)
 
-## Fields
+Name of the target method.
 
-### <a id="ReadyM_Api_Multiplayer_Generators_DeriveINetworkedComponentAttribute_Mode"></a> Mode
+`args` [Type](https://learn.microsoft.com/dotnet/api/system.type)\[\]
+
+Types of the target method parameters, in order. Use an empty array for parameterless methods.
+
+### <a id="PreludeLib_Attributes_HarmonyTargetMethodHint__ctor_System_Type_System_String_System_Type___"></a> HarmonyTargetMethodHint\(Type, string, params Type\[\]\)
+
+The declaring type can be specified as a Type to allow for compile-time checking of the target method's existence and signature.
+However, this creates a hard reference to the assembly containing the target method, which may not be desirable in all cases.
 
 ```csharp
-public readonly SerializableMode Mode
+public HarmonyTargetMethodHint(Type declaringType, string methodName, params Type[] args)
 ```
 
-#### Field Value
+#### Parameters
 
- [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/eeac82fd51ece0f45a955fd0c86037eb3c992eb8/src/ReadyM.Api/Serialization/SerializableMode.cs)
+`declaringType` [Type](https://learn.microsoft.com/dotnet/api/system.type)
+
+Fully qualified name of the declaring type, including namespace.
+
+`methodName` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+Name of the target method.
+
+`args` [Type](https://learn.microsoft.com/dotnet/api/system.type)\[\]
+
+Types of the target method parameters, in order. Use an empty array for parameterless methods.
+
+### <a id="PreludeLib_Attributes_HarmonyTargetMethodHint__ctor_System_String_System_String_System_Type___"></a> HarmonyTargetMethodHint\(string, string, params Type\[\]\)
+
+The declaring type can be specified as a string to avoid hard references to the assembly containing the target method.
+
+```csharp
+public HarmonyTargetMethodHint(string declaringType, string methodName, params Type[] args)
+```
+
+#### Parameters
+
+`declaringType` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+Fully qualified name of the declaring type, including namespace.
+
+`methodName` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+Name of the target method.
+
+`args` [Type](https://learn.microsoft.com/dotnet/api/system.type)\[\]
+
+Types of the target method parameters, in order. Use an empty array for parameterless methods.
 
 
