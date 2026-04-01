@@ -2,26 +2,28 @@
 sidebar_position: 3
 ---
 
-# Gameplay systems
+# 玩法系统
 
-In order to facilitate the development of gameplay logic, the WukongMP SDK provides a way to implement **systems**.
-These are classes that expose a tick method tied to the game's update loop.
+为便于开发游戏逻辑，WukongMP SDK 提供了一种实现 **系统** 的方式。这些类暴露了一个绑定到游戏更新循环的 tick 方法。
 
-## Declaring systems
+## 声明系统
 
-Any class deriving from [ModSystemBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase) and defined in the same assembly as your main mod class (one that extends [ModBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase)) will be automatically registered when the game starts, and will begin executing soon after.
+任何从
+[ModSystemBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase)
+派生并在与您的主模组类位于同一程序集中的类（该类继承自
+[ModBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase)）将会在游戏启动时自动注册，并在不久之后开始执行。
 
 :::info
 
-Systems are singletons — each system has only one instance running at a time.
+系统是单例的——每个系统在同一时间只运行一个实例。
 
 :::
 
-At this time there is no functionality for turning systems on an off, you have to implement methods for that yourself.
+目前没有用于开启或关闭系统的功能，你需要自己实现相应的方法。
 
-Below is an example of a minimal system declaration:
+以下是一个最小系统声明的示例：
 
-```csharp title="最小系统示例"
+```csharp title="Minimal system example"
 public class MySystem : ModSystemBase
 {
     protected override void OnUpdate(UpdateTick tick)
@@ -31,9 +33,9 @@ public class MySystem : ModSystemBase
 }
 ```
 
-You can get a reference to your system's instance by resolving it from the Dependency Injection container:
+您可以通过从依赖注入容器中解析它来获取系统实例的引用：
 
-```csharp title="通过依赖注入解析系统"
+```csharp title="Resolving systems from DI"
 public class MyMod : ModBase
 {
     protected override void Initialize(IDependencyContainer services)
