@@ -19,11 +19,11 @@ sidebar_position: 1
 
 请访问 [examples](/docs/category/mod-examples) 页面以获取灵感。
 
-| 特性        | 状态                                                                               |
-| --------- | -------------------------------------------------------------------------------- |
-| 修改游戏代码    | :white_check_mark: [done](/docs/wukongmp-docs/Development/patching)              |
-| 游戏事件      | :white_check_mark: [done](/docs/wukongmp-docs/Development/APIs/game-events)      |
-| 控制台命令 API | :white_check_mark: [done](/docs/wukongmp-docs/Development/APIs/console-commands) |
-| 保存文件 API  | :construction: [部分](/docs/wukongmp-docs/Development/APIs/save-file-management)   |
-| 自定义 RPC   | :soon: [in progress](/docs/wukongmp-docs/Development/APIs/custom-rpc)            |
-| 自定义数据同步   | :soon: [in progress](/docs/wukongmp-docs/Development/APIs/custom-components)     |
+| 特性        | 状态                                                                              |
+| --------- | ------------------------------------------------------------------------------- |
+| 修改游戏代码    | :white_check_mark: [已完成](/docs/wukongmp-docs/Development/patching)              |
+| 游戏事件      | :white_check_mark: [已完成](/docs/wukongmp-docs/Development/APIs/game-events)      |
+| 控制台命令 API | :white_check_mark: [已完成](/docs/wukongmp-docs/Development/APIs/console-commands) |
+| 保存文件 API  | :construction: [部分](/docs/wukongmp-docs/Development/APIs/save-file-management)  |
+| 自定义 RPC   | :soon: [进行中](/docs/wukongmp-docs/Development/APIs/custom-rpc)                   |
+| 自定义数据同步   | :soon: [进行中](/docs/wukongmp-docs/Development/APIs/custom-components)            |
