@@ -1,6 +1,6 @@
 # Save file management
 
-Use the [Save API](/docs/wukongmp-api-reference/WukongMp.Api/WukongMp.Api.IWukongSaveApi.md) to upload and download save files in a similar way our co-op mod does.
+Use the [Save API](/docs/wukongmp-api-reference/WukongMp.Api/WukongMp.Api.IWukongSaveApi) to upload and download save files in a similar way our co-op mod does.
 
 The [server documentation](/docs/wukongmp-docs/Server/save-files) describes how save files are currently being managed on the server side.
 
