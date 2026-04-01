@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Save files
 
 WukongMP SDK allows for synchronizing player save data with the server using the [Save API](/docs/wukongmp-docs/Development/APIs/save-file-management).
@@ -14,11 +18,11 @@ saves
 
 The main world save file, shared world state for all players, will be placed in the `world.sav` file.
 
-Save files belonging to individual players are stored in files with the following naming pattern: `player_GUID.sav`, where the [GUID](https://pl.wikipedia.org/wiki/Globally_Unique_Identifier) is provided by the ReadyM platform and unique for each player.
+Save files belonging to individual players are stored in files with the following naming pattern: `player_GUID.sav`, where the [GUID](https://en.wikipedia.org/wiki/Globally_Unique_Identifier) is provided by the ReadyM platform and unique for each player.
 
 ## Using the co-op mod
 
-Until we expand the [Save API](/docs/wukongmp-docs/03-Development/04-APIs/save-file-management) to allow uploading an arbitrary number of save files with arbitrary metadata, the save file behavior is as follows:
+Until we expand the [Save API](/docs/wukongmp-docs/Development/APIs/save-file-management) to allow uploading an arbitrary number of save files with arbitrary metadata, the save file behavior is as follows:
 
 1. The first player that loads a new location (area) is considered the "host" of that area, and is responsible for uploading `world.sav` when the game would be saved.
 2. All players, including the host, also upload their own `player_GUID.sav` save files, which contain their individual characters' information.

@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # 什么是 WukongMP？
 
 WukongMP 是我们为 **《黑神话：悟空》**

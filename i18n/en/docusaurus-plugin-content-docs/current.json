@@ -3,13 +3,13 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.wukongMpDocsSidebar.category.Server": {
-    "message": "Server",
-    "description": "The label for category 'Server' in sidebar 'wukongMpDocsSidebar'"
+  "sidebar.wukongMpDocsSidebar.category.Server hosting": {
+    "message": "Server hosting",
+    "description": "The label for category 'Server hosting' in sidebar 'wukongMpDocsSidebar'"
   },
-  "sidebar.wukongMpDocsSidebar.category.Development": {
-    "message": "Development",
-    "description": "The label for category 'Development' in sidebar 'wukongMpDocsSidebar'"
+  "sidebar.wukongMpDocsSidebar.category.Mod development": {
+    "message": "Mod development",
+    "description": "The label for category 'Mod development' in sidebar 'wukongMpDocsSidebar'"
   },
   "sidebar.wukongMpDocsSidebar.category.APIs": {
     "message": "APIs",
@@ -27,9 +27,17 @@
     "message": "Example mods built with WukongMP SDK",
     "description": "The generated-index page description for category 'Mod examples' in sidebar 'wukongMpDocsSidebar'"
   },
+  "sidebar.wukongMpApiSidebar.category.PreludeLib.Attributes": {
+    "message": "PreludeLib.Attributes",
+    "description": "The label for category 'PreludeLib.Attributes' in sidebar 'wukongMpApiSidebar'"
+  },
   "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Command": {
     "message": "ReadyM.Api.Command",
     "description": "The label for category 'ReadyM.Api.Command' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.DI": {
+    "message": "ReadyM.Api.DI",
+    "description": "The label for category 'ReadyM.Api.DI' in sidebar 'wukongMpApiSidebar'"
   },
   "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Idents": {
     "message": "ReadyM.Api.Idents",
@@ -42,14 +50,6 @@
   "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.ECS.Components": {
     "message": "ReadyM.Api.Multiplayer.ECS.Components",
     "description": "The label for category 'ReadyM.Api.Multiplayer.ECS.Components' in sidebar 'wukongMpApiSidebar'"
-  },
-  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.ECS.Tags": {
-    "message": "ReadyM.Api.Multiplayer.ECS.Tags",
-    "description": "The label for category 'ReadyM.Api.Multiplayer.ECS.Tags' in sidebar 'wukongMpApiSidebar'"
-  },
-  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Extensions": {
-    "message": "ReadyM.Api.Multiplayer.Extensions",
-    "description": "The label for category 'ReadyM.Api.Multiplayer.Extensions' in sidebar 'wukongMpApiSidebar'"
   },
   "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Generators": {
     "message": "ReadyM.Api.Multiplayer.Generators",
@@ -94,6 +94,10 @@
   "sidebar.wukongMpApiSidebar.category.WukongMp.Api.WukongUtils": {
     "message": "WukongMp.Api.WukongUtils",
     "description": "The label for category 'WukongMp.Api.WukongUtils' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.WukongMp.Coop.Gamemode": {
+    "message": "WukongMp.Coop.Gamemode",
+    "description": "The label for category 'WukongMp.Coop.Gamemode' in sidebar 'wukongMpApiSidebar'"
   },
   "sidebar.wukongMpApiSidebar.category.WukongMp.Sdk": {
     "message": "WukongMp.Sdk",

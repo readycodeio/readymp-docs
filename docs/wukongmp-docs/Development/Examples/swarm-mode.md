@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Swarm Mode
 
 The purpose of this mod is to provide an example of a simplest way to implement a new game mode in WukongMP.

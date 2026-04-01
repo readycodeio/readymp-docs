@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Mod management
 
 Mod support is a core feature of WukongMP, allowing you to extend the functionality of your server with custom content.

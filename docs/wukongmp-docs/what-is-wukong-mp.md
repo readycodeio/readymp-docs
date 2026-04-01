@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # What is WukongMP?
 
 WukongMP is our community multiplayer project for **Black Myth: Wukong**. We built it to bring players together in shared multiplayer experiences, making it possible to explore the world in co-op, fight bosses with friends, and join custom community-run servers.
