@@ -2,6 +2,7 @@ import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Translate, { translate } from '@docusaurus/Translate';
 
 type FeatureItem = {
   title: string;
@@ -10,27 +11,21 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Unified play - single account',
+    title: translate({id: 'readym.feature1.title'}),
     description: (
-      <>
-        Integrate with your favorite gaming platforms securely and manage your gaming identity in one place.
-      </>
+      <Translate id="readym.feature1.description" />
     ),
   },
   {
-    title: 'Gateway to the ReadyM world',
+    title: translate({id: 'readym.feature2.title'}),
     description: (
-      <>
-        In a few simple steps, start your own dedicated custom co-op or PvP game directly from our launcher, then play with friends.
-      </>
+      <Translate id="readym.feature2.description" />
     ),
   },
   {
-    title: 'Custom game modes',
+    title: translate({id: 'readym.feature3.title'}),
     description: (
-      <>
-        Shipping SDK that allows server owners to create and customize game modes, scripts, and rulesets.
-      </>
+      <Translate id="readym.feature3.description" />
     ),
   },
 ];

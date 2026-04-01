@@ -325,5 +325,32 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "readym.sdk-documentation": {
+    "message": "SDK Documentation"
+  },
+  "readym.readym-docs": {
+    "message": "ReadyM Docs"
+  },
+  "readym.tagline": {
+    "message": "Develop multiplayer experiences in your favourite games"
+  },
+  "readym.feature1.title": {
+    "message": "Unified play - single account"
+  },
+  "readym.feature1.description": {
+    "message": "Access all ReadyM games with a single account, ensuring a seamless gaming experience."
+  },
+  "readym.feature2.title": {
+    "message": "Gateway to the ReadyM world"
+  },
+  "readym.feature2.description": {
+    "message": "Explore the vast universe of ReadyM games and connect with a global community of players."
+  },
+  "readym.feature3.title": {
+    "message": "Custom game modes"
+  },
+  "readym.feature3.description": {
+    "message": "Create and enjoy unique game modes tailored to your preferences, enhancing your gaming experience."
   }
 }
