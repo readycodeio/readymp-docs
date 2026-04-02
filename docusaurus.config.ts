@@ -112,7 +112,7 @@ const config: Config = {
           label: 'API Reference',
         },
         {
-          href: 'https://github.com/readycodeio/readymp-docs',
+          href: 'https://github.com/readycodeio',
           label: 'GitHub',
           position: 'right',
         },
