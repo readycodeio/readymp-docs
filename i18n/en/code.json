@@ -330,27 +330,27 @@
     "message": "SDK Documentation"
   },
   "readym.readym-docs": {
-    "message": "ReadyM Docs"
+    "message": "ReadyM Dev Portal"
   },
   "readym.tagline": {
-    "message": "Develop multiplayer experiences in your favourite games"
+    "message": "Build multiplayer experiences in your favourite games."
   },
   "readym.feature1.title": {
-    "message": "Unified play - single account"
+    "message": "ReadyM SDK"
   },
   "readym.feature1.description": {
-    "message": "Access all ReadyM games with a single account, ensuring a seamless gaming experience."
+    "message": "We believe that server owners and their communities deserve better – better performance, better tools, and better experiences. Our goal is to empower you to create the gaming worlds you've always dreamed of, free from the technical limitations and frustrations that have held you back."
   },
   "readym.feature2.title": {
-    "message": "Gateway to the ReadyM world"
+    "message": "Made by modders, for modders"
   },
   "readym.feature2.description": {
-    "message": "Explore the vast universe of ReadyM games and connect with a global community of players."
+    "message": "Create complex, interacting mods using our C#-based scripting engine. This is the foundation of everything you'd want to build: roleplaying servers, survival modes, custom arenas, boss rush leagues, or PvP tournaments with custom rulesets."
   },
   "readym.feature3.title": {
-    "message": "Custom game modes"
+    "message": "Build it, run it, own it"
   },
   "readym.feature3.description": {
-    "message": "Create and enjoy unique game modes tailored to your preferences, enhancing your gaming experience."
+    "message": "Server binaries are the deployable package you run on your own hardware or with a hosting provider. Drop it on a machine, configure it, point players at it. Your server, your rules."
   }
 }
