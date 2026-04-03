@@ -2,15 +2,19 @@
 sidebar_position: 4
 ---
 
-# Custom RPC
+# 自定义 RPC
 
-One of the core WukongMP SDK functionalities is the support for arbitrary Remote Procedure Call (RPC) functions. These can have arbitrary payloads and support a number of [Relay Modes](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md).
+WukongMP SDK 的核心功能之一是支持任意远程过程调用 (RPC) 函数。这些函数可以携带任意有效负载，并支持多种
+[中继模式](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md)。
 
-RPC handlers allow you to define your own events that are sent to other players connected to the same server.
+RPC 处理程序允许你定义自己的事件，这些事件将发送给连接到同一服务器的其他玩家。
 
-## Declaring an RPC handler class
+## 声明一个 RPC 处理程序类
 
-In order to add custom RPC procedures to your mod, you must define a [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class that extends [RpcClassBase](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcClassBase).
+为了向你的模组添加自定义 RPC 过程，你必须定义一个
+[partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
+类，它继承自
+[RpcClassBase](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcClassBase)。
 
 ```csharp title="Minimal RPC class definition"
 public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
@@ -21,16 +25,19 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 
 :::important
 
-For any of the RPC handlers to be registered, the class **must** be added to the DI container in your mod's `Initialize` method.
-Consult the documentation for [ModBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase.md).
+要注册任何 RPC 处理程序，类 **必须**被添加到 DI 容器中，在你的模组的 `Initialize` 方法中。请查阅
+[ModBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase.md)
+的文档。
 
 :::
 
-## Defining RPC handlers
+## 定义 RPC 处理程序
 
-In order to add a new RPC handler to your mod, add a method decorated with the [RpcEvent](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.RpcEventAttribute) attribute.
+为了向你的模组添加一个新的 RPC 处理程序，请添加一个带有
+[RpcEvent](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.RpcEventAttribute)
+属性的方法。
 
-Method names must start with "On..." — corresponding "Send..." methods for sending the RPC will be generated automatically in the same class.
+方法名必须以“On...”开头——在同一个类中会自动为发送 RPC 生成相应的“Send...”方法。
 
 ```csharp title="Minimal RPC handler"
 public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
@@ -45,24 +52,28 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 }
 ```
 
-The attribute requires a parameter of type [RelayMode](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode), which indicates how the message will be propagated to players when it reaches the server.
+该属性需要一个类型为
+[RelayMode](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode)
+的参数，该参数指示消息到达服务器时将如何传播给玩家。
 
-Currently, the following modes are supported:
+当前支持以下模式：
 
-| Relay mode | Description |
-| ---------- | ----------- |
-| **AreaOfInterestOthers** | Message is sent to all other players on the same level |
-| **AreaOfInterestAll**  | Message is sent to all players on the same level, including the sender |
-| **GlobalOthers** | Message is sent to all other players on the server |
-| **GlobalAll** | Message is sent to all players on the server, including the sender |
+| 中继模式                     | 描述                       |
+| ------------------------ | ------------------------ |
+| **AreaOfInterestOthers** | 消息已发送给同一等级的所有其他玩家        |
+| **AreaOfInterestAll**    | 消息将发送给同一等级的所有玩家，包括发送者本人。 |
+| **GlobalOthers**         | 消息已发送给服务器上的所有其他玩家        |
+| **GlobalAll**            | 消息已发送给服务器上的所有玩家，包括发送者    |
 
-### Sending data
+### 正在发送数据
 
-RPC handlers support passing data in parameters that are either:
+RPC 处理程序支持在参数中传递数据，这些数据要么是：
 
-* primitive data types
-* structs, decorated with [[DeriveINetSerializable]](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute).
-* special parameters injected by the SDK
+* 原始数据类型
+* 被
+  [[DeriveINetSerializable]](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute)
+  装饰的结构体。
+* 由 SDK 注入的特殊参数
 
 ```csharp title="Passing primitive data"
 public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
@@ -97,10 +108,10 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 }
 ```
 
-### Special parameters
+### 特殊参数
 
 :::info
 
-This feature will be documented soon.
+此功能的文档将很快发布。
 
 :::

@@ -24,6 +24,6 @@ sidebar_position: 1
 | 修改游戏代码    | :white_check_mark: [已完成](/docs/wukongmp-docs/Development/patching)              |
 | 游戏事件      | :white_check_mark: [已完成](/docs/wukongmp-docs/Development/APIs/game-events)      |
 | 控制台命令 API | :white_check_mark: [已完成](/docs/wukongmp-docs/Development/APIs/console-commands) |
-| 自定义 RPC   | :white_check_mark: [已完成](/docs/wukongmp-docs/Development/custom-rpc)                   |
+| 自定义 RPC   | :white_check_mark: [已完成](/docs/wukongmp-docs/Development/custom-rpc)            |
 | 保存文件 API  | :construction: [部分](/docs/wukongmp-docs/Development/APIs/save-file-management)  |
 | 自定义数据同步   | :soon: [进行中](/docs/wukongmp-docs/Development/APIs/custom-components)            |
