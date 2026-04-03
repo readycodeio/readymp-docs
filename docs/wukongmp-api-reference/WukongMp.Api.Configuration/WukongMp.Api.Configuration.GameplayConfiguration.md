@@ -3,8 +3,10 @@
 Namespace: [WukongMp.Api.Configuration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.md)  
 Assembly: WukongMp.Api.dll  
 
+Configuration class for gameplay-related settings and queries.
+
 ```csharp
-[Obsolete("TODO: Make a more centralized configuration system.")]
+[Obsolete("Will be replaced with a configuration file in the future.")]
 public sealed class GameplayConfiguration
 ```
 
@@ -26,6 +28,8 @@ public sealed class GameplayConfiguration
 
 ### <a id="WukongMp_Api_Configuration_GameplayConfiguration__ctor_Microsoft_Extensions_Logging_ILogger_"></a> GameplayConfiguration\(ILogger\)
 
+Configuration class for gameplay-related settings and queries.
+
 ```csharp
 public GameplayConfiguration(ILogger logger)
 ```
@@ -36,27 +40,10 @@ public GameplayConfiguration(ILogger logger)
 
 ## Properties
 
-### <a id="WukongMp_Api_Configuration_GameplayConfiguration_DeleteDestroyedTamersFromEcs"></a> DeleteDestroyedTamersFromEcs
-
-```csharp
-public bool DeleteDestroyedTamersFromEcs { get; set; }
-```
-
-#### Property Value
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
-### <a id="WukongMp_Api_Configuration_GameplayConfiguration_DisableCutscenes"></a> DisableCutscenes
-
-```csharp
-public bool DisableCutscenes { get; set; }
-```
-
-#### Property Value
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
 ### <a id="WukongMp_Api_Configuration_GameplayConfiguration_EnableCustomCameraArmLength"></a> EnableCustomCameraArmLength
+
+When enabled, allows for a custom camera arm length to be set, which can affect how close or far the camera is from the character.
+This is <code>true</code> in PvP and <code>false</code> in co-op.
 
 ```csharp
 public bool EnableCustomCameraArmLength { get; set; }
@@ -68,6 +55,10 @@ public bool EnableCustomCameraArmLength { get; set; }
 
 ### <a id="WukongMp_Api_Configuration_GameplayConfiguration_IsStrongDamageImmueEnabled"></a> IsStrongDamageImmueEnabled
 
+Is immunity to strong damage enabled?
+This would prevent characters from being one-shot by powerful attacks, providing a more balanced gameplay experience.
+This is <code>true</code> in PvP and <code>false</code> in co-op.
+
 ```csharp
 public bool IsStrongDamageImmueEnabled { get; set; }
 ```
@@ -78,30 +69,11 @@ public bool IsStrongDamageImmueEnabled { get; set; }
 
 ### <a id="WukongMp_Api_Configuration_GameplayConfiguration_IsSupportMultiLockEnabled"></a> IsSupportMultiLockEnabled
 
+Can secondary lock targets (other than the character's body) be locked when using the camera lock-on feature?
+This is <code>true</code> in co-op and <code>false</code> in PvP.
+
 ```csharp
 public bool IsSupportMultiLockEnabled { get; set; }
-```
-
-#### Property Value
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
-### <a id="WukongMp_Api_Configuration_GameplayConfiguration_OverrideLocalPlayerTeamFromGlobalEntity"></a> OverrideLocalPlayerTeamFromGlobalEntity
-
-```csharp
-[Obsolete("To be replaced by data sync direction after refactoring")]
-public bool OverrideLocalPlayerTeamFromGlobalEntity { get; set; }
-```
-
-#### Property Value
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
-### <a id="WukongMp_Api_Configuration_GameplayConfiguration_SyncTamerTeamFromGameToEcs"></a> SyncTamerTeamFromGameToEcs
-
-```csharp
-[Obsolete("To be replaced by data sync direction after refactoring")]
-public bool SyncTamerTeamFromGameToEcs { get; set; }
 ```
 
 #### Property Value

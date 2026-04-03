@@ -3,6 +3,9 @@
 Namespace: [WukongMp.Api.Configuration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.md)  
 Assembly: WukongMp.Api.dll  
 
+Category for Harmony patches.
+Each patch must be assigned to a category.
+
 ```csharp
 public static class PatchCategory
 ```
@@ -26,6 +29,10 @@ public static class PatchCategory
 
 ### <a id="WukongMp_Api_Configuration_PatchCategory_Connected"></a> Connected
 
+Patches in this category are only enabled when the player is connected to the server.
+NOTE: In the current version of the SDK, this category is the same as **Global**.
+In the future, we will add support for enabling/disabling these patches based on the connection state of the player.
+
 ```csharp
 public const string Connected = "Connected"
 ```
@@ -36,6 +43,8 @@ public const string Connected = "Connected"
 
 ### <a id="WukongMp_Api_Configuration_PatchCategory_Disabled"></a> Disabled
 
+Patches in this category are not enabled.
+
 ```csharp
 public const string Disabled = "Disabled"
 ```
@@ -45,6 +54,8 @@ public const string Disabled = "Disabled"
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Api_Configuration_PatchCategory_Global"></a> Global
+
+Patches in this category are enabled at all times.
 
 ```csharp
 public const string Global = "Global"

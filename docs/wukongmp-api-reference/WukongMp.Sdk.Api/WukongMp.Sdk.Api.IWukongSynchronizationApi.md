@@ -37,7 +37,7 @@ IReadOnlyList<PlayerId> AreaPlayers { get; }
 
 #### Property Value
 
- [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/eeac82fd51ece0f45a955fd0c86037eb3c992eb8/src/ReadyM.Api/Idents/PlayerId.cs)\>
+ [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/PlayerId.cs)\>
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_CurrentAreaId"></a> CurrentAreaId
 
@@ -47,7 +47,7 @@ AreaId? CurrentAreaId { get; }
 
 #### Property Value
 
- [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/eeac82fd51ece0f45a955fd0c86037eb3c992eb8/src/ReadyM.Api/Idents/AreaId.cs)?
+ [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/AreaId.cs)?
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_InRoom"></a> InRoom
 
@@ -97,7 +97,7 @@ PlayerId? LocalPlayerId { get; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/eeac82fd51ece0f45a955fd0c86037eb3c992eb8/src/ReadyM.Api/Idents/PlayerId.cs)?
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/PlayerId.cs)?
 
 ## Methods
 
@@ -133,7 +133,7 @@ void SpawnEnemy(TamerKind kind, Vector3 position)
 
 #### Parameters
 
-`kind` [TamerKind](https://github.com/readycodeio/wukong\-csharp\-mod/blob/e2a60a8b99c56e51f4fe868bb6dd9952e09770fd/WukongMp.Api/Configuration/TamerKind.cs)
+`kind` [TamerKind](https://github.com/readycodeio/wukong\-csharp\-mod/blob/0a9ad36dcf06d0f90e8b717d992c9965851265c6/WukongMp.Api/Configuration/TamerKind.cs)
 
 `position` [Vector3](https://learn.microsoft.com/dotnet/api/system.numerics.vector3)
 
@@ -151,7 +151,7 @@ bool TryGetPlayerInfoById(PlayerId player, out string? nickname, out int? team)
 
 #### Parameters
 
-`player` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/eeac82fd51ece0f45a955fd0c86037eb3c992eb8/src/ReadyM.Api/Idents/PlayerId.cs)
+`player` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/PlayerId.cs)
 
 `nickname` [string](https://learn.microsoft.com/dotnet/api/system.string)?
 

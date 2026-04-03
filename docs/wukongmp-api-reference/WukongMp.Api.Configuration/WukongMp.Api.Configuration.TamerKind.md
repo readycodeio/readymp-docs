@@ -3,6 +3,8 @@
 Namespace: [WukongMp.Api.Configuration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.md)  
 Assembly: WukongMp.Api.dll  
 
+Represents the type of a Tamer (monster).
+
 ```csharp
 public readonly struct TamerKind : IEquatable<TamerKind>
 ```

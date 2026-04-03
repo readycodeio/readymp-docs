@@ -3,8 +3,11 @@
 Namespace: [ReadyM.Api.Idents](../ReadyM.Api.Idents/ReadyM.Api.Idents.md)  
 Assembly: ReadyM.Api.dll  
 
+A unique identifier for a player in the current session.
+This is not a persistent identifier and can change over time, especially if players disconnect and reconnect.
+It should be used for identifying players during the current session, but not for long-term storage or cross-session identification.
+
 ```csharp
-[DeriveJsonSerializable(SerializableMode.Default)]
 public struct PlayerId : INetSerializable, IEquatable<PlayerId>
 ```
 
@@ -22,21 +25,11 @@ public struct PlayerId : INetSerializable, IEquatable<PlayerId>
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
 
-## Constructors
-
-### <a id="ReadyM_Api_Idents_PlayerId__ctor_System_UInt16_"></a> PlayerId\(ushort\)
-
-```csharp
-public PlayerId(ushort id)
-```
-
-#### Parameters
-
-`id` [ushort](https://learn.microsoft.com/dotnet/api/system.uint16)
-
 ## Properties
 
 ### <a id="ReadyM_Api_Idents_PlayerId_Invalid"></a> Invalid
+
+An invalid PlayerId, which can be used to represent the absence of a player or an uninitialized state.
 
 ```csharp
 public static PlayerId Invalid { get; }
@@ -46,30 +39,10 @@ public static PlayerId Invalid { get; }
 
  [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
 
-### <a id="ReadyM_Api_Idents_PlayerId_Max"></a> Max
-
-```csharp
-public static PlayerId Max { get; }
-```
-
-#### Property Value
-
- [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
-
-### <a id="ReadyM_Api_Idents_PlayerId_RawValue"></a> RawValue
-
-Numeric identifier for a player. This can change over time, so it should not be used as a persistent identifier.
-Rely on the **PlayerId** as a unique identifier for the current session.
-
-```csharp
-public ushort RawValue { get; }
-```
-
-#### Property Value
-
- [ushort](https://learn.microsoft.com/dotnet/api/system.uint16)
-
 ### <a id="ReadyM_Api_Idents_PlayerId_Server"></a> Server
+
+The PlayerId representing the server itself.
+This can be used to identify actions or messages that originate from the server rather than any specific player.
 
 ```csharp
 public static PlayerId Server { get; }
@@ -138,36 +111,6 @@ public void Serialize(NetDataWriter writer)
 #### Parameters
 
 `writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
-
-### <a id="ReadyM_Api_Idents_PlayerId_TextDeserialize_System_Text_Json_Utf8JsonReader__System_Text_Json_JsonSerializerOptions_"></a> TextDeserialize\(ref Utf8JsonReader, JsonSerializerOptions\)
-
-```csharp
-public static PlayerId TextDeserialize(ref Utf8JsonReader reader, JsonSerializerOptions options)
-```
-
-#### Parameters
-
-`reader` [Utf8JsonReader](https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader)
-
-`options` [JsonSerializerOptions](https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions)
-
-#### Returns
-
- [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
-
-### <a id="ReadyM_Api_Idents_PlayerId_TextSerialize_System_Text_Json_Utf8JsonWriter_ReadyM_Api_Idents_PlayerId_System_Text_Json_JsonSerializerOptions_"></a> TextSerialize\(Utf8JsonWriter, PlayerId, JsonSerializerOptions\)
-
-```csharp
-public static void TextSerialize(Utf8JsonWriter writer, PlayerId obj, JsonSerializerOptions options)
-```
-
-#### Parameters
-
-`writer` [Utf8JsonWriter](https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter)
-
-`obj` [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
-
-`options` [JsonSerializerOptions](https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions)
 
 ### <a id="ReadyM_Api_Idents_PlayerId_ToString"></a> ToString\(\)
 

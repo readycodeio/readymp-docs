@@ -3,6 +3,8 @@
 Namespace: [WukongMp.Api.Configuration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.md)  
 Assembly: WukongMp.Api.dll  
 
+Defines constants for Tamer (monster) types.
+
 ```csharp
 public static class TamerConstants
 ```
@@ -64,16 +66,6 @@ public static readonly TamerKind Bandit
 
  [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
-### <a id="WukongMp_Api_Configuration_TamerConstants_BawLangLang"></a> BawLangLang
-
-```csharp
-public static readonly TamerKind BawLangLang
-```
-
-#### Field Value
-
- [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
-
 ### <a id="WukongMp_Api_Configuration_TamerConstants_BlackBear"></a> BlackBear
 
 ```csharp
@@ -108,36 +100,6 @@ public static readonly TamerKind BlackWind
 
 ```csharp
 public static readonly TamerKind BladeMonk
-```
-
-#### Field Value
-
- [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
-
-### <a id="WukongMp_Api_Configuration_TamerConstants_BlazeBone"></a> BlazeBone
-
-```csharp
-public static readonly TamerKind BlazeBone
-```
-
-#### Field Value
-
- [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
-
-### <a id="WukongMp_Api_Configuration_TamerConstants_BossB"></a> BossB
-
-```csharp
-public static readonly TamerKind BossB
-```
-
-#### Field Value
-
- [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
-
-### <a id="WukongMp_Api_Configuration_TamerConstants_BossC"></a> BossC
-
-```csharp
-public static readonly TamerKind BossC
 ```
 
 #### Field Value
@@ -304,26 +266,6 @@ public static readonly TamerKind GoreEye
 
  [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
-### <a id="WukongMp_Api_Configuration_TamerConstants_JackalSoldier"></a> JackalSoldier
-
-```csharp
-public static readonly TamerKind JackalSoldier
-```
-
-#### Field Value
-
- [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
-
-### <a id="WukongMp_Api_Configuration_TamerConstants_JiaoLoong"></a> JiaoLoong
-
-```csharp
-public static readonly TamerKind JiaoLoong
-```
-
-#### Field Value
-
- [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
-
 ### <a id="WukongMp_Api_Configuration_TamerConstants_KangLoong"></a> KangLoong
 
 ```csharp
@@ -344,26 +286,6 @@ public static readonly TamerKind KangStar
 
  [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
 
-### <a id="WukongMp_Api_Configuration_TamerConstants_LotusVision"></a> LotusVision
-
-```csharp
-public static readonly TamerKind LotusVision
-```
-
-#### Field Value
-
- [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
-
-### <a id="WukongMp_Api_Configuration_TamerConstants_MacaqueChief"></a> MacaqueChief
-
-```csharp
-public static readonly TamerKind MacaqueChief
-```
-
-#### Field Value
-
- [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
-
 ### <a id="WukongMp_Api_Configuration_TamerConstants_MadTiger"></a> MadTiger
 
 ```csharp
@@ -378,16 +300,6 @@ public static readonly TamerKind MadTiger
 
 ```csharp
 public static readonly TamerKind Mantis
-```
-
-#### Field Value
-
- [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
-
-### <a id="WukongMp_Api_Configuration_TamerConstants_Martialist"></a> Martialist
-
-```csharp
-public static readonly TamerKind Martialist
 ```
 
 #### Field Value
@@ -478,26 +390,6 @@ public static readonly TamerKind RedLoong
 
 ```csharp
 public static readonly TamerKind SnakePatroller
-```
-
-#### Field Value
-
- [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
-
-### <a id="WukongMp_Api_Configuration_TamerConstants_Spider"></a> Spider
-
-```csharp
-public static readonly TamerKind Spider
-```
-
-#### Field Value
-
- [TamerKind](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKind.md)
-
-### <a id="WukongMp_Api_Configuration_TamerConstants_Spider2"></a> Spider2
-
-```csharp
-public static readonly TamerKind Spider2
 ```
 
 #### Field Value

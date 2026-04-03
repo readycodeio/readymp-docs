@@ -3,6 +3,9 @@
 Namespace: [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
+Marks a method as an RPC event handler.
+Use this in partial classes extending from **RpcClassBase**.
+
 ```csharp
 [AttributeUsage(AttributeTargets.Method)]
 public sealed class RpcEventAttribute : Attribute
@@ -64,6 +67,9 @@ public sealed class RpcEventAttribute : Attribute
 
 ### <a id="ReadyM_Api_Multiplayer_Generators_RpcEventAttribute__ctor_ReadyM_Api_Multiplayer_Protocol_Enums_RelayMode_"></a> RpcEventAttribute\(RelayMode\)
 
+Marks a method as an RPC event handler.
+Use this in partial classes extending from **RpcClassBase**.
+
 ```csharp
 public RpcEventAttribute(RelayMode relayMode)
 ```
@@ -71,5 +77,7 @@ public RpcEventAttribute(RelayMode relayMode)
 #### Parameters
 
 `relayMode` [RelayMode](../ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md)
+
+Determines how the event is relayed to other clients.
 
 

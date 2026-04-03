@@ -3,6 +3,8 @@
 Namespace: [WukongMp.Api](../WukongMp.Api/WukongMp.Api.md)  
 Assembly: WukongMp.Api.dll  
 
+Extension methods for Unreal Engine types and other helper methods.
+
 ```csharp
 public static class USharpExtensions
 ```

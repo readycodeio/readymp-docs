@@ -26,6 +26,8 @@ public static class EcsExtensions
 
 ### <a id="WukongMp_Api_EcsExtensions_GetComponent__1_b1_BGUActorBaseCS_"></a> GetComponent<T\>\(BGUActorBaseCS\)
 
+Get a **game ECS** component of type <code class="typeparamref">T</code> from the given actor.
+
 ```csharp
 public static T? GetComponent<T>(this BGUActorBaseCS actor) where T : UActorCompBaseCS
 ```
@@ -34,12 +36,18 @@ public static T? GetComponent<T>(this BGUActorBaseCS actor) where T : UActorComp
 
 `actor` BGUActorBaseCS
 
+The actor to get the component from.
+
 #### Returns
 
  T?
 
+The component of type <code class="typeparamref">T</code> if found; otherwise, <code>null</code>.
+
 #### Type Parameters
 
 `T` 
+
+The type of the component to get. Must be a subclass of **UActorCompBaseCS**.
 
 

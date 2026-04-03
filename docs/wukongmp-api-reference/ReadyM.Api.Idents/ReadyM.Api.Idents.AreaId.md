@@ -8,7 +8,6 @@ Areas can be main Chapter maps, sub-areas such as the Zodiac Village, or hidden 
 If going somewhere requires a loading screen, it's probably a different area.
 
 ```csharp
-[DeriveJsonSerializable(SerializableMode.Default)]
 public struct AreaId : INetSerializable, IEquatable<AreaId>
 ```
 
@@ -125,36 +124,6 @@ public void Serialize(NetDataWriter writer)
 #### Parameters
 
 `writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
-
-### <a id="ReadyM_Api_Idents_AreaId_TextDeserialize_System_Text_Json_Utf8JsonReader__System_Text_Json_JsonSerializerOptions_"></a> TextDeserialize\(ref Utf8JsonReader, JsonSerializerOptions\)
-
-```csharp
-public static AreaId TextDeserialize(ref Utf8JsonReader reader, JsonSerializerOptions options)
-```
-
-#### Parameters
-
-`reader` [Utf8JsonReader](https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader)
-
-`options` [JsonSerializerOptions](https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions)
-
-#### Returns
-
- [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
-
-### <a id="ReadyM_Api_Idents_AreaId_TextSerialize_System_Text_Json_Utf8JsonWriter_ReadyM_Api_Idents_AreaId_System_Text_Json_JsonSerializerOptions_"></a> TextSerialize\(Utf8JsonWriter, AreaId, JsonSerializerOptions\)
-
-```csharp
-public static void TextSerialize(Utf8JsonWriter writer, AreaId obj, JsonSerializerOptions options)
-```
-
-#### Parameters
-
-`writer` [Utf8JsonWriter](https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter)
-
-`obj` [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
-
-`options` [JsonSerializerOptions](https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions)
 
 ### <a id="ReadyM_Api_Idents_AreaId_ToString"></a> ToString\(\)
 

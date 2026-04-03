@@ -21,6 +21,6 @@ Visit the [examples](/docs/category/mod-examples) page for some inspiration.
 | Patching game code | :white_check_mark: [done](/docs/wukongmp-docs/Development/patching) |
 | Game event API | :white_check_mark: [done](/docs/wukongmp-docs/Development/APIs/game-events) |
 | Console command API | :white_check_mark: [done](/docs/wukongmp-docs/Development/APIs/console-commands) |
+| Custom RPC | :white_check_mark: [done](/docs/wukongmp-docs/Development/custom-rpc) |
 | Save file API | :construction: [partial](/docs/wukongmp-docs/Development/APIs/save-file-management) |
-| Custom RPC | :soon: [in progress](/docs/wukongmp-docs/Development/APIs/custom-rpc) |
 | Custom data sync | :soon: [in progress](/docs/wukongmp-docs/Development/APIs/custom-components) |

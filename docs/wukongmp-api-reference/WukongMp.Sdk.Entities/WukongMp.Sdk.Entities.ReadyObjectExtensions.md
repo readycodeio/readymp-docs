@@ -54,7 +54,7 @@ public static AreaId? get_AreaId<TSelf>(TSelf obj) where TSelf : struct, IReadyE
 
 #### Returns
 
- [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/eeac82fd51ece0f45a955fd0c86037eb3c992eb8/src/ReadyM.Api/Idents/AreaId.cs)?
+ [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/AreaId.cs)?
 
 #### Type Parameters
 
@@ -92,7 +92,7 @@ public static PlayerId get_Owner<TSelf>(TSelf obj) where TSelf : struct, IReadyE
 
 #### Returns
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/eeac82fd51ece0f45a955fd0c86037eb3c992eb8/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/PlayerId.cs)
 
 #### Type Parameters
 

@@ -10,6 +10,9 @@
 
  [ModBase](../WukongMp.Sdk/WukongMp.Sdk.ModBase.md)
 
+Base class for WukongMP SDK mods.
+Each mod should have exactly one class extending from this, which will be instantiated by the mod loader.
+
  [ModSystemBase](../WukongMp.Sdk/WukongMp.Sdk.ModSystemBase.md)
 
 ### Structs
@@ -21,5 +24,11 @@
 ### Interfaces
 
  [IReadyEntity<TSelf\>](../WukongMp.Sdk/WukongMp.Sdk.IReadyEntity-1.md)
+
+### Enums
+
+ [SaveFileType](../WukongMp.Sdk/WukongMp.Sdk.SaveFileType.md)
+
+Indicates the type of a save file.
 
 

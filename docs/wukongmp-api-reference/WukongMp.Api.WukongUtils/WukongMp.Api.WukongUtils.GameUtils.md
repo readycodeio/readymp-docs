@@ -3,6 +3,8 @@
 Namespace: [WukongMp.Api.WukongUtils](../WukongMp.Api.WukongUtils/WukongMp.Api.WukongUtils.md)  
 Assembly: WukongMp.Api.dll  
 
+Provides utility methods for directly interacting with the game world, bypassing the SDK.
+
 ```csharp
 public static class GameUtils
 ```
@@ -21,6 +23,10 @@ public static class GameUtils
 [object.Equals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\-system\-object\)), 
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
+
+## Remarks
+
+These methods are not guaranteed to be stable across game updates, and might be removed in the future.
 
 ## Methods
 

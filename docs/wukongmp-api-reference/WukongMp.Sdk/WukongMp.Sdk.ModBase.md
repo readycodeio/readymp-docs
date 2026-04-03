@@ -3,6 +3,9 @@
 Namespace: [WukongMp.Sdk](../WukongMp.Sdk/WukongMp.Sdk.md)  
 Assembly: WukongMp.Sdk.dll  
 
+Base class for WukongMP SDK mods.
+Each mod should have exactly one class extending from this, which will be instantiated by the mod loader.
+
 ```csharp
 public abstract class ModBase : ICSharpModExV2, ICSharpModEx, ICSharpMod
 ```
@@ -40,6 +43,9 @@ protected ModBase()
 
 ### <a id="WukongMp_Sdk_ModBase_IsDebug"></a> IsDebug
 
+Indicates whether the mod is running in a debug build.
+Can be used to enable debug-only features or logging.
+
 ```csharp
 public bool IsDebug { get; }
 ```
@@ -60,6 +66,9 @@ protected ILogger Logger { get; }
 
 ### <a id="WukongMp_Sdk_ModBase_Name"></a> Name
 
+Mod name.
+This should be unique across all mods, as it's used for logging and patching.
+
 ```csharp
 public abstract string Name { get; }
 ```
@@ -69,6 +78,10 @@ public abstract string Name { get; }
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Sdk_ModBase_Version"></a> Version
+
+Mod version.
+This is for informational purposes and does not have to be unique.
+In future versions of the SDK, this might be used for compatibility checks or update notifications.
 
 ```csharp
 public abstract string Version { get; }
@@ -82,11 +95,16 @@ public abstract string Version { get; }
 
 ### <a id="WukongMp_Sdk_ModBase_DeInit"></a> DeInit\(\)
 
+Called by the mod loader on game closing.
+
 ```csharp
 public virtual void DeInit()
 ```
 
 ### <a id="WukongMp_Sdk_ModBase_GetReloadContext"></a> GetReloadContext\(\)
+
+Called by the mod loader.
+Used in hot reload.
 
 ```csharp
 public virtual object? GetReloadContext()
@@ -97,6 +115,8 @@ public virtual object? GetReloadContext()
  [object](https://learn.microsoft.com/dotnet/api/system.object)?
 
 ### <a id="WukongMp_Sdk_ModBase_Init"></a> Init\(\)
+
+Called by the mod loader on game start.
 
 ```csharp
 public void Init()
@@ -110,15 +130,20 @@ protected abstract void Initialize(IDependencyContainer services)
 
 #### Parameters
 
-`services` [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/eeac82fd51ece0f45a955fd0c86037eb3c992eb8/src/ReadyM.Api/DI/IDependencyContainer.cs)
+`services` [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_ModBase_LateInit"></a> LateInit\(\)
+
+Called by the mod loader after all <code>Init</code> calls.
 
 ```csharp
 public virtual void LateInit()
 ```
 
 ### <a id="WukongMp_Sdk_ModBase_Reload_System_Object_"></a> Reload\(object?\)
+
+Called by the mod loader.
+Used in hot reload.
 
 ```csharp
 public virtual void Reload(object? context)
@@ -129,6 +154,8 @@ public virtual void Reload(object? context)
 `context` [object](https://learn.microsoft.com/dotnet/api/system.object)?
 
 ### <a id="WukongMp_Sdk_ModBase_SetLoggerFactory_Microsoft_Extensions_Logging_ILoggerFactory_"></a> SetLoggerFactory\(ILoggerFactory\)
+
+Called by the mod loader.
 
 ```csharp
 public void SetLoggerFactory(ILoggerFactory loggerFactory)
