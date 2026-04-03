@@ -28,7 +28,7 @@ public class MySystem : ModSystemBase
 {
     protected override void OnUpdate(UpdateTick tick)
     {
-        // do something every frame
+        // 每帧执行的操作
     }
 }
 ```

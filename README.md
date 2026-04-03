@@ -8,6 +8,37 @@ The source for the documentation is located in the `docs/` folder. The `i18n` fo
 
 There are a few things to watch out for when writing docs so that they play well with Weblate:
 
+### Code is not translated
+
+Code blocks and their metadata is not detected by Weblate, so if you write something like this:
+
+```text
+```csharp title="Minimal system example"
+public class MySystem : ModSystemBase
+{
+    protected override void OnUpdate(UpdateTick tick)
+    {
+        // do something every frame
+    }
+}
+\```
+```
+
+You must manually translate it in the files copied to other locales:
+
+```text
+```csharp title="最简系统示例"
+public class MySystem : ModSystemBase
+{
+    protected override void OnUpdate(UpdateTick tick)
+    {
+        // 每帧执行的操作
+    }
+}
+\```
+```
+
+
 ### Admonitions
 
 Separate admonition tags from content with a newline, like so:
