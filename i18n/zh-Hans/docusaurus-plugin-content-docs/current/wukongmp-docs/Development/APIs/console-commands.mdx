@@ -24,7 +24,7 @@ API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongConso
 ### 注册没有参数的命令
 
 <Tabs>
-<TabItem value="code" label="Source code">
+<TabItem value="code" label="源代码">
 
 ```csharp
 void RebirthAtShrine() { ... }
@@ -35,7 +35,7 @@ void RebirthAtShrine() { ... }
 ```
 
 </TabItem>
-<TabItem value="console" label="In-game console">
+<TabItem value="console" label="控制台">
 
 
 ```shell
@@ -51,7 +51,7 @@ rebirth_shrine
 `bool`。参数可以是可选的，在这种情况下需要提供默认值。
 
 <Tabs>
-<TabItem value="code" label="Source code">
+<TabItem value="code" label="源代码">
 
 ```csharp
 void TeleportToShrine(int shrine = 1001) { ... }
@@ -62,7 +62,7 @@ void TeleportToShrine(int shrine = 1001) { ... }
 ```
 
 </TabItem>
-<TabItem value="console" label="In-game console">
+<TabItem value="console" label="控制台">
 
 ```shell
 teleport_shrine             # teleports to shrine 1001
@@ -77,7 +77,7 @@ teleport_shrine 2005        # teleports to shrine 2005
 您可以定义在输入命令时将显示的一组参数值。这些值可以用箭头键进行选择，并可通过 <kbd>TAB</kbd> 自动完成。
 
 <Tabs>
-<TabItem value="code" label="Source code">
+<TabItem value="code" label="源代码">
 
 ```csharp
 IEnumerable<string> GetAllValidUnitNames() => ["wolf_soldier", "wolf_sentinel", "gold_rhino"];
@@ -90,7 +90,7 @@ void SpawnMonster(string monsterType) { ... }
 ```
 
 </TabItem>
-<TabItem value="console" label="In-game console">
+<TabItem value="console" label="控制台">
 
 在完成命令名称后，系统将立即显示可用的参数值：
 

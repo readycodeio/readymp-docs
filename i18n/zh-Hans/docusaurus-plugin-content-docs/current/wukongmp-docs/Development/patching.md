@@ -7,8 +7,7 @@ sidebar_position: 2
 WukongMP SDK 构建在对 [Harmony](https://github.com/pardeike/Harmony) 库的自定义分支之上。虽然它支持
 Harmony 的大部分 API，但在补丁的发现和启用方式上存在一些差异。
 
-通常，在为你的 WukongMP 模组定义补丁时，请参考 [official Harmony
-documentation](https://harmony.pardeike.net/articles/intro.html)。
+通常，在为你的 WukongMP 模组定义补丁时，请参考 [Harmony 官方文档](https://harmony.pardeike.net/articles/intro.html)。
 
 以下是确保补丁正确工作所需满足的一些要求。
 
@@ -20,7 +19,7 @@ documentation](https://harmony.pardeike.net/articles/intro.html)。
 [PatchCategory](/docs/wukongmp-api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.PatchCategory)
 中定义的常量之一，如下所示：
 
-```csharp title="Example patch"
+```csharp title="补丁示例"
 [HarmonyPatch(typeof(BPS_PlayerTeleportSystem), "OnPlayerTeleportTo")]
 [HarmonyPatchCategory(PatchCategory.Global)]
 public static class PatchOnPlayerTeleportTo { ... }
@@ -39,7 +38,7 @@ public static class PatchOnPlayerTeleportTo { ... }
 [HarmonyTargetMethodHint](/docs/wukongmp-api-reference/PreludeLib.Attributes/PreludeLib.Attributes.HarmonyTargetMethodHint)
 属性。第一个参数是完整限定类名，第二个参数是被补丁的成员名称。
 
-```csharp title="Example: patching an internal class"
+```csharp title="示例：针对内部类打补丁"
 [HarmonyPatch]
 [HarmonyPatchCategory(PatchCategory.Connected)]
 internal static class PatchComplexSkillDoInteractAction
@@ -57,10 +56,9 @@ internal static class PatchComplexSkillDoInteractAction
 [TargetMethod](https://harmony.pardeike.net/articles/patching-auxiliary.html#targetmethod)
 的用例是通用类（泛型类）。在这种情况下，您还必须使用
 [HarmonyTargetMethodHint](/docs/wukongmp-api-reference/PreludeLib.Attributes/PreludeLib.Attributes.HarmonyTargetMethodHint)
-进行装饰，提供专门化的类类型和成员名称。\
-==WEBLATE_PART==
+进行装饰，提供专门化的类类型和成员名称。
 
-```csharp title="Example: Patching a generic class"
+```csharp title="示例：针对泛型类打补丁"
 [HarmonyPatch]
 [HarmonyPatchCategory(PatchCategory.Global)]
 public class PatchShrineRegisterFunc

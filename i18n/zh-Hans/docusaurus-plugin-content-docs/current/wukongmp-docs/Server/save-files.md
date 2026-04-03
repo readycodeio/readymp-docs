@@ -9,7 +9,7 @@ API](/docs/wukongmp-docs/Development/APIs/save-file-management) 将玩家的存�
 
 存档文件存放在服务器上的 `saves/` 目录中。
 
-```text title="Example save folder layout"
+```text title="存档文件夹结构示例"
 saves
 ├── world.sav
 └── players/

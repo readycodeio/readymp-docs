@@ -17,11 +17,11 @@ Launcher](https://portal.ready.mp/pl/dashboard/launcher) 将下载并安装缺�
 
 模组的预期结构如下：
 
-```text title="Example mod archive layout"
+```text title="模组目录结构示例"
 mod_name.zip
-└── ModName             # Root directory of the mod, can be named arbitrarily
-    ├── ModName.dll     # Main assembly of the mod, must have the same name as the root directory
-    └── other_files...  # Other files required by the mod (optional)
+└── ModName             # 模组根目录，可随意命名
+    ├── ModName.dll     # 模组主程序集，必须与根目录同名
+    └── other_files...  # 模组所需的其他文件 (可选)
 ```
 
 连接到服务器时，客户端将自动从 `mods/` 目录下载并安装任何缺失的模组，确保无缝的多人游戏体验。

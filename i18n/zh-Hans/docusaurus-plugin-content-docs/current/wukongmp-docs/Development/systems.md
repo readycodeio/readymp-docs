@@ -23,7 +23,7 @@ sidebar_position: 3
 
 以下是一个最小系统声明的示例：
 
-```csharp title="Minimal system example"
+```csharp title="最简系统示例"
 public class MySystem : ModSystemBase
 {
     protected override void OnUpdate(UpdateTick tick)
@@ -35,7 +35,7 @@ public class MySystem : ModSystemBase
 
 您可以通过从依赖注入容器中解析它来获取系统实例的引用：
 
-```csharp title="Resolving systems from DI"
+```csharp title="通过依赖注入解析系统"
 public class MyMod : ModBase
 {
     protected override void Initialize(IDependencyContainer services)
