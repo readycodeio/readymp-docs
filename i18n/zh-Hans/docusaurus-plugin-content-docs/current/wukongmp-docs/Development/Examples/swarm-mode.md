@@ -23,30 +23,79 @@ public class Mod : ModBase
 
 `Initialize` 方法是配置模组的地方。在这个模组中，我们要做几件事：
 
-1. 从依赖注入容器解析 `SpawnEnemySwarmSystem`——模组中定义的每个系统都会在那里被注入。
-2. 注册一个控制台命令 `swarm_mode`，用于开启我们自定义的游戏模式。
-3. 订阅 `OnPlayerDead` 事件，在最后一个玩家死亡时将其关闭。
+1. 在依赖注入容器中注册我们的 RPC 处理程序类，以实现 RPC 的发送与接收。
+1. 从依赖注入容器中解析 `SpawnEnemySwarmSystem`——你模组中定义的每个系统都会在那里被注入。
+1. 注册一个控制台命令 `swarm_mode`，用于开启我们的自定义游戏模式，并通知其他玩家。
+1. 订阅 `OnPlayerDead` 事件，在最后一个玩家死亡时将其禁用，并在有人死亡时发送事件。
 
 ```csharp title="Mod.cs" showLineNumbers  
     protected override void Initialize(IDependencyContainer services)
     {
+        services.RegisterSingleton<Rpc>();
+
+        var rpc = services.Resolve<Rpc>();
         var spawnSystem = services.Resolve<SpawnEnemySwarmSystem>();
 
         WukongApi.Console.AddCommand("swarm_mode", ConsoleCommand.Create(() =>
         {
             spawnSystem.Enable();
+            rpc.SendSwarmStarted();
         }));
 
-        // if all players are dead, reset the swarm mode
         WukongApi.Events.OnPlayerDead += (victim, attacker) =>
         {
             var alivePlayers = WukongApi.Sync.AllMainCharacters.Count(x => !x.IsDead);
-
             if (alivePlayers > 0)
-                WukongApi.Local.AddChatMessage($"Remaining players: {alivePlayers}", FLinearColor.Yellow);
+            {
+                rpc.SendRemainingPlayers(alivePlayers);
+            }
             else
+            {
+                rpc.SendSwarmEnded(spawnSystem.SpawnedEnemies);
                 spawnSystem.Disable();
+            }
         };
+    }
+}
+```
+
+## 自定义 RPC
+
+我们的模组使用一些自定义的远程过程调用来向其他玩家通知战斗的状态。
+
+这些调用都会显示用户界面元素——信息横幅或对接收玩家可见的聊天消息。
+
+我们使用 `AreaOfInterestAll` [Relay
+mode](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode)，以在同一关卡的所有客户端接收该消息，包含发送者。这样每个人看到的消息相同。
+
+请参阅 [RPC 文档](/docs/wukongmp-docs/Development/custom-rpc)，以了解在 RPC 类中你还能做些什么。
+
+```csharp title="Custom RPC class"
+public partial class Rpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+{
+    [RpcEvent(RelayMode.AreaOfInterestAll)]
+    private void OnSwarmStarted(PlayerId __sender)
+    {
+        if (!WukongApi.Sync.TryGetPlayerInfoById(__sender, out var playerName, out _))
+        {
+            Logging.LogError("Failed to get player info for sender {Sender}", __sender);
+        }
+
+        WukongApi.Local.ShowInfoMessage("Get ready!", 3);
+        WukongApi.Local.AddChatMessage($"Swarm mode enabled by {playerName}!", FLinearColor.NavajoWhite);
+        WukongApi.Local.AddChatMessage("Enemies will spawn around you every 10 seconds, with increasing numbers. Survive as long as you can!", FLinearColor.NavajoWhite);
+    }
+
+    [RpcEvent(RelayMode.AreaOfInterestAll)]
+    private void OnSwarmEnded(int enemiesSpawned)
+    {
+        WukongApi.Local.AddChatMessage($"Swarm mode ended, survived {enemiesSpawned} enemies", FLinearColor.OrangeRed);
+    }
+
+    [RpcEvent(RelayMode.AreaOfInterestAll)]
+    private void OnRemainingPlayers(int remaining)
+    {
+        WukongApi.Local.AddChatMessage($"Remaining players: {remaining}", FLinearColor.Yellow);
     }
 }
 ```
@@ -74,7 +123,6 @@ public sealed class SpawnEnemySwarmSystem : ModSystemBase
 接下来是启用和禁用系统的方法。我们使用 [Local
 API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi)
 来显示消息横幅并向聊天窗口添加消息。
-
 
 ```csharp showLineNumbers=13 title="SpawnEnemySwarmSystem.cs"
     public void Enable()
