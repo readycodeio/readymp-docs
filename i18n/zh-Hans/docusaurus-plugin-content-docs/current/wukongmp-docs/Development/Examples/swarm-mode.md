@@ -70,7 +70,7 @@ mode](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.
 
 请参阅 [RPC 文档](/docs/wukongmp-docs/Development/custom-rpc)，以了解在 RPC 类中你还能做些什么。
 
-```csharp title="Custom RPC class"
+```csharp title="自定义 RPC 类"
 public partial class Rpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
 {
     [RpcEvent(RelayMode.AreaOfInterestAll)]
