@@ -38,6 +38,9 @@ public class MySystem : ModSystemBase
 ```
 ~~~
 
+> [!WARNING]
+> Weblate will aggressively try to override the translation with the English version. This is because code blocks, including `title` metadata, are copied verbatim and I haven't found a way to fix that as of yet. When merging from the `weblate` branch to `develop`, make sure not to reverse your manual translations.
+
 ### Admonitions
 
 Separate admonition tags from content with a newline, like so:
