@@ -30,13 +30,15 @@ WukongMP 服务器当前以以下格式分发：
 
 ```text
 server/
-├── server.exe                 # Main server binary
-├── config.json                # Configuration file
-├── e_sqlite3.dll              # Dependency
-├── aspnetcorev2_inprocess.dll # Dependency
-├── mods/                      # Directory for mods (empty by default)
-├── saves/                     # Directory for game saves (empty by default)
-└── wwwroot/                   # Admin panel assets
+├── server.exe                 # 服务器主二进制文件
+├── config.json                # 配置文件
+├── e_sqlite3.dll              # 依赖项
+├── aspnetcorev2_inprocess.dll # 依赖项
+├── mods/                      # 模组目录
+    ├── WukongMp.Sdk.zip       # SDK 软件包
+    ├── WukongMp.Coop.zip      # 联机模组包
+    ├── saves/                 # 游戏存档目录（默认为空）
+└── wwwroot/                   # 管理面板资源
 ```
 
 </TabItem>
@@ -44,12 +46,14 @@ server/
 
 ```text
 server/
-├── server                     # Main server binary
-├── config.json                # Configuration file
-├── libe_sqlite3.so            # Dependency
-├── mods/                      # Directory for mods (empty by default)
-├── saves/                     # Directory for game saves (empty by default)
-└── wwwroot/                   # Admin panel assets
+├── server                     # 服务器主二进制文件
+├── config.json                # 配置文件
+├── libe_sqlite3.so            # 依赖项
+├── mods/                      # 模组目录
+    ├── WukongMp.Sdk.zip       # SDK 软件包
+    └── WukongMp.Coop.zip      # 联机模组包
+├── saves/                     # 游戏存档目录（默认为空）
+└── wwwroot/                   # 管理面板资源
 ```
 
 </TabItem>
