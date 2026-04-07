@@ -59,6 +59,14 @@ server/
 </TabItem>
 </Tabs>
 
+## Configuration
+
+You can adjust server settings by editing the `config.json` file. In the following table, the `:` notation is used to represent nested settings.
+
+| Setting | Type | Purpose |
+| --- | --- | --- |
+| `Server:Port` | number | The port on which the server listens for incoming connections |
+
 ## First launch
 
 Start the server by running the `server.exe` binary.
@@ -66,7 +74,7 @@ Start the server by running the `server.exe` binary.
 On first launch, the server creates a `data/` directory inside the server folder. 
 This directory contains the `web.db` database file, where persistent data is stored.
 
-The server listens on the following ports:
+Unless changed in `config.json`, the server listens on the following ports:
 
 | Port | Protocol | Purpose |
 | --- | --- | --- |
