@@ -7,16 +7,20 @@
     "message": "ReadyM Logo",
     "description": "The alt text of navbar logo"
   },
-  "item.label.Docs": {
-    "message": "Docs",
-    "description": "Navbar item with label Docs"
-  },
-  "item.label.API Reference": {
-    "message": "API Reference",
-    "description": "Navbar item with label API Reference"
-  },
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"
+  },
+  "item.label.OblivionMP": {
+    "message": "OblivionMP",
+    "description": "Navbar item with label OblivionMP"
+  },
+  "item.label.WukongMP": {
+    "message": "WukongMP",
+    "description": "Navbar item with label WukongMP"
+  },
+  "item.label.WukongMP API Reference": {
+    "message": "WukongMP API Reference",
+    "description": "Navbar item with label WukongMP API Reference"
   }
 }

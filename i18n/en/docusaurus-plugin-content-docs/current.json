@@ -43,30 +43,6 @@
     "message": "ReadyM.Api.Idents",
     "description": "The label for category 'ReadyM.Api.Idents' in sidebar 'wukongMpApiSidebar'"
   },
-  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer": {
-    "message": "ReadyM.Api.Multiplayer",
-    "description": "The label for category 'ReadyM.Api.Multiplayer' in sidebar 'wukongMpApiSidebar'"
-  },
-  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.ECS.Components": {
-    "message": "ReadyM.Api.Multiplayer.ECS.Components",
-    "description": "The label for category 'ReadyM.Api.Multiplayer.ECS.Components' in sidebar 'wukongMpApiSidebar'"
-  },
-  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Generators": {
-    "message": "ReadyM.Api.Multiplayer.Generators",
-    "description": "The label for category 'ReadyM.Api.Multiplayer.Generators' in sidebar 'wukongMpApiSidebar'"
-  },
-  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Mapping.Data": {
-    "message": "ReadyM.Api.Multiplayer.Mapping.Data",
-    "description": "The label for category 'ReadyM.Api.Multiplayer.Mapping.Data' in sidebar 'wukongMpApiSidebar'"
-  },
-  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Mapping.Tags": {
-    "message": "ReadyM.Api.Multiplayer.Mapping.Tags",
-    "description": "The label for category 'ReadyM.Api.Multiplayer.Mapping.Tags' in sidebar 'wukongMpApiSidebar'"
-  },
-  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Protocol.Enums": {
-    "message": "ReadyM.Api.Multiplayer.Protocol.Enums",
-    "description": "The label for category 'ReadyM.Api.Multiplayer.Protocol.Enums' in sidebar 'wukongMpApiSidebar'"
-  },
   "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Serialization": {
     "message": "ReadyM.Api.Serialization",
     "description": "The label for category 'ReadyM.Api.Serialization' in sidebar 'wukongMpApiSidebar'"
@@ -95,10 +71,6 @@
     "message": "WukongMp.Api.WukongUtils",
     "description": "The label for category 'WukongMp.Api.WukongUtils' in sidebar 'wukongMpApiSidebar'"
   },
-  "sidebar.wukongMpApiSidebar.category.WukongMp.Coop.Gamemode": {
-    "message": "WukongMp.Coop.Gamemode",
-    "description": "The label for category 'WukongMp.Coop.Gamemode' in sidebar 'wukongMpApiSidebar'"
-  },
   "sidebar.wukongMpApiSidebar.category.WukongMp.Sdk": {
     "message": "WukongMp.Sdk",
     "description": "The label for category 'WukongMp.Sdk' in sidebar 'wukongMpApiSidebar'"
@@ -110,5 +82,29 @@
   "sidebar.wukongMpApiSidebar.category.WukongMp.Sdk.Entities": {
     "message": "WukongMp.Sdk.Entities",
     "description": "The label for category 'WukongMp.Sdk.Entities' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Client": {
+    "message": "ReadyM.Api.Multiplayer.Client",
+    "description": "The label for category 'ReadyM.Api.Multiplayer.Client' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Protocol": {
+    "message": "ReadyM.Api.Multiplayer.Protocol",
+    "description": "The label for category 'ReadyM.Api.Multiplayer.Protocol' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.RPC": {
+    "message": "ReadyM.Api.Multiplayer.RPC",
+    "description": "The label for category 'ReadyM.Api.Multiplayer.RPC' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Serialization": {
+    "message": "ReadyM.Api.Multiplayer.Serialization",
+    "description": "The label for category 'ReadyM.Api.Multiplayer.Serialization' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Generators": {
+    "message": "ReadyM.Api.Multiplayer.Generators",
+    "description": "The label for category 'ReadyM.Api.Multiplayer.Generators' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Protocol.Enums": {
+    "message": "ReadyM.Api.Multiplayer.Protocol.Enums",
+    "description": "The label for category 'ReadyM.Api.Multiplayer.Protocol.Enums' in sidebar 'wukongMpApiSidebar'"
   }
 }
