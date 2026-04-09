@@ -16,6 +16,7 @@ const config: Config = {
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    faster: true
   },
 
   // Set the production url of your site here
@@ -101,15 +102,21 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
+          sidebarId: 'oblivionMpDocsSidebar',
+          position: 'left',
+          label: '🚧 OblivionMP',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'wukongMpDocsSidebar',
           position: 'left',
-          label: 'Docs',
+          label: 'WukongMP',
         },
         {
           type: 'docSidebar',
           sidebarId: 'wukongMpApiSidebar',
           position: 'left',
-          label: 'API Reference',
+          label: 'WukongMP API Reference',
         },
         {
           href: 'https://github.com/readycodeio',
@@ -128,6 +135,10 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
+            {
+              label: '🚧 OblivionMP SDK',
+              to: '/docs/oblivionmp-docs/what-is-oblivion-mp',
+            },
             {
               label: 'WukongMP SDK',
               to: '/docs/wukongmp-docs/what-is-wukong-mp',

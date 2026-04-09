@@ -15,18 +15,6 @@
     "message": "WukongMP SDK",
     "description": "The label of footer link with label=WukongMP SDK linking to /docs/wukongmp-docs/what-is-wukong-mp"
   },
-  "link.item.label.Discord": {
-    "message": "Discord",
-    "description": "The label of footer link with label=Discord linking to https://discord.gg/wukongmp-readym-1278355057330618533"
-  },
-  "link.item.label.Youtube": {
-    "message": "Youtube",
-    "description": "The label of footer link with label=Youtube linking to https://www.youtube.com/@readymultiplayer"
-  },
-  "link.item.label.Instagram": {
-    "message": "Instagram",
-    "description": "The label of footer link with label=Instagram linking to https://www.instagram.com/ready_multiplayer"
-  },
   "link.item.label.Player Portal": {
     "message": "Player Portal",
     "description": "The label of footer link with label=Player Portal linking to https://portal.ready.mp"
@@ -38,5 +26,49 @@
   "copyright": {
     "message": "Copyright © 2026 ReadyCode, Inc.",
     "description": "The footer copyright"
+  },
+  "link.item.label.ReadyM FAQ": {
+    "message": "ReadyM FAQ",
+    "description": "The label of footer link with label=ReadyM FAQ linking to https://www.ready.mp/faq"
+  },
+  "link.item.label.WukongMP Discord": {
+    "message": "WukongMP Discord",
+    "description": "The label of footer link with label=WukongMP Discord linking to https://discord.gg/wukongmp"
+  },
+  "link.item.label.OblivionMP Discord": {
+    "message": "OblivionMP Discord",
+    "description": "The label of footer link with label=OblivionMP Discord linking to https://discord.gg/obmp"
+  },
+  "link.item.label.YouTube": {
+    "message": "YouTube",
+    "description": "The label of footer link with label=YouTube linking to https://www.youtube.com/@readymultiplayer"
+  },
+  "link.item.label.BiliBili": {
+    "message": "BiliBili",
+    "description": "The label of footer link with label=BiliBili linking to https://space.bilibili.com/3546825837513480"
+  },
+  "link.item.label.TikTok": {
+    "message": "TikTok",
+    "description": "The label of footer link with label=TikTok linking to https://www.tiktok.com/@ready.mp"
+  },
+  "link.item.label.X": {
+    "message": "X",
+    "description": "The label of footer link with label=X linking to https://x.com/readymod"
+  },
+  "link.item.label.QQ": {
+    "message": "QQ",
+    "description": "The label of footer link with label=QQ linking to https://pd.qq.com/g/pd30575984"
+  },
+  "link.item.label.WukongMP": {
+    "message": "WukongMP",
+    "description": "The label of footer link with label=WukongMP linking to https://wukong.mp"
+  },
+  "link.item.label.OblivionMP": {
+    "message": "OblivionMP",
+    "description": "The label of footer link with label=OblivionMP linking to https://oblivion.mp"
+  },
+  "link.item.label.OblivionMP SDK": {
+    "message": "OblivionMP SDK",
+    "description": "The label of footer link with label=OblivionMP SDK linking to /docs/oblivionmp-docs/what-is-oblivion-mp"
   }
 }
