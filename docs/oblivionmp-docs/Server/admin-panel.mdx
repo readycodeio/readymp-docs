@@ -1,0 +1,56 @@
+---
+sidebar_position: 2
+---
+
+# Admin panel
+
+The admin panel is available over HTTP on port `9050`.
+
+If the server is running on your local machine, you can open it at http://localhost:9050.
+
+## First-time setup
+
+When launching the server for the first time, you will need to create an administrator account.
+
+During startup, the server prints a one-time setup PIN in the console output:
+
+```shell-session
+$ ./server.exe
+[15:16:37 INF] Starting web server on 127.0.0.1:9050
+[15:16:37 INF] Starting RelayServer...
+[15:16:37 INF] Running server on port 9050
+...
+//highlight-next-line
+[15:16:37 WRN] No admin users found. Admin setup PIN: 766596
+```
+
+Enter this PIN in the admin panel to begin the setup process.
+
+<img
+  src={require('/img/docs/admin-panel-setup-pin.png').default}
+  width={500}
+  alt="Setup PIN code view"
+/>
+
+## Sign in with ReadyM
+
+After entering the PIN, you will be asked to sign in with your ReadyM account.
+
+<img
+  src={require('/img/docs/admin-panel-sign-in.png').default}
+  width={500}
+  alt="Admin panel sign-in"
+/>
+
+You will be redirected to the ReadyM authentication page, where you can enter your credentials.
+
+Once authentication is successful, you will be redirected back to the admin panel automatically.
+
+## Admin panel interface
+
+After signing in, you can access the admin panel interface.
+
+<img
+  src={require('/img/docs/admin-panel-terminal.png').default}
+  alt="Admin panel terminal"
+/>

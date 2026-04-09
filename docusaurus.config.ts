@@ -104,7 +104,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'oblivionMpDocsSidebar',
           position: 'left',
-          label: 'OblivionMP',
+          label: '🚧 OblivionMP',
         },
         {
           type: 'docSidebar',
@@ -135,6 +135,10 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
+            {
+              label: '🚧 OblivionMP SDK',
+              to: '/docs/oblivionmp-docs/what-is-oblivion-mp',
+            },
             {
               label: 'WukongMP SDK',
               to: '/docs/wukongmp-docs/what-is-wukong-mp',

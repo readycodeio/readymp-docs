@@ -106,5 +106,9 @@
   "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Protocol.Enums": {
     "message": "ReadyM.Api.Multiplayer.Protocol.Enums",
     "description": "The label for category 'ReadyM.Api.Multiplayer.Protocol.Enums' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.oblivionMpDocsSidebar.category.Server hosting": {
+    "message": "Server hosting",
+    "description": "The label for category 'Server hosting' in sidebar 'oblivionMpDocsSidebar'"
   }
 }
