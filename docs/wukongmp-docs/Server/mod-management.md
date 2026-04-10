@@ -12,16 +12,15 @@ WukongMP supports automatic mod sync for clients connecting to the server.
 When a client connects, the server checks if the client has the required mods installed.
 If not, the [ReadyM Launcher](https://portal.ready.mp/pl/dashboard/launcher) will download and install the missing mods before they can join the game.
 
-To add a mod to your server, simply place the mod archive in the `mods/` directory.
+To add a mod to your server, simply place the mod folder in the `mods/` directory.
 
-Mod archives are expected to be in ZIP format, with a `.zip` extension.
+The expected structure of a mod folder is as follows. If you use our [official mod template](https://github.com/readycodeio/wukongmp-mod-template), there's a `MakeModFolder.ps1` script in there, which will package the mod appropriately.
 
-The expected structure of a mod is as follows:
-
-```text title="Example mod archive layout"
-mod_name.zip
-└── ModName             # Root directory of the mod, can be named arbitrarily
-    ├── ModName.dll     # Main assembly of the mod, must have the same name as the root directory
+```text title="Example mod folder layout"
+mods
+└──MyModFolder          # Root directory of the mod, can be named arbitrarily
+    ├── MyMod.dll       # Main assembly of the mod
+    ├── manifest.json   # Mod manifest file
     └── other_files...  # Other files required by the mod (optional)
 ```
 
