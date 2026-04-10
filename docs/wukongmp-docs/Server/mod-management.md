@@ -17,8 +17,8 @@ To add a mod to your server, simply place the mod folder in the `mods/` director
 The expected structure of a mod folder is as follows. If you use our [official mod template](https://github.com/readycodeio/wukongmp-mod-template), there's a `MakeModFolder.ps1` script in there, which will package the mod appropriately.
 
 ```text title="Example mod folder layout"
-mods
-└──MyModFolder          # Root directory of the mod, can be named arbitrarily
+mods/
+└──MyModFolder/         # Root directory of the mod, can be named arbitrarily
     ├── MyMod.dll       # Main assembly of the mod
     ├── manifest.json   # Mod manifest file
     └── other_files...  # Other files required by the mod (optional)

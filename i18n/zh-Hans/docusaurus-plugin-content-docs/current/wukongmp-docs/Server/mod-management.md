@@ -17,8 +17,8 @@ Launcher](https://portal.ready.mp/pl/dashboard/launcher) 将下载并安装缺�
 
 
 ```text title="示例 mod 文件夹布局"
-mods
-└──MyModFolder          # mod 的根目录，可以任意命名
+mods/
+└──MyModFolder/         # mod 的根目录，可以任意命名
     ├── MyMod.dll       # mod 的主程序集
     ├── manifest.json   # mod 清单文件
     └── other_files...  # mod 所需的其他文件（可选）
