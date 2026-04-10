@@ -7,7 +7,8 @@ sidebar_position: 2
 WukongMP SDK 构建在对 [Harmony](https://github.com/pardeike/Harmony) 库的自定义分支之上。虽然它支持
 Harmony 的大部分 API，但在补丁的发现和启用方式上存在一些差异。
 
-通常，在为你的 WukongMP 模组定义补丁时，请参考 [Harmony 官方文档](https://harmony.pardeike.net/articles/intro.html)。
+通常，在为你的 WukongMP 模组定义补丁时，请参考 [Harmony
+官方文档](https://harmony.pardeike.net/articles/intro.html)。
 
 以下是确保补丁正确工作所需满足的一些要求。
 
