@@ -11,17 +11,17 @@ sidebar_position: 3
 WukongMP 支持对连接到服务器的客户端进行自动模组同步。客户端连接时，服务器会检查客户端是否安装了所需的模组。如果没有，[ReadyM
 Launcher](https://portal.ready.mp/pl/dashboard/launcher) 将下载并安装缺失的模组，才能加入游戏。
 
-要将模组添加到服务器，请将模组归档放在 `mods/` 目录中。
+要将模组添加到服务器，只需将模组文件夹放在 `mods/` 目录中。
 
-模组归档应为 ZIP 格式，扩展名为 `.zip`。
+模组文件夹的预期结构如下。如果你使用我们的[官方模组模板](https://github.com/readycodeio/wukongmp-mod-template)，里面有一个`MakeModFolder.ps1`脚本，它将相应地打包模组。
 
-模组的预期结构如下：
 
-```text title="模组目录结构示例"
-mod_name.zip
-└── ModName             # 模组根目录，可随意命名
-    ├── ModName.dll     # 模组主程序集，必须与根目录同名
-    └── other_files...  # 模组所需的其他文件 (可选)
+```text title="示例 mod 文件夹布局"
+mods/
+└──MyModFolder/         # mod 的根目录，可以任意命名
+    ├── MyMod.dll       # mod 的主程序集
+    ├── manifest.json   # mod 清单文件
+    └── other_files...  # mod 所需的其他文件（可选）
 ```
 
 连接到服务器时，客户端将自动从 `mods/` 目录下载并安装任何缺失的模组，确保无缝的多人游戏体验。
