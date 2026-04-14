@@ -1,0 +1,8 @@
+sdk:
+  label: 'SDK'
+  permalink: '/sdk'
+  description: 'Release notes related to the modding SDK'
+launcher:
+  label: 'Launcher'
+  permalink: '/launcher'
+  description: 'Release notes related to the ReadyM launcher'
