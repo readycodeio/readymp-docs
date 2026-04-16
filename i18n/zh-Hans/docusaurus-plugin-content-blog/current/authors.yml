@@ -1,6 +1,6 @@
 readym:
-  name: ReadyM Team
-  title: Creators of WukongMP and OblivionMP
+  name: ReadyM 团队
+  title: WukongMP 和 OblivionMP 的开发者
   page: true
   image_url: https://github.com/readycodeio.png
   socials:
@@ -10,7 +10,7 @@ readym:
     email: contact@readycode.io
 jakuj:
   name: Jakub Janaszkiewicz
-  title: Senior Engineer @ ReadyCode
+  title: ReadyCode 高级工程师
   page: true
   image_url: https://github.com/JakuJ.png
   socials:
