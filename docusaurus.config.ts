@@ -67,6 +67,9 @@ const config: Config = {
           sidebarPath: './sidebars.ts'
         },
         blog: {
+          blogTitle: 'ReadyM Release Notes',
+          blogDescription: 'Read about the latest updates and improvements in ReadyM multiplayer SDKs.',
+          routeBasePath: 'releases',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -117,6 +120,11 @@ const config: Config = {
           sidebarId: 'wukongMpApiSidebar',
           position: 'left',
           label: 'WukongMP API Reference',
+        },
+        {
+          to: 'releases',
+          label: 'Releases',
+          position: 'left'
         },
         {
           href: 'https://github.com/readycodeio',

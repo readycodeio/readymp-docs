@@ -1,0 +1,8 @@
+wukongmp:
+  label: 'WukongMP SDK'
+  permalink: '/wukongmp'
+  description: 'WukongMP 模组 SDK 的发布说明'
+launcher:
+  label: 'Launcher'
+  permalink: '/launcher'
+  description: '与 ReadyM 启动器相关的发行说明'
