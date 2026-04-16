@@ -1,0 +1,18 @@
+readym:
+  name: ReadyM Team
+  title: Creators of WukongMP and OblivionMP
+  page: true
+  image_url: https://github.com/readycodeio.png
+  socials:
+    x: readymod
+    youtube: readymultiplayer
+    github: readycodeio
+    email: contact@readycode.io
+jakuj:
+  name: Jakub Janaszkiewicz
+  title: Senior Engineer @ ReadyCode
+  page: true
+  image_url: https://github.com/JakuJ.png
+  socials:
+    github: JakuJ
+    linkedin: jakub-janaszkiewicz

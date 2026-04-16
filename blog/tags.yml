@@ -1,0 +1,8 @@
+wukongmp:
+  label: 'WukongMP SDK'
+  permalink: '/wukongmp'
+  description: 'Release notes related to the WukongMP modding SDK'
+launcher:
+  label: 'Launcher'
+  permalink: '/launcher'
+  description: 'Release notes related to the ReadyM Launcher'
