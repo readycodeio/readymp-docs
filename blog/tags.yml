@@ -5,4 +5,4 @@ wukongmp:
 launcher:
   label: 'Launcher'
   permalink: '/launcher'
-  description: 'Release notes related to the ReadyM launcher'
+  description: 'Release notes related to the ReadyM Launcher'
