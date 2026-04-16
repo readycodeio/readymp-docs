@@ -2,11 +2,12 @@
 sidebar_position: 2
 ---
 
-# Mod manifests
+# 模组清单
 
-The official WukongMP SDK mod template contains a file named `manifest.json`. This file is required by the mod loader to recognize the folder containing your mod DLL as a WukongMP mod, and contains information required for resolving mod dependencies.
+官方的 WukongMP SDK 模组模板包含一个名为 `manifest.json` 的文件。此文件是模组加载器识别包含你的模组 DLL 的文件夹为
+WukongMP 模组所必需的，并包含解析模组依赖所需的信息。
 
-An example `manifest.json` file looks like this:
+一个示例 `manifest.json` 文件如下所示：
 
 ```json title="manifest.json"
 {
@@ -24,13 +25,13 @@ An example `manifest.json` file looks like this:
 }
 ```
 
-Refer to the table below for the description of each field in the manifest file.
+请参阅下表，了解清单文件中各字段的描述。
 
-| Field | Type | Optional | Description |
-| ----- | ---- | -------- | ----------- |
-| `uniqueId` | string | no | Unique identifier of your mod. Can contain only alphanumeric characters, `.` or `_` |
-| `version` | string | no | Mod version, in `MAJOR.MINOR.PATCH` format. |
-| `name` | string | no | Mod name, as it will be displayed in the server admin portal and in the Launcher. |
-| `author` | string | no | Mod author, as it will be displayed in the server admin portal and in the Launcher. |
-| `description` | string | **yes** | A short description of the mod. |
-| `dependencies` | array of objects | **yes** | A list of other mods that are required for your mod to work. Each dependency must specify the `uniqueId` of the required mod, and a `minimumVersion`. |
+| 表单字段           | 类型     | 可选    | 描述                                                                   |
+| -------------- | ------ | ----- | -------------------------------------------------------------------- |
+| `uniqueId`     | string | 不     | 模组的唯一标识符。只能包含字母数字字符，`.` 或 `_`                                        |
+| `version`      | string | 不     | 模组版本，采用 `MAJOR.MINOR.PATCH` 格式。                                      |
+| `name`         | string | 不     | 模组名称（将在服务器管理员门户和启动器中显示）                                              |
+| `author`       | string | 不     | 模组作者，将在服务器管理门户和启动器中显示。                                               |
+| `description`  | string | **是** | 该模组的简短描述。                                                            |
+| `dependencies` | 对象数组   | **是** | 为使你的模组正常工作所需的其他模组列表。每个依赖项必须指定所需模组的 `uniqueId`，以及一个 `minimumVersion`。 |
