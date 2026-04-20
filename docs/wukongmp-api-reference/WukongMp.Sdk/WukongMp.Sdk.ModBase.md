@@ -66,25 +66,10 @@ protected ILogger Logger { get; }
 
 ### <a id="WukongMp_Sdk_ModBase_Name"></a> Name
 
-Mod name.
-This should be unique across all mods, as it's used for logging and patching.
+Mod name, used for logging and patching.
 
 ```csharp
 public abstract string Name { get; }
-```
-
-#### Property Value
-
- [string](https://learn.microsoft.com/dotnet/api/system.string)
-
-### <a id="WukongMp_Sdk_ModBase_Version"></a> Version
-
-Mod version.
-This is for informational purposes and does not have to be unique.
-In future versions of the SDK, this might be used for compatibility checks or update notifications.
-
-```csharp
-public abstract string Version { get; }
 ```
 
 #### Property Value
@@ -130,7 +115,7 @@ protected abstract void Initialize(IDependencyContainer services)
 
 #### Parameters
 
-`services` [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/DI/IDependencyContainer.cs)
+`services` [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/c0f35c2436fda0af53d3a8816d8def0f55e7a28c/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_ModBase_LateInit"></a> LateInit\(\)
 
