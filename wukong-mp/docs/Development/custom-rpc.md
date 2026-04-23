@@ -4,13 +4,13 @@ sidebar_position: 5
 
 # Custom RPC
 
-One of the core WukongMP SDK functionalities is the support for arbitrary Remote Procedure Call (RPC) functions. These can have arbitrary payloads and support a number of [Relay Modes](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md).
+One of the core WukongMP SDK functionalities is the support for arbitrary Remote Procedure Call (RPC) functions. These can have arbitrary payloads and support a number of [Relay Modes](../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md).
 
 RPC handlers allow you to define your own events that are sent to other players connected to the same server.
 
 ## Declaring an RPC handler class
 
-In order to add custom RPC procedures to your mod, you must define a [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class that extends [RpcClassBase](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcClassBase).
+In order to add custom RPC procedures to your mod, you must define a [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class that extends [RpcClassBase](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcClassBase).
 
 ```csharp title="Minimal RPC class definition"
 public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
@@ -22,13 +22,13 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 :::important
 
 For any of the RPC handlers to be registered, the class **must** be added to the DI container in your mod's `Initialize` method.
-Consult the documentation for [ModBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase.md).
+Consult the documentation for [ModBase](../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase.md).
 
 :::
 
 ## Defining RPC handlers
 
-In order to add a new RPC handler to your mod, add a method decorated with the [RpcEvent](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.RpcEventAttribute) attribute.
+In order to add a new RPC handler to your mod, add a method decorated with the [RpcEvent](../../api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.RpcEventAttribute) attribute.
 
 Method names must start with "On..." — corresponding "Send..." methods for sending the RPC will be generated automatically in the same class.
 
@@ -46,7 +46,7 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 }
 ```
 
-The attribute requires a parameter of type [RelayMode](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode), which indicates how the message will be propagated to players when it reaches the server.
+The attribute requires a parameter of type [RelayMode](../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode), which indicates how the message will be propagated to players when it reaches the server.
 
 Currently, the following modes are supported:
 
@@ -62,7 +62,7 @@ Currently, the following modes are supported:
 RPC handlers support passing data in parameters that are either:
 
 * primitive data types
-* structs, decorated with [[DeriveINetSerializable]](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute).
+* structs, decorated with [[DeriveINetSerializable]](../../api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute).
 * special parameters injected by the SDK
 
 An RPC hander can have any number of these parameters declared in any order. The generated "Send..." methods will have the same parameters (excluding the injected ones).
@@ -105,7 +105,7 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 }
 ```
 
-The SDK provides the [[DeriveINetSerializable]](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute) attribute, which makes the SDK automatically generate serialization code for most cases. The structure must be declared [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) for this to work.
+The SDK provides the [[DeriveINetSerializable]](../../api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute) attribute, which makes the SDK automatically generate serialization code for most cases. The structure must be declared [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) for this to work.
 
 ```csharp title="Generating serialization code"
 [DeriveINetSerializable]
@@ -146,7 +146,7 @@ Right now there is only one special parameter that can be used. We might expand 
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| `__sender` | [PlayerId](/docs/wukongmp-api-reference/ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId) | The identifier of the player sending the RPC |
+| `__sender` | [PlayerId](../../api-reference/ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId) | The identifier of the player sending the RPC |
 
 This parameter can be used alongside other parameters, but is not visible in the generated "Send..." method.
 

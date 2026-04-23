@@ -10,7 +10,7 @@ The players are supposed to fight until they can't anymore, after which the mod 
 
 ## Mod entry point
 
-In order to create a WukongMP mod, you must create a new C# library project referencing `WukongMp.Sdk.dll` and define a class derived from [ModBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase).
+In order to create a WukongMP mod, you must create a new C# library project referencing `WukongMp.Sdk.dll` and define a class derived from [ModBase](../../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase).
 
 At minimum, the mod must define its name and version number:
 
@@ -65,9 +65,9 @@ Our mod uses a few custom Remote Procedure Calls to notify other players about t
 
 All of these calls display UI elements - informational banners or chat messages visible to the receiving player.
 
-We use the `AreaOfInterestAll` [Relay mode](/docs/wukongmp-api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode) to receive the message on all clients in the same level, the sender included. This ensures everyone sees the same messages.
+We use the `AreaOfInterestAll` [Relay mode](../../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode) to receive the message on all clients in the same level, the sender included. This ensures everyone sees the same messages.
 
-Refer to the [RPC documentation](/docs/wukongmp-docs/Development/custom-rpc) to learn what else you can do in RPC classes.
+Refer to the [RPC documentation](../custom-rpc) to learn what else you can do in RPC classes.
 
 ```csharp title="Custom RPC class"
 public partial class Rpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
@@ -119,7 +119,7 @@ public sealed class SpawnEnemySwarmSystem : ModSystemBase
     private const float InitialDelay = 3.0f;
 ```
 
-Then - the methods for enabling and disabling the system. We use the [Local API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi) for showing message banners and adding messages to the chat window.
+Then - the methods for enabling and disabling the system. We use the [Local API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi) for showing message banners and adding messages to the chat window.
 
 ```csharp showLineNumbers=13 title="SpawnEnemySwarmSystem.cs"
     public void Enable()
@@ -145,8 +145,8 @@ Then - the methods for enabling and disabling the system. We use the [Local API]
     }
 ```
 
-All systems (classes derived from [ModSystemBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase)) expose an [OnUpdate](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase#-onupdateupdatetick) method which runs on every frame.
-We can use that to count the number of seconds since the last time we spawned enemies. When `_timeSinceLastSpawn` exceedes the threshold, we use the [Synchronization API](/docs/wukongmp-api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi) to spawn an enemy (Wolf Sentinel) a few times in a circle around the player. All available enemy types are defined in [TamerConstants](/docs/wukongmp-api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerConstants).
+All systems (classes derived from [ModSystemBase](../../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase)) expose an [OnUpdate](../../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase#-onupdateupdatetick) method which runs on every frame.
+We can use that to count the number of seconds since the last time we spawned enemies. When `_timeSinceLastSpawn` exceedes the threshold, we use the [Synchronization API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi) to spawn an enemy (Wolf Sentinel) a few times in a circle around the player. All available enemy types are defined in [TamerConstants](../../../api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerConstants).
 
 ```csharp showLineNumbers=35 title="SpawnEnemySwarmSystem.cs"
     protected override void OnUpdate(UpdateTick tick)

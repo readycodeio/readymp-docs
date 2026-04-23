@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Save files
 
-WukongMP SDK allows for synchronizing player save data with the server using the [Save API](/docs/wukongmp-docs/Development/APIs/save-file-management).
+WukongMP SDK allows for synchronizing player save data with the server using the [Save API](../Development/APIs/save-file-management).
 
 The save files are stored in the `saves/` directory on the server.
 
@@ -22,7 +22,7 @@ Save files belonging to individual players are stored in files with the followin
 
 ## Using the co-op mod
 
-Until we expand the [Save API](/docs/wukongmp-docs/Development/APIs/save-file-management) to allow uploading an arbitrary number of save files with arbitrary metadata, the save file behavior is as follows:
+Until we expand the [Save API](../Development/APIs/save-file-management) to allow uploading an arbitrary number of save files with arbitrary metadata, the save file behavior is as follows:
 
 1. The first player that loads a new location (area) is considered the "host" of that area, and is responsible for uploading `world.sav` when the game would be saved.
 2. All players, including the host, also upload their own `player_GUID.sav` save files, which contain their individual characters' information.

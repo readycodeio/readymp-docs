@@ -9,7 +9,7 @@ These are classes that expose a tick method tied to the game's update loop.
 
 ## Declaring systems
 
-Any class deriving from [ModSystemBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase) and defined in the same assembly as your main mod class (one that extends [ModBase](/docs/wukongmp-api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase)) will be automatically registered when the game starts, and will begin executing soon after.
+Any class deriving from [ModSystemBase](../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase) and defined in the same assembly as your main mod class (one that extends [ModBase](../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase)) will be automatically registered when the game starts, and will begin executing soon after.
 
 :::info
 
