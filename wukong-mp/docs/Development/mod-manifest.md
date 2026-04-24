@@ -11,14 +11,14 @@ An example `manifest.json` file looks like this:
 ```json title="manifest.json"
 {
   "uniqueId": "WukongMP.Coop",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "name": "WukongMP Co-op mode",
   "author": "ReadyM Team",
   "description": "The official WukongMP Co-op mode.",
   "dependencies": [
     {
       "uniqueId": "WukongMP.SDK",
-      "minimumVersion": "0.1.0"
+      "minimumVersion": "0.2.0"
     }
   ]
 }

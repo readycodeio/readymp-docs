@@ -167,3 +167,25 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
     private void SendComplexEvent(int number, BuffData buffData) { ... }
 }
 ```
+
+## Executing callbacks on the main thread
+
+RPC handlers are executed on a separate network thread, so they should not interact with the game world directly, as doing so can cause crashes. However, you can schedule callbacks to be executed on the main thread using the [RunOnMainThread](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcClassBase#-runonmainthreadaction) method available in your RPC handler class.
+
+```csharp title="Running code on the main thread"
+public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+{
+    [RpcEvent(RelayMode.AreaOfInterestAll)]
+    private void OnDespawnAllMonsters()
+    {
+        // destroying an Unreal Engine pawn must be done on the main thread
+        RunOnMainThread(() =>
+        {
+            foreach (var monster in WukongApi.Sync.AreaTamers)
+            {
+                monster.Tamer?.CurrentRef.DestroyTamer(); // calls BGU_UnrealWorldUtil.DestroyActor
+            }
+        });
+    }
+}
+```
