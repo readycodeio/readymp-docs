@@ -39,6 +39,16 @@ public static PlayerId Invalid { get; }
 
  [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
 
+### <a id="ReadyM_Api_Idents_PlayerId_RawValue"></a> RawValue
+
+```csharp
+public ushort RawValue { get; }
+```
+
+#### Property Value
+
+ [ushort](https://learn.microsoft.com/dotnet/api/system.uint16)
+
 ### <a id="ReadyM_Api_Idents_PlayerId_Server"></a> Server
 
 The PlayerId representing the server itself.

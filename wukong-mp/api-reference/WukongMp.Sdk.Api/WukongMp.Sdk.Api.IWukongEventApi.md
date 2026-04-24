@@ -31,7 +31,7 @@ event Action<PlayerId>? OnConnected
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/PlayerId.cs)\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/Idents/PlayerId.cs)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnDisconnected"></a> OnDisconnected
 
@@ -43,7 +43,7 @@ event Action<PlayerId, DisconnectReason>? OnDisconnected
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/PlayerId.cs), [DisconnectReason](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/INetEventListener.cs)\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/Idents/PlayerId.cs), [DisconnectReason](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/INetEventListener.cs)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnEndPlayGameplayLevel"></a> OnEndPlayGameplayLevel
 
@@ -79,7 +79,19 @@ event Action<AreaId>? OnJoinedArea
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[AreaId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/AreaId.cs)\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[AreaId](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/Idents/AreaId.cs)\>?
+
+### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnLanguageChanged"></a> OnLanguageChanged
+
+Fired when the game's language is changed, either by the player changing it in the settings or by the game automatically setting it based on the player's system language.
+
+```csharp
+event Action<CultureInfo>? OnLanguageChanged
+```
+
+#### Event Type
+
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[CultureInfo](https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnLeftArea"></a> OnLeftArea
 
@@ -91,7 +103,7 @@ event Action<AreaId>? OnLeftArea
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[AreaId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/AreaId.cs)\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[AreaId](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/Idents/AreaId.cs)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnLevelLoaded"></a> OnLevelLoaded
 
@@ -131,6 +143,18 @@ event Action? OnLocalPlayerBeforeRebirth
 
  [Action](https://learn.microsoft.com/dotnet/api/system.action)?
 
+### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnLocalPlayerChangedSpectator"></a> OnLocalPlayerChangedSpectator
+
+Fired when the local player changes spectator mode, either by entering or exiting spectator mode.
+
+```csharp
+event Action<bool>? OnLocalPlayerChangedSpectator
+```
+
+#### Event Type
+
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[bool](https://learn.microsoft.com/dotnet/api/system.boolean)\>?
+
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnMainCharacterEntityInitialized"></a> OnMainCharacterEntityInitialized
 
 Fired when the player's main character ECS entity is initialized and ready.
@@ -157,6 +181,30 @@ event Action<ReadyTamer, ReadyCharacter?>? OnMonsterDead
 
  [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[ReadyTamer](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyTamer.md), [ReadyCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyCharacter.md)?\>?
 
+### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnMonsterDestroyed"></a> OnMonsterDestroyed
+
+Fired when a monster is removed from the game world, either by dying or by being despawned for other reasons (e.g. the player leaving the area).
+
+```csharp
+event Action<ReadyTamer>? OnMonsterDestroyed
+```
+
+#### Event Type
+
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[ReadyTamer](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyTamer.md)\>?
+
+### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnMonsterSpawned"></a> OnMonsterSpawned
+
+Fired when a monster is spawned in the game world, either by being spawned by the player or by being spawned by the game itself.
+
+```csharp
+event Action<ReadyTamer>? OnMonsterSpawned
+```
+
+#### Event Type
+
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[ReadyTamer](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyTamer.md)\>?
+
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnOtherPlayerInsideArea"></a> OnOtherPlayerInsideArea
 
 Fired when another player enters the same area as the local player.
@@ -167,7 +215,7 @@ event Action<PlayerId, AreaId>? OnOtherPlayerInsideArea
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/PlayerId.cs), [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/AreaId.cs)\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/Idents/PlayerId.cs), [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/Idents/AreaId.cs)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnOtherPlayerOutsideArea"></a> OnOtherPlayerOutsideArea
 
@@ -179,7 +227,7 @@ event Action<PlayerId, AreaId>? OnOtherPlayerOutsideArea
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/PlayerId.cs), [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/AreaId.cs)\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/Idents/PlayerId.cs), [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/Idents/AreaId.cs)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnPlayerChangedTeam"></a> OnPlayerChangedTeam
 

@@ -9,20 +9,22 @@ public interface IWukongFileApi
 
 ## Methods
 
-### <a id="WukongMp_Sdk_Api_IWukongFileApi_GetSaveFileFullName_WukongMp_Sdk_ModBase_System_String_"></a> GetSaveFileFullName\(ModBase, string\)
+### <a id="WukongMp_Sdk_Api_IWukongFileApi_GetSaveFileFullName__1_System_String_"></a> GetSaveFileFullName<T\>\(string\)
 
 ```csharp
-string GetSaveFileFullName(ModBase mod, string slotName)
+string GetSaveFileFullName<T>(string slotName) where T : ModBase
 ```
 
 #### Parameters
-
-`mod` [ModBase](../WukongMp.Sdk/WukongMp.Sdk.ModBase.md)
 
 `slotName` [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 #### Returns
 
  [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+#### Type Parameters
+
+`T` 
 
 

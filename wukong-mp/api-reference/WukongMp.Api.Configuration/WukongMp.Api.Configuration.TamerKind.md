@@ -22,17 +22,33 @@ public readonly struct TamerKind : IEquatable<TamerKind>
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
 
+## Constructors
+
+### <a id="WukongMp_Api_Configuration_TamerKind__ctor_System_String_"></a> TamerKind\(string\)
+
+Represents the type of a Tamer (monster).
+
+```csharp
+public TamerKind(string name)
+```
+
+#### Parameters
+
+`name` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+Must be a valid monster name.
+
 ## Fields
 
 ### <a id="WukongMp_Api_Configuration_TamerKind_Name"></a> Name
 
 ```csharp
-public readonly string? Name
+public readonly string Name
 ```
 
 #### Field Value
 
- [string](https://learn.microsoft.com/dotnet/api/system.string)?
+ [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ## Methods
 

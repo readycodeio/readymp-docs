@@ -9,9 +9,17 @@ Provides access to all of the various APIs and services that WukongMP offers.
 
 ### Interfaces
 
+ [IWukongChatApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongChatApi.md)
+
+API for interacting with the in-game chat.
+
+ [IWukongCheatsApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongCheatsApi.md)
+
  [IWukongConfigurationApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongConfigurationApi.md)
 
  [IWukongConsoleApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongConsoleApi.md)
+
+API for the in-game console (F1).
 
  [IWukongEventApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongEventApi.md)
 
@@ -22,6 +30,10 @@ Provides events related to gameplay, player actions, and multiplayer interaction
  [IWukongInputApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi.md)
 
  [IWukongLocalApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi.md)
+
+ [IWukongPvpApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongPvpApi.md)
+
+API for PvP mode. Will be removed in the future when custom data sync is implemented.
 
  [IWukongSynchronizationApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi.md)
 

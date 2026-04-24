@@ -11,9 +11,11 @@ Configuration class for gameplay-related settings and queries.
 Category for Harmony patches.
 Each patch must be assigned to a category.
 
- [TamerConstants](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerConstants.md)
+ [TamerKinds](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKinds.md)
 
 Defines constants for Tamer (monster) types.
+
+ [UnitPathUtils](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.UnitPathUtils.md)
 
 ### Structs
 

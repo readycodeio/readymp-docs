@@ -42,7 +42,7 @@ public static RelayMessage ByRelayMode(RelayMessageCode eventCode, PlayerId play
 
 `eventCode` [RelayMessageCode](../ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMessageCode.md)
 
-`playerId` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/PlayerId.cs)
+`playerId` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/Idents/PlayerId.cs)
 
 `mode` [RelayMode](../ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md)
 

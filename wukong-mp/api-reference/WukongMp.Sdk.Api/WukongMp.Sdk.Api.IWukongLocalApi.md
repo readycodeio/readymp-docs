@@ -23,24 +23,6 @@ bool IsGameplayLevel { get; }
 
 ## Methods
 
-### <a id="WukongMp_Sdk_Api_IWukongLocalApi_AddChatMessage_System_String_UnrealEngine_Runtime_FLinearColor_"></a> AddChatMessage\(string, FLinearColor\)
-
-Adds a message to the in-game chat, visible only to the local player.
-
-```csharp
-void AddChatMessage(string message, FLinearColor color)
-```
-
-#### Parameters
-
-`message` [string](https://learn.microsoft.com/dotnet/api/system.string)
-
-The message to add to the chat.
-
-`color` FLinearColor
-
-The color of the message in the chat.
-
 ### <a id="WukongMp_Sdk_Api_IWukongLocalApi_HideInfoMessage"></a> HideInfoMessage\(\)
 
 Hides the message currently being shown on the player's screen, if any.
@@ -80,6 +62,24 @@ The message to show.
 `timeoutSeconds` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
 The amount of time, in seconds, to show the message for.
+
+### <a id="WukongMp_Sdk_Api_IWukongLocalApi_ShowTip_System_String_System_Boolean_"></a> ShowTip\(string, bool\)
+
+Shows a tip message on the player's screen using the game's UI.
+
+```csharp
+void ShowTip(string message, bool autoHide)
+```
+
+#### Parameters
+
+`message` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+The message to show.
+
+`autoHide` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+Whether the message should automatically hide after 5 seconds
 
 ### <a id="WukongMp_Sdk_Api_IWukongLocalApi_Wait_System_Threading_Tasks_Task_"></a> Wait\(Task\)
 

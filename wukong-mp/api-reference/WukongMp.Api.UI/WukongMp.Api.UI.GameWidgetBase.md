@@ -14,6 +14,11 @@ public abstract class GameWidgetBase
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
 [GameWidgetBase](../WukongMp.Api.UI/WukongMp.Api.UI.GameWidgetBase.md)
 
+#### Derived
+
+[CountdownWidget](../WukongMp.Api.UI/WukongMp.Api.UI.CountdownWidget.md), 
+[GameMessageWidget](../WukongMp.Api.UI/WukongMp.Api.UI.GameMessageWidget.md)
+
 #### Inherited Members
 
 [object.GetType\(\)](https://learn.microsoft.com/dotnet/api/system.object.gettype), 

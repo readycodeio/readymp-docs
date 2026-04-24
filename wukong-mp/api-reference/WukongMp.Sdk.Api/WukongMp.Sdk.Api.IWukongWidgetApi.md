@@ -43,6 +43,28 @@ void HideInfoMessage()
 void HideTip()
 ```
 
+### <a id="WukongMp_Sdk_Api_IWukongWidgetApi_SetTimerText_System_Int32_System_Int32_"></a> SetTimerText\(int, int\)
+
+```csharp
+void SetTimerText(int initialMinutes, int initialSeconds)
+```
+
+#### Parameters
+
+`initialMinutes` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+`initialSeconds` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="WukongMp_Sdk_Api_IWukongWidgetApi_SetTimerVisibility_System_Boolean_"></a> SetTimerVisibility\(bool\)
+
+```csharp
+void SetTimerVisibility(bool visible)
+```
+
+#### Parameters
+
+`visible` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 ### <a id="WukongMp_Sdk_Api_IWukongWidgetApi_ShowInGameWidgets_System_Boolean_"></a> ShowInGameWidgets\(bool\)
 
 ```csharp

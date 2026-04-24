@@ -27,6 +27,26 @@ public static class WukongApi
 
 ## Properties
 
+### <a id="WukongMp_Sdk_Api_WukongApi_Chat"></a> Chat
+
+```csharp
+public static IWukongChatApi Chat { get; }
+```
+
+#### Property Value
+
+ [IWukongChatApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongChatApi.md)
+
+### <a id="WukongMp_Sdk_Api_WukongApi_Cheats"></a> Cheats
+
+```csharp
+public static IWukongCheatsApi Cheats { get; }
+```
+
+#### Property Value
+
+ [IWukongCheatsApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongCheatsApi.md)
+
 ### <a id="WukongMp_Sdk_Api_WukongApi_Configuration"></a> Configuration
 
 ```csharp
@@ -87,6 +107,16 @@ public static IWukongLocalApi Local { get; }
 
  [IWukongLocalApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi.md)
 
+### <a id="WukongMp_Sdk_Api_WukongApi_PvP"></a> PvP
+
+```csharp
+public static IWukongPvpApi PvP { get; }
+```
+
+#### Property Value
+
+ [IWukongPvpApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongPvpApi.md)
+
 ### <a id="WukongMp_Sdk_Api_WukongApi_Saves"></a> Saves
 
 ```csharp
@@ -95,7 +125,7 @@ public static IWukongSaveApi Saves { get; }
 
 #### Property Value
 
- [IWukongSaveApi](https://github.com/readycodeio/wukong\-csharp\-mod/blob/0a9ad36dcf06d0f90e8b717d992c9965851265c6/WukongMp.Api/IWukongSaveApi.cs)
+ [IWukongSaveApi](https://github.com/readycodeio/wukong\-csharp\-mod/blob/c75196dbf9f9d36004b262bf095bccb6234c3d74/WukongMp.Api/IWukongSaveApi.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Services"></a> Services
 
@@ -105,7 +135,7 @@ public static IDependencyContainer Services { get; }
 
 #### Property Value
 
- [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/DI/IDependencyContainer.cs)
+ [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Sync"></a> Sync
 

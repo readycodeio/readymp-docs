@@ -22,7 +22,9 @@ public readonly struct ReadyTamer : IReadyEntity<ReadyTamer>
 
 #### Extension Methods
 
-[ReadyObjectExtensions.SetLocationRotation<ReadyTamer\>\(ReadyTamer, Vector3, Vector3\)](WukongMp.Sdk.Entities.ReadyObjectExtensions.md\#WukongMp\_Sdk\_Entities\_ReadyObjectExtensions\_SetLocationRotation\_\_1\_\_\_0\_System\_Numerics\_Vector3\_System\_Numerics\_Vector3\_)
+[ReadyCharacterExtensions.HideMarker<ReadyTamer\>\(ReadyTamer\)](WukongMp.Sdk.Entities.ReadyCharacterExtensions.md\#WukongMp\_Sdk\_Entities\_ReadyCharacterExtensions\_HideMarker\_\_1\_\_\_0\_), 
+[ReadyObjectExtensions.SetLocationRotation<ReadyTamer\>\(ReadyTamer, Vector3, Vector3\)](WukongMp.Sdk.Entities.ReadyObjectExtensions.md\#WukongMp\_Sdk\_Entities\_ReadyObjectExtensions\_SetLocationRotation\_\_1\_\_\_0\_System\_Numerics\_Vector3\_System\_Numerics\_Vector3\_), 
+[ReadyCharacterExtensions.SetMarkerMessage<ReadyTamer\>\(ReadyTamer, string, string\)](WukongMp.Sdk.Entities.ReadyCharacterExtensions.md\#WukongMp\_Sdk\_Entities\_ReadyCharacterExtensions\_SetMarkerMessage\_\_1\_\_\_0\_System\_String\_System\_String\_)
 
 ## Properties
 
@@ -65,6 +67,16 @@ public bool IsMonsterActive { get; }
 #### Property Value
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="WukongMp_Sdk_Entities_ReadyTamer_Tamer"></a> Tamer
+
+```csharp
+public BUTamerActor? Tamer { get; }
+```
+
+#### Property Value
+
+ BUTamerActor?
 
 ## Operators
 

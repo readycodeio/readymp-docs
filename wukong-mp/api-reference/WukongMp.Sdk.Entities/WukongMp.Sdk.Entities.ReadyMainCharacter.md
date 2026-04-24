@@ -22,7 +22,9 @@ public readonly struct ReadyMainCharacter : IReadyEntity<ReadyMainCharacter>
 
 #### Extension Methods
 
-[ReadyObjectExtensions.SetLocationRotation<ReadyMainCharacter\>\(ReadyMainCharacter, Vector3, Vector3\)](WukongMp.Sdk.Entities.ReadyObjectExtensions.md\#WukongMp\_Sdk\_Entities\_ReadyObjectExtensions\_SetLocationRotation\_\_1\_\_\_0\_System\_Numerics\_Vector3\_System\_Numerics\_Vector3\_)
+[ReadyCharacterExtensions.HideMarker<ReadyMainCharacter\>\(ReadyMainCharacter\)](WukongMp.Sdk.Entities.ReadyCharacterExtensions.md\#WukongMp\_Sdk\_Entities\_ReadyCharacterExtensions\_HideMarker\_\_1\_\_\_0\_), 
+[ReadyObjectExtensions.SetLocationRotation<ReadyMainCharacter\>\(ReadyMainCharacter, Vector3, Vector3\)](WukongMp.Sdk.Entities.ReadyObjectExtensions.md\#WukongMp\_Sdk\_Entities\_ReadyObjectExtensions\_SetLocationRotation\_\_1\_\_\_0\_System\_Numerics\_Vector3\_System\_Numerics\_Vector3\_), 
+[ReadyCharacterExtensions.SetMarkerMessage<ReadyMainCharacter\>\(ReadyMainCharacter, string, string\)](WukongMp.Sdk.Entities.ReadyCharacterExtensions.md\#WukongMp\_Sdk\_Entities\_ReadyCharacterExtensions\_SetMarkerMessage\_\_1\_\_\_0\_System\_String\_System\_String\_)
 
 ## Properties
 
@@ -40,6 +42,16 @@ public bool BeguilingChantEligible { get; set; }
 
 ```csharp
 public bool IsRespawning { get; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_IsSpectator"></a> IsSpectator
+
+```csharp
+public bool IsSpectator { get; }
 ```
 
 #### Property Value
@@ -84,7 +96,7 @@ public PlayerId PlayerId { get; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/16f0ba653289bfdbcd76b35571a56163f648d4fe/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_RebirthPointId"></a> RebirthPointId
 
@@ -108,11 +120,15 @@ public int WaitingCutsceneId { get; }
 
 ## Methods
 
-### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_HideMarker"></a> HideMarker\(\)
+### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_EnableInteraction_System_Boolean_"></a> EnableInteraction\(bool\)
 
 ```csharp
-public void HideMarker()
+public void EnableInteraction(bool enabled)
 ```
+
+#### Parameters
+
+`enabled` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_RebirthAtShrine_System_Int32_"></a> RebirthAtShrine\(int\)
 
@@ -129,18 +145,6 @@ public void RebirthAtShrine(int shrineId)
 ```csharp
 public void RebirthInPlace()
 ```
-
-### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_SetMarkerMessage_System_String_System_String_"></a> SetMarkerMessage\(string, string\)
-
-```csharp
-public void SetMarkerMessage(string message, string color)
-```
-
-#### Parameters
-
-`message` [string](https://learn.microsoft.com/dotnet/api/system.string)
-
-`color` [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_Teleport_System_Numerics_Vector3_System_Numerics_Vector3_"></a> Teleport\(Vector3, Vector3\)
 

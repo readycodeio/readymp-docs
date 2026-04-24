@@ -24,6 +24,38 @@ public static class ReadyCharacterExtensions
 
 ## Methods
 
+### <a id="WukongMp_Sdk_Entities_ReadyCharacterExtensions_HideMarker__1___0_"></a> HideMarker<TSelf\>\(TSelf\)
+
+```csharp
+public static void HideMarker<TSelf>(this TSelf obj) where TSelf : struct, IReadyEntity<TSelf>, IReadyConvertable<TSelf, ReadyCharacter>
+```
+
+#### Parameters
+
+`obj` TSelf
+
+#### Type Parameters
+
+`TSelf` 
+
+### <a id="WukongMp_Sdk_Entities_ReadyCharacterExtensions_SetMarkerMessage__1___0_System_String_System_String_"></a> SetMarkerMessage<TSelf\>\(TSelf, string, string\)
+
+```csharp
+public static void SetMarkerMessage<TSelf>(this TSelf obj, string message, string color) where TSelf : struct, IReadyEntity<TSelf>, IReadyConvertable<TSelf, ReadyCharacter>
+```
+
+#### Parameters
+
+`obj` TSelf
+
+`message` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+`color` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+#### Type Parameters
+
+`TSelf` 
+
 ### <a id="WukongMp_Sdk_Entities_ReadyCharacterExtensions_get_Hp__1___0_"></a> get\_Hp<TSelf\>\(TSelf\)
 
 ```csharp
@@ -123,6 +155,22 @@ public static void set_HpMaxBase<TSelf>(TSelf obj, float value) where TSelf : st
 `obj` TSelf
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+#### Type Parameters
+
+`TSelf` 
+
+### <a id="WukongMp_Sdk_Entities_ReadyCharacterExtensions_set_TeamId__1___0_System_Int32_"></a> set\_TeamId<TSelf\>\(TSelf, int\)
+
+```csharp
+public static void set_TeamId<TSelf>(TSelf obj, int value) where TSelf : struct, IReadyEntity<TSelf>, IReadyConvertable<TSelf, ReadyCharacter>
+```
+
+#### Parameters
+
+`obj` TSelf
+
+`value` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 #### Type Parameters
 
