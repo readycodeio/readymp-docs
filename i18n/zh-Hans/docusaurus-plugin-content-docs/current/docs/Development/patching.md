@@ -17,7 +17,7 @@ Harmony 的大部分 API，但在补丁的发现和启用方式上存在一些�
 你模组代码中声明的每个 Harmony 补丁都必须使用
 [HarmonyPatchCategory](https://harmony.pardeike.net/api/HarmonyLib.HarmonyPatchCategory.html)
 属性进行标记，并使用
-[PatchCategory](/docs/wukongmp-api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.PatchCategory)
+[PatchCategory](/wukong-mp/api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.PatchCategory)
 中定义的常量之一，如下所示：
 
 ```csharp title="补丁示例"
@@ -36,7 +36,7 @@ public static class PatchOnPlayerTeleportTo { ... }
 方法，才能对 `private` 或 `internal` 类的成员进行补丁。
 
 在 WukongMP SDK 的 Harmony 分叉中，必须存在
-[HarmonyTargetMethodHint](/docs/wukongmp-api-reference/PreludeLib.Attributes/PreludeLib.Attributes.HarmonyTargetMethodHint)
+[HarmonyTargetMethodHint](/wukong-mp/api-reference/PreludeLib.Attributes/PreludeLib.Attributes.HarmonyTargetMethodHint)
 属性。第一个参数是完整限定类名，第二个参数是被补丁的成员名称。
 
 ```csharp title="示例：针对内部类打补丁"
@@ -56,7 +56,7 @@ internal static class PatchComplexSkillDoInteractAction
 另一个
 [TargetMethod](https://harmony.pardeike.net/articles/patching-auxiliary.html#targetmethod)
 的用例是通用类（泛型类）。在这种情况下，您还必须使用
-[HarmonyTargetMethodHint](/docs/wukongmp-api-reference/PreludeLib.Attributes/PreludeLib.Attributes.HarmonyTargetMethodHint)
+[HarmonyTargetMethodHint](/wukong-mp/api-reference/PreludeLib.Attributes/PreludeLib.Attributes.HarmonyTargetMethodHint)
 进行装饰，提供专门化的类类型和成员名称。
 
 ```csharp title="示例：针对泛型类打补丁"

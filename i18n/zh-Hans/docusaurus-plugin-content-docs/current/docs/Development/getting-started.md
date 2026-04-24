@@ -17,13 +17,13 @@ sidebar_position: 1
 
 对任意 RPC 调用和自定义数据同步的支持正在实现中。
 
-请访问 [示例](/docs/category/mod-examples) 页面以获取灵感。
+请访问 [示例](/wukong-mp/category/mod-examples) 页面以获取灵感。
 
 | 特性        | 状态                                                                              |
 | --------- | ------------------------------------------------------------------------------- |
-| 修改游戏代码    | :white_check_mark: [已完成](/docs/wukongmp-docs/Development/patching)              |
-| 游戏事件      | :white_check_mark: [已完成](/docs/wukongmp-docs/Development/APIs/game-events)      |
-| 控制台命令 API | :white_check_mark: [已完成](/docs/wukongmp-docs/Development/APIs/console-commands) |
-| 自定义 RPC   | :white_check_mark: [已完成](/docs/wukongmp-docs/Development/custom-rpc)            |
-| 保存文件 API  | :construction: [部分](/docs/wukongmp-docs/Development/APIs/save-file-management)  |
-| 自定义数据同步   | :soon: [进行中](/docs/wukongmp-docs/Development/APIs/custom-components)            |
+| 修改游戏代码    | :white_check_mark: [已完成](/wukong-mp/docs/Development/patching)              |
+| 游戏事件      | :white_check_mark: [已完成](/wukong-mp/docs/Development/APIs/game-events)      |
+| 控制台命令 API | :white_check_mark: [已完成](/wukong-mp/docs/Development/APIs/console-commands) |
+| 自定义 RPC   | :white_check_mark: [已完成](/wukong-mp/docs/Development/custom-rpc)            |
+| 保存文件 API  | :construction: [部分](/wukong-mp/docs/Development/APIs/save-file-management)  |
+| 自定义数据同步   | :soon: [进行中](/wukong-mp/docs/Development/APIs/custom-components)            |
