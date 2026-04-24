@@ -1,0 +1,82 @@
+---
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+# Installation
+
+The WukongMP server is currently distributed in the following formats:
+
+- Binary package
+- Docker image **(coming soon)**
+
+### Downloads
+| Platform | Architecture | Download |
+| --- | --- | --- |
+| Linux | x64 | [Download for Linux](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.1.0.zip) |
+| Windows | x64 | [Download for Windows](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.1.0.zip) |
+
+## Installation
+
+Extract the binary package to a location of your choice.
+
+After extraction, the directory structure should look like this:
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+```text
+server/
+├── server.exe                 # Main server binary
+├── config.json                # Configuration file
+├── e_sqlite3.dll              # Dependency
+├── aspnetcorev2_inprocess.dll # Dependency
+├── mods/                      # Directory for mods
+|   ├── WukongMp.Sdk/          # SDK mod
+|   └── WukongMp.Coop/         # Co-op mod
+├── saves/                     # Directory for game saves (empty by default)
+└── wwwroot/                   # Admin panel assets
+```
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+```text
+server/
+├── server                     # Main server binary
+├── config.json                # Configuration file
+├── libe_sqlite3.so            # Dependency
+├── mods/                      # Directory for mods
+|   ├── WukongMp.Sdk/          # SDK mod
+|   └── WukongMp.Coop/         # Co-op mod
+├── saves/                     # Directory for game saves (empty by default)
+└── wwwroot/                   # Admin panel assets
+```
+
+</TabItem>
+</Tabs>
+
+## Configuration
+
+You can adjust server settings by editing the `config.json` file. In the following table, the `:` notation is used to represent nested settings.
+
+| Setting | Type | Purpose |
+| --- | --- | --- |
+| `Server:Port` | number | The port on which the server listens for incoming connections |
+
+## First launch
+
+Start the server by running the `server.exe` binary.
+
+On first launch, the server creates a `data/` directory inside the server folder. 
+This directory contains the `web.db` database file, where persistent data is stored.
+
+Unless changed in `config.json`, the server listens on the following ports:
+
+| Port | Protocol | Purpose |
+| --- | --- | --- |
+| 9050 | UDP | Game traffic (player connections, game state synchronization, etc.) |
+| 9050 | HTTP | [Admin panel](admin-panel) |

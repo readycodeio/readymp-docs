@@ -67,6 +67,15 @@ const config: Config = {
           sidebarPath: './sidebarsWukong.ts',
           path: 'wukong-mp',
           routeBasePath: 'wukong-mp',
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '0.2.0'
+            },
+            '0.1.0': {
+              label: '0.1.0',
+            }
+          },
         },
         blog: {
           blogTitle: 'ReadyM Release Notes',
@@ -127,14 +136,15 @@ const config: Config = {
           label: 'Releases',
           position: 'left'
         },
-        // {
-        //   type: 'docsVersionDropdown',
-        //   versions: {
-        //     'current': {label: 'Latest'},
-        //     '0.1.0': {label: 'v0.1.0'},
-        //   },
-        //   position: 'right',
-        // },
+        {
+          type: 'docsVersionDropdown',
+          versions: {
+            'current': { label: '0.2.0' },
+            '0.1.0': { label: '0.1.0' },
+          },
+          position: 'right',
+          docsPluginId: 'default',
+        },
         {
           href: 'https://github.com/readycodeio',
           label: 'GitHub',
