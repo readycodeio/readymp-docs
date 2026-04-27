@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.oblivionMpDocsSidebar.category.Server hosting": {
+    "message": "Server hosting",
+    "description": "The label for category 'Server hosting' in sidebar 'oblivionMpDocsSidebar'"
+  }
+}

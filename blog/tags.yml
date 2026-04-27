@@ -6,3 +6,7 @@ launcher:
   label: 'Launcher'
   permalink: '/launcher'
   description: 'Release notes related to the ReadyM Launcher'
+adminPanel:
+  label: 'Admin panel'
+  permalink: '/admin-panel'
+  description: 'Release notes related to the ReadyM server admin panel'

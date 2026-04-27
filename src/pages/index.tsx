@@ -19,7 +19,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/wukongmp-docs/what-is-wukong-mp">
+            to="/wukong-mp/docs/what-is-wukong-mp">
             {translate({id: 'readym.sdk-documentation'})}
           </Link>
         </div>
