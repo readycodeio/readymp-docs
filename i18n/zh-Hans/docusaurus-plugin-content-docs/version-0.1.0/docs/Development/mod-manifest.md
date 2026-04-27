@@ -34,4 +34,4 @@ WukongMP 模组所必需的，并包含解析模组依赖所需的信息。
 | `name`         | string | 不     | 模组名称（将在服务器管理员门户和启动器中显示）                                              |
 | `author`       | string | 不     | 模组作者，将在服务器管理门户和启动器中显示。                                               |
 | `description`  | string | **是** | 该模组的简短描述。                                                            |
-| `dependencies` | 对象数组   | **是** | 为使你的模组正常工作所需的其他模组列表。每个依赖项必须指定所需模组的 `uniqueId`，以及一个 `minimumVersion`。 |
+| `dependencies` | 对象数组 | **是** | 为使你的模组正常工作所需的其他模组列表。每个依赖项必须指定所需模组的 `uniqueId`，以及一个 `minimumVersion`。 |

@@ -4,8 +4,8 @@ sidebar_position: 4
 
 # 游戏存档文件
 
-WukongMP SDK 允许使用 [Save
-API](/wukong-mp/docs/Development/APIs/save-file-management) 将玩家的存档数据同步到服务器。
+WukongMP SDK 允许使用 [Save API](../Development/APIs/save-file-management)
+将玩家的存档数据同步到服务器。
 
 存档文件存放在服务器上的 `saves/` 目录中。
 
@@ -25,7 +25,7 @@ saves
 
 ## 使用联机合作模组
 
-在我们扩展 [Save API](/wukong-mp/docs/Development/APIs/save-file-management)
+在我们扩展 [Save API](../Development/APIs/save-file-management)
 以允许上传任意数量的带有任意元数据的存档文件之前，存档文件的行为如下：
 
 1. 首个加载新位置（区域）的玩家被视为该区域的「主机」，并在游戏保存时负责上传 `world.sav`。

@@ -5,7 +5,7 @@ sidebar_position: 5
 # 自定义 RPC
 
 WukongMP SDK 的核心功能之一是支持任意远程过程调用 (RPC) 函数。这些函数可以携带任意有效负载，并支持多种
-[中继模式](/wukong-mp/api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md)。
+[中继模式](../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md)。
 
 RPC 处理程序允许你定义自己的事件，这些事件将发送给连接到同一服务器的其他玩家。
 
@@ -14,7 +14,7 @@ RPC 处理程序允许你定义自己的事件，这些事件将发送给连接�
 为了向你的模组添加自定义 RPC 过程，你必须定义一个
 [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
 类，它继承自
-[RpcClassBase](/wukong-mp/api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcClassBase)。
+[RpcClassBase](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcClassBase)。
 
 ```csharp title="最简 RPC 类定义"
 public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
@@ -26,15 +26,14 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 :::important
 
 要注册任何 RPC 处理程序，类 **必须**被添加到 DI 容器中，在你的模组的 `Initialize` 方法中。请查阅
-[ModBase](/wukong-mp/api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase.md)
-的文档。
+[ModBase](../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase.md) 的文档。
 
 :::
 
 ## 定义 RPC 处理程序
 
 为了向你的模组添加一个新的 RPC 处理程序，请添加一个带有
-[RpcEvent](/wukong-mp/api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.RpcEventAttribute)
+[RpcEvent](../../api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.RpcEventAttribute)
 属性的方法。
 
 方法名必须以“On...”开头——在同一个类中会自动为发送 RPC 生成相应的“Send...”方法。
@@ -54,7 +53,7 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 ```
 
 该属性需要一个类型为
-[RelayMode](/wukong-mp/api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode)
+[RelayMode](../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode)
 的参数，该参数指示消息到达服务器时将如何传播给玩家。
 
 当前支持以下模式：
@@ -72,7 +71,7 @@ RPC 处理程序支持在参数中传递数据，这些数据要么是：
 
 * 原始数据类型
 * 被
-  [[DeriveINetSerializable]](/wukong-mp/api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute)
+  [[DeriveINetSerializable]](../../api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute)
   装饰的结构体。
 * 由 SDK 注入的特殊参数
 
@@ -122,7 +121,7 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 ```
 
 SDK 提供了
-[[DeriveINetSerializable]](/wukong-mp/api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute)
+[[DeriveINetSerializable]](../../api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute)
 属性，这使得 SDK 在大多数情况下能够自动生成序列化代码。为了实现这一点，结构体必须声明为
 [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)。
 
@@ -166,8 +165,8 @@ public struct BuffAddData(int buffId, float duration) : INetSerializable
 目前只能使用一个特殊参数。我们可能会在未来版本的 SDK 中扩展此功能。
 
 | 名称         | 类型                                                                                    | 描述              |
-| ---------- | ------------------------------------------------------------------------------------- | --------------- |
-| `__sender` | [PlayerId](/wukong-mp/api-reference/ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId) | 发送该 RPC 的玩家的标识符 |
+| ---------- | ---------------------------------------------------------------------------- | --------------- |
+| `__sender` | [PlayerId](../../api-reference/ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId) | 发送该 RPC 的玩家的标识符 |
 
 此参数可与其他参数一起使用，但在生成的“Send...”方法中不可见。
 
@@ -186,5 +185,29 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 
     // 由 SDK 生成
     private void SendComplexEvent(int number, BuffData buffData) { ... }
+}
+```
+
+## 在主线程执行回调
+
+RPC 处理程序在单独的网络线程上执行，因此它们不应直接与游戏世界交互，因为这样做可能会导致崩溃。不过，你可以使用在你的 RPC 处理程序类中提供的
+[RunOnMainThread](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcClassBase#-runonmainthreadaction)
+方法，将回调安排在主线程上执行。
+
+```csharp title="Running code on the main thread"
+public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+{
+    [RpcEvent(RelayMode.AreaOfInterestAll)]
+    private void OnDespawnAllMonsters()
+    {
+        // destroying an Unreal Engine pawn must be done on the main thread
+        RunOnMainThread(() =>
+        {
+            foreach (var monster in WukongApi.Sync.AreaTamers)
+            {
+                monster.Tamer?.CurrentRef.DestroyTamer(); // calls BGU_UnrealWorldUtil.DestroyActor
+            }
+        });
+    }
 }
 ```

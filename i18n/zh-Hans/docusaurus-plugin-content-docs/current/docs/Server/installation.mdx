@@ -16,8 +16,8 @@ WukongMP 服务器当前以以下格式分发：
 ### 下载
 | 平台      | 架构  | 下载                                                                                                              |
 | ------- | --- | --------------------------------------------------------------------------------------------------------------- |
-| Linux   | x64 | [Linux 版下载](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-alpha.zip) |
-| Windows | x64 | [Windows 版下载](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-alpha.zip) |
+| Linux   | x64 | [Linux 版下载](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.2.0.zip) |
+| Windows | x64 | [Windows 版下载](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.2.0.zip) |
 
 ## 安装
 
@@ -30,15 +30,17 @@ WukongMP 服务器当前以以下格式分发：
 
 ```text
 server/
-├── server.exe                 # 服务器主二进制文件
+├── server.exe                 # 主服务器二进制文件
 ├── config.json                # 配置文件
-├── e_sqlite3.dll              # 依赖项
-├── aspnetcorev2_inprocess.dll # 依赖项
 ├── mods/                      # 模组目录
-|   ├── WukongMp.Sdk/          # SDK 软件包
-|   └── WukongMp.Coop/         # 联机模组包
+|   └── WukongMp.Sdk/          # SDK 模组
+├── optional_mods/             # 将其中任意模组移动到 "mods" 文件夹以启用
+|   ├── WukongMp.Coop/         # 合作模组
+|   └── WukongMp.PvP/          # 对战模组
 ├── saves/                     # 游戏存档目录（默认为空）
-└── wwwroot/                   # 管理面板资源
+├── wwwroot/                   # 管理面板资源
+├── e_sqlite3.dll              # 依赖项
+└── aspnetcorev2_inprocess.dll # 依赖项
 ```
 
 </TabItem>
@@ -46,14 +48,16 @@ server/
 
 ```text
 server/
-├── server                     # 服务器主二进制文件
+├── server                     # 主服务器二进制文件
 ├── config.json                # 配置文件
-├── libe_sqlite3.so            # 依赖项
 ├── mods/                      # 模组目录
-|   ├── WukongMp.Sdk/          # SDK 软件包
-|   └── WukongMp.Coop/         # 联机模组包
+|   └── WukongMp.Sdk/          # SDK 模组
+├── optional_mods/             # 将其中任意模组移动到 "mods" 文件夹以启用
+|   ├── WukongMp.Coop/         # 合作模组
+|   └── WukongMp.PvP/          # 对战模组
 ├── saves/                     # 游戏存档目录（默认为空）
-└── wwwroot/                   # 管理面板资源
+├── wwwroot/                   # 管理面板资源
+└── libe_sqlite3.so            # 依赖项
 ```
 
 </TabItem>
