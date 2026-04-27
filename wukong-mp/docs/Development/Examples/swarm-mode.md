@@ -146,7 +146,7 @@ Then - the methods for enabling and disabling the system. We use the [Local API]
 ```
 
 All systems (classes derived from [ModSystemBase](../../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase)) expose an [OnUpdate](../../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase#-onupdateupdatetick) method which runs on every frame.
-We can use that to count the number of seconds since the last time we spawned enemies. When `_timeSinceLastSpawn` exceedes the threshold, we use the [Synchronization API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi) to spawn an enemy (Wolf Sentinel) a few times in a circle around the player. All available enemy types are defined in [TamerConstants](../../../api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerConstants).
+We can use that to count the number of seconds since the last time we spawned enemies. When `_timeSinceLastSpawn` exceedes the threshold, we use the [Synchronization API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi) to spawn an enemy (Wolf Sentinel) a few times in a circle around the player. All available enemy types are defined in [TamerKinds](../../../api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKinds).
 
 ```csharp showLineNumbers=35 title="SpawnEnemySwarmSystem.cs"
     protected override void OnUpdate(UpdateTick tick)

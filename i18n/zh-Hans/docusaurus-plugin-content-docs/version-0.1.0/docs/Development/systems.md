@@ -9,9 +9,9 @@ sidebar_position: 4
 ## 声明系统
 
 任何从
-[ModSystemBase](/wukong-mp/api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase)
+[ModSystemBase](/wukong-mp/0.1.0/api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase)
 派生并在与您的主模组类位于同一程序集中的类（该类继承自
-[ModBase](/wukong-mp/api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase)）将会在游戏启动时自动注册，并在不久之后开始执行。
+[ModBase](/wukong-mp/0.1.0/api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase)）将会在游戏启动时自动注册，并在不久之后开始执行。
 
 :::info
 

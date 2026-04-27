@@ -8,7 +8,7 @@ sidebar_position: 1
 模组模板](https://github.com/readycodeio/wukongmp-mod-template)。
 
 克隆仓库并按照
-[README](https://github.com/readycodeio/wukongmp-mod-template/blob/main/README.md)
+[README](https://github.com/readycodeio/wukongmp-mod-template/blob/main/README)
 文件中提供的说明进行操作。
 
 ## 功能状态

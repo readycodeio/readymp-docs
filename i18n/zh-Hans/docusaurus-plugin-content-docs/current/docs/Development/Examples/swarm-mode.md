@@ -156,7 +156,7 @@ API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi)
 [Synchronization
 API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi)
 在玩家周围以圆形分布刷出若干次敌人（Wolf Sentinel）。所有可用的敌人类型都在
-[TamerConstants](../../../api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerConstants)
+[TamerKinds](../../../api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKinds)
 中定义。
 
 ```csharp showLineNumbers=35 title="SpawnEnemySwarmSystem.cs"

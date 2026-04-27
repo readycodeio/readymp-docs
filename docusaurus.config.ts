@@ -146,12 +146,12 @@ const config: Config = {
           docsPluginId: 'default',
         },
         {
-          href: 'https://github.com/readycodeio',
-          label: 'GitHub',
+          type: 'localeDropdown',
           position: 'right',
         },
         {
-          type: 'localeDropdown',
+          href: 'https://github.com/readycodeio',
+          label: 'GitHub',
           position: 'right',
         },
       ],

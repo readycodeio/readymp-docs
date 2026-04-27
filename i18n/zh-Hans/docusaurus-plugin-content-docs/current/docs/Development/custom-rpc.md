@@ -5,7 +5,7 @@ sidebar_position: 5
 # 自定义 RPC
 
 WukongMP SDK 的核心功能之一是支持任意远程过程调用 (RPC) 函数。这些函数可以携带任意有效负载，并支持多种
-[中继模式](../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md)。
+[中继模式](../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode)。
 
 RPC 处理程序允许你定义自己的事件，这些事件将发送给连接到同一服务器的其他玩家。
 
@@ -26,7 +26,7 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 :::important
 
 要注册任何 RPC 处理程序，类 **必须**被添加到 DI 容器中，在你的模组的 `Initialize` 方法中。请查阅
-[ModBase](../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase.md) 的文档。
+[ModBase](../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase) 的文档。
 
 :::
 

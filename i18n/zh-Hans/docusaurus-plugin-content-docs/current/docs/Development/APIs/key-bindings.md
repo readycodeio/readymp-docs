@@ -1,7 +1,6 @@
 # 按键绑定
 
-[Input
-API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi.md)
+[Input API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi)
 提供了一种注册自定义键盘和控制器绑定的方式。
 
 ## 示例

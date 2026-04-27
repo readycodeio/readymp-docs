@@ -1,7 +1,7 @@
 # 按键绑定
 
 [Input
-API](/wukong-mp/api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi.md)
+API](/wukong-mp/0.1.0/api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi)
 提供了一种注册自定义键盘和控制器绑定的方式。
 
 ## 示例
@@ -27,7 +27,7 @@ WukongApi.Input.RegisterKeyBind(ModifierKeys.Alt, Key.X, () =>
 ## 注册控制器绑定
 
 使用
-[RegisterGamePadBind](/wukong-mp/api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi#-registergamepadbindgamepadbutton-action)
+[RegisterGamePadBind](/wukong-mp/0.1.0/api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi#-registergamepadbindgamepadbutton-action)
 方法绑定到以下按钮之一：
 
 ```csharp
@@ -60,7 +60,7 @@ public enum GamePadButton
 ## 使用 `CanApplyInput`
 
 按键绑定在每次按下按键时都会执行，与上下文无关。如果你希望在聊天输入时按下 'K' 不会触发任何命令逻辑，请将其通过对
-[CanApplyInput](/wukong-mp/api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi#-canapplyinput)
+[CanApplyInput](/wukong-mp/0.1.0/api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongInputApi#-canapplyinput)
 的调用进行过滤。
 
 ```csharp showLineNumbers

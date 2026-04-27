@@ -10,7 +10,7 @@ sidebar_position: 1
 ## 模组入口点
 
 为了创建一个 WukongMP 模组，您必须创建一个新的 C# 类库项目，引用 `WukongMp.Sdk.dll`，并定义一个从
-[ModBase](/wukong-mp/api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase) 派生的类。
+[ModBase](/wukong-mp/0.1.0/api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase) 派生的类。
 
 至少，该模组必须定义其名称和版本号：
 
@@ -66,7 +66,7 @@ public class Mod : ModBase
 这些调用都会显示用户界面元素——信息横幅或对接收玩家可见的聊天消息。
 
 我们使用 `AreaOfInterestAll` [Relay
-mode](/wukong-mp/api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode)，以在同一关卡的所有客户端接收该消息，包含发送者。这样每个人看到的消息相同。
+mode](/wukong-mp/0.1.0/api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode)，以在同一关卡的所有客户端接收该消息，包含发送者。这样每个人看到的消息相同。
 
 请参阅 [RPC 文档](/wukong-mp/docs/Development/custom-rpc)，以了解在 RPC 类中你还能做些什么。
 
@@ -121,7 +121,7 @@ public sealed class SpawnEnemySwarmSystem : ModSystemBase
 ```
 
 接下来是启用和禁用系统的方法。我们使用 [Local
-API](/wukong-mp/api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi)
+API](/wukong-mp/0.1.0/api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi)
 来显示消息横幅并向聊天窗口添加消息。
 
 ```csharp showLineNumbers=13 title="SpawnEnemySwarmSystem.cs"
@@ -149,14 +149,14 @@ API](/wukong-mp/api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi)
 ```
 
 所有系统（派生自
-[ModSystemBase](/wukong-mp/api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase)
+[ModSystemBase](/wukong-mp/0.1.0/api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase)
 的类）都暴露一个
-[OnUpdate](/wukong-mp/api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase#-onupdateupdatetick)
+[OnUpdate](/wukong-mp/0.1.0/api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase#-onupdateupdatetick)
 方法，该方法在每一帧运行。我们可以用它来计算自上次刷怪以来经过的秒数。当 `_timeSinceLastSpawn` 超过阈值时，我们使用
 [Synchronization
-API](/wukong-mp/api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi)
+API](/wukong-mp/0.1.0/api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi)
 在玩家周围以圆形分布刷出若干次敌人（Wolf Sentinel）。所有可用的敌人类型都在
-[TamerConstants](/wukong-mp/api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerConstants)
+[TamerConstants](/wukong-mp/0.1.0/api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerConstants)
 中定义。
 
 ```csharp showLineNumbers=35 title="SpawnEnemySwarmSystem.cs"
