@@ -1,7 +1,7 @@
 {
   "version.label": {
-    "message": "下一页",
-    "description": "The label for version current"
+    "message": "0.1.0",
+    "description": "The label for version 0.1.0"
   },
   "sidebar.wukongMpDocsSidebar.category.APIs": {
     "message": "API 接口",
