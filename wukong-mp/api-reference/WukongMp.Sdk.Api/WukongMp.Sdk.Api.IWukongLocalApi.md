@@ -3,6 +3,8 @@
 Namespace: [WukongMp.Sdk.Api](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.md)  
 Assembly: WukongMp.Sdk.dll  
 
+Provides various utility methods not related to networking.
+
 ```csharp
 public interface IWukongLocalApi
 ```

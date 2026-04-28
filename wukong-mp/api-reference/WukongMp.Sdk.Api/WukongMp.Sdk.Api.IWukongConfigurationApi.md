@@ -3,6 +3,10 @@
 Namespace: [WukongMp.Sdk.Api](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.md)  
 Assembly: WukongMp.Sdk.dll  
 
+Provides ways to configure various aspects othe game's behavior.
+Will be replaced in the future with more specific configuration APIs, but for now serves as a catch-all for miscellaneous configuration options that don't fit anywhere else.
+Hence, we do not document the individual configuration options here, as they are all subject to change and may be removed in the future without a major version bump.
+
 ```csharp
 public interface IWukongConfigurationApi
 ```

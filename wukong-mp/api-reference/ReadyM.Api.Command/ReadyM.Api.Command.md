@@ -6,8 +6,4 @@
 
  [ConsoleCommand.ParamInfo](../ReadyM.Api.Command/ReadyM.Api.Command.ConsoleCommand.ParamInfo.md)
 
-### Interfaces
-
- [IConsoleCommandRegistry](../ReadyM.Api.Command/ReadyM.Api.Command.IConsoleCommandRegistry.md)
-
 

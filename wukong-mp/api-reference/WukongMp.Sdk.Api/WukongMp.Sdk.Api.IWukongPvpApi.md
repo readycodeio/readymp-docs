@@ -3,7 +3,7 @@
 Namespace: [WukongMp.Sdk.Api](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.md)  
 Assembly: WukongMp.Sdk.dll  
 
-API for PvP mode. Will be removed in the future when custom data sync is implemented.
+API for PvP mode. Will be removed in the future when custom data sync and server-side scripting are implemented.
 
 ```csharp
 [Obsolete("This API is temporary and will be removed in the future when custom data sync is implemented.")]
@@ -152,7 +152,7 @@ ref PvPComponent PvpData(ReadyMainCharacter mainCharacter)
 
 #### Returns
 
- [PvPComponent](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Wukong.Common/ECS/Components/PvPComponent.cs)
+ [PvPComponent](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Wukong.Common/ECS/Components/PvPComponent.cs)
 
 ### <a id="WukongMp_Sdk_Api_IWukongPvpApi_SetLastRoundWinnerTeam_System_Int32_"></a> SetLastRoundWinnerTeam\(int\)
 

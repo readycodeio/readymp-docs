@@ -3,6 +3,8 @@
 Namespace: [WukongMp.Sdk.Api](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.md)  
 Assembly: WukongMp.Sdk.dll  
 
+Provides methods and properties for enabling and managing cheats in the game.
+
 ```csharp
 public interface IWukongCheatsApi
 ```
@@ -10,6 +12,8 @@ public interface IWukongCheatsApi
 ## Properties
 
 ### <a id="WukongMp_Sdk_Api_IWukongCheatsApi_CheatsAllowed"></a> CheatsAllowed
+
+Gets a value indicating whether cheats are allowed.
 
 ```csharp
 bool CheatsAllowed { get; }
@@ -23,62 +27,64 @@ bool CheatsAllowed { get; }
 
 ### <a id="WukongMp_Sdk_Api_IWukongCheatsApi_ResetCooldowns"></a> ResetCooldowns\(\)
 
+Resets all cooldowns for the player.
+
 ```csharp
 void ResetCooldowns()
 ```
 
 ### <a id="WukongMp_Sdk_Api_IWukongCheatsApi_ResetMana"></a> ResetMana\(\)
 
+Resets the player's mana to its maximum value.
+
 ```csharp
 void ResetMana()
 ```
 
-### <a id="WukongMp_Sdk_Api_IWukongCheatsApi_SetSpritCooldownTime_WukongMp_Sdk_Entities_ReadyMainCharacter_System_Single_"></a> SetSpritCooldownTime\(ReadyMainCharacter, float\)
+### <a id="WukongMp_Sdk_Api_IWukongCheatsApi_SetSpritCooldownTime_System_Single_"></a> SetSpritCooldownTime\(float\)
+
+Sets the cooldown time for the player's spirit abilities.
 
 ```csharp
-void SetSpritCooldownTime(ReadyMainCharacter mainEntity, float spiritCooldownTime)
+void SetSpritCooldownTime(float spiritCooldownTime)
 ```
 
 #### Parameters
 
-`mainEntity` [ReadyMainCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyMainCharacter.md)
-
 `spiritCooldownTime` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
+The cooldown time to set, in seconds.
+
 ### <a id="WukongMp_Sdk_Api_IWukongCheatsApi_ToggleInfiniteMana"></a> ToggleInfiniteMana\(\)
+
+Toggles infinite mana for the player.
 
 ```csharp
 void ToggleInfiniteMana()
 ```
 
-### <a id="WukongMp_Sdk_Api_IWukongCheatsApi_ToggleInfiniteTransform_WukongMp_Sdk_Entities_ReadyMainCharacter_"></a> ToggleInfiniteTransform\(ReadyMainCharacter\)
+### <a id="WukongMp_Sdk_Api_IWukongCheatsApi_ToggleInfiniteTransform"></a> ToggleInfiniteTransform\(\)
+
+Toggles infinite transformation for the player.
 
 ```csharp
-void ToggleInfiniteTransform(ReadyMainCharacter mainEntity)
+void ToggleInfiniteTransform()
 ```
 
-#### Parameters
+### <a id="WukongMp_Sdk_Api_IWukongCheatsApi_ToggleInfiniteVessel"></a> ToggleInfiniteVessel\(\)
 
-`mainEntity` [ReadyMainCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyMainCharacter.md)
-
-### <a id="WukongMp_Sdk_Api_IWukongCheatsApi_ToggleInfiniteVessel_WukongMp_Sdk_Entities_ReadyMainCharacter_"></a> ToggleInfiniteVessel\(ReadyMainCharacter\)
+Toggles infinite vessel usage for the player.
 
 ```csharp
-void ToggleInfiniteVessel(ReadyMainCharacter mainEntity)
+void ToggleInfiniteVessel()
 ```
 
-#### Parameters
+### <a id="WukongMp_Sdk_Api_IWukongCheatsApi_ToggleNoSkillsCooldown"></a> ToggleNoSkillsCooldown\(\)
 
-`mainEntity` [ReadyMainCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyMainCharacter.md)
-
-### <a id="WukongMp_Sdk_Api_IWukongCheatsApi_ToggleNoSkillsCooldown_WukongMp_Sdk_Entities_ReadyMainCharacter_"></a> ToggleNoSkillsCooldown\(ReadyMainCharacter\)
+Toggles no cooldowns for skills for the player.
 
 ```csharp
-void ToggleNoSkillsCooldown(ReadyMainCharacter mainEntity)
+void ToggleNoSkillsCooldown()
 ```
-
-#### Parameters
-
-`mainEntity` [ReadyMainCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyMainCharacter.md)
 
 

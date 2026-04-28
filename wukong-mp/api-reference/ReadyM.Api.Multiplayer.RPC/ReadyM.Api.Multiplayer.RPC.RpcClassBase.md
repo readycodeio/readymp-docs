@@ -17,7 +17,7 @@ public abstract class RpcClassBase : IHostedService, IDisposable
 
 #### Implements
 
-[IHostedService](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/DI/IHostedService.cs), 
+[IHostedService](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/DI/IHostedService.cs), 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members

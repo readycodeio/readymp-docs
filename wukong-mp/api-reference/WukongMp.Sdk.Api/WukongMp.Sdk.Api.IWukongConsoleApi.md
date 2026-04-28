@@ -6,12 +6,8 @@ Assembly: WukongMp.Sdk.dll
 API for the in-game console (F1).
 
 ```csharp
-public interface IWukongConsoleApi : IConsoleCommandRegistry
+public interface IWukongConsoleApi
 ```
-
-#### Implements
-
-[IConsoleCommandRegistry](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/Command/IConsoleCommandRegistry.cs)
 
 ## Methods
 
@@ -30,7 +26,7 @@ void AddCommand(string commandName, ConsoleCommand command, IEnumerable<string>?
 
 The name of the command that has to be typed in the console to execute the command.
 
-`command` [ConsoleCommand](https://github.com/readycodeio/readym\-gameserver/blob/daf080979857c414af94451f43a34b7da899696a/src/ReadyM.Api/Command/ConsoleCommand.cs)
+`command` [ConsoleCommand](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Command/ConsoleCommand.cs)
 
 Command handler
 
