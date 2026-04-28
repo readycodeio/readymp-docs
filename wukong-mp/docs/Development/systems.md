@@ -1,0 +1,44 @@
+---
+sidebar_position: 4
+---
+
+# Gameplay systems
+
+In order to facilitate the development of gameplay logic, the WukongMP SDK provides a way to implement **systems**.
+These are classes that expose a tick method tied to the game's update loop.
+
+## Declaring systems
+
+Any class deriving from [ModSystemBase](../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase) and defined in the same assembly as your main mod class (one that extends [ModBase](../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase)) will be automatically registered when the game starts, and will begin executing soon after.
+
+:::info
+
+Systems are singletons — each system has only one instance running at a time.
+
+:::
+
+At this time there is no functionality for turning systems on an off, you have to implement methods for that yourself.
+
+Below is an example of a minimal system declaration:
+
+```csharp title="Minimal system example"
+public class MySystem : ModSystemBase
+{
+    protected override void OnUpdate(UpdateTick tick)
+    {
+        // do something every frame
+    }
+}
+```
+
+You can get a reference to your system's instance by resolving it from the Dependency Injection container:
+
+```csharp title="Resolving systems from DI"
+public class MyMod : ModBase
+{
+    protected override void Initialize(IDependencyContainer services)
+    {
+        var mySystemInstance = services.Resolve<MySystem>();
+    }
+}
+```

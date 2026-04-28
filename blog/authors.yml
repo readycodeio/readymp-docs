@@ -8,11 +8,3 @@ readym:
     youtube: readymultiplayer
     github: readycodeio
     email: contact@readycode.io
-jakuj:
-  name: Jakub Janaszkiewicz
-  title: Senior Engineer @ ReadyCode
-  page: true
-  image_url: https://github.com/JakuJ.png
-  socials:
-    github: JakuJ
-    linkedin: jakub-janaszkiewicz

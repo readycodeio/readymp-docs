@@ -6,3 +6,7 @@ launcher:
   label: 'Launcher'
   permalink: '/launcher'
   description: '与 ReadyM 启动器相关的发行说明'
+adminPanel:
+  label: '管理员面板'
+  permalink: '/admin-panel'
+  description: '与 ReadyM 服务器管理面板相关的发行说明'

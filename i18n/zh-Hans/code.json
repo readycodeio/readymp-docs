@@ -71,10 +71,6 @@
     "message": "上一页",
     "description": "The label used to navigate to the previous doc"
   },
-  "theme.docs.paginator.next": {
-    "message": "下一页",
-    "description": "The label used to navigate to the next doc"
-  },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
     "message": "{count} 篇文档带有标签",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -179,7 +175,7 @@
     "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.IconExternalLink.ariaLabel": {
-    "message": "(在新标签页中打开)",
+    "message": "（在新标签页中打开）",
     "description": "The ARIA label for the external link icon"
   },
   "theme.NavBar.navAriaLabel": {
@@ -352,5 +348,9 @@
   },
   "readym.feature3.description": {
     "message": "服务器二进制包是你在自己硬件上或托管提供商处运行的可部署软件包。将其部署到一台机器上，进行配置，让玩家指向它。你的服务器，你的规则。"
+  },
+  "theme.docs.paginator.next": {
+    "message": "下一页",
+    "description": "The label used to navigate to the next doc"
   }
 }

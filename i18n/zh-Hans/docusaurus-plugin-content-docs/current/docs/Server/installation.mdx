@@ -1,0 +1,85 @@
+---
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+# 安装
+
+WukongMP 服务器当前以以下格式分发：
+
+- 二进制包
+- Docker 镜像 **(即将推出)**
+
+### 下载
+| 平台      | 架构  | 下载                                                                                                              |
+| ------- | --- | --------------------------------------------------------------------------------------------------------------- |
+| Linux   | x64 | [Linux 版下载](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.2.0.zip) |
+| Windows | x64 | [Windows 版下载](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.2.0.zip) |
+
+## 安装
+
+将二进制包解压到你选择的位置。
+
+解压后，目录结构应如下所示：
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+```text
+server/
+├── server.exe                 # 主服务器二进制文件
+├── config.json                # 配置文件
+├── mods/                      # 模组目录
+|   └── WukongMp.Sdk/          # SDK 模组
+├── optional_mods/             # 将其中任意模组移动到 "mods" 文件夹以启用
+|   ├── WukongMp.Coop/         # 合作模组
+|   └── WukongMp.PvP/          # 对战模组
+├── saves/                     # 游戏存档目录（默认为空）
+├── wwwroot/                   # 管理面板资源
+├── e_sqlite3.dll              # 依赖项
+└── aspnetcorev2_inprocess.dll # 依赖项
+```
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+```text
+server/
+├── server                     # 主服务器二进制文件
+├── config.json                # 配置文件
+├── mods/                      # 模组目录
+|   └── WukongMp.Sdk/          # SDK 模组
+├── optional_mods/             # 将其中任意模组移动到 "mods" 文件夹以启用
+|   ├── WukongMp.Coop/         # 合作模组
+|   └── WukongMp.PvP/          # 对战模组
+├── saves/                     # 游戏存档目录（默认为空）
+├── wwwroot/                   # 管理面板资源
+└── libe_sqlite3.so            # 依赖项
+```
+
+</TabItem>
+</Tabs>
+
+## 配置
+
+您可以通过编辑 `config.json` 文件来调整服务器设置。在以下表格中，使用 `:` 记法来表示嵌套设置。
+
+| 设置            | 类型  | 目的           |
+| ------------- | --- | ------------ |
+| `Server:Port` | 数字  | 服务器监听传入连接的端口 |
+
+## 首次启动
+
+通过运行 `server.exe` 二进制文件来启动服务器。
+
+首次启动时，服务器在服务器文件夹内创建一个 `data/` 目录。该目录包含用于存储持久数据的 `web.db` 数据库文件。
+
+除非在 `config.json` 中进行了更改，否则服务器将监听以下端口：
+
+| 端口   | 协议   | 目的                    |
+| ---- | ---- | --------------------- |
+| 9050 | UDP  | 游戏网络流量（玩家连接、游戏状态同步等）  |
+| 9050 | HTTP | [后台管理面板](admin-panel) |

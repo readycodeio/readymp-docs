@@ -24,6 +24,7 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
+  trailingSlash: false,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -64,7 +65,18 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts'
+          sidebarPath: './sidebarsWukong.ts',
+          path: 'wukong-mp',
+          routeBasePath: 'wukong-mp',
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '0.2.0'
+            },
+            '0.1.0': {
+              label: '0.1.0',
+            }
+          },
         },
         blog: {
           blogTitle: 'ReadyM Release Notes',
@@ -104,8 +116,7 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'oblivionMpDocsSidebar',
+          to: 'oblivion-mp/docs/what-is-oblivion-mp',
           position: 'left',
           label: '🚧 OblivionMP',
         },
@@ -127,12 +138,21 @@ const config: Config = {
           position: 'left'
         },
         {
-          href: 'https://github.com/readycodeio',
-          label: 'GitHub',
+          type: 'docsVersionDropdown',
+          versions: {
+            'current': { label: '0.2.0' },
+            '0.1.0': { label: '0.1.0' },
+          },
           position: 'right',
+          docsPluginId: 'default',
         },
         {
           type: 'localeDropdown',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/readycodeio',
+          label: 'GitHub',
           position: 'right',
         },
       ],
@@ -145,11 +165,11 @@ const config: Config = {
           items: [
             {
               label: '🚧 OblivionMP SDK',
-              to: '/docs/oblivionmp-docs/what-is-oblivion-mp',
+              to: '/oblivion-mp/docs/what-is-oblivion-mp',
             },
             {
               label: 'WukongMP SDK',
-              to: '/docs/wukongmp-docs/what-is-wukong-mp',
+              to: '/wukong-mp/docs/what-is-wukong-mp',
             },
             {
               label: 'ReadyM FAQ',
@@ -220,6 +240,18 @@ const config: Config = {
       additionalLanguages: ['csharp'],
     },
   } satisfies Preset.ThemeConfig,
+
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'oblivion',
+        path: 'oblivion-mp',
+        routeBasePath: 'oblivion-mp',
+        sidebarPath: './sidebarsOblivion.ts'
+      },
+    ],
+  ],
 };
 
 export default config;

@@ -1,0 +1,114 @@
+{
+  "version.label": {
+    "message": "0.1.0",
+    "description": "The label for version 0.1.0"
+  },
+  "sidebar.wukongMpDocsSidebar.category.APIs": {
+    "message": "API 接口",
+    "description": "The label for category 'APIs' in sidebar 'wukongMpDocsSidebar'"
+  },
+  "sidebar.wukongMpDocsSidebar.category.sdk-examples": {
+    "message": "模组示例",
+    "description": "The label for category 'Mod examples' in sidebar 'wukongMpDocsSidebar'"
+  },
+  "sidebar.wukongMpDocsSidebar.category.sdk-examples.link.generated-index.title": {
+    "message": "模组示例",
+    "description": "The generated-index page title for category 'Mod examples' in sidebar 'wukongMpDocsSidebar'"
+  },
+  "sidebar.wukongMpDocsSidebar.category.sdk-examples.link.generated-index.description": {
+    "message": "使用 WukongMP SDK 构建的示例模组",
+    "description": "The generated-index page description for category 'Mod examples' in sidebar 'wukongMpDocsSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Command": {
+    "message": "ReadyM.Api.Command",
+    "description": "The label for category 'ReadyM.Api.Command' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Idents": {
+    "message": "ReadyM.Api.Idents",
+    "description": "The label for category 'ReadyM.Api.Idents' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Generators": {
+    "message": "ReadyM.Api.Multiplayer.Generators",
+    "description": "The label for category 'ReadyM.Api.Multiplayer.Generators' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Protocol.Enums": {
+    "message": "ReadyM.Api.Multiplayer.Protocol.Enums",
+    "description": "The label for category 'ReadyM.Api.Multiplayer.Protocol.Enums' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Serialization": {
+    "message": "ReadyM.Api.Serialization",
+    "description": "The label for category 'ReadyM.Api.Serialization' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.WukongMp.Api": {
+    "message": "WukongMp.Api",
+    "description": "The label for category 'WukongMp.Api' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.WukongMp.Api.Configuration": {
+    "message": "WukongMp.Api.Configuration",
+    "description": "The label for category 'WukongMp.Api.Configuration' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.WukongMp.Api.Https": {
+    "message": "WukongMp.Api.Https",
+    "description": "The label for category 'WukongMp.Api.Https' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.WukongMp.Api.Resources": {
+    "message": "WukongMp.Api.Resources",
+    "description": "The label for category 'WukongMp.Api.Resources' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.WukongMp.Api.UI": {
+    "message": "WukongMp.Api.UI",
+    "description": "The label for category 'WukongMp.Api.UI' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.WukongMp.Api.WukongUtils": {
+    "message": "WukongMp.Api.WukongUtils",
+    "description": "The label for category 'WukongMp.Api.WukongUtils' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.WukongMp.Sdk": {
+    "message": "WukongMp.Sdk",
+    "description": "The label for category 'WukongMp.Sdk' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.WukongMp.Sdk.Api": {
+    "message": "WukongMp.Sdk.Api",
+    "description": "The label for category 'WukongMp.Sdk.Api' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.WukongMp.Sdk.Entities": {
+    "message": "WukongMp.Sdk.Entities",
+    "description": "The label for category 'WukongMp.Sdk.Entities' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpDocsSidebar.category.Server hosting": {
+    "message": "服务器托管",
+    "description": "The label for category 'Server hosting' in sidebar 'wukongMpDocsSidebar'"
+  },
+  "sidebar.wukongMpDocsSidebar.category.Mod development": {
+    "message": "模组开发",
+    "description": "The label for category 'Mod development' in sidebar 'wukongMpDocsSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.PreludeLib.Attributes": {
+    "message": "PreludeLib.Attributes",
+    "description": "The label for category 'PreludeLib.Attributes' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.DI": {
+    "message": "ReadyM.Api.DI",
+    "description": "The label for category 'ReadyM.Api.DI' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Client": {
+    "message": "ReadyM.Api.Multiplayer.Client",
+    "description": "The label for category 'ReadyM.Api.Multiplayer.Client' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Protocol": {
+    "message": "ReadyM.Api.Multiplayer.Protocol",
+    "description": "The label for category 'ReadyM.Api.Multiplayer.Protocol' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.RPC": {
+    "message": "ReadyM.Api.Multiplayer.RPC",
+    "description": "The label for category 'ReadyM.Api.Multiplayer.RPC' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.wukongMpApiSidebar.category.ReadyM.Api.Multiplayer.Serialization": {
+    "message": "ReadyM.Api.Multiplayer.Serialization",
+    "description": "The label for category 'ReadyM.Api.Multiplayer.Serialization' in sidebar 'wukongMpApiSidebar'"
+  },
+  "sidebar.oblivionMpDocsSidebar.category.Server hosting": {
+    "message": "Server hosting",
+    "description": "The label for category 'Server hosting' in sidebar 'oblivionMpDocsSidebar'"
+  }
+}
