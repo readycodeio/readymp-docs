@@ -1,9 +1,4 @@
 # Website
-
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
-
-## Quirks of working with Weblate
-
 The source for the documentation is located in the `docs/` folder. The `i18n` folder's content is written by our [Weblate instance](https://translate.readycode.io).
 
 There are a few things to watch out for when writing docs so that they play well with Weblate:
