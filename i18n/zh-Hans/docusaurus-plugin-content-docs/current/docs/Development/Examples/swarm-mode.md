@@ -150,12 +150,11 @@ API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi)
 
 所有系统（派生自
 [ModSystemBase](../../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase)
-的类）都暴露一个
+的类）都会暴露一个在每帧执行的
 [OnUpdate](../../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModSystemBase#-onupdateupdatetick)
-方法，该方法在每一帧运行。我们可以用它来计算自上次刷怪以来经过的秒数。当 `_timeSinceLastSpawn` 超过阈值时，我们使用
-[Synchronization
+方法。我们可以用它来统计自上次生成敌人以来经过的秒数。当 `_timeSinceLastSpawn` 超过阈值时，我们使用 [Synchronization
 API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi)
-在玩家周围以圆形分布刷出若干次敌人（Wolf Sentinel）。所有可用的敌人类型都在
+在玩家周围以圆环的方式重复生成若干个敌人（Wolf Sentinel）。所有可用的敌人类型都在
 [TamerKinds](../../../api-reference/WukongMp.Api.Configuration/WukongMp.Api.Configuration.TamerKinds)
 中定义。
 
