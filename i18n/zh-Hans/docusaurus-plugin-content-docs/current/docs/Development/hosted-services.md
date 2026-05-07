@@ -2,17 +2,20 @@
 sidebar_position: 5
 ---
 
-# Hosted services
+# 托管服务
 
-In addition to systems, the WukongMP SDK also provides a way to implement **hosted services**. These are classes that expose lifecycle methods for when the game starts and stops, but don't have a tick method.
+除了系统之外，WukongMP SDK 还提供一种实现 **托管服务** 的方式。这些类暴露了在游戏启动和停止时的生命周期方法，但没有 tick 方法。
 
-## Declaring hosted services
+## 声明托管服务
 
-Any class implementing [IHostedService](../../api-reference/ReadyM.Api.DI/ReadyM.Api.DI.IHostedService) and added to the Dependency Injection container in your mod's `Initialize` method will automatically call its `OnScopeStart` method when the game starts, and disposed of when the game shuts down.
+任何实现
+[IHostedService](../../api-reference/ReadyM.Api.DI/ReadyM.Api.DI.IHostedService)
+并在你模组的 `Initialize` 方法中被添加到依赖注入容器的类，将在游戏启动时自动调用其 `OnScopeStart` 方法，且在游戏关闭时被释放。
 
-Such services are useful for managing event subscriptions, or running initialization code that doesn't fit in the `Initialize` method of your mod class, or that needs to be cleaned up when the game shuts down.
+此类服务对于管理事件订阅，或运行不适合放在模组类的 `Initialize` 方法中的初始化代码，或需要在游戏关闭时进行清理的代码，都是有用的。
 
-Below is an example of a hosted service from the PvP mod. It encapsulates some simple logic for synchronizing PvP state when joining a new area. Since many of the mod's features depend on subcribing to game events, this pattern of using hosted services to manage event subscriptions is used throughout the mod's codebase.
+下面是 PvP 模组中一个托管服务的示例。它封装了一些简单的逻辑，用于在进入新区域时同步 PvP
+状态。由于模组的许多功能依赖于对游戏事件的订阅，这种使用托管服务来管理事件订阅的模式已在整个模组的代码库中得到广泛应用。
 
 ```csharp title="托管服务示例"
 public sealed class PvpSynchronizer : IHostedService
@@ -27,7 +30,7 @@ public sealed class PvpSynchronizer : IHostedService
     {
         var isMasterClient = WukongApi.Sync.IsMasterClient;
         Logging.LogDebug("Joined area {AreaId}, is master client: {IsMasterClient}", areaId, isMasterClient);
-        
+
         if (isMasterClient)
             WukongApi.PvP.InitializeAreaPvpState();
     }
