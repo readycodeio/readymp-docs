@@ -36,6 +36,25 @@ WukongMP SDK 和服务器的抢先体验版本不包含任何针对模组的沙�
 
 :::
 
+### .pak 文件
+
+WukongMP 的模组可以包含用于游戏资源的 `.pak` 文件，这些文件将被游戏自动加载。
+
+要在你的模组中包含一个 `.pak` 文件，只需将它放在模组文件夹中的任意位置即可。只要模组中存在有效的 `manifest.json`
+文件，服务器就会将其识别为模组并分发给客户端，游戏在加载模组时会加载 `.pak` 文件。
+
+特别是，这使你能够创建仅包含自定义资源且不包含任何代码的模组，这对于简单的内容模组非常有用。
+
+一个包含 `.pak` 文件的示例模组结构如下：
+
+```text title="Example mod folder layout with .pak file"
+mods/
+└──MyModFolder/           # mod 的根目录，可以任意命名
+    ├── manifest.json     # mod 清单文件
+    ├── custom_assets.pak # 自定义资源包
+    └── other_files...    # mod 所需的其他文件（可选）
+```
+
 ## 服务器端模组
 
 :::info[正在进行中]

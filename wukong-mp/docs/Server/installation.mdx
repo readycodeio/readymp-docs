@@ -11,7 +11,9 @@ import TabItem from '@theme/TabItem';
 The WukongMP server is currently distributed in the following formats:
 
 - Binary package
-- Docker image **(coming soon)**
+- [Docker image](#docker)
+
+## Binary package
 
 ### Downloads
 
@@ -20,7 +22,7 @@ The WukongMP server is currently distributed in the following formats:
 | Linux | x64 | [Download for Linux](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.2.2.zip) |
 | Windows | x64 | [Download for Windows](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.2.2.zip) |
 
-## Installation
+### Installation
 
 Extract the binary package to a location of your choice.
 
@@ -64,7 +66,7 @@ server/
 </TabItem>
 </Tabs>
 
-## Configuration
+### Configuration
 
 You can adjust server settings by editing the `config.json` file. In the following table, the `:` notation is used to represent nested settings.
 
@@ -72,7 +74,7 @@ You can adjust server settings by editing the `config.json` file. In the followi
 | --- | --- | --- |
 | `Server:Port` | number | The port on which the server listens for incoming connections |
 
-## First launch
+### First launch
 
 Start the server by running the `server.exe` binary.
 
@@ -85,3 +87,58 @@ Unless changed in `config.json`, the server listens on the following ports:
 | --- | --- | --- |
 | 9050 | UDP | Game traffic (player connections, game state synchronization, etc.) |
 | 9050 | HTTP | [Admin panel](admin-panel) |
+
+## Docker
+
+A Linux-based x64 Docker image is also available for those who prefer containerized deployments. 
+
+Pull the image from the registry:
+
+```shell
+docker pull ghcr.io/readycodeio/wukongmp-server:0.2.2
+```
+
+Run:
+
+```shell
+docker run \
+    -p 9050:9050/udp -p 9050:9050/tcp \
+    -v ./data:/app/data \
+    -v ./mods:/app/mods \
+    -v ./saves:/app/saves \
+    --name wukongmp-server \
+    ghcr.io/readycodeio/wukongmp-server:0.2.2
+```
+
+Or with Docker Compose:
+
+```yaml title="docker-compose.yml"
+services:
+  server:
+    image: ghcr.io/readycodeio/wukongmp-server:0.2.2
+    container_name: wukongmp-server
+    restart: unless-stopped
+    ports:
+      - "9050:9050/tcp"
+      - "9050:9050/udp"
+    volumes:
+      - ./data:/app/data
+      - ./mods:/app/mods
+      - ./saves:/app/saves
+```
+
+:::important
+
+The image ships **without mods**. Copy `WukongMp.Sdk` and the mode you want (`WukongMp.PvP`, `WukongMp.Coop`) from the binary ZIP into your `mods/` volume before starting the container.
+
+:::
+
+### Configuration
+
+Configuring the port is done by remapping the container ports in the `docker run` command or Docker Compose file. For example, to use port 9060 instead of 9050, change the ports section to:
+
+```yaml title="docker-compose.yml"
+ports:
+  - "9060:9060/tcp"
+  - "9060:9060/udp"
+```
