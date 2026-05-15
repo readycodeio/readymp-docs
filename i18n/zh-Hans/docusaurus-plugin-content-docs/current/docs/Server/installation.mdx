@@ -10,8 +10,10 @@ import TabItem from '@theme/TabItem';
 
 WukongMP 服务器当前以以下格式分发：
 
-- 二进制包
-- Docker 镜像 **(即将推出)**
+- 二进制软件包
+- [Docker 镜像](#docker)
+
+## 二进制软件包
 
 ### 下载
 
@@ -20,7 +22,7 @@ WukongMP 服务器当前以以下格式分发：
 | Linux   | x64 | [Linux 版下载](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.2.2.zip) |
 | Windows | x64 | [Windows 版下载](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.2.2.zip) |
 
-## 安装
+### 安装
 
 将二进制包解压到你选择的位置。
 
@@ -64,7 +66,7 @@ server/
 </TabItem>
 </Tabs>
 
-## 配置
+### 配置
 
 您可以通过编辑 `config.json` 文件来调整服务器设置。在以下表格中，使用 `:` 记法来表示嵌套设置。
 
@@ -72,7 +74,7 @@ server/
 | ------------- | --- | ------------ |
 | `Server:Port` | 数字  | 服务器监听传入连接的端口 |
 
-## 首次启动
+### 首次启动
 
 通过运行 `server.exe` 二进制文件来启动服务器。
 
@@ -84,3 +86,60 @@ server/
 | ---- | ---- | --------------------- |
 | 9050 | UDP  | 游戏网络流量（玩家连接、游戏状态同步等）  |
 | 9050 | HTTP | [后台管理面板](admin-panel) |
+
+## Docker
+
+也提供了基于 Linux 的 x64 Docker 镜像，供偏好容器化部署的用户使用。
+
+从注册表拉取镜像：
+
+```shell
+docker pull ghcr.io/readycodeio/wukongmp-server:0.2.2
+```
+
+运行：
+
+```shell
+docker run \
+    -p 9050:9050/udp -p 9050:9050/tcp \
+    -v ./data:/app/data \
+    -v ./mods:/app/mods \
+    -v ./saves:/app/saves \
+    --name wukongmp-server \
+    ghcr.io/readycodeio/wukongmp-server:0.2.2
+```
+
+或者使用 Docker Compose：
+
+```yaml title="docker-compose.yml"
+services:
+  server:
+    image: ghcr.io/readycodeio/wukongmp-server:0.2.2
+    container_name: wukongmp-server
+    restart: unless-stopped
+    ports:
+      - "9050:9050/tcp"
+      - "9050:9050/udp"
+    volumes:
+      - ./data:/app/data
+      - ./mods:/app/mods
+      - ./saves:/app/saves
+```
+
+:::important
+
+镜像 **不带模组**。在启动容器之前，将 `WukongMp.Sdk`
+以及你想要的模式（`WukongMp.PvP`、`WukongMp.Coop`）从二进制 ZIP 文件复制到你的 `mods/` 卷中。
+
+:::
+
+### 配置
+
+端口的配置是通过在 `docker run` 命令或 Docker Compose 文件中重新映射容器端口来完成的。例如，要使用端口 9060 而不是
+9050，请将端口部分更改为：
+
+```yaml title="docker-compose.yml"
+ports:
+  - "9060:9060/tcp"
+  - "9060:9060/udp"
+```
