@@ -12,13 +12,12 @@ sidebar_position: 1
 为了创建一个 WukongMP 模组，您必须创建一个新的 C# 类库项目，引用 `WukongMp.Sdk.dll`，并定义一个从
 [ModBase](../../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase) 派生的类。
 
-至少，该模组必须定义其名称和版本号：
+模块至少必须定义其名称：
 
 ```csharp title="Mod.cs"
 public class Mod : ModBase
 {
     public override string Name => "Swarm";
-    public override string Version => "1.0.0";
 ```
 
 `Initialize` 方法是配置模组的地方。在这个模组中，我们要做几件事：

@@ -12,13 +12,12 @@ The players are supposed to fight until they can't anymore, after which the mod 
 
 In order to create a WukongMP mod, you must create a new C# library project referencing `WukongMp.Sdk.dll` and define a class derived from [ModBase](../../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase).
 
-At minimum, the mod must define its name and version number:
+At minimum, the mod must define its name:
 
 ```csharp title="Mod.cs"
 public class Mod : ModBase
 {
     public override string Name => "Swarm";
-    public override string Version => "1.0.0";
 ```
 
 The `Initialize` method is the place to configure your mod. In this mod, we do a few things:
