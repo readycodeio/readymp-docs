@@ -322,35 +322,76 @@
         "message": "标签",
         "description": "The title of the tag list page"
     },
-    "readym.sdk-documentation": {
-        "message": "SDK 文档"
-    },
-    "readym.readym-docs": {
-        "message": "ReadyM 开发者门户"
-    },
-    "readym.tagline": {
-        "message": "在你最喜欢的游戏中打造多人体验。"
-    },
-    "readym.feature1.title": {
-        "message": "ReadyM 软件开发工具包"
-    },
-    "readym.feature1.description": {
-        "message": "我们相信服务器拥有者及其社区值得更好——更高的性能、更强大的工具，以及更出色的体验。我们的目标是帮助您创造自己一直梦想的游戏世界，摆脱那些曾经束缚您、令您沮丧的技术限制。"
-    },
-    "readym.feature2.title": {
-        "message": "由模组制作者打造，专为模组制作者而设"
-    },
-    "readym.feature2.description": {
-        "message": "使用我们基于 C# 的脚本引擎，创建复杂且相互作用的模组。这是你想要构建的一切的基础：角色扮演服务器、生存模式、自定义竞技场、Boss Rush 联赛，或带有自定义规则集的 PvP 锦标赛。"
-    },
-    "readym.feature3.title": {
-        "message": "打造它，运行它，拥有它"
-    },
-    "readym.feature3.description": {
-        "message": "服务器二进制包是你在自己硬件上或托管提供商处运行的可部署软件包。将其部署到一台机器上，进行配置，让玩家指向它。你的服务器，你的规则。"
-    },
-    "theme.docs.paginator.next": {
+        "theme.docs.paginator.next": {
         "message": "下一页",
         "description": "The label used to navigate to the next doc"
+    },
+    "readym.readym-docs": {
+        "message": "ReadyM 开发者门户",
+        "description": "Site title shown in the hero and browser tab"
+    },
+    "readym.tagline": {
+        "message": "在您最喜爱的游戏中构建多人游戏体验。",
+        "description": "Hero subtitle / site meta description"
+    },
+    "readym.sdk-documentation": {
+        "message": "SDK 文档",
+        "description": "Secondary CTA button in the hero"
+    },
+    "readym.host-a-server": {
+        "message": "托管服务器",
+        "description": "Primary CTA button in the hero — links to the Quick Start guide"
+    },
+    "readym.paths.label": {
+        "message": "您想做什么？",
+        "description": "Eyebrow label above the two audience path cards"
+    },
+    "readym.path.server.title": {
+        "message": "运行服务器",
+        "description": "Title of the server-owner path card"
+    },
+    "readym.path.server.description": {
+        "message": "几分钟内启动您的 WukongMP 服务器。下载二进制文件或使用 Docker，完成配置后即可上线。",
+        "description": "Body text of the server-owner path card"
+    },
+    "readym.path.server.cta": {
+        "message": "快速入门指南 \u2192",
+        "description": "Link label at the bottom of the server-owner path card"
+    },
+    "readym.path.sdk.title": {
+        "message": "构建模组",
+        "description": "Title of the developer path card"
+    },
+    "readym.path.sdk.description": {
+        "message": "使用我们基于 C# 的 SDK 扩展 WukongMP。构建角色扮演服务器、生存模式、自定义竞技场或带有自定义规则集的 PvP 锦标赛。",
+        "description": "Body text of the developer path card"
+    },
+    "readym.path.sdk.cta": {
+        "message": "SDK 文档 \u2192",
+        "description": "Link label at the bottom of the developer path card"
+    },
+    "readym.feature1.title": {
+        "message": "ReadyM SDK",
+        "description": "Title of the first feature column on the homepage"
+    },
+    "readym.feature1.description": {
+        "message": "我们相信服务器主及其社区理应获得更好的体验——更高的性能、更完善的工具、更出色的游戏感受。我们的目标是赋予您创造梦想游戏世界的能力，摆脱技术限制与挫败感的束缚。",
+        "description": "Body text of the first feature column"
+    },
+    "readym.feature2.title": {
+        "message": "由模组玩家打造，为模组玩家服务",
+        "description": "Title of the second feature column"
+    },
+    "readym.feature2.description": {
+        "message": "使用我们基于 C# 的脚本引擎创建复杂的交互式模组。这是构建一切所需功能的基础：角色扮演服务器、生存模式、自定义竞技场、Boss 连战或带有自定义规则集的 PvP 锦标赛。",
+        "description": "Body text of the second feature column"
+    },
+    "readym.feature3.title": {
+        "message": "自建、自运行、自主掌控",
+        "description": "Title of the third feature column"
+    },
+    "readym.feature3.description": {
+        "message": "服务器二进制文件是可部署的软件包，可在您自己的硬件或托管服务商上运行。将其部署到服务器上，完成配置，引导玩家连接。您的服务器，您做主。",
+        "description": "Body text of the third feature column"
     }
 }

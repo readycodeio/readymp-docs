@@ -326,31 +326,72 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "readym.sdk-documentation": {
-    "message": "SDK Documentation"
-  },
   "readym.readym-docs": {
-    "message": "ReadyM Dev Portal"
+    "message": "ReadyM Dev Portal",
+    "description": "Site title shown in the hero and browser tab"
   },
   "readym.tagline": {
-    "message": "Build multiplayer experiences in your favourite games."
+    "message": "Build multiplayer experiences in your favourite games.",
+    "description": "Hero subtitle / site meta description"
+  },
+  "readym.sdk-documentation": {
+    "message": "SDK Documentation",
+    "description": "Secondary CTA button in the hero"
+  },
+  "readym.host-a-server": {
+    "message": "Host a Server",
+    "description": "Primary CTA button in the hero — links to the Quick Start guide"
+  },
+  "readym.paths.label": {
+    "message": "What are you here for?",
+    "description": "Eyebrow label above the two audience path cards"
+  },
+  "readym.path.server.title": {
+    "message": "Running a Server",
+    "description": "Title of the server-owner path card"
+  },
+  "readym.path.server.description": {
+    "message": "Get your WukongMP server up and running in minutes. Download the binary or use Docker, configure, and go live.",
+    "description": "Body text of the server-owner path card"
+  },
+  "readym.path.server.cta": {
+    "message": "Quick Start Guide \u2192",
+    "description": "Link label at the bottom of the server-owner path card"
+  },
+  "readym.path.sdk.title": {
+    "message": "Building Mods",
+    "description": "Title of the developer path card"
+  },
+  "readym.path.sdk.description": {
+    "message": "Extend WukongMP with our C#-based SDK. Build roleplaying servers, survival modes, custom arenas, or PvP tournaments with custom rulesets.",
+    "description": "Body text of the developer path card"
+  },
+  "readym.path.sdk.cta": {
+    "message": "SDK Documentation \u2192",
+    "description": "Link label at the bottom of the developer path card"
   },
   "readym.feature1.title": {
-    "message": "ReadyM SDK"
+    "message": "ReadyM SDK",
+    "description": "Title of the first feature column on the homepage"
   },
   "readym.feature1.description": {
-    "message": "We believe that server owners and their communities deserve better – better performance, better tools, and better experiences. Our goal is to empower you to create the gaming worlds you've always dreamed of, free from the technical limitations and frustrations that have held you back."
+    "message": "We believe that server owners and their communities deserve better \u2013 better performance, better tools, and better experiences. Our goal is to empower you to create the gaming worlds you\u2019ve always dreamed of, free from the technical limitations and frustrations that have held you back.",
+    "description": "Body text of the first feature column"
   },
   "readym.feature2.title": {
-    "message": "Made by modders, for modders"
+    "message": "Made by modders, for modders",
+    "description": "Title of the second feature column"
   },
   "readym.feature2.description": {
-    "message": "Create complex, interacting mods using our C#-based scripting engine. This is the foundation of everything you'd want to build: roleplaying servers, survival modes, custom arenas, boss rush leagues, or PvP tournaments with custom rulesets."
+    "message": "Create complex, interacting mods using our C#-based scripting engine. This is the foundation of everything you\u2019d want to build: roleplaying servers, survival modes, custom arenas, boss rush leagues, or PvP tournaments with custom rulesets.",
+    "description": "Body text of the second feature column"
   },
   "readym.feature3.title": {
-    "message": "Build it, run it, own it"
+    "message": "Build it, run it, own it",
+    "description": "Title of the third feature column"
   },
   "readym.feature3.description": {
-    "message": "Server binaries are the deployable package you run on your own hardware or with a hosting provider. Drop it on a machine, configure it, point players at it. Your server, your rules."
+    "message": "Server binaries are the deployable package you run on your own hardware or with a hosting provider. Drop it on a machine, configure it, point players at it. Your server, your rules.",
+    "description": "Body text of the third feature column"
   }
 }

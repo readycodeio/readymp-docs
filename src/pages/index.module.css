@@ -1,10 +1,5 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
 .heroBanner {
-  padding: 4rem 0;
+  padding: 5rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -12,7 +7,7 @@
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 2.5rem 1.5rem;
   }
 }
 
@@ -20,4 +15,90 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.buttonOutline {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: #fff !important;
+}
+
+.buttonOutline:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  color: #fff !important;
+}
+
+/* ── Audience path cards ─────────────────────────────────────────── */
+
+.paths {
+  padding: 4.5rem 0 5rem;
+}
+
+.pathsLabel {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-500);
+  margin: 0 0 2.25rem;
+}
+
+.pathsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .pathsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pathCard {
+  display: block;
+  padding: 2.25rem 2rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+.pathCard:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  color: inherit;
+}
+
+.pathIcon {
+  font-size: 2.25rem;
+  line-height: 1;
+  margin-bottom: 1.1rem;
+}
+
+.pathCard h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 0.625rem;
+  color: var(--ifm-heading-color);
+}
+
+.pathCard p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0 0 1.5rem;
+}
+
+.pathCta {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
 }
