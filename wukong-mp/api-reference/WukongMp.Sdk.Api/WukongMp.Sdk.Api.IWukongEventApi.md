@@ -31,19 +31,19 @@ event Action<PlayerId>? OnConnected
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/PlayerId.cs)\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/35a3d35386874af513f4af64fb25c76e0ab4cf43/src/ReadyM.Api/Idents/PlayerId.cs)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnDisconnected"></a> OnDisconnected
 
 Fired when any player disconnects from the server, either voluntarily or involuntarily.
 
 ```csharp
-event Action<PlayerId, DisconnectReason>? OnDisconnected
+event Action<PlayerId, DisconnectedReason>? OnDisconnected
 ```
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/PlayerId.cs), [DisconnectReason](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/INetEventListener.cs)\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/35a3d35386874af513f4af64fb25c76e0ab4cf43/src/ReadyM.Api/Idents/PlayerId.cs), [DisconnectedReason](https://github.com/readycodeio/readym\-gameserver/blob/35a3d35386874af513f4af64fb25c76e0ab4cf43/src/ReadyM.Api.Multiplayer/Protocol/DisconnectedReason.cs)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnEndPlayGameplayLevel"></a> OnEndPlayGameplayLevel
 
@@ -79,7 +79,7 @@ event Action<AreaId>? OnJoinedArea
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[AreaId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/AreaId.cs)\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[AreaId](https://github.com/readycodeio/readym\-gameserver/blob/35a3d35386874af513f4af64fb25c76e0ab4cf43/src/ReadyM.Api/Idents/AreaId.cs)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnLanguageChanged"></a> OnLanguageChanged
 
@@ -103,7 +103,7 @@ event Action<AreaId>? OnLeftArea
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[AreaId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/AreaId.cs)\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[AreaId](https://github.com/readycodeio/readym\-gameserver/blob/35a3d35386874af513f4af64fb25c76e0ab4cf43/src/ReadyM.Api/Idents/AreaId.cs)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnLevelLoaded"></a> OnLevelLoaded
 
@@ -215,7 +215,7 @@ event Action<PlayerId, AreaId>? OnOtherPlayerInsideArea
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/PlayerId.cs), [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/AreaId.cs)\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/35a3d35386874af513f4af64fb25c76e0ab4cf43/src/ReadyM.Api/Idents/PlayerId.cs), [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/35a3d35386874af513f4af64fb25c76e0ab4cf43/src/ReadyM.Api/Idents/AreaId.cs)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnOtherPlayerOutsideArea"></a> OnOtherPlayerOutsideArea
 
@@ -227,7 +227,7 @@ event Action<PlayerId, AreaId>? OnOtherPlayerOutsideArea
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/PlayerId.cs), [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/AreaId.cs)\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-2)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/35a3d35386874af513f4af64fb25c76e0ab4cf43/src/ReadyM.Api/Idents/PlayerId.cs), [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/35a3d35386874af513f4af64fb25c76e0ab4cf43/src/ReadyM.Api/Idents/AreaId.cs)\>?
 
 ### <a id="WukongMp_Sdk_Api_IWukongEventApi_OnPlayerChangedTeam"></a> OnPlayerChangedTeam
 

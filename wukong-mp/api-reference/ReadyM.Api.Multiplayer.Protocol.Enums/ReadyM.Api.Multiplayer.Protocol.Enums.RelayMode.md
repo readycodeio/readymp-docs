@@ -35,16 +35,4 @@ Sends the message to all players in the game, including the sender.
 
 
 
-`EntityOwner = 4` 
-
-Sends the message to the owner of an entity, possibly back to the sender.
-
-Not part of stable API.
-
-`Peers = 5` 
-
-Sends the message to a specific list of players.
-
-
-
 
