@@ -15,9 +15,11 @@ sidebar_position: 1
 
 目前你可以开发对游戏事件、实体数据（玩家、敌人）有访问权限的模组，并且可以定义自定义命令和游戏逻辑系统。
 
-对任意 RPC 调用和自定义数据同步的支持正在实现中。
+服务器端逻辑和自定义数据同步的支持正在推进中。
 
-请访问 [示例](/wukong-mp/category/mod-examples) 页面以获取灵感。
+请访问 [examples](/wukong-mp/category/mod-examples) 页面以获取灵感，或浏览
+[co-op](https://github.com/readycodeio/WukongMP-co-op-mod) 与
+[PvP](https://github.com/readycodeio/WukongMP-PvP-mod) 模组的源代码。
 
 | 特性        | 状态                                                             |
 | --------- | -------------------------------------------------------------- |
@@ -27,3 +29,4 @@ sidebar_position: 1
 | 自定义 RPC   | :white_check_mark: [已完成](../Development/custom-rpc)            |
 | 保存文件 API  | :construction: [部分](../Development/APIs/save-file-management)  |
 | 自定义数据同步   | :soon: [进行中](../Development/APIs/custom-components)            |
+| 服务器端模组    | :soon: 进行中                                                     |

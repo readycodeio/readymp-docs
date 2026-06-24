@@ -152,7 +152,7 @@ ref PvPComponent PvpData(ReadyMainCharacter mainCharacter)
 
 #### Returns
 
- [PvPComponent](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Wukong.Common/ECS/Components/PvPComponent.cs)
+ [PvPComponent](https://github.com/readycodeio/readym\-gameserver/blob/a1b59546bbb845a6f917219c2bff68f0f63b4da0/src/ReadyM.Wukong.Common/ECS/Components/PvPComponent.cs)
 
 ### <a id="WukongMp_Sdk_Api_IWukongPvpApi_SetLastRoundWinnerTeam_System_Int32_"></a> SetLastRoundWinnerTeam\(int\)
 

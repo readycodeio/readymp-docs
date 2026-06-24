@@ -71,7 +71,7 @@ const config: Config = {
           lastVersion: 'current',
           versions: {
             current: {
-              label: '0.2.2'
+              label: '0.2.3'
             },
             '0.1.0': {
               label: '0.1.0',
@@ -140,7 +140,7 @@ const config: Config = {
         {
           type: 'docsVersionDropdown',
           versions: {
-            'current': { label: '0.2.2' },
+            'current': { label: '0.2.3' },
             '0.1.0': { label: '0.1.0' },
           },
           position: 'right',

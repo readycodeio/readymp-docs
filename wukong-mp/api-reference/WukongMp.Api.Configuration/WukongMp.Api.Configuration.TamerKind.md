@@ -43,12 +43,12 @@ Must be a valid monster name.
 ### <a id="WukongMp_Api_Configuration_TamerKind_Name"></a> Name
 
 ```csharp
-public readonly string Name
+public readonly string? Name
 ```
 
 #### Field Value
 
- [string](https://learn.microsoft.com/dotnet/api/system.string)
+ [string](https://learn.microsoft.com/dotnet/api/system.string)?
 
 ## Methods
 

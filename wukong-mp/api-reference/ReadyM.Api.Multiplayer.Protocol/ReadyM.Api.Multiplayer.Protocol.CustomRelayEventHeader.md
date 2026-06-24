@@ -6,8 +6,8 @@ Assembly: ReadyM.Api.Multiplayer.dll
 Spans 4 bytes in standard relay modes and (6 + 2 * peers) in peer-targeted relay mode.
 - 1 byte for eventCode
 - 2 bytes for sender
-- 1 byte for relayMode and eventCaching (bit packed)
 - 2 bytes for peers count
+- 1 byte for relayMode
 - peers * 2 bytes for peers
 
 ```csharp
@@ -30,8 +30,8 @@ public struct CustomRelayEventHeader
 Spans 4 bytes in standard relay modes and (6 + 2 * peers) in peer-targeted relay mode.
 - 1 byte for eventCode
 - 2 bytes for sender
-- 1 byte for relayMode and eventCaching (bit packed)
 - 2 bytes for peers count
+- 1 byte for relayMode
 - peers * 2 bytes for peers
 
 ```csharp
@@ -42,9 +42,9 @@ public CustomRelayEventHeader(RelayMessageCode eventCode, PlayerId sender, Playe
 
 `eventCode` [RelayMessageCode](../ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMessageCode.md)
 
-`sender` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/PlayerId.cs)
+`sender` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/a1b59546bbb845a6f917219c2bff68f0f63b4da0/src/ReadyM.Api/Idents/PlayerId.cs)
 
-`peers` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/PlayerId.cs)\[\]?
+`peers` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/a1b59546bbb845a6f917219c2bff68f0f63b4da0/src/ReadyM.Api/Idents/PlayerId.cs)\[\]?
 
 `relayMode` [RelayMode](../ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md)
 
@@ -68,7 +68,7 @@ public PlayerId[]? Peers
 
 #### Field Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/PlayerId.cs)\[\]?
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/a1b59546bbb845a6f917219c2bff68f0f63b4da0/src/ReadyM.Api/Idents/PlayerId.cs)\[\]?
 
 ### <a id="ReadyM_Api_Multiplayer_Protocol_CustomRelayEventHeader_RelayMode"></a> RelayMode
 
@@ -88,6 +88,6 @@ public PlayerId Sender
 
 #### Field Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/a1b59546bbb845a6f917219c2bff68f0f63b4da0/src/ReadyM.Api/Idents/PlayerId.cs)
 
 

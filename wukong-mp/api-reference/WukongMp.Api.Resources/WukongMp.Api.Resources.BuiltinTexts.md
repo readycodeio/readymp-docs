@@ -26,12 +26,36 @@ public class BuiltinTexts
 
 ## Properties
 
+### <a id="WukongMp_Api_Resources_BuiltinTexts_AlreadyConnected"></a> AlreadyConnected
+
+Looks up a localized string similar to Already connected to the server elsewhere..
+
+```csharp
+public static string AlreadyConnected { get; }
+```
+
+#### Property Value
+
+ [string](https://learn.microsoft.com/dotnet/api/system.string)
+
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_AntiStallWarning"></a> AntiStallWarning
 
 Looks up a localized string similar to Engage!.
 
 ```csharp
 public static string AntiStallWarning { get; }
+```
+
+#### Property Value
+
+ [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+### <a id="WukongMp_Api_Resources_BuiltinTexts_Banned"></a> Banned
+
+Looks up a localized string similar to You were banned from the server..
+
+```csharp
+public static string Banned { get; }
 ```
 
 #### Property Value
@@ -327,6 +351,18 @@ public static string ExecutionError { get; }
 
  [string](https://learn.microsoft.com/dotnet/api/system.string)
 
+### <a id="WukongMp_Api_Resources_BuiltinTexts_HelpCommandHeader"></a> HelpCommandHeader
+
+Looks up a localized string similar to Available commands: {0}.
+
+```csharp
+public static string HelpCommandHeader { get; }
+```
+
+#### Property Value
+
+ [string](https://learn.microsoft.com/dotnet/api/system.string)
+
 ### <a id="WukongMp_Api_Resources_BuiltinTexts_HintCommandsUse"></a> HintCommandsUse
 
 Looks up a localized string similar to Press F1 to use commands.
@@ -345,6 +381,18 @@ Looks up a localized string similar to In Multiplayer Lobby.
 
 ```csharp
 public static string InMultiplayer { get; }
+```
+
+#### Property Value
+
+ [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+### <a id="WukongMp_Api_Resources_BuiltinTexts_IncompatibleVersion"></a> IncompatibleVersion
+
+Looks up a localized string similar to Unable to connect. Incompatible SDK version..
+
+```csharp
+public static string IncompatibleVersion { get; }
 ```
 
 #### Property Value
@@ -561,6 +609,18 @@ Looks up a localized string similar to Join other players to proceed.
 
 ```csharp
 public static string JoinOtherPlayersToProceed { get; }
+```
+
+#### Property Value
+
+ [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+### <a id="WukongMp_Api_Resources_BuiltinTexts_Kicked"></a> Kicked
+
+Looks up a localized string similar to You were kicked from the server..
+
+```csharp
+public static string Kicked { get; }
 ```
 
 #### Property Value
@@ -861,6 +921,18 @@ Looks up a localized string similar to Round ended. {0} won.
 
 ```csharp
 public static string RoundEndedWinner { get; }
+```
+
+#### Property Value
+
+ [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+### <a id="WukongMp_Api_Resources_BuiltinTexts_ServerFull"></a> ServerFull
+
+Looks up a localized string similar to Server is full, try again later..
+
+```csharp
+public static string ServerFull { get; }
 ```
 
 #### Property Value

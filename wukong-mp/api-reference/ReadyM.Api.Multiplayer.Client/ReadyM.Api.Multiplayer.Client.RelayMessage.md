@@ -32,7 +32,7 @@ public readonly NetDataWriter Writer
 
 ### <a id="ReadyM_Api_Multiplayer_Client_RelayMessage_ByRelayMode_ReadyM_Api_Multiplayer_Protocol_Enums_RelayMessageCode_ReadyM_Api_Idents_PlayerId_ReadyM_Api_Multiplayer_Protocol_Enums_RelayMode_LiteNetLib_DeliveryMethod_"></a> ByRelayMode\(RelayMessageCode, PlayerId, RelayMode, DeliveryMethod\)
 
-Send an event with a specific delivery method. This overload does not support event caching.
+Send an event with a specific delivery method.
 
 ```csharp
 public static RelayMessage ByRelayMode(RelayMessageCode eventCode, PlayerId playerId, RelayMode mode, DeliveryMethod deliveryMethod)
@@ -42,7 +42,7 @@ public static RelayMessage ByRelayMode(RelayMessageCode eventCode, PlayerId play
 
 `eventCode` [RelayMessageCode](../ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMessageCode.md)
 
-`playerId` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/025fbf075362214ad0f4c9a456c7d58004b374a4/src/ReadyM.Api/Idents/PlayerId.cs)
+`playerId` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/a1b59546bbb845a6f917219c2bff68f0f63b4da0/src/ReadyM.Api/Idents/PlayerId.cs)
 
 `mode` [RelayMode](../ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md)
 
