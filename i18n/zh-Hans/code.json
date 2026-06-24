@@ -322,7 +322,7 @@
         "message": "标签",
         "description": "The title of the tag list page"
     },
-        "theme.docs.paginator.next": {
+    "theme.docs.paginator.next": {
         "message": "下一页",
         "description": "The label used to navigate to the next doc"
     },
@@ -331,7 +331,7 @@
         "description": "Site title shown in the hero and browser tab"
     },
     "readym.tagline": {
-        "message": "在您最喜爱的游戏中构建多人游戏体验。",
+        "message": "在你最喜欢的游戏中打造多人体验。",
         "description": "Hero subtitle / site meta description"
     },
     "readym.sdk-documentation": {
@@ -355,7 +355,7 @@
         "description": "Body text of the server-owner path card"
     },
     "readym.path.server.cta": {
-        "message": "快速入门指南 \u2192",
+        "message": "快速入门指南 →",
         "description": "Link label at the bottom of the server-owner path card"
     },
     "readym.path.sdk.title": {
@@ -367,31 +367,31 @@
         "description": "Body text of the developer path card"
     },
     "readym.path.sdk.cta": {
-        "message": "SDK 文档 \u2192",
+        "message": "SDK 文档 →",
         "description": "Link label at the bottom of the developer path card"
     },
     "readym.feature1.title": {
-        "message": "ReadyM SDK",
+        "message": "ReadyM 软件开发工具包",
         "description": "Title of the first feature column on the homepage"
     },
     "readym.feature1.description": {
-        "message": "我们相信服务器主及其社区理应获得更好的体验——更高的性能、更完善的工具、更出色的游戏感受。我们的目标是赋予您创造梦想游戏世界的能力，摆脱技术限制与挫败感的束缚。",
+        "message": "我们相信服务器拥有者及其社区值得更好——更高的性能、更强大的工具，以及更出色的体验。我们的目标是帮助您创造自己一直梦想的游戏世界，摆脱那些曾经束缚您、令您沮丧的技术限制。",
         "description": "Body text of the first feature column"
     },
     "readym.feature2.title": {
-        "message": "由模组玩家打造，为模组玩家服务",
+        "message": "由模组制作者打造，专为模组制作者而设",
         "description": "Title of the second feature column"
     },
     "readym.feature2.description": {
-        "message": "使用我们基于 C# 的脚本引擎创建复杂的交互式模组。这是构建一切所需功能的基础：角色扮演服务器、生存模式、自定义竞技场、Boss 连战或带有自定义规则集的 PvP 锦标赛。",
+        "message": "使用我们基于 C# 的脚本引擎，创建复杂且相互作用的模组。这是你想要构建的一切的基础：角色扮演服务器、生存模式、自定义竞技场、Boss Rush 联赛，或带有自定义规则集的 PvP 锦标赛。",
         "description": "Body text of the second feature column"
     },
     "readym.feature3.title": {
-        "message": "自建、自运行、自主掌控",
+        "message": "打造它，运行它，拥有它",
         "description": "Title of the third feature column"
     },
     "readym.feature3.description": {
-        "message": "服务器二进制文件是可部署的软件包，可在您自己的硬件或托管服务商上运行。将其部署到服务器上，完成配置，引导玩家连接。您的服务器，您做主。",
+        "message": "服务器二进制包是你在自己硬件上或托管提供商处运行的可部署软件包。将其部署到一台机器上，进行配置，让玩家指向它。你的服务器，你的规则。",
         "description": "Body text of the third feature column"
     }
 }
