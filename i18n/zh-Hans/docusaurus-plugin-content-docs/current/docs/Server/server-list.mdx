@@ -2,31 +2,31 @@
 sidebar_position: 5
 ---
 
-# Publishing your server
+# 发布你的服务器
 
-To list your server on the public server list in the Launcher, configure the `ServerList` section in `config.json`. 
+要在启动器的公共服务器列表中列出您的服务器，请在 `config.json` 中配置 `ServerList` 部分。
 
 :::note
 
-Any changes made to `config.json` require a **server restart** to take effect.
+对 `config.json` 所做的任何更改都需要 **服务器重启** 才能生效。
 
 :::
 
-### Configuration Settings
+### 配置设置
 
-| Setting | Type | Description |
-| --- | --- | --- |
-| `Enabled` | boolean | Whether to list the server publicly. |
-| `Name` | string | Display name visible in the Launcher. |
-| `Gamemode` | string | Game mode tag, shown next to the name. |
-| `MaxPlayers` | integer | Maximum number of players. **Must be 1 or greater** (enforced when players connect). |
-| `PublicHost` | string | Publicly routable IP address or hostname. See [Host Validation](#host-validation-rules). |
-| `PublicPort` | integer | The advertised port for players to connect to via the public IP. |
-| `LicenseKey` | string | License key used to obtain verification. See [Verified status](#verified-status). |
+| 设置           | 类型     | 描述                                                              |
+| ------------ | ------ | --------------------------------------------------------------- |
+| `Enabled`    | 布尔值    | 是否公开列出服务器。                                                      |
+| `name`       | string | 在启动器中可见的显示名称。                                                   |
+| `Gamemode`   | string | 游戏模式标签，显示在名称旁边。                                                 |
+| `MaxPlayers` | 整数     | 最大可容纳的玩家数量。**必须为1或以上**（在玩家连接时强制执行）。                             |
+| `公开主机名`      | string | 公开可路由的 IP 地址或主机名。请参阅 [主机验证规则](#主机验证规则)。 |
+| `公开端口`       | 整数     | 玩家通过公共 IP 连接到服务器所使用的对外端口。                                       |
+| `许可密钥`       | string | 用于获取验证的许可密钥。请参阅 [已验证状态](#已验证状态)。            |
 
-Be respectful when choosing a name and gamemode tag, as they will be visible to all players in the Launcher. Violations of the [ReadyM Terms of Service](https://portal.ready.mp/en/terms) may result in your server being removed from the public list or your account being banned.
+在选择名称和游戏模式标签时请保持尊重，因为它们将对启动器中的所有玩家可见。违反 [ReadyM 服务条款](https://portal.ready.mp/en/terms) 可能导致您的服务器从公开列表中移除，或您的账户被封禁。
 
-### Minimal Configuration Example
+### 最小配置示例
 
 ```json
 {
@@ -48,54 +48,60 @@ Be respectful when choosing a name and gamemode tag, as they will be visible to 
 
 ---
 
-## Network Configuration
+## 网络配置
 
-When configuring your server network layout, it is important to distinguish between the local binding port and the public routing port:
+在配置服务器网络布局时，区分本地绑定端口和公共路由端口非常重要：
 
-* **`Server.Port`**: The local port the server software binds to on your host machine.
-* **`ServerList.PublicPort`**: The external port advertised to the public internet that players will use to connect to your server.
+* **`Server.Port`**：服务器软件在您的主机上绑定的本地端口。
+* **`ServerList.PublicPort`**：对外公布给公共互联网的端口，玩家将使用该端口连接到您的服务器。
 
-> These two ports can be different if your server operates behind a router using **Port Forwarding**, a network address translation (**NAT**) layer, or inside a virtualized environment like **Docker**. Ensure your external firewall routes incoming traffic from the `PublicPort` to your local `Server.Port`.
-
----
-
-## Host Validation Rules
-
-Our system evaluates the `PublicHost` string to ensure network validity. If your address does not comply with the following routing requirements, the server will fail to list publicly.
-
-### Hostnames vs. IP Addresses
-* **Hostnames**: Standard domain names (e.g., `server.example.com`) are accepted without remote resolution. The server automatically cleans up trailing dots (FQDN formatting) and strips IPv6 literal brackets (`[...]`). 
-* **Localhost Restriction**: Using `localhost` as a hostname is rejected by default to prevent internal routing loopbacks.
-
-### Blocked Network Ranges
-If an explicit IP address is supplied, it **must be publicly routable**. The system explicitly blocks the following private, local, and restricted address allocations:
-
-| Address Type | IPv4 Ranges | IPv6 Ranges / Rules |
-| --- | --- | --- |
-| **Loopback / Unspecified** | `127.0.0.0/8`, `0.0.0.0/8` | `::1`, `::`, IPv4-mapped loopbacks |
-| **Private Networks** | `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16` | Unique Local Addresses (`fc00::/7`) |
-| **Link-Local / Site-Local** | `169.254.0.0/16` | Link-Local (`fe80::/10`), Site-Local |
-| **Carrier-Grade NAT** | `100.64.0.0/10` | N/A |
-| **Multicast & Reserved** | `224.0.0.0/4` through `255.255.255.255` | Multicast (`ff00::/8`) |
+> 如果您的服务器位于路由器后面，使用 **端口转发**、网络地址转换（**NAT**）层，或在如 **Docker**
+> 这样的虚拟化环境中运行，这两个端口可以不同。请确保外部防火墙将来自 `PublicPort` 的进入流量路由到本地 `Server.Port`。
 
 ---
 
-## Verified status
+## 主机验证规则
 
-To get the **Verified** badge on the server list, provide a valid license key in `ServerList:LicenseKey`. You can generate keys on the [Player Portal](https://portal.ready.mp/en/dashboard/licenses).
+我们的系统会对 `PublicHost` 字符串进行评估，以确保网络有效性。如果您的地址不符合以下路由要求，服务器将无法在公开列表中列出。
 
-<img src={require('/img/docs/server-licenses-0.2.3.png').default} alt="Server licenses in the Player Portal" />
+### 主机名与 IP 地址
 
-### License Allocations
-* An account can generate a maximum of **3 license keys**.
-* **Key Sharing**: A single license key can be shared across multiple servers simultaneously. This allows you to host an unlimited number of public, verified servers using your allocated keys. *(Note: This behavior is subject to change in future portal updates).*
+* **主机名**：标准域名（例如 `server.example.com`）在无需远程解析的情况下被接受。服务器会自动清理末尾的点（FQDN 格式化），并去除
+  IPv6 字面量括号中的方括号（`[...]`）。
+* **本地主机限制**：默认拒绝将 `localhost` 作为主机名，以防止内部路由环回。
+
+### 被阻塞的网络范围
+
+如果提供了显式 IP 地址，它 **必须公网可路由**。系统明确阻止以下私有、本地和受限地址分配：
+
+| 地址类型            | IPv4 范围                                         | IPv6 范围 / 规则             |
+| --------------- | ----------------------------------------------- | ------------------------ |
+| **回环 / 未指定**    | `127.0.0.0/8`, `0.0.0.0/8`                      | `::1`, `::`, IPv4 映射回环地址 |
+| **私有网络**        | `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16` | 唯一本地地址（`fc00::/7`）       |
+| **链路本地 / 站点本地** | `169.254.0.0/16`                                | 链路本地（`fe80::/10`），站点本地   |
+| **运营商级 NAT**    | `100.64.0.0/10`                                 | 不适用                      |
+| **多播与保留**       | `224.0.0.0/4`至 `255.255.255.255`                | 多播（`ff00::/8`）           |
+
+---
+
+## 已验证状态
+
+要在服务器列表中获得 **已验证** 徽章，请在 `ServerList:LicenseKey` 中输入一个有效的许可密钥。您可以在 [玩家门户](https://portal.ready.mp/en/dashboard/licenses) 生成密钥。
+
+<img src={require('/img/docs/server-licenses-0.2.3-zh.png').default}
+alt="玩家门户中的服务器许可证" />
+
+### 许可证分配
+
+* 一个账户最多可以生成 **3 个许可密钥**。
+* **密钥共享**：一个许可密钥可以同时在多台服务器之间共享。这使您能够使用您分配的密钥来托管无限数量的公开、已验证的服务器。*（注：此行为可能会在未来的门户更新中发生更改。）*
 
 :::warning
 
-The key is a secret and should not be shared publicly. If you believe your key has been compromised, generate a new one in the Player Portal and immediately revoke the compromised token.
+密钥是机密信息，不应公开共享。如果您认为密钥已被泄露，请在玩家门户中重新生成一个新密钥，并立即撤销被泄露的令牌。
 
 :::
 
-After entering a valid key in the configuration and restarting, the server will be marked as **Verified** in the Launcher:
+在配置中输入有效密钥并重启后，服务器在启动器中将被标记为 **已验证**:
 
-<img src={require('/img/docs/server-list-0.2.3.png').default} alt="Verified server in the Launcher" />
+<img src={require('/img/docs/server-list-0.2.3-zh.png').default} alt="启动器中的已验证服务器"/>

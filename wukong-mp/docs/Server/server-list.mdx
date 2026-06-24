@@ -64,10 +64,12 @@ When configuring your server network layout, it is important to distinguish betw
 Our system evaluates the `PublicHost` string to ensure network validity. If your address does not comply with the following routing requirements, the server will fail to list publicly.
 
 ### Hostnames vs. IP Addresses
+
 * **Hostnames**: Standard domain names (e.g., `server.example.com`) are accepted without remote resolution. The server automatically cleans up trailing dots (FQDN formatting) and strips IPv6 literal brackets (`[...]`). 
 * **Localhost Restriction**: Using `localhost` as a hostname is rejected by default to prevent internal routing loopbacks.
 
 ### Blocked Network Ranges
+
 If an explicit IP address is supplied, it **must be publicly routable**. The system explicitly blocks the following private, local, and restricted address allocations:
 
 | Address Type | IPv4 Ranges | IPv6 Ranges / Rules |
@@ -87,6 +89,7 @@ To get the **Verified** badge on the server list, provide a valid license key in
 <img src={require('/img/docs/server-licenses-0.2.3.png').default} alt="Server licenses in the Player Portal" />
 
 ### License Allocations
+
 * An account can generate a maximum of **3 license keys**.
 * **Key Sharing**: A single license key can be shared across multiple servers simultaneously. This allows you to host an unlimited number of public, verified servers using your allocated keys. *(Note: This behavior is subject to change in future portal updates).*
 
