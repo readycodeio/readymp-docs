@@ -96,7 +96,7 @@ public PlayerId PlayerId { get; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/35a3d35386874af513f4af64fb25c76e0ab4cf43/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/a1b59546bbb845a6f917219c2bff68f0f63b4da0/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_RebirthPointId"></a> RebirthPointId
 
@@ -149,7 +149,6 @@ public void RebirthInPlace()
 ### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_Teleport_System_Numerics_Vector3_System_Numerics_Vector3_"></a> Teleport\(Vector3, Vector3\)
 
 ```csharp
-[Obsolete("Set '.Location' and '.Rotation' instead. Will be remove in future versions of the SDK.")]
 public void Teleport(Vector3 location, Vector3 rotation)
 ```
 

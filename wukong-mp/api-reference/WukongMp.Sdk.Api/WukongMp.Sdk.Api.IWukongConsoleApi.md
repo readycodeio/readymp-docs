@@ -25,7 +25,7 @@ void AddCommand(string commandName, ConsoleCommand command, IEnumerable<string>?
 
 Text the player types to invoke the command (e.g. "spawn").
 
-`command` [ConsoleCommand](https://github.com/readycodeio/readym\-gameserver/blob/35a3d35386874af513f4af64fb25c76e0ab4cf43/src/ReadyM.Api/Command/ConsoleCommand.cs)
+`command` [ConsoleCommand](https://github.com/readycodeio/readym\-gameserver/blob/a1b59546bbb845a6f917219c2bff68f0f63b4da0/src/ReadyM.Api/Command/ConsoleCommand.cs)
 
 Handler that runs when the command is executed.
 
@@ -49,7 +49,7 @@ void AddCommand(string commandName, ConsoleCommand command, Func<IEnumerable<str
 
 Text the player types to invoke the command (e.g. "kick").
 
-`command` [ConsoleCommand](https://github.com/readycodeio/readym\-gameserver/blob/35a3d35386874af513f4af64fb25c76e0ab4cf43/src/ReadyM.Api/Command/ConsoleCommand.cs)
+`command` [ConsoleCommand](https://github.com/readycodeio/readym\-gameserver/blob/a1b59546bbb845a6f917219c2bff68f0f63b4da0/src/ReadyM.Api/Command/ConsoleCommand.cs)
 
 Handler that runs when the command is executed.
 
