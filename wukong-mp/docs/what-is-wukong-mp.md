@@ -38,7 +38,7 @@ WukongMP is built and maintained by the [ReadyM](https://www.ready.mp) team. It 
 
 ### For server owners
 
-1. **Download the server binary** (Windows or Linux) or pull the Docker image — see the [Quick Start guide](Server/quick-start) to be live in minutes
+1. **Download the server binary** (Windows or Linux) or pull the Docker image — see the [Quick Start guide](quick-start) to be live in minutes
 2. **Configure** — edit `config.json` to set your port, then drop mods into the `mods/` folder
 3. **Launch and manage** — start the server and use the built-in web admin panel to manage players, mods, and settings
 

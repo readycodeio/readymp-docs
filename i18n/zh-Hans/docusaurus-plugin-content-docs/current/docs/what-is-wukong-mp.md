@@ -43,7 +43,7 @@ WukongMP 由 [ReadyM](https://www.ready.mp) 团队构建并维护。它 **不是
 ### 作为服务器所有者
 
 1. **下载服务器二进制文件**（Windows 或 Linux）或拉取 Docker 镜像 — 请参阅
-   [快速入门指南](Server/quick-start)，几分钟即可上线
+   [快速入门指南](quick-start)，几分钟即可上线
 2. **配置** — 编辑 `config.json` 以设置端口，然后将 mods 放入 `mods/` 文件夹
 3. **启动并管理** — 启动服务器并使用内置网页管理面板来管理玩家、模组和设置
 
