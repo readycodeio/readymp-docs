@@ -1,6 +1,6 @@
 ---
 title: WukongMP mods are now open source
-description: WukongMP mods are now open source and available on GitHub.
+description: WukongMP 模组现已开源，可在 GitHub 上获取。
 slug: wukongmp-mods-open-source
 authors: readym
 tags: [wukongmp]
