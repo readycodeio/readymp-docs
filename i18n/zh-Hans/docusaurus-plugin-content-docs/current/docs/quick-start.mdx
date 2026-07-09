@@ -14,13 +14,13 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 <TabItem value="windows" label="Windows">
 
 [⬇ Windows
-版下载（x64，v0.2.4）](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.2.4.zip)
+下载（x64，v0.2.4）](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.2.4.zip)
 
 </TabItem>
 <TabItem value="linux" label="Linux">
 
 [⬇ Linux
-版下载（x64，v0.2.4）](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.2.4.zip)
+下载（x64，v0.2.4）](https://readymstorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.2.4.zip)
 
 </TabItem>
 <TabItem value="docker" label="Docker">
@@ -51,7 +51,7 @@ docker pull ghcr.io/readycodeio/wukongmp-server:0.2.4
 </TabItem>
 <TabItem value="docker" label="Docker">
 
-从镜像中复制配置文件:
+从镜像中复制配置文件：
 
 ```shell
 docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.2.4
@@ -63,11 +63,10 @@ docker rm wukongmp-tmp
 
 :::important
 
-镜像不附带 **without mods**。在启动容器之前，请下载二进制包并将 `WukongMp.Sdk`
-与你选择的游戏模式模组（`WukongMp.PvP` 或 `WukongMp.Coop`）复制到你本地的 `./mods/` 文件夹。
+镜像 **不带模组**。在启动容器之前，请下载二进制程序包并将 `WukongMp.Sdk` 以及你选择的游戏模式模组（`WukongMp.PvP` 或
+`WukongMp.Coop`）复制到本地 `./mods/` 文件夹中。
 
 :::
-
 
 </TabItem>
 </Tabs>
@@ -92,16 +91,6 @@ chmod +x server && ./server
 
 </TabItem>
 <TabItem value="docker" label="Docker">
-
-从镜像中复制配置文件:
-
-```shell
-docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.2.4
-docker cp wukongmp-tmp:/app/config.json ./config.json
-docker rm wukongmp-tmp
-```
-
-运行：
 
 ```shell
 docker run \

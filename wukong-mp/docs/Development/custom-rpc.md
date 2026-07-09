@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Custom RPC
 
-One of the core WukongMP SDK functionalities is the support for arbitrary Remote Procedure Call (RPC) functions. These can have arbitrary payloads and support a number of [Relay Modes](../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md).
+One of the core WukongMP SDK functionalities is the support for arbitrary Remote Procedure Call (RPC) functions. These can have arbitrary payloads and support a number of [Relay Modes](../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode).
 
 RPC handlers allow you to define your own events that are sent to other players connected to the same server.
 
@@ -22,7 +22,7 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 :::important
 
 For any of the RPC handlers to be registered, the class **must** be added to the DI container in your mod's `Initialize` method.
-Consult the documentation for [ModBase](../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase.md).
+Consult the documentation for [ModBase](../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase).
 
 :::
 

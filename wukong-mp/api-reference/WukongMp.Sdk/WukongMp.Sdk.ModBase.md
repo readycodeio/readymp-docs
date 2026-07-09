@@ -13,7 +13,7 @@ public abstract class ModBase : ICSharpModExV2, ICSharpModEx, ICSharpMod
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[ModBase](../WukongMp.Sdk/WukongMp.Sdk.ModBase.md)
+[ModBase](../WukongMp.Sdk/WukongMp.Sdk.ModBase)
 
 #### Implements
 

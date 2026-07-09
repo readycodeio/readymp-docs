@@ -70,15 +70,15 @@ server/
 
 您可以通过编辑 `config.json` 文件来调整服务器设置。在以下表格中，使用 `:` 记法来表示嵌套设置。
 
-| 设置            | 类型  | 目的           |
-| ------------- | --- | ------------ |
-| `Server:Port` | 数字  | 服务器监听传入连接的端口 |
-| `Server:Password` | string | 可选。设置后，玩家必须在启动器中输入此密码才能加入。留空或省略则为开放服务器。 |
-| `Telemetry:OptOut` | 布尔值 | 设置为 `true` 可退出向 ReadyM 发送匿名遥测数据。默认为 `false`。 |
+| 设置            | 类型     | 目的                                            |
+| ------------- | ------ | --------------------------------------------- |
+| `Server:Port` | 数字     | 服务器监听传入连接的端口                                  |
+| `Server:Password`      | string | 可选。设置后，玩家在加入时必须在启动器中输入此密码。留空或省略以表示开放服务器。      |
+| `Telemetry:OptOut`     | 布尔值    | 设置为 `true` 即可选择不向 ReadyM 发送匿名遥测。默认值为 `false`。 |
 
 :::note
 
-`Server:Password` 会限制所有玩家，包括管理员和白名单用户。设置了密码的服务器会在公共服务器列表中显示一个锁图标。
+`服务器:密码` 对包括管理员和白名单用户在内的每位玩家都需要通过密码进行验证。受密码保护的服务器在公开服务器列表中显示为带锁的图标。
 
 :::
 
@@ -105,7 +105,7 @@ server/
 docker pull ghcr.io/readycodeio/wukongmp-server:0.2.4
 ```
 
-从镜像中复制配置文件:
+从镜像中复制配置文件：
 
 ```shell
 docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.2.4
