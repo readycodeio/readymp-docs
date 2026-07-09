@@ -17,12 +17,20 @@ Any changes made to `config.json` require a **server restart** to take effect.
 | Setting | Type | Description |
 | --- | --- | --- |
 | `Enabled` | boolean | Whether to list the server publicly. |
-| `Name` | string | Display name visible in the Launcher. |
-| `Gamemode` | string | Game mode tag, shown next to the name. |
-| `MaxPlayers` | integer | Maximum number of players. **Must be 1 or greater** (enforced when players connect). |
-| `PublicHost` | string | Publicly routable IP address or hostname. See [Host Validation](#host-validation-rules). |
+| `Name` | string | Display name visible in the Launcher. Maximum 50 characters. |
+| `Gamemode` | string | Game mode tag, shown next to the name. Maximum 15 characters. |
+| `Description` | string | Optional. Short description shown on the server's card in the Launcher. Maximum 300 characters. |
+| `Country` | string | Optional. Two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code (e.g. `PL`, `US`, `DE`), used to show a flag on the server's card. |
+| `MaxPlayers` | integer | Maximum number of players. Must be between **1 and 64** (enforced when players connect). |
+| `PublicHost` | string | Publicly routable IP address or hostname (maximum 253 characters). See [Host Validation](#host-validation-rules). |
 | `PublicPort` | integer | The advertised port for players to connect to via the public IP. |
 | `LicenseKey` | string | License key used to obtain verification. See [Verified status](#verified-status). |
+
+:::note
+
+These limits are enforced when your server reports to the public list. If a value is invalid (for example a description over 300 characters or a malformed country code), the server is not listed.
+
+:::
 
 Be respectful when choosing a name and gamemode tag, as they will be visible to all players in the Launcher. Violations of the [ReadyM Terms of Service](https://portal.ready.mp/en/terms) may result in your server being removed from the public list or your account being banned.
 
@@ -35,14 +43,15 @@ Be respectful when choosing a name and gamemode tag, as they will be visible to 
         "Enabled": true,
         "Name": "Bob's arena",
         "Gamemode": "PvP",
+        "Description": "Weekly PvP tournaments, all welcome",
+        "Country": "US",
         "MaxPlayers": 32,
         "PublicHost": "203.0.113.1",
         "PublicPort": 9050,
         "LicenseKey": ""
     },
 //highlight-end
-    "Server": { "Port": 9050 },
-    "Web": { "Sso": { "Authority": "https://api.ready.mp" } }
+    "Server": { "Port": 9050 }
 }
 ```
 

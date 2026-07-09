@@ -17,12 +17,20 @@ sidebar_position: 5
 | 设置           | 类型     | 描述                                                              |
 | ------------ | ------ | --------------------------------------------------------------- |
 | `Enabled`    | 布尔值    | 是否公开列出服务器。                                                      |
-| `name`       | string | 在启动器中可见的显示名称。                                                   |
-| `Gamemode`   | string | 游戏模式标签，显示在名称旁边。                                                 |
-| `MaxPlayers` | 整数     | 最大可容纳的玩家数量。**必须为1或以上**（在玩家连接时强制执行）。                             |
-| `公开主机名`      | string | 公开可路由的 IP 地址或主机名。请参阅 [主机验证规则](#主机验证规则)。 |
-| `公开端口`       | 整数     | 玩家通过公共 IP 连接到服务器所使用的对外端口。                                       |
-| `许可密钥`       | string | 用于获取验证的许可密钥。请参阅 [已验证状态](#已验证状态)。            |
+| `Name`       | string | 在启动器中可见的显示名称。最多 50 个字符。                                                   |
+| `Gamemode`   | string | 游戏模式标签，显示在名称旁边。最多 15 个字符。                                                 |
+| `Description` | string | 可选。在启动器服务器卡片上显示的简短描述。最多 300 个字符。 |
+| `Country` | string | 可选。两位字母 [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 国家/地区代码（例如 `PL`、`US`、`DE`），用于在服务器卡片上显示国旗。 |
+| `MaxPlayers` | 整数     | 最大可容纳的玩家数量。必须介于 **1 到 64** 之间（在玩家连接时强制执行）。                             |
+| `PublicHost`      | string | 公开可路由的 IP 地址或主机名（最多 253 个字符）。请参阅 [主机验证规则](#主机验证规则)。 |
+| `PublicPort`       | 整数     | 玩家通过公共 IP 连接到服务器所使用的对外端口。                                       |
+| `LicenseKey`       | string | 用于获取验证的许可密钥。请参阅 [已验证状态](#已验证状态)。            |
+
+:::note
+
+这些限制在您的服务器向公共列表上报时强制执行。如果某个值无效（例如描述超过 300 个字符或国家/地区代码格式错误），服务器将不会被列出。
+
+:::
 
 在选择名称和游戏模式标签时请保持尊重，因为它们将对启动器中的所有玩家可见。违反 [ReadyM 服务条款](https://portal.ready.mp/en/terms) 可能导致您的服务器从公开列表中移除，或您的账户被封禁。
 
@@ -35,14 +43,15 @@ sidebar_position: 5
         "Enabled": true,
         "Name": "Bob's arena",
         "Gamemode": "PvP",
+        "Description": "Weekly PvP tournaments, all welcome",
+        "Country": "CN",
         "MaxPlayers": 32,
         "PublicHost": "203.0.113.1",
         "PublicPort": 9050,
         "LicenseKey": ""
     },
 //highlight-end
-    "Server": { "Port": 9050 },
-    "Web": { "Sso": { "Authority": "https://api.ready.mp" } }
+    "Server": { "Port": 9050 }
 }
 ```
 
