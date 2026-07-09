@@ -51,10 +51,23 @@ docker pull ghcr.io/readycodeio/wukongmp-server:0.2.4
 </TabItem>
 <TabItem value="docker" label="Docker">
 
-:::重要 提示：镜像不附带 **without mods**。在启动容器之前，请下载二进制包并将 `WukongMp.Sdk`
-与你选择的游戏模式模组（`WukongMp.PvP` 或 `WukongMp.Coop`）复制到你本地的 `./mods/` 文件夹。:::
+从镜像中复制配置文件:
+
+```shell
+docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.2.4
+docker cp wukongmp-tmp:/app/config.json ./config.json
+docker rm wukongmp-tmp
+```
 
 端口配置通过重新映射容器端口来处理 — 请参见第3步。
+
+:::important
+
+镜像不附带 **without mods**。在启动容器之前，请下载二进制包并将 `WukongMp.Sdk`
+与你选择的游戏模式模组（`WukongMp.PvP` 或 `WukongMp.Coop`）复制到你本地的 `./mods/` 文件夹。
+
+:::
+
 
 </TabItem>
 </Tabs>
@@ -80,12 +93,23 @@ chmod +x server && ./server
 </TabItem>
 <TabItem value="docker" label="Docker">
 
+从镜像中复制配置文件:
+
+```shell
+docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.2.4
+docker cp wukongmp-tmp:/app/config.json ./config.json
+docker rm wukongmp-tmp
+```
+
+运行：
+
 ```shell
 docker run \
     -p 9050:9050/udp -p 9050:9050/tcp \
     -v ./data:/app/data \
     -v ./mods:/app/mods \
     -v ./saves:/app/saves \
+    -v ./config.json:/app/config.json \
     --name wukongmp-server \
     ghcr.io/readycodeio/wukongmp-server:0.2.4
 ```
@@ -105,6 +129,7 @@ services:
       - ./data:/app/data
       - ./mods:/app/mods
       - ./saves:/app/saves
+      - ./config.json:/app/config.json
 ```
 
 </TabItem>
