@@ -19,7 +19,7 @@ Any changes made to `config.json` require a **server restart** to take effect.
 | `Enabled` | boolean | Whether to list the server publicly. |
 | `Name` | string | Display name visible in the Launcher. Maximum 50 characters. |
 | `Gamemode` | string | Game mode tag, shown next to the name. Maximum 15 characters. |
-| `Description` | string | Optional. Short description shown on the server's card in the Launcher. Maximum 100 characters. |
+| `Description` | string | Optional. Short description shown on the server's card in the Launcher. Maximum 300 characters. |
 | `Country` | string | Optional. Two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code (e.g. `PL`, `US`, `DE`), used to show a flag on the server's card. |
 | `MaxPlayers` | integer | Maximum number of players. Must be between **1 and 64** (enforced when players connect). |
 | `PublicHost` | string | Publicly routable IP address or hostname (maximum 253 characters). See [Host Validation](#host-validation-rules). |
@@ -28,7 +28,7 @@ Any changes made to `config.json` require a **server restart** to take effect.
 
 :::note
 
-These limits are enforced when your server reports to the public list. If a value is invalid (for example a description over 100 characters or a malformed country code), the server is not listed.
+These limits are enforced when your server reports to the public list. If a value is invalid (for example a description over 300 characters or a malformed country code), the server is not listed.
 
 :::
 
