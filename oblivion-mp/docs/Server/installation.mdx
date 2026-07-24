@@ -34,9 +34,12 @@ server/
 ├── config.json                       # Configuration file
 ├── e_sqlite3.dll                     # Dependency
 ├── aspnetcorev2_inprocess.dll        # Dependency
-├── mods/                             # Directory for client-side mods (empty by default)
+├── mods/                             # Directory for client-side mods
+    └── OblivionMp.Sdk
+        ├── manifes.json              # manifest file (unused in 0.1.0)
+        └── OblivionMp.Sdk.dll        # Client-side SDK
 ├── server_mods/                      # Directory for server-side mods
-|   └── OblivionMp.Sdk.Serverside.dll # Server-side SDK, ships by default
+|   └── OblivionMp.Sdk.Serverside.dll # Server-side SDK
 ├── saves/                            # Directory for game saves (empty by default)
 └── wwwroot/                          # Admin panel assets
 ```
@@ -49,7 +52,10 @@ server/
 ├── server                            # Main server binary
 ├── config.json                       # Configuration file
 ├── libe_sqlite3.so                   # Dependency
-├── mods/                             # Directory for client-side mods (empty by default)
+├── mods/                             # Directory for client-side mods
+    └── OblivionMp.Sdk
+        ├── manifes.json              # manifest file (unused in 0.1.0)
+        └── OblivionMp.Sdk.dll        # Client-side SDK
 ├── server_mods/                      # Directory for server-side mods
 |   └── OblivionMp.Sdk.Serverside.dll # Server-side SDK, ships by default
 ├── saves/                            # Directory for game saves (empty by default)
