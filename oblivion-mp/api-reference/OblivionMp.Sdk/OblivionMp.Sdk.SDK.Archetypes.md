@@ -32,7 +32,17 @@ public static ArchetypeId DroppedItemArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Api/Idents/ArchetypeId.cs)
+
+### <a id="OblivionMp_Sdk_SDK_Archetypes_GlobalPlayerArchetype"></a> GlobalPlayerArchetype
+
+```csharp
+public static ArchetypeId GlobalPlayerArchetype { get; }
+```
+
+#### Property Value
+
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="OblivionMp_Sdk_SDK_Archetypes_MainCharacterArchetype"></a> MainCharacterArchetype
 
@@ -42,6 +52,6 @@ public static ArchetypeId MainCharacterArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 

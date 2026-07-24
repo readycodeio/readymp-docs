@@ -18,7 +18,7 @@ public abstract class ClientRpcHandler : RpcBase, IHostedService, IDisposable
 
 #### Implements
 
-[IHostedService](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Api/DI/IHostedService.cs), 
+[IHostedService](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Api/DI/IHostedService.cs), 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members
@@ -27,7 +27,6 @@ public abstract class ClientRpcHandler : RpcBase, IHostedService, IDisposable
 [RpcBase.DeInitRpc\(\)](ReadyM.Api.Multiplayer.RPC.RpcBase.md\#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_DeInitRpc), 
 [RpcBase.OnScopeStart\(\)](ReadyM.Api.Multiplayer.RPC.RpcBase.md\#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_OnScopeStart), 
 [RpcBase.Dispose\(\)](ReadyM.Api.Multiplayer.RPC.RpcBase.md\#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_Dispose), 
-[RpcBase.RunOnGameThread\(Action\)](ReadyM.Api.Multiplayer.RPC.RpcBase.md\#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_RunOnGameThread\_System\_Action\_), 
 [RpcBase.RelayClient](ReadyM.Api.Multiplayer.RPC.RpcBase.md\#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_RelayClient), 
 [RpcBase.Serializer](ReadyM.Api.Multiplayer.RPC.RpcBase.md\#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_Serializer), 
 [object.GetType\(\)](https://learn.microsoft.com/dotnet/api/system.object.gettype), 

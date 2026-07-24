@@ -21,7 +21,7 @@ public abstract class RpcBase : IHostedService, IDisposable
 
 #### Implements
 
-[IHostedService](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Api/DI/IHostedService.cs), 
+[IHostedService](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Api/DI/IHostedService.cs), 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members
@@ -102,15 +102,5 @@ This allows the service to perform any necessary setup at the appropriate time, 
 ```csharp
 public virtual void OnScopeStart()
 ```
-
-### <a id="ReadyM_Api_Multiplayer_RPC_RpcBase_RunOnGameThread_System_Action_"></a> RunOnGameThread\(Action\)
-
-```csharp
-protected void RunOnGameThread(Action callback)
-```
-
-#### Parameters
-
-`callback` [Action](https://learn.microsoft.com/dotnet/api/system.action)
 
 

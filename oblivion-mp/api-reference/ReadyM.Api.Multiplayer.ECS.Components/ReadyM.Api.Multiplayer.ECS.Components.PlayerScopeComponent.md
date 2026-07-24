@@ -1,12 +1,10 @@
-﻿# Struct MainCharacterComponent
+﻿# Struct PlayerScopeComponent
 
-Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Components](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.md)  
-Assembly: ReadyM.Relay.Common.Oblivion.dll  
-
-Holds the player's ID.
+Namespace: [ReadyM.Api.Multiplayer.ECS.Components](../ReadyM.Api.Multiplayer.ECS.Components/ReadyM.Api.Multiplayer.ECS.Components.md)  
+Assembly: ReadyM.Api.Multiplayer.dll  
 
 ```csharp
-public struct MainCharacterComponent : IIndexedComponent<PlayerId>, IComponent, INetSerializable
+public struct PlayerScopeComponent : IIndexedComponent<PlayerId>, IComponent, INetSerializable
 ```
 
 #### Implements
@@ -26,7 +24,7 @@ public struct MainCharacterComponent : IIndexedComponent<PlayerId>, IComponent, 
 
 ## Properties
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_MainCharacterComponent_PlayerId"></a> PlayerId
+### <a id="ReadyM_Api_Multiplayer_ECS_Components_PlayerScopeComponent_PlayerId"></a> PlayerId
 
 ```csharp
 public PlayerId PlayerId { get; set; }
@@ -38,17 +36,17 @@ public PlayerId PlayerId { get; set; }
 
 ## Methods
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_MainCharacterComponent_Assign_ReadyM_Relay_Common_Oblivion_ECS_Components_MainCharacterComponent__"></a> Assign\(in MainCharacterComponent\)
+### <a id="ReadyM_Api_Multiplayer_ECS_Components_PlayerScopeComponent_Assign_ReadyM_Api_Multiplayer_ECS_Components_PlayerScopeComponent__"></a> Assign\(in PlayerScopeComponent\)
 
 ```csharp
-public void Assign(in MainCharacterComponent value)
+public void Assign(in PlayerScopeComponent value)
 ```
 
 #### Parameters
 
-`value` [MainCharacterComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent.md)
+`value` [PlayerScopeComponent](../ReadyM.Api.Multiplayer.ECS.Components/ReadyM.Api.Multiplayer.ECS.Components.PlayerScopeComponent.md)
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_MainCharacterComponent_Deserialize_LiteNetLib_Utils_NetDataReader_"></a> Deserialize\(NetDataReader\)
+### <a id="ReadyM_Api_Multiplayer_ECS_Components_PlayerScopeComponent_Deserialize_LiteNetLib_Utils_NetDataReader_"></a> Deserialize\(NetDataReader\)
 
 ```csharp
 public void Deserialize(NetDataReader reader)
@@ -58,7 +56,7 @@ public void Deserialize(NetDataReader reader)
 
 `reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_MainCharacterComponent_GetIndexedValue"></a> GetIndexedValue\(\)
+### <a id="ReadyM_Api_Multiplayer_ECS_Components_PlayerScopeComponent_GetIndexedValue"></a> GetIndexedValue\(\)
 
 Returns the value of the indexed component field.
 
@@ -70,7 +68,7 @@ public PlayerId GetIndexedValue()
 
  [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Api/Idents/PlayerId.cs)
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_MainCharacterComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
+### <a id="ReadyM_Api_Multiplayer_ECS_Components_PlayerScopeComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
 ```csharp
 public void Serialize(NetDataWriter writer)

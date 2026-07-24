@@ -9,7 +9,7 @@ public readonly struct ReadyMainCharacter : IReadyEntity<ReadyMainCharacter>
 
 #### Implements
 
-[IReadyEntity<ReadyMainCharacter\>](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Sdk.Common/Entities/IReadyEntity.cs)
+[IReadyEntity<ReadyMainCharacter\>](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Sdk.Common/Entities/IReadyEntity.cs)
 
 #### Inherited Members
 
@@ -174,7 +174,7 @@ public PlayerId PlayerId { get; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="OblivionMp_Sdk_Entities_Player_ReadyMainCharacter_Rotation"></a> Rotation
 
@@ -194,39 +194,9 @@ public CharacterSex Sex { get; set; }
 
 #### Property Value
 
- [CharacterSex](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterSex.cs)
+ [CharacterSex](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterSex.cs)
 
 ## Methods
-
-### <a id="OblivionMp_Sdk_Entities_Player_ReadyMainCharacter_AddCustomPotion_OblivionMp_Sdk_CustomPotion_"></a> AddCustomPotion\(CustomPotion\)
-
-```csharp
-[Obsolete("TODO: Materializes a potion type, but does not add it to the character.")]
-public FormId? AddCustomPotion(CustomPotion formula)
-```
-
-#### Parameters
-
-`formula` [CustomPotion](../OblivionMp.Sdk/OblivionMp.Sdk.CustomPotion.md)
-
-#### Returns
-
- [FormId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Relay.Common.Oblivion/FormId.cs)?
-
-### <a id="OblivionMp_Sdk_Entities_Player_ReadyMainCharacter_AddCustomSpell_OblivionMp_Sdk_CustomSpell_"></a> AddCustomSpell\(CustomSpell\)
-
-```csharp
-[Obsolete("TODO: Materializes a spell, but does not add it to the character.")]
-public FormId? AddCustomSpell(CustomSpell spell)
-```
-
-#### Parameters
-
-`spell` [CustomSpell](../OblivionMp.Sdk/OblivionMp.Sdk.CustomSpell.md)
-
-#### Returns
-
- [FormId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Relay.Common.Oblivion/FormId.cs)?
 
 ### <a id="OblivionMp_Sdk_Entities_Player_ReadyMainCharacter_AddItemToInventory_ReadyM_Relay_Common_Oblivion_FormId_System_Int32_"></a> AddItemToInventory\(FormId, int\)
 
@@ -236,7 +206,7 @@ public void AddItemToInventory(FormId itemId, int quantity)
 
 #### Parameters
 
-`itemId` [FormId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
+`itemId` [FormId](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
 
 `quantity` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
@@ -268,7 +238,7 @@ public float GetAttribute(CharacterAttribute attribute)
 
 #### Parameters
 
-`attribute` [CharacterAttribute](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterAttribute.cs)
+`attribute` [CharacterAttribute](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterAttribute.cs)
 
 #### Returns
 
@@ -282,11 +252,25 @@ public float GetEffectValue(CharacterEffect effect)
 
 #### Parameters
 
-`effect` [CharacterEffect](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterEffect.cs)
+`effect` [CharacterEffect](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterEffect.cs)
 
 #### Returns
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+### <a id="OblivionMp_Sdk_Entities_Player_ReadyMainCharacter_GetGlobal__1"></a> GetGlobal<T\>\(\)
+
+```csharp
+public ref T GetGlobal<T>() where T : struct, IComponent
+```
+
+#### Returns
+
+ T
+
+#### Type Parameters
+
+`T` 
 
 ### <a id="OblivionMp_Sdk_Entities_Player_ReadyMainCharacter_GetSocialAttribute_ReadyM_Relay_Common_Oblivion_ECS_Values_CharacterSocialAttribute_"></a> GetSocialAttribute\(CharacterSocialAttribute\)
 
@@ -296,7 +280,7 @@ public float GetSocialAttribute(CharacterSocialAttribute attribute)
 
 #### Parameters
 
-`attribute` [CharacterSocialAttribute](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterSocialAttribute.cs)
+`attribute` [CharacterSocialAttribute](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterSocialAttribute.cs)
 
 #### Returns
 
@@ -310,7 +294,7 @@ public void RemoveItemFromInventory(FormId itemId, int quantity = 2147483647)
 
 #### Parameters
 
-`itemId` [FormId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
+`itemId` [FormId](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
 
 `quantity` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
@@ -322,7 +306,7 @@ public void SetAttribute(CharacterAttribute attribute, float value)
 
 #### Parameters
 
-`attribute` [CharacterAttribute](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterAttribute.cs)
+`attribute` [CharacterAttribute](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterAttribute.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -334,7 +318,7 @@ public void SetEffectValue(CharacterEffect effect, float value)
 
 #### Parameters
 
-`effect` [CharacterEffect](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterEffect.cs)
+`effect` [CharacterEffect](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterEffect.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -346,7 +330,7 @@ public void SetSocialAttribute(CharacterSocialAttribute attribute, float value)
 
 #### Parameters
 
-`attribute` [CharacterSocialAttribute](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterSocialAttribute.cs)
+`attribute` [CharacterSocialAttribute](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterSocialAttribute.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -360,7 +344,7 @@ public static explicit operator ReadyMainCharacter(ReadyObject obj)
 
 #### Parameters
 
-`obj` [ReadyObject](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Sdk.Common/Entities/ReadyObject.cs)
+`obj` [ReadyObject](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Sdk.Common/Entities/ReadyObject.cs)
 
 #### Returns
 
@@ -374,7 +358,7 @@ public static explicit operator ReadyMainCharacter(ReadyCharacter character)
 
 #### Parameters
 
-`character` [ReadyCharacter](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Sdk.Common/Entities/ReadyCharacter.cs)
+`character` [ReadyCharacter](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Sdk.Common/Entities/ReadyCharacter.cs)
 
 #### Returns
 
@@ -392,7 +376,7 @@ public static implicit operator ReadyObject(ReadyMainCharacter mainCharacter)
 
 #### Returns
 
- [ReadyObject](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Sdk.Common/Entities/ReadyObject.cs)
+ [ReadyObject](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Sdk.Common/Entities/ReadyObject.cs)
 
 ### <a id="OblivionMp_Sdk_Entities_Player_ReadyMainCharacter_op_Implicit_OblivionMp_Sdk_Entities_Player_ReadyMainCharacter__ReadyM_Sdk_Common_Entities_ReadyCharacter"></a> implicit operator ReadyCharacter\(ReadyMainCharacter\)
 
@@ -406,6 +390,6 @@ public static implicit operator ReadyCharacter(ReadyMainCharacter mainCharacter)
 
 #### Returns
 
- [ReadyCharacter](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Sdk.Common/Entities/ReadyCharacter.cs)
+ [ReadyCharacter](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Sdk.Common/Entities/ReadyCharacter.cs)
 
 
