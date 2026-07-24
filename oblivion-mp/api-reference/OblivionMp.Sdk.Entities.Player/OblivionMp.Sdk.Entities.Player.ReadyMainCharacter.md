@@ -9,7 +9,7 @@ public readonly struct ReadyMainCharacter : IReadyEntity<ReadyMainCharacter>
 
 #### Implements
 
-[IReadyEntity<ReadyMainCharacter\>](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Sdk.Common/Entities/IReadyEntity.cs)
+[IReadyEntity<ReadyMainCharacter\>](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/Entities/IReadyEntity.cs)
 
 #### Inherited Members
 
@@ -136,16 +136,6 @@ public IEnumerable<CustomPotion> KnownCustomPotionTypes { get; }
 
  [IEnumerable](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1)<[CustomPotion](../OblivionMp.Sdk/OblivionMp.Sdk.CustomPotion.md)\>
 
-### <a id="OblivionMp_Sdk_Entities_Player_ReadyMainCharacter_Location"></a> Location
-
-```csharp
-public Vector3 Location { get; set; }
-```
-
-#### Property Value
-
- [Vector3](https://learn.microsoft.com/dotnet/api/system.numerics.vector3)
-
 ### <a id="OblivionMp_Sdk_Entities_Player_ReadyMainCharacter_Magicka"></a> Magicka
 
 ```csharp
@@ -174,17 +164,7 @@ public PlayerId PlayerId { get; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Api/Idents/PlayerId.cs)
-
-### <a id="OblivionMp_Sdk_Entities_Player_ReadyMainCharacter_Rotation"></a> Rotation
-
-```csharp
-public Vector3 Rotation { get; set; }
-```
-
-#### Property Value
-
- [Vector3](https://learn.microsoft.com/dotnet/api/system.numerics.vector3)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="OblivionMp_Sdk_Entities_Player_ReadyMainCharacter_Sex"></a> Sex
 
@@ -194,7 +174,7 @@ public CharacterSex Sex { get; set; }
 
 #### Property Value
 
- [CharacterSex](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterSex.cs)
+ [CharacterSex](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterSex.cs)
 
 ## Methods
 
@@ -206,7 +186,7 @@ public void AddItemToInventory(FormId itemId, int quantity)
 
 #### Parameters
 
-`itemId` [FormId](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
+`itemId` [FormId](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
 
 `quantity` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
@@ -238,7 +218,7 @@ public float GetAttribute(CharacterAttribute attribute)
 
 #### Parameters
 
-`attribute` [CharacterAttribute](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterAttribute.cs)
+`attribute` [CharacterAttribute](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterAttribute.cs)
 
 #### Returns
 
@@ -252,7 +232,7 @@ public float GetEffectValue(CharacterEffect effect)
 
 #### Parameters
 
-`effect` [CharacterEffect](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterEffect.cs)
+`effect` [CharacterEffect](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterEffect.cs)
 
 #### Returns
 
@@ -280,7 +260,7 @@ public float GetSocialAttribute(CharacterSocialAttribute attribute)
 
 #### Parameters
 
-`attribute` [CharacterSocialAttribute](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterSocialAttribute.cs)
+`attribute` [CharacterSocialAttribute](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterSocialAttribute.cs)
 
 #### Returns
 
@@ -294,7 +274,7 @@ public void RemoveItemFromInventory(FormId itemId, int quantity = 2147483647)
 
 #### Parameters
 
-`itemId` [FormId](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
+`itemId` [FormId](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
 
 `quantity` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
@@ -306,7 +286,7 @@ public void SetAttribute(CharacterAttribute attribute, float value)
 
 #### Parameters
 
-`attribute` [CharacterAttribute](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterAttribute.cs)
+`attribute` [CharacterAttribute](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterAttribute.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -318,7 +298,7 @@ public void SetEffectValue(CharacterEffect effect, float value)
 
 #### Parameters
 
-`effect` [CharacterEffect](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterEffect.cs)
+`effect` [CharacterEffect](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterEffect.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -330,7 +310,7 @@ public void SetSocialAttribute(CharacterSocialAttribute attribute, float value)
 
 #### Parameters
 
-`attribute` [CharacterSocialAttribute](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterSocialAttribute.cs)
+`attribute` [CharacterSocialAttribute](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/ECS/Values/CharacterSocialAttribute.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -344,7 +324,7 @@ public static explicit operator ReadyMainCharacter(ReadyObject obj)
 
 #### Parameters
 
-`obj` [ReadyObject](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Sdk.Common/Entities/ReadyObject.cs)
+`obj` [ReadyObject](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/Entities/ReadyObject.cs)
 
 #### Returns
 
@@ -358,7 +338,7 @@ public static explicit operator ReadyMainCharacter(ReadyCharacter character)
 
 #### Parameters
 
-`character` [ReadyCharacter](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Sdk.Common/Entities/ReadyCharacter.cs)
+`character` [ReadyCharacter](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/Entities/ReadyCharacter.cs)
 
 #### Returns
 
@@ -376,7 +356,7 @@ public static implicit operator ReadyObject(ReadyMainCharacter mainCharacter)
 
 #### Returns
 
- [ReadyObject](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Sdk.Common/Entities/ReadyObject.cs)
+ [ReadyObject](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/Entities/ReadyObject.cs)
 
 ### <a id="OblivionMp_Sdk_Entities_Player_ReadyMainCharacter_op_Implicit_OblivionMp_Sdk_Entities_Player_ReadyMainCharacter__ReadyM_Sdk_Common_Entities_ReadyCharacter"></a> implicit operator ReadyCharacter\(ReadyMainCharacter\)
 
@@ -390,6 +370,6 @@ public static implicit operator ReadyCharacter(ReadyMainCharacter mainCharacter)
 
 #### Returns
 
- [ReadyCharacter](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Sdk.Common/Entities/ReadyCharacter.cs)
+ [ReadyCharacter](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/Entities/ReadyCharacter.cs)
 
 

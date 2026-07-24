@@ -9,8 +9,8 @@ public interface IOblivionSyncApi : ISynchronizationApi<ReadyMainCharacter>, ISy
 
 #### Implements
 
-[ISynchronizationApi<ReadyMainCharacter\>](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Sdk.Common/Entities/ISynchronizationApi.cs), 
-[ISynchronizationApi](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Sdk.Common/Entities/ISynchronizationApi.cs)
+[ISynchronizationApi<ReadyMainCharacter\>](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/Entities/ISynchronizationApi.cs), 
+[ISynchronizationApi](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/Entities/ISynchronizationApi.cs)
 
 ## Properties
 
@@ -34,7 +34,7 @@ void SpawnDroppedItem(FormId item, int stackSize, Vector3 position)
 
 #### Parameters
 
-`item` [FormId](https://github.com/readycodeio/readym\-gameserver/blob/aaec9134f84b641c99520265ff1437f2c790d1d9/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
+`item` [FormId](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
 
 `stackSize` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
