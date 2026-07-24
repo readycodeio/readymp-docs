@@ -8,6 +8,12 @@ Client-side mods run inside the game alongside the OblivionMP client. They can r
 
 A mod is a .NET class library that references the `OblivionMp.Sdk` package (shipped with the server under `mods/OblivionMp.Sdk.zip`) and defines a single class extending `ModBase`. The mod loader instantiates this class when the game starts.
 
+:::tip[Start from the template]
+
+The quickest way to start is the official [OblivionMP mod template](https://github.com/readycodeio/oblivionmp-mod-template). It ships a ready-to-build solution with client, server, and shared projects wired up against the SDK, plus a script that packages both mods. Clone it and follow the [README](https://github.com/readycodeio/oblivionmp-mod-template/blob/main/README.md).
+
+:::
+
 ```csharp title="Minimal mod class"
 using OblivionMp.Sdk;
 using ReadyM.Api.DI;

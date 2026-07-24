@@ -27,6 +27,8 @@ mod_name.zip
 
 Upon connecting to the server, clients will automatically download and install any missing mods from the `mods/` directory, ensuring a seamless multiplayer experience.
 
+If you build with the official [OblivionMP mod template](https://github.com/readycodeio/oblivionmp-mod-template), its `MakeModFolder.ps1` script packages your mod into this layout for you, producing a folder for the client mod (`mods/`) and one for the server mod (`server_mods/`).
+
 :::danger[Security notice]
 
 The early access version of the OblivionMP SDK and server does not include any sandboxing or security mechanisms for mods.

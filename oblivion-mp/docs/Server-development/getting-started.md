@@ -8,6 +8,12 @@ Server-side mods run inside the OblivionMP relay server. They can register their
 
 A server-side mod is a .NET class library referencing the server SDK, defining a single class extending [ServerModBase](../../api-reference/ReadyM.Relay.Server.Sdk/ReadyM.Relay.Server.Sdk.ServerModBase). Its assembly is placed directly in the server's [`server_mods/` directory](../Server/mod-management#server-side-mods) — a separate location from the client-facing `mods/` folder — where the mod loader picks it up and instantiates the class when the server starts.
 
+:::tip[Start from the template]
+
+The official [OblivionMP mod template](https://github.com/readycodeio/oblivionmp-mod-template) already wires up a server project next to its client and shared projects, with a working example and a packaging script. Clone it and follow the [README](https://github.com/readycodeio/oblivionmp-mod-template/blob/main/README.md) rather than setting the references up by hand.
+
+:::
+
 ```csharp title="Minimal server mod class"
 using ReadyM.Relay.Server.Sdk;
 using ReadyM.Relay.Server.Sdk.Ecs.Components;
