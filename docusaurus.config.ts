@@ -31,7 +31,7 @@ const config: Config = {
   organizationName: 'ReadyCode', // Usually your GitHub org/user name.
   projectName: 'ReadyMp', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -116,9 +116,18 @@ const config: Config = {
       },
       items: [
         {
-          to: 'oblivion-mp/docs/what-is-oblivion-mp',
+          type: 'docSidebar',
+          sidebarId: 'oblivionMpDocsSidebar',
           position: 'left',
-          label: '🚧 OblivionMP',
+          label: 'OblivionMP',
+          docsPluginId: 'oblivion'
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'oblivionMpApiSidebar',
+          position: 'left',
+          label: 'OblivionMP API Reference',
+          docsPluginId: 'oblivion'
         },
         {
           type: 'docSidebar',
@@ -164,7 +173,7 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: '🚧 OblivionMP SDK',
+              label: 'OblivionMP SDK',
               to: '/oblivion-mp/docs/what-is-oblivion-mp',
             },
             {

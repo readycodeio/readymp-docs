@@ -23,10 +23,6 @@
     "message": "WukongMP API Reference",
     "description": "Navbar item with label WukongMP API Reference"
   },
-  "item.label.🚧 OblivionMP": {
-    "message": "🚧 OblivionMP",
-    "description": "Navbar item with label 🚧 OblivionMP"
-  },
   "item.label.Releases": {
     "message": "Releases",
     "description": "Navbar item with label Releases"

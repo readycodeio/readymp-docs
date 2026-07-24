@@ -2,6 +2,10 @@ wukongmp:
   label: 'WukongMP SDK'
   permalink: '/wukongmp'
   description: 'Release notes related to the WukongMP modding SDK'
+oblivionmp:
+  label: 'OblivionMP SDK'
+  permalink: '/oblivionmp'
+  description: 'Release notes related to the OblivionMP modding SDK'
 launcher:
   label: 'Launcher'
   permalink: '/launcher'

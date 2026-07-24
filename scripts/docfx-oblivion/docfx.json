@@ -1,0 +1,60 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../../../../oblivion-mod/OblivionMp.Sdk/bin/Debug/net10.0",
+          "files": [
+            "ReadyM.Api.dll",
+            "ReadyM.Api.Multiplayer.dll",
+            "OblivionMp.Sdk.dll",
+            "ReadyM.Relay.Common.Oblivion.dll"
+          ]
+        }
+      ],
+      "output": "api",
+      "filter": "filter.yml",
+      "outputFormat": "markdown",
+      "shouldSkipMarkup": true,
+      "disableGitFeatures": true,
+      "properties": {
+        "TargetFramework": "netstandard2.0"
+      },
+      "enumSortOrder": "declaringOrder"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "OblivionMP SDK",
+      "_appTitle": "OblivionMP SDK",
+      "_enableSearch": false,
+      "pdf": false
+    },
+    "xref": [
+      "https://learn.microsoft.com/en-us/dotnet/.xrefmap.json"
+    ]
+  }
+}

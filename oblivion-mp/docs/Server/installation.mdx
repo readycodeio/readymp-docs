@@ -8,16 +8,22 @@ import TabItem from '@theme/TabItem';
 
 # Installation
 
-The OblivionMP server is currently distributed in the following formats:
+The OblivionMP server will be distributed in the following formats:
 
 - Binary package
-- Docker image **(coming soon)**
+- Docker image
+
+:::info[Closed alpha]
+
+The server is currently in closed alpha and is being handed to a small group of testers first. Public downloads and the Docker image are coming soon.
+
+:::
 
 ### Downloads
 | Platform | Architecture | Download |
 | --- | --- | --- |
-| Linux | x64 | [**coming soon**](#) |
-| Windows | x64 | [**coming soon**](#) |
+| Linux | x64 | **Closed alpha** |
+| Windows | x64 | **Closed alpha** |
 
 ## Installation
 
@@ -30,14 +36,18 @@ After extraction, the directory structure should look like this:
 
 ```text
 server/
-├── server.exe                 # Main server binary
-├── config.json                # Configuration file
-├── e_sqlite3.dll              # Dependency
-├── aspnetcorev2_inprocess.dll # Dependency
-├── mods/                      # Directory for mods
-|   └── OblivionMp.Sdk.zip     # SDK package
-├── saves/                     # Directory for game saves (empty by default)
-└── wwwroot/                   # Admin panel assets
+├── server.exe                        # Main server binary
+├── config.json                       # Configuration file
+├── e_sqlite3.dll                     # Dependency
+├── aspnetcorev2_inprocess.dll        # Dependency
+├── mods/                             # Directory for client-side mods
+    └── OblivionMp.Sdk
+        ├── manifes.json              # manifest file (unused in 0.1.0)
+        └── OblivionMp.Sdk.dll        # Client-side SDK
+├── server_mods/                      # Directory for server-side mods
+|   └── OblivionMp.Sdk.Serverside.dll # Server-side SDK
+├── saves/                            # Directory for game saves (empty by default)
+└── wwwroot/                          # Admin panel assets
 ```
 
 </TabItem>
@@ -45,13 +55,17 @@ server/
 
 ```text
 server/
-├── server                     # Main server binary
-├── config.json                # Configuration file
-├── libe_sqlite3.so            # Dependency
-├── mods/                      # Directory for mods
-|   └── OblivionMp.Sdk.zip     # SDK package
-├── saves/                     # Directory for game saves (empty by default)
-└── wwwroot/                   # Admin panel assets
+├── server                            # Main server binary
+├── config.json                       # Configuration file
+├── libe_sqlite3.so                   # Dependency
+├── mods/                             # Directory for client-side mods
+    └── OblivionMp.Sdk
+        ├── manifes.json              # manifest file (unused in 0.1.0)
+        └── OblivionMp.Sdk.dll        # Client-side SDK
+├── server_mods/                      # Directory for server-side mods
+|   └── OblivionMp.Sdk.Serverside.dll # Server-side SDK, ships by default
+├── saves/                            # Directory for game saves (empty by default)
+└── wwwroot/                          # Admin panel assets
 ```
 
 </TabItem>
@@ -78,3 +92,7 @@ Unless changed in `config.json`, the server listens on the following ports:
 | --- | --- | --- |
 | 9050 | UDP | Game traffic (player connections, game state synchronization, etc.) |
 | 9050 | HTTP | [Admin panel](admin-panel) |
+
+## Docker
+
+A Linux-based x64 Docker image is coming soon. It will be published to the container registry once the server leaves closed alpha.
