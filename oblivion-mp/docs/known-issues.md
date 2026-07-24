@@ -9,3 +9,4 @@ This is the list of known issues in release **0.1.0**.
 * Setting a rapidly changing value on the server side, e.g. the player's position, will often be ignored by the player who overrides the value every frame. As such, it is not possible to teleport a player by simply setting his `TransformComponent.Position` to another value.
 * Position of dropped items is not synchronized. Dragging them around will not be seen by other players, but they will disappear for everyone when picked up.
 * Level items pickup and position are not synced at all.
+* The game sometimes crashes when using doors.
