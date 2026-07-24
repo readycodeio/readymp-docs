@@ -32,7 +32,7 @@ public AreaId AreaId { get; set; }
 
 #### Property Value
 
- [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/ReadyM.Api/Idents/AreaId.cs)
+ [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Api/Idents/AreaId.cs)
 
 ### <a id="ReadyM_Api_Multiplayer_ECS_Components_AreaScopeComponent_MasterClient"></a> MasterClient
 
@@ -42,7 +42,7 @@ public PlayerId MasterClient { get; set; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ## Methods
 
@@ -76,7 +76,7 @@ public AreaId GetIndexedValue()
 
 #### Returns
 
- [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/ReadyM.Api/Idents/AreaId.cs)
+ [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Api/Idents/AreaId.cs)
 
 ### <a id="ReadyM_Api_Multiplayer_ECS_Components_AreaScopeComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 

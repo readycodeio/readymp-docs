@@ -9,7 +9,7 @@ public readonly struct ReadyDroppedItem : IReadyEntity<ReadyDroppedItem>
 
 #### Implements
 
-[IReadyEntity<ReadyDroppedItem\>](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/ReadyM.Sdk.Common/Entities/IReadyEntity.cs)
+[IReadyEntity<ReadyDroppedItem\>](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Sdk.Common/Entities/IReadyEntity.cs)
 
 #### Inherited Members
 
@@ -34,7 +34,7 @@ public FormId FormId { get; }
 
 #### Property Value
 
- [FormId](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
+ [FormId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
 
 ### <a id="OblivionMp_Sdk_Entities_DroppedItem_ReadyDroppedItem_StackSize"></a> StackSize
 
@@ -56,7 +56,7 @@ public static explicit operator ReadyDroppedItem(ReadyObject obj)
 
 #### Parameters
 
-`obj` [ReadyObject](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/ReadyM.Sdk.Common/Entities/ReadyObject.cs)
+`obj` [ReadyObject](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Sdk.Common/Entities/ReadyObject.cs)
 
 #### Returns
 
@@ -70,7 +70,7 @@ public static explicit operator ReadyDroppedItem(ReadyCharacter character)
 
 #### Parameters
 
-`character` [ReadyCharacter](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/ReadyM.Sdk.Common/Entities/ReadyCharacter.cs)
+`character` [ReadyCharacter](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Sdk.Common/Entities/ReadyCharacter.cs)
 
 #### Returns
 
@@ -88,7 +88,7 @@ public static implicit operator ReadyObject(ReadyDroppedItem mainCharacter)
 
 #### Returns
 
- [ReadyObject](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/ReadyM.Sdk.Common/Entities/ReadyObject.cs)
+ [ReadyObject](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Sdk.Common/Entities/ReadyObject.cs)
 
 ### <a id="OblivionMp_Sdk_Entities_DroppedItem_ReadyDroppedItem_op_Implicit_OblivionMp_Sdk_Entities_DroppedItem_ReadyDroppedItem__ReadyM_Sdk_Common_Entities_ReadyCharacter"></a> implicit operator ReadyCharacter\(ReadyDroppedItem\)
 
@@ -102,6 +102,6 @@ public static implicit operator ReadyCharacter(ReadyDroppedItem mainCharacter)
 
 #### Returns
 
- [ReadyCharacter](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/ReadyM.Sdk.Common/Entities/ReadyCharacter.cs)
+ [ReadyCharacter](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Sdk.Common/Entities/ReadyCharacter.cs)
 
 

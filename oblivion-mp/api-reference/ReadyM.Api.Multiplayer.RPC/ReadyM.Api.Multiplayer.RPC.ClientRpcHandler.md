@@ -18,7 +18,7 @@ public abstract class ClientRpcHandler : RpcBase, IHostedService, IDisposable
 
 #### Implements
 
-[IHostedService](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/ReadyM.Api/DI/IHostedService.cs), 
+[IHostedService](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Api/DI/IHostedService.cs), 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members

@@ -30,7 +30,7 @@ public NativeString256 Text
 
 #### Field Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Values_DialogueResponse_TopicId"></a> TopicId
 

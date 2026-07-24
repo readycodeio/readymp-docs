@@ -34,7 +34,7 @@ public PlayerId PlayerId { get; set; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ## Methods
 
@@ -68,7 +68,7 @@ public PlayerId GetIndexedValue()
 
 #### Returns
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/b6eacba3e1df560975dcddbb4d4e3c5b49398de9/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/b4fbaead42db99a223e606c7d888cf0ce632f4cf/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_MainCharacterComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
