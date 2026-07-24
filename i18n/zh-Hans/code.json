@@ -334,41 +334,41 @@
         "message": "在你最喜欢的游戏中打造多人体验。",
         "description": "Hero subtitle / site meta description"
     },
-    "readym.sdk-documentation": {
-        "message": "SDK 文档",
-        "description": "Secondary CTA button in the hero"
+    "readym.hero.wukong": {
+        "message": "WukongMP 文档",
+        "description": "Hero CTA button linking to WukongMP documentation"
     },
-    "readym.host-a-server": {
-        "message": "托管服务器",
-        "description": "Primary CTA button in the hero — links to the Quick Start guide"
+    "readym.hero.oblivion": {
+        "message": "OblivionMP 文档",
+        "description": "Hero CTA button linking to OblivionMP documentation"
     },
     "readym.paths.label": {
         "message": "您想做什么？",
         "description": "Eyebrow label above the two audience path cards"
     },
-    "readym.path.server.title": {
-        "message": "运行服务器",
-        "description": "Title of the server-owner path card"
+    "readym.game.wukong.title": {
+        "message": "WukongMP",
+        "description": "Title of the WukongMP game card"
     },
-    "readym.path.server.description": {
-        "message": "几分钟内启动您的 WukongMP 服务器。下载二进制文件或使用 Docker，完成配置后即可上线。",
-        "description": "Body text of the server-owner path card"
+    "readym.game.wukong.description": {
+        "message": "《黑神话：悟空》的社区多人游戏平台。托管服务器，并使用 C# SDK 构建自定义游戏模式。",
+        "description": "Body text of the WukongMP game card"
     },
-    "readym.path.server.cta": {
-        "message": "快速入门指南 →",
-        "description": "Link label at the bottom of the server-owner path card"
+    "readym.game.wukong.cta": {
+        "message": "WukongMP 文档 →",
+        "description": "Link label at the bottom of the WukongMP game card"
     },
-    "readym.path.sdk.title": {
-        "message": "构建模组",
-        "description": "Title of the developer path card"
+    "readym.game.oblivion.title": {
+        "message": "OblivionMP",
+        "description": "Title of the OblivionMP game card"
     },
-    "readym.path.sdk.description": {
-        "message": "使用我们基于 C# 的 SDK 扩展 WukongMP。构建角色扮演服务器、生存模式、自定义竞技场或带有自定义规则集的 PvP 锦标赛。",
-        "description": "Body text of the developer path card"
+    "readym.game.oblivion.description": {
+        "message": "《上古卷轴IV：湮灭 重制版》的社区多人游戏平台。托管服务器，并使用 C# SDK 构建自定义游戏模式。",
+        "description": "Body text of the OblivionMP game card"
     },
-    "readym.path.sdk.cta": {
-        "message": "SDK 文档 →",
-        "description": "Link label at the bottom of the developer path card"
+    "readym.game.oblivion.cta": {
+        "message": "OblivionMP 文档 →",
+        "description": "Link label at the bottom of the OblivionMP game card"
     },
     "readym.feature1.title": {
         "message": "ReadyM 软件开发工具包",

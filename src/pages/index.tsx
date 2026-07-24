@@ -19,18 +19,23 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/wukong-mp/docs/quick-start">
-            🚀{' '}
+            to="/wukong-mp/docs/what-is-wukong-mp">
+            🐒{' '}
             {translate({
-              id: 'readym.host-a-server',
-              message: 'Host a Server',
-              description: 'Hero CTA button for server owners',
+              id: 'readym.hero.wukong',
+              message: 'WukongMP Docs',
+              description: 'Hero CTA button linking to WukongMP documentation',
             })}
           </Link>
           <Link
             className={clsx('button button--outline button--secondary button--lg', styles.buttonOutline)}
-            to="/wukong-mp/docs/what-is-wukong-mp">
-            {translate({id: 'readym.sdk-documentation'})}
+            to="/oblivion-mp/docs/what-is-oblivion-mp">
+            ⚔️{' '}
+            {translate({
+              id: 'readym.hero.oblivion',
+              message: 'OblivionMP Docs',
+              description: 'Hero CTA button linking to OblivionMP documentation',
+            })}
           </Link>
         </div>
       </div>
@@ -48,38 +53,38 @@ type PathItem = {
 
 const paths: PathItem[] = [
   {
-    icon: '🖥️',
+    icon: '🐒',
     title: translate({
-      id: 'readym.path.server.title',
-      message: 'Running a Server',
+      id: 'readym.game.wukong.title',
+      message: 'WukongMP',
     }),
     description: translate({
-      id: 'readym.path.server.description',
+      id: 'readym.game.wukong.description',
       message:
-        'Get your WukongMP server up and running in minutes. Download the binary or use Docker, configure, and go live.',
+        'Community multiplayer for Black Myth: Wukong. Host a server and build custom game modes with the C# SDK.',
     }),
     cta: translate({
-      id: 'readym.path.server.cta',
-      message: 'Quick Start Guide →',
+      id: 'readym.game.wukong.cta',
+      message: 'WukongMP Docs →',
     }),
-    href: '/wukong-mp/docs/quick-start',
+    href: '/wukong-mp/docs/what-is-wukong-mp',
   },
   {
-    icon: '⚡',
+    icon: '⚔️',
     title: translate({
-      id: 'readym.path.sdk.title',
-      message: 'Building Mods',
+      id: 'readym.game.oblivion.title',
+      message: 'OblivionMP',
     }),
     description: translate({
-      id: 'readym.path.sdk.description',
+      id: 'readym.game.oblivion.description',
       message:
-        'Extend WukongMP with our C#-based SDK. Build roleplaying servers, survival modes, custom arenas, or PvP tournaments with custom rulesets.',
+        'Community multiplayer for The Elder Scrolls IV: Oblivion Remastered. Host a server and build custom game modes with the C# SDK.',
     }),
     cta: translate({
-      id: 'readym.path.sdk.cta',
-      message: 'SDK Documentation →',
+      id: 'readym.game.oblivion.cta',
+      message: 'OblivionMP Docs →',
     }),
-    href: '/wukong-mp/docs/Development/getting-started',
+    href: '/oblivion-mp/docs/what-is-oblivion-mp',
   },
 ];
 
