@@ -126,7 +126,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'oblivionMpApiSidebar',
           position: 'left',
-          label: 'OblivionMP API Reference',
+          label: 'OblivionMP API',
           docsPluginId: 'oblivion'
         },
         {
@@ -139,12 +139,20 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'wukongMpApiSidebar',
           position: 'left',
-          label: 'WukongMP API Reference',
+          label: 'WukongMP API',
         },
         {
           to: 'releases',
           label: 'Releases',
           position: 'left'
+        },
+        {
+          type: 'docsVersionDropdown',
+          versions: {
+            'current': { label: '0.1.0' },
+          },
+          position: 'right',
+          docsPluginId: 'oblivion',
         },
         {
           type: 'docsVersionDropdown',
@@ -257,7 +265,14 @@ const config: Config = {
         id: 'oblivion',
         path: 'oblivion-mp',
         routeBasePath: 'oblivion-mp',
-        sidebarPath: './sidebarsOblivion.ts'
+        sidebarPath: './sidebarsOblivion.ts',
+        lastVersion: 'current',
+        versions: {
+          current: {
+            label: '0.1.0',
+            badge: true
+          }
+        },
       },
     ],
   ],

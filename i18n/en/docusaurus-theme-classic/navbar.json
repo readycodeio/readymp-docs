@@ -19,9 +19,9 @@
     "message": "WukongMP",
     "description": "Navbar item with label WukongMP"
   },
-  "item.label.WukongMP API Reference": {
-    "message": "WukongMP API Reference",
-    "description": "Navbar item with label WukongMP API Reference"
+  "item.label.WukongMP API": {
+    "message": "WukongMP API",
+    "description": "Navbar item with label WukongMP API"
   },
   "item.label.Releases": {
     "message": "Releases",
