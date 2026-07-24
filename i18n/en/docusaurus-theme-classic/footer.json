@@ -70,9 +70,5 @@
   "link.item.label.OblivionMP SDK": {
     "message": "OblivionMP SDK",
     "description": "The label of footer link with label=OblivionMP SDK linking to /docs/oblivionmp-docs/what-is-oblivion-mp"
-  },
-  "link.item.label.🚧 OblivionMP SDK": {
-    "message": "🚧 OblivionMP SDK",
-    "description": "The label of footer link with label=🚧 OblivionMP SDK linking to /docs/oblivionmp-docs/what-is-oblivion-mp"
   }
 }

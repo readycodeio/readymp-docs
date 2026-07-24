@@ -116,9 +116,18 @@ const config: Config = {
       },
       items: [
         {
-          to: 'oblivion-mp/docs/what-is-oblivion-mp',
+          type: 'docSidebar',
+          sidebarId: 'oblivionMpDocsSidebar',
           position: 'left',
-          label: '🚧 OblivionMP',
+          label: 'OblivionMP',
+          docsPluginId: 'oblivion'
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'oblivionMpApiSidebar',
+          position: 'left',
+          label: 'OblivionMP API Reference',
+          docsPluginId: 'oblivion'
         },
         {
           type: 'docSidebar',
@@ -164,7 +173,7 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: '🚧 OblivionMP SDK',
+              label: 'OblivionMP SDK',
               to: '/oblivion-mp/docs/what-is-oblivion-mp',
             },
             {

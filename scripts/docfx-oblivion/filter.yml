@@ -1,0 +1,5 @@
+apiRules:
+- include:
+    uidRegex: ^PreludeLib\.Attributes
+- exclude:
+    uidRegex: ^PreludeLib
