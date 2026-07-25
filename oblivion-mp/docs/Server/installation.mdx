@@ -80,6 +80,16 @@ You can adjust server settings by editing the `config.json` file. In the followi
 | Setting | Type | Purpose |
 | --- | --- | --- |
 | `Server:Port` | number | The port on which the server listens for incoming connections |
+| `Server:Password` | string | Optional. When set, players must enter this password in the Launcher to join. Leave empty or omit for an open server. |
+| `Telemetry:OptOut` | boolean | Set to `true` to opt out of sending anonymous telemetry to ReadyM. Defaults to `false`. |
+
+:::note
+
+`Server:Password` gates every player, including admins and whitelisted users. Password-protected servers are shown with a lock on the public server list.
+
+:::
+
+The OblivionMP server runs on the same binaries as [WukongMP](/wukong-mp/docs/what-is-wukong-mp), so the hosting features are identical: the same [admin panel](admin-panel) and the same public [server listing](publishing-your-server).
 
 ## First launch
 

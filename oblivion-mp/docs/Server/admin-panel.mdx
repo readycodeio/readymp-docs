@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Admin panel
 
-The admin panel is available over HTTP on port `9050`.
+The admin panel is available over HTTP on port **9050** (unless changed in `config.json`).
 
 If the server is running on your local machine, you can open it at http://localhost:9050.
 
@@ -54,3 +54,11 @@ After signing in, you can access the admin panel interface.
   src={require('/img/docs/admin-panel-terminal.png').default}
   alt="Admin panel terminal"
 />
+
+The admin panel offers the following views:
+
+* **Terminal** - view server status, active players, uptime, and real-time logs.
+* **Players** - view the list of players who have ever connected to the server, along with their first and last visit date.
+* **Mods** - view the list of currently installed mods on the server.
+* **Admins** - view the list of server administrators, add new administrators, and manage their permissions.
+* **Settings** - manage panel settings, such as language and theme.

@@ -26,7 +26,7 @@ public partial struct WalletComponent : IOwnershipBased
 Each private field produces a matching public property — `_balance` becomes `Balance`. Assigning to that property marks the component as changed, so the SDK knows to replicate it on the next tick:
 
 ```csharp
-ref var wallet = ref player.Get<WalletComponent>();
+ref var wallet = ref player.GetGlobal<WalletComponent>();
 wallet.Balance += 500;
 ```
 
@@ -44,17 +44,19 @@ protected override void RegisterServices(IDependencyContainer services)
 }
 ```
 
-An [IArchetypeRegistration](../../api-reference/ReadyM.Api.ECS.Registry/ReadyM.Api.ECS.Registry.IArchetypeRegistration) adds the component to an [archetype](../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.SDK.Archetypes) — for example, to every main character:
+An [IArchetypeRegistration](../../api-reference/ReadyM.Api.ECS.Registry/ReadyM.Api.ECS.Registry.IArchetypeRegistration) adds the component to an [archetype](../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.SDK.Archetypes) — a wallet is persistent, player-scoped data, so it goes on the global player entity:
 
 ```csharp title="Attaching the component to an archetype"
 public class MyRegistration : IArchetypeRegistration
 {
     public void Register(IArchetypeRegistry registry)
     {
-        registry.ModifyArchetype(SDK.Archetypes.MainCharacterArchetype, b => b.Add<WalletComponent>());
+        registry.ModifyArchetype(SDK.Archetypes.GlobalPlayerArchetype, b => b.Add<WalletComponent>());
     }
 }
 ```
+
+Read components on the global player entity with `GetGlobal<T>()`, and those on the character's world pawn (position, vitals, equipment) with `Get<T>()`. Whichever archetype you pick, it **must** be the same one the server mod uses.
 
 :::important
 
@@ -68,7 +70,8 @@ Every networked entity has an **owner** — usually the player whose character i
 
 ```csharp
 // works: I own my character, so this replicates to everyone
-SDK.Sync.LocalPlayer?.Get<WalletComponent>().Balance += 500;
+if (SDK.Sync.LocalPlayer is { } player)
+    player.GetGlobal<WalletComponent>().Balance += 500;
 ```
 
 The server can override an owned component authoritatively — for example to award gold that a client should not be able to grant itself. Such server-authored changes are replicated back to the owner and take priority over the owner's local value. See [server-side development](../Server-development/getting-started) for how to write server-authoritative logic.

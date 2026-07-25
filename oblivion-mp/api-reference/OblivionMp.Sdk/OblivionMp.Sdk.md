@@ -4,6 +4,8 @@
 
  [OblivionMp.Sdk.Api](../OblivionMp.Sdk.Api/OblivionMp.Sdk.Api.md)
 
+ [OblivionMp.Sdk.Serverside](../OblivionMp.Sdk/OblivionMp.Sdk.Serverside.md)
+
 ### Classes
 
  [SDK.Archetypes](../OblivionMp.Sdk/OblivionMp.Sdk.SDK.Archetypes.md)

@@ -38,7 +38,7 @@ public class MyServerMod : ServerModBase
 
 Just like on the client, a networked component must be declared with `[DeriveINetworkedComponent]` — see [Custom components](../Client/custom-components) for the full pattern. On the server, register it in `RegisterComponents`, then attach it to an archetype in `Init`:
 
-```csharp title="Registering a component and attaching it to the main character archetype"
+```csharp title="Registering a component and attaching it to the global player archetype"
 public class MyServerMod : ServerModBase
 {
     protected override void RegisterComponents(IComponentRegistry registry)
@@ -51,13 +51,15 @@ public class MyServerMod : ServerModBase
         var registry = Services.Resolve<IArchetypeRegistry>();
         var archetypes = Services.Resolve<OblivionArchetypes>();
 
-        registry.ModifyArchetype(archetypes.MainCharacterArchetype, archetype =>
+        registry.ModifyArchetype(archetypes.GlobalPlayerArchetype, archetype =>
         {
             archetype.Add<WalletComponent>();
         });
     }
 }
 ```
+
+A wallet is persistent, player-scoped data, so it belongs on the **global player entity**: one entity per connected player that lives for the whole session, regardless of which area or cell the player is in. Data that describes the character's presence in the world (position, vitals, equipment) belongs on the main character instead. See [Archetypes and components](archetypes) for what each archetype carries.
 
 :::important
 
