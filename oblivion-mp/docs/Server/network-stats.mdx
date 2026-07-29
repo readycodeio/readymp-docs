@@ -8,6 +8,11 @@ The **Network** view in the [admin panel](./admin-panel) is a live breakdown of 
 
 Viewing it requires the **Dashboard access** permission.
 
+<img
+  src={require('/img/docs/network-tab.png').default}
+  alt="Network tab in admin panel"
+/>
+
 ## How sampling works
 
 The server closes one measurement window per second and pushes it to the panel over an event stream. It retains the last 300 windows; the charts and tables show the most recent 120, which is what the `last 120s` label next to the **LIVE** badge means.
@@ -69,7 +74,7 @@ Per component payload, aggregated across the visible windows.
 
 | Column | Meaning |
 | --- | --- |
-| **Component** | Type name of the component. See [component names](#component-names) below. |
+| **Component** | Type name of the component. |
 | **In** / **Out** | Payload bytes per second, averaged over the whole visible window. |
 | **In msgs** / **Out msgs** | Message counts. These are totals over the window, not rates, unlike the byte columns beside them. |
 | **In/msg** / **Out/msg** | Average payload bytes per message. |
