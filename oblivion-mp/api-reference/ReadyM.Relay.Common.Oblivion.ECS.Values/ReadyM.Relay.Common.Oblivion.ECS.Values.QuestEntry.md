@@ -30,7 +30,7 @@ public NativeString64 Name
 
 #### Field Value
 
- [NativeString64](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/YooniCSharp/Native/Container/NativeString64.cs)
+ [NativeString64](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString64.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Values_QuestEntry_QuestId"></a> QuestId
 

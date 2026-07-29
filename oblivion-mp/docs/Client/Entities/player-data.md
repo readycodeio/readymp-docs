@@ -94,6 +94,8 @@ player.AddItemToInventory(itemId, 1);
 player.RemoveItemFromInventory(itemId); // removes all instances
 player.RemoveItemFromInventory(itemId, 3); // removes up to 3
 player.ClearInventory();
+if (player.HasItemInInventory(itemId)) { ... }
+if (player.HasItemInInventory(itemId, out int count) && count >= 5) { ... }
 ```
 
 ```csharp

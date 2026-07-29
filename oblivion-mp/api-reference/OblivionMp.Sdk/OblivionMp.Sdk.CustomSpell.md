@@ -46,6 +46,6 @@ public required SpellType SpellType { get; init; }
 
 #### Property Value
 
- [SpellType](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/ECS/Values/SpellType.cs)
+ [SpellType](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Relay.Common.Oblivion/ECS/Values/SpellType.cs)
 
 

@@ -35,7 +35,7 @@ public AreaId(NativeString256 id)
 
 #### Parameters
 
-`id` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/YooniCSharp/Native/Container/NativeString256.cs)
+`id` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Api_Idents_AreaId__ctor_System_String_"></a> AreaId\(string\)
 

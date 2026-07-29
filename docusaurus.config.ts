@@ -149,7 +149,7 @@ const config: Config = {
         {
           type: 'docsVersionDropdown',
           versions: {
-            'current': { label: '0.1.0' },
+            'current': { label: '0.1.1' },
           },
           position: 'right',
           docsPluginId: 'oblivion',
@@ -269,7 +269,7 @@ const config: Config = {
         lastVersion: 'current',
         versions: {
           current: {
-            label: '0.1.0',
+            label: '0.1.1',
             badge: true
           }
         },

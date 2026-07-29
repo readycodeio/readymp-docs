@@ -12,9 +12,9 @@
 
  [Chunks5](../ReadyM.Api.Multiplayer.Interop/ReadyM.Api.Multiplayer.Interop.Chunks5.md)
 
- [SizeOfHelper<T\>](../ReadyM.Api.Multiplayer.Interop/ReadyM.Api.Multiplayer.Interop.SizeOfHelper-1.md)
-
  [SizeOfHelper](../ReadyM.Api.Multiplayer.Interop/ReadyM.Api.Multiplayer.Interop.SizeOfHelper.md)
+
+ [SizeOfHelper<T\>](../ReadyM.Api.Multiplayer.Interop/ReadyM.Api.Multiplayer.Interop.SizeOfHelper-1.md)
 
 ### Delegates
 
