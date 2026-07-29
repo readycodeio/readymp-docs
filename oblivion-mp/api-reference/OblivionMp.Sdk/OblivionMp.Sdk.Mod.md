@@ -10,24 +10,24 @@ public class Mod : ModBase, ICSharpMod
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[ModBase](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/ModBase.cs) ← 
+[ModBase](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/ModBase.cs) ← 
 [Mod](../OblivionMp.Sdk/OblivionMp.Sdk.Mod.md)
 
 #### Implements
 
-[ICSharpMod](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Modloader/Mods/ICsharpMod.cs)
+[ICSharpMod](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Modloader/Mods/ICsharpMod.cs)
 
 #### Inherited Members
 
-[ModBase.Init\(IDependencyContainer\)](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/ModBase.cs), 
-[ModBase.RegisterServices\(IDependencyContainer\)](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/ModBase.cs), 
-[ModBase.Start\(\)](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/ModBase.cs), 
-[ModBase.DeInit\(\)](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/ModBase.cs), 
-[ModBase.GetReloadContext\(\)](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/ModBase.cs), 
-[ModBase.Reload\(object?\)](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/ModBase.cs), 
-[ModBase.Logger](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/ModBase.cs), 
-[ModBase.Name](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/ModBase.cs), 
-[ModBase.IsDebug](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/ModBase.cs), 
+[ModBase.Init\(IDependencyContainer\)](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/ModBase.cs), 
+[ModBase.RegisterServices\(IDependencyContainer\)](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/ModBase.cs), 
+[ModBase.Start\(\)](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/ModBase.cs), 
+[ModBase.DeInit\(\)](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/ModBase.cs), 
+[ModBase.GetReloadContext\(\)](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/ModBase.cs), 
+[ModBase.Reload\(object?\)](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/ModBase.cs), 
+[ModBase.Logger](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/ModBase.cs), 
+[ModBase.Name](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/ModBase.cs), 
+[ModBase.IsDebug](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/ModBase.cs), 
 [object.GetType\(\)](https://learn.microsoft.com/dotnet/api/system.object.gettype), 
 [object.MemberwiseClone\(\)](https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone), 
 [object.ToString\(\)](https://learn.microsoft.com/dotnet/api/system.object.tostring), 
@@ -68,7 +68,7 @@ protected override void RegisterServices(IDependencyContainer services)
 
 #### Parameters
 
-`services` [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Api/DI/IDependencyContainer.cs)
+`services` [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="OblivionMp_Sdk_Mod_Start"></a> Start\(\)
 

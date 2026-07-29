@@ -37,13 +37,15 @@ public Vector3 Position { get; set; }
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_TransformComponent_Rotation"></a> Rotation
 
+Rotation around the vertical axis (yaw) in degrees.
+
 ```csharp
-public Vector3 Rotation { get; set; }
+public float Rotation { get; set; }
 ```
 
 #### Property Value
 
- [Vector3](https://learn.microsoft.com/dotnet/api/system.numerics.vector3)
+ [float](https://learn.microsoft.com/dotnet/api/system.single)
 
 ## Methods
 

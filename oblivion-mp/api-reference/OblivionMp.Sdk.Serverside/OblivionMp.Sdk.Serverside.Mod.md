@@ -10,16 +10,16 @@ public class Mod : ServerModBase
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[ServerModBase](https://github.com/readycodeio/readym\-gameserver/blob/37d1ae4983c51b8e07919f4a5a8d0e86833a3225/src/ReadyM.Relay.Server.Sdk/ServerModBase.cs) ← 
+[ServerModBase](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Relay.Server.Sdk/ServerModBase.cs) ← 
 [Mod](../OblivionMp.Sdk.Serverside/OblivionMp.Sdk.Serverside.Mod.md)
 
 #### Inherited Members
 
-[ServerModBase.InitializeAot\(IComponentRegistry\)](https://github.com/readycodeio/readym\-gameserver/blob/37d1ae4983c51b8e07919f4a5a8d0e86833a3225/src/ReadyM.Relay.Server.Sdk/ServerModBase.cs), 
-[ServerModBase.Initialize\(IServerDependencyContainer\)](https://github.com/readycodeio/readym\-gameserver/blob/37d1ae4983c51b8e07919f4a5a8d0e86833a3225/src/ReadyM.Relay.Server.Sdk/ServerModBase.cs), 
-[ServerModBase.RegisterComponents\(IComponentRegistry\)](https://github.com/readycodeio/readym\-gameserver/blob/37d1ae4983c51b8e07919f4a5a8d0e86833a3225/src/ReadyM.Relay.Server.Sdk/ServerModBase.cs), 
-[ServerModBase.Init\(\)](https://github.com/readycodeio/readym\-gameserver/blob/37d1ae4983c51b8e07919f4a5a8d0e86833a3225/src/ReadyM.Relay.Server.Sdk/ServerModBase.cs), 
-[ServerModBase.Services](https://github.com/readycodeio/readym\-gameserver/blob/37d1ae4983c51b8e07919f4a5a8d0e86833a3225/src/ReadyM.Relay.Server.Sdk/ServerModBase.cs), 
+[ServerModBase.InitializeAot\(IComponentRegistry\)](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Relay.Server.Sdk/ServerModBase.cs), 
+[ServerModBase.Initialize\(IServerDependencyContainer\)](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Relay.Server.Sdk/ServerModBase.cs), 
+[ServerModBase.RegisterComponents\(IComponentRegistry\)](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Relay.Server.Sdk/ServerModBase.cs), 
+[ServerModBase.Init\(\)](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Relay.Server.Sdk/ServerModBase.cs), 
+[ServerModBase.Services](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Relay.Server.Sdk/ServerModBase.cs), 
 [object.GetType\(\)](https://learn.microsoft.com/dotnet/api/system.object.gettype), 
 [object.MemberwiseClone\(\)](https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone), 
 [object.ToString\(\)](https://learn.microsoft.com/dotnet/api/system.object.tostring), 
@@ -54,6 +54,6 @@ protected override void RegisterComponents(IComponentRegistry registry)
 
 #### Parameters
 
-`registry` [IComponentRegistry](https://github.com/readycodeio/readym\-gameserver/blob/37d1ae4983c51b8e07919f4a5a8d0e86833a3225/src/ReadyM.Relay.Server.Sdk/Ecs/Components/IComponentRegistry.cs)
+`registry` [IComponentRegistry](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Relay.Server.Sdk/Ecs/Components/IComponentRegistry.cs)
 
 

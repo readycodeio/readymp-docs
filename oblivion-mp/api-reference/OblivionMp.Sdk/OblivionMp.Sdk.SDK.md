@@ -32,7 +32,7 @@ public static IInputApi Input { get; }
 
 #### Property Value
 
- [IInputApi](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Sdk.Common/Api/IInputApi.cs)
+ [IInputApi](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/Api/IInputApi.cs)
 
 ### <a id="OblivionMp_Sdk_SDK_Services"></a> Services
 
@@ -42,7 +42,7 @@ public static IDependencyContainer Services { get; }
 
 #### Property Value
 
- [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Api/DI/IDependencyContainer.cs)
+ [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="OblivionMp_Sdk_SDK_Sync"></a> Sync
 

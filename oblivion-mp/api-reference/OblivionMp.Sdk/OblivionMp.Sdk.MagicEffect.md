@@ -46,7 +46,7 @@ public required FormId EffectCode { get; init; }
 
 #### Property Value
 
- [FormId](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
+ [FormId](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
 
 ### <a id="OblivionMp_Sdk_MagicEffect_Magnitude"></a> Magnitude
 
@@ -66,6 +66,6 @@ public required MagicEffectRange Range { get; init; }
 
 #### Property Value
 
- [MagicEffectRange](https://github.com/readycodeio/readym\-gameserver/blob/230fe858a098de9ac732d546ca5b1296f221735a/src/ReadyM.Relay.Common.Oblivion/ECS/Values/MagicEffectRange.cs)
+ [MagicEffectRange](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Relay.Common.Oblivion/ECS/Values/MagicEffectRange.cs)
 
 

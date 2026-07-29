@@ -48,12 +48,12 @@ public float ActorForwardPoseOffset { get; set; }
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_ActorRotation"></a> ActorRotation
 
 ```csharp
-public Vector3 ActorRotation { get; set; }
+public float ActorRotation { get; set; }
 ```
 
 #### Property Value
 
- [Vector3](https://learn.microsoft.com/dotnet/api/system.numerics.vector3)
+ [float](https://learn.microsoft.com/dotnet/api/system.single)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_AnalogInputModifier"></a> AnalogInputModifier
 
@@ -108,12 +108,12 @@ public Vector3 ControlInputVector { get; set; }
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_ControlRotation"></a> ControlRotation
 
 ```csharp
-public Vector3 ControlRotation { get; set; }
+public float ControlRotation { get; set; }
 ```
 
 #### Property Value
 
- [Vector3](https://learn.microsoft.com/dotnet/api/system.numerics.vector3)
+ [float](https://learn.microsoft.com/dotnet/api/system.single)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_CurrentOrientationAngle"></a> CurrentOrientationAngle
 
@@ -228,12 +228,12 @@ public float MinMaxForwardAngle { get; set; }
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_RotationRate"></a> RotationRate
 
 ```csharp
-public Vector3 RotationRate { get; set; }
+public float RotationRate { get; set; }
 ```
 
 #### Property Value
 
- [Vector3](https://learn.microsoft.com/dotnet/api/system.numerics.vector3)
+ [float](https://learn.microsoft.com/dotnet/api/system.single)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_SneakingLocomotionPlayRate"></a> SneakingLocomotionPlayRate
 
