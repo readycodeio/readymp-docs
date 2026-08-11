@@ -122,6 +122,22 @@ public void Serialize(NetDataWriter writer)
 
 `writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
 
+### <a id="ReadyM_Api_Idents_PlayerId_TextDeserialize_System_Text_Json_Utf8JsonReader__System_Text_Json_JsonSerializerOptions_"></a> TextDeserialize\(ref Utf8JsonReader, JsonSerializerOptions\)
+
+```csharp
+public static PlayerId TextDeserialize(ref Utf8JsonReader reader, JsonSerializerOptions options)
+```
+
+#### Parameters
+
+`reader` [Utf8JsonReader](https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader)
+
+`options` [JsonSerializerOptions](https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions)
+
+#### Returns
+
+ [PlayerId](../ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
+
 ### <a id="ReadyM_Api_Idents_PlayerId_ToString"></a> ToString\(\)
 
 ```csharp

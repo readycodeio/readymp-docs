@@ -6,6 +6,8 @@
 
  [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)
 
+ [WukongMp.Sdk.Serverside](../WukongMp.Sdk/WukongMp.Sdk.Serverside.md)
+
 ### Classes
 
  [ModBase](../WukongMp.Sdk/WukongMp.Sdk.ModBase.md)
@@ -24,11 +26,5 @@ Each mod should have exactly one class extending from this, which will be instan
 ### Interfaces
 
  [IReadyEntity<TSelf\>](../WukongMp.Sdk/WukongMp.Sdk.IReadyEntity-1.md)
-
-### Enums
-
- [SaveFileType](../WukongMp.Sdk/WukongMp.Sdk.SaveFileType.md)
-
-Indicates the type of a save file.
 
 

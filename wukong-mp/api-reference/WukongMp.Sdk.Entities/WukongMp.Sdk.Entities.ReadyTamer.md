@@ -3,6 +3,8 @@
 Namespace: [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)  
 Assembly: WukongMp.Sdk.dll  
 
+Represents a tamer (monster) entity in the Wukong multiplayer SDK.
+
 ```csharp
 public readonly struct ReadyTamer : IReadyEntity<ReadyTamer>
 ```
@@ -38,15 +40,15 @@ public string? Guid { get; }
 
  [string](https://learn.microsoft.com/dotnet/api/system.string)?
 
-### <a id="WukongMp_Sdk_Entities_ReadyTamer_HpMultiplier"></a> HpMultiplier
+### <a id="WukongMp_Sdk_Entities_ReadyTamer_HpScalingPercent"></a> HpScalingPercent
 
 ```csharp
-public float HpMultiplier { get; set; }
+public int HpScalingPercent { get; set; }
 ```
 
 #### Property Value
 
- [float](https://learn.microsoft.com/dotnet/api/system.single)
+ [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyTamer_IsBossOrElite"></a> IsBossOrElite
 

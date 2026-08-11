@@ -4,8 +4,6 @@
 
  [WukongMp.Api.Configuration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.md)
 
- [WukongMp.Api.Https](../WukongMp.Api.Https/WukongMp.Api.Https.md)
-
  [WukongMp.Api.Resources](../WukongMp.Api.Resources/WukongMp.Api.Resources.md)
 
  [WukongMp.Api.UI](../WukongMp.Api.UI/WukongMp.Api.UI.md)

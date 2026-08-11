@@ -91,4 +91,18 @@ T Resolve<T>()
 
 `T` 
 
+### <a id="ReadyM_Api_DI_IDependencyContainer_ResolveAll__1"></a> ResolveAll<T\>\(\)
+
+```csharp
+IEnumerable<T> ResolveAll<T>()
+```
+
+#### Returns
+
+ [IEnumerable](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1)<T\>
+
+#### Type Parameters
+
+`T` 
+
 

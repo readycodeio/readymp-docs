@@ -29,7 +29,7 @@ Cancellation token to cancel the download operation.
 
 #### Returns
 
- [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[FileInfo](../WukongMp.Api.Https/WukongMp.Api.Https.FileInfo.md)?\>
+ [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[FileInfo](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/ReadyM.Api/Saves/FileInfo.cs)?\>
 
 The content of the player's save file if the download was successful, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> otherwise.
 
@@ -49,7 +49,7 @@ Cancellation token to cancel the download operation.
 
 #### Returns
 
- [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[FileInfo](../WukongMp.Api.Https/WukongMp.Api.Https.FileInfo.md)?\>
+ [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[FileInfo](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/ReadyM.Api/Saves/FileInfo.cs)?\>
 
 The content of the world save file if the download was successful, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> otherwise.
 

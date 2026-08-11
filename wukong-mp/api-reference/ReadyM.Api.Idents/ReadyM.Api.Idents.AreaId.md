@@ -27,21 +27,35 @@ public struct AreaId : INetSerializable, IEquatable<AreaId>
 
 ## Constructors
 
-### <a id="ReadyM_Api_Idents_AreaId__ctor_System_UInt16_"></a> AreaId\(ushort\)
-
-Identifies an area within the game world.
-Areas can be main Chapter maps, sub-areas such as the Zodiac Village, or hidden boss arenas.
-If going somewhere requires a loading screen, it's probably a different area.
+### <a id="ReadyM_Api_Idents_AreaId__ctor_Yooni_Native_Container_NativeString256_"></a> AreaId\(NativeString256\)
 
 ```csharp
-public AreaId(ushort id)
+public AreaId(NativeString256 id)
 ```
 
 #### Parameters
 
-`id` [ushort](https://learn.microsoft.com/dotnet/api/system.uint16)
+`id` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/YooniCSharp/Native/Container/NativeString256.cs)
 
-The underlying ID value. This is not guaranteed to be stable across game versions, and should not be used for anything other than debugging or logging purposes.
+### <a id="ReadyM_Api_Idents_AreaId__ctor_System_String_"></a> AreaId\(string\)
+
+```csharp
+public AreaId(string id)
+```
+
+#### Parameters
+
+`id` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+### <a id="ReadyM_Api_Idents_AreaId__ctor_System_Int32_"></a> AreaId\(int\)
+
+```csharp
+public AreaId(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ## Properties
 
@@ -49,16 +63,6 @@ The underlying ID value. This is not guaranteed to be stable across game version
 
 ```csharp
 public static AreaId Invalid { get; }
-```
-
-#### Property Value
-
- [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
-
-### <a id="ReadyM_Api_Idents_AreaId_Max"></a> Max
-
-```csharp
-public static AreaId Max { get; }
 ```
 
 #### Property Value
@@ -124,6 +128,22 @@ public void Serialize(NetDataWriter writer)
 #### Parameters
 
 `writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+
+### <a id="ReadyM_Api_Idents_AreaId_TextDeserialize_System_Text_Json_Utf8JsonReader__System_Text_Json_JsonSerializerOptions_"></a> TextDeserialize\(ref Utf8JsonReader, JsonSerializerOptions\)
+
+```csharp
+public static AreaId TextDeserialize(ref Utf8JsonReader reader, JsonSerializerOptions options)
+```
+
+#### Parameters
+
+`reader` [Utf8JsonReader](https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader)
+
+`options` [JsonSerializerOptions](https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions)
+
+#### Returns
+
+ [AreaId](../ReadyM.Api.Idents/ReadyM.Api.Idents.AreaId.md)
 
 ### <a id="ReadyM_Api_Idents_AreaId_ToString"></a> ToString\(\)
 
