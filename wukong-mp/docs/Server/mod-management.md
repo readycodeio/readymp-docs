@@ -56,8 +56,35 @@ mods/
 
 ## Server-side mods
 
-:::warning[Work in progress]
+WukongMP mods can also run logic on the server itself, in addition to any client-side content. Server-side mods live in a **separate** `server_mods/` directory, next to `mods/`, and are loaded differently.
 
-This feature is under development and will be available in a future version of the SDK.
+Unlike client mods, server-side mods are not folders with a manifest. Drop the mod's assembly (and any dependencies) directly into `server_mods/`. The server scans the directory recursively for `.dll` files on startup and loads any assembly that contains a mod class.
+
+```text title="Example server_mods/ layout"
+server_mods/
+├── WukongMp.Sdk.Serverside.dll     # Server-side SDK, ships with the server
+├── ReadyM.Wukong.Common.dll        # Shared component and RPC definitions
+├── WukongMp.Coop.Serverside.dll    # Co-op mod, server side
+├── WukongMp.Coop.Common.dll        # Co-op mod, shared contracts
+└── MyServerMod.dll                 # your server-side mod
+```
+
+The server ships with no gameplay logic of its own beyond the mods listed above. Write your own server-side mod, or install one built by the community.
+
+:::important
+
+A server-side mod and the client-side mod it talks to are two halves of one thing. Their networked component shapes and RPC contracts have to match, so ship them together as versions of the same package: the client half in `mods/`, the server half in `server_mods/`.
+
+:::
+
+A server-side mod can register networked ECS components, run gameplay systems on the server tick, and handle server RPCs sent by clients. See the [server-side development](../Server-development/getting-started) docs to learn how to build one.
+
+:::danger[Security notice]
+
+The early access version of the WukongMP SDK and server does not include any sandboxing or security mechanisms for mods.
+
+Only use mods from trusted sources, as they can execute arbitrary code on the server and connected clients.
+
+Never run a server with untrusted mods, especially if the server is publicly accessible.
 
 :::

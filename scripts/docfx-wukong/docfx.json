@@ -13,6 +13,14 @@
           ]
         },
         {
+          "src": "../../../../wukong-csharp-mod/readym-gameserver/src/WukongMp.Sdk.Serverside/bin/Debug/net10.0",
+          "files": [
+            "WukongMp.Sdk.Serverside.dll",
+            "ReadyM.Relay.Server.Sdk.dll",
+            "ReadyM.Wukong.Common.dll"
+          ]
+        },
+        {
           "src": "../../../../embed-csharp-loader/HarmonyPrepatcher/src/PreludeLib/bin/Release/netstandard2.0",
           "files": [
             "PreludeLib.dll"

@@ -35,11 +35,14 @@ After extraction, the directory structure should look like this:
 server/
 ├── server.exe                 # Main server binary
 ├── config.json                # Configuration file
-├── mods/                      # Directory for mods
+├── mods/                      # Directory for client-side mods
 |   ├── WukongMp.Sdk/          # SDK mod
 |   └── WukongMp.PvP/          # PvP mod
 ├── optional_mods/             # Move any of these mods to the "mods" folder to enable them
 |   └── WukongMp.Coop/         # Co-op mod
+├── server_mods/               # Directory for server-side mods
+|   ├── WukongMp.Sdk.Serverside.dll  # Server-side SDK
+|   └── WukongMp.Coop.Serverside.dll # Co-op mod, server side
 ├── saves/                     # Directory for game saves (empty by default)
 ├── wwwroot/                   # Admin panel assets
 ├── e_sqlite3.dll              # Dependency
@@ -53,11 +56,14 @@ server/
 server/
 ├── server                     # Main server binary
 ├── config.json                # Configuration file
-├── mods/                      # Directory for mods
+├── mods/                      # Directory for client-side mods
 |   ├── WukongMp.Sdk/          # SDK mod
 |   └── WukongMp.PvP/          # PvP mod
 ├── optional_mods/             # Move any of these mods to the "mods" folder to enable them
 |   └── WukongMp.Coop/         # Co-op mod
+├── server_mods/               # Directory for server-side mods
+|   ├── WukongMp.Sdk.Serverside.dll  # Server-side SDK
+|   └── WukongMp.Coop.Serverside.dll # Co-op mod, server side
 ├── saves/                     # Directory for game saves (empty by default)
 ├── wwwroot/                   # Admin panel assets
 └── libe_sqlite3.so            # Dependency
