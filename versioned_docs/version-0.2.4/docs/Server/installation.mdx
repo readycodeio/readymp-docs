@@ -1,0 +1,169 @@
+---
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+# Installation
+
+The WukongMP server is currently distributed in the following formats:
+
+- Binary package
+- [Docker image](#docker)
+
+## Binary package
+
+### Downloads
+
+| Platform | Architecture | Download |
+| --- | --- | --- |
+| Linux | x64 | [Download for Linux](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.2.4.zip) |
+| Windows | x64 | [Download for Windows](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.2.4.zip) |
+
+### Installation
+
+Extract the binary package to a location of your choice.
+
+After extraction, the directory structure should look like this:
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+```text
+server/
+├── server.exe                 # Main server binary
+├── config.json                # Configuration file
+├── mods/                      # Directory for mods
+|   ├── WukongMp.Sdk/          # SDK mod
+|   └── WukongMp.PvP/          # PvP mod
+├── optional_mods/             # Move any of these mods to the "mods" folder to enable them
+|   └── WukongMp.Coop/         # Co-op mod
+├── saves/                     # Directory for game saves (empty by default)
+├── wwwroot/                   # Admin panel assets
+├── e_sqlite3.dll              # Dependency
+└── aspnetcorev2_inprocess.dll # Dependency
+```
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+```text
+server/
+├── server                     # Main server binary
+├── config.json                # Configuration file
+├── mods/                      # Directory for mods
+|   ├── WukongMp.Sdk/          # SDK mod
+|   └── WukongMp.PvP/          # PvP mod
+├── optional_mods/             # Move any of these mods to the "mods" folder to enable them
+|   └── WukongMp.Coop/         # Co-op mod
+├── saves/                     # Directory for game saves (empty by default)
+├── wwwroot/                   # Admin panel assets
+└── libe_sqlite3.so            # Dependency
+```
+
+</TabItem>
+</Tabs>
+
+### Configuration
+
+You can adjust server settings by editing the `config.json` file. In the following table, the `:` notation is used to represent nested settings.
+
+| Setting | Type | Purpose |
+| --- | --- | --- |
+| `Server:Port` | number | The port on which the server listens for incoming connections |
+| `Server:Password` | string | Optional. When set, players must enter this password in the Launcher to join. Leave empty or omit for an open server. |
+| `Telemetry:OptOut` | boolean | Set to `true` to opt out of sending anonymous telemetry to ReadyM. Defaults to `false`. |
+
+:::note
+
+`Server:Password` gates every player, including admins and whitelisted users. Password-protected servers are shown with a lock on the public server list.
+
+:::
+
+### First launch
+
+Start the server by running the `server.exe` binary.
+
+On first launch, the server creates a `data/` directory inside the server folder. 
+This directory contains the `web.db` database file, where persistent data is stored.
+
+Unless changed in `config.json`, the server listens on the following ports:
+
+| Port | Protocol | Purpose |
+| --- | --- | --- |
+| 9050 | UDP | Game traffic (player connections, game state synchronization, etc.) |
+| 9050 | HTTP | [Admin panel](admin-panel) |
+
+## Docker
+
+A Linux-based x64 Docker image is also available for those who prefer containerized deployments. 
+
+Pull the image from the registry:
+
+```shell
+docker pull ghcr.io/readycodeio/wukongmp-server:0.2.4
+```
+
+Copy the config file from the image:
+
+```shell
+docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.2.4
+docker cp wukongmp-tmp:/app/config.json ./config.json
+docker rm wukongmp-tmp
+```
+
+Run:
+
+<Tabs>
+<TabItem value="docker" label="Docker">
+
+```shell
+docker run \
+    -p 9050:9050/udp -p 9050:9050/tcp \
+    -v ./data:/app/data \
+    -v ./mods:/app/mods \
+    -v ./saves:/app/saves \
+    -v ./config.json:/app/config.json \
+    --name wukongmp-server \
+    ghcr.io/readycodeio/wukongmp-server:0.2.4
+```
+
+</TabItem>
+<TabItem value="compose" label="Docker Compose">
+
+```yaml title="docker-compose.yml"
+services:
+  server:
+    image: ghcr.io/readycodeio/wukongmp-server:0.2.4
+    container_name: wukongmp-server
+    restart: unless-stopped
+    ports:
+      - "9050:9050/tcp"
+      - "9050:9050/udp"
+    volumes:
+      - ./data:/app/data
+      - ./mods:/app/mods
+      - ./saves:/app/saves
+      - ./config.json:/app/config.json
+```
+
+</TabItem>
+</Tabs>
+
+:::important
+
+The image ships **without mods**. Copy `WukongMp.Sdk` and the mode you want (`WukongMp.PvP`, `WukongMp.Coop`) from the binary ZIP into your `mods/` volume before starting the container.
+
+:::
+
+### Configuration
+
+Configuring the port is done by remapping the container ports in the `docker run` command or Docker Compose file. For example, to use port 9060 instead of 9050, change the ports section to:
+
+```yaml title="docker-compose.yml"
+ports:
+  - "9060:9060/tcp"
+  - "9060:9060/udp"
+```
