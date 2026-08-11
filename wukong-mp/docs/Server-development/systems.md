@@ -104,6 +104,7 @@ protected override void Init()
 ```
 
 ```csharp
+[ServerRpcFor(typeof(RpcContracts))]
 public partial class RpcHandlers(ScaleHpSystem hpScaling) : ServerRpcHandlersBase
 {
     partial void OnScaleBossHp(RpcContext context, int scalingPercent)

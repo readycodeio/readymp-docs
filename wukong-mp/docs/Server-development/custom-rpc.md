@@ -43,9 +43,10 @@ The contract project is referenced by both the server mod and the client mod, an
 
 ## Declaring server-side handlers
 
-Implement the server side of a contract in a [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class extending [ServerRpcHandlersBase](../../api-reference/ReadyM.Relay.Server.Sdk.Rpc/ReadyM.Relay.Server.Sdk.Rpc.ServerRpcHandlersBase). For every `[ClientToServer]` leg of the contract, define a matching `On...` partial method. The SDK generates the corresponding `Send...` method for any `[ServerToClient]` leg.
+Implement the server side of a contract in a [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class extending [ServerRpcHandlersBase](../../api-reference/ReadyM.Relay.Server.Sdk.Rpc/ReadyM.Relay.Server.Sdk.Rpc.ServerRpcHandlersBase), annotated with `[ServerRpcFor]` naming the contract class it implements. For every `[ClientToServer]` leg of that contract, define a matching `On...` partial method. The SDK generates the corresponding `Send...` method for any `[ServerToClient]` leg.
 
 ```csharp title="Server-side RPC handler"
+[ServerRpcFor(typeof(RpcContracts))]
 public partial class RpcHandlers(ScaleHpSystem hpScaling, EcsApi ecs) : ServerRpcHandlersBase
 {
     partial void OnScaleBossHp(RpcContext context, int scalingPercent)
@@ -66,6 +67,22 @@ public partial class RpcHandlers(ScaleHpSystem hpScaling, EcsApi ecs) : ServerRp
 ```
 
 The [RpcContext](../../api-reference/ReadyM.Relay.Server.Sdk.Rpc/ReadyM.Relay.Server.Sdk.Rpc.RpcContext) parameter is always injected first and exposes `Sender`, the [PlayerId](../../api-reference/ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId) of the client that sent the request. Generated `Send...` methods take a `PlayerId` recipient as their first parameter, followed by the response payload. There is no broadcast overload: to reach every player, query the main characters and send to each, as above.
+
+### Binding a class to its contract
+
+`[ServerRpcFor]` is **required** on every server handler and client RPC class, and takes the `[ServerRpcContracts]` class it implements. Your mod may reference several contract sets, directly or through a chain of shared projects, and this is what tells the generator which one to emit against.
+
+Only the legs declared by the named contract class are generated, so a class implements exactly one contract set. If you have several contract classes, give each its own handler class:
+
+```csharp title="One handler class per contract set"
+[ServerRpcFor(typeof(BossContracts))]
+public partial class BossRpc(EcsApi ecs) : ServerRpcHandlersBase { /* boss legs only */ }
+
+[ServerRpcFor(typeof(ArenaContracts))]
+public partial class ArenaRpc(EcsApi ecs) : ServerRpcHandlersBase { /* arena legs only */ }
+```
+
+Omitting the attribute is a compile error (`SRPC004`), as is naming a class that is not annotated with `[ServerRpcContracts]` (`SRPC005`).
 
 :::important
 

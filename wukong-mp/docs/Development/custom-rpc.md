@@ -212,11 +212,12 @@ This is specific to client-relayed RPC. Server RPC response handlers are **not**
 
 Server RPC contracts are declared in a common project shared by the server and client mods, and describe both the request (client to server) and response (server to client) shapes of an RPC. See [server-side development](../Server-development/custom-rpc) for how they are defined.
 
-On the client, define a [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class extending [ServerRpcClient](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.ServerRpcClient) to send requests to the server and handle its responses. As with client-relayed RPC, the class must be registered in your mod's `Initialize` method.
+On the client, define a [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class extending [ServerRpcClient](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.ServerRpcClient) to send requests to the server and handle its responses. It must carry `[ServerRpcFor]` naming the contract class it implements, exactly like its server-side counterpart. As with client-relayed RPC, the class must be registered in your mod's `Initialize` method.
 
 Unlike `[RpcEvent]` handlers, these are invoked on the network thread as the response is parsed. Wrap anything that touches the game world in `RunOnGameThread`:
 
 ```csharp title="Client-side server RPC handling"
+[ServerRpcFor(typeof(RpcContracts))]
 public partial class MyServerRpc : ServerRpcClient
 {
     // called when the server responds to our ScaleBossHp request
@@ -238,4 +239,4 @@ Calling the generated `Send...` method sends the request to the server:
 WukongApi.Services.Resolve<MyServerRpc>().SendScaleBossHp(150);
 ```
 
-Only the legs declared by the shared contract are generated: a one-way client-to-server RPC has no `On...` handler stub on the client, and a one-way server-to-client RPC has no `Send...` method.
+Only the legs declared by the shared contract are generated: a one-way client-to-server RPC has no `On...` handler stub on the client, and a one-way server-to-client RPC has no `Send...` method. Only the legs of the class named in `[ServerRpcFor]` are generated, so use one class per contract set. See [Binding a class to its contract](../Server-development/custom-rpc#binding-a-class-to-its-contract).
