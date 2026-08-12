@@ -16,7 +16,7 @@ public class MyServerMod : ServerModBase
 {
     protected override void RegisterComponents(IComponentRegistry registry)
     {
-        // register your networked components here
+        // register your custom components here
     }
 
     protected override void Init()
@@ -45,6 +45,16 @@ A typical setup for a fully-featured mod involves **three projects**:
 * A client-side mod, targeting `netstandard2.0`, and referencing the shared mod.
 
 ## Registering components and archetypes
+
+:::info[Networked components are a preview in 0.3.0]
+
+The API below is final and the server side of it works, so you can write against it today. What is missing is the other half: there is no way yet for a client mod to register the matching archetype change, so the client never learns about your component and never syncs it. Until it lands, a mod-registered networked component is server-only state.
+
+Client-side registration ships in **0.3.1**, and it is an additive change: your `RegisterComponent` and `ModifyArchetype` calls stay exactly as they are, and the values start replicating once both halves are in place.
+
+In the meantime, [local components](#local-components) are the ones to reach for. They work end to end on the server right now.
+
+:::
 
 A networked component is declared with `[DeriveINetworkedComponent]` on a `partial struct`. The generator turns each private field into a public property and writes the serialization code:
 
@@ -88,7 +98,45 @@ A running kill count is persistent, player-scoped data, so it belongs on the **g
 
 :::important
 
-A networked component's shape and its archetype membership must match between the server mod and every client mod. Ship server-side and client-side mods together as versions of the same package.
+Once client-side registration lands in 0.3.1, a networked component's shape and its archetype membership must match between the server mod and every client mod. Ship server-side and client-side mods together as versions of the same package.
+
+:::
+
+## Local components
+
+A **local component** is server-side state hung off an entity, with no replication attached. It is a plain `struct` implementing `IComponent`:
+
+```csharp title="A local component"
+public struct CooldownComponent : IComponent
+{
+    public float RemainingSeconds;
+}
+```
+
+Register it with `RegisterLocalComponent` instead of `RegisterComponent`, and attach it to an archetype exactly the same way:
+
+```csharp title="Registering a local component"
+protected override void RegisterComponents(IComponentRegistry registry)
+{
+    registry.RegisterLocalComponent<CooldownComponent>();
+}
+
+protected override void Init()
+{
+    var registry = Services.Resolve<IArchetypeRegistry>();
+    var archetypes = new WukongArchetypes();
+
+    registry.ModifyArchetype(archetypes.MainCharacterArchetype, a => a.Add<CooldownComponent>());
+}
+```
+
+From there it behaves like any other component: it shows up in `Query`, you read and write it by `ref`, and it lives and dies with its entity. It simply never leaves the server.
+
+This is the whole surface you need for logic the server owns and the client only ever learns about through [RPC](custom-rpc): timers, cooldowns, accumulated scores, per-player bookkeeping.
+
+:::note
+
+Components are capped at 256 bytes each, local or networked, and the server has a fixed number of component slots. Registering fails loudly if you exceed either.
 
 :::
 
@@ -140,8 +188,9 @@ There is a known issue in this version that overwriting data that the client cha
 
 | Feature | Status |
 |---|---|
-| Networked components | :white_check_mark: [done](#registering-components-and-archetypes) |
+| Local components | :white_check_mark: [done](#local-components) |
 | Gameplay systems | :white_check_mark: [done](systems) |
 | Server RPC | :white_check_mark: [done](custom-rpc) |
+| Networked components | :construction: [preview](#registering-components-and-archetypes), client-side registration lands in 0.3.1 |
 | Higher-level entity API | :soon: planned, see the note in [Archetypes and components](archetypes) |
 | Server mod manifests | :soon: not used in 0.3.0 |

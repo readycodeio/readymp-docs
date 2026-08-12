@@ -23,5 +23,5 @@ Visit the [examples](/wukong-mp/category/mod-examples) page for some inspiration
 | Console command API | :white_check_mark: [done](../Development/APIs/console-commands) |
 | Custom RPC | :white_check_mark: [done](../Development/custom-rpc) |
 | Save file API | :construction: [partial](../Development/APIs/save-file-management) |
-| Custom data sync | :white_check_mark: [done](../Server-development/archetypes) |
+| Custom data sync | :construction: [preview](../Development/APIs/custom-components), client-side registration lands in 0.3.1 |
 | Server-side mods | :white_check_mark: [done](../Server-development/getting-started) |

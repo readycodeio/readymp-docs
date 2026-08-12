@@ -29,7 +29,13 @@ The numeric IDs behind these properties are an implementation detail of the curr
 
 :::
 
-Attach your own [networked components](getting-started#registering-components-and-archetypes) to any of these in your mod's `Init`, the same way the bounty example does in [Getting started](getting-started#registering-components-and-archetypes). The tables below list the components each archetype already carries, so you know what is available to query.
+Attach your own components to any of these in your mod's `Init`, the same way the examples in [Getting started](getting-started#registering-components-and-archetypes) do. The tables below list the components each archetype already carries, so you know what is available to query.
+
+:::info[Replication of your own components is a preview]
+
+Attaching a component to an archetype works on the server today, and [local components](getting-started#local-components) are fully usable. Networked ones are only half wired: the client cannot register the matching archetype change yet, so it never syncs them. That other half lands in **0.3.1** with no changes needed on your side. See the note in [Getting started](getting-started#registering-components-and-archetypes).
+
+:::
 
 :::warning[The access API is temporary]
 
@@ -119,7 +125,8 @@ public class Mod : ServerModBase
     protected override void RegisterComponents(IComponentRegistry registry)
     {
         // A component must be registered before any archetype can use it.
-        registry.RegisterComponent<ShrineComponent>();
+        // Use RegisterLocalComponent for server-only state, RegisterComponent for networked.
+        registry.RegisterLocalComponent<ShrineComponent>();
         registry.RegisterComponent<BountyComponent>();
     }
 
@@ -149,6 +156,6 @@ var entity = ecsApi.CreateEntity(Mod.ShrineArchetype);
 
 :::important
 
-An archetype your mod registers exists only on the server unless the client mod registers a matching one. Keep the component set and its order identical on both sides.
+An archetype your mod registers exists only on the server. Once client-side registration lands in 0.3.1, the client mod will need to register a matching one, with the component set and its order identical on both sides.
 
 :::
