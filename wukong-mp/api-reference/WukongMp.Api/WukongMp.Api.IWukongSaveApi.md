@@ -1,4 +1,4 @@
-﻿# Interface IWukongSaveApi
+# Interface IWukongSaveApi
 
 Namespace: [WukongMp.Api](../WukongMp.Api/WukongMp.Api.md)  
 Assembly: WukongMp.Api.dll  
@@ -29,7 +29,7 @@ Cancellation token to cancel the download operation.
 
 #### Returns
 
- [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[FileInfo](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/ReadyM.Api/Saves/FileInfo.cs)?\>
+ [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[FileInfo](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Saves/FileInfo.cs)?\>
 
 The content of the player's save file if the download was successful, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> otherwise.
 
@@ -49,7 +49,7 @@ Cancellation token to cancel the download operation.
 
 #### Returns
 
- [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[FileInfo](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/ReadyM.Api/Saves/FileInfo.cs)?\>
+ [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[FileInfo](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Saves/FileInfo.cs)?\>
 
 The content of the world save file if the download was successful, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> otherwise.
 

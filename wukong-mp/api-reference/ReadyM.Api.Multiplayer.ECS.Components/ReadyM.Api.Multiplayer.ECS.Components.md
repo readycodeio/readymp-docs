@@ -1,4 +1,4 @@
-﻿# ReadyM.Api.Multiplayer.ECS.Components
+# ReadyM.Api.Multiplayer.ECS.Components
 
 ### Structs
 

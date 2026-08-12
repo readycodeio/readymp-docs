@@ -1,4 +1,4 @@
-﻿# WukongMp.Sdk.Serverside
+# WukongMp.Sdk.Serverside
 
 ### Classes
 

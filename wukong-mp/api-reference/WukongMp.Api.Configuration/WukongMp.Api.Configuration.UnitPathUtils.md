@@ -1,4 +1,4 @@
-﻿# Class UnitPathUtils
+# Class UnitPathUtils
 
 Namespace: [WukongMp.Api.Configuration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.md)  
 Assembly: WukongMp.Api.dll  

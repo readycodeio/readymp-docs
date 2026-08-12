@@ -1,4 +1,4 @@
-﻿# Interface IHostedService
+# Interface IHostedService
 
 Namespace: [ReadyM.Api.DI](../ReadyM.Api.DI/ReadyM.Api.DI.md)  
 Assembly: ReadyM.Api.dll  

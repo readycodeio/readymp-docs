@@ -1,4 +1,4 @@
-﻿# WukongMp.Sdk.Entities
+# WukongMp.Sdk.Entities
 
 ### Classes
 

@@ -1,4 +1,4 @@
-﻿# ReadyM.Relay.Server.Sdk.Rpc
+# ReadyM.Relay.Server.Sdk.Rpc
 
 ### Classes
 

@@ -1,4 +1,4 @@
-﻿# Class BuiltinTexts
+# Class BuiltinTexts
 
 Namespace: [WukongMp.Api.Resources](../WukongMp.Api.Resources/WukongMp.Api.Resources.md)  
 Assembly: WukongMp.Api.dll  

@@ -1,4 +1,4 @@
-﻿# ReadyM.Api.Idents
+# ReadyM.Api.Idents
 
 ### Structs
 

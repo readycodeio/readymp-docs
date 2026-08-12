@@ -1,4 +1,4 @@
-﻿# Class GameUtils
+# Class GameUtils
 
 Namespace: [WukongMp.Api.WukongUtils](../WukongMp.Api.WukongUtils/WukongMp.Api.WukongUtils.md)  
 Assembly: WukongMp.Api.dll  

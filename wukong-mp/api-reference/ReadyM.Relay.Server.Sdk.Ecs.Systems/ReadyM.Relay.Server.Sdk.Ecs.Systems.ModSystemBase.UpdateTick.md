@@ -1,4 +1,4 @@
-﻿# Struct ModSystemBase.UpdateTick
+# Struct ModSystemBase.UpdateTick
 
 Namespace: [ReadyM.Relay.Server.Sdk.Ecs.Systems](../ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.Systems.md)  
 Assembly: ReadyM.Relay.Server.Sdk.dll  

@@ -1,4 +1,4 @@
-﻿# Class ReadyObjectExtensions
+# Class ReadyObjectExtensions
 
 Namespace: [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)  
 Assembly: WukongMp.Sdk.dll  
@@ -54,7 +54,7 @@ public static AreaId? get_AreaId<TSelf>(TSelf obj) where TSelf : struct, IReadyE
 
 #### Returns
 
- [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/ReadyM.Api/Idents/AreaId.cs)?
+ [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/AreaId.cs)?
 
 #### Type Parameters
 
@@ -92,7 +92,7 @@ public static PlayerId get_Owner<TSelf>(TSelf obj) where TSelf : struct, IReadyE
 
 #### Returns
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/PlayerId.cs)
 
 #### Type Parameters
 

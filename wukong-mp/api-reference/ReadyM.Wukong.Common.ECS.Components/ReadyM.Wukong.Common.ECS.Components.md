@@ -1,4 +1,4 @@
-﻿# ReadyM.Wukong.Common.ECS.Components
+# ReadyM.Wukong.Common.ECS.Components
 
 ### Structs
 

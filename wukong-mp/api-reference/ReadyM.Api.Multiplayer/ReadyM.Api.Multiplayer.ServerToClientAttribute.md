@@ -1,4 +1,4 @@
-﻿# Class ServerToClientAttribute
+# Class ServerToClientAttribute
 
 Namespace: [ReadyM.Api.Multiplayer](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  

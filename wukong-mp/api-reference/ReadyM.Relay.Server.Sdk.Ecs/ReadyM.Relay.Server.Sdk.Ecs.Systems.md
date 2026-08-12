@@ -1,4 +1,4 @@
-﻿# ReadyM.Relay.Server.Sdk.Ecs.Systems
+# ReadyM.Relay.Server.Sdk.Ecs.Systems
 
 ### Classes
 

@@ -1,4 +1,4 @@
-﻿# Struct MovieComponent
+# Struct MovieComponent
 
 Namespace: [ReadyM.Wukong.Common.ECS.Components](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.md)  
 Assembly: ReadyM.Wukong.Common.dll  
@@ -142,7 +142,7 @@ public NativeList<int>.ReadOnly GetFinishedSequences()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_GetFinishedSequences_System_Int32_"></a> GetFinishedSequences\(int\)
 
@@ -166,7 +166,7 @@ public NativeList<int>.ReadOnly GetStartedSequences()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_GetStartedSequences_System_Int32_"></a> GetStartedSequences\(int\)
 
@@ -252,7 +252,7 @@ public void SetFinishedSequences(in NativeList<int> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_SetFinishedSequences_System_Int32_System_Int32__"></a> SetFinishedSequences\(int, in int\)
 
@@ -274,7 +274,7 @@ public void SetStartedSequences(in NativeList<int> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_SetStartedSequences_System_Int32_System_Int32__"></a> SetStartedSequences\(int, in int\)
 

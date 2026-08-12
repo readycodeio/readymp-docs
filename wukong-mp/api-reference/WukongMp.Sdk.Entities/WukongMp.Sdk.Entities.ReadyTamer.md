@@ -1,4 +1,4 @@
-﻿# Struct ReadyTamer
+# Struct ReadyTamer
 
 Namespace: [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)  
 Assembly: WukongMp.Sdk.dll  

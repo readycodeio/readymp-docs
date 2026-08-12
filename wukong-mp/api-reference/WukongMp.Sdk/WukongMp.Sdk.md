@@ -1,4 +1,4 @@
-﻿# WukongMp.Sdk
+# WukongMp.Sdk
 
 ### Namespaces
 

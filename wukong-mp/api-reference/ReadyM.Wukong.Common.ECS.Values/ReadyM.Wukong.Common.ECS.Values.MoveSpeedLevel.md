@@ -1,4 +1,4 @@
-﻿# Enum MoveSpeedLevel
+# Enum MoveSpeedLevel
 
 Namespace: [ReadyM.Wukong.Common.ECS.Values](../ReadyM.Wukong.Common.ECS.Values/ReadyM.Wukong.Common.ECS.Values.md)  
 Assembly: ReadyM.Wukong.Common.dll  

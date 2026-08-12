@@ -1,4 +1,4 @@
-﻿# Struct PvpStateComponent
+# Struct PvpStateComponent
 
 Namespace: [ReadyM.Wukong.Common.ECS.Components](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.md)  
 Assembly: ReadyM.Wukong.Common.dll  

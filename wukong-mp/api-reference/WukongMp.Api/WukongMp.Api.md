@@ -1,4 +1,4 @@
-﻿# WukongMp.Api
+# WukongMp.Api
 
 ### Namespaces
 
@@ -23,6 +23,10 @@ Provides static logging methods that can be used throughout the codebase without
 Extension methods for Unreal Engine types and other helper methods.
 
 ### Interfaces
+
+ [IComponentApi](../WukongMp.Api/WukongMp.Api.IComponentApi.md)
+
+Provides methods for registering custom networked components.
 
  [IWukongSaveApi](../WukongMp.Api/WukongMp.Api.IWukongSaveApi.md)
 

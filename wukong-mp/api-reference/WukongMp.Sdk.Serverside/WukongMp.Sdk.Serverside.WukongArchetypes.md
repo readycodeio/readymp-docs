@@ -1,4 +1,4 @@
-﻿# Class WukongArchetypes
+# Class WukongArchetypes
 
 Namespace: [WukongMp.Sdk.Serverside](../WukongMp.Sdk/WukongMp.Sdk.Serverside.md)  
 Assembly: WukongMp.Sdk.Serverside.dll  
@@ -6,7 +6,7 @@ Assembly: WukongMp.Sdk.Serverside.dll
 Provides references for core entity archetypes in WukongMP.
 
 ```csharp
-public class WukongArchetypes
+public static class WukongArchetypes
 ```
 
 #### Inheritance
@@ -24,25 +24,17 @@ public class WukongArchetypes
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
 
-## Constructors
-
-### <a id="WukongMp_Sdk_Serverside_WukongArchetypes__ctor"></a> WukongArchetypes\(\)
-
-```csharp
-public WukongArchetypes()
-```
-
 ## Properties
 
 ### <a id="WukongMp_Sdk_Serverside_WukongArchetypes_AreaArchetype"></a> AreaArchetype
 
 ```csharp
-public ArchetypeId AreaArchetype { get; }
+public static ArchetypeId AreaArchetype { get; }
 ```
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Serverside_WukongArchetypes_GlobalPlayerArchetype"></a> GlobalPlayerArchetype
 
@@ -52,12 +44,12 @@ Components:<br />
 * **PlayerComponent**
 
 ```csharp
-public ArchetypeId GlobalPlayerArchetype { get; }
+public static ArchetypeId GlobalPlayerArchetype { get; }
 ```
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Serverside_WukongArchetypes_MainCharacterArchetype"></a> MainCharacterArchetype
 
@@ -71,12 +63,12 @@ Components:<br />
 * **PvPComponent**<br />
 
 ```csharp
-public ArchetypeId MainCharacterArchetype { get; }
+public static ArchetypeId MainCharacterArchetype { get; }
 ```
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Serverside_WukongArchetypes_PvpStateArchetype"></a> PvpStateArchetype
 
@@ -86,12 +78,12 @@ Components:<br />
 
 ```csharp
 [Obsolete("Will be moved to the PvP mod in future refactoring.")]
-public ArchetypeId PvpStateArchetype { get; }
+public static ArchetypeId PvpStateArchetype { get; }
 ```
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Serverside_WukongArchetypes_TamerArchetype"></a> TamerArchetype
 
@@ -106,11 +98,11 @@ Components:<br />
 * **MonsterAnimationComponent**
 
 ```csharp
-public ArchetypeId TamerArchetype { get; }
+public static ArchetypeId TamerArchetype { get; }
 ```
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 

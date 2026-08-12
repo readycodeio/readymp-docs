@@ -1,4 +1,4 @@
-﻿# Struct AttributesState
+# Struct AttributesState
 
 Namespace: [ReadyM.Wukong.Common.ECS.Values](../ReadyM.Wukong.Common.ECS.Values/ReadyM.Wukong.Common.ECS.Values.md)  
 Assembly: ReadyM.Wukong.Common.dll  

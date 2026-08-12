@@ -1,4 +1,4 @@
-﻿# Struct ModSystemBase.UpdateTick
+# Struct ModSystemBase.UpdateTick
 
 Namespace: [WukongMp.Sdk](../WukongMp.Sdk/WukongMp.Sdk.md)  
 Assembly: WukongMp.Sdk.dll  

@@ -1,4 +1,4 @@
-﻿# Class ReadyCharacterExtensions
+# Class ReadyCharacterExtensions
 
 Namespace: [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)  
 Assembly: WukongMp.Sdk.dll  

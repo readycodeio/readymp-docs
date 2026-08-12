@@ -1,4 +1,4 @@
-﻿# ReadyM.Wukong.Common.Rpc
+# ReadyM.Wukong.Common.Rpc
 
 ### Structs
 

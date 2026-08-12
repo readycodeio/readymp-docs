@@ -1,4 +1,4 @@
-﻿# Class HarmonyTargetMethodHint
+# Class HarmonyTargetMethodHint
 
 Namespace: [PreludeLib.Attributes](../PreludeLib.Attributes/PreludeLib.Attributes.md)  
 Assembly: PreludeLib.dll  

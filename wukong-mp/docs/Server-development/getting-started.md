@@ -36,7 +36,7 @@ The [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod) is built on t
 
 ## Setting up the project
 
-A server-side mod targets `net10.0`, unlike client-side mods which target `netstandard2.0`. It references the server SDK and the shared WukongMP assemblies, all of which ship in the server package. Use to the [mod template](https://github.com/readycodeio/wukongmp-mod-template) to get started with creating a server-side mod.
+A server-side mod targets `net10.0`, unlike client-side mods which target `netstandard2.0`. It references the server SDK and the shared WukongMP assemblies, all of which ship in the server package. Use the [mod template](https://github.com/readycodeio/wukongmp-mod-template) to get started with creating a server-side mod.
 
 A typical setup for a fully-featured mod involves **three projects**:
 
@@ -44,19 +44,11 @@ A typical setup for a fully-featured mod involves **three projects**:
 * A server-side mod, targeting `net10.0`, and referencing the shared mod. 
 * A client-side mod, targeting `netstandard2.0`, and referencing the shared mod.
 
+The shared project targets `netstandard2.0` so both of the other two can reference it. In the template it references the SDK assemblies with `Private="false"`, which keeps the `netstandard2.0` builds out of the server mod's output folder, where the `net10.0` builds have to win. That split is why the template carries two dependency folders: `Dependencies/SDK` for the `netstandard2.0` assemblies and `Dependencies/ServerSDK` for the `net10.0` ones.
+
 ## Registering components and archetypes
 
-:::info[Networked components are a preview in 0.3.0]
-
-The API below is final and the server side of it works, so you can write against it today. What is missing is the other half: there is no way yet for a client mod to register the matching archetype change, so the client never learns about your component and never syncs it. Until it lands, a mod-registered networked component is server-only state.
-
-Client-side registration ships in **0.3.1**, which is coming very soon. The server-side code on this page keeps working as written, but it is not a free upgrade: your client mod will need to register the same components and the same archetype changes on its side before the server's values reach it.
-
-In the meantime, [local components](#local-components) are the ones to reach for. They work end to end on the server right now.
-
-:::
-
-A networked component is declared with `[DeriveINetworkedComponent]` on a `partial struct`. The generator turns each private field into a public property and writes the serialization code:
+A **networked component** replicates between the server and every connected client. It is declared with `[DeriveINetworkedComponent]` on a `partial struct`, in the shared project, so the server mod and the client mod compile against the same definition. The generator turns each private field into a public property and writes the serialization code:
 
 ```csharp title="A networked component (in the shared project)"
 using System.Runtime.InteropServices;
@@ -84,9 +76,8 @@ public class MyServerMod : ServerModBase
     protected override void Init()
     {
         var registry = Services.Resolve<IArchetypeRegistry>();
-        var archetypes = new WukongArchetypes();
 
-        registry.ModifyArchetype(archetypes.GlobalPlayerArchetype, archetype =>
+        registry.ModifyArchetype(WukongArchetypes.GlobalPlayerArchetype, archetype =>
         {
             archetype.Add<BountyComponent>();
         });
@@ -96,9 +87,35 @@ public class MyServerMod : ServerModBase
 
 A running kill count is persistent, player-scoped data, so it belongs on the **global player entity**: one entity per connected player that lives for the whole session, regardless of which area the player is in. Data that describes the character's presence in the world (position, HP, team) belongs on the main character instead. See [Archetypes and components](archetypes) for what each archetype carries.
 
+## Matching it up on the client
+
+The two halves are symmetric. Whatever the server mod registers and attaches, the client mod registers and attaches the same way, and the values then replicate in both directions. In the client mod's `Initialize`:
+
+```csharp title="The client half of the same component"
+protected override void Initialize(IDependencyContainer services)
+{
+    services.Resolve<IComponentApi>().RegisterComponent<BountyComponent>();
+    services.RegisterSingleton<IArchetypeRegistration, BountyRegistration>();
+}
+```
+
+```csharp title="BountyRegistration.cs"
+public class BountyRegistration : IArchetypeRegistration
+{
+    public void Register(IArchetypeRegistry registry)
+    {
+        registry.ModifyArchetype(WukongApi.Archetypes.GlobalPlayerArchetype, b => b.Add<BountyComponent>());
+    }
+}
+```
+
+See [Custom components](../Development/APIs/custom-components) for the client side in full.
+
 :::important
 
-Once client-side registration lands in 0.3.1, a networked component's shape and its archetype membership must match between the server mod and every client mod. Ship server-side and client-side mods together as versions of the same package.
+The two sides have to agree exactly. Register the same components, in the same order, and attach them to the same archetypes on both sides. Component IDs are positional, assigned in registration order and sent as a byte on the wire, so a mismatch does not fail loudly, it misreads the stream.
+
+The practical rule: keep the component definitions in the shared project, do the registration in one place on each side, and ship the client mod and the server mod together as versions of the same package.
 
 :::
 
@@ -124,15 +141,14 @@ protected override void RegisterComponents(IComponentRegistry registry)
 protected override void Init()
 {
     var registry = Services.Resolve<IArchetypeRegistry>();
-    var archetypes = new WukongArchetypes();
 
-    registry.ModifyArchetype(archetypes.MainCharacterArchetype, a => a.Add<CooldownComponent>());
+    registry.ModifyArchetype(WukongArchetypes.MainCharacterArchetype, a => a.Add<CooldownComponent>());
 }
 ```
 
-From there it behaves like any other component: it shows up in `Query`, you read and write it by `ref`, and it lives and dies with its entity. It simply never leaves the server.
+From there it behaves like any other component: it shows up in `Query`, you read and write it by `ref`, and it lives and dies with its entity. It simply never leaves the server, so it needs no counterpart in the client mod and costs nothing on the wire.
 
-This is the whole surface you need for logic the server owns and the client only ever learns about through [RPC](custom-rpc): timers, cooldowns, accumulated scores, per-player bookkeeping.
+Reach for a local component whenever the client has no business seeing the value: timers, cooldowns, cheat bookkeeping, intermediate state a system rebuilds every tick. Everything the client has to render or react to belongs in a networked component instead, or in an [RPC](custom-rpc) if it is a one-off event rather than state.
 
 :::note
 
@@ -188,9 +204,9 @@ There is a known issue in this version that overwriting data that the client cha
 
 | Feature | Status |
 |---|---|
+| Networked components | :white_check_mark: [done](#registering-components-and-archetypes) |
 | Local components | :white_check_mark: [done](#local-components) |
 | Gameplay systems | :white_check_mark: [done](systems) |
 | Server RPC | :white_check_mark: [done](custom-rpc) |
-| Networked components | :construction: [preview](#registering-components-and-archetypes), client-side registration lands in 0.3.1 |
 | Higher-level entity API | :soon: planned, see the note in [Archetypes and components](archetypes) |
 | Server mod manifests | :soon: not used in 0.3.0 |

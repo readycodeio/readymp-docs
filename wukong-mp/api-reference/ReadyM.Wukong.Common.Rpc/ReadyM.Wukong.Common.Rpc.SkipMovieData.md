@@ -1,4 +1,4 @@
-﻿# Struct SkipMovieData
+# Struct SkipMovieData
 
 Namespace: [ReadyM.Wukong.Common.Rpc](../ReadyM.Wukong.Common.ECS.Values/ReadyM.Wukong.Common.Rpc.md)  
 Assembly: ReadyM.Wukong.Common.dll  

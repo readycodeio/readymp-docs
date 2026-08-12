@@ -1,4 +1,4 @@
-﻿# ReadyM.Api.Multiplayer.RPC
+# ReadyM.Api.Multiplayer.RPC
 
 ### Classes
 

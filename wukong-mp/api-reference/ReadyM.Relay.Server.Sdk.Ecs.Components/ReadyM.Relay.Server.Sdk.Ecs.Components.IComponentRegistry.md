@@ -1,4 +1,4 @@
-﻿# Interface IComponentRegistry
+# Interface IComponentRegistry
 
 Namespace: [ReadyM.Relay.Server.Sdk.Ecs.Components](../ReadyM.Relay.Server.Sdk.Ecs.Components/ReadyM.Relay.Server.Sdk.Ecs.Components.md)  
 Assembly: ReadyM.Relay.Server.Sdk.dll  

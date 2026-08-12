@@ -1,4 +1,4 @@
-﻿# Class PatchCategory
+# Class PatchCategory
 
 Namespace: [WukongMp.Api.Configuration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.md)  
 Assembly: WukongMp.Api.dll  

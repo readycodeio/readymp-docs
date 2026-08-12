@@ -1,4 +1,4 @@
-﻿# Interface IArchetypeRegistry
+# Interface IArchetypeRegistry
 
 Namespace: [ReadyM.Api.ECS.Worlds](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.md)  
 Assembly: ReadyM.Api.dll  

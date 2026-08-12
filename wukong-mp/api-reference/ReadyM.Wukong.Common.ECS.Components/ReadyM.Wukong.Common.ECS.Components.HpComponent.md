@@ -1,4 +1,4 @@
-﻿# Struct HpComponent
+# Struct HpComponent
 
 Namespace: [ReadyM.Wukong.Common.ECS.Components](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.md)  
 Assembly: ReadyM.Wukong.Common.dll  

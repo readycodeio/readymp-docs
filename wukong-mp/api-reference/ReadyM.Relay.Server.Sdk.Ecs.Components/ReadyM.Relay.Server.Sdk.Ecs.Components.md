@@ -1,4 +1,4 @@
-﻿# ReadyM.Relay.Server.Sdk.Ecs.Components
+# ReadyM.Relay.Server.Sdk.Ecs.Components
 
 ### Interfaces
 

@@ -1,4 +1,4 @@
-﻿# Class WukongApi
+# Class WukongApi
 
 Namespace: [WukongMp.Sdk.Api](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.md)  
 Assembly: WukongMp.Sdk.dll  
@@ -26,6 +26,25 @@ public static class WukongApi
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
 
 ## Properties
+
+### <a id="WukongMp_Sdk_Api_WukongApi_Archetypes"></a> Archetypes
+
+Provides references for core entity archetypes in WukongMP.
+
+```csharp
+public static WukongArchetypes Archetypes { get; }
+```
+
+#### Property Value
+
+ [WukongArchetypes](../WukongMp.Sdk.Api.Implementation/WukongMp.Sdk.Api.Implementation.WukongArchetypes.md)
+
+#### Remarks
+
+Safe to use from an **IArchetypeRegistration**,
+unlike the other APIs here: **WukongArchetypes** has no dependencies of
+its own, so reaching it does not pull the ECS world back into the container while
+the world is still being built.
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Chat"></a> Chat
 
@@ -148,7 +167,7 @@ public static IWukongSaveApi Saves { get; }
 
 #### Property Value
 
- [IWukongSaveApi](https://github.com/readycodeio/wukong\-csharp\-mod/blob/ee9f19ef1810c3437563f50da3d7fcdf8f3e22ed/WukongMp.Api/IWukongSaveApi.cs)
+ [IWukongSaveApi](https://github.com/readycodeio/wukong\-csharp\-mod/blob/792c639530616be62a1b7d564fb754b09bcbc5b0/WukongMp.Api/IWukongSaveApi.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Services"></a> Services
 
@@ -158,7 +177,7 @@ public static IDependencyContainer Services { get; }
 
 #### Property Value
 
- [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/c12780df078c882058ee18410f12720cc6ee2a0a/src/ReadyM.Api/DI/IDependencyContainer.cs)
+ [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Sync"></a> Sync
 

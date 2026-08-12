@@ -1,4 +1,4 @@
-﻿# ReadyM.Api.Multiplayer.Protocol
+# ReadyM.Api.Multiplayer.Protocol
 
 ### Namespaces
 

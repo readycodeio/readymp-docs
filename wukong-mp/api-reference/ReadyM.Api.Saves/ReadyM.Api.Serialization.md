@@ -1,4 +1,4 @@
-﻿# ReadyM.Api.Serialization
+# ReadyM.Api.Serialization
 
 ### Enums
 

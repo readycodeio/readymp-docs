@@ -1,4 +1,4 @@
-﻿# Enum DisconnectedReason
+# Enum DisconnectedReason
 
 Namespace: [ReadyM.Api.Multiplayer.Protocol](../ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  

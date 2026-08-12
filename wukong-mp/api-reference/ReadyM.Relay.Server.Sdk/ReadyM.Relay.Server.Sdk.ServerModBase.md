@@ -1,4 +1,4 @@
-﻿# Class ServerModBase
+# Class ServerModBase
 
 Namespace: [ReadyM.Relay.Server.Sdk](../ReadyM.Relay.Server.Sdk/ReadyM.Relay.Server.Sdk.md)  
 Assembly: ReadyM.Relay.Server.Sdk.dll  

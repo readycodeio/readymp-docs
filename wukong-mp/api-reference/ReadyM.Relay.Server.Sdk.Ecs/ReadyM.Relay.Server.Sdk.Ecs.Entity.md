@@ -1,4 +1,4 @@
-﻿# Struct Entity
+# Struct Entity
 
 Namespace: [ReadyM.Relay.Server.Sdk.Ecs](../ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.md)  
 Assembly: ReadyM.Relay.Server.Sdk.dll  

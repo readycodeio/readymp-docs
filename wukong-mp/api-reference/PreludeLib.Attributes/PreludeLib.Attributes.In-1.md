@@ -1,4 +1,4 @@
-﻿# Struct In<T>
+# Struct In<T>
 
 Namespace: [PreludeLib.Attributes](../PreludeLib.Attributes/PreludeLib.Attributes.md)  
 Assembly: PreludeLib.dll  

@@ -70,7 +70,7 @@ The [RpcContext](../../api-reference/ReadyM.Relay.Server.Sdk.Rpc/ReadyM.Relay.Se
 
 ### Binding a class to its contract
 
-`[ServerRpcFor]` is **required** on every server handler and client RPC class, and takes the `[ServerRpcContracts]` class it implements. Your mod may reference several contract sets, directly or through a chain of shared projects, and this is what tells the generator which one to emit against.
+[`[ServerRpcFor]`](../../api-reference/ReadyM.Api.Multiplayer/ReadyM.Api.Multiplayer.ServerRpcForAttribute) is **required** on every server handler and client RPC class, and takes the `[ServerRpcContracts]` class it implements. Your mod may reference several contract sets, directly or through a chain of shared projects, and this is what tells the generator which one to emit against.
 
 Only the legs declared by the named contract class are generated, so a class implements exactly one contract set. If you have several contract classes, give each its own handler class:
 

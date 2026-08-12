@@ -1,4 +1,4 @@
-﻿# WukongMp.Api.UI
+# WukongMp.Api.UI
 
 ### Classes
 

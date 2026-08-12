@@ -1,4 +1,4 @@
-﻿# Class RpcEventAttribute
+# Class RpcEventAttribute
 
 Namespace: [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  

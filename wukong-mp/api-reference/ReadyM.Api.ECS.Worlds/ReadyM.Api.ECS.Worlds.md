@@ -1,4 +1,4 @@
-﻿# ReadyM.Api.ECS.Worlds
+# ReadyM.Api.ECS.Worlds
 
 ### Classes
 

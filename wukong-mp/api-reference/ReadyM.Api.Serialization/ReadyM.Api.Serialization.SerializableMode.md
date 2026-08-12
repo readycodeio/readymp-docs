@@ -1,4 +1,4 @@
-﻿# Enum SerializableMode
+# Enum SerializableMode
 
 Namespace: [ReadyM.Api.Serialization](../ReadyM.Api.Saves/ReadyM.Api.Serialization.md)  
 Assembly: ReadyM.Api.dll  

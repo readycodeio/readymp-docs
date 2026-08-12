@@ -1,4 +1,4 @@
-﻿# Class EntityBuilderBase
+# Class EntityBuilderBase
 
 Namespace: [ReadyM.Api.ECS.Worlds](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.md)  
 Assembly: ReadyM.Api.dll  

@@ -1,4 +1,4 @@
-﻿# Struct ArchetypeId
+# Struct ArchetypeId
 
 Namespace: [ReadyM.Api.Idents](../ReadyM.Api.Idents/ReadyM.Api.Idents.md)  
 Assembly: ReadyM.Api.dll  

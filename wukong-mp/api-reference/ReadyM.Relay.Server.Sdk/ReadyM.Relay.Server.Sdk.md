@@ -1,4 +1,4 @@
-﻿# ReadyM.Relay.Server.Sdk
+# ReadyM.Relay.Server.Sdk
 
 ### Namespaces
 

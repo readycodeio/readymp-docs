@@ -1,4 +1,4 @@
-﻿# ReadyM.Wukong.Common.ECS.Values
+# ReadyM.Wukong.Common.ECS.Values
 
 ### Classes
 

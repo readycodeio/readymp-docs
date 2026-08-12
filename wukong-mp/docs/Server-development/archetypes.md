@@ -14,14 +14,13 @@ An **archetype** is the fixed set of components an entity is created with. Wukon
 They are named by [WukongArchetypes](../../api-reference/WukongMp.Sdk.Serverside/WukongMp.Sdk.Serverside.WukongArchetypes), a small class that maps each one to its [ArchetypeId](../../api-reference/ReadyM.Api.Idents/ReadyM.Api.Idents.ArchetypeId):
 
 ```csharp
-var archetypes = new WukongArchetypes();
-// archetypes.AreaArchetype
-// archetypes.GlobalPlayerArchetype
-// archetypes.TamerArchetype
-// archetypes.MainCharacterArchetype
+// WukongArchetypes.AreaArchetype
+// WukongArchetypes.GlobalPlayerArchetype
+// WukongArchetypes.TamerArchetype
+// WukongArchetypes.MainCharacterArchetype
 ```
 
-The class holds fixed IDs and no state, so constructing it directly is fine. `WukongMp.Sdk.Serverside` also registers it as a singleton.
+The members are static, so there is nothing to resolve or construct. The client SDK exposes the same set through [`WukongApi.Archetypes`](../../api-reference/WukongMp.Sdk.Api.Implementation/WukongMp.Sdk.Api.Implementation.WukongArchetypes), which is how a client mod names the same archetype when it registers its half of a networked component.
 
 :::danger[Do not hardcode archetype IDs]
 
@@ -30,12 +29,6 @@ The numeric IDs behind these properties are an implementation detail of the curr
 :::
 
 Attach your own components to any of these in your mod's `Init`, the same way the examples in [Getting started](getting-started#registering-components-and-archetypes) do. The tables below list the components each archetype already carries, so you know what is available to query.
-
-:::info[Replication of your own components is a preview]
-
-Attaching a component to an archetype works on the server today, and [local components](getting-started#local-components) are fully usable. Networked ones are only half wired: the client cannot register the matching archetype change yet, so it never syncs them. That other half lands in **0.3.1**, coming very soon, and it will require adding the matching registration to your client mod. See the note in [Getting started](getting-started#registering-components-and-archetypes).
-
-:::
 
 :::warning[The access API is temporary]
 
@@ -140,8 +133,7 @@ public class Mod : ServerModBase
             .Add<ShrineComponent>());
 
         // Attaching a component to a built-in archetype instead.
-        var archetypes = new WukongArchetypes();
-        registry.ModifyArchetype(archetypes.GlobalPlayerArchetype, b => b.Add<BountyComponent>());
+        registry.ModifyArchetype(WukongArchetypes.GlobalPlayerArchetype, b => b.Add<BountyComponent>());
     }
 }
 ```
@@ -156,6 +148,6 @@ var entity = ecsApi.CreateEntity(Mod.ShrineArchetype);
 
 :::important
 
-An archetype your mod registers exists only on the server. Once client-side registration lands in 0.3.1, the client mod will need to register a matching one, with the component set and its order identical on both sides.
+An archetype your mod registers must be registered on the client too, in the same order and with the same component set, or the two sides disagree about what an entity of that archetype contains. Register archetypes from a single [`IArchetypeRegistration`](../../api-reference/ReadyM.Api.ECS.Registry/ReadyM.Api.ECS.Registry.IArchetypeRegistration) on the client so the order is obvious and easy to keep in step. See [Custom components](../Development/APIs/custom-components).
 
 :::
