@@ -33,7 +33,7 @@ Attach your own components to any of these in your mod's `Init`, the same way th
 
 :::info[Replication of your own components is a preview]
 
-Attaching a component to an archetype works on the server today, and [local components](getting-started#local-components) are fully usable. Networked ones are only half wired: the client cannot register the matching archetype change yet, so it never syncs them. That other half lands in **0.3.1** with no changes needed on your side. See the note in [Getting started](getting-started#registering-components-and-archetypes).
+Attaching a component to an archetype works on the server today, and [local components](getting-started#local-components) are fully usable. Networked ones are only half wired: the client cannot register the matching archetype change yet, so it never syncs them. That other half lands in **0.3.1**, coming very soon, and it will require adding the matching registration to your client mod. See the note in [Getting started](getting-started#registering-components-and-archetypes).
 
 :::
 

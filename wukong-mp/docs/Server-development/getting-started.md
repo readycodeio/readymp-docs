@@ -50,7 +50,7 @@ A typical setup for a fully-featured mod involves **three projects**:
 
 The API below is final and the server side of it works, so you can write against it today. What is missing is the other half: there is no way yet for a client mod to register the matching archetype change, so the client never learns about your component and never syncs it. Until it lands, a mod-registered networked component is server-only state.
 
-Client-side registration ships in **0.3.1**, and it is an additive change: your `RegisterComponent` and `ModifyArchetype` calls stay exactly as they are, and the values start replicating once both halves are in place.
+Client-side registration ships in **0.3.1**, which is coming very soon. The server-side code on this page keeps working as written, but it is not a free upgrade: your client mod will need to register the same components and the same archetype changes on its side before the server's values reach it.
 
 In the meantime, [local components](#local-components) are the ones to reach for. They work end to end on the server right now.
 
