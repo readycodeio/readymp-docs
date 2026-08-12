@@ -38,6 +38,12 @@ The [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod) is built on t
 
 A server-side mod targets `net10.0`, unlike client-side mods which target `netstandard2.0`. It references the server SDK and the shared WukongMP assemblies, all of which ship in the server package. Use the [mod template](https://github.com/readycodeio/wukongmp-mod-template) to get started with creating a server-side mod.
 
+:::note
+
+Server mods run on CoreCLR rather than inside the AOT-compiled server binary, so the machine hosting the server needs the .NET 10 runtime installed. See [Requirements](../Server/installation#requirements).
+
+:::
+
 A typical setup for a fully-featured mod involves **three projects**:
 
 * A shared `netstandard2.0` mod that contains type definitions and RPC contracts.

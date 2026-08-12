@@ -13,6 +13,44 @@ The WukongMP server is currently distributed in the following formats:
 - Binary package
 - [Docker image](#docker)
 
+## Requirements
+
+The server binary itself is self-contained, but [server-side mods](../Server-development/getting-started) run on CoreCLR, which the server starts at launch. That means the [**.NET 10 runtime**](https://dotnet.microsoft.com/download/dotnet/10.0) has to be installed on the machine, even if you do not intend to install any mods of your own. The `dotnet-runtime-10.0` package is enough, you do not need the SDK.
+
+The Docker image already includes it.
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+The [official installer](https://dotnet.microsoft.com/download/dotnet/10.0) puts the runtime where the server expects it, so there is nothing else to do.
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+Install it with your package manager, or with Microsoft's [install script](https://learn.microsoft.com/dotnet/core/install/linux-scripted-manual#scripted-install). The server looks for the runtime in the usual locations, in this order:
+
+1. `/usr/lib/dotnet` (Debian and Ubuntu packages)
+2. `/usr/lib64/dotnet` (Fedora and RHEL)
+3. `/usr/share/dotnet` (Microsoft packages and the install script)
+4. `~/.dotnet`
+
+A directory only counts if it actually contains `host/fxr`, so a leftover from an uninstalled version does not get in the way. If your runtime lives somewhere else, point `DOTNET_ROOT` at it:
+
+```shell
+DOTNET_ROOT=/opt/dotnet ./server
+```
+
+Check where yours is with `dotnet --info | grep 'Base Path'`.
+
+</TabItem>
+</Tabs>
+
+:::note
+
+If the runtime is missing, the server exits at startup with `Cannot locate a .NET installation containing host/fxr` and lists the directories it checked.
+
+:::
+
 ## Binary package
 
 ### Downloads
