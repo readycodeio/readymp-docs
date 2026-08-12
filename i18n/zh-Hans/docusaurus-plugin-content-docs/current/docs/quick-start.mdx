@@ -14,20 +14,22 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 <TabItem value="windows" label="Windows">
 
 [⬇ Windows
-下载（x64，v0.2.4）](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.2.4.zip)
+下载（x64，v0.3.0）](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.3.0.zip)
 
 </TabItem>
 <TabItem value="linux" label="Linux">
 
 [⬇ Linux
-下载（x64，v0.2.4）](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.2.4.zip)
+下载（x64，v0.3.0）](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.3.0.zip)
 
 </TabItem>
 <TabItem value="docker" label="Docker">
 
-```shell
-docker pull ghcr.io/readycodeio/wukongmp-server:0.2.4
-```
+:::info[即将推出]
+
+Docker 镜像尚未发布。目前请按上面的 Windows 或 Linux 步骤操作。
+
+:::
 
 </TabItem>
 </Tabs>
@@ -49,26 +51,6 @@ docker pull ghcr.io/readycodeio/wukongmp-server:0.2.4
 如要更改端口（默认值：`9050`），打开 `config.json` 并编辑 `Server:Port`。
 
 </TabItem>
-<TabItem value="docker" label="Docker">
-
-从镜像中复制配置文件：
-
-```shell
-docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.2.4
-docker cp wukongmp-tmp:/app/config.json ./config.json
-docker rm wukongmp-tmp
-```
-
-端口配置通过重新映射容器端口来处理 — 请参见第3步。
-
-:::important
-
-镜像 **不带模组**。在启动容器之前，请下载二进制程序包并将 `WukongMp.Sdk` 以及你选择的游戏模式模组（`WukongMp.PvP` 或
-`WukongMp.Coop`）复制到本地 `./mods/` 文件夹中。
-
-:::
-
-</TabItem>
 </Tabs>
 
 ## 3. 启动服务器
@@ -87,38 +69,6 @@ docker rm wukongmp-tmp
 
 ```shell
 chmod +x server && ./server
-```
-
-</TabItem>
-<TabItem value="docker" label="Docker">
-
-```shell
-docker run \
-    -p 9050:9050/udp -p 9050:9050/tcp \
-    -v ./data:/app/data \
-    -v ./mods:/app/mods \
-    -v ./saves:/app/saves \
-    -v ./config.json:/app/config.json \
-    --name wukongmp-server \
-    ghcr.io/readycodeio/wukongmp-server:0.2.4
-```
-
-或者使用 Docker Compose：
-
-```yaml title="docker-compose.yml"
-services:
-  server:
-    image: ghcr.io/readycodeio/wukongmp-server:0.2.4
-    container_name: wukongmp-server
-    restart: unless-stopped
-    ports:
-      - "9050:9050/tcp"
-      - "9050:9050/udp"
-    volumes:
-      - ./data:/app/data
-      - ./mods:/app/mods
-      - ./saves:/app/saves
-      - ./config.json:/app/config.json
 ```
 
 </TabItem>
