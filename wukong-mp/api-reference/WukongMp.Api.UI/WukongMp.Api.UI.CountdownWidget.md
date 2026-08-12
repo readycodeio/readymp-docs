@@ -1,4 +1,4 @@
-﻿# Class CountdownWidget
+# Class CountdownWidget
 
 Namespace: [WukongMp.Api.UI](../WukongMp.Api.UI/WukongMp.Api.UI.md)  
 Assembly: WukongMp.Api.dll  

@@ -1,4 +1,4 @@
-﻿# Struct Out<T>
+# Struct Out<T>
 
 Namespace: [PreludeLib.Attributes](../PreludeLib.Attributes/PreludeLib.Attributes.md)  
 Assembly: PreludeLib.dll  

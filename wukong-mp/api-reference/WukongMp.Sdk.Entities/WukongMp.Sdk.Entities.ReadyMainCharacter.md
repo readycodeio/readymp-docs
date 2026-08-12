@@ -1,7 +1,9 @@
-﻿# Struct ReadyMainCharacter
+# Struct ReadyMainCharacter
 
 Namespace: [WukongMp.Sdk.Entities](../WukongMp.Sdk.Api/WukongMp.Sdk.Entities.md)  
 Assembly: WukongMp.Sdk.dll  
+
+Represents the player character entity in the game.
 
 ```csharp
 public readonly struct ReadyMainCharacter : IReadyEntity<ReadyMainCharacter>
@@ -32,6 +34,16 @@ public readonly struct ReadyMainCharacter : IReadyEntity<ReadyMainCharacter>
 
 ```csharp
 public bool BeguilingChantEligible { get; set; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_IsObserver"></a> IsObserver
+
+```csharp
+public bool IsObserver { get; }
 ```
 
 #### Property Value
@@ -96,7 +108,7 @@ public PlayerId PlayerId { get; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/a1b59546bbb845a6f917219c2bff68f0f63b4da0/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_RebirthPointId"></a> RebirthPointId
 

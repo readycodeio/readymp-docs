@@ -1,4 +1,8 @@
-﻿# ReadyM.Api.DI
+# ReadyM.Api.DI
+
+### Classes
+
+ [DependencyContainerBase](../ReadyM.Api.DI/ReadyM.Api.DI.DependencyContainerBase.md)
 
 ### Interfaces
 

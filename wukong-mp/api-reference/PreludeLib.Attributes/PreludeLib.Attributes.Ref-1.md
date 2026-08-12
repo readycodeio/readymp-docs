@@ -1,4 +1,4 @@
-﻿# Struct Ref<T>
+# Struct Ref<T>
 
 Namespace: [PreludeLib.Attributes](../PreludeLib.Attributes/PreludeLib.Attributes.md)  
 Assembly: PreludeLib.dll  

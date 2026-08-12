@@ -70,7 +70,7 @@ mode](../../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Mu
 请参阅 [RPC 文档](../custom-rpc)，以了解在 RPC 类中你还能做些什么。
 
 ```csharp title="自定义 RPC 类"
-public partial class Rpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+public partial class Rpc : ClientRpcHandler
 {
     [RpcEvent(RelayMode.AreaOfInterestAll)]
     private void OnSwarmStarted(PlayerId __sender)

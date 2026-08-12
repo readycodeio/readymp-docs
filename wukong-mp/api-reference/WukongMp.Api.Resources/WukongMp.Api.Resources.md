@@ -1,4 +1,4 @@
-﻿# WukongMp.Api.Resources
+# WukongMp.Api.Resources
 
 ### Classes
 

@@ -4,20 +4,25 @@ sidebar_position: 5
 
 # 自定义 RPC
 
-WukongMP SDK 的核心功能之一是支持任意远程过程调用 (RPC) 函数。这些函数可以携带任意有效负载，并支持多种
+WukongMP SDK 支持两种远程过程调用 (RPC) 消息：
+
+* **客户端中继 RPC**：由客户端发送，服务器把它转发给其他客户端。服务器不对这类消息作出反应，只负责转发。本页大部分内容讲的是这种 RPC。
+* **服务器 RPC**：由客户端发送给服务器，服务器运行你的服务器端逻辑，并可以回复。它的契约和服务器端处理程序在[服务器端开发](../Server-development/custom-rpc)中定义。本页讲的是如何处理服务器 RPC 的客户端一侧。
+
+## 客户端中继 RPC {#client-relayed-rpc}
+
+客户端中继 RPC 让你定义自己的事件，发送给连接到同一服务器的其他玩家，不涉及任何服务器端逻辑。这些事件可以携带任意有效负载，并支持多种
 [中继模式](../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode)。
 
-RPC 处理程序允许你定义自己的事件，这些事件将发送给连接到同一服务器的其他玩家。
-
-## 声明一个 RPC 处理程序类
+### 声明一个 RPC 处理程序类 {#declaring-an-rpc-handler-class}
 
 为了向你的模组添加自定义 RPC 过程，你必须定义一个
 [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
 类，它继承自
-[RpcClassBase](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcClassBase)。
+[ClientRpcHandler](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.ClientRpcHandler)。
 
 ```csharp title="最简 RPC 类定义"
-public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+public partial class MyRpc : ClientRpcHandler
 {
     // 在此处编写 RPC 处理器
 }
@@ -28,9 +33,18 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 要注册任何 RPC 处理程序，类 **必须**被添加到 DI 容器中，在你的模组的 `Initialize` 方法中。请查阅
 [ModBase](../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase) 的文档。
 
+```csharp
+protected override void Initialize(IDependencyContainer services)
+{
+    services.RegisterSingleton<MyRpc>();
+}
+```
+
 :::
 
-## 定义 RPC 处理程序
+依赖项通过构造函数注入，所以需要日志记录器或其他服务的处理程序把它写成主构造函数参数即可：`public partial class MyRpc(ILogger logger) : ClientRpcHandler`。
+
+### 定义 RPC 处理程序 {#defining-rpc-handlers}
 
 为了向你的模组添加一个新的 RPC 处理程序，请添加一个带有
 [RpcEvent](../../api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.RpcEventAttribute)
@@ -39,7 +53,7 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 方法名必须以“On...”开头——在同一个类中会自动为发送 RPC 生成相应的“Send...”方法。
 
 ```csharp title="最简 RPC 处理器"
-public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+public partial class MyRpc : ClientRpcHandler
 {
     [RpcEvent(RelayMode.AreaOfInterestOthers)]
     private void OnMyCustomCall()
@@ -65,7 +79,7 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 | **GlobalOthers**         | 消息已发送给服务器上的所有其他玩家        |
 | **GlobalAll**            | 消息已发送给服务器上的所有玩家，包括发送者    |
 
-## 正在发送数据
+### 发送数据 {#sending-data}
 
 RPC 处理程序支持在参数中传递数据，这些数据要么是：
 
@@ -77,14 +91,14 @@ RPC 处理程序支持在参数中传递数据，这些数据要么是：
 
 一个 RPC 处理程序可以按任意数量、任意顺序声明这些参数。生成的“Send...”方法将具有相同的参数（不包括注入的参数）。
 
-### 基本数据类型
+#### 基本数据类型 {#primitive-data-types}
 
 我们支持在 C#
 运行时定义的所有原始数据类型：`bool`、`char`、`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、`ulong`、`float`、`double`，以及
 `string`。
 
 ```csharp title="传递基本数据"
-public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+public partial class MyRpc : ClientRpcHandler
 {
     [RpcEvent(RelayMode.AreaOfInterestOthers)]
     private void OnMyCustomCall(int number, string text)
@@ -97,7 +111,7 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 }
 ```
 
-### 复杂数据类型
+#### 复杂数据类型 {#complex-data-types}
 
 您可以在 RPC 参数中使用复杂的数据结构。这些数据结构必须实现
 [INetSerializable](https://revenantx.github.io/LiteNetLib/api/LiteNetLib.Utils.INetSerializable.html)
@@ -107,7 +121,7 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 [INetSerializable](https://revenantx.github.io/LiteNetLib/api/LiteNetLib.Utils.INetSerializable.html)。
 
 ```csharp title="复杂 RPC 参数示例"
-public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+public partial class MyRpc : ClientRpcHandler
 {
     [RpcEvent(RelayMode.AreaOfInterestOthers)]
     private void OnPlayerBuffed(BuffData payload)
@@ -160,7 +174,7 @@ public struct BuffAddData(int buffId, float duration) : INetSerializable
 }
 ```
 
-### 特殊参数
+#### 特殊参数 {#special-parameters}
 
 目前只能使用一个特殊参数。我们可能会在未来版本的 SDK 中扩展此功能。
 
@@ -171,7 +185,7 @@ public struct BuffAddData(int buffId, float duration) : INetSerializable
 此参数可与其他参数一起使用，但在生成的“Send...”方法中不可见。
 
 ```csharp title="使用注入的参数"
-public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+public partial class MyRpc : ClientRpcHandler
 {
     [RpcEvent(RelayMode.AreaOfInterestOthers)]
     private void OnComplexEvent(int number, PlayerId __sender, BuffData buffData)
@@ -188,26 +202,64 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 }
 ```
 
-## 在主线程执行回调
+### 线程 {#threading}
 
-RPC 处理程序在单独的网络线程上执行，因此它们不应直接与游戏世界交互，因为这样做可能会导致崩溃。不过，你可以使用在你的 RPC 处理程序类中提供的
-[RunOnMainThread](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcClassBase#-runonmainthreadaction)
-方法，将回调安排在主线程上执行。
+消息到达时在单独的网络线程上，但 SDK 会在调用每个 `[RpcEvent]` 处理程序之前把它调度到游戏线程上。因此处理程序内部可以直接操作游戏世界，操作 Unreal Engine 对象不需要额外处理：
 
-```csharp title="Running code on the main thread"
-public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+```csharp title="在处理程序中操作游戏世界"
+public partial class MyRpc : ClientRpcHandler
 {
     [RpcEvent(RelayMode.AreaOfInterestAll)]
     private void OnDespawnAllMonsters()
     {
-        // destroying an Unreal Engine pawn must be done on the main thread
-        RunOnMainThread(() =>
+        foreach (var monster in WukongApi.Sync.AreaTamers)
         {
-            foreach (var monster in WukongApi.Sync.AreaTamers)
-            {
-                monster.Tamer?.CurrentRef.DestroyTamer(); // calls BGU_UnrealWorldUtil.DestroyActor
-            }
+            monster.Tamer?.CurrentRef.DestroyTamer(); // 调用 BGU_UnrealWorldUtil.DestroyActor
+        }
+    }
+}
+```
+
+由于处理程序运行在游戏线程上，它们也共用游戏线程的时间预算。开销大的工作应该放到[系统](systems)里或后台任务上，而不是处理程序体内。
+
+:::note
+
+这只适用于客户端中继 RPC。服务器 RPC 的响应处理程序**不会**被自动调度，见下文。
+
+:::
+
+## 在客户端处理服务器 RPC {#handling-server-rpc-on-the-client}
+
+服务器 RPC 契约声明在服务器模组和客户端模组共享的公共项目中，描述了请求（客户端到服务器）和响应（服务器到客户端）两个方向的数据形状。它们的定义方式请见[服务器端开发](../Server-development/custom-rpc)。
+
+在客户端，定义一个继承
+[ServerRpcClient](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.ServerRpcClient)
+的 [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
+类，用来向服务器发送请求并处理它的响应。这个类必须用 `[ServerRpcFor]` 标注它所实现的契约类，并且和客户端中继 RPC 一样，必须在模组的 `Initialize` 方法中注册。
+
+与 `[RpcEvent]` 处理程序不同，这些方法是在解析响应时于网络线程上调用的。任何接触游戏世界的代码都要用 `RunOnGameThread` 包起来：
+
+```csharp title="客户端处理服务器 RPC"
+[ServerRpcFor(typeof(ExampleRpcContracts))]
+public partial class MyServerRpc : ServerRpcClient
+{
+    // 服务器响应我们的 ScaleBossHp 请求时调用
+    partial void OnBossHpScaleConfirm(int scalingPercent, int players)
+    {
+        RunOnGameThread(() =>
+        {
+            WukongApi.Chat.ShowLocalMessage(
+                $"Boss HP is set to {scalingPercent}% and multiplied by {players} players.",
+                FLinearColor.Gray);
         });
     }
 }
 ```
+
+调用生成的 `Send...` 方法即可把请求发给服务器：
+
+```csharp
+WukongApi.Services.Resolve<MyServerRpc>().SendScaleBossHp(150);
+```
+
+只有共享契约中声明的方向会被生成：单向的客户端到服务器 RPC 在客户端没有 `On...` 处理程序桩，单向的服务器到客户端 RPC 没有 `Send...` 方法。

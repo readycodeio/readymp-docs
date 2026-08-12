@@ -1,4 +1,4 @@
-﻿# WukongMp.Sdk.Entities
+# WukongMp.Sdk.Entities
 
 ### Classes
 
@@ -16,8 +16,12 @@
 
  [ReadyMainCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyMainCharacter.md)
 
+Represents the player character entity in the game.
+
  [ReadyObject](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyObject.md)
 
  [ReadyTamer](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyTamer.md)
+
+Represents a tamer (monster) entity in the Wukong multiplayer SDK.
 
 

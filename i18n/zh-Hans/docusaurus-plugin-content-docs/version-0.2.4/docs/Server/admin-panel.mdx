@@ -1,0 +1,53 @@
+---
+sidebar_position: 2
+---
+
+# 后台管理面板
+
+管理面板可通过 HTTP 访问，端口为 **9050**（除非在 `config.json` 中更改）。
+
+如果服务器在本地计算机上运行，您可以在 http://localhost:9050 打开它。
+
+## 首次设置
+
+首次启动服务器时，您需要创建一个管理员账户。
+
+在启动时，服务器会在控制台输出中打印一个一次性设置 PIN 码：
+
+```shell-session
+$ ./server.exe
+[15:16:37 INF] Starting web server on 127.0.0.1:9050
+[15:16:37 INF] Starting RelayServer...
+[15:16:37 INF] Running server on port 9050
+...
+//highlight-next-line
+[15:16:37 WRN] No admin users found. Admin setup PIN: 766596
+```
+
+在后台管理面板中输入此 PIN 以开始设置过程。
+
+<img src={require('/img/docs/admin-panel-setup-pin-0.2.0.png').default}
+width={500} alt="设置 PIN 码界面" />
+
+## 通过 ReadyM 登录
+
+输入 PIN 后，您将被要求使用 ReadyM 账户登录。
+
+您将被重定向到 ReadyM 身份验证页面，在那里可以输入您的凭据。
+
+认证成功后，系统将自动将您重定向回后台管理面板。
+
+## 后台管理面板界面
+
+登录后，您可以访问后台管理面板界面。
+
+<img src={require('/img/docs/admin-panel-terminal-0.2.0.png').default}
+alt="管理面板终端" />
+
+管理面板提供以下视图：
+
+* **终端** - 查看服务器状态、在线玩家、运行时间和实时日志。
+* **Players** - 查看自服务器上线以来曾连接过的玩家列表，以及他们的首次和最后访问日期。
+* **模组** - 查看服务器上当前安装的模组列表。
+* **管理员** - 查看服务器管理员列表、添加新的管理员，以及管理他们的权限。
+* **设置** - 管理面板设置，如语言和主题。

@@ -1,0 +1,150 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
+
+# 快速开始
+
+在不到5分钟内让 WukongMP 服务器运行起来。
+
+## 1. 下载服务器
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+[⬇ Windows
+下载（x64，v0.2.4）](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.2.4.zip)
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+[⬇ Linux
+下载（x64，v0.2.4）](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.2.4.zip)
+
+</TabItem>
+<TabItem value="docker" label="Docker">
+
+```shell
+docker pull ghcr.io/readycodeio/wukongmp-server:0.2.4
+```
+
+</TabItem>
+</Tabs>
+
+## 2. 提取并配置
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+将 `.zip` 解压到你选择的文件夹中。服务器是独立的——无需安装程序。
+
+如要更改端口（默认值：`9050`），打开 `config.json` 并编辑 `Server:Port`。
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+将 `.zip` 解压到你选择的文件夹中。服务器是独立的——无需安装程序。
+
+如要更改端口（默认值：`9050`），打开 `config.json` 并编辑 `Server:Port`。
+
+</TabItem>
+<TabItem value="docker" label="Docker">
+
+从镜像中复制配置文件：
+
+```shell
+docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.2.4
+docker cp wukongmp-tmp:/app/config.json ./config.json
+docker rm wukongmp-tmp
+```
+
+端口配置通过重新映射容器端口来处理 — 请参见第3步。
+
+:::important
+
+镜像 **不带模组**。在启动容器之前，请下载二进制程序包并将 `WukongMp.Sdk` 以及你选择的游戏模式模组（`WukongMp.PvP` 或
+`WukongMp.Coop`）复制到本地 `./mods/` 文件夹中。
+
+:::
+
+</TabItem>
+</Tabs>
+
+## 3. 启动服务器
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+双击 `server.exe`，或在终端中运行它：
+
+```shell
+.\server.exe
+```
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+```shell
+chmod +x server && ./server
+```
+
+</TabItem>
+<TabItem value="docker" label="Docker">
+
+```shell
+docker run \
+    -p 9050:9050/udp -p 9050:9050/tcp \
+    -v ./data:/app/data \
+    -v ./mods:/app/mods \
+    -v ./saves:/app/saves \
+    -v ./config.json:/app/config.json \
+    --name wukongmp-server \
+    ghcr.io/readycodeio/wukongmp-server:0.2.4
+```
+
+或者使用 Docker Compose：
+
+```yaml title="docker-compose.yml"
+services:
+  server:
+    image: ghcr.io/readycodeio/wukongmp-server:0.2.4
+    container_name: wukongmp-server
+    restart: unless-stopped
+    ports:
+      - "9050:9050/tcp"
+      - "9050:9050/udp"
+    volumes:
+      - ./data:/app/data
+      - ./mods:/app/mods
+      - ./saves:/app/saves
+      - ./config.json:/app/config.json
+```
+
+</TabItem>
+</Tabs>
+
+## 4. 打开管理面板
+
+服务器运行后，请打开浏览器并前往：
+
+```
+http://localhost:9050
+```
+
+在这里你可以管理玩家、配置模组，并实时监控你的服务器。
+
+---
+
+🎉 **你已上线！** 分享你的 IP 和端口 `:9050` 给玩家——他们需要安装 ReadyM Launcher 才能连接。
+
+---
+
+## 后续步骤
+
+|                               |               |
+| ----------------------------- | ------------- |
+| [完整安装指南](Server/installation) | 高级配置和选项       |
+| [后台管理面板](Server/admin-panel)  | 管理用户、封禁和服务器设置 |
+| [模组管理](Server/mod-management) | 安装并配置模组       |
+| [服务器列表](Server/server-list)   | 将您的服务器公开注册    |

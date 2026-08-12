@@ -15,7 +15,7 @@ sidebar_position: 1
 
 目前你可以开发对游戏事件、实体数据（玩家、敌人）有访问权限的模组，并且可以定义自定义命令和游戏逻辑系统。
 
-服务器端逻辑和自定义数据同步的支持正在推进中。
+模组也可以在服务器上运行逻辑，参见[服务器端开发](../Server-development/getting-started)。
 
 请访问 [examples](/wukong-mp/category/mod-examples) 页面以获取灵感，或浏览
 [co-op](https://github.com/readycodeio/WukongMP-co-op-mod) 与
@@ -28,5 +28,5 @@ sidebar_position: 1
 | 控制台命令 API | :white_check_mark: [已完成](../Development/APIs/console-commands) |
 | 自定义 RPC   | :white_check_mark: [已完成](../Development/custom-rpc)            |
 | 保存文件 API  | :construction: [部分](../Development/APIs/save-file-management)  |
-| 自定义数据同步   | :soon: [进行中](../Development/APIs/custom-components)            |
-| 服务器端模组    | :soon: 进行中                                                     |
+| 自定义数据同步   | :white_check_mark: [已完成](../Development/APIs/custom-components) |
+| 服务器端模组    | :white_check_mark: [已完成](../Server-development/getting-started) |

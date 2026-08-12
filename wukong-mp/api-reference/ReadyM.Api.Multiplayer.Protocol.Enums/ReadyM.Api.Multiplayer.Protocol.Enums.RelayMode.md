@@ -1,4 +1,4 @@
-﻿# Enum RelayMode
+# Enum RelayMode
 
 Namespace: [ReadyM.Api.Multiplayer.Protocol.Enums](../ReadyM.Api.Multiplayer.Protocol/ReadyM.Api.Multiplayer.Protocol.Enums.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  

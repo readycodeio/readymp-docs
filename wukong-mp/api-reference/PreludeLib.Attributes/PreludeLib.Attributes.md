@@ -1,4 +1,4 @@
-﻿# PreludeLib.Attributes
+# PreludeLib.Attributes
 
 ### Classes
 

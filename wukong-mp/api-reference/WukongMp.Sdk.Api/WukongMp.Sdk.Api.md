@@ -1,4 +1,8 @@
-﻿# WukongMp.Sdk.Api
+# WukongMp.Sdk.Api
+
+### Namespaces
+
+ [WukongMp.Sdk.Api.Implementation](../WukongMp.Api.WukongUtils/WukongMp.Sdk.Api.Implementation.md)
 
 ### Classes
 

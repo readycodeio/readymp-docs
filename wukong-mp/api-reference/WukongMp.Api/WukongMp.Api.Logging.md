@@ -1,4 +1,4 @@
-﻿# Class Logging
+# Class Logging
 
 Namespace: [WukongMp.Api](../WukongMp.Api/WukongMp.Api.md)  
 Assembly: WukongMp.Api.dll  

@@ -1,4 +1,4 @@
-﻿# Class ModSystemBase
+# Class ModSystemBase
 
 Namespace: [WukongMp.Sdk](../WukongMp.Sdk/WukongMp.Sdk.md)  
 Assembly: WukongMp.Sdk.dll  

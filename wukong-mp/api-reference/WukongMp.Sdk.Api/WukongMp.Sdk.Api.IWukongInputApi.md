@@ -1,4 +1,4 @@
-﻿# Interface IWukongInputApi
+# Interface IWukongInputApi
 
 Namespace: [WukongMp.Sdk.Api](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.md)  
 Assembly: WukongMp.Sdk.dll  

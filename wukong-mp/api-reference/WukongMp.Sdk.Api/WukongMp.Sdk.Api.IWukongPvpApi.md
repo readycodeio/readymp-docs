@@ -1,4 +1,4 @@
-﻿# Interface IWukongPvpApi
+# Interface IWukongPvpApi
 
 Namespace: [WukongMp.Sdk.Api](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.md)  
 Assembly: WukongMp.Sdk.dll  
@@ -140,10 +140,10 @@ int TournamentRounds { get; }
 void InitializeAreaPvpState()
 ```
 
-### <a id="WukongMp_Sdk_Api_IWukongPvpApi_PvpData_WukongMp_Sdk_Entities_ReadyMainCharacter_"></a> PvpData\(ReadyMainCharacter\)
+### <a id="WukongMp_Sdk_Api_IWukongPvpApi_IsReadyForPvP_WukongMp_Sdk_Entities_ReadyMainCharacter_"></a> IsReadyForPvP\(ReadyMainCharacter\)
 
 ```csharp
-ref PvPComponent PvpData(ReadyMainCharacter mainCharacter)
+bool IsReadyForPvP(ReadyMainCharacter mainCharacter)
 ```
 
 #### Parameters
@@ -152,7 +152,19 @@ ref PvPComponent PvpData(ReadyMainCharacter mainCharacter)
 
 #### Returns
 
- [PvPComponent](https://github.com/readycodeio/readym\-gameserver/blob/a1b59546bbb845a6f917219c2bff68f0f63b4da0/src/ReadyM.Wukong.Common/ECS/Components/PvPComponent.cs)
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="WukongMp_Sdk_Api_IWukongPvpApi_SetIsReadyForPvp_WukongMp_Sdk_Entities_ReadyMainCharacter_System_Boolean_"></a> SetIsReadyForPvp\(ReadyMainCharacter, bool\)
+
+```csharp
+void SetIsReadyForPvp(ReadyMainCharacter mainCharacter, bool ready)
+```
+
+#### Parameters
+
+`mainCharacter` [ReadyMainCharacter](../WukongMp.Sdk.Entities/WukongMp.Sdk.Entities.ReadyMainCharacter.md)
+
+`ready` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 ### <a id="WukongMp_Sdk_Api_IWukongPvpApi_SetLastRoundWinnerTeam_System_Int32_"></a> SetLastRoundWinnerTeam\(int\)
 

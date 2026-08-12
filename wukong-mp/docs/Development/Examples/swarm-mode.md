@@ -69,7 +69,7 @@ We use the `AreaOfInterestAll` [Relay mode](../../../api-reference/ReadyM.Api.Mu
 Refer to the [RPC documentation](../custom-rpc) to learn what else you can do in RPC classes.
 
 ```csharp title="Custom RPC class"
-public partial class Rpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+public partial class Rpc : ClientRpcHandler
 {
     [RpcEvent(RelayMode.AreaOfInterestAll)]
     private void OnSwarmStarted(PlayerId __sender)

@@ -1,4 +1,4 @@
-﻿# Class TamerKinds
+# Class TamerKinds
 
 Namespace: [WukongMp.Api.Configuration](../WukongMp.Api.Configuration/WukongMp.Api.Configuration.md)  
 Assembly: WukongMp.Api.dll  

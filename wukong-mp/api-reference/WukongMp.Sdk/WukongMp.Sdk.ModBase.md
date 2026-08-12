@@ -1,4 +1,4 @@
-﻿# Class ModBase
+# Class ModBase
 
 Namespace: [WukongMp.Sdk](../WukongMp.Sdk/WukongMp.Sdk.md)  
 Assembly: WukongMp.Sdk.dll  
@@ -13,7 +13,7 @@ public abstract class ModBase : ICSharpModExV2, ICSharpModEx, ICSharpMod
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[ModBase](../WukongMp.Sdk/WukongMp.Sdk.ModBase)
+[ModBase](../WukongMp.Sdk/WukongMp.Sdk.ModBase.md)
 
 #### Implements
 
@@ -115,7 +115,7 @@ protected abstract void Initialize(IDependencyContainer services)
 
 #### Parameters
 
-`services` [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/a1b59546bbb845a6f917219c2bff68f0f63b4da0/src/ReadyM.Api/DI/IDependencyContainer.cs)
+`services` [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_ModBase_LateInit"></a> LateInit\(\)
 

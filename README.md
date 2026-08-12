@@ -73,3 +73,9 @@ yarn serve --locale zh-Hans # Chinese
 ~~~
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+## Add a new version
+
+To add a new version for a documentation page, follow this guide: https://docusaurus.io/docs/docs-multi-instance#tagging-new-versions.
+
+Remember, that the `docs:version` command expets the **current** version (one that is getting frozen), not the new one.

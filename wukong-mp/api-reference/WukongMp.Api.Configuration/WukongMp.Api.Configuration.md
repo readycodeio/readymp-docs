@@ -1,4 +1,4 @@
-﻿# WukongMp.Api.Configuration
+# WukongMp.Api.Configuration
 
 ### Classes
 

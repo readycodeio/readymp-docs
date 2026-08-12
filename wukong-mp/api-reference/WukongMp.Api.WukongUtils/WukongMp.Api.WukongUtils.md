@@ -1,4 +1,4 @@
-﻿# WukongMp.Api.WukongUtils
+# WukongMp.Api.WukongUtils
 
 ### Classes
 

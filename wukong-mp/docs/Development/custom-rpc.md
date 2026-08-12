@@ -4,16 +4,21 @@ sidebar_position: 5
 
 # Custom RPC
 
-One of the core WukongMP SDK functionalities is the support for arbitrary Remote Procedure Call (RPC) functions. These can have arbitrary payloads and support a number of [Relay Modes](../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode).
+The WukongMP SDK supports two kinds of Remote Procedure Call (RPC) messages:
 
-RPC handlers allow you to define your own events that are sent to other players connected to the same server.
+* **Client-relayed RPC**, sent by a client and relayed by the server to other clients. The server does not react to these messages, it only forwards them. This is what most of this page covers.
+* **Server RPC**, sent by a client to the server, which runs your server-side logic and may reply. Contracts and server-side handlers for these are defined in [server-side development](../Server-development/custom-rpc). This page covers how to handle the client side of a server RPC.
 
-## Declaring an RPC handler class
+## Client-relayed RPC
 
-In order to add custom RPC procedures to your mod, you must define a [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class that extends [RpcClassBase](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcClassBase).
+Client-relayed RPC lets you define your own events that are sent to other players connected to the same server, without any server-side logic involved. These can have arbitrary payloads and support a number of [Relay Modes](../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode).
+
+### Declaring an RPC handler class
+
+In order to add custom RPC procedures to your mod, you must define a [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class that extends [ClientRpcHandler](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.ClientRpcHandler).
 
 ```csharp title="Minimal RPC class definition"
-public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+public partial class MyRpc : ClientRpcHandler
 {
     // RPC handlers go here
 }
@@ -24,16 +29,25 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 For any of the RPC handlers to be registered, the class **must** be added to the DI container in your mod's `Initialize` method.
 Consult the documentation for [ModBase](../../api-reference/WukongMp.Sdk/WukongMp.Sdk.ModBase).
 
+```csharp
+protected override void Initialize(IDependencyContainer services)
+{
+    services.RegisterSingleton<MyRpc>();
+}
+```
+
 :::
 
-## Defining RPC handlers
+Dependencies are injected through the constructor, so a handler that needs a logger or another service takes it as a primary constructor parameter: `public partial class MyRpc(ILogger logger) : ClientRpcHandler`.
+
+### Defining RPC handlers
 
 In order to add a new RPC handler to your mod, add a method decorated with the [RpcEvent](../../api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.RpcEventAttribute) attribute.
 
-Method names must start with "On..." — corresponding "Send..." methods for sending the RPC will be generated automatically in the same class.
+Method names must start with "On...", and corresponding "Send..." methods for sending the RPC will be generated automatically in the same class.
 
 ```csharp title="Minimal RPC handler"
-public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+public partial class MyRpc : ClientRpcHandler
 {
     [RpcEvent(RelayMode.AreaOfInterestOthers)]
     private void OnMyCustomCall()
@@ -57,7 +71,7 @@ Currently, the following modes are supported:
 | **GlobalOthers** | Message is sent to all other players on the server |
 | **GlobalAll** | Message is sent to all players on the server, including the sender |
 
-## Sending data
+### Sending data
 
 RPC handlers support passing data in parameters that are either:
 
@@ -67,12 +81,12 @@ RPC handlers support passing data in parameters that are either:
 
 An RPC hander can have any number of these parameters declared in any order. The generated "Send..." methods will have the same parameters (excluding the injected ones).
 
-### Primitive data types
+#### Primitive data types
 
 We support all primitive data types defined in the C# runtime: `bool`, `char`, `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, and `string`.
 
 ```csharp title="Passing primitive data"
-public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+public partial class MyRpc : ClientRpcHandler
 {
     [RpcEvent(RelayMode.AreaOfInterestOthers)]
     private void OnMyCustomCall(int number, string text)
@@ -85,14 +99,14 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 }
 ```
 
-### Complex data types
+#### Complex data types
 
 You can use complex data structures in your RPC parameters. These must extend the [INetSerializable](https://revenantx.github.io/LiteNetLib/api/LiteNetLib.Utils.INetSerializable.html) interface.
 
 The fields of the payload structures can be of any serializable type, including other complex types, provided they also extend [INetSerializable](https://revenantx.github.io/LiteNetLib/api/LiteNetLib.Utils.INetSerializable.html).
 
 ```csharp title="Complex RPC parameter example"
-public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+public partial class MyRpc : ClientRpcHandler
 {
     [RpcEvent(RelayMode.AreaOfInterestOthers)]
     private void OnPlayerBuffed(BuffData payload)
@@ -140,7 +154,7 @@ public struct BuffAddData(int buffId, float duration) : INetSerializable
 }
 ```
 
-### Special parameters
+#### Special parameters
 
 Right now there is only one special parameter that can be used. We might expand this functionality in future versions of the SDK. 
 
@@ -151,7 +165,7 @@ Right now there is only one special parameter that can be used. We might expand 
 This parameter can be used alongside other parameters, but is not visible in the generated "Send..." method.
 
 ```csharp title="Using injected parameters"
-public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+public partial class MyRpc : ClientRpcHandler
 {
     [RpcEvent(RelayMode.AreaOfInterestOthers)]
     private void OnComplexEvent(int number, PlayerId __sender, BuffData buffData)
@@ -168,24 +182,61 @@ public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : Rpc
 }
 ```
 
-## Executing callbacks on the main thread
+### Threading
 
-RPC handlers are executed on a separate network thread, so they should not interact with the game world directly, as doing so can cause crashes. However, you can schedule callbacks to be executed on the main thread using the [RunOnMainThread](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcClassBase#-runonmainthreadaction) method available in your RPC handler class.
+Messages arrive on a separate network thread, but the SDK schedules every `[RpcEvent]` handler onto the game thread before invoking it. Your handler body can touch the game world directly, so working with Unreal Engine objects needs no extra ceremony:
 
-```csharp title="Running code on the main thread"
-public partial class MyRpc(IRpcClient client, IRelaySerializer serializer) : RpcClassBase(client, serializer)
+```csharp title="Touching the game world from a handler"
+public partial class MyRpc : ClientRpcHandler
 {
     [RpcEvent(RelayMode.AreaOfInterestAll)]
     private void OnDespawnAllMonsters()
     {
-        // destroying an Unreal Engine pawn must be done on the main thread
-        RunOnMainThread(() =>
+        foreach (var monster in WukongApi.Sync.AreaTamers)
         {
-            foreach (var monster in WukongApi.Sync.AreaTamers)
-            {
-                monster.Tamer?.CurrentRef.DestroyTamer(); // calls BGU_UnrealWorldUtil.DestroyActor
-            }
+            monster.Tamer?.CurrentRef.DestroyTamer(); // calls BGU_UnrealWorldUtil.DestroyActor
+        }
+    }
+}
+```
+
+Because handlers run on the game thread, they also share its budget. Anything expensive belongs in a [system](systems) or on a background task, not in the handler body.
+
+:::note
+
+This is specific to client-relayed RPC. Server RPC response handlers are **not** scheduled for you, see below.
+
+:::
+
+## Handling server RPC on the client
+
+Server RPC contracts are declared in a common project shared by the server and client mods, and describe both the request (client to server) and response (server to client) shapes of an RPC. See [server-side development](../Server-development/custom-rpc) for how they are defined.
+
+On the client, define a [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class extending [ServerRpcClient](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.ServerRpcClient) to send requests to the server and handle its responses. It must carry `[ServerRpcFor]` naming the contract class it implements, exactly like its server-side counterpart. As with client-relayed RPC, the class must be registered in your mod's `Initialize` method.
+
+Unlike `[RpcEvent]` handlers, these are invoked on the network thread as the response is parsed. Wrap anything that touches the game world in `RunOnGameThread`:
+
+```csharp title="Client-side server RPC handling"
+[ServerRpcFor(typeof(RpcContracts))]
+public partial class MyServerRpc : ServerRpcClient
+{
+    // called when the server responds to our ScaleBossHp request
+    partial void OnBossHpScaleConfirm(int scalingPercent, int players)
+    {
+        RunOnGameThread(() =>
+        {
+            WukongApi.Chat.ShowLocalMessage(
+                $"Boss HP is set to {scalingPercent}% and multiplied by {players} players.",
+                FLinearColor.Gray);
         });
     }
 }
 ```
+
+Calling the generated `Send...` method sends the request to the server:
+
+```csharp
+WukongApi.Services.Resolve<MyServerRpc>().SendScaleBossHp(150);
+```
+
+Only the legs declared by the shared contract are generated: a one-way client-to-server RPC has no `On...` handler stub on the client, and a one-way server-to-client RPC has no `Send...` method. Only the legs of the class named in `[ServerRpcFor]` are generated, so use one class per contract set. See [Binding a class to its contract](../Server-development/custom-rpc#binding-a-class-to-its-contract).
