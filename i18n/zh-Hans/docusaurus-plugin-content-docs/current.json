@@ -110,5 +110,9 @@
   "sidebar.oblivionMpDocsSidebar.category.Server hosting": {
     "message": "Server hosting",
     "description": "The label for category 'Server hosting' in sidebar 'oblivionMpDocsSidebar'"
+  },
+  "sidebar.wukongMpDocsSidebar.category.Server-side development": {
+    "message": "服务器端开发",
+    "description": "The label for category 'Server-side development' in sidebar 'wukongMpDocsSidebar'"
   }
 }

@@ -40,12 +40,16 @@ Extract the `.zip` to a folder of your choice. The server is self-contained — 
 
 To change the port (default: `9050`), open `config.json` and edit `Server:Port`.
 
+The package already includes the SDK and both game modes, with co-op enabled by default. To play PvP instead, move `WukongMp.PvP` from `optional_mods/` into `mods/`, then delete `WukongMp.Coop` from `mods/` and the two `WukongMp.Coop.*` files from `server_mods/`. Both modes are open source too, if you would rather build them yourself: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod), [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod).
+
 </TabItem>
 <TabItem value="linux" label="Linux">
 
 Extract the `.zip` to a folder of your choice. The server is self-contained — no installer needed.
 
 To change the port (default: `9050`), open `config.json` and edit `Server:Port`.
+
+The package already includes the SDK and both game modes, with co-op enabled by default. To play PvP instead, move `WukongMp.PvP` from `optional_mods/` into `mods/`, then delete `WukongMp.Coop` from `mods/` and the two `WukongMp.Coop.*` files from `server_mods/`. Both modes are open source too, if you would rather build them yourself: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod), [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod).
 
 </TabItem>
 <TabItem value="docker" label="Docker">
@@ -62,7 +66,9 @@ Port configuration is handled by remapping the container ports — see step 3.
 
 :::important
 
-The image ships **without mods**. Before starting the container, download the binary package and copy `WukongMp.Sdk` and your chosen game mode mod (`WukongMp.PvP` or `WukongMp.Coop`) into your local `./mods/` folder.
+The image ships **without mods**. Before starting the container, put `WukongMp.Sdk` and exactly one game mode (`WukongMp.Coop` or `WukongMp.PvP`) into your local `./mods/` folder. Co-op also needs its server half in `./server_mods/`; PvP has no server-side half.
+
+Either download the binary package and copy them out of it, or build them from source: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod), [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod).
 
 :::
 
