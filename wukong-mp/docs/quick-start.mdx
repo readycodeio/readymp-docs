@@ -24,11 +24,9 @@ Get a WukongMP server running in under 5 minutes.
 </TabItem>
 <TabItem value="docker" label="Docker">
 
-:::info[Coming soon]
-
-The Docker image is not published yet. For now, follow the Windows or Linux steps above.
-
-:::
+```shell
+docker pull ghcr.io/readycodeio/wukongmp-server:0.3.0
+```
 
 </TabItem>
 </Tabs>
@@ -50,6 +48,25 @@ Extract the `.zip` to a folder of your choice. The server is self-contained — 
 To change the port (default: `9050`), open `config.json` and edit `Server:Port`.
 
 </TabItem>
+<TabItem value="docker" label="Docker">
+
+Copy the config file from the image:
+
+```shell
+docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.3.0
+docker cp wukongmp-tmp:/app/config.json ./config.json
+docker rm wukongmp-tmp
+```
+
+Port configuration is handled by remapping the container ports — see step 3.
+
+:::important
+
+The image ships **without mods**. Before starting the container, download the binary package and copy `WukongMp.Sdk` and your chosen game mode mod (`WukongMp.PvP` or `WukongMp.Coop`) into your local `./mods/` folder.
+
+:::
+
+</TabItem>
 </Tabs>
 
 ## 3. Start the server
@@ -68,6 +85,40 @@ Double-click `server.exe`, or run it from a terminal:
 
 ```shell
 chmod +x server && ./server
+```
+
+</TabItem>
+<TabItem value="docker" label="Docker">
+
+```shell
+docker run \
+    -p 9050:9050/udp -p 9050:9050/tcp \
+    -v ./data:/app/data \
+    -v ./mods:/app/mods \
+    -v ./server_mods:/app/server_mods \
+    -v ./saves:/app/saves \
+    -v ./config.json:/app/config.json \
+    --name wukongmp-server \
+    ghcr.io/readycodeio/wukongmp-server:0.3.0
+```
+
+Or with Docker Compose:
+
+```yaml title="docker-compose.yml"
+services:
+  server:
+    image: ghcr.io/readycodeio/wukongmp-server:0.3.0
+    container_name: wukongmp-server
+    restart: unless-stopped
+    ports:
+      - "9050:9050/tcp"
+      - "9050:9050/udp"
+    volumes:
+      - ./data:/app/data
+      - ./mods:/app/mods
+      - ./server_mods:/app/server_mods
+      - ./saves:/app/saves
+      - ./config.json:/app/config.json
 ```
 
 </TabItem>
