@@ -32,7 +32,7 @@ Attach your own components to any of these in your mod's `Init`, the same way th
 
 :::warning[The access API is temporary]
 
-Right now you read and write these components through the low-level [`EcsApi`](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.EcsApi) (raw `Query` calls and `ref` component access). This is deliberately bare-bones for `0.3.0`. A higher-level, less raw server API is planned, so expect the way you access entity data to change in a later release.
+Right now you read and write these components through the low-level [`EcsApi`](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.EcsApi) (raw `Query` calls and `ref` component access). This is deliberately bare-bones for `0.3.1`. A higher-level, less raw server API is planned, so expect the way you access entity data to change in a later release.
 
 :::
 

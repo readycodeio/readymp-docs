@@ -215,4 +215,4 @@ There is a known issue in this version that overwriting data that the client cha
 | Gameplay systems | :white_check_mark: [done](systems) |
 | Server RPC | :white_check_mark: [done](custom-rpc) |
 | Higher-level entity API | :soon: planned, see the note in [Archetypes and components](archetypes) |
-| Server mod manifests | :soon: not used in 0.3.0 |
+| Server mod manifests | :soon: not used in 0.3.1 |

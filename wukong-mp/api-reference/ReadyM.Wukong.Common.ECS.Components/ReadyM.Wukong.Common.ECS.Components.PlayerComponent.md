@@ -29,12 +29,12 @@ Globally persisted player nickname.
 **NicknameComponent** attached to an area-scoped player character entity is recreated from this value on area change.
 
 ```csharp
-public string Nickname { get; set; }
+public NativeString256 Nickname { get; set; }
 ```
 
 #### Property Value
 
- [string](https://learn.microsoft.com/dotnet/api/system.string)
+ [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_PlayerComponent_TeamId"></a> TeamId
 

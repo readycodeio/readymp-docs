@@ -59,8 +59,8 @@ DOTNET_ROOT=/opt/dotnet ./server
 
 | 平台      | 架构  | 下载                                                                                                              |
 | ------- | --- | --------------------------------------------------------------------------------------------------------------- |
-| Linux   | x64 | [Linux 版下载](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.3.0.zip) |
-| Windows | x64 | [Windows 版下载](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.3.0.zip) |
+| Linux   | x64 | [Linux 版下载](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.3.1.zip) |
+| Windows | x64 | [Windows 版下载](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.3.1.zip) |
 
 ### 安装
 
@@ -160,13 +160,13 @@ server/
 从注册表拉取镜像：
 
 ```shell
-docker pull ghcr.io/readycodeio/wukongmp-server:0.3.0
+docker pull ghcr.io/readycodeio/wukongmp-server:0.3.1
 ```
 
 从镜像中复制配置文件：
 
 ```shell
-docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.3.0
+docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.3.1
 docker cp wukongmp-tmp:/app/config.json ./config.json
 docker rm wukongmp-tmp
 ```
@@ -185,7 +185,7 @@ docker run \
     -v ./saves:/app/saves \
     -v ./config.json:/app/config.json \
     --name wukongmp-server \
-    ghcr.io/readycodeio/wukongmp-server:0.3.0
+    ghcr.io/readycodeio/wukongmp-server:0.3.1
 ```
 
 </TabItem>
@@ -194,7 +194,7 @@ docker run \
 ```yaml title="docker-compose.yml"
 services:
   server:
-    image: ghcr.io/readycodeio/wukongmp-server:0.3.0
+    image: ghcr.io/readycodeio/wukongmp-server:0.3.1
     container_name: wukongmp-server
     restart: unless-stopped
     ports:

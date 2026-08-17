@@ -36,7 +36,7 @@ public void SendToOne(PlayerId player, NetDataWriter data, DeliveryMethod delive
 
 #### Parameters
 
-`player` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/PlayerId.cs)
+`player` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)
 
 `data` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
 

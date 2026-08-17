@@ -22,18 +22,18 @@ Skip this if you are using Docker, the image already includes it. See [Requireme
 <Tabs groupId="os">
 <TabItem value="windows" label="Windows">
 
-[⬇ Download for Windows (x64, v0.3.0)](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.3.0.zip)
+[⬇ Download for Windows (x64, v0.3.0)](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.3.1.zip)
 
 </TabItem>
 <TabItem value="linux" label="Linux">
 
-[⬇ Download for Linux (x64, v0.3.0)](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.3.0.zip)
+[⬇ Download for Linux (x64, v0.3.0)](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.3.1.zip)
 
 </TabItem>
 <TabItem value="docker" label="Docker">
 
 ```shell
-docker pull ghcr.io/readycodeio/wukongmp-server:0.3.0
+docker pull ghcr.io/readycodeio/wukongmp-server:0.3.1
 ```
 
 </TabItem>
@@ -65,7 +65,7 @@ The package already includes the SDK and both game modes, with co-op enabled by 
 Copy the config file from the image:
 
 ```shell
-docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.3.0
+docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.3.1
 docker cp wukongmp-tmp:/app/config.json ./config.json
 docker rm wukongmp-tmp
 ```
@@ -113,7 +113,7 @@ docker run \
     -v ./saves:/app/saves \
     -v ./config.json:/app/config.json \
     --name wukongmp-server \
-    ghcr.io/readycodeio/wukongmp-server:0.3.0
+    ghcr.io/readycodeio/wukongmp-server:0.3.1
 ```
 
 Or with Docker Compose:
@@ -121,7 +121,7 @@ Or with Docker Compose:
 ```yaml title="docker-compose.yml"
 services:
   server:
-    image: ghcr.io/readycodeio/wukongmp-server:0.3.0
+    image: ghcr.io/readycodeio/wukongmp-server:0.3.1
     container_name: wukongmp-server
     restart: unless-stopped
     ports:

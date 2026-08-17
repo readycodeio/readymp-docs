@@ -42,7 +42,7 @@ public ArchetypeId AreaArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_GlobalPlayerArchetype"></a> GlobalPlayerArchetype
 
@@ -57,7 +57,7 @@ public ArchetypeId GlobalPlayerArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_MainCharacterArchetype"></a> MainCharacterArchetype
 
@@ -76,7 +76,7 @@ public ArchetypeId MainCharacterArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_PvpStateArchetype"></a> PvpStateArchetype
 
@@ -91,7 +91,7 @@ public ArchetypeId PvpStateArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_TamerArchetype"></a> TamerArchetype
 
@@ -111,6 +111,6 @@ public ArchetypeId TamerArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 

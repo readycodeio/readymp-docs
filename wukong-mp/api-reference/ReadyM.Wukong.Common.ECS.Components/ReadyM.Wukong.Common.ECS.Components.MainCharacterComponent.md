@@ -194,7 +194,7 @@ public PlayerId PlayerId { get; set; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_RebirthPointId"></a> RebirthPointId
 
@@ -298,7 +298,7 @@ public PlayerId GetIndexedValue()
 
 #### Returns
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 

@@ -115,7 +115,7 @@ protected abstract void Initialize(IDependencyContainer services)
 
 #### Parameters
 
-`services` [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/DI/IDependencyContainer.cs)
+`services` [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_ModBase_LateInit"></a> LateInit\(\)
 

@@ -167,7 +167,7 @@ public static IWukongSaveApi Saves { get; }
 
 #### Property Value
 
- [IWukongSaveApi](https://github.com/readycodeio/wukong\-csharp\-mod/blob/792c639530616be62a1b7d564fb754b09bcbc5b0/WukongMp.Api/IWukongSaveApi.cs)
+ [IWukongSaveApi](https://github.com/readycodeio/wukong\-csharp\-mod/blob/9c1d49d24be968cbb4a6601771b1c359274acb70/WukongMp.Api/IWukongSaveApi.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Services"></a> Services
 
@@ -177,7 +177,7 @@ public static IDependencyContainer Services { get; }
 
 #### Property Value
 
- [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/4a84cd6e2f2a01df3ad669f6632cd6c40d70e910/src/ReadyM.Api/DI/IDependencyContainer.cs)
+ [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Sync"></a> Sync
 
