@@ -1,0 +1,165 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
+
+# 快速开始
+
+在不到5分钟内让 WukongMP 服务器运行起来。
+
+:::info[开始之前]
+
+运行服务器的机器上需要安装 [**.NET 10 运行时**](https://dotnet.microsoft.com/download/dotnet/10.0)。服务器在启动时会启动 CoreCLR 来运行服务器端模组，因此缺少运行时它会立即退出，并报出 `Cannot locate a .NET installation containing host/fxr`。装 `dotnet-runtime-10.0` 包就够了，不需要 SDK。
+
+如果你使用 Docker 就可以跳过这一步，镜像已经包含它了。各平台的具体说明请参见[系统要求](Server/installation)。
+
+:::
+
+## 1. 下载服务器
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+[⬇ Windows
+下载（x64，v0.3.1）](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.3.1.zip)
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+[⬇ Linux
+下载（x64，v0.3.1）](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.3.1.zip)
+
+</TabItem>
+<TabItem value="docker" label="Docker">
+
+```shell
+docker pull ghcr.io/readycodeio/wukongmp-server:0.3.1
+```
+
+</TabItem>
+</Tabs>
+
+## 2. 提取并配置
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+将 `.zip` 解压到你选择的文件夹中。不需要运行任何安装程序。
+
+如要更改端口（默认值：`9050`），打开 `config.json` 并编辑 `Server:Port`。
+
+软件包已经带上了 SDK 和两种游戏模式，其中联机合作模式默认启用。如果要改玩对战模式，请把 `WukongMp.PvP` 从 `optional_mods/` 移动到 `mods/`，然后从 `mods/` 中删除 `WukongMp.Coop`，并从 `server_mods/` 中删除两个 `WukongMp.Coop.*` 文件。两种模式同样是开源的，你也可以自己构建：[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)、[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)。
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+将 `.zip` 解压到你选择的文件夹中。不需要运行任何安装程序。
+
+如要更改端口（默认值：`9050`），打开 `config.json` 并编辑 `Server:Port`。
+
+软件包已经带上了 SDK 和两种游戏模式，其中联机合作模式默认启用。如果要改玩对战模式，请把 `WukongMp.PvP` 从 `optional_mods/` 移动到 `mods/`，然后从 `mods/` 中删除 `WukongMp.Coop`，并从 `server_mods/` 中删除两个 `WukongMp.Coop.*` 文件。两种模式同样是开源的，你也可以自己构建：[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)、[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)。
+
+</TabItem>
+<TabItem value="docker" label="Docker">
+
+从镜像中复制配置文件：
+
+```shell
+docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.3.1
+docker cp wukongmp-tmp:/app/config.json ./config.json
+docker rm wukongmp-tmp
+```
+
+端口配置通过重新映射容器端口来处理 — 请参见第3步。
+
+:::important
+
+镜像 **不带模组**。在启动容器之前，请把 `WukongMp.Sdk` 和其中**一种**游戏模式（`WukongMp.Coop` 或 `WukongMp.PvP`）放进本地 `./mods/` 文件夹。联机合作模式还需要把它的服务器一半放进 `./server_mods/`；对战模式没有服务器端一半。
+
+你可以下载二进制软件包并从其中复制，也可以从源码构建：[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)、[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)。
+
+:::
+
+</TabItem>
+</Tabs>
+
+## 3. 启动服务器
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+双击 `server.exe`，或在终端中运行它：
+
+```shell
+.\server.exe
+```
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+```shell
+chmod +x server && ./server
+```
+
+</TabItem>
+<TabItem value="docker" label="Docker">
+
+```shell
+docker run \
+    -p 9050:9050/udp -p 9050:9050/tcp \
+    -v ./data:/app/data \
+    -v ./mods:/app/mods \
+    -v ./server_mods:/app/server_mods \
+    -v ./saves:/app/saves \
+    -v ./config.json:/app/config.json \
+    --name wukongmp-server \
+    ghcr.io/readycodeio/wukongmp-server:0.3.1
+```
+
+或者使用 Docker Compose：
+
+```yaml title="docker-compose.yml"
+services:
+  server:
+    image: ghcr.io/readycodeio/wukongmp-server:0.3.1
+    container_name: wukongmp-server
+    restart: unless-stopped
+    ports:
+      - "9050:9050/tcp"
+      - "9050:9050/udp"
+    volumes:
+      - ./data:/app/data
+      - ./mods:/app/mods
+      - ./server_mods:/app/server_mods
+      - ./saves:/app/saves
+      - ./config.json:/app/config.json
+```
+
+</TabItem>
+</Tabs>
+
+## 4. 打开管理面板
+
+服务器运行后，请打开浏览器并前往：
+
+```
+http://localhost:9050
+```
+
+在这里你可以管理玩家、配置模组，并实时监控你的服务器。
+
+---
+
+🎉 **你已上线！** 分享你的 IP 和端口 `:9050` 给玩家——他们需要安装 ReadyM Launcher 才能连接。
+
+---
+
+## 后续步骤
+
+|                               |               |
+| ----------------------------- | ------------- |
+| [完整安装指南](Server/installation) | 高级配置和选项       |
+| [后台管理面板](Server/admin-panel)  | 管理用户、封禁和服务器设置 |
+| [模组管理](Server/mod-management) | 安装并配置模组       |
+| [服务器列表](Server/server-list)   | 将您的服务器公开注册    |

@@ -1,0 +1,232 @@
+---
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+# Installation
+
+The WukongMP server is currently distributed in the following formats:
+
+- Binary package
+- [Docker image](#docker)
+
+## Requirements
+
+The server binary itself is self-contained, but [server-side mods](../Server-development/getting-started) run on CoreCLR, which the server starts at launch. That means the [**.NET 10 runtime**](https://dotnet.microsoft.com/download/dotnet/10.0) has to be installed on the machine, even if you do not intend to install any mods of your own. The `dotnet-runtime-10.0` package is enough, you do not need the SDK.
+
+The Docker image already includes it.
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+The [official installer](https://dotnet.microsoft.com/download/dotnet/10.0) puts the runtime where the server expects it, so there is nothing else to do.
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+Install it with your package manager, or with Microsoft's [install script](https://learn.microsoft.com/dotnet/core/install/linux-scripted-manual#scripted-install). The server looks for the runtime in the usual locations, in this order:
+
+1. `/usr/lib/dotnet` (Debian and Ubuntu packages)
+2. `/usr/lib64/dotnet` (Fedora and RHEL)
+3. `/usr/share/dotnet` (Microsoft packages and the install script)
+4. `~/.dotnet`
+
+A directory only counts if it actually contains `host/fxr`, so a leftover from an uninstalled version does not get in the way. If your runtime lives somewhere else, point `DOTNET_ROOT` at it:
+
+```shell
+DOTNET_ROOT=/opt/dotnet ./server
+```
+
+Check where yours is with `dotnet --info | grep 'Base Path'`.
+
+</TabItem>
+</Tabs>
+
+:::note
+
+If the runtime is missing, the server exits at startup with `Cannot locate a .NET installation containing host/fxr` and lists the directories it checked.
+
+:::
+
+## Binary package
+
+### Downloads
+
+| Platform | Architecture | Download |
+| --- | --- | --- |
+| Linux | x64 | [Download for Linux](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.3.1.zip) |
+| Windows | x64 | [Download for Windows](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.3.1.zip) |
+
+### Installation
+
+Extract the binary package to a location of your choice.
+
+After extraction, the directory structure should look like this:
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+```text
+server/
+├── server.exe                 # Main server binary
+├── config.json                # Configuration file
+├── mods/                      # Directory for client-side mods
+|   ├── WukongMp.Sdk/          # SDK mod
+|   └── WukongMp.Coop/         # Co-op mod
+├── optional_mods/             # Move any of these mods to the "mods" folder to enable them
+|   └── WukongMp.PvP/          # PvP mod
+├── server_mods/               # Directory for server-side mods
+|   ├── WukongMp.Sdk.Serverside.dll  # Server-side SDK
+|   └── WukongMp.Coop.Serverside.dll # Co-op mod, server side
+├── saves/                     # Directory for game saves (empty by default)
+├── wwwroot/                   # Admin panel assets
+├── e_sqlite3.dll              # Dependency
+└── aspnetcorev2_inprocess.dll # Dependency
+```
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+```text
+server/
+├── server                     # Main server binary
+├── config.json                # Configuration file
+├── mods/                      # Directory for client-side mods
+|   ├── WukongMp.Sdk/          # SDK mod
+|   └── WukongMp.Coop/         # Co-op mod
+├── optional_mods/             # Move any of these mods to the "mods" folder to enable them
+|   └── WukongMp.PvP/          # PvP mod
+├── server_mods/               # Directory for server-side mods
+|   ├── WukongMp.Sdk.Serverside.dll  # Server-side SDK
+|   └── WukongMp.Coop.Serverside.dll # Co-op mod, server side
+├── saves/                     # Directory for game saves (empty by default)
+├── wwwroot/                   # Admin panel assets
+└── libe_sqlite3.so            # Dependency
+```
+
+</TabItem>
+</Tabs>
+
+The package ships the SDK and both game modes, so there is nothing else to install. **Co-op is enabled out of the box**, both its client half in `mods/` and its server half in `server_mods/`.
+
+The two game modes are mutually exclusive, so switching to PvP means removing co-op:
+
+1. Move `WukongMp.PvP` from `optional_mods/` into `mods/`.
+2. Delete the `WukongMp.Coop` folder from `mods/`.
+3. Delete `WukongMp.Coop.Serverside.dll` and `WukongMp.Coop.Common.dll` from `server_mods/`. Leave the other files there, they belong to the SDK.
+
+PvP has no server-side half of its own, so nothing needs adding to `server_mods/` for it.
+
+Both game modes are also open source, so you can build them yourself instead of using the shipped builds: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod) and [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod). Each repository has a `MakeModFolder.ps1` script that produces an `Output/mods/` folder for the client half and an `Output/server_mods/` folder for the server half, matching the layout above. See [Mod management](mod-management) for how the server loads each.
+
+### Configuration
+
+You can adjust server settings by editing the `config.json` file. In the following table, the `:` notation is used to represent nested settings.
+
+| Setting | Type | Purpose |
+| --- | --- | --- |
+| `Server:Port` | number | The port on which the server listens for incoming connections |
+| `Server:Password` | string | Optional. When set, players must enter this password in the Launcher to join. Leave empty or omit for an open server. |
+| `Telemetry:OptOut` | boolean | Set to `true` to opt out of sending anonymous telemetry to ReadyM. Defaults to `false`. |
+
+:::note
+
+`Server:Password` gates every player, including admins and whitelisted users. Password-protected servers are shown with a lock on the public server list.
+
+:::
+
+### First launch
+
+Start the server by running the `server.exe` binary.
+
+On first launch, the server creates a `data/` directory inside the server folder. 
+This directory contains the `web.db` database file, where persistent data is stored.
+
+Unless changed in `config.json`, the server listens on the following ports:
+
+| Port | Protocol | Purpose |
+| --- | --- | --- |
+| 9050 | UDP | Game traffic (player connections, game state synchronization, etc.) |
+| 9050 | HTTP | [Admin panel](admin-panel) |
+
+## Docker
+
+A Linux-based x64 Docker image is also available for those who prefer containerized deployments. 
+
+Pull the image from the registry:
+
+```shell
+docker pull ghcr.io/readycodeio/wukongmp-server:0.3.1
+```
+
+Copy the config file from the image:
+
+```shell
+docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.3.1
+docker cp wukongmp-tmp:/app/config.json ./config.json
+docker rm wukongmp-tmp
+```
+
+Run:
+
+<Tabs>
+<TabItem value="docker" label="Docker">
+
+```shell
+docker run \
+    -p 9050:9050/udp -p 9050:9050/tcp \
+    -v ./data:/app/data \
+    -v ./mods:/app/mods \
+    -v ./server_mods:/app/server_mods \
+    -v ./saves:/app/saves \
+    -v ./config.json:/app/config.json \
+    --name wukongmp-server \
+    ghcr.io/readycodeio/wukongmp-server:0.3.1
+```
+
+</TabItem>
+<TabItem value="compose" label="Docker Compose">
+
+```yaml title="docker-compose.yml"
+services:
+  server:
+    image: ghcr.io/readycodeio/wukongmp-server:0.3.1
+    container_name: wukongmp-server
+    restart: unless-stopped
+    ports:
+      - "9050:9050/tcp"
+      - "9050:9050/udp"
+    volumes:
+      - ./data:/app/data
+      - ./mods:/app/mods
+      - ./server_mods:/app/server_mods
+      - ./saves:/app/saves
+      - ./config.json:/app/config.json
+```
+
+</TabItem>
+</Tabs>
+
+:::important
+
+The image ships **without mods**. Before starting the container, put `WukongMp.Sdk` and exactly one game mode into your `mods/` volume, and the matching server-side mods into your `server_mods/` volume. Co-op needs both halves; PvP has no server-side half.
+
+You can get them two ways:
+
+* **From the binary package.** Download the ZIP above and copy the folders out of its `mods/`, `optional_mods/` and `server_mods/` directories.
+* **From source.** Both game modes are open source: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod) and [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod). Run each repository's `MakeModFolder.ps1` script with the `Release` argument, then copy the contents of the resulting `Output/mods/` and `Output/server_mods/` folders across.
+
+:::
+
+### Configuration
+
+Configuring the port is done by remapping the container ports in the `docker run` command or Docker Compose file. For example, to use port 9060 instead of 9050, change the ports section to:
+
+```yaml title="docker-compose.yml"
+ports:
+  - "9060:9060/tcp"
+  - "9060:9060/udp"
+```
