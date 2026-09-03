@@ -215,4 +215,3 @@ ecsApi.Query<HpComponent, int>(ref alive, static (ref hp, ref alive) =>
 | 游戏系统 | :white_check_mark: [已完成](systems) |
 | 服务器 RPC | :white_check_mark: [已完成](custom-rpc) |
 | 更高层的实体 API | :soon: 计划中，参见[原型与组件](archetypes)中的说明 |
-| 服务器模组清单 | :soon: 0.3.1 中未使用 |

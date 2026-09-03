@@ -22,19 +22,19 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 <TabItem value="windows" label="Windows">
 
 [⬇ Windows
-下载（x64，v0.3.1）](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.3.1.zip)
+下载（x64，v0.4.0）](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.4.0.zip)
 
 </TabItem>
 <TabItem value="linux" label="Linux">
 
 [⬇ Linux
-下载（x64，v0.3.1）](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.3.1.zip)
+下载（x64，v0.4.0）](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.4.0.zip)
 
 </TabItem>
 <TabItem value="docker" label="Docker">
 
 ```shell
-docker pull ghcr.io/readycodeio/wukongmp-server:0.3.1
+docker pull ghcr.io/readycodeio/wukongmp-server:0.4.0
 ```
 
 </TabItem>
@@ -66,7 +66,7 @@ docker pull ghcr.io/readycodeio/wukongmp-server:0.3.1
 从镜像中复制配置文件：
 
 ```shell
-docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.3.1
+docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.4.0
 docker cp wukongmp-tmp:/app/config.json ./config.json
 docker rm wukongmp-tmp
 ```
@@ -110,11 +110,10 @@ docker run \
     -p 9050:9050/udp -p 9050:9050/tcp \
     -v ./data:/app/data \
     -v ./mods:/app/mods \
-    -v ./server_mods:/app/server_mods \
     -v ./saves:/app/saves \
     -v ./config.json:/app/config.json \
     --name wukongmp-server \
-    ghcr.io/readycodeio/wukongmp-server:0.3.1
+    ghcr.io/readycodeio/wukongmp-server:0.4.0
 ```
 
 或者使用 Docker Compose：
@@ -122,7 +121,7 @@ docker run \
 ```yaml title="docker-compose.yml"
 services:
   server:
-    image: ghcr.io/readycodeio/wukongmp-server:0.3.1
+    image: ghcr.io/readycodeio/wukongmp-server:0.4.0
     container_name: wukongmp-server
     restart: unless-stopped
     ports:
@@ -131,7 +130,6 @@ services:
     volumes:
       - ./data:/app/data
       - ./mods:/app/mods
-      - ./server_mods:/app/server_mods
       - ./saves:/app/saves
       - ./config.json:/app/config.json
 ```

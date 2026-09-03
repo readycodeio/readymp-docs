@@ -32,7 +32,7 @@ sidebar_position: 4
 
 :::warning[访问 API 是临时的]
 
-目前你通过底层的 [`EcsApi`](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.EcsApi) 读写这些组件（原始的 `Query` 调用和 `ref` 组件访问）。这在 `0.3.1` 中是刻意保持简陋的。我们计划提供一套更高层、不那么原始的服务器 API，所以请预期访问实体数据的方式在后续版本中会有变化。
+目前你通过底层的 [`EcsApi`](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.EcsApi) 读写这些组件（原始的 `Query` 调用和 `ref` 组件访问）。这在 `0.4.0` 中是刻意保持简陋的。我们计划提供一套更高层、不那么原始的服务器 API，所以请预期访问实体数据的方式在后续版本中会有变化。
 
 :::
 
