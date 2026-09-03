@@ -4,6 +4,8 @@
 
  [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)
 
+ [ReadyM.Api.Multiplayer.Interop](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Interop.md)
+
  [ReadyM.Api.Multiplayer.Protocol](../ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.md)
 
  [ReadyM.Api.Multiplayer.RPC](../ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.md)

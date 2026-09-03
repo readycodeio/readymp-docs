@@ -24,4 +24,34 @@ public readonly struct ReadyObject : IReadyEntity<ReadyObject>
 
 [ReadyObjectExtensions.SetLocationRotation<ReadyObject\>\(ReadyObject, Vector3, Vector3\)](WukongMp.Sdk.Entities.ReadyObjectExtensions.md\#WukongMp\_Sdk\_Entities\_ReadyObjectExtensions\_SetLocationRotation\_\_1\_\_\_0\_System\_Numerics\_Vector3\_System\_Numerics\_Vector3\_)
 
+## Constructors
+
+### <a id="WukongMp_Sdk_Entities_ReadyObject__ctor_WukongMp_Sdk_Api_IWukongSynchronizationApi_Friflo_Engine_ECS_Entity_"></a> ReadyObject\(IWukongSynchronizationApi, Entity\)
+
+```csharp
+public ReadyObject(IWukongSynchronizationApi api, Entity entity)
+```
+
+#### Parameters
+
+`api` [IWukongSynchronizationApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi.md)
+
+`entity` [Entity](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/Entity.cs)
+
+## Methods
+
+### <a id="WukongMp_Sdk_Entities_ReadyObject_Get__1"></a> Get<T\>\(\)
+
+```csharp
+public ref T Get<T>() where T : struct, IComponent
+```
+
+#### Returns
+
+ T
+
+#### Type Parameters
+
+`T` 
+
 

@@ -74,7 +74,7 @@ public DeriveINetSerializableAttribute(SerializableMode mode = SerializableMode.
 
 #### Parameters
 
-`mode` [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Serialization/SerializableMode.cs)
+`mode` [SerializableMode](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Serialization/SerializableMode.cs)
 
 Determines which members of the struct are serialized. See **SerializableMode** for details.
 
@@ -88,6 +88,6 @@ public readonly SerializableMode Mode
 
 #### Field Value
 
- [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Serialization/SerializableMode.cs)
+ [SerializableMode](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Serialization/SerializableMode.cs)
 
 

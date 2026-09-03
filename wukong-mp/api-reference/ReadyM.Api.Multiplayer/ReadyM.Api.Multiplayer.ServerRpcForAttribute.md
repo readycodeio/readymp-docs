@@ -1,6 +1,6 @@
 # Class ServerRpcForAttribute
 
-Namespace: [ReadyM.Api.Multiplayer](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.md)  
+Namespace: [ReadyM.Api.Multiplayer](../ReadyM.Api.Multiplayer.Interop/ReadyM.Api.Multiplayer.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 Binds an RPC class (server <code>ServerRpcHandlersBase</code>, client <code>ServerRpcClient</code>) to the

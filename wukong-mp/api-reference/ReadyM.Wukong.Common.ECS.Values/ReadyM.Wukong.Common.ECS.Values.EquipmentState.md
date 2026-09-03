@@ -11,7 +11,7 @@ public struct EquipmentState : INetSerializable, IEquatable<EquipmentState>
 
 #### Implements
 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs), 
+INetSerializable, 
 [IEquatable<EquipmentState\>](https://learn.microsoft.com/dotnet/api/system.iequatable-1)
 
 #### Inherited Members
@@ -61,7 +61,7 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
 
 ### <a id="ReadyM_Wukong_Common_ECS_Values_EquipmentState_Equals_ReadyM_Wukong_Common_ECS_Values_EquipmentState_"></a> Equals\(EquipmentState\)
 
@@ -133,7 +133,7 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 ### <a id="ReadyM_Wukong_Common_ECS_Values_EquipmentState_TextDeserialize_System_Text_Json_Utf8JsonReader__System_Text_Json_JsonSerializerOptions_"></a> TextDeserialize\(ref Utf8JsonReader, JsonSerializerOptions\)
 

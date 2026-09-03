@@ -4,6 +4,7 @@
 
  [BuiltinTexts](../WukongMp.Api.Resources/WukongMp.Api.Resources.BuiltinTexts.md)
 
-A strongly-typed resource class, for looking up localized strings, etc.
+Lookup by resource name, for the few places that only learn which string they need at runtime,
+such as a localized chat message whose key arrived over the wire.
 
 

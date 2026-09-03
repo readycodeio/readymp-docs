@@ -3,16 +3,17 @@
 Namespace: [ReadyM.Wukong.Common.ECS.Components](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.md)  
 Assembly: ReadyM.Wukong.Common.dll  
 
-Holds the state of the movie sequences that are currently playing or have finished playing in a given area.
+Holds the state of the movie sequences that have been started in a given area.
 
 ```csharp
-public struct MovieComponent : IComponent, INetSerializable, IDisposable
+public struct MovieComponent : INativeInit, IComponent, INetSerializable, IDisposable
 ```
 
 #### Implements
 
+[INativeInit](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/ECS/Components/INativeInit.cs), 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs), 
+INetSerializable, 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members
@@ -26,16 +27,6 @@ public struct MovieComponent : IComponent, INetSerializable, IDisposable
 
 ## Properties
 
-### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_FinishedSequencesCount"></a> FinishedSequencesCount
-
-```csharp
-public int FinishedSequencesCount { get; }
-```
-
-#### Property Value
-
- [int](https://learn.microsoft.com/dotnet/api/system.int32)
-
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_StartedSequencesCount"></a> StartedSequencesCount
 
 ```csharp
@@ -47,16 +38,6 @@ public int StartedSequencesCount { get; }
  [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ## Methods
-
-### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_AddFinishedSequences_System_Int32__"></a> AddFinishedSequences\(in int\)
-
-```csharp
-public void AddFinishedSequences(in int value)
-```
-
-#### Parameters
-
-`value` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_AddStartedSequences_System_Int32__"></a> AddStartedSequences\(in int\)
 
@@ -78,31 +59,11 @@ public void Assign(in MovieComponent value)
 
 `value` [MovieComponent](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.MovieComponent.md)
 
-### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_ClearFinishedSequences"></a> ClearFinishedSequences\(\)
-
-```csharp
-public void ClearFinishedSequences()
-```
-
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_ClearStartedSequences"></a> ClearStartedSequences\(\)
 
 ```csharp
 public void ClearStartedSequences()
 ```
-
-### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_ContainsFinishedSequences_System_Int32__"></a> ContainsFinishedSequences\(in int\)
-
-```csharp
-public bool ContainsFinishedSequences(in int value)
-```
-
-#### Parameters
-
-`value` [int](https://learn.microsoft.com/dotnet/api/system.int32)
-
-#### Returns
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_ContainsStartedSequences_System_Int32__"></a> ContainsStartedSequences\(in int\)
 
@@ -126,7 +87,7 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_Dispose"></a> Dispose\(\)
 
@@ -134,29 +95,15 @@ public void Deserialize(NetDataReader reader)
 public void Dispose()
 ```
 
-### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_GetFinishedSequences"></a> GetFinishedSequences\(\)
+### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_GetChangeComponent"></a> GetChangeComponent\(\)
 
 ```csharp
-public NativeList<int>.ReadOnly GetFinishedSequences()
+public Type GetChangeComponent()
 ```
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/YooniCSharp/Native/Container/NativeList.cs)
-
-### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_GetFinishedSequences_System_Int32_"></a> GetFinishedSequences\(int\)
-
-```csharp
-public int GetFinishedSequences(int index)
-```
-
-#### Parameters
-
-`index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
-
-#### Returns
-
- [int](https://learn.microsoft.com/dotnet/api/system.int32)
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_GetStartedSequences"></a> GetStartedSequences\(\)
 
@@ -166,7 +113,7 @@ public NativeList<int>.ReadOnly GetStartedSequences()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_GetStartedSequences_System_Int32_"></a> GetStartedSequences\(int\)
 
@@ -182,17 +129,15 @@ public int GetStartedSequences(int index)
 
  [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_InsertFinishedSequences_System_Int32_System_Int32__"></a> InsertFinishedSequences\(int, in int\)
+### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_Init_Yooni_Native_LowLevel_AllocatorKind_"></a> Init\(AllocatorKind\)
 
 ```csharp
-public void InsertFinishedSequences(int index, in int value)
+public void Init(AllocatorKind allocatorKind)
 ```
 
 #### Parameters
 
-`index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
-
-`value` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+`allocatorKind` [AllocatorKind](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/YooniCSharp/Native/LowLevel/AllocatorKind.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_InsertStartedSequences_System_Int32_System_Int32__"></a> InsertStartedSequences\(int, in int\)
 
@@ -205,20 +150,6 @@ public void InsertStartedSequences(int index, in int value)
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 `value` [int](https://learn.microsoft.com/dotnet/api/system.int32)
-
-### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_RemoveAtFinishedSequences_System_Int32_"></a> RemoveAtFinishedSequences\(int\)
-
-```csharp
-public int RemoveAtFinishedSequences(int index)
-```
-
-#### Parameters
-
-`index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
-
-#### Returns
-
- [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_RemoveAtStartedSequences_System_Int32_"></a> RemoveAtStartedSequences\(int\)
 
@@ -242,29 +173,7 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
-
-### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_SetFinishedSequences_Yooni_Native_Container_NativeList_System_Int32___"></a> SetFinishedSequences\(in NativeList<int\>\)
-
-```csharp
-public void SetFinishedSequences(in NativeList<int> value)
-```
-
-#### Parameters
-
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>
-
-### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_SetFinishedSequences_System_Int32_System_Int32__"></a> SetFinishedSequences\(int, in int\)
-
-```csharp
-public void SetFinishedSequences(int index, in int value)
-```
-
-#### Parameters
-
-`index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
-
-`value` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+`writer` NetDataWriter
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_SetStartedSequences_Yooni_Native_Container_NativeList_System_Int32___"></a> SetStartedSequences\(in NativeList<int\>\)
 
@@ -274,7 +183,7 @@ public void SetStartedSequences(in NativeList<int> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/YooniCSharp/Native/Container/NativeList.cs)<[int](https://learn.microsoft.com/dotnet/api/system.int32)\>
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_SetStartedSequences_System_Int32_System_Int32__"></a> SetStartedSequences\(int, in int\)
 
@@ -287,5 +196,15 @@ public void SetStartedSequences(int index, in int value)
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 `value` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MovieComponent_StartedSequencesNotifyChanged_System_Int32_"></a> StartedSequencesNotifyChanged\(int\)
+
+```csharp
+public void StartedSequencesNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 

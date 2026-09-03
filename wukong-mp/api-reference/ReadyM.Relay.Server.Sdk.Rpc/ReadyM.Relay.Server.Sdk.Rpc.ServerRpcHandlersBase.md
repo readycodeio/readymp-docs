@@ -1,6 +1,6 @@
 # Class ServerRpcHandlersBase
 
-Namespace: [ReadyM.Relay.Server.Sdk.Rpc](../ReadyM.Relay.Server.Sdk/ReadyM.Relay.Server.Sdk.Rpc.md)  
+Namespace: [ReadyM.Relay.Server.Sdk.Rpc](../ReadyM.Relay.Server.Sdk.Players/ReadyM.Relay.Server.Sdk.Rpc.md)  
 Assembly: ReadyM.Relay.Server.Sdk.dll  
 
 ```csharp
@@ -14,7 +14,7 @@ public abstract class ServerRpcHandlersBase : IHostedService, IDisposable
 
 #### Implements
 
-[IHostedService](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/DI/IHostedService.cs), 
+[IHostedService](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/DI/IHostedService.cs), 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members
@@ -79,7 +79,7 @@ protected abstract void InitRpc()
 
 ### <a id="ReadyM_Relay_Server_Sdk_Rpc_ServerRpcHandlersBase_OnScopeStart"></a> OnScopeStart\(\)
 
-Called when the DI container is initialized (on game start).
+Called when the DI container is initialized (on game/server start).
 This allows the service to perform any necessary setup at the appropriate time, such as registering event handlers.
 
 ```csharp

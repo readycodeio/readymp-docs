@@ -1,16 +1,19 @@
-# Class EntityBuilderBase
+# Class ArchetypeBuilder
 
 Namespace: [ReadyM.Api.ECS.Worlds](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.md)  
 Assembly: ReadyM.Api.dll  
 
+Builder class for creating archetypes in the ECS (Entity Component System) framework.
+It allows adding components, tags, and custom filters to define the structure of an archetype.
+
 ```csharp
-public abstract class EntityBuilderBase
+public class ArchetypeBuilder
 ```
 
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[EntityBuilderBase](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.EntityBuilderBase.md)
+[ArchetypeBuilder](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.ArchetypeBuilder.md)
 
 #### Inherited Members
 
@@ -24,39 +27,36 @@ public abstract class EntityBuilderBase
 
 ## Constructors
 
-### <a id="ReadyM_Api_ECS_Worlds_EntityBuilderBase__ctor"></a> EntityBuilderBase\(\)
+### <a id="ReadyM_Api_ECS_Worlds_ArchetypeBuilder__ctor"></a> ArchetypeBuilder\(\)
 
 ```csharp
-protected EntityBuilderBase()
+public ArchetypeBuilder()
 ```
 
 ## Methods
 
-### <a id="ReadyM_Api_ECS_Worlds_EntityBuilderBase_Add__1"></a> Add<T\>\(\)
+### <a id="ReadyM_Api_ECS_Worlds_ArchetypeBuilder_Add__1"></a> Add<T\>\(\)
 
-Add a component to the archetype.
+Adds a component of type T to the archetype builder. The component type must be a value type and implement the **IComponent** interface.
 
 ```csharp
-public abstract EntityBuilderBase Add<T>() where T : struct, IComponent
+public ArchetypeBuilder Add<T>() where T : struct, IComponent
 ```
 
 #### Returns
 
- [EntityBuilderBase](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.EntityBuilderBase.md)
+ [ArchetypeBuilder](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.ArchetypeBuilder.md)
 
 #### Type Parameters
 
 `T` 
 
-Type of the component. Must implement **IComponent**.
+### <a id="ReadyM_Api_ECS_Worlds_ArchetypeBuilder_Add__1___0_"></a> Add<T\>\(T\)
 
-### <a id="ReadyM_Api_ECS_Worlds_EntityBuilderBase_Add__1___0__"></a> Add<T\>\(in T\)
-
-Add a component with a default value to the archetype.
+Adds a component of type T with a specific instance to the archetype builder. The component type must be a value type and implement the **IComponent** interface.
 
 ```csharp
-[Obsolete("Default values are ignored on the server-side. Use Add<T>() and set the values manually later.")]
-public abstract EntityBuilderBase Add<T>(in T component) where T : struct, IComponent
+public ArchetypeBuilder Add<T>(T component) where T : struct, IComponent
 ```
 
 #### Parameters
@@ -65,12 +65,10 @@ public abstract EntityBuilderBase Add<T>(in T component) where T : struct, IComp
 
 #### Returns
 
- [EntityBuilderBase](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.EntityBuilderBase.md)
+ [ArchetypeBuilder](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.ArchetypeBuilder.md)
 
 #### Type Parameters
 
 `T` 
-
-Type of the component. Must implement **IComponent**.
 
 

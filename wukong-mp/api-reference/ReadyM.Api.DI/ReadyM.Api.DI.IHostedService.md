@@ -19,7 +19,7 @@ public interface IHostedService : IDisposable
 
 ### <a id="ReadyM_Api_DI_IHostedService_OnScopeStart"></a> OnScopeStart\(\)
 
-Called when the DI container is initialized (on game start).
+Called when the DI container is initialized (on game/server start).
 This allows the service to perform any necessary setup at the appropriate time, such as registering event handlers.
 
 ```csharp

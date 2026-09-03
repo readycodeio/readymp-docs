@@ -11,12 +11,12 @@ public interface IArchetypeRegistry
 
 ## Methods
 
-### <a id="ReadyM_Api_ECS_Worlds_IArchetypeRegistry_ModifyArchetype_ReadyM_Api_Idents_ArchetypeId_System_Action_ReadyM_Api_ECS_Worlds_EntityBuilderBase__"></a> ModifyArchetype\(ArchetypeId, Action<EntityBuilderBase\>\)
+### <a id="ReadyM_Api_ECS_Worlds_IArchetypeRegistry_ModifyArchetype_ReadyM_Api_Idents_ArchetypeId_System_Action_ReadyM_Api_ECS_Worlds_ArchetypeBuilder__"></a> ModifyArchetype\(ArchetypeId, Action<ArchetypeBuilder\>\)
 
 Extends an existing entity archetype with additional components.
 
 ```csharp
-void ModifyArchetype(ArchetypeId archetypeId, Action<EntityBuilderBase> build)
+void ModifyArchetype(ArchetypeId archetypeId, Action<ArchetypeBuilder> callback)
 ```
 
 #### Parameters
@@ -25,23 +25,24 @@ void ModifyArchetype(ArchetypeId archetypeId, Action<EntityBuilderBase> build)
 
 The identifier of the archetype to modify.
 
-`build` [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[EntityBuilderBase](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.EntityBuilderBase.md)\>
+`callback` [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[ArchetypeBuilder](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.ArchetypeBuilder.md)\>
 
-A action for adding components.
+This callback will be invoked immediately to modify the existing registered archetype
+            builder. It is NOT invoked on each call
 
-### <a id="ReadyM_Api_ECS_Worlds_IArchetypeRegistry_RegisterArchetype_System_Action_ReadyM_Api_ECS_Worlds_EntityBuilderBase__"></a> RegisterArchetype\(Action<EntityBuilderBase\>\)
+### <a id="ReadyM_Api_ECS_Worlds_IArchetypeRegistry_RegisterArchetype_ReadyM_Api_ECS_Worlds_ArchetypeBuilder_"></a> RegisterArchetype\(ArchetypeBuilder\)
 
 Registers a new entity archetype with the configured components.
 
 ```csharp
-ArchetypeId RegisterArchetype(Action<EntityBuilderBase> build)
+ArchetypeId RegisterArchetype(ArchetypeBuilder builder)
 ```
 
 #### Parameters
 
-`build` [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[EntityBuilderBase](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.EntityBuilderBase.md)\>
+`builder` [ArchetypeBuilder](../ReadyM.Api.ECS.Worlds/ReadyM.Api.ECS.Worlds.ArchetypeBuilder.md)
 
-An action for adding components.
+The archetype builder with the configured components.
 
 #### Returns
 

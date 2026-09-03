@@ -41,10 +41,9 @@ public static WukongArchetypes Archetypes { get; }
 
 #### Remarks
 
-Safe to use from an **IArchetypeRegistration**,
-unlike the other APIs here: **WukongArchetypes** has no dependencies of
-its own, so reaching it does not pull the ECS world back into the container while
-the world is still being built.
+Ids are positional: they are handed out in the order archetypes are registered, and the client and the relay
+server have to agree. Ids 2 and 3 belong to the cell and world archetypes, which Wukong does not use but still
+registers on both sides so that everything after them lines up. Do not close the gap.
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Chat"></a> Chat
 
@@ -57,18 +56,6 @@ public static IWukongChatApi Chat { get; }
 #### Property Value
 
  [IWukongChatApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongChatApi.md)
-
-### <a id="WukongMp_Sdk_Api_WukongApi_Cheats"></a> Cheats
-
-Provides methods and properties for enabling and managing cheats in the game.
-
-```csharp
-public static IWukongCheatsApi Cheats { get; }
-```
-
-#### Property Value
-
- [IWukongCheatsApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongCheatsApi.md)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Configuration"></a> Configuration
 
@@ -144,18 +131,6 @@ public static IWukongLocalApi Local { get; }
 
  [IWukongLocalApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi.md)
 
-### <a id="WukongMp_Sdk_Api_WukongApi_PvP"></a> PvP
-
-API for PvP mode. Will be removed in the future when custom data sync and server-side scripting are implemented.
-
-```csharp
-public static IWukongPvpApi PvP { get; }
-```
-
-#### Property Value
-
- [IWukongPvpApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongPvpApi.md)
-
 ### <a id="WukongMp_Sdk_Api_WukongApi_Saves"></a> Saves
 
 API for managing world and player saves in Wukong Multiplayer.
@@ -167,7 +142,7 @@ public static IWukongSaveApi Saves { get; }
 
 #### Property Value
 
- [IWukongSaveApi](https://github.com/readycodeio/wukong\-csharp\-mod/blob/9c1d49d24be968cbb4a6601771b1c359274acb70/WukongMp.Api/IWukongSaveApi.cs)
+ [IWukongSaveApi](https://github.com/readycodeio/wukongmp\-sdk/blob/2ec474d750b708ddb8ec4179f17489aea7264a6d/WukongMp.Api/IWukongSaveApi.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Services"></a> Services
 
@@ -177,7 +152,7 @@ public static IDependencyContainer Services { get; }
 
 #### Property Value
 
- [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/DI/IDependencyContainer.cs)
+ [IDependencyContainer](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_Api_WukongApi_Sync"></a> Sync
 

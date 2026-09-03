@@ -17,7 +17,7 @@ public abstract class ModBase : ICSharpModExV2, ICSharpModEx, ICSharpMod
 
 #### Implements
 
-[ICSharpModExV2](https://github.com/readycodeio/embed\-csharp\-loader/blob/72a84f50456aa082e7ead2a681d861586cbde74c/CSharpModBaseV2/ICSharpModExV2.cs), 
+[ICSharpModExV2](https://github.com/readycodeio/wukong\-modloader/blob/b2b98792dadfd659164d151a67e5f73e684cf677/CSharpModBaseV2/ICSharpModExV2.cs), 
 [ICSharpModEx](https://github.com/readycodeio/embed\-csharp\-loader/blob/72a84f50456aa082e7ead2a681d861586cbde74c/CSharpModBase/ICSharpModEx.cs), 
 [ICSharpMod](https://github.com/readycodeio/embed\-csharp\-loader/blob/72a84f50456aa082e7ead2a681d861586cbde74c/CSharpModBase/ICSharpMod.cs)
 
@@ -63,6 +63,18 @@ protected ILogger Logger { get; }
 #### Property Value
 
  [ILogger](https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger)
+
+### <a id="WukongMp_Sdk_ModBase_ModDirectory"></a> ModDirectory
+
+This mod's own folder under <code>Mods</code>, which holds its assemblies, manifest and any config files.
+
+```csharp
+protected string ModDirectory { get; }
+```
+
+#### Property Value
+
+ [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 ### <a id="WukongMp_Sdk_ModBase_Name"></a> Name
 
@@ -115,7 +127,7 @@ protected abstract void Initialize(IDependencyContainer services)
 
 #### Parameters
 
-`services` [IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/DI/IDependencyContainer.cs)
+`services` [IDependencyContainer](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_ModBase_LateInit"></a> LateInit\(\)
 
@@ -124,6 +136,41 @@ Called by the mod loader after all <code>Init</code> calls.
 ```csharp
 public virtual void LateInit()
 ```
+
+### <a id="WukongMp_Sdk_ModBase_RegisterArchetypes_System_Action_ReadyM_Api_ECS_Worlds_IArchetypeRegistry__"></a> RegisterArchetypes\(Action<IArchetypeRegistry\>\)
+
+Register new archetypes or modify existing.
+
+```csharp
+protected void RegisterArchetypes(Action<IArchetypeRegistry> configure)
+```
+
+#### Parameters
+
+`configure` [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[IArchetypeRegistry](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/ECS/Worlds/IArchetypeRegistry.cs)\>
+
+The configuration callback.
+
+### <a id="WukongMp_Sdk_ModBase_RegisterConfig__1_System_String_"></a> RegisterConfig<TConfig\>\(string\)
+
+Reads <code class="paramref">fileName</code> from this mod's folder and registers the result as a singleton.
+
+```csharp
+protected void RegisterConfig<TConfig>(string fileName = "config.json") where TConfig : class, new()
+```
+
+#### Parameters
+
+`fileName` [string](https://learn.microsoft.com/dotnet/api/system.string)
+
+#### Type Parameters
+
+`TConfig` 
+
+#### Remarks
+
+A missing file yields defaults. A file that exists but does not parse, or that carries a key the
+config type does not declare, throws **ModConfigException**.
 
 ### <a id="WukongMp_Sdk_ModBase_Reload_System_Object_"></a> Reload\(object?\)
 
@@ -149,5 +196,17 @@ public void SetLoggerFactory(ILoggerFactory loggerFactory)
 #### Parameters
 
 `loggerFactory` [ILoggerFactory](https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory)
+
+### <a id="WukongMp_Sdk_ModBase_SetModDirectory_System_String_"></a> SetModDirectory\(string\)
+
+Called by the mod loader, before **Init**.
+
+```csharp
+public void SetModDirectory(string directory)
+```
+
+#### Parameters
+
+`directory` [string](https://learn.microsoft.com/dotnet/api/system.string)
 
 

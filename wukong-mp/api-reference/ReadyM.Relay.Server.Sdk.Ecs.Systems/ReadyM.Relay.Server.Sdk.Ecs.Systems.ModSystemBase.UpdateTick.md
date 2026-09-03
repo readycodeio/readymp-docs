@@ -40,24 +40,24 @@ Total time since server start, in seconds.
 
 ## Fields
 
-### <a id="ReadyM_Relay_Server_Sdk_Ecs_Systems_ModSystemBase_UpdateTick_deltaTime"></a> deltaTime
+### <a id="ReadyM_Relay_Server_Sdk_Ecs_Systems_ModSystemBase_UpdateTick_DeltaTime"></a> DeltaTime
 
 The time in seconds since the last tick.
 
 ```csharp
-public readonly float deltaTime
+public readonly float DeltaTime
 ```
 
 #### Field Value
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
 
-### <a id="ReadyM_Relay_Server_Sdk_Ecs_Systems_ModSystemBase_UpdateTick_time"></a> time
+### <a id="ReadyM_Relay_Server_Sdk_Ecs_Systems_ModSystemBase_UpdateTick_Time"></a> Time
 
 The time at the beginning of the current frame since application start.
 
 ```csharp
-public readonly float time
+public readonly float Time
 ```
 
 #### Field Value
