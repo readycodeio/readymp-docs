@@ -1,4 +1,4 @@
-﻿# ReadyM.Api.Multiplayer.RPC
+# ReadyM.Api.Multiplayer.RPC
 
 ### Classes
 
@@ -12,5 +12,7 @@ Each class that defines RPC methods with [RpcEvent] attributes must inherit from
 Base class for all RPC handlers, client and server.
 
  [ServerRpcClient](../ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.ServerRpcClient.md)
+
+Base class for server-defined RPC handlers.
 
 

@@ -1,6 +1,6 @@
-﻿# Struct ReadyMainCharacter.AnimationApi
+# Struct ReadyMainCharacter.AnimationApi
 
-Namespace: [OblivionMp.Sdk.Entities.Player](../OblivionMp.Sdk.Entities.Extensions/OblivionMp.Sdk.Entities.Player.md)  
+Namespace: [OblivionMp.Sdk.Entities.Player](../OblivionMp.Sdk.Entities.Player/OblivionMp.Sdk.Entities.Player.md)  
 Assembly: OblivionMp.Sdk.dll  
 
 ```csharp

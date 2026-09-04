@@ -1,4 +1,4 @@
-﻿# Struct DialogueTopic
+# Struct DialogueTopic
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Values](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
@@ -9,7 +9,7 @@ public struct DialogueTopic : INetSerializable
 
 #### Implements
 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs)
+INetSerializable
 
 #### Inherited Members
 
@@ -30,7 +30,7 @@ public NativeString64 Name
 
 #### Field Value
 
- [NativeString64](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString64.cs)
+ [NativeString64](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString64.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Values_DialogueTopic_QuestId"></a> QuestId
 
@@ -41,6 +41,36 @@ public uint QuestId
 #### Field Value
 
  [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Values_DialogueTopic_SpeakerBaseId"></a> SpeakerBaseId
+
+```csharp
+public uint SpeakerBaseId
+```
+
+#### Field Value
+
+ [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Values_DialogueTopic_StageAtLeast"></a> StageAtLeast
+
+```csharp
+public byte StageAtLeast
+```
+
+#### Field Value
+
+ [byte](https://learn.microsoft.com/dotnet/api/system.byte)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Values_DialogueTopic_StageBelow"></a> StageBelow
+
+```csharp
+public byte StageBelow
+```
+
+#### Field Value
+
+ [byte](https://learn.microsoft.com/dotnet/api/system.byte)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Values_DialogueTopic_TopicId"></a> TopicId
 
@@ -62,7 +92,7 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Values_DialogueTopic_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
@@ -72,6 +102,6 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 

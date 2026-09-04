@@ -1,4 +1,4 @@
-﻿# Enum CharacterEffect
+# Enum CharacterEffect
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Values](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  

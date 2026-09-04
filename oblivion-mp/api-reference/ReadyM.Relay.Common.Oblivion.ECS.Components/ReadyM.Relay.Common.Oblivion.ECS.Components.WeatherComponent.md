@@ -1,4 +1,4 @@
-﻿# Struct WeatherComponent
+# Struct WeatherComponent
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Components](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
@@ -12,7 +12,7 @@ public struct WeatherComponent : IComponent, INetSerializable
 #### Implements
 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs)
+INetSerializable
 
 #### Inherited Members
 
@@ -65,7 +65,17 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_WeatherComponent_GetChangeComponent"></a> GetChangeComponent\(\)
+
+```csharp
+public Type GetChangeComponent()
+```
+
+#### Returns
+
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_WeatherComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
@@ -75,6 +85,26 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_WeatherComponent_TransitionRatioNotifyChanged_System_Int32_"></a> TransitionRatioNotifyChanged\(int\)
+
+```csharp
+public void TransitionRatioNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_WeatherComponent_WeatherFormIdNotifyChanged_System_Int32_"></a> WeatherFormIdNotifyChanged\(int\)
+
+```csharp
+public void WeatherFormIdNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 

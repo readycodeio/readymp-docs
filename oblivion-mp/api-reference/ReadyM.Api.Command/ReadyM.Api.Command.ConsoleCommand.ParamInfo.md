@@ -1,4 +1,4 @@
-﻿# Struct ConsoleCommand.ParamInfo
+# Struct ConsoleCommand.ParamInfo
 
 Namespace: [ReadyM.Api.Command](../ReadyM.Api.Command/ReadyM.Api.Command.md)  
 Assembly: ReadyM.Api.dll  

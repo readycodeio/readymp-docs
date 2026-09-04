@@ -1,4 +1,4 @@
-﻿# Enum CharacterSocialAttribute
+# Enum CharacterSocialAttribute
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Values](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  

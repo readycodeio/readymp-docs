@@ -8,12 +8,13 @@
           "files": [
             "ReadyM.Api.dll",
             "ReadyM.Api.Multiplayer.dll",
+            "ReadyM.Sdk.Common.dll",
             "OblivionMp.Sdk.dll",
             "ReadyM.Relay.Common.Oblivion.dll"
           ]
         },
         {
-          "src": "../../../../oblivion-mod/readym-gameserver/src/OblivionMp.Sdk.Serverside/bin/Debug/net10.0",
+          "src": "../../../../oblivion-mod/OblivionMp.Sdk.Serverside/bin/Debug/net10.0",
           "files": [
             "OblivionMp.Sdk.Serverside.dll",
             "ReadyM.Relay.Server.Sdk.dll"
@@ -26,7 +27,7 @@
       "shouldSkipMarkup": true,
       "disableGitFeatures": true,
       "properties": {
-        "TargetFramework": "netstandard2.0"
+        "TargetFramework": "net10.0"
       },
       "enumSortOrder": "declaringOrder"
     }

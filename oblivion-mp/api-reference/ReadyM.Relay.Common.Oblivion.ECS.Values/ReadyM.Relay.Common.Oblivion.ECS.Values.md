@@ -1,4 +1,4 @@
-﻿# ReadyM.Relay.Common.Oblivion.ECS.Values
+# ReadyM.Relay.Common.Oblivion.ECS.Values
 
 ### Structs
 
@@ -16,11 +16,19 @@ Represents an entry in a player's inventory, including the item form ID, quantit
 
  [MagicEffectEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md)
 
+ [QuestCompassTarget](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.QuestCompassTarget.md)
+
  [QuestEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.QuestEntry.md)
 
  [SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)
 
+ [SpokenTopicEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SpokenTopicEntry.md)
+
+ [WorldFlagEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.WorldFlagEntry.md)
+
 ### Enums
+
+ [AudienceKind](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.AudienceKind.md)
 
  [CharacterAttribute](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterAttribute.md)
 
@@ -40,7 +48,15 @@ Character social attributes.
 
  [ConsumeKind](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.ConsumeKind.md)
 
+ [DifficultyTier](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.DifficultyTier.md)
+
+ [FormType](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.FormType.md)
+
  [MagicEffectRange](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectRange.md)
+
+ [ParentCellKind](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.ParentCellKind.md)
+
+ [QuestPhase](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.QuestPhase.md)
 
  [SpellType](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SpellType.md)
 

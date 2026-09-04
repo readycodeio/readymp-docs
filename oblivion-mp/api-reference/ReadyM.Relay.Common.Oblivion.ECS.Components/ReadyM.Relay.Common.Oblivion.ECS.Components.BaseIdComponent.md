@@ -1,4 +1,4 @@
-﻿# Struct BaseIdComponent
+# Struct BaseIdComponent
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Components](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
@@ -12,7 +12,7 @@ public struct BaseIdComponent : IComponent, INetSerializable
 #### Implements
 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs)
+INetSerializable
 
 #### Inherited Members
 
@@ -59,6 +59,16 @@ public void Assign(in BaseIdComponent value)
 
 `value` [BaseIdComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent.md)
 
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_BaseIdComponent_BaseIdNotifyChanged_System_Int32_"></a> BaseIdNotifyChanged\(int\)
+
+```csharp
+public void BaseIdNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_BaseIdComponent_Deserialize_LiteNetLib_Utils_NetDataReader_"></a> Deserialize\(NetDataReader\)
 
 ```csharp
@@ -67,7 +77,17 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_BaseIdComponent_GetChangeComponent"></a> GetChangeComponent\(\)
+
+```csharp
+public Type GetChangeComponent()
+```
+
+#### Returns
+
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_BaseIdComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
@@ -77,6 +97,6 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 

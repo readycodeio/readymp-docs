@@ -1,7 +1,9 @@
-﻿# Struct ModSystemBase.UpdateTick
+# Struct ModSystemBase.UpdateTick
 
 Namespace: [ReadyM.Relay.Server.Sdk.Ecs.Systems](../ReadyM.Relay.Server.Sdk.Ecs.Systems/ReadyM.Relay.Server.Sdk.Ecs.Systems.md)  
 Assembly: ReadyM.Relay.Server.Sdk.dll  
+
+Holds the time information for the current update tick.
 
 ```csharp
 protected readonly struct ModSystemBase.UpdateTick
@@ -20,6 +22,8 @@ protected readonly struct ModSystemBase.UpdateTick
 
 ### <a id="ReadyM_Relay_Server_Sdk_Ecs_Systems_ModSystemBase_UpdateTick__ctor_System_Single_System_Single_"></a> UpdateTick\(float, float\)
 
+Holds the time information for the current update tick.
+
 ```csharp
 public UpdateTick(float deltaTime, float time)
 ```
@@ -28,28 +32,32 @@ public UpdateTick(float deltaTime, float time)
 
 `deltaTime` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
+Time since last tick, in seconds.
+
 `time` [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+Total time since server start, in seconds.
 
 ## Fields
 
-### <a id="ReadyM_Relay_Server_Sdk_Ecs_Systems_ModSystemBase_UpdateTick_deltaTime"></a> deltaTime
+### <a id="ReadyM_Relay_Server_Sdk_Ecs_Systems_ModSystemBase_UpdateTick_DeltaTime"></a> DeltaTime
 
 The time in seconds since the last tick.
 
 ```csharp
-public readonly float deltaTime
+public readonly float DeltaTime
 ```
 
 #### Field Value
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
 
-### <a id="ReadyM_Relay_Server_Sdk_Ecs_Systems_ModSystemBase_UpdateTick_time"></a> time
+### <a id="ReadyM_Relay_Server_Sdk_Ecs_Systems_ModSystemBase_UpdateTick_Time"></a> Time
 
 The time at the beginning of the current frame since application start.
 
 ```csharp
-public readonly float time
+public readonly float Time
 ```
 
 #### Field Value

@@ -1,4 +1,4 @@
-﻿# Interface ISaveTaggedComponent<TSelf>
+# Interface ISaveTaggedComponent<TSelf>
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Components](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  

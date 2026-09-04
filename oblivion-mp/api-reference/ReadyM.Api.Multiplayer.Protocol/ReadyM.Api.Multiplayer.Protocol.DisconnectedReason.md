@@ -1,6 +1,6 @@
-﻿# Enum DisconnectedReason
+# Enum DisconnectedReason
 
-Namespace: [ReadyM.Api.Multiplayer.Protocol](../ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.md)  
+Namespace: [ReadyM.Api.Multiplayer.Protocol](../ReadyM.Api.Multiplayer.Protocol/ReadyM.Api.Multiplayer.Protocol.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 Denotes a reason for being disconnected from the server.
@@ -62,6 +62,12 @@ Player was kicked from the server by an admin.
 `Banned = 8` 
 
 Player was banned from the server by an admin.
+
+
+
+`ServerBanned = 9` 
+
+The whole server was banned by ReadyM, so it refuses all players.
 
 
 

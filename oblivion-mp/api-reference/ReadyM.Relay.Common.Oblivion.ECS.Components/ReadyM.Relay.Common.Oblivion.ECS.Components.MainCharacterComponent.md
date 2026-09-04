@@ -1,4 +1,4 @@
-﻿# Struct MainCharacterComponent
+# Struct MainCharacterComponent
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Components](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
@@ -13,7 +13,7 @@ public struct MainCharacterComponent : IIndexedComponent<PlayerId>, IComponent, 
 
 [IIndexedComponent<PlayerId\>](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/Index/IIndexedComponent.cs), 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs)
+INetSerializable
 
 #### Inherited Members
 
@@ -34,7 +34,7 @@ public PlayerId PlayerId { get; set; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ## Methods
 
@@ -56,7 +56,17 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_MainCharacterComponent_GetChangeComponent"></a> GetChangeComponent\(\)
+
+```csharp
+public Type GetChangeComponent()
+```
+
+#### Returns
+
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_MainCharacterComponent_GetIndexedValue"></a> GetIndexedValue\(\)
 
@@ -68,7 +78,17 @@ public PlayerId GetIndexedValue()
 
 #### Returns
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Idents/PlayerId.cs)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_MainCharacterComponent_PlayerIdNotifyChanged_System_Int32_"></a> PlayerIdNotifyChanged\(int\)
+
+```csharp
+public void PlayerIdNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_MainCharacterComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
@@ -78,6 +98,6 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 

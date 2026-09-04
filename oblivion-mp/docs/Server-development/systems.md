@@ -1,10 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Gameplay systems
 
-Just like on the client, the server SDK provides **systems** — classes that expose a tick method, run on the server's own update loop. Use these for logic that should run continuously on the server, independent of any single RPC call: passive income, timers, periodic world state checks, and so on.
+Just like on the client, the server SDK provides **systems**: classes that expose a tick method, run on the server's own update loop. Use these for logic that should run continuously on the server, independent of any single RPC call: passive income, timers, periodic world state checks, and so on.
 
 ## Declaring systems
 
@@ -20,7 +20,7 @@ public class MySystem : ModSystemBase
 }
 ```
 
-The `UpdateTick` passed to `OnUpdate` exposes `deltaTime` (seconds since the last tick) and `time` (seconds since server start).
+The `UpdateTick` passed to `OnUpdate` exposes `DeltaTime` (seconds since the last tick) and `Time` (seconds since server start).
 
 :::important
 
@@ -35,7 +35,7 @@ protected override void Init()
 
 :::
 
-You can inject dependencies — such as [EcsApi](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.EcsApi) — through the constructor, same as any other service resolved from the dependency injection container.
+You can inject dependencies, such as [EcsApi](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.EcsApi), through the constructor, same as any other service resolved from the dependency injection container.
 
 ```csharp title="A system with a dependency"
 public class PassiveIncomeSystem(EcsApi ecsApi) : ModSystemBase

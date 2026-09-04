@@ -1,4 +1,4 @@
-﻿# Class SDK.Archetypes
+# Class SDK.Archetypes
 
 Namespace: [OblivionMp.Sdk](../OblivionMp.Sdk/OblivionMp.Sdk.md)  
 Assembly: OblivionMp.Sdk.dll  
@@ -26,15 +26,20 @@ public static class SDK.Archetypes
 
 ### <a id="OblivionMp_Sdk_SDK_Archetypes_DroppedItemArchetype"></a> DroppedItemArchetype
 
+Gets the archetype ID of dropped item entities.
+
 ```csharp
 public static ArchetypeId DroppedItemArchetype { get; }
 ```
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="OblivionMp_Sdk_SDK_Archetypes_GlobalPlayerArchetype"></a> GlobalPlayerArchetype
+
+s
+            Gets the archetype ID of main character entities. Useful for assigning components which need to be persistent across different areas.
 
 ```csharp
 public static ArchetypeId GlobalPlayerArchetype { get; }
@@ -42,9 +47,11 @@ public static ArchetypeId GlobalPlayerArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="OblivionMp_Sdk_SDK_Archetypes_MainCharacterArchetype"></a> MainCharacterArchetype
+
+Gets the archetype ID of main character entities.
 
 ```csharp
 public static ArchetypeId MainCharacterArchetype { get; }
@@ -52,6 +59,6 @@ public static ArchetypeId MainCharacterArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 

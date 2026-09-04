@@ -1,7 +1,9 @@
-﻿# Struct CustomPotion
+# Struct CustomPotion
 
 Namespace: [OblivionMp.Sdk](../OblivionMp.Sdk/OblivionMp.Sdk.md)  
 Assembly: OblivionMp.Sdk.dll  
+
+Properties of a custom potion item.
 
 ```csharp
 public readonly struct CustomPotion

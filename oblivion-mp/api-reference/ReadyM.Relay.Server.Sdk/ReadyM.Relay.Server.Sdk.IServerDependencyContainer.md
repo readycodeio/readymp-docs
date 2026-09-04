@@ -1,7 +1,10 @@
-﻿# Interface IServerDependencyContainer
+# Interface IServerDependencyContainer
 
 Namespace: [ReadyM.Relay.Server.Sdk](../ReadyM.Relay.Server.Sdk/ReadyM.Relay.Server.Sdk.md)  
 Assembly: ReadyM.Relay.Server.Sdk.dll  
+
+Represents a dependency injection container for server-side mods.
+Allows registering systems, apart from standard DI services.
 
 ```csharp
 public interface IServerDependencyContainer : IDependencyContainer
@@ -9,7 +12,7 @@ public interface IServerDependencyContainer : IDependencyContainer
 
 #### Implements
 
-[IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/DI/IDependencyContainer.cs)
+[IDependencyContainer](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ## Methods
 

@@ -1,4 +1,4 @@
-﻿# Class Items.Keys
+# Class Items.Keys
 
 Namespace: [ReadyM.Relay.Common.Oblivion.Data](../ReadyM.Relay.Common.Oblivion.Data/ReadyM.Relay.Common.Oblivion.Data.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  

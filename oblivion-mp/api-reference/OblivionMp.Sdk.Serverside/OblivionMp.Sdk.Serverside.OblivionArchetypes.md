@@ -1,6 +1,6 @@
-﻿# Class OblivionArchetypes
+# Class OblivionArchetypes
 
-Namespace: [OblivionMp.Sdk.Serverside](../OblivionMp.Sdk/OblivionMp.Sdk.Serverside.md)  
+Namespace: [OblivionMp.Sdk.Serverside](../OblivionMp.Sdk.Serverside/OblivionMp.Sdk.Serverside.md)  
 Assembly: OblivionMp.Sdk.Serverside.dll  
 
 ```csharp
@@ -40,7 +40,17 @@ public ArchetypeId DroppedItemArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Idents/ArchetypeId.cs)
+
+### <a id="OblivionMp_Sdk_Serverside_OblivionArchetypes_FurnitureArchetype"></a> FurnitureArchetype
+
+```csharp
+public ArchetypeId FurnitureArchetype { get; }
+```
+
+#### Property Value
+
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="OblivionMp_Sdk_Serverside_OblivionArchetypes_GlobalPlayerArchetype"></a> GlobalPlayerArchetype
 
@@ -50,7 +60,7 @@ public ArchetypeId GlobalPlayerArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="OblivionMp_Sdk_Serverside_OblivionArchetypes_MainCharacterArchetype"></a> MainCharacterArchetype
 
@@ -60,6 +70,6 @@ public ArchetypeId MainCharacterArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 

@@ -1,4 +1,4 @@
-﻿# Struct AppearanceComponent
+# Struct AppearanceComponent
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Components](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
@@ -6,14 +6,15 @@ Assembly: ReadyM.Relay.Common.Oblivion.dll
 Holds the player character's appearance settings.
 
 ```csharp
-public struct AppearanceComponent : ISaveTaggedComponent<AppearanceComponent>, IComponent, INetSerializable, IDisposable
+public struct AppearanceComponent : ISaveTaggedComponent<AppearanceComponent>, INativeInit, IComponent, INetSerializable, IDisposable
 ```
 
 #### Implements
 
 [ISaveTaggedComponent<AppearanceComponent\>](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.ISaveTaggedComponent-1.md), 
+[INativeInit](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/ECS/Components/INativeInit.cs), 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs), 
+INetSerializable, 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members
@@ -25,20 +26,6 @@ public struct AppearanceComponent : ISaveTaggedComponent<AppearanceComponent>, I
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
 
-## Constructors
-
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent__ctor_Yooni_Native_LowLevel_AllocatorKind_"></a> AppearanceComponent\(AllocatorKind\)
-
-Holds the player character's appearance settings.
-
-```csharp
-public AppearanceComponent(AllocatorKind allocatorKind)
-```
-
-#### Parameters
-
-`allocatorKind` [AllocatorKind](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/LowLevel/AllocatorKind.cs)
-
 ## Properties
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_BeardPath"></a> BeardPath
@@ -49,7 +36,7 @@ public NativeString256 BeardPath { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_BoneScalingCount"></a> BoneScalingCount
 
@@ -119,7 +106,7 @@ public NativeString256 EyeMaterialPath { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_EyebrowsPath"></a> EyebrowsPath
 
@@ -129,7 +116,7 @@ public NativeString256 EyebrowsPath { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_FaceBaseMeshPath"></a> FaceBaseMeshPath
 
@@ -139,7 +126,7 @@ public NativeString256 FaceBaseMeshPath { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_FaceMatOverrideCount"></a> FaceMatOverrideCount
 
@@ -169,7 +156,7 @@ public NativeString256 FaceMorphsSourcePath { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_HairColorCount"></a> HairColorCount
 
@@ -189,7 +176,7 @@ public NativeString256 HairPath { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_MustachePath"></a> MustachePath
 
@@ -199,7 +186,7 @@ public NativeString256 MustachePath { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_RacePath"></a> RacePath
 
@@ -209,7 +196,7 @@ public NativeString256 RacePath { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SenescenceLevel"></a> SenescenceLevel
 
@@ -259,7 +246,7 @@ public NativeString256 SkinParameterDefinitionsPath { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ## Methods
 
@@ -271,7 +258,7 @@ public bool AddBoneScaling(in NativeString256 key, in float value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -287,9 +274,9 @@ public bool AddFaceMatOverride(in NativeString256 key, in NativeString256 value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -303,7 +290,7 @@ public bool AddFaceMorph(in NativeString256 key, in float value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -335,7 +322,7 @@ public bool AddSkinColor(in NativeString256 key, in Vector4 value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4)
 
@@ -351,7 +338,7 @@ public bool AddSkinParam(in NativeString256 key, in float value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -369,15 +356,37 @@ public void Assign(in AppearanceComponent value)
 
 `value` [AppearanceComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.md)
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_BoneScaling_SetFromApi_Yooni_Native_Container_NativeDictionary_Yooni_Native_Container_NativeString256_System_Single_Yooni_Native_Container_NativeStringHash256__"></a> BoneScaling\_SetFromApi\(NativeDictionary<NativeString256, float, NativeStringHash256\>\)
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_BeardPathNotifyChanged_System_Int32_"></a> BeardPathNotifyChanged\(int\)
 
 ```csharp
-public void BoneScaling_SetFromApi(NativeDictionary<NativeString256, float, NativeStringHash256> value)
+public void BeardPathNotifyChanged(int id)
 ```
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_BoneScalingNotifyChanged_System_Int32_"></a> BoneScalingNotifyChanged\(int\)
+
+```csharp
+public void BoneScalingNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_BoneScaling_SetFromApi_Yooni_Native_Container_NativeDictionary_Yooni_Native_Container_NativeString256_System_Single_Yooni_Native_Container_NativeStringHash256__System_Int32_"></a> BoneScaling\_SetFromApi\(NativeDictionary<NativeString256, float, NativeStringHash256\>, int\)
+
+```csharp
+public void BoneScaling_SetFromApi(NativeDictionary<NativeString256, float, NativeStringHash256> value, int id)
+```
+
+#### Parameters
+
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_ClearBoneScaling"></a> ClearBoneScaling\(\)
 
@@ -423,7 +432,7 @@ public bool ContainsBoneScaling(in NativeString256 key, in float value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -439,7 +448,7 @@ public bool ContainsBoneScalingKey(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -453,9 +462,9 @@ public bool ContainsFaceMatOverride(in NativeString256 key, in NativeString256 v
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -469,7 +478,7 @@ public bool ContainsFaceMatOverrideKey(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -483,7 +492,7 @@ public bool ContainsFaceMorph(in NativeString256 key, in float value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -499,7 +508,7 @@ public bool ContainsFaceMorphKey(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -543,7 +552,7 @@ public bool ContainsSkinColor(in NativeString256 key, in Vector4 value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4)
 
@@ -559,7 +568,7 @@ public bool ContainsSkinColorKey(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -573,7 +582,7 @@ public bool ContainsSkinParam(in NativeString256 key, in float value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -589,11 +598,61 @@ public bool ContainsSkinParamKey(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_CustomisationBeardIndexNotifyChanged_System_Int32_"></a> CustomisationBeardIndexNotifyChanged\(int\)
+
+```csharp
+public void CustomisationBeardIndexNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_CustomisationEyeMaterialIndexNotifyChanged_System_Int32_"></a> CustomisationEyeMaterialIndexNotifyChanged\(int\)
+
+```csharp
+public void CustomisationEyeMaterialIndexNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_CustomisationEyebrowsIndexNotifyChanged_System_Int32_"></a> CustomisationEyebrowsIndexNotifyChanged\(int\)
+
+```csharp
+public void CustomisationEyebrowsIndexNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_CustomisationHairIndexNotifyChanged_System_Int32_"></a> CustomisationHairIndexNotifyChanged\(int\)
+
+```csharp
+public void CustomisationHairIndexNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_CustomisationMustacheIndexNotifyChanged_System_Int32_"></a> CustomisationMustacheIndexNotifyChanged\(int\)
+
+```csharp
+public void CustomisationMustacheIndexNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_Deserialize_LiteNetLib_Utils_NetDataReader_"></a> Deserialize\(NetDataReader\)
 
@@ -603,7 +662,7 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_Dispose"></a> Dispose\(\)
 
@@ -611,25 +670,89 @@ public void Deserialize(NetDataReader reader)
 public void Dispose()
 ```
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_FaceMatOverride_SetFromApi_Yooni_Native_Container_NativeDictionary_Yooni_Native_Container_NativeString256_Yooni_Native_Container_NativeString256_Yooni_Native_Container_NativeStringHash256__"></a> FaceMatOverride\_SetFromApi\(NativeDictionary<NativeString256, NativeString256, NativeStringHash256\>\)
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_EyeMaterialPathNotifyChanged_System_Int32_"></a> EyeMaterialPathNotifyChanged\(int\)
 
 ```csharp
-public void FaceMatOverride_SetFromApi(NativeDictionary<NativeString256, NativeString256, NativeStringHash256> value)
+public void EyeMaterialPathNotifyChanged(int id)
 ```
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_FaceMorph_SetFromApi_Yooni_Native_Container_NativeDictionary_Yooni_Native_Container_NativeString256_System_Single_Yooni_Native_Container_NativeStringHash256__"></a> FaceMorph\_SetFromApi\(NativeDictionary<NativeString256, float, NativeStringHash256\>\)
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_EyebrowsPathNotifyChanged_System_Int32_"></a> EyebrowsPathNotifyChanged\(int\)
 
 ```csharp
-public void FaceMorph_SetFromApi(NativeDictionary<NativeString256, float, NativeStringHash256> value)
+public void EyebrowsPathNotifyChanged(int id)
 ```
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_FaceBaseMeshPathNotifyChanged_System_Int32_"></a> FaceBaseMeshPathNotifyChanged\(int\)
+
+```csharp
+public void FaceBaseMeshPathNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_FaceMatOverrideNotifyChanged_System_Int32_"></a> FaceMatOverrideNotifyChanged\(int\)
+
+```csharp
+public void FaceMatOverrideNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_FaceMatOverride_SetFromApi_Yooni_Native_Container_NativeDictionary_Yooni_Native_Container_NativeString256_Yooni_Native_Container_NativeString256_Yooni_Native_Container_NativeStringHash256__System_Int32_"></a> FaceMatOverride\_SetFromApi\(NativeDictionary<NativeString256, NativeString256, NativeStringHash256\>, int\)
+
+```csharp
+public void FaceMatOverride_SetFromApi(NativeDictionary<NativeString256, NativeString256, NativeStringHash256> value, int id)
+```
+
+#### Parameters
+
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_FaceMorphNotifyChanged_System_Int32_"></a> FaceMorphNotifyChanged\(int\)
+
+```csharp
+public void FaceMorphNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_FaceMorph_SetFromApi_Yooni_Native_Container_NativeDictionary_Yooni_Native_Container_NativeString256_System_Single_Yooni_Native_Container_NativeStringHash256__System_Int32_"></a> FaceMorph\_SetFromApi\(NativeDictionary<NativeString256, float, NativeStringHash256\>, int\)
+
+```csharp
+public void FaceMorph_SetFromApi(NativeDictionary<NativeString256, float, NativeStringHash256> value, int id)
+```
+
+#### Parameters
+
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_FaceMorphsSourcePathNotifyChanged_System_Int32_"></a> FaceMorphsSourcePathNotifyChanged\(int\)
+
+```csharp
+public void FaceMorphsSourcePathNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_GetBoneScaling"></a> GetBoneScaling\(\)
 
@@ -639,7 +762,7 @@ public NativeDictionary<NativeString256, float, NativeStringHash256>.ReadOnly Ge
 
 #### Returns
 
- [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)
+ [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_GetBoneScaling_Yooni_Native_Container_NativeString256__"></a> GetBoneScaling\(in NativeString256\)
 
@@ -649,11 +772,21 @@ public float GetBoneScaling(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_GetChangeComponent"></a> GetChangeComponent\(\)
+
+```csharp
+public Type GetChangeComponent()
+```
+
+#### Returns
+
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_GetFaceMatOverride"></a> GetFaceMatOverride\(\)
 
@@ -663,7 +796,7 @@ public NativeDictionary<NativeString256, NativeString256, NativeStringHash256>.R
 
 #### Returns
 
- [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)
+ [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_GetFaceMatOverride_Yooni_Native_Container_NativeString256__"></a> GetFaceMatOverride\(in NativeString256\)
 
@@ -673,11 +806,11 @@ public NativeString256 GetFaceMatOverride(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_GetFaceMorph"></a> GetFaceMorph\(\)
 
@@ -687,7 +820,7 @@ public NativeDictionary<NativeString256, float, NativeStringHash256>.ReadOnly Ge
 
 #### Returns
 
- [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)
+ [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_GetFaceMorph_Yooni_Native_Container_NativeString256__"></a> GetFaceMorph\(in NativeString256\)
 
@@ -697,7 +830,7 @@ public float GetFaceMorph(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -711,7 +844,7 @@ public NativeDictionary<byte, Vector4, ByteHash>.ReadOnly GetHairColor()
 
 #### Returns
 
- [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4), [ByteHash](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/ByteHash.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)
+ [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4), [ByteHash](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/ByteHash.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_GetHairColor_System_Byte__"></a> GetHairColor\(in byte\)
 
@@ -735,7 +868,7 @@ public NativeDictionary<NativeString256, Vector4, NativeStringHash256>.ReadOnly 
 
 #### Returns
 
- [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)
+ [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_GetSkinColor_Yooni_Native_Container_NativeString256__"></a> GetSkinColor\(in NativeString256\)
 
@@ -745,7 +878,7 @@ public Vector4 GetSkinColor(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -759,7 +892,7 @@ public NativeDictionary<NativeString256, float, NativeStringHash256>.ReadOnly Ge
 
 #### Returns
 
- [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)
+ [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_GetSkinParam_Yooni_Native_Container_NativeString256__"></a> GetSkinParam\(in NativeString256\)
 
@@ -769,21 +902,73 @@ public float GetSkinParam(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_HairColor_SetFromApi_Yooni_Native_Container_NativeDictionary_System_Byte_System_Numerics_Vector4_Yooni_Native_Container_ByteHash__"></a> HairColor\_SetFromApi\(NativeDictionary<byte, Vector4, ByteHash\>\)
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_HairColorNotifyChanged_System_Int32_"></a> HairColorNotifyChanged\(int\)
 
 ```csharp
-public void HairColor_SetFromApi(NativeDictionary<byte, Vector4, ByteHash> value)
+public void HairColorNotifyChanged(int id)
 ```
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4), [ByteHash](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/ByteHash.cs)\>
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_HairColor_SetFromApi_Yooni_Native_Container_NativeDictionary_System_Byte_System_Numerics_Vector4_Yooni_Native_Container_ByteHash__System_Int32_"></a> HairColor\_SetFromApi\(NativeDictionary<byte, Vector4, ByteHash\>, int\)
+
+```csharp
+public void HairColor_SetFromApi(NativeDictionary<byte, Vector4, ByteHash> value, int id)
+```
+
+#### Parameters
+
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4), [ByteHash](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/ByteHash.cs)\>
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_HairPathNotifyChanged_System_Int32_"></a> HairPathNotifyChanged\(int\)
+
+```csharp
+public void HairPathNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_Init_Yooni_Native_LowLevel_AllocatorKind_"></a> Init\(AllocatorKind\)
+
+```csharp
+public void Init(AllocatorKind allocatorKind)
+```
+
+#### Parameters
+
+`allocatorKind` [AllocatorKind](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/LowLevel/AllocatorKind.cs)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_MustachePathNotifyChanged_System_Int32_"></a> MustachePathNotifyChanged\(int\)
+
+```csharp
+public void MustachePathNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_RacePathNotifyChanged_System_Int32_"></a> RacePathNotifyChanged\(int\)
+
+```csharp
+public void RacePathNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_RemoveBoneScaling_Yooni_Native_Container_NativeString256__"></a> RemoveBoneScaling\(in NativeString256\)
 
@@ -793,7 +978,7 @@ public bool RemoveBoneScaling(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -807,7 +992,7 @@ public bool RemoveFaceMatOverride(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -821,7 +1006,7 @@ public bool RemoveFaceMorph(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -849,7 +1034,7 @@ public bool RemoveSkinColor(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -863,11 +1048,21 @@ public bool RemoveSkinParam(in NativeString256 key)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SenescenceLevelNotifyChanged_System_Int32_"></a> SenescenceLevelNotifyChanged\(int\)
+
+```csharp
+public void SenescenceLevelNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
@@ -877,7 +1072,7 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SetBoneScaling_Yooni_Native_Container_NativeDictionary_Yooni_Native_Container_NativeString256_System_Single_Yooni_Native_Container_NativeStringHash256___"></a> SetBoneScaling\(in NativeDictionary<NativeString256, float, NativeStringHash256\>\)
 
@@ -887,7 +1082,7 @@ public void SetBoneScaling(in NativeDictionary<NativeString256, float, NativeStr
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SetBoneScaling_Yooni_Native_Container_NativeString256__System_Single__"></a> SetBoneScaling\(in NativeString256, in float\)
 
@@ -897,7 +1092,7 @@ public void SetBoneScaling(in NativeString256 key, in float value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -909,7 +1104,7 @@ public void SetFaceMatOverride(in NativeDictionary<NativeString256, NativeString
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SetFaceMatOverride_Yooni_Native_Container_NativeString256__Yooni_Native_Container_NativeString256__"></a> SetFaceMatOverride\(in NativeString256, in NativeString256\)
 
@@ -919,9 +1114,9 @@ public void SetFaceMatOverride(in NativeString256 key, in NativeString256 value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SetFaceMorph_Yooni_Native_Container_NativeDictionary_Yooni_Native_Container_NativeString256_System_Single_Yooni_Native_Container_NativeStringHash256___"></a> SetFaceMorph\(in NativeDictionary<NativeString256, float, NativeStringHash256\>\)
 
@@ -931,7 +1126,7 @@ public void SetFaceMorph(in NativeDictionary<NativeString256, float, NativeStrin
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SetFaceMorph_Yooni_Native_Container_NativeString256__System_Single__"></a> SetFaceMorph\(in NativeString256, in float\)
 
@@ -941,7 +1136,7 @@ public void SetFaceMorph(in NativeString256 key, in float value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -953,7 +1148,7 @@ public void SetHairColor(in NativeDictionary<byte, Vector4, ByteHash> value)
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4), [ByteHash](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/ByteHash.cs)\>
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4), [ByteHash](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/ByteHash.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SetHairColor_System_Byte__System_Numerics_Vector4__"></a> SetHairColor\(in byte, in Vector4\)
 
@@ -975,7 +1170,7 @@ public void SetSkinColor(in NativeDictionary<NativeString256, Vector4, NativeStr
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SetSkinColor_Yooni_Native_Container_NativeString256__System_Numerics_Vector4__"></a> SetSkinColor\(in NativeString256, in Vector4\)
 
@@ -985,7 +1180,7 @@ public void SetSkinColor(in NativeString256 key, in Vector4 value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4)
 
@@ -997,7 +1192,7 @@ public void SetSkinParam(in NativeDictionary<NativeString256, float, NativeStrin
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SetSkinParam_Yooni_Native_Container_NativeString256__System_Single__"></a> SetSkinParam\(in NativeString256, in float\)
 
@@ -1007,29 +1202,73 @@ public void SetSkinParam(in NativeString256 key, in float value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SkinColor_SetFromApi_Yooni_Native_Container_NativeDictionary_Yooni_Native_Container_NativeString256_System_Numerics_Vector4_Yooni_Native_Container_NativeStringHash256__"></a> SkinColor\_SetFromApi\(NativeDictionary<NativeString256, Vector4, NativeStringHash256\>\)
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SexNotifyChanged_System_Int32_"></a> SexNotifyChanged\(int\)
 
 ```csharp
-public void SkinColor_SetFromApi(NativeDictionary<NativeString256, Vector4, NativeStringHash256> value)
+public void SexNotifyChanged(int id)
 ```
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SkinParam_SetFromApi_Yooni_Native_Container_NativeDictionary_Yooni_Native_Container_NativeString256_System_Single_Yooni_Native_Container_NativeStringHash256__"></a> SkinParam\_SetFromApi\(NativeDictionary<NativeString256, float, NativeStringHash256\>\)
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SkinColorNotifyChanged_System_Int32_"></a> SkinColorNotifyChanged\(int\)
 
 ```csharp
-public void SkinParam_SetFromApi(NativeDictionary<NativeString256, float, NativeStringHash256> value)
+public void SkinColorNotifyChanged(int id)
 ```
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SkinColor_SetFromApi_Yooni_Native_Container_NativeDictionary_Yooni_Native_Container_NativeString256_System_Numerics_Vector4_Yooni_Native_Container_NativeStringHash256__System_Int32_"></a> SkinColor\_SetFromApi\(NativeDictionary<NativeString256, Vector4, NativeStringHash256\>, int\)
+
+```csharp
+public void SkinColor_SetFromApi(NativeDictionary<NativeString256, Vector4, NativeStringHash256> value, int id)
+```
+
+#### Parameters
+
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SkinParamNotifyChanged_System_Int32_"></a> SkinParamNotifyChanged\(int\)
+
+```csharp
+public void SkinParamNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SkinParam_SetFromApi_Yooni_Native_Container_NativeDictionary_Yooni_Native_Container_NativeString256_System_Single_Yooni_Native_Container_NativeStringHash256__System_Int32_"></a> SkinParam\_SetFromApi\(NativeDictionary<NativeString256, float, NativeStringHash256\>, int\)
+
+```csharp
+public void SkinParam_SetFromApi(NativeDictionary<NativeString256, float, NativeStringHash256> value, int id)
+```
+
+#### Parameters
+
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs), [float](https://learn.microsoft.com/dotnet/api/system.single), [NativeStringHash256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeStringHash256.cs)\>
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_SkinParameterDefinitionsPathNotifyChanged_System_Int32_"></a> SkinParameterDefinitionsPathNotifyChanged\(int\)
+
+```csharp
+public void SkinParameterDefinitionsPathNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AppearanceComponent_TryGetBoneScalingValue_Yooni_Native_Container_NativeString256__System_Single__"></a> TryGetBoneScalingValue\(in NativeString256, out float\)
 
@@ -1039,7 +1278,7 @@ public bool TryGetBoneScalingValue(in NativeString256 key, out float value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -1055,9 +1294,9 @@ public bool TryGetFaceMatOverrideValue(in NativeString256 key, out NativeString2
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -1071,7 +1310,7 @@ public bool TryGetFaceMorphValue(in NativeString256 key, out float value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
@@ -1103,7 +1342,7 @@ public bool TryGetSkinColorValue(in NativeString256 key, out Vector4 value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [Vector4](https://learn.microsoft.com/dotnet/api/system.numerics.vector4)
 
@@ -1119,7 +1358,7 @@ public bool TryGetSkinParamValue(in NativeString256 key, out float value)
 
 #### Parameters
 
-`key` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`key` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 

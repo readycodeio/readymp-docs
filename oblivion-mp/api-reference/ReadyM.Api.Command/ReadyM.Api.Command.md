@@ -1,4 +1,4 @@
-﻿# ReadyM.Api.Command
+# ReadyM.Api.Command
 
 ### Structs
 

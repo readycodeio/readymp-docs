@@ -1,4 +1,4 @@
-﻿# ReadyM.Api.Saves
+# ReadyM.Api.Saves
 
 ### Structs
 

@@ -1,4 +1,4 @@
-﻿# Struct DynamicFormsComponent
+# Struct DynamicFormsComponent
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Components](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
@@ -6,14 +6,15 @@ Assembly: ReadyM.Relay.Common.Oblivion.dll
 Holds the player's dynamic forms, including spells and alchemy effects.
 
 ```csharp
-public struct DynamicFormsComponent : ISaveTaggedComponent<DynamicFormsComponent>, IComponent, INetSerializable, IDisposable
+public struct DynamicFormsComponent : ISaveTaggedComponent<DynamicFormsComponent>, INativeInit, IComponent, INetSerializable, IDisposable
 ```
 
 #### Implements
 
 [ISaveTaggedComponent<DynamicFormsComponent\>](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.ISaveTaggedComponent-1.md), 
+[INativeInit](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/ECS/Components/INativeInit.cs), 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs), 
+INetSerializable, 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members
@@ -24,20 +25,6 @@ public struct DynamicFormsComponent : ISaveTaggedComponent<DynamicFormsComponent
 [object.Equals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\-system\-object\)), 
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
-
-## Constructors
-
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent__ctor_Yooni_Native_LowLevel_AllocatorKind_"></a> DynamicFormsComponent\(AllocatorKind\)
-
-Holds the player's dynamic forms, including spells and alchemy effects.
-
-```csharp
-public DynamicFormsComponent(AllocatorKind allocatorKind)
-```
-
-#### Parameters
-
-`allocatorKind` [AllocatorKind](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/LowLevel/AllocatorKind.cs)
 
 ## Properties
 
@@ -122,6 +109,26 @@ public void AddSpells(in DynamicSpellEntry value)
 #### Parameters
 
 `value` [DynamicSpellEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.DynamicSpellEntry.md)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_AlchemyEffectsNotifyChanged_System_Int32_"></a> AlchemyEffectsNotifyChanged\(int\)
+
+```csharp
+public void AlchemyEffectsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_AlchemyNotifyChanged_System_Int32_"></a> AlchemyNotifyChanged\(int\)
+
+```csharp
+public void AlchemyNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_Assign_ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent__"></a> Assign\(in DynamicFormsComponent\)
 
@@ -221,7 +228,7 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_Dispose"></a> Dispose\(\)
 
@@ -237,7 +244,7 @@ public NativeList<AlchemyEntry>.ReadOnly GetAlchemy()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[AlchemyEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.AlchemyEntry.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[AlchemyEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.AlchemyEntry.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_GetAlchemy_System_Int32_"></a> GetAlchemy\(int\)
 
@@ -261,7 +268,7 @@ public NativeList<MagicEffectEntry>.ReadOnly GetAlchemyEffects()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[MagicEffectEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[MagicEffectEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_GetAlchemyEffects_System_Int32_"></a> GetAlchemyEffects\(int\)
 
@@ -277,6 +284,16 @@ public MagicEffectEntry GetAlchemyEffects(int index)
 
  [MagicEffectEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md)
 
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_GetChangeComponent"></a> GetChangeComponent\(\)
+
+```csharp
+public Type GetChangeComponent()
+```
+
+#### Returns
+
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
+
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_GetSpellEffects"></a> GetSpellEffects\(\)
 
 ```csharp
@@ -285,7 +302,7 @@ public NativeList<MagicEffectEntry>.ReadOnly GetSpellEffects()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[MagicEffectEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[MagicEffectEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_GetSpellEffects_System_Int32_"></a> GetSpellEffects\(int\)
 
@@ -309,7 +326,7 @@ public NativeList<DynamicSpellEntry>.ReadOnly GetSpells()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[DynamicSpellEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.DynamicSpellEntry.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[DynamicSpellEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.DynamicSpellEntry.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_GetSpells_System_Int32_"></a> GetSpells\(int\)
 
@@ -324,6 +341,16 @@ public DynamicSpellEntry GetSpells(int index)
 #### Returns
 
  [DynamicSpellEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.DynamicSpellEntry.md)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_Init_Yooni_Native_LowLevel_AllocatorKind_"></a> Init\(AllocatorKind\)
+
+```csharp
+public void Init(AllocatorKind allocatorKind)
+```
+
+#### Parameters
+
+`allocatorKind` [AllocatorKind](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/LowLevel/AllocatorKind.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_InsertAlchemy_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_AlchemyEntry__"></a> InsertAlchemy\(int, in AlchemyEntry\)
 
@@ -437,7 +464,7 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_SetAlchemy_Yooni_Native_Container_NativeList_ReadyM_Relay_Common_Oblivion_ECS_Values_AlchemyEntry___"></a> SetAlchemy\(in NativeList<AlchemyEntry\>\)
 
@@ -447,7 +474,7 @@ public void SetAlchemy(in NativeList<AlchemyEntry> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[AlchemyEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.AlchemyEntry.md)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[AlchemyEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.AlchemyEntry.md)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_SetAlchemy_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_AlchemyEntry__"></a> SetAlchemy\(int, in AlchemyEntry\)
 
@@ -469,7 +496,7 @@ public void SetAlchemyEffects(in NativeList<MagicEffectEntry> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[MagicEffectEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[MagicEffectEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_SetAlchemyEffects_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_MagicEffectEntry__"></a> SetAlchemyEffects\(int, in MagicEffectEntry\)
 
@@ -491,7 +518,7 @@ public void SetSpellEffects(in NativeList<MagicEffectEntry> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[MagicEffectEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[MagicEffectEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_SetSpellEffects_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_MagicEffectEntry__"></a> SetSpellEffects\(int, in MagicEffectEntry\)
 
@@ -513,7 +540,7 @@ public void SetSpells(in NativeList<DynamicSpellEntry> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[DynamicSpellEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.DynamicSpellEntry.md)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[DynamicSpellEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.DynamicSpellEntry.md)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_SetSpells_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_DynamicSpellEntry__"></a> SetSpells\(int, in DynamicSpellEntry\)
 
@@ -526,5 +553,25 @@ public void SetSpells(int index, in DynamicSpellEntry value)
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 `value` [DynamicSpellEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.DynamicSpellEntry.md)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_SpellEffectsNotifyChanged_System_Int32_"></a> SpellEffectsNotifyChanged\(int\)
+
+```csharp
+public void SpellEffectsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_DynamicFormsComponent_SpellsNotifyChanged_System_Int32_"></a> SpellsNotifyChanged\(int\)
+
+```csharp
+public void SpellsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 

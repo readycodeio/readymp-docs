@@ -1,4 +1,4 @@
-﻿# Struct AnimationStateComponent
+# Struct AnimationStateComponent
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Components](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
@@ -6,13 +6,14 @@ Assembly: ReadyM.Relay.Common.Oblivion.dll
 Holds the player character's animation state.
 
 ```csharp
-public struct AnimationStateComponent : IComponent, INetSerializable, IDisposable
+public struct AnimationStateComponent : INativeInit, IComponent, INetSerializable, IDisposable
 ```
 
 #### Implements
 
+[INativeInit](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/ECS/Components/INativeInit.cs), 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs), 
+INetSerializable, 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members
@@ -23,20 +24,6 @@ public struct AnimationStateComponent : IComponent, INetSerializable, IDisposabl
 [object.Equals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\-system\-object\)), 
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
-
-## Constructors
-
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent__ctor_Yooni_Native_LowLevel_AllocatorKind_"></a> AnimationStateComponent\(AllocatorKind\)
-
-Holds the player character's animation state.
-
-```csharp
-public AnimationStateComponent(AllocatorKind allocatorKind)
-```
-
-#### Parameters
-
-`allocatorKind` [AllocatorKind](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/LowLevel/AllocatorKind.cs)
 
 ## Properties
 
@@ -98,7 +85,7 @@ public NativeString256 BlockAnimLayerClassName { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_BlockingTagsCount"></a> BlockingTagsCount
 
@@ -218,7 +205,7 @@ public NativeString256 CurrentGait { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_DodgeAnimLayerClassName"></a> DodgeAnimLayerClassName
 
@@ -228,7 +215,7 @@ public NativeString256 DodgeAnimLayerClassName { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_DodgingRequest"></a> DodgingRequest
 
@@ -278,7 +265,7 @@ public NativeString256 GetUpAnimLayerClassName { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_HasMeleeWeapon"></a> HasMeleeWeapon
 
@@ -298,7 +285,7 @@ public NativeString256 InAirAnimLayerClassName { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InCombatStance"></a> InCombatStance
 
@@ -378,7 +365,7 @@ public NativeString256 MeleeSequenceName { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_MontageName"></a> MontageName
 
@@ -388,7 +375,7 @@ public NativeString256 MontageName { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_MontagePosition"></a> MontagePosition
 
@@ -478,7 +465,7 @@ public NativeString256 RecoilAnimLayerClassName { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RecoilingRequest"></a> RecoilingRequest
 
@@ -498,7 +485,7 @@ public NativeString256 ShieldHandPoseAnimLayerClassName { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SpellCastAnimLayerClassName"></a> SpellCastAnimLayerClassName
 
@@ -508,7 +495,7 @@ public NativeString256 SpellCastAnimLayerClassName { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_StaggerAnimLayerClassName"></a> StaggerAnimLayerClassName
 
@@ -518,7 +505,7 @@ public NativeString256 StaggerAnimLayerClassName { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_TorchAnimLayerClassName"></a> TorchAnimLayerClassName
 
@@ -528,7 +515,7 @@ public NativeString256 TorchAnimLayerClassName { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_UseControllerDesiredRotation"></a> UseControllerDesiredRotation
 
@@ -600,7 +587,7 @@ public void AddAnimTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AddAttackingTags_Yooni_Native_Container_NativeString256__"></a> AddAttackingTags\(in NativeString256\)
 
@@ -610,7 +597,7 @@ public void AddAttackingTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AddBlockingTags_Yooni_Native_Container_NativeString256__"></a> AddBlockingTags\(in NativeString256\)
 
@@ -620,7 +607,7 @@ public void AddBlockingTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AddCastingRequestSamples_ReadyM_Relay_Common_Oblivion_ECS_Values_SequencedSample__"></a> AddCastingRequestSamples\(in SequencedSample\)
 
@@ -640,7 +627,7 @@ public void AddEquipUnequipTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AddGameplayTags_Yooni_Native_Container_NativeString256__"></a> AddGameplayTags\(in NativeString256\)
 
@@ -650,7 +637,7 @@ public void AddGameplayTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AddLastAnimTags_Yooni_Native_Container_NativeString256__"></a> AddLastAnimTags\(in NativeString256\)
 
@@ -660,7 +647,7 @@ public void AddLastAnimTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AddMeleeMontageSamples_ReadyM_Relay_Common_Oblivion_ECS_Values_SequencedSample__"></a> AddMeleeMontageSamples\(in SequencedSample\)
 
@@ -680,7 +667,7 @@ public void AddParentAnimTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AddParentAttackingTags_Yooni_Native_Container_NativeString256__"></a> AddParentAttackingTags\(in NativeString256\)
 
@@ -690,7 +677,7 @@ public void AddParentAttackingTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AddParentBlockingTags_Yooni_Native_Container_NativeString256__"></a> AddParentBlockingTags\(in NativeString256\)
 
@@ -700,7 +687,7 @@ public void AddParentBlockingTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AddParentEquipUnequipTags_Yooni_Native_Container_NativeString256__"></a> AddParentEquipUnequipTags\(in NativeString256\)
 
@@ -710,7 +697,7 @@ public void AddParentEquipUnequipTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AddParentGameplayTags_Yooni_Native_Container_NativeString256__"></a> AddParentGameplayTags\(in NativeString256\)
 
@@ -720,7 +707,7 @@ public void AddParentGameplayTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AddParentLastAnimTags_Yooni_Native_Container_NativeString256__"></a> AddParentLastAnimTags\(in NativeString256\)
 
@@ -730,7 +717,37 @@ public void AddParentLastAnimTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AnimActionSamplesNotifyChanged_System_Int32_"></a> AnimActionSamplesNotifyChanged\(int\)
+
+```csharp
+public void AnimActionSamplesNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AnimIsStaggeredNotifyChanged_System_Int32_"></a> AnimIsStaggeredNotifyChanged\(int\)
+
+```csharp
+public void AnimIsStaggeredNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AnimTagsNotifyChanged_System_Int32_"></a> AnimTagsNotifyChanged\(int\)
+
+```csharp
+public void AnimTagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_Assign_ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent__"></a> Assign\(in AnimationStateComponent\)
 
@@ -741,6 +758,116 @@ public void Assign(in AnimationStateComponent value)
 #### Parameters
 
 `value` [AnimationStateComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.md)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AttackingRequestNotifyChanged_System_Int32_"></a> AttackingRequestNotifyChanged\(int\)
+
+```csharp
+public void AttackingRequestNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_AttackingTagsNotifyChanged_System_Int32_"></a> AttackingTagsNotifyChanged\(int\)
+
+```csharp
+public void AttackingTagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_BlockAnimLayerClassNameNotifyChanged_System_Int32_"></a> BlockAnimLayerClassNameNotifyChanged\(int\)
+
+```csharp
+public void BlockAnimLayerClassNameNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_BlockingTagsNotifyChanged_System_Int32_"></a> BlockingTagsNotifyChanged\(int\)
+
+```csharp
+public void BlockingTagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_CanExitAttackNotifyChanged_System_Int32_"></a> CanExitAttackNotifyChanged\(int\)
+
+```csharp
+public void CanExitAttackNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_CanExitBlockNotifyChanged_System_Int32_"></a> CanExitBlockNotifyChanged\(int\)
+
+```csharp
+public void CanExitBlockNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_CanFootLockNotifyChanged_System_Int32_"></a> CanFootLockNotifyChanged\(int\)
+
+```csharp
+public void CanFootLockNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_CanUseOrientationWarpingNotifyChanged_System_Int32_"></a> CanUseOrientationWarpingNotifyChanged\(int\)
+
+```csharp
+public void CanUseOrientationWarpingNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_CastingRequestNotifyChanged_System_Int32_"></a> CastingRequestNotifyChanged\(int\)
+
+```csharp
+public void CastingRequestNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_CastingRequestSamplesNotifyChanged_System_Int32_"></a> CastingRequestSamplesNotifyChanged\(int\)
+
+```csharp
+public void CastingRequestSamplesNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_CharacterStateFlagsNotifyChanged_System_Int32_"></a> CharacterStateFlagsNotifyChanged\(int\)
+
+```csharp
+public void CharacterStateFlagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_ClearAnimActionSamples"></a> ClearAnimActionSamples\(\)
 
@@ -832,6 +959,26 @@ public void ClearParentGameplayTags()
 public void ClearParentLastAnimTags()
 ```
 
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_ComboHitIndexNotifyChanged_System_Int32_"></a> ComboHitIndexNotifyChanged\(int\)
+
+```csharp
+public void ComboHitIndexNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_CompWeaponDrawnNotifyChanged_System_Int32_"></a> CompWeaponDrawnNotifyChanged\(int\)
+
+```csharp
+public void CompWeaponDrawnNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_ContainsAnimActionSamples_ReadyM_Relay_Common_Oblivion_ECS_Values_SequencedSample__"></a> ContainsAnimActionSamples\(in SequencedSample\)
 
 ```csharp
@@ -854,7 +1001,7 @@ public bool ContainsAnimTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -868,7 +1015,7 @@ public bool ContainsAttackingTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -882,7 +1029,7 @@ public bool ContainsBlockingTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -910,7 +1057,7 @@ public bool ContainsEquipUnequipTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -924,7 +1071,7 @@ public bool ContainsGameplayTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -938,7 +1085,7 @@ public bool ContainsLastAnimTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -966,7 +1113,7 @@ public bool ContainsParentAnimTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -980,7 +1127,7 @@ public bool ContainsParentAttackingTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -994,7 +1141,7 @@ public bool ContainsParentBlockingTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -1008,7 +1155,7 @@ public bool ContainsParentEquipUnequipTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -1022,7 +1169,7 @@ public bool ContainsParentGameplayTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
@@ -1036,11 +1183,31 @@ public bool ContainsParentLastAnimTags(in NativeString256 value)
 
 #### Parameters
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 #### Returns
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_CurrentAnimActionNotifyChanged_System_Int32_"></a> CurrentAnimActionNotifyChanged\(int\)
+
+```csharp
+public void CurrentAnimActionNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_CurrentGaitNotifyChanged_System_Int32_"></a> CurrentGaitNotifyChanged\(int\)
+
+```csharp
+public void CurrentGaitNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_Deserialize_LiteNetLib_Utils_NetDataReader_"></a> Deserialize\(NetDataReader\)
 
@@ -1050,13 +1217,63 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_Dispose"></a> Dispose\(\)
 
 ```csharp
 public void Dispose()
 ```
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_DodgeAnimLayerClassNameNotifyChanged_System_Int32_"></a> DodgeAnimLayerClassNameNotifyChanged\(int\)
+
+```csharp
+public void DodgeAnimLayerClassNameNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_DodgingRequestNotifyChanged_System_Int32_"></a> DodgingRequestNotifyChanged\(int\)
+
+```csharp
+public void DodgingRequestNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_EquipUnequipTagsNotifyChanged_System_Int32_"></a> EquipUnequipTagsNotifyChanged\(int\)
+
+```csharp
+public void EquipUnequipTagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_ForceExitEquipNotifyChanged_System_Int32_"></a> ForceExitEquipNotifyChanged\(int\)
+
+```csharp
+public void ForceExitEquipNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GameplayTagsNotifyChanged_System_Int32_"></a> GameplayTagsNotifyChanged\(int\)
+
+```csharp
+public void GameplayTagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetAnimActionSamples"></a> GetAnimActionSamples\(\)
 
@@ -1066,7 +1283,7 @@ public NativeList<SequencedSample>.ReadOnly GetAnimActionSamples()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetAnimActionSamples_System_Int32_"></a> GetAnimActionSamples\(int\)
 
@@ -1090,7 +1307,7 @@ public NativeList<NativeString256>.ReadOnly GetAnimTags()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetAnimTags_System_Int32_"></a> GetAnimTags\(int\)
 
@@ -1104,7 +1321,7 @@ public NativeString256 GetAnimTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetAttackingTags"></a> GetAttackingTags\(\)
 
@@ -1114,7 +1331,7 @@ public NativeList<NativeString256>.ReadOnly GetAttackingTags()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetAttackingTags_System_Int32_"></a> GetAttackingTags\(int\)
 
@@ -1128,7 +1345,7 @@ public NativeString256 GetAttackingTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetBlockingTags"></a> GetBlockingTags\(\)
 
@@ -1138,7 +1355,7 @@ public NativeList<NativeString256>.ReadOnly GetBlockingTags()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetBlockingTags_System_Int32_"></a> GetBlockingTags\(int\)
 
@@ -1152,7 +1369,7 @@ public NativeString256 GetBlockingTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetCastingRequestSamples"></a> GetCastingRequestSamples\(\)
 
@@ -1162,7 +1379,7 @@ public NativeList<SequencedSample>.ReadOnly GetCastingRequestSamples()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetCastingRequestSamples_System_Int32_"></a> GetCastingRequestSamples\(int\)
 
@@ -1178,6 +1395,16 @@ public SequencedSample GetCastingRequestSamples(int index)
 
  [SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)
 
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetChangeComponent"></a> GetChangeComponent\(\)
+
+```csharp
+public Type GetChangeComponent()
+```
+
+#### Returns
+
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
+
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetEquipUnequipTags"></a> GetEquipUnequipTags\(\)
 
 ```csharp
@@ -1186,7 +1413,7 @@ public NativeList<NativeString256>.ReadOnly GetEquipUnequipTags()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetEquipUnequipTags_System_Int32_"></a> GetEquipUnequipTags\(int\)
 
@@ -1200,7 +1427,7 @@ public NativeString256 GetEquipUnequipTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetGameplayTags"></a> GetGameplayTags\(\)
 
@@ -1210,7 +1437,7 @@ public NativeList<NativeString256>.ReadOnly GetGameplayTags()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetGameplayTags_System_Int32_"></a> GetGameplayTags\(int\)
 
@@ -1224,7 +1451,7 @@ public NativeString256 GetGameplayTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetLastAnimTags"></a> GetLastAnimTags\(\)
 
@@ -1234,7 +1461,7 @@ public NativeList<NativeString256>.ReadOnly GetLastAnimTags()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetLastAnimTags_System_Int32_"></a> GetLastAnimTags\(int\)
 
@@ -1248,7 +1475,7 @@ public NativeString256 GetLastAnimTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetMeleeMontageSamples"></a> GetMeleeMontageSamples\(\)
 
@@ -1258,7 +1485,7 @@ public NativeList<SequencedSample>.ReadOnly GetMeleeMontageSamples()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetMeleeMontageSamples_System_Int32_"></a> GetMeleeMontageSamples\(int\)
 
@@ -1282,7 +1509,7 @@ public NativeList<NativeString256>.ReadOnly GetParentAnimTags()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetParentAnimTags_System_Int32_"></a> GetParentAnimTags\(int\)
 
@@ -1296,7 +1523,7 @@ public NativeString256 GetParentAnimTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetParentAttackingTags"></a> GetParentAttackingTags\(\)
 
@@ -1306,7 +1533,7 @@ public NativeList<NativeString256>.ReadOnly GetParentAttackingTags()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetParentAttackingTags_System_Int32_"></a> GetParentAttackingTags\(int\)
 
@@ -1320,7 +1547,7 @@ public NativeString256 GetParentAttackingTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetParentBlockingTags"></a> GetParentBlockingTags\(\)
 
@@ -1330,7 +1557,7 @@ public NativeList<NativeString256>.ReadOnly GetParentBlockingTags()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetParentBlockingTags_System_Int32_"></a> GetParentBlockingTags\(int\)
 
@@ -1344,7 +1571,7 @@ public NativeString256 GetParentBlockingTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetParentEquipUnequipTags"></a> GetParentEquipUnequipTags\(\)
 
@@ -1354,7 +1581,7 @@ public NativeList<NativeString256>.ReadOnly GetParentEquipUnequipTags()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetParentEquipUnequipTags_System_Int32_"></a> GetParentEquipUnequipTags\(int\)
 
@@ -1368,7 +1595,7 @@ public NativeString256 GetParentEquipUnequipTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetParentGameplayTags"></a> GetParentGameplayTags\(\)
 
@@ -1378,7 +1605,7 @@ public NativeList<NativeString256>.ReadOnly GetParentGameplayTags()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetParentGameplayTags_System_Int32_"></a> GetParentGameplayTags\(int\)
 
@@ -1392,7 +1619,7 @@ public NativeString256 GetParentGameplayTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetParentLastAnimTags"></a> GetParentLastAnimTags\(\)
 
@@ -1402,7 +1629,7 @@ public NativeList<NativeString256>.ReadOnly GetParentLastAnimTags()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetParentLastAnimTags_System_Int32_"></a> GetParentLastAnimTags\(int\)
 
@@ -1416,7 +1643,57 @@ public NativeString256 GetParentLastAnimTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_GetUpAnimLayerClassNameNotifyChanged_System_Int32_"></a> GetUpAnimLayerClassNameNotifyChanged\(int\)
+
+```csharp
+public void GetUpAnimLayerClassNameNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_HasMeleeWeaponNotifyChanged_System_Int32_"></a> HasMeleeWeaponNotifyChanged\(int\)
+
+```csharp
+public void HasMeleeWeaponNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InAirAnimLayerClassNameNotifyChanged_System_Int32_"></a> InAirAnimLayerClassNameNotifyChanged\(int\)
+
+```csharp
+public void InAirAnimLayerClassNameNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InCombatStanceNotifyChanged_System_Int32_"></a> InCombatStanceNotifyChanged\(int\)
+
+```csharp
+public void InCombatStanceNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_Init_Yooni_Native_LowLevel_AllocatorKind_"></a> Init\(AllocatorKind\)
+
+```csharp
+public void Init(AllocatorKind allocatorKind)
+```
+
+#### Parameters
+
+`allocatorKind` [AllocatorKind](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/LowLevel/AllocatorKind.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InsertAnimActionSamples_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_SequencedSample__"></a> InsertAnimActionSamples\(int, in SequencedSample\)
 
@@ -1440,7 +1717,7 @@ public void InsertAnimTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InsertAttackingTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> InsertAttackingTags\(int, in NativeString256\)
 
@@ -1452,7 +1729,7 @@ public void InsertAttackingTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InsertBlockingTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> InsertBlockingTags\(int, in NativeString256\)
 
@@ -1464,7 +1741,7 @@ public void InsertBlockingTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InsertCastingRequestSamples_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_SequencedSample__"></a> InsertCastingRequestSamples\(int, in SequencedSample\)
 
@@ -1488,7 +1765,7 @@ public void InsertEquipUnequipTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InsertGameplayTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> InsertGameplayTags\(int, in NativeString256\)
 
@@ -1500,7 +1777,7 @@ public void InsertGameplayTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InsertLastAnimTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> InsertLastAnimTags\(int, in NativeString256\)
 
@@ -1512,7 +1789,7 @@ public void InsertLastAnimTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InsertMeleeMontageSamples_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_SequencedSample__"></a> InsertMeleeMontageSamples\(int, in SequencedSample\)
 
@@ -1536,7 +1813,7 @@ public void InsertParentAnimTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InsertParentAttackingTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> InsertParentAttackingTags\(int, in NativeString256\)
 
@@ -1548,7 +1825,7 @@ public void InsertParentAttackingTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InsertParentBlockingTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> InsertParentBlockingTags\(int, in NativeString256\)
 
@@ -1560,7 +1837,7 @@ public void InsertParentBlockingTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InsertParentEquipUnequipTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> InsertParentEquipUnequipTags\(int, in NativeString256\)
 
@@ -1572,7 +1849,7 @@ public void InsertParentEquipUnequipTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InsertParentGameplayTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> InsertParentGameplayTags\(int, in NativeString256\)
 
@@ -1584,7 +1861,7 @@ public void InsertParentGameplayTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_InsertParentLastAnimTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> InsertParentLastAnimTags\(int, in NativeString256\)
 
@@ -1596,7 +1873,187 @@ public void InsertParentLastAnimTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_IsMovingNotifyChanged_System_Int32_"></a> IsMovingNotifyChanged\(int\)
+
+```csharp
+public void IsMovingNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_IsStartCompletedNotifyChanged_System_Int32_"></a> IsStartCompletedNotifyChanged\(int\)
+
+```csharp
+public void IsStartCompletedNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_IsUsingFullBodyNotifyChanged_System_Int32_"></a> IsUsingFullBodyNotifyChanged\(int\)
+
+```csharp
+public void IsUsingFullBodyNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_LastAnimTagsNotifyChanged_System_Int32_"></a> LastAnimTagsNotifyChanged\(int\)
+
+```csharp
+public void LastAnimTagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_MeleeMontageSamplesNotifyChanged_System_Int32_"></a> MeleeMontageSamplesNotifyChanged\(int\)
+
+```csharp
+public void MeleeMontageSamplesNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_MeleePlayRateNotifyChanged_System_Int32_"></a> MeleePlayRateNotifyChanged\(int\)
+
+```csharp
+public void MeleePlayRateNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_MeleeSequenceNameNotifyChanged_System_Int32_"></a> MeleeSequenceNameNotifyChanged\(int\)
+
+```csharp
+public void MeleeSequenceNameNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_MontageNameNotifyChanged_System_Int32_"></a> MontageNameNotifyChanged\(int\)
+
+```csharp
+public void MontageNameNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_MontagePositionNotifyChanged_System_Int32_"></a> MontagePositionNotifyChanged\(int\)
+
+```csharp
+public void MontagePositionNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_OrientRotationToMovementNotifyChanged_System_Int32_"></a> OrientRotationToMovementNotifyChanged\(int\)
+
+```csharp
+public void OrientRotationToMovementNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_ParentAnimTagsNotifyChanged_System_Int32_"></a> ParentAnimTagsNotifyChanged\(int\)
+
+```csharp
+public void ParentAnimTagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_ParentAttackingTagsNotifyChanged_System_Int32_"></a> ParentAttackingTagsNotifyChanged\(int\)
+
+```csharp
+public void ParentAttackingTagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_ParentBlockingTagsNotifyChanged_System_Int32_"></a> ParentBlockingTagsNotifyChanged\(int\)
+
+```csharp
+public void ParentBlockingTagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_ParentEquipUnequipTagsNotifyChanged_System_Int32_"></a> ParentEquipUnequipTagsNotifyChanged\(int\)
+
+```csharp
+public void ParentEquipUnequipTagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_ParentGameplayTagsNotifyChanged_System_Int32_"></a> ParentGameplayTagsNotifyChanged\(int\)
+
+```csharp
+public void ParentGameplayTagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_ParentLastAnimTagsNotifyChanged_System_Int32_"></a> ParentLastAnimTagsNotifyChanged\(int\)
+
+```csharp
+public void ParentLastAnimTagsNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RecoilAnimLayerClassNameNotifyChanged_System_Int32_"></a> RecoilAnimLayerClassNameNotifyChanged\(int\)
+
+```csharp
+public void RecoilAnimLayerClassNameNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RecoilingRequestNotifyChanged_System_Int32_"></a> RecoilingRequestNotifyChanged\(int\)
+
+```csharp
+public void RecoilingRequestNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RemoveAtAnimActionSamples_System_Int32_"></a> RemoveAtAnimActionSamples\(int\)
 
@@ -1624,7 +2081,7 @@ public NativeString256 RemoveAtAnimTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RemoveAtAttackingTags_System_Int32_"></a> RemoveAtAttackingTags\(int\)
 
@@ -1638,7 +2095,7 @@ public NativeString256 RemoveAtAttackingTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RemoveAtBlockingTags_System_Int32_"></a> RemoveAtBlockingTags\(int\)
 
@@ -1652,7 +2109,7 @@ public NativeString256 RemoveAtBlockingTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RemoveAtCastingRequestSamples_System_Int32_"></a> RemoveAtCastingRequestSamples\(int\)
 
@@ -1680,7 +2137,7 @@ public NativeString256 RemoveAtEquipUnequipTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RemoveAtGameplayTags_System_Int32_"></a> RemoveAtGameplayTags\(int\)
 
@@ -1694,7 +2151,7 @@ public NativeString256 RemoveAtGameplayTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RemoveAtLastAnimTags_System_Int32_"></a> RemoveAtLastAnimTags\(int\)
 
@@ -1708,7 +2165,7 @@ public NativeString256 RemoveAtLastAnimTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RemoveAtMeleeMontageSamples_System_Int32_"></a> RemoveAtMeleeMontageSamples\(int\)
 
@@ -1736,7 +2193,7 @@ public NativeString256 RemoveAtParentAnimTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RemoveAtParentAttackingTags_System_Int32_"></a> RemoveAtParentAttackingTags\(int\)
 
@@ -1750,7 +2207,7 @@ public NativeString256 RemoveAtParentAttackingTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RemoveAtParentBlockingTags_System_Int32_"></a> RemoveAtParentBlockingTags\(int\)
 
@@ -1764,7 +2221,7 @@ public NativeString256 RemoveAtParentBlockingTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RemoveAtParentEquipUnequipTags_System_Int32_"></a> RemoveAtParentEquipUnequipTags\(int\)
 
@@ -1778,7 +2235,7 @@ public NativeString256 RemoveAtParentEquipUnequipTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RemoveAtParentGameplayTags_System_Int32_"></a> RemoveAtParentGameplayTags\(int\)
 
@@ -1792,7 +2249,7 @@ public NativeString256 RemoveAtParentGameplayTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_RemoveAtParentLastAnimTags_System_Int32_"></a> RemoveAtParentLastAnimTags\(int\)
 
@@ -1806,7 +2263,7 @@ public NativeString256 RemoveAtParentLastAnimTags(int index)
 
 #### Returns
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
@@ -1816,7 +2273,7 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetAnimActionSamples_Yooni_Native_Container_NativeList_ReadyM_Relay_Common_Oblivion_ECS_Values_SequencedSample___"></a> SetAnimActionSamples\(in NativeList<SequencedSample\>\)
 
@@ -1826,7 +2283,7 @@ public void SetAnimActionSamples(in NativeList<SequencedSample> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetAnimActionSamples_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_SequencedSample__"></a> SetAnimActionSamples\(int, in SequencedSample\)
 
@@ -1848,7 +2305,7 @@ public void SetAnimTags(in NativeList<NativeString256> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetAnimTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> SetAnimTags\(int, in NativeString256\)
 
@@ -1860,7 +2317,7 @@ public void SetAnimTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetAttackingTags_Yooni_Native_Container_NativeList_Yooni_Native_Container_NativeString256___"></a> SetAttackingTags\(in NativeList<NativeString256\>\)
 
@@ -1870,7 +2327,7 @@ public void SetAttackingTags(in NativeList<NativeString256> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetAttackingTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> SetAttackingTags\(int, in NativeString256\)
 
@@ -1882,7 +2339,7 @@ public void SetAttackingTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetBlockingTags_Yooni_Native_Container_NativeList_Yooni_Native_Container_NativeString256___"></a> SetBlockingTags\(in NativeList<NativeString256\>\)
 
@@ -1892,7 +2349,7 @@ public void SetBlockingTags(in NativeList<NativeString256> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetBlockingTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> SetBlockingTags\(int, in NativeString256\)
 
@@ -1904,7 +2361,7 @@ public void SetBlockingTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetCastingRequestSamples_Yooni_Native_Container_NativeList_ReadyM_Relay_Common_Oblivion_ECS_Values_SequencedSample___"></a> SetCastingRequestSamples\(in NativeList<SequencedSample\>\)
 
@@ -1914,7 +2371,7 @@ public void SetCastingRequestSamples(in NativeList<SequencedSample> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetCastingRequestSamples_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_SequencedSample__"></a> SetCastingRequestSamples\(int, in SequencedSample\)
 
@@ -1936,7 +2393,7 @@ public void SetEquipUnequipTags(in NativeList<NativeString256> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetEquipUnequipTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> SetEquipUnequipTags\(int, in NativeString256\)
 
@@ -1948,7 +2405,7 @@ public void SetEquipUnequipTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetGameplayTags_Yooni_Native_Container_NativeList_Yooni_Native_Container_NativeString256___"></a> SetGameplayTags\(in NativeList<NativeString256\>\)
 
@@ -1958,7 +2415,7 @@ public void SetGameplayTags(in NativeList<NativeString256> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetGameplayTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> SetGameplayTags\(int, in NativeString256\)
 
@@ -1970,7 +2427,7 @@ public void SetGameplayTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetLastAnimTags_Yooni_Native_Container_NativeList_Yooni_Native_Container_NativeString256___"></a> SetLastAnimTags\(in NativeList<NativeString256\>\)
 
@@ -1980,7 +2437,7 @@ public void SetLastAnimTags(in NativeList<NativeString256> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetLastAnimTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> SetLastAnimTags\(int, in NativeString256\)
 
@@ -1992,7 +2449,7 @@ public void SetLastAnimTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetMeleeMontageSamples_Yooni_Native_Container_NativeList_ReadyM_Relay_Common_Oblivion_ECS_Values_SequencedSample___"></a> SetMeleeMontageSamples\(in NativeList<SequencedSample\>\)
 
@@ -2002,7 +2459,7 @@ public void SetMeleeMontageSamples(in NativeList<SequencedSample> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[SequencedSample](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample.md)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetMeleeMontageSamples_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_SequencedSample__"></a> SetMeleeMontageSamples\(int, in SequencedSample\)
 
@@ -2024,7 +2481,7 @@ public void SetParentAnimTags(in NativeList<NativeString256> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetParentAnimTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> SetParentAnimTags\(int, in NativeString256\)
 
@@ -2036,7 +2493,7 @@ public void SetParentAnimTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetParentAttackingTags_Yooni_Native_Container_NativeList_Yooni_Native_Container_NativeString256___"></a> SetParentAttackingTags\(in NativeList<NativeString256\>\)
 
@@ -2046,7 +2503,7 @@ public void SetParentAttackingTags(in NativeList<NativeString256> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetParentAttackingTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> SetParentAttackingTags\(int, in NativeString256\)
 
@@ -2058,7 +2515,7 @@ public void SetParentAttackingTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetParentBlockingTags_Yooni_Native_Container_NativeList_Yooni_Native_Container_NativeString256___"></a> SetParentBlockingTags\(in NativeList<NativeString256\>\)
 
@@ -2068,7 +2525,7 @@ public void SetParentBlockingTags(in NativeList<NativeString256> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetParentBlockingTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> SetParentBlockingTags\(int, in NativeString256\)
 
@@ -2080,7 +2537,7 @@ public void SetParentBlockingTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetParentEquipUnequipTags_Yooni_Native_Container_NativeList_Yooni_Native_Container_NativeString256___"></a> SetParentEquipUnequipTags\(in NativeList<NativeString256\>\)
 
@@ -2090,7 +2547,7 @@ public void SetParentEquipUnequipTags(in NativeList<NativeString256> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetParentEquipUnequipTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> SetParentEquipUnequipTags\(int, in NativeString256\)
 
@@ -2102,7 +2559,7 @@ public void SetParentEquipUnequipTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetParentGameplayTags_Yooni_Native_Container_NativeList_Yooni_Native_Container_NativeString256___"></a> SetParentGameplayTags\(in NativeList<NativeString256\>\)
 
@@ -2112,7 +2569,7 @@ public void SetParentGameplayTags(in NativeList<NativeString256> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetParentGameplayTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> SetParentGameplayTags\(int, in NativeString256\)
 
@@ -2124,7 +2581,7 @@ public void SetParentGameplayTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetParentLastAnimTags_Yooni_Native_Container_NativeList_Yooni_Native_Container_NativeString256___"></a> SetParentLastAnimTags\(in NativeList<NativeString256\>\)
 
@@ -2134,7 +2591,7 @@ public void SetParentLastAnimTags(in NativeList<NativeString256> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeList.cs)<[NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SetParentLastAnimTags_System_Int32_Yooni_Native_Container_NativeString256__"></a> SetParentLastAnimTags\(int, in NativeString256\)
 
@@ -2146,6 +2603,96 @@ public void SetParentLastAnimTags(int index, in NativeString256 value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`value` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_ShieldHandPoseAnimLayerClassNameNotifyChanged_System_Int32_"></a> ShieldHandPoseAnimLayerClassNameNotifyChanged\(int\)
+
+```csharp
+public void ShieldHandPoseAnimLayerClassNameNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_SpellCastAnimLayerClassNameNotifyChanged_System_Int32_"></a> SpellCastAnimLayerClassNameNotifyChanged\(int\)
+
+```csharp
+public void SpellCastAnimLayerClassNameNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_StaggerAnimLayerClassNameNotifyChanged_System_Int32_"></a> StaggerAnimLayerClassNameNotifyChanged\(int\)
+
+```csharp
+public void StaggerAnimLayerClassNameNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_TorchAnimLayerClassNameNotifyChanged_System_Int32_"></a> TorchAnimLayerClassNameNotifyChanged\(int\)
+
+```csharp
+public void TorchAnimLayerClassNameNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_UseControllerDesiredRotationNotifyChanged_System_Int32_"></a> UseControllerDesiredRotationNotifyChanged\(int\)
+
+```csharp
+public void UseControllerDesiredRotationNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_UseControllerRotationYawNotifyChanged_System_Int32_"></a> UseControllerRotationYawNotifyChanged\(int\)
+
+```csharp
+public void UseControllerRotationYawNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_UseRotationSpeedCurveNotifyChanged_System_Int32_"></a> UseRotationSpeedCurveNotifyChanged\(int\)
+
+```csharp
+public void UseRotationSpeedCurveNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_WantsToRunNotifyChanged_System_Int32_"></a> WantsToRunNotifyChanged\(int\)
+
+```csharp
+public void WantsToRunNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationStateComponent_WeaponDrawnNotifyChanged_System_Int32_"></a> WeaponDrawnNotifyChanged\(int\)
+
+```csharp
+public void WeaponDrawnNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 

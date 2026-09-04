@@ -1,4 +1,4 @@
-﻿# Struct AnimationMovementComponent
+# Struct AnimationMovementComponent
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Components](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
@@ -12,7 +12,7 @@ public struct AnimationMovementComponent : IComponent, INetSerializable
 #### Implements
 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs)
+INetSerializable
 
 #### Inherited Members
 
@@ -357,6 +357,46 @@ public float YawRotationDelta { get; set; }
 
 ## Methods
 
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_AccelerationNotifyChanged_System_Int32_"></a> AccelerationNotifyChanged\(int\)
+
+```csharp
+public void AccelerationNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_ActorForwardPoseOffsetNotifyChanged_System_Int32_"></a> ActorForwardPoseOffsetNotifyChanged\(int\)
+
+```csharp
+public void ActorForwardPoseOffsetNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_ActorRotationNotifyChanged_System_Int32_"></a> ActorRotationNotifyChanged\(int\)
+
+```csharp
+public void ActorRotationNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_AnalogInputModifierNotifyChanged_System_Int32_"></a> AnalogInputModifierNotifyChanged\(int\)
+
+```csharp
+public void AnalogInputModifierNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_Assign_ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent__"></a> Assign\(in AnimationMovementComponent\)
 
 ```csharp
@@ -367,6 +407,66 @@ public void Assign(in AnimationMovementComponent value)
 
 `value` [AnimationMovementComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.md)
 
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_ClampedAxisNotifyChanged_System_Int32_"></a> ClampedAxisNotifyChanged\(int\)
+
+```csharp
+public void ClampedAxisNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_CombatLeanHorizontalNotifyChanged_System_Int32_"></a> CombatLeanHorizontalNotifyChanged\(int\)
+
+```csharp
+public void CombatLeanHorizontalNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_CombatLeanVerticalNotifyChanged_System_Int32_"></a> CombatLeanVerticalNotifyChanged\(int\)
+
+```csharp
+public void CombatLeanVerticalNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_ControlInputVectorNotifyChanged_System_Int32_"></a> ControlInputVectorNotifyChanged\(int\)
+
+```csharp
+public void ControlInputVectorNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_ControlRotationNotifyChanged_System_Int32_"></a> ControlRotationNotifyChanged\(int\)
+
+```csharp
+public void ControlRotationNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_CurrentOrientationAngleNotifyChanged_System_Int32_"></a> CurrentOrientationAngleNotifyChanged\(int\)
+
+```csharp
+public void CurrentOrientationAngleNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_Deserialize_LiteNetLib_Utils_NetDataReader_"></a> Deserialize\(NetDataReader\)
 
 ```csharp
@@ -375,7 +475,127 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_DirectionalAxisLengthNotifyChanged_System_Int32_"></a> DirectionalAxisLengthNotifyChanged\(int\)
+
+```csharp
+public void DirectionalAxisLengthNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_DirectionalAxisNotifyChanged_System_Int32_"></a> DirectionalAxisNotifyChanged\(int\)
+
+```csharp
+public void DirectionalAxisNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_GetChangeComponent"></a> GetChangeComponent\(\)
+
+```csharp
+public Type GetChangeComponent()
+```
+
+#### Returns
+
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_HorizontalSpeedNotifyChanged_System_Int32_"></a> HorizontalSpeedNotifyChanged\(int\)
+
+```csharp
+public void HorizontalSpeedNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_LastControlInputVectorNotifyChanged_System_Int32_"></a> LastControlInputVectorNotifyChanged\(int\)
+
+```csharp
+public void LastControlInputVectorNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_LeanHorizontalNotifyChanged_System_Int32_"></a> LeanHorizontalNotifyChanged\(int\)
+
+```csharp
+public void LeanHorizontalNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_LeanPoseAlphaNotifyChanged_System_Int32_"></a> LeanPoseAlphaNotifyChanged\(int\)
+
+```csharp
+public void LeanPoseAlphaNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_LeanVerticalNotifyChanged_System_Int32_"></a> LeanVerticalNotifyChanged\(int\)
+
+```csharp
+public void LeanVerticalNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_LookAtPointNotifyChanged_System_Int32_"></a> LookAtPointNotifyChanged\(int\)
+
+```csharp
+public void LookAtPointNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_MinMaxBackwardAngleNotifyChanged_System_Int32_"></a> MinMaxBackwardAngleNotifyChanged\(int\)
+
+```csharp
+public void MinMaxBackwardAngleNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_MinMaxForwardAngleNotifyChanged_System_Int32_"></a> MinMaxForwardAngleNotifyChanged\(int\)
+
+```csharp
+public void MinMaxForwardAngleNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_RotationRateNotifyChanged_System_Int32_"></a> RotationRateNotifyChanged\(int\)
+
+```csharp
+public void RotationRateNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
@@ -385,6 +605,126 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_SneakingLocomotionPlayRateNotifyChanged_System_Int32_"></a> SneakingLocomotionPlayRateNotifyChanged\(int\)
+
+```csharp
+public void SneakingLocomotionPlayRateNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_SneakingLocomotionSpeedNotifyChanged_System_Int32_"></a> SneakingLocomotionSpeedNotifyChanged\(int\)
+
+```csharp
+public void SneakingLocomotionSpeedNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_StandingLocomotionPlayRateNotifyChanged_System_Int32_"></a> StandingLocomotionPlayRateNotifyChanged\(int\)
+
+```csharp
+public void StandingLocomotionPlayRateNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_StandingLocomotionSpeedNotifyChanged_System_Int32_"></a> StandingLocomotionSpeedNotifyChanged\(int\)
+
+```csharp
+public void StandingLocomotionSpeedNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_StartPoseAlphaNotifyChanged_System_Int32_"></a> StartPoseAlphaNotifyChanged\(int\)
+
+```csharp
+public void StartPoseAlphaNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_StrideDirectionNotifyChanged_System_Int32_"></a> StrideDirectionNotifyChanged\(int\)
+
+```csharp
+public void StrideDirectionNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_StrideScaleNotifyChanged_System_Int32_"></a> StrideScaleNotifyChanged\(int\)
+
+```csharp
+public void StrideScaleNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_TurnInPlaceAngleThresholdNotifyChanged_System_Int32_"></a> TurnInPlaceAngleThresholdNotifyChanged\(int\)
+
+```csharp
+public void TurnInPlaceAngleThresholdNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_UpperBodyAngleNotifyChanged_System_Int32_"></a> UpperBodyAngleNotifyChanged\(int\)
+
+```csharp
+public void UpperBodyAngleNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_VelocityNotifyChanged_System_Int32_"></a> VelocityNotifyChanged\(int\)
+
+```csharp
+public void VelocityNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_VerticalSpeedNotifyChanged_System_Int32_"></a> VerticalSpeedNotifyChanged\(int\)
+
+```csharp
+public void VerticalSpeedNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_AnimationMovementComponent_YawRotationDeltaNotifyChanged_System_Int32_"></a> YawRotationDeltaNotifyChanged\(int\)
+
+```csharp
+public void YawRotationDeltaNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 

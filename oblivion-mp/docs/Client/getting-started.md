@@ -6,7 +6,9 @@ sidebar_position: 1
 
 Client-side mods run inside the game alongside the OblivionMP client. They can read and change entity data, react to input, define custom data that is synchronized between players, and exchange custom network messages.
 
-A mod is a .NET class library that references the `OblivionMp.Sdk` package (shipped with the server under `mods/OblivionMp.Sdk.zip`) and defines a single class extending `ModBase`. The mod loader instantiates this class when the game starts.
+A mod is a .NET class library that references the OblivionMP SDK assemblies and defines a single class extending [`ModBase`](../../api-reference/ReadyM.Sdk.Common/ReadyM.Sdk.Common.ModBase). The mod loader instantiates this class when the game starts.
+
+A mod is one folder holding up to two halves, a `client/` and a `server/`. The pages under **Client-side mods** cover the client half; [server-side development](../Server-development/getting-started) covers the other one. Small mods only ever need the client half. See [Mod management](../Server/mod-management) for the folder structure the server expects.
 
 :::tip[Start from the template]
 
@@ -34,7 +36,7 @@ public class MyMod : ModBase
 }
 ```
 
-All SDK functionality is reached through the static [SDK](../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.SDK) class — for example `SDK.Input`, `SDK.Sync`, and `SDK.Services`.
+All SDK functionality is reached through the static [SDK](../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.SDK) class, for example `SDK.Input`, `SDK.Sync`, `SDK.Chat`, `SDK.GameMessage`, `SDK.Markers` and `SDK.Services`.
 
 :::info
 
@@ -52,6 +54,8 @@ Everything registered in `RegisterServices` is resolved from the same [dependenc
 | Gameplay systems | :white_check_mark: [done](systems) |
 | Custom RPC | :white_check_mark: [done](custom-rpc) |
 | Hosted services | :white_check_mark: [done](hosted-services) |
-| [Server-side mods](../Server-development/getting-started) | :construction: primitive API |
+| Messages and markers | :white_check_mark: [done](messages-and-markers) |
+| Mod config files | :white_check_mark: [done](mod-config) |
+| Mod manifests | :white_check_mark: [done](../Server/mod-management) |
+| [Server-side mods](../Server-development/getting-started) | :white_check_mark: [done](../Server-development/getting-started) |
 | Save file API | :construction: sync implemented, no public API yet |
-| Mod manifests | :soon: not enforced in 0.1.0 |

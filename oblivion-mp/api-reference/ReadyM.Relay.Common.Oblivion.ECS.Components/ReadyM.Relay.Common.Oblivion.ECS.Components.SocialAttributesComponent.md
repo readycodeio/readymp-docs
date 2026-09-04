@@ -1,4 +1,4 @@
-﻿# Struct SocialAttributesComponent
+# Struct SocialAttributesComponent
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Components](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
@@ -6,14 +6,15 @@ Assembly: ReadyM.Relay.Common.Oblivion.dll
 Holds the player character's social attributes.
 
 ```csharp
-public struct SocialAttributesComponent : ISaveTaggedComponent<SocialAttributesComponent>, IComponent, INetSerializable, IDisposable
+public struct SocialAttributesComponent : ISaveTaggedComponent<SocialAttributesComponent>, INativeInit, IComponent, INetSerializable, IDisposable
 ```
 
 #### Implements
 
 [ISaveTaggedComponent<SocialAttributesComponent\>](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.ISaveTaggedComponent-1.md), 
+[INativeInit](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/ECS/Components/INativeInit.cs), 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs), 
+INetSerializable, 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members
@@ -24,20 +25,6 @@ public struct SocialAttributesComponent : ISaveTaggedComponent<SocialAttributesC
 [object.Equals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\-system\-object\)), 
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
-
-## Constructors
-
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_SocialAttributesComponent__ctor_Yooni_Native_LowLevel_AllocatorKind_"></a> SocialAttributesComponent\(AllocatorKind\)
-
-Holds the player character's social attributes.
-
-```csharp
-public SocialAttributesComponent(AllocatorKind allocatorKind)
-```
-
-#### Parameters
-
-`allocatorKind` [AllocatorKind](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/LowLevel/AllocatorKind.cs)
 
 ## Properties
 
@@ -79,15 +66,27 @@ public void Assign(in SocialAttributesComponent value)
 
 `value` [SocialAttributesComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.SocialAttributesComponent.md)
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_SocialAttributesComponent_Attribute_SetFromApi_Yooni_Native_Container_NativeDictionary_System_Byte_System_Single_Yooni_Native_Container_ByteHash__"></a> Attribute\_SetFromApi\(NativeDictionary<byte, float, ByteHash\>\)
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_SocialAttributesComponent_AttributeNotifyChanged_System_Int32_"></a> AttributeNotifyChanged\(int\)
 
 ```csharp
-public void Attribute_SetFromApi(NativeDictionary<byte, float, ByteHash> value)
+public void AttributeNotifyChanged(int id)
 ```
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), [ByteHash](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/ByteHash.cs)\>
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_SocialAttributesComponent_Attribute_SetFromApi_Yooni_Native_Container_NativeDictionary_System_Byte_System_Single_Yooni_Native_Container_ByteHash__System_Int32_"></a> Attribute\_SetFromApi\(NativeDictionary<byte, float, ByteHash\>, int\)
+
+```csharp
+public void Attribute_SetFromApi(NativeDictionary<byte, float, ByteHash> value, int id)
+```
+
+#### Parameters
+
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), [ByteHash](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/ByteHash.cs)\>
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_SocialAttributesComponent_ClearAttribute"></a> ClearAttribute\(\)
 
@@ -133,7 +132,7 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_SocialAttributesComponent_Dispose"></a> Dispose\(\)
 
@@ -149,7 +148,7 @@ public NativeDictionary<byte, float, ByteHash>.ReadOnly GetAttribute()
 
 #### Returns
 
- [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), [ByteHash](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/ByteHash.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)
+ [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), [ByteHash](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/ByteHash.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_SocialAttributesComponent_GetAttribute_System_Byte__"></a> GetAttribute\(in byte\)
 
@@ -164,6 +163,26 @@ public float GetAttribute(in byte key)
 #### Returns
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_SocialAttributesComponent_GetChangeComponent"></a> GetChangeComponent\(\)
+
+```csharp
+public Type GetChangeComponent()
+```
+
+#### Returns
+
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_SocialAttributesComponent_Init_Yooni_Native_LowLevel_AllocatorKind_"></a> Init\(AllocatorKind\)
+
+```csharp
+public void Init(AllocatorKind allocatorKind)
+```
+
+#### Parameters
+
+`allocatorKind` [AllocatorKind](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/LowLevel/AllocatorKind.cs)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_SocialAttributesComponent_RemoveAttribute_System_Byte__"></a> RemoveAttribute\(in byte\)
 
@@ -187,7 +206,7 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_SocialAttributesComponent_SetAttribute_Yooni_Native_Container_NativeDictionary_System_Byte_System_Single_Yooni_Native_Container_ByteHash___"></a> SetAttribute\(in NativeDictionary<byte, float, ByteHash\>\)
 
@@ -197,7 +216,7 @@ public void SetAttribute(in NativeDictionary<byte, float, ByteHash> value)
 
 #### Parameters
 
-`value` [NativeDictionary](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), [ByteHash](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/ByteHash.cs)\>
+`value` [NativeDictionary](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeDictionary.cs)<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), [ByteHash](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/ByteHash.cs)\>
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_SocialAttributesComponent_SetAttribute_System_Byte__System_Single__"></a> SetAttribute\(in byte, in float\)
 

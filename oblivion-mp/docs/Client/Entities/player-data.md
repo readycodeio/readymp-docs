@@ -8,7 +8,7 @@ sidebar_position: 2
 
 :::important
 
-Writing to any of these properties only works on an entity you own — see [Ownership](players#ownership). Attempting to write to a player you don't own logs an error and does nothing.
+Writing to any of these properties only works on an entity you own. See [Ownership](players#ownership). Attempting to write to a player you don't own logs an error and does nothing.
 
 :::
 

@@ -1,6 +1,6 @@
-﻿# Class ReadyActorExtensions
+# Class ReadyActorExtensions
 
-Namespace: [OblivionMp.Sdk.Entities.Extensions](../OblivionMp.Sdk.Entities.DroppedItem/OblivionMp.Sdk.Entities.Extensions.md)  
+Namespace: [OblivionMp.Sdk.Entities.Extensions](../OblivionMp.Sdk.Entities.Extensions/OblivionMp.Sdk.Entities.Extensions.md)  
 Assembly: OblivionMp.Sdk.dll  
 
 ```csharp
@@ -25,6 +25,8 @@ public static class ReadyActorExtensions
 ## Methods
 
 ### <a id="OblivionMp_Sdk_Entities_Extensions_ReadyActorExtensions_get_Pawn__1___0_"></a> get\_Pawn<TSelf\>\(TSelf\)
+
+The in-game pawn (actor) of the player.
 
 ```csharp
 public static nint? get_Pawn<TSelf>(TSelf obj) where TSelf : struct, IReadyEntity<TSelf>, IReadyConvertable<TSelf, ReadyActor>

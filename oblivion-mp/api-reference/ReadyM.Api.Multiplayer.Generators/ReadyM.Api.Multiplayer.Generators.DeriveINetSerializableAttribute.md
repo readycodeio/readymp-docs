@@ -1,4 +1,4 @@
-﻿# Class DeriveINetSerializableAttribute
+# Class DeriveINetSerializableAttribute
 
 Namespace: [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
@@ -74,7 +74,7 @@ public DeriveINetSerializableAttribute(SerializableMode mode = SerializableMode.
 
 #### Parameters
 
-`mode` [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/Serialization/SerializableMode.cs)
+`mode` [SerializableMode](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Serialization/SerializableMode.cs)
 
 Determines which members of the struct are serialized. See **SerializableMode** for details.
 
@@ -88,6 +88,6 @@ public readonly SerializableMode Mode
 
 #### Field Value
 
- [SerializableMode](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/Serialization/SerializableMode.cs)
+ [SerializableMode](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Serialization/SerializableMode.cs)
 
 

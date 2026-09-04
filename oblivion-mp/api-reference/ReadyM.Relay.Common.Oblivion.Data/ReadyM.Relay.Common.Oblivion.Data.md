@@ -1,4 +1,4 @@
-﻿# ReadyM.Relay.Common.Oblivion.Data
+# ReadyM.Relay.Common.Oblivion.Data
 
 ### Classes
 

@@ -1,4 +1,4 @@
-﻿# ReadyM.Relay.Common.Oblivion.ECS.Components
+# ReadyM.Relay.Common.Oblivion.ECS.Components
 
 ### Structs
 
@@ -18,6 +18,14 @@ Holds the player character's appearance settings.
 
 Holds an Oblivion actor's Base ID.
 
+ [CellDiscoveryComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.md)
+
+ [DialogueComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.md)
+
+ [DifficultyComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.md)
+
+Holds the difficulty the server dictates for every client in the session.
+
  [DynamicFormsComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.md)
 
 Holds the player's dynamic forms, including spells and alchemy effects.
@@ -29,6 +37,8 @@ Holds player character's effect attributes' values.
  [EquipmentComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.md)
 
 Holds the player's equipment.
+
+ [JournalComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.md)
 
  [MainCharacterComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent.md)
 
@@ -50,6 +60,8 @@ Holds the player character's activity flags.
 
 Holds the player character's quiver information.
 
+ [RefIdComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.md)
+
  [SkillAttributesComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.SkillAttributesComponent.md)
 
 Holds the player character's skill attributes.
@@ -57,6 +69,8 @@ Holds the player character's skill attributes.
  [SocialAttributesComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.SocialAttributesComponent.md)
 
 Holds the player character's social attributes.
+
+ [SpokenTopicsComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.md)
 
  [StackCountComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent.md)
 
@@ -77,6 +91,8 @@ Holds the player character's vital attributes.
  [WeatherComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.md)
 
 Holds the global weather state of the game world.
+
+ [WorldStateComponent](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.md)
 
 ### Interfaces
 

@@ -1,7 +1,9 @@
-﻿# Interface IComponentRegistry
+# Interface IComponentRegistry
 
 Namespace: [ReadyM.Relay.Server.Sdk.Ecs.Components](../ReadyM.Relay.Server.Sdk.Ecs.Components/ReadyM.Relay.Server.Sdk.Ecs.Components.md)  
 Assembly: ReadyM.Relay.Server.Sdk.dll  
+
+Allows registering components with the ECS system, both local and networked.
 
 ```csharp
 public interface IComponentRegistry
@@ -11,30 +13,30 @@ public interface IComponentRegistry
 
 ### <a id="ReadyM_Relay_Server_Sdk_Ecs_Components_IComponentRegistry_RegisterComponent__1"></a> RegisterComponent<T\>\(\)
 
+Registers a networked (replicated over the network) component type with the ECS system.
+
 ```csharp
-int RegisterComponent<T>() where T : struct, INetworkedComponent
+void RegisterComponent<T>() where T : struct, INetworkedComponent
 ```
-
-#### Returns
-
- [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 #### Type Parameters
 
 `T` 
+
+The type of the component to register. Must be a struct that implements **INetworkedComponent**.
 
 ### <a id="ReadyM_Relay_Server_Sdk_Ecs_Components_IComponentRegistry_RegisterLocalComponent__1"></a> RegisterLocalComponent<T\>\(\)
 
+Registers a local (not replicated over the network) component type with the ECS system.
+
 ```csharp
-int RegisterLocalComponent<T>() where T : struct
+void RegisterLocalComponent<T>() where T : struct
 ```
-
-#### Returns
-
- [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 #### Type Parameters
 
 `T` 
+
+The type of the component to register. Must be a struct.
 
 

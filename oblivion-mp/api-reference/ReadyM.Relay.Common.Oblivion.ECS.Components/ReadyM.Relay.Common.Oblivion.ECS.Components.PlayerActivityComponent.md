@@ -1,4 +1,4 @@
-﻿# Struct PlayerActivityComponent
+# Struct PlayerActivityComponent
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Components](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
@@ -12,7 +12,7 @@ public struct PlayerActivityComponent : IComponent, INetSerializable
 #### Implements
 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs)
+INetSerializable
 
 #### Inherited Members
 
@@ -24,6 +24,16 @@ public struct PlayerActivityComponent : IComponent, INetSerializable
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
 
 ## Properties
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_PlayerActivityComponent_DetectedByOtherPlayer"></a> DetectedByOtherPlayer
+
+```csharp
+public bool DetectedByOtherPlayer { get; set; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_PlayerActivityComponent_InCombat"></a> InCombat
 
@@ -65,7 +75,47 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_PlayerActivityComponent_DetectedByOtherPlayerNotifyChanged_System_Int32_"></a> DetectedByOtherPlayerNotifyChanged\(int\)
+
+```csharp
+public void DetectedByOtherPlayerNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_PlayerActivityComponent_GetChangeComponent"></a> GetChangeComponent\(\)
+
+```csharp
+public Type GetChangeComponent()
+```
+
+#### Returns
+
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_PlayerActivityComponent_InCombatNotifyChanged_System_Int32_"></a> InCombatNotifyChanged\(int\)
+
+```csharp
+public void InCombatNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_PlayerActivityComponent_InDialogueNotifyChanged_System_Int32_"></a> InDialogueNotifyChanged\(int\)
+
+```csharp
+public void InDialogueNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_PlayerActivityComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
@@ -75,6 +125,6 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 

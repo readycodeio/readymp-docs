@@ -14,11 +14,11 @@ ReadyMainCharacter? localPlayer = SDK.Sync.LocalPlayer;
 IEnumerable<ReadyMainCharacter> players = SDK.Sync.AllPlayers;
 ```
 
-Both return values of type [ReadyMainCharacter](../../../api-reference/OblivionMp.Sdk.Entities.Player/OblivionMp.Sdk.Entities.Player.ReadyMainCharacter) — see [Player data](player-data) for what you can read and change on it.
+Both return values of type [ReadyMainCharacter](../../../api-reference/OblivionMp.Sdk.Entities.Player/OblivionMp.Sdk.Entities.Player.ReadyMainCharacter). See [Player data](player-data) for what you can read and change on it.
 
 ## Ownership
 
-Every player entity is **owned** by the player it represents. You can freely *read* any player's data, but you can only *change* data on entities you own — usually the local player, unless the change is a [server-authoritative override](../custom-components#ownership).
+Every player entity is **owned** by the player it represents. You can freely *read* any player's data, but you can only *change* data on entities you own, usually the local player, unless the change is a [server-authoritative override](../custom-components#ownership).
 
 ```csharp
 foreach (var player in SDK.Sync.AllPlayers)

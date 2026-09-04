@@ -1,6 +1,6 @@
-﻿# Enum RelayMode
+# Enum RelayMode
 
-Namespace: [ReadyM.Api.Multiplayer.Protocol.Enums](../ReadyM.Api.Multiplayer.Protocol/ReadyM.Api.Multiplayer.Protocol.Enums.md)  
+Namespace: [ReadyM.Api.Multiplayer.Protocol.Enums](../ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 Indicates how an RPC message should be relayed to other players in the game.

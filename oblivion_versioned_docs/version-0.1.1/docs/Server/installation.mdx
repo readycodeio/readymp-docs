@@ -1,0 +1,110 @@
+---
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+# Installation
+
+The OblivionMP server will be distributed in the following formats:
+
+- Binary package
+- Docker image
+
+:::info[Closed alpha]
+
+The server is currently in closed alpha and is being handed to a small group of testers first. Public downloads and the Docker image are coming soon.
+
+:::
+
+### Downloads
+| Platform | Architecture | Download |
+| --- | --- | --- |
+| Linux | x64 | **Closed alpha** |
+| Windows | x64 | **Closed alpha** |
+
+## Installation
+
+Extract the binary package to a location of your choice.
+
+After extraction, the directory structure should look like this:
+
+<Tabs groupId="os">
+<TabItem value="windows" label="Windows">
+
+```text
+server/
+├── server.exe                        # Main server binary
+├── config.json                       # Configuration file
+├── e_sqlite3.dll                     # Dependency
+├── aspnetcorev2_inprocess.dll        # Dependency
+├── *.dll                             # Managed runtime dependencies
+├── mods/                             # Directory for client-side mods
+    └── OblivionMp.Sdk
+        ├── manifes.json              # manifest file (unused in 0.1.0)
+        └── OblivionMp.Sdk.dll        # Client-side SDK
+├── server_mods/                      # Directory for server-side mods
+|   └── OblivionMp.Sdk.Serverside.dll # Server-side SDK
+├── saves/                            # Directory for game saves (empty by default)
+└── wwwroot/                          # Admin panel assets
+```
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+```text
+server/
+├── server                            # Main server binary
+├── config.json                       # Configuration file
+├── libe_sqlite3.so                   # Dependency
+├── *.dll                             # Managed runtime dependencies
+├── mods/                             # Directory for client-side mods
+    └── OblivionMp.Sdk
+        ├── manifes.json              # manifest file (unused in 0.1.0)
+        └── OblivionMp.Sdk.dll        # Client-side SDK
+├── server_mods/                      # Directory for server-side mods
+|   └── OblivionMp.Sdk.Serverside.dll # Server-side SDK, ships by default
+├── saves/                            # Directory for game saves (empty by default)
+└── wwwroot/                          # Admin panel assets
+```
+
+</TabItem>
+</Tabs>
+
+## Configuration
+
+You can adjust server settings by editing the `config.json` file. In the following table, the `:` notation is used to represent nested settings.
+
+| Setting | Type | Purpose |
+| --- | --- | --- |
+| `Server:Port` | number | The port on which the server listens for incoming connections |
+| `Server:Password` | string | Optional. When set, players must enter this password in the Launcher to join. Leave empty or omit for an open server. |
+| `Telemetry:OptOut` | boolean | Set to `true` to opt out of sending anonymous telemetry to ReadyM. Defaults to `false`. |
+
+:::note
+
+`Server:Password` gates every player, including admins and whitelisted users. Password-protected servers are shown with a lock on the public server list.
+
+:::
+
+The OblivionMP server runs on the same binaries as [WukongMP](/wukong-mp/docs/what-is-wukong-mp), so the hosting features are identical: the same [admin panel](admin-panel) and the same public [server listing](publishing-your-server).
+
+## First launch
+
+Start the server by running the `server.exe` binary.
+
+On first launch, the server creates a `data/` directory inside the server folder. 
+This directory contains the `web.db` database file, where persistent data is stored.
+
+Unless changed in `config.json`, the server listens on the following ports:
+
+| Port | Protocol | Purpose |
+| --- | --- | --- |
+| 9050 | UDP | Game traffic (player connections, game state synchronization, etc.) |
+| 9050 | HTTP | [Admin panel](admin-panel) |
+
+## Docker
+
+A Linux-based x64 Docker image is coming soon. It will be published to the container registry once the server leaves closed alpha.
