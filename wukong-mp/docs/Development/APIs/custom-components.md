@@ -25,41 +25,33 @@ Any type the component's fields use has to live in the shared project too, for t
 
 ## Registering it on the client
 
-Two things have to happen in your mod's `Initialize`: register the component type, and register an archetype change that attaches it to an entity.
+Two things have to happen in your mod's `Initialize`: register the component type, and attach it to an archetype.
 
 ```csharp title="Mod.cs"
 protected override void Initialize(IDependencyContainer services)
 {
     services.Resolve<IComponentApi>().RegisterComponent<BountyComponent>();
-    services.RegisterSingleton<IArchetypeRegistration, BountyRegistration>();
-}
-```
 
-[`IComponentApi.RegisterComponent<T>`](../../../api-reference/WukongMp.Api/WukongMp.Api.IComponentApi) declares the type to the networking layer. The archetype change goes in a class implementing [`IArchetypeRegistration`](../../../api-reference/ReadyM.Api.ECS.Registry/ReadyM.Api.ECS.Registry.IArchetypeRegistration), which the SDK calls while it builds the ECS world:
-
-```csharp title="BountyRegistration.cs"
-using ReadyM.Api.ECS.Registry;
-using ReadyM.Api.ECS.Worlds;
-using WukongMp.Sdk.Api;
-
-public class BountyRegistration : IArchetypeRegistration
-{
-    public void Register(IArchetypeRegistry registry)
+    RegisterArchetypes(registry =>
     {
         registry.ModifyArchetype(WukongApi.Archetypes.GlobalPlayerArchetype, b => b.Add<BountyComponent>());
-    }
+    });
 }
 ```
+
+[`IComponentApi.RegisterComponent<T>`](../../../api-reference/WukongMp.Api/WukongMp.Api.IComponentApi) declares the type to the networking layer. `RegisterArchetypes` takes a callback that the SDK runs once while it builds the ECS world, which is where the archetype change belongs.
 
 `WukongApi.Archetypes` names the built-in archetypes, the same set the server SDK exposes as static members on `WukongArchetypes`. See [Archetypes and components](../../Server-development/archetypes) for what each one carries and which one your data belongs on.
 
-:::note
+:::note[Changed in 0.4.0]
 
-`WukongApi.Archetypes` is the only part of `WukongApi` that is safe to touch from inside `Register`. It has no dependencies of its own, whereas the other APIs would pull the ECS world back into the container while the world is still being built.
+This used to need a separate class implementing `IArchetypeRegistration`, registered in DI. That interface is internal now; use `RegisterArchetypes` and delete the class.
 
 :::
 
 Registrations are additive, so registering your own does not displace the SDK's. `ModifyArchetype` attaches to an existing archetype; `RegisterArchetype` on the same interface creates a new one, if your mod spawns its own kind of entity.
+
+If you want other mods to use your archetypes and components, make sure to make them `public` types and give your dependant a way to get the `ArchetypeId` assigned to your custom archetype.
 
 ## Keeping the two sides in step
 

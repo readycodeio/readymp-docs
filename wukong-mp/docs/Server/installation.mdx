@@ -73,15 +73,14 @@ After extraction, the directory structure should look like this:
 server/
 ├── server.exe                 # Main server binary
 ├── config.json                # Configuration file
-├── mods/                      # Directory for client-side mods
+├── mods/                      # Installed mods, one folder each
 |   ├── WukongMp.Sdk/          # SDK mod
 |   └── WukongMp.Coop/         # Co-op mod
 ├── optional_mods/             # Move any of these mods to the "mods" folder to enable them
 |   └── WukongMp.PvP/          # PvP mod
 ├── saves/                     # Directory for game saves (empty by default)
 ├── wwwroot/                   # Admin panel assets
-├── e_sqlite3.dll              # Dependency
-└── aspnetcorev2_inprocess.dll # Dependency
+└── other dependency files...
 ```
 
 </TabItem>
@@ -91,30 +90,27 @@ server/
 server/
 ├── server                     # Main server binary
 ├── config.json                # Configuration file
-├── mods/                      # Directory for client-side mods
+├── mods/                      # Installed mods, one folder each
 |   ├── WukongMp.Sdk/          # SDK mod
 |   └── WukongMp.Coop/         # Co-op mod
 ├── optional_mods/             # Move any of these mods to the "mods" folder to enable them
 |   └── WukongMp.PvP/          # PvP mod
 ├── saves/                     # Directory for game saves (empty by default)
 ├── wwwroot/                   # Admin panel assets
-└── libe_sqlite3.so            # Dependency
+└── other dependency files...
 ```
 
 </TabItem>
 </Tabs>
 
-The package ships the SDK and both game modes, so there is nothing else to install. **Co-op is enabled out of the box**, both its client half in `mods/` and its server half in `server_mods/`.
+The package ships the SDK and both game modes, so there is nothing else to install. **Co-op is enabled out of the box.**
 
 The two game modes are mutually exclusive, so switching to PvP means removing co-op:
 
 1. Move `WukongMp.PvP` from `optional_mods/` into `mods/`.
 2. Delete the `WukongMp.Coop` folder from `mods/`.
-3. Delete `WukongMp.Coop.Serverside.dll` and `WukongMp.Coop.Common.dll` from `server_mods/`. Leave the other files there, they belong to the SDK.
 
-PvP has no server-side half of its own, so nothing needs adding to `server_mods/` for it.
-
-Both game modes are also open source, so you can build them yourself instead of using the shipped builds: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod) and [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod). Each repository has a `MakeModFolder.ps1` script that produces an `Output/mods/` folder for the client half and an `Output/server_mods/` folder for the server half, matching the layout above. See [Mod management](mod-management) for how the server loads each.
+Both game modes are also open source, so you can build them yourself instead of using the shipped builds: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod) and [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod). Each repository has a `MakeModFolder.ps1` script that produces an `Output/mods/` folder holding the finished mod, matching the layout above. See [Mod management](mod-management) for how the server loads it.
 
 ### Configuration
 
@@ -204,12 +200,12 @@ services:
 
 :::important
 
-The image ships **without mods**. Before starting the container, put `WukongMp.Sdk` and exactly one game mode into your `mods/` volume, and the matching server-side mods into your `server_mods/` volume. Co-op needs both halves; PvP has no server-side half.
+The image ships **without mods**. Before starting the container, put the `WukongMp.Sdk` folder and exactly one game mode into your `mods/` volume. Each mod folder carries both of its halves, so there is nothing else to place.
 
 You can get them two ways:
 
-* **From the binary package.** Download the ZIP above and copy the folders out of its `mods/`, `optional_mods/` and `server_mods/` directories.
-* **From source.** Both game modes are open source: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod) and [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod). Run each repository's `MakeModFolder.ps1` script with the `Release` argument, then copy the contents of the resulting `Output/mods/` and `Output/server_mods/` folders across.
+* **From the binary package.** Download the ZIP above and copy the folders out of its `mods/` and `optional_mods/` directories.
+* **From source.** Both game modes are open source: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod) and [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod). Run each repository's `MakeModFolder.ps1` script with the `Release` argument, then copy the mod folder out of the resulting `Output/mods/`.
 
 :::
 

@@ -119,7 +119,7 @@ See [Custom components](../Development/APIs/custom-components) for the client si
 
 :::important
 
-The two sides have to agree exactly. Register the same components, in the same order, and attach them to the same archetypes on both sides. Component IDs are positional, assigned in registration order and sent as a byte on the wire, so a mismatch does not fail loudly, it misreads the stream.
+The two sides have to agree exactly. Register the same components, in the same order, and attach them to the same archetypes on both sides. Component IDs are positional, assigned in registration order and sent as a byte on the wire, so a mismatch does not fail with an error, it misreads the stream.
 
 The practical rule: keep the component definitions in the shared project, do the registration in one place on each side, and ship the client mod and the server mod together as versions of the same package.
 
@@ -158,7 +158,7 @@ Reach for a local component whenever the client has no business seeing the value
 
 :::note
 
-Components are capped at 256 bytes each, local or networked, and the server has a fixed number of component slots. Registering fails loudly if you exceed either.
+Components are capped at 256 bytes each, local or networked, and the server has a fixed number of component slots. Registering fails if you exceed either.
 
 :::
 

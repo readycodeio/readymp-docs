@@ -153,7 +153,7 @@ We can use that to count the number of seconds since the last time we spawned en
         if (!_enabled || !WukongApi.Sync.LocalMainCharacter.HasValue)
             return;
 
-        _timeSinceLastSpawn += tick.deltaTime;
+        _timeSinceLastSpawn += tick.DeltaTime;
         if (_timeSinceLastSpawn > SpawnInterval)
         {
             _timeSinceLastSpawn = 0;

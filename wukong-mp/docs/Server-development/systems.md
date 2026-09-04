@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Gameplay systems
@@ -20,7 +20,7 @@ public class MySystem : ModSystemBase
 }
 ```
 
-The [UpdateTick](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs.Systems/ReadyM.Relay.Server.Sdk.Ecs.Systems.ModSystemBase.UpdateTick) passed to `OnUpdate` exposes `deltaTime` (seconds since the last tick) and `time` (seconds since server start).
+The [UpdateTick](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs.Systems/ReadyM.Relay.Server.Sdk.Ecs.Systems.ModSystemBase.UpdateTick) passed to `OnUpdate` exposes `DeltaTime` (seconds since the last tick) and `Time` (seconds since server start).
 
 :::important
 
