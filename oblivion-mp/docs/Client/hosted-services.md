@@ -10,7 +10,7 @@ In addition to systems, the OblivionMP SDK provides a way to implement **hosted 
 
 Any class implementing [IHostedService](../../api-reference/ReadyM.Api.DI/ReadyM.Api.DI.IHostedService) and added to the dependency injection container in your mod's `RegisterServices` method automatically has its `OnScopeStart` method called when the game starts, and is disposed of when the game shuts down.
 
-Such services are useful for running initialization code that doesn't fit in `RegisterServices`, or that needs to be cleaned up when the game shuts down — for example managing subscriptions or setting up long-lived resources.
+Such services are useful for running initialization code that doesn't fit in `RegisterServices`, or that needs to be cleaned up when the game shuts down, for example managing subscriptions or setting up long-lived resources.
 
 ```csharp title="Hosted service example"
 public sealed class MyService : IHostedService

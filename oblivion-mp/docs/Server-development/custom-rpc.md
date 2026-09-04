@@ -1,10 +1,10 @@
 ---
-sidebar_position: 3
+sidebar_position: 7
 ---
 
 # Custom RPC
 
-Server RPC lets a client send a request to the server and, optionally, receive a response. Unlike [client-relayed RPC](../Client/custom-rpc#client-relayed-rpc), the server always runs your code first — it decides whether and how to reply.
+Server RPC lets a client send a request to the server and, optionally, receive a response. Unlike [client-relayed RPC](../Client/custom-rpc#client-relayed-rpc), the server always runs your code first, and it decides whether and how to reply.
 
 A server RPC is defined once, as a **contract** shared between the server mod and the client mod, in a common project both reference. The contract declares the shape of each direction of the message; the server mod implements the handler, and the client mod implements the response handler described in [Handling server RPC on the client](../Client/custom-rpc#handling-server-rpc-on-the-client).
 
@@ -21,7 +21,7 @@ public static partial class RpcContracts
     // one-way: the client asks, the server acts, no reply
     [ClientToServer] public static partial void ChooseProfession(Profession profession);
 
-    // request/response: empty request, int response — the two directions can have
+    // request/response: empty request, int response, and the two directions can have
     // different payloads, since they are declared as separate overloads
     [ClientToServer] public static partial void GetWalletBalance();
     [ServerToClient] public static partial void GetWalletBalance(int amount);
@@ -30,10 +30,10 @@ public static partial class RpcContracts
 
 * A method with only `[ClientToServer]` is a one-way command: the client sends it, the server handles it, and there is no reply.
 * A method with only `[ServerToClient]` is a one-way push: only the server can send it.
-* Two overloads of the same name, one of each attribute, form a request/response pair — their payloads don't need to match.
+* Two overloads of the same name, one of each attribute, form a request/response pair, and their payloads do not need to match.
 * A single method carrying **both** attributes is a symmetric two-way message, sharing one payload shape.
 
-Parameters follow the same rules as [client-relayed RPC](../Client/custom-rpc#sending-data) — primitive types or `[DeriveINetSerializable]` structs.
+Parameters follow the same rules as [client-relayed RPC](../Client/custom-rpc#sending-data): primitive types or `[DeriveINetSerializable]` structs.
 
 ## Declaring server-side handlers
 
@@ -78,7 +78,15 @@ protected override void Init()
 
 :::
 
-A client can only ask the server to act on its own behalf — nothing stops a malformed or malicious request from naming someone else's entity. Always check `context.Sender` against the entity you're about to modify before applying any change, as in the example above.
+A client can only ask the server to act on its own behalf, and nothing stops a malformed or malicious request from naming someone else's entity. Always check `context.Sender` against the entity you're about to modify before applying any change, as in the example above.
+
+## Handlers run on the game thread {#handlers-run-on-the-game-thread}
+
+`On...` methods are dispatched onto the server's update thread, the same one your systems run on. You do not need to do anything about threading: read and write components through `EcsApi` directly, and a handler will never see an entity mid-update, because it cannot run while a system does.
+
+This changed in `0.2.0`. Handlers used to be invoked on the network thread as packets were parsed, which meant a handler and a system could touch the entity store at the same time.
+
+Long work is still the wrong thing to do here, for a different reason than before: a slow handler now delays everyone's tick. If the answer depends on state only a system can produce, store the request and let the system deal with it.
 
 ## Client side
 

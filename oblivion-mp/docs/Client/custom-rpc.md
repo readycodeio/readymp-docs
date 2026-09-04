@@ -6,8 +6,8 @@ sidebar_position: 6
 
 The OblivionMP SDK supports two kinds of Remote Procedure Call (RPC) messages:
 
-* **Client-relayed RPC** — sent by a client, relayed by the server to other clients. The server does not react to these messages; it only forwards them. This is what this page covers.
-* **Server RPC** — sent by a client to the server, which runs your server-side logic and may reply. Contracts and server-side handlers for these are defined in [server-side development](../Server-development/custom-rpc). This page covers how to handle the client side of a server RPC.
+* **Client-relayed RPC**: sent by a client, relayed by the server to other clients. The server does not react to these messages; it only forwards them. This is what this page covers.
+* **Server RPC**: sent by a client to the server, which runs your server-side logic and may reply. Contracts and server-side handlers for these are defined in [server-side development](../Server-development/custom-rpc). This page covers how to handle the client side of a server RPC.
 
 ## Client-relayed RPC
 
@@ -41,7 +41,7 @@ protected override void RegisterServices(IDependencyContainer services)
 
 To add a new RPC handler to your mod, add a method decorated with the [RpcEvent](../../api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.RpcEventAttribute) attribute.
 
-Method names must start with "On..." — a corresponding "Send..." method for sending the RPC will be generated automatically in the same class.
+Method names must start with "On...", and a corresponding "Send..." method for sending the RPC will be generated automatically in the same class.
 
 ```csharp title="Minimal RPC handler"
 public partial class MyRpc(ILogger logger) : ClientRpcHandler
@@ -177,7 +177,7 @@ public partial class MyRpc(ILogger logger) : ClientRpcHandler
 
 ## Handling server RPC on the client
 
-Server RPC contracts are declared in a common project shared by the server and client mods, and describe both the request (client → server) and response (server → client) shapes of an RPC — see [server-side development](../Server-development/custom-rpc) for how they're defined.
+Server RPC contracts are declared in a common project shared by the server and client mods, and describe both the request (client → server) and response (server → client) shapes of an RPC. See [server-side development](../Server-development/custom-rpc) for how they're defined.
 
 On the client, define a [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class extending [ServerRpcClient](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.ServerRpcClient) to send requests to the server and handle its responses. As with client-relayed RPC, the class must be registered in your mod's `RegisterServices` method.
 
@@ -198,4 +198,4 @@ Calling the generated `Send...` method sends the request to the server:
 SDK.Services.Resolve<ServerRpc>().SendAddWalletBalance();
 ```
 
-Only the legs of the contract declared by the shared contract are generated — a one-way client-to-server RPC has no `On...` handler stub on the client, and a one-way server-to-client RPC has no `Send...` method.
+Only the legs of the contract declared by the shared contract are generated: a one-way client-to-server RPC has no `On...` handler stub on the client, and a one-way server-to-client RPC has no `Send...` method.

@@ -41,12 +41,13 @@ server/
 ├── e_sqlite3.dll                     # Dependency
 ├── aspnetcorev2_inprocess.dll        # Dependency
 ├── *.dll                             # Managed runtime dependencies
-├── mods/                             # Directory for client-side mods
-    └── OblivionMp.Sdk
-        ├── manifes.json              # manifest file (unused in 0.1.0)
-        └── OblivionMp.Sdk.dll        # Client-side SDK
-├── server_mods/                      # Directory for server-side mods
-|   └── OblivionMp.Sdk.Serverside.dll # Server-side SDK
+├── mods/                             # Installed mods, one folder each
+|   └── OblivionMp.Sdk/
+|       ├── manifest.json             # Mod manifest, shared by both halves
+|       ├── client/                   # Handed out to connecting players
+|       |   └── OblivionMp.Sdk.dll
+|       └── server/                   # Stays on the server
+|           └── OblivionMp.Sdk.Serverside.dll
 ├── saves/                            # Directory for game saves (empty by default)
 └── wwwroot/                          # Admin panel assets
 ```
@@ -60,12 +61,13 @@ server/
 ├── config.json                       # Configuration file
 ├── libe_sqlite3.so                   # Dependency
 ├── *.dll                             # Managed runtime dependencies
-├── mods/                             # Directory for client-side mods
-    └── OblivionMp.Sdk
-        ├── manifes.json              # manifest file (unused in 0.1.0)
-        └── OblivionMp.Sdk.dll        # Client-side SDK
-├── server_mods/                      # Directory for server-side mods
-|   └── OblivionMp.Sdk.Serverside.dll # Server-side SDK, ships by default
+├── mods/                             # Installed mods, one folder each
+|   └── OblivionMp.Sdk/
+|       ├── manifest.json             # Mod manifest, shared by both halves
+|       ├── client/                   # Handed out to connecting players
+|       |   └── OblivionMp.Sdk.dll
+|       └── server/                   # Stays on the server
+|           └── OblivionMp.Sdk.Serverside.dll
 ├── saves/                            # Directory for game saves (empty by default)
 └── wwwroot/                          # Admin panel assets
 ```
