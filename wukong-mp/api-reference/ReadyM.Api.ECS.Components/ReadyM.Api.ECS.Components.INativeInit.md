@@ -19,6 +19,6 @@ void Init(AllocatorKind allocatorKind)
 
 #### Parameters
 
-`allocatorKind` [AllocatorKind](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/YooniCSharp/Native/LowLevel/AllocatorKind.cs)
+`allocatorKind` [AllocatorKind](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/YooniCSharp/Native/LowLevel/AllocatorKind.cs)
 
 

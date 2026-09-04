@@ -6,7 +6,6 @@ Assembly: ReadyM.Relay.Server.Sdk.dll
 Provides access to player events and actions on the server.
 
 ```csharp
-[Obsolete("This API is being deprecated in favor of the more general ServerEventsApi.")]
 public class PlayerApi
 ```
 
@@ -39,7 +38,7 @@ public Guid? GetReadyMId(PlayerId player)
 
 #### Parameters
 
-`player` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/PlayerId.cs)
+`player` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 #### Returns
 
@@ -53,13 +52,14 @@ public void Kick(PlayerId player)
 
 #### Parameters
 
-`player` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/PlayerId.cs)
+`player` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="ReadyM_Relay_Server_Sdk_Players_PlayerApi_OnPlayerConnected"></a> OnPlayerConnected
 
 Fired once the player has finished the handshake and their ECS entity exists.
 
 ```csharp
+[Obsolete("This API is being deprecated in favor of the more general ServerEventsApi.")]
 public event Action<PlayerConnectedEvent>? OnPlayerConnected
 ```
 
@@ -72,6 +72,7 @@ public event Action<PlayerConnectedEvent>? OnPlayerConnected
 Fired when the player leaves, whichever way they left.
 
 ```csharp
+[Obsolete("This API is being deprecated in favor of the more general ServerEventsApi.")]
 public event Action<PlayerDisconnectedEvent>? OnPlayerDisconnected
 ```
 

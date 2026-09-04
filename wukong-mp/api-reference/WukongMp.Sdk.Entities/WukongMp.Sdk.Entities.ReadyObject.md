@@ -24,23 +24,25 @@ public readonly struct ReadyObject : IReadyEntity<ReadyObject>
 
 [ReadyObjectExtensions.SetLocationRotation<ReadyObject\>\(ReadyObject, Vector3, Vector3\)](WukongMp.Sdk.Entities.ReadyObjectExtensions.md\#WukongMp\_Sdk\_Entities\_ReadyObjectExtensions\_SetLocationRotation\_\_1\_\_\_0\_System\_Numerics\_Vector3\_System\_Numerics\_Vector3\_)
 
-## Constructors
+## Properties
 
-### <a id="WukongMp_Sdk_Entities_ReadyObject__ctor_WukongMp_Sdk_Api_IWukongSynchronizationApi_Friflo_Engine_ECS_Entity_"></a> ReadyObject\(IWukongSynchronizationApi, Entity\)
+### <a id="WukongMp_Sdk_Entities_ReadyObject_IsNull"></a> IsNull
+
+Whether the entity behind this handle no longer exists.
 
 ```csharp
-public ReadyObject(IWukongSynchronizationApi api, Entity entity)
+public bool IsNull { get; }
 ```
 
-#### Parameters
+#### Property Value
 
-`api` [IWukongSynchronizationApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi.md)
-
-`entity` [Entity](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/Entity.cs)
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 ## Methods
 
 ### <a id="WukongMp_Sdk_Entities_ReadyObject_Get__1"></a> Get<T\>\(\)
+
+Reads a component, throwing if the entity is gone.
 
 ```csharp
 public ref T Get<T>() where T : struct, IComponent
@@ -49,6 +51,26 @@ public ref T Get<T>() where T : struct, IComponent
 #### Returns
 
  T
+
+#### Type Parameters
+
+`T` 
+
+### <a id="WukongMp_Sdk_Entities_ReadyObject_TryGet__1___0__"></a> TryGet<T\>\(out T\)
+
+Reads a copy of a component, or returns false when the entity is gone or does not carry it.
+
+```csharp
+public bool TryGet<T>(out T value) where T : struct, IComponent
+```
+
+#### Parameters
+
+`value` T
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 #### Type Parameters
 

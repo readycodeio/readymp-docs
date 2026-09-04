@@ -108,7 +108,7 @@ public PlayerId PlayerId { get; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_RebirthPointId"></a> RebirthPointId
 
@@ -128,7 +128,7 @@ public SpectatorReason SpectatorReason { get; }
 
 #### Property Value
 
- [SpectatorReason](https://github.com/readycodeio/wukongmp\-sdk/blob/2ec474d750b708ddb8ec4179f17489aea7264a6d/ReadyM.Wukong.Common/ECS/Values/SpectatorReason.cs)
+ [SpectatorReason](https://github.com/readycodeio/wukongmp\-sdk/blob/29ff28936c5326e1675ad7dcf354a210c52854d3/ReadyM.Wukong.Common/ECS/Values/SpectatorReason.cs)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_WaitingCutsceneId"></a> WaitingCutsceneId
 

@@ -34,7 +34,7 @@ public AreaId AreaId { get; set; }
 
 #### Property Value
 
- [AreaId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/AreaId.cs)
+ [AreaId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/AreaId.cs)
 
 ### <a id="ReadyM_Api_Multiplayer_ECS_Components_AreaScopeComponent_MasterClient"></a> MasterClient
 
@@ -44,7 +44,7 @@ public PlayerId MasterClient { get; set; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ## Methods
 
@@ -98,7 +98,7 @@ public AreaId GetIndexedValue()
 
 #### Returns
 
- [AreaId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/AreaId.cs)
+ [AreaId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/AreaId.cs)
 
 ### <a id="ReadyM_Api_Multiplayer_ECS_Components_AreaScopeComponent_MasterClientNotifyChanged_System_Int32_"></a> MasterClientNotifyChanged\(int\)
 

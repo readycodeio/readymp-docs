@@ -33,7 +33,7 @@ IReadOnlyList<PlayerId> AllPlayers { get; }
 
 #### Property Value
 
- [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/PlayerId.cs)\>
+ [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)\>
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_AllTamers"></a> AllTamers
 
@@ -69,7 +69,7 @@ IReadOnlyList<PlayerId> AreaPlayers { get; }
 
 #### Property Value
 
- [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/PlayerId.cs)\>
+ [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)\>
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_AreaTamers"></a> AreaTamers
 
@@ -93,7 +93,7 @@ AreaId? CurrentAreaId { get; }
 
 #### Property Value
 
- [AreaId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/AreaId.cs)?
+ [AreaId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/AreaId.cs)?
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_InArea"></a> InArea
 
@@ -153,7 +153,7 @@ PlayerId? LocalPlayerId { get; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/PlayerId.cs)?
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)?
 
 ## Methods
 
@@ -185,7 +185,7 @@ void EnableSpectatorMode(ReadyMainCharacter character, SpectatorReason reason)
 
 The character to enable spectator mode for.
 
-`reason` [SpectatorReason](https://github.com/readycodeio/wukongmp\-sdk/blob/2ec474d750b708ddb8ec4179f17489aea7264a6d/ReadyM.Wukong.Common/ECS/Values/SpectatorReason.cs)
+`reason` [SpectatorReason](https://github.com/readycodeio/wukongmp\-sdk/blob/29ff28936c5326e1675ad7dcf354a210c52854d3/ReadyM.Wukong.Common/ECS/Values/SpectatorReason.cs)
 
 The reason for enabling spectator mode.
 
@@ -199,7 +199,7 @@ void GetDisconnectReasonAndInvoke(Action<DisconnectedReason> callback)
 
 #### Parameters
 
-`callback` [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[DisconnectedReason](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api.Multiplayer/Protocol/DisconnectedReason.cs)\>
+`callback` [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[DisconnectedReason](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api.Multiplayer/Protocol/DisconnectedReason.cs)\>
 
 The callback to invoke with the disconnect reason.
 
@@ -230,7 +230,7 @@ ReadyMainCharacter? GetMainCharacterByPlayerId(PlayerId playerId)
 
 #### Parameters
 
-`playerId` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/PlayerId.cs)
+`playerId` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 The player ID.
 
@@ -310,7 +310,7 @@ void SpawnEnemy(TamerKind kind, Vector3 position, int count = 1, int teamId = 2)
 
 #### Parameters
 
-`kind` [TamerKind](https://github.com/readycodeio/wukongmp\-sdk/blob/2ec474d750b708ddb8ec4179f17489aea7264a6d/WukongMp.Api/Configuration/TamerKind.cs)
+`kind` [TamerKind](https://github.com/readycodeio/wukongmp\-sdk/blob/29ff28936c5326e1675ad7dcf354a210c52854d3/WukongMp.Api/Configuration/TamerKind.cs)
 
 The kind of enemy to spawn.
 
@@ -366,7 +366,7 @@ bool TryGetPlayerInfoById(PlayerId player, out string? nickname, out int? team)
 
 #### Parameters
 
-`player` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/PlayerId.cs)
+`player` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 The player ID.
 

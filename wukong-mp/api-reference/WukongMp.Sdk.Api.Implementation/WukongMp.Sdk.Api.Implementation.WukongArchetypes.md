@@ -48,7 +48,7 @@ public ArchetypeId AreaArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_GlobalPlayerArchetype"></a> GlobalPlayerArchetype
 
@@ -63,7 +63,7 @@ public ArchetypeId GlobalPlayerArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_MainCharacterArchetype"></a> MainCharacterArchetype
 
@@ -82,7 +82,7 @@ public ArchetypeId MainCharacterArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_PvpStateArchetype"></a> PvpStateArchetype
 
@@ -97,7 +97,7 @@ public ArchetypeId PvpStateArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_TamerArchetype"></a> TamerArchetype
 
@@ -117,7 +117,7 @@ public ArchetypeId TamerArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_WorldArchetype"></a> WorldArchetype
 
@@ -127,6 +127,6 @@ public ArchetypeId WorldArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 

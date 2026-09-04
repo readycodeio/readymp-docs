@@ -33,7 +33,7 @@ public NativeString256 Nickname { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ## Methods
 

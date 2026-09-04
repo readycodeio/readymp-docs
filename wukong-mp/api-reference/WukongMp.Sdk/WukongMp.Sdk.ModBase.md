@@ -127,7 +127,7 @@ protected abstract void Initialize(IDependencyContainer services)
 
 #### Parameters
 
-`services` [IDependencyContainer](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/DI/IDependencyContainer.cs)
+`services` [IDependencyContainer](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ### <a id="WukongMp_Sdk_ModBase_LateInit"></a> LateInit\(\)
 
@@ -147,7 +147,7 @@ protected void RegisterArchetypes(Action<IArchetypeRegistry> configure)
 
 #### Parameters
 
-`configure` [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[IArchetypeRegistry](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/ECS/Worlds/IArchetypeRegistry.cs)\>
+`configure` [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[IArchetypeRegistry](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/ECS/Worlds/IArchetypeRegistry.cs)\>
 
 The configuration callback.
 

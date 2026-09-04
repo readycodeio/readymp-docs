@@ -34,7 +34,7 @@ public PlayerId PlayerId { get; set; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ## Methods
 
@@ -78,7 +78,7 @@ public PlayerId GetIndexedValue()
 
 #### Returns
 
- [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="ReadyM_Api_Multiplayer_ECS_Components_PlayerScopeComponent_PlayerIdNotifyChanged_System_Int32_"></a> PlayerIdNotifyChanged\(int\)
 

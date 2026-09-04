@@ -40,7 +40,7 @@ public required PlayerId PlayerId { get; init; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/d18fdc661c93a259eeb85e08d6767d73dcca0550/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="ReadyM_Relay_Server_Sdk_Players_PlayerDisconnectedEvent_ReadyMId"></a> ReadyMId
 
