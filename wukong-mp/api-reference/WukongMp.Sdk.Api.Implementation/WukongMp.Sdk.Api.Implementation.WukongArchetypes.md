@@ -24,6 +24,12 @@ public class WukongArchetypes
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
 
+## Remarks
+
+Ids are positional: they are handed out in the order archetypes are registered, and the client and the relay
+server have to agree. Ids 2 and 3 belong to the cell and world archetypes, which Wukong does not use but still
+registers on both sides so that everything after them lines up. Do not close the gap.
+
 ## Constructors
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes__ctor"></a> WukongArchetypes\(\)
@@ -42,7 +48,7 @@ public ArchetypeId AreaArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_GlobalPlayerArchetype"></a> GlobalPlayerArchetype
 
@@ -57,7 +63,7 @@ public ArchetypeId GlobalPlayerArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_MainCharacterArchetype"></a> MainCharacterArchetype
 
@@ -68,7 +74,7 @@ Components:<br />
 * **HpComponent**<br />
 * **NicknameComponent**<br />
 * **TeamComponent**<br />
-* **PvPComponent**<br />
+* PvPComponent<br />
 
 ```csharp
 public ArchetypeId MainCharacterArchetype { get; }
@@ -76,13 +82,13 @@ public ArchetypeId MainCharacterArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_PvpStateArchetype"></a> PvpStateArchetype
 
 Global PvP state entity archetype. Used by the PvP mod.
 Components:<br />
-* **PvpStateComponent**
+* PvpStateComponent
 
 ```csharp
 [Obsolete("Will be moved to the PvP mod in future refactoring.")]
@@ -91,7 +97,7 @@ public ArchetypeId PvpStateArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 ### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_TamerArchetype"></a> TamerArchetype
 
@@ -111,6 +117,16 @@ public ArchetypeId TamerArchetype { get; }
 
 #### Property Value
 
- [ArchetypeId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/ArchetypeId.cs)
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/ArchetypeId.cs)
+
+### <a id="WukongMp_Sdk_Api_Implementation_WukongArchetypes_WorldArchetype"></a> WorldArchetype
+
+```csharp
+public ArchetypeId WorldArchetype { get; }
+```
+
+#### Property Value
+
+ [ArchetypeId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/ArchetypeId.cs)
 
 

@@ -17,10 +17,6 @@ Provides access to all of the various APIs and services that WukongMP offers.
 
 API for interacting with the in-game chat.
 
- [IWukongCheatsApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongCheatsApi.md)
-
-Provides methods and properties for enabling and managing cheats in the game.
-
  [IWukongConfigurationApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongConfigurationApi.md)
 
 Provides ways to configure various aspects othe game's behavior.
@@ -46,10 +42,6 @@ Provides methods related to input, such as registering key binds.
  [IWukongLocalApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi.md)
 
 Provides various utility methods not related to networking.
-
- [IWukongPvpApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongPvpApi.md)
-
-API for PvP mode. Will be removed in the future when custom data sync and server-side scripting are implemented.
 
  [IWukongSynchronizationApi](../WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchronizationApi.md)
 

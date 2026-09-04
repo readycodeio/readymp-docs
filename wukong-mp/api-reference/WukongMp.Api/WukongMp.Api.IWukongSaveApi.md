@@ -29,7 +29,7 @@ Cancellation token to cancel the download operation.
 
 #### Returns
 
- [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[FileInfo](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Saves/FileInfo.cs)?\>
+ [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[FileInfo](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Saves/FileInfo.cs)?\>
 
 The content of the player's save file if the download was successful, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> otherwise.
 
@@ -49,7 +49,7 @@ Cancellation token to cancel the download operation.
 
 #### Returns
 
- [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[FileInfo](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Saves/FileInfo.cs)?\>
+ [Task](https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1)<[FileInfo](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Saves/FileInfo.cs)?\>
 
 The content of the world save file if the download was successful, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> otherwise.
 

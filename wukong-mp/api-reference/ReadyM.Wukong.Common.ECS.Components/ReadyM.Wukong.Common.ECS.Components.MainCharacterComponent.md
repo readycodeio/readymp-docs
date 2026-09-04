@@ -13,7 +13,7 @@ public struct MainCharacterComponent : IIndexedComponent<PlayerId>, IComponent, 
 
 [IIndexedComponent<PlayerId\>](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/Index/IIndexedComponent.cs), 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs)
+INetSerializable
 
 #### Inherited Members
 
@@ -194,7 +194,7 @@ public PlayerId PlayerId { get; set; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_RebirthPointId"></a> RebirthPointId
 
@@ -278,6 +278,26 @@ public void Assign(in MainCharacterComponent value)
 
 `value` [MainCharacterComponent](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.MainCharacterComponent.md)
 
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_AttributesNotifyChanged_System_Int32_"></a> AttributesNotifyChanged\(int\)
+
+```csharp
+public void AttributesNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_BeguilingChantEligibleNotifyChanged_System_Int32_"></a> BeguilingChantEligibleNotifyChanged\(int\)
+
+```csharp
+public void BeguilingChantEligibleNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_Deserialize_LiteNetLib_Utils_NetDataReader_"></a> Deserialize\(NetDataReader\)
 
 ```csharp
@@ -286,7 +306,27 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_EquipmentNotifyChanged_System_Int32_"></a> EquipmentNotifyChanged\(int\)
+
+```csharp
+public void EquipmentNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_GetChangeComponent"></a> GetChangeComponent\(\)
+
+```csharp
+public Type GetChangeComponent()
+```
+
+#### Returns
+
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_GetIndexedValue"></a> GetIndexedValue\(\)
 
@@ -298,7 +338,147 @@ public PlayerId GetIndexedValue()
 
 #### Returns
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_InJumpNotifyChanged_System_Int32_"></a> InJumpNotifyChanged\(int\)
+
+```csharp
+public void InJumpNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_IsAttackingNotifyChanged_System_Int32_"></a> IsAttackingNotifyChanged\(int\)
+
+```csharp
+public void IsAttackingNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_IsFallingNotifyChanged_System_Int32_"></a> IsFallingNotifyChanged\(int\)
+
+```csharp
+public void IsFallingNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_IsFlyingNotifyChanged_System_Int32_"></a> IsFlyingNotifyChanged\(int\)
+
+```csharp
+public void IsFlyingNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_IsLandingMoveNotifyChanged_System_Int32_"></a> IsLandingMoveNotifyChanged\(int\)
+
+```csharp
+public void IsLandingMoveNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_IsSpectatorNotifyChanged_System_Int32_"></a> IsSpectatorNotifyChanged\(int\)
+
+```csharp
+public void IsSpectatorNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_IsStandRotateNotifyChanged_System_Int32_"></a> IsStandRotateNotifyChanged\(int\)
+
+```csharp
+public void IsStandRotateNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_IsTransformedNotifyChanged_System_Int32_"></a> IsTransformedNotifyChanged\(int\)
+
+```csharp
+public void IsTransformedNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_MoveAccelerationNotifyChanged_System_Int32_"></a> MoveAccelerationNotifyChanged\(int\)
+
+```csharp
+public void MoveAccelerationNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_MoveSpeedLevelNotifyChanged_System_Int32_"></a> MoveSpeedLevelNotifyChanged\(int\)
+
+```csharp
+public void MoveSpeedLevelNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_MoveSpeedStateNotifyChanged_System_Int32_"></a> MoveSpeedStateNotifyChanged\(int\)
+
+```csharp
+public void MoveSpeedStateNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_OrientRotationToMovementNotifyChanged_System_Int32_"></a> OrientRotationToMovementNotifyChanged\(int\)
+
+```csharp
+public void OrientRotationToMovementNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_PlayerIdNotifyChanged_System_Int32_"></a> PlayerIdNotifyChanged\(int\)
+
+```csharp
+public void PlayerIdNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_RebirthPointIdNotifyChanged_System_Int32_"></a> RebirthPointIdNotifyChanged\(int\)
+
+```csharp
+public void RebirthPointIdNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
@@ -308,6 +488,66 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_ShouldWaitRotateFinishedNotifyChanged_System_Int32_"></a> ShouldWaitRotateFinishedNotifyChanged\(int\)
+
+```csharp
+public void ShouldWaitRotateFinishedNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_SpectatorReasonNotifyChanged_System_Int32_"></a> SpectatorReasonNotifyChanged\(int\)
+
+```csharp
+public void SpectatorReasonNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_TurnInplaceRemainAngleNotifyChanged_System_Int32_"></a> TurnInplaceRemainAngleNotifyChanged\(int\)
+
+```csharp
+public void TurnInplaceRemainAngleNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_TurnInplaceTargetRotationNotifyChanged_System_Int32_"></a> TurnInplaceTargetRotationNotifyChanged\(int\)
+
+```csharp
+public void TurnInplaceTargetRotationNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_VelocityNotifyChanged_System_Int32_"></a> VelocityNotifyChanged\(int\)
+
+```csharp
+public void VelocityNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_MainCharacterComponent_WaitingSequenceIdNotifyChanged_System_Int32_"></a> WaitingSequenceIdNotifyChanged\(int\)
+
+```csharp
+public void WaitingSequenceIdNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 

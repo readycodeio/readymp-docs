@@ -1,0 +1,119 @@
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+# 控制台命令
+
+WukongMP SDK 包含一个命令控制台，按下键盘上的 <kbd>F1</kbd> 即可访问。
+
+## 键盘快捷键
+
+| 绑定                            | 行动          |
+| ----------------------------- | ----------- |
+| <kbd>TAB</kbd>                | 对所选命令进行自动完成 |
+| <kbd>Alt</kbd> + <kbd>↑</kbd> | 上一条命令       |
+| <kbd>Alt</kbd> + <kbd>↓</kbd> | 下一条命令       |
+
+## 定义自定义命令
+
+使用 [Console
+API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongConsoleApi)
+来定义自定义命令。
+
+
+### 注册没有参数的命令
+
+<Tabs>
+<TabItem value="code" label="源代码">
+
+```csharp
+void RebirthAtShrine() { ... }
+// ...
+{
+    WukongApi.Console.AddCommand("rebirth_shrine", ConsoleCommand.Create(RebirthAtShrine));
+}
+```
+
+</TabItem>
+<TabItem value="console" label="控制台">
+
+
+```shell
+rebirth_shrine
+```
+
+</TabItem>
+</Tabs>
+
+### 需要参数
+
+命令参数将从处理程序签名中推断——支持的类型包括 `string`、`int`、`float`、`double` 以及
+`bool`。参数可以是可选的，在这种情况下需要提供默认值。
+
+<Tabs>
+<TabItem value="code" label="源代码">
+
+```csharp
+void TeleportToShrine(int shrine = 1001) { ... }
+// ...
+{
+    WukongApi.Console.AddCommand("teleport_shrine", ConsoleCommand.Create(TeleportToShrine));
+}
+```
+
+</TabItem>
+<TabItem value="console" label="控制台">
+
+```shell
+teleport_shrine             # teleports to shrine 1001
+teleport_shrine 2005        # teleports to shrine 2005
+```
+
+</TabItem>
+</Tabs>
+
+### 定义自动完成的参数
+
+您可以定义在输入命令时将显示的一组参数值。这些值可以用箭头键进行选择，并可通过 <kbd>TAB</kbd> 自动完成。
+
+<Tabs>
+<TabItem value="code" label="源代码">
+
+```csharp
+IEnumerable<string> GetAllValidUnitNames() => ["wolf_soldier", "wolf_sentinel", "gold_rhino"];
+
+void SpawnMonster(string monsterType) { ... }
+// ...
+{
+    WukongApi.Console.AddCommand("spawn", ConsoleCommand.Create(SpawnMonster), GetAllValidUnitNames());
+}
+```
+
+</TabItem>
+<TabItem value="console" label="控制台">
+
+在完成命令名称后，系统将立即显示可用的参数值：
+
+```shell
+spawn
+//highlight-start
+wolf_soldier
+wolf_sentinel
+gold_rhino
+//highlight-end
+```
+
+参数会根据已输入的内容进行筛选：
+
+```shell
+spawn wo
+//highlight-start
+wolf_soldier
+wolf_sentinel
+//highlight-end
+```
+
+---
+
+</TabItem>
+</Tabs>

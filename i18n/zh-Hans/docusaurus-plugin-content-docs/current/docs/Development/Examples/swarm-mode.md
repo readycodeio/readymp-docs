@@ -23,7 +23,7 @@ public class Mod : ModBase
 `Initialize` 方法是配置模组的地方。在这个模组中，我们要做几件事：
 
 1. 在依赖注入容器中注册我们的 RPC 处理程序类，以实现 RPC 的发送与接收。
-1. 从依赖注入容器中解析 `SpawnEnemySwarmSystem`——你模组中定义的每个系统都会在那里被注入。
+1. 从依赖注入容器中解析 `SpawnEnemySwarmSystem`，你模组中定义的每个系统都会在那里被注入。
 1. 注册一个控制台命令 `swarm_mode`，用于开启我们的自定义游戏模式，并通知其他玩家。
 1. 订阅 `OnPlayerDead` 事件，在最后一个玩家死亡时将其禁用，并在有人死亡时发送事件。
 
@@ -62,7 +62,7 @@ public class Mod : ModBase
 
 我们的模组使用一些自定义的远程过程调用来向其他玩家通知战斗的状态。
 
-这些调用都会显示用户界面元素——信息横幅或对接收玩家可见的聊天消息。
+这些调用都会显示用户界面元素：信息横幅，或对接收玩家可见的聊天消息。
 
 我们使用 `AreaOfInterestAll` [Relay
 mode](../../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode)，以在同一关卡的所有客户端接收该消息，包含发送者。这样每个人看到的消息相同。
@@ -140,7 +140,7 @@ API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongLocalApi)
         _enabled = false;
         WukongApi.Local.AddChatMessage($"Swarm mode ended, survived {_enemies} enemies", FLinearColor.OrangeRed);
 
-        // reset state for next time
+        // 重置状态，供下一次使用
         _enemies = 0;
         _swarmSize = 3;
         _timeSinceLastSpawn = SpawnInterval - InitialDelay;
@@ -163,14 +163,14 @@ API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchroniza
         if (!_enabled || !WukongApi.Sync.LocalMainCharacter.HasValue)
             return;
 
-        _timeSinceLastSpawn += tick.deltaTime;
+        _timeSinceLastSpawn += tick.DeltaTime;
         if (_timeSinceLastSpawn > SpawnInterval)
         {
             _timeSinceLastSpawn = 0;
             WukongApi.Local.ShowInfoMessage($"Spawning {_swarmSize} enemies!", 1);
 
 // highlight-start
-            // spawn a few enemies around the player
+            // 在玩家周围生成若干敌人
             for (var i = 0; i < _swarmSize; i++)
             {
                 var position = GetNthPointOnCircle(WukongApi.Sync.LocalMainCharacter.Value.Location, i, _swarmSize);
@@ -178,10 +178,10 @@ API](../../../api-reference/WukongMp.Sdk.Api/WukongMp.Sdk.Api.IWukongSynchroniza
             }
 // highlight-end
 
-            // increase swarm size, up to a certain point
+            // 增大兽潮规模，但有上限
             _swarmSize = Math.Min(_swarmSize + SwarmIncrement, SwarmMax);
 
-            // count total enemies spawned for end-of-mode summary
+            // 统计生成的敌人总数，用于模式结束时的总结
             _enemies += _swarmSize;
         }
     }

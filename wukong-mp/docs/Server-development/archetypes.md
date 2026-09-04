@@ -1,11 +1,12 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 # Archetypes and components
 
-An **archetype** is the fixed set of components an entity is created with. WukongMP exposes four built-in archetypes that your server mod can query and extend:
+An **archetype** is the fixed set of components an entity is created with. WukongMP exposes five built-in archetypes that your server mod can query and extend:
 
+- the **world** entity (one per server, for state that belongs to nothing else),
 - the **area** entity (one per active area),
 - the **global player entity** (one per connected player),
 - the **tamer** (an enemy in the world),
@@ -14,6 +15,7 @@ An **archetype** is the fixed set of components an entity is created with. Wukon
 They are named by [WukongArchetypes](../../api-reference/WukongMp.Sdk.Serverside/WukongMp.Sdk.Serverside.WukongArchetypes), a small class that maps each one to its [ArchetypeId](../../api-reference/ReadyM.Api.Idents/ReadyM.Api.Idents.ArchetypeId):
 
 ```csharp
+// WukongArchetypes.WorldArchetype
 // WukongArchetypes.AreaArchetype
 // WukongArchetypes.GlobalPlayerArchetype
 // WukongArchetypes.TamerArchetype
@@ -30,11 +32,19 @@ The numeric IDs behind these properties are an implementation detail of the curr
 
 Attach your own components to any of these in your mod's `Init`, the same way the examples in [Getting started](getting-started#registering-components-and-archetypes) do. The tables below list the components each archetype already carries, so you know what is available to query.
 
-:::warning[The access API is temporary]
+Creating entities of an archetype, and reading and writing their components, is covered in [Entities](entities).
 
-Right now you read and write these components through the low-level [`EcsApi`](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.EcsApi) (raw `Query` calls and `ref` component access). This is deliberately bare-bones for `0.3.1`. A higher-level, less raw server API is planned, so expect the way you access entity data to change in a later release.
+## World entity
 
-:::
+One entity for the whole server, created once at startup. It is the place for state that belongs to the session rather than to an area, a player or an actor: match settings, a global mode toggle, a scoreboard.
+
+| Component | Description |
+| --- | --- |
+| `MetadataComponent` | Bookkeeping the SDK uses to identify the entity. |
+
+Nothing game-specific lives here by default, which is the point: it starts empty so mods can claim it. The PvP mod keeps its match settings and round state on this entity.
+
+The world entity does not exist yet when your mod's `Init` runs, so if you need to write to it at startup, subscribe to `OnWorldEntityCreated`. See [Server events](server-events).
 
 ## Area entity
 
@@ -46,12 +56,11 @@ In Black Myth: Wukong, an area is a loaded map. Each main story act has one, eac
 
 :::
 
-This is where room rules live, so a system that needs to know whether cheats are allowed or whether a cutscene has already played reads it here.
+A system that needs to know whether a cutscene has already played in this area reads it here. Room and match rules used to live on this entity as a `RoomComponent`; they moved into the PvP mod in `0.4.0`, since that is the only thing that used them.
 
 | Component | Description |
 | --- | --- |
 | [`AreaScopeComponent`](../../api-reference/ReadyM.Api.Multiplayer.ECS.Components/ReadyM.Api.Multiplayer.ECS.Components.AreaScopeComponent) | The `AreaId` this entity scopes to. |
-| [`RoomComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.RoomComponent) | Room configuration: level, tournament rounds, whether the gourd, consumables, immobilize, Phantom Rush, chat, cheats and anti-stall are allowed, and the NG+ level spawned enemies scale to in PvP. |
 | [`MovieComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.MovieComponent) | Which cutscenes have started and finished in this area. |
 
 `AreaScopeComponent` is the component every area-scoped entity is matched on. Pairing it with a component of your own is how you narrow a query to a single area, as the SDK's own movie handlers do.
@@ -94,15 +103,14 @@ When crossing between areas, this entity is destroyed and recreated, so persiste
 | [`HpComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.HpComponent) | Current HP, base max HP, the max HP multiplier in percent, and death state. |
 | [`NicknameComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.NicknameComponent) | The player's displayed name, copied from `PlayerComponent` on area change. |
 | [`TeamComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.TeamComponent) | Team ID of the underlying game actor. |
-| [`PvPComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.PvPComponent) | Whether the player has readied up for PvP. |
 
 `MainCharacterComponent` is the component to pair with when you want per-player data, because it is the one that carries the `PlayerId` in the world. Almost every query in a server mod starts here.
 
 All of the above are the game's own networked components, defined in `ReadyM.Wukong.Common`.
 
-:::note[PvP state]
+:::note[PvP components moved]
 
-The PvP mod adds a fifth, global archetype holding a single [`PvpStateComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.PvpStateComponent) with the match settings and round state. `WukongArchetypes.PvpStateArchetype` still names it, but it is marked obsolete and will move into the PvP mod, so treat it as PvP-internal rather than part of the SDK surface.
+`PvPComponent`, `PvpStateComponent` and `RoomComponent` used to ship in `ReadyM.Wukong.Common` and appear on these archetypes. As of `0.4.0` they belong to the PvP mod, along with the `PvpStateArchetype` that named the archetype they lived on. If you referenced any of them, they are now in the [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod), which is also the worked example of a mod putting its own state on the world entity.
 
 :::
 
@@ -140,14 +148,12 @@ public class Mod : ServerModBase
 
 Both calls take a builder, where `Add<T>()` declares one component on the archetype. The game's own components are resolved by type, so you can freely mix them with your own.
 
-With the `ArchetypeId` in hand, create entities from it through `EcsApi`:
-
-```csharp
-var entity = ecsApi.CreateEntity(Mod.ShrineArchetype);
-```
+Keep the returned `ArchetypeId` on your mod class. You need it to create entities, which is covered in [Entities](entities).
 
 :::important
 
-An archetype your mod registers must be registered on the client too, in the same order and with the same component set, or the two sides disagree about what an entity of that archetype contains. Register archetypes from a single [`IArchetypeRegistration`](../../api-reference/ReadyM.Api.ECS.Registry/ReadyM.Api.ECS.Registry.IArchetypeRegistration) on the client so the order is obvious and easy to keep in step. See [Custom components](../Development/APIs/custom-components).
+An archetype your mod registers must be registered on the client too, in the same order and with the same component set, or the two sides disagree about what an entity of that archetype contains.
+
+On the client, do it in one `RegisterArchetypes` call so the order is obvious and easy to keep in step. See [Custom components](../Development/APIs/custom-components).
 
 :::

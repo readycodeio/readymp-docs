@@ -1,6 +1,6 @@
 # Class RpcApi
 
-Namespace: [ReadyM.Relay.Server.Sdk.Rpc](../ReadyM.Relay.Server.Sdk/ReadyM.Relay.Server.Sdk.Rpc.md)  
+Namespace: [ReadyM.Relay.Server.Sdk.Rpc](../ReadyM.Relay.Server.Sdk.Players/ReadyM.Relay.Server.Sdk.Rpc.md)  
 Assembly: ReadyM.Relay.Server.Sdk.dll  
 
 Low-level API for handling RPC messages in the ReadyM Relay Server SDK.
@@ -36,10 +36,10 @@ public void SendToOne(PlayerId player, NetDataWriter data, DeliveryMethod delive
 
 #### Parameters
 
-`player` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)
+`player` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
-`data` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`data` NetDataWriter
 
-`deliveryMethod` [DeliveryMethod](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/NetConstants.cs)
+`deliveryMethod` DeliveryMethod
 
 

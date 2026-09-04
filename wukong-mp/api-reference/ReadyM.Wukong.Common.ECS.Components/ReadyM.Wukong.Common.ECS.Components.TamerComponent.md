@@ -6,13 +6,14 @@ Assembly: ReadyM.Wukong.Common.dll
 Holds the state of a tamer (monster) entity.
 
 ```csharp
-public struct TamerComponent : IComponent, INetSerializable, IDisposable
+public struct TamerComponent : INativeInit, IComponent, INetSerializable, IDisposable
 ```
 
 #### Implements
 
+[INativeInit](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/ECS/Components/INativeInit.cs), 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs), 
+INetSerializable, 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members
@@ -44,7 +45,7 @@ public NativeString256 Guid { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_HasFsmPaused"></a> HasFsmPaused
 
@@ -84,7 +85,7 @@ public NativeString256 UnitPath { get; set; }
 
 #### Property Value
 
- [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/YooniCSharp/Native/Container/NativeString256.cs)
+ [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ## Methods
 
@@ -96,7 +97,7 @@ public void AddHoldingPlayers(in PlayerId value)
 
 #### Parameters
 
-`value` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)
+`value` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_Assign_ReadyM_Wukong_Common_ECS_Components_TamerComponent__"></a> Assign\(in TamerComponent\)
 
@@ -122,7 +123,7 @@ public bool ContainsHoldingPlayers(in PlayerId value)
 
 #### Parameters
 
-`value` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)
+`value` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 #### Returns
 
@@ -136,13 +137,23 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_Dispose"></a> Dispose\(\)
 
 ```csharp
 public void Dispose()
 ```
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_GetChangeComponent"></a> GetChangeComponent\(\)
+
+```csharp
+public Type GetChangeComponent()
+```
+
+#### Returns
+
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_GetHoldingPlayers"></a> GetHoldingPlayers\(\)
 
@@ -152,7 +163,7 @@ public NativeList<PlayerId>.ReadOnly GetHoldingPlayers()
 
 #### Returns
 
- [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/YooniCSharp/Native/Container/NativeList.cs)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/YooniCSharp/Native/Container/NativeList.cs)
+ [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/YooniCSharp/Native/Container/NativeList.cs)<[PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)\>.[ReadOnly](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/YooniCSharp/Native/Container/NativeList.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_GetHoldingPlayers_System_Int32_"></a> GetHoldingPlayers\(int\)
 
@@ -166,7 +177,47 @@ public PlayerId GetHoldingPlayers(int index)
 
 #### Returns
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_GuidNotifyChanged_System_Int32_"></a> GuidNotifyChanged\(int\)
+
+```csharp
+public void GuidNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_HasFsmPausedNotifyChanged_System_Int32_"></a> HasFsmPausedNotifyChanged\(int\)
+
+```csharp
+public void HasFsmPausedNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_HoldingPlayersNotifyChanged_System_Int32_"></a> HoldingPlayersNotifyChanged\(int\)
+
+```csharp
+public void HoldingPlayersNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_Init_Yooni_Native_LowLevel_AllocatorKind_"></a> Init\(AllocatorKind\)
+
+```csharp
+public void Init(AllocatorKind allocatorKind)
+```
+
+#### Parameters
+
+`allocatorKind` [AllocatorKind](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/YooniCSharp/Native/LowLevel/AllocatorKind.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_InsertHoldingPlayers_System_Int32_ReadyM_Api_Idents_PlayerId__"></a> InsertHoldingPlayers\(int, in PlayerId\)
 
@@ -178,7 +229,17 @@ public void InsertHoldingPlayers(int index, in PlayerId value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)
+`value` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_IsBossOrEliteNotifyChanged_System_Int32_"></a> IsBossOrEliteNotifyChanged\(int\)
+
+```csharp
+public void IsBossOrEliteNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_RemoveAtHoldingPlayers_System_Int32_"></a> RemoveAtHoldingPlayers\(int\)
 
@@ -192,7 +253,7 @@ public PlayerId RemoveAtHoldingPlayers(int index)
 
 #### Returns
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
@@ -202,7 +263,7 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_SetHoldingPlayers_Yooni_Native_Container_NativeList_ReadyM_Api_Idents_PlayerId___"></a> SetHoldingPlayers\(in NativeList<PlayerId\>\)
 
@@ -212,7 +273,7 @@ public void SetHoldingPlayers(in NativeList<PlayerId> value)
 
 #### Parameters
 
-`value` [NativeList](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/YooniCSharp/Native/Container/NativeList.cs)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)\>
+`value` [NativeList](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/YooniCSharp/Native/Container/NativeList.cs)<[PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)\>
 
 ### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_SetHoldingPlayers_System_Int32_ReadyM_Api_Idents_PlayerId__"></a> SetHoldingPlayers\(int, in PlayerId\)
 
@@ -224,6 +285,16 @@ public void SetHoldingPlayers(int index, in PlayerId value)
 
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
-`value` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/Idents/PlayerId.cs)
+`value` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
+
+### <a id="ReadyM_Wukong_Common_ECS_Components_TamerComponent_UnitPathNotifyChanged_System_Int32_"></a> UnitPathNotifyChanged\(int\)
+
+```csharp
+public void UnitPathNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 

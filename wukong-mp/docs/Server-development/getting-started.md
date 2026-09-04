@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Server-side mods run inside the WukongMP relay server. They can register their own networked components, attach them to existing archetypes, run gameplay systems on the server tick, and handle RPCs sent by clients.
 
-A server-side mod is a .NET class library referencing the server SDK, defining a single class extending [ServerModBase](../../api-reference/ReadyM.Relay.Server.Sdk/ReadyM.Relay.Server.Sdk.ServerModBase). Its assembly is placed directly in the server's [`server_mods/` directory](../Server/mod-management#server-side-mods), a separate location from the client-facing `mods/` folder, where the mod loader picks it up and instantiates the class when the server starts.
+A server-side mod is a .NET class library referencing the server SDK, defining a single class extending [ServerModBase](../../api-reference/ReadyM.Relay.Server.Sdk/ReadyM.Relay.Server.Sdk.ServerModBase). Its assemblies go in the [`server/` folder of your mod](../Server/mod-management#server-side-mods), alongside the `client/` folder and the manifest, where the server picks them up and instantiates the class on startup.
 
 ```csharp title="Minimal server mod class"
 using ReadyM.Relay.Server.Sdk;
@@ -30,7 +30,7 @@ public class MyServerMod : ServerModBase
 
 :::tip[Learn from a shipping mod]
 
-The [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod) is built on this SDK and ships with the server. Its `WukongMp.Coop.Serverside` project is a small, complete example of everything on these pages: two systems, one RPC handler, and a shared contract project. The [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod) is not updated to use server-side features.
+Both official modes are built on this SDK and ship with the server. The [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod)'s `WukongMp.Coop.Serverside` project is the smaller example: a few systems, an RPC handler, and a shared contract project. The [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod) was rewritten as a server-side mod in `0.4.0` and is the larger one, covering server events, world-entity state and a config file.
 
 :::
 
@@ -50,7 +50,15 @@ A typical setup for a fully-featured mod involves **three projects**:
 * A server-side mod, targeting `net10.0`, and referencing the shared mod. 
 * A client-side mod, targeting `netstandard2.0`, and referencing the shared mod.
 
-The shared project targets `netstandard2.0` so both of the other two can reference it. In the template it references the SDK assemblies with `Private="false"`, which keeps the `netstandard2.0` builds out of the server mod's output folder, where the `net10.0` builds have to win. That split is why the template carries two dependency folders: `Dependencies/SDK` for the `netstandard2.0` assemblies and `Dependencies/ServerSDK` for the `net10.0` ones.
+The shared project targets `netstandard2.0` so both of the other two can reference it. Each project references the SDK through the NuGet package for its side:
+
+| Project | Package |
+| --- | --- |
+| shared | `ReadyM.SDK.Wukong.Common` |
+| client | `ReadyM.SDK.Wukong.Client` |
+| server | `ReadyM.SDK.Wukong.Server` |
+
+Client and Server both depend on Common and neither depends on the other, so calling client-only API from your server mod is a compile error rather than something you discover at runtime.
 
 ## Registering components and archetypes
 
@@ -101,25 +109,21 @@ The two halves are symmetric. Whatever the server mod registers and attaches, th
 protected override void Initialize(IDependencyContainer services)
 {
     services.Resolve<IComponentApi>().RegisterComponent<BountyComponent>();
-    services.RegisterSingleton<IArchetypeRegistration, BountyRegistration>();
+
+    RegisterArchetypes(registry =>
+    {
+        registry.ModifyArchetype(WukongApi.Archetypes.GlobalPlayerArchetype, b => b.Add<BountyComponent>());
+    });
 }
 ```
 
-```csharp title="BountyRegistration.cs"
-public class BountyRegistration : IArchetypeRegistration
-{
-    public void Register(IArchetypeRegistry registry)
-    {
-        registry.ModifyArchetype(WukongApi.Archetypes.GlobalPlayerArchetype, b => b.Add<BountyComponent>());
-    }
-}
-```
+`RegisterArchetypes` replaces the separate `IArchetypeRegistration` class this used to need. It takes a callback that runs once while the ECS schema is built, and it exists on both mod base classes, so the two halves now look the same.
 
 See [Custom components](../Development/APIs/custom-components) for the client side in full.
 
 :::important
 
-The two sides have to agree exactly. Register the same components, in the same order, and attach them to the same archetypes on both sides. Component IDs are positional, assigned in registration order and sent as a byte on the wire, so a mismatch does not fail loudly, it misreads the stream.
+The two sides have to agree exactly. Register the same components, in the same order, and attach them to the same archetypes on both sides. Component IDs are positional, assigned in registration order and sent as a byte on the wire, so a mismatch does not fail with an error, it misreads the stream.
 
 The practical rule: keep the component definitions in the shared project, do the registration in one place on each side, and ship the client mod and the server mod together as versions of the same package.
 
@@ -158,7 +162,7 @@ Reach for a local component whenever the client has no business seeing the value
 
 :::note
 
-Components are capped at 256 bytes each, local or networked, and the server has a fixed number of component slots. Registering fails loudly if you exceed either.
+Components are capped at 256 bytes each, local or networked, and the server has a fixed number of component slots. Registering fails if you exceed either.
 
 :::
 
@@ -198,21 +202,20 @@ ecsApi.Query<HpComponent, int>(ref alive, static (ref hp, ref alive) =>
 
 Writes made from a server mod are authoritative: the SDK marks them as server-authored, so a change your mod makes to an owned component is replicated back to the owning client rather than being overwritten by it.
 
-:::warning[Known issues]
+:::info[Forcing a value change]
 
-There is a known issue in this version that overwriting data that the client changes every frame, e.g. position, usually does not work.
+There is a known issue where overwriting data that the client changes every frame, e.g. position, usually does not work due to the client and the server racing each other over the network.
 
-**This will be addressed in a future update to the SDK.** For now, use RPC for making updates to such components. For example, do not attempt to teleport a player by settings their `TransformComponent.Position` in a query on the server, but rather send an RPC so that the client does teleportation logic.
+While a robust solution for this is being implemented, for now you can use an **experimental "NotifyChanged" API**:
+
+```csharp
+ecs.QueryWithEntity<TransformComponent>((ref transform, id) =>
+{
+    transform.Position = ...;
+    transform.PositionNotifyChanged(id);
+});
+```
+
+This forces the client who owns the `TransformComponent` to apply this server-authored update before sending any of their own position.
 
 :::
-
-## Feature status
-
-| Feature | Status |
-|---|---|
-| Networked components | :white_check_mark: [done](#registering-components-and-archetypes) |
-| Local components | :white_check_mark: [done](#local-components) |
-| Gameplay systems | :white_check_mark: [done](systems) |
-| Server RPC | :white_check_mark: [done](custom-rpc) |
-| Higher-level entity API | :soon: planned, see the note in [Archetypes and components](archetypes) |
-| Server mod manifests | :soon: not used in 0.3.1 |

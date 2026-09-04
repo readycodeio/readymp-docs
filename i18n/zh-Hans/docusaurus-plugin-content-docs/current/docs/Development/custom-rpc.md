@@ -50,7 +50,7 @@ protected override void Initialize(IDependencyContainer services)
 [RpcEvent](../../api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.RpcEventAttribute)
 属性的方法。
 
-方法名必须以“On...”开头——在同一个类中会自动为发送 RPC 生成相应的“Send...”方法。
+方法名必须以“On...”开头，在同一个类中会自动为发送 RPC 生成相应的“Send...”方法。
 
 ```csharp title="最简 RPC 处理器"
 public partial class MyRpc : ClientRpcHandler
@@ -222,12 +222,6 @@ public partial class MyRpc : ClientRpcHandler
 
 由于处理程序运行在游戏线程上，它们也共用游戏线程的时间预算。开销大的工作应该放到[系统](systems)里或后台任务上，而不是处理程序体内。
 
-:::note
-
-这只适用于客户端中继 RPC。服务器 RPC 的响应处理程序**不会**被自动调度，见下文。
-
-:::
-
 ## 在客户端处理服务器 RPC {#handling-server-rpc-on-the-client}
 
 服务器 RPC 契约声明在服务器模组和客户端模组共享的公共项目中，描述了请求（客户端到服务器）和响应（服务器到客户端）两个方向的数据形状。它们的定义方式请见[服务器端开发](../Server-development/custom-rpc)。
@@ -237,7 +231,7 @@ public partial class MyRpc : ClientRpcHandler
 的 [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
 类，用来向服务器发送请求并处理它的响应。这个类必须用 `[ServerRpcFor]` 标注它所实现的契约类，并且和客户端中继 RPC 一样，必须在模组的 `Initialize` 方法中注册。
 
-与 `[RpcEvent]` 处理程序不同，这些方法是在解析响应时于网络线程上调用的。任何接触游戏世界的代码都要用 `RunOnGameThread` 包起来：
+这些方法会像 `[RpcEvent]` 处理程序一样被调度到游戏线程上，因此函数体可以直接操作游戏世界：
 
 ```csharp title="客户端处理服务器 RPC"
 [ServerRpcFor(typeof(ExampleRpcContracts))]
@@ -246,15 +240,18 @@ public partial class MyServerRpc : ServerRpcClient
     // 服务器响应我们的 ScaleBossHp 请求时调用
     partial void OnBossHpScaleConfirm(int scalingPercent, int players)
     {
-        RunOnGameThread(() =>
-        {
-            WukongApi.Chat.ShowLocalMessage(
-                $"Boss HP is set to {scalingPercent}% and multiplied by {players} players.",
-                FLinearColor.Gray);
-        });
+        WukongApi.Chat.ShowLocalMessage(
+            $"Boss HP is set to {scalingPercent}% and multiplied by {players} players.",
+            FLinearColor.Gray);
     }
 }
 ```
+
+:::note[0.4.0 中的变化]
+
+这些处理程序以前运行在网络线程上，因此任何接触游戏世界的代码都必须包在 `RunOnGameThread` 里。现在调度已经由 SDK 完成。`RunOnGameThread` 仍然存在，但在处理程序中调用它是多余的，可以把那些函数体解开。
+
+:::
 
 调用生成的 `Send...` 方法即可把请求发给服务器：
 
@@ -262,4 +259,4 @@ public partial class MyServerRpc : ServerRpcClient
 WukongApi.Services.Resolve<MyServerRpc>().SendScaleBossHp(150);
 ```
 
-只有共享契约中声明的方向会被生成：单向的客户端到服务器 RPC 在客户端没有 `On...` 处理程序桩，单向的服务器到客户端 RPC 没有 `Send...` 方法。
+只有共享契约中声明的方向会被生成：单向的客户端到服务器 RPC 在客户端没有 `On...` 处理程序桩，单向的服务器到客户端 RPC 没有 `Send...` 方法。只有 `[ServerRpcFor]` 所指定的那个类的方向会被生成，所以请为每一组契约用一个类。参见[把类绑定到它的契约](../Server-development/custom-rpc#binding-a-class-to-its-contract)。

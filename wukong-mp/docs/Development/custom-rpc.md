@@ -202,19 +202,13 @@ public partial class MyRpc : ClientRpcHandler
 
 Because handlers run on the game thread, they also share its budget. Anything expensive belongs in a [system](systems) or on a background task, not in the handler body.
 
-:::note
-
-This is specific to client-relayed RPC. Server RPC response handlers are **not** scheduled for you, see below.
-
-:::
-
 ## Handling server RPC on the client
 
 Server RPC contracts are declared in a common project shared by the server and client mods, and describe both the request (client to server) and response (server to client) shapes of an RPC. See [server-side development](../Server-development/custom-rpc) for how they are defined.
 
 On the client, define a [partial](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) class extending [ServerRpcClient](../../api-reference/ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.ServerRpcClient) to send requests to the server and handle its responses. It must carry `[ServerRpcFor]` naming the contract class it implements, exactly like its server-side counterpart. As with client-relayed RPC, the class must be registered in your mod's `Initialize` method.
 
-Unlike `[RpcEvent]` handlers, these are invoked on the network thread as the response is parsed. Wrap anything that touches the game world in `RunOnGameThread`:
+These are scheduled onto the game thread for you, exactly like `[RpcEvent]` handlers, so the body can touch the game world directly:
 
 ```csharp title="Client-side server RPC handling"
 [ServerRpcFor(typeof(RpcContracts))]
@@ -223,15 +217,18 @@ public partial class MyServerRpc : ServerRpcClient
     // called when the server responds to our ScaleBossHp request
     partial void OnBossHpScaleConfirm(int scalingPercent, int players)
     {
-        RunOnGameThread(() =>
-        {
-            WukongApi.Chat.ShowLocalMessage(
-                $"Boss HP is set to {scalingPercent}% and multiplied by {players} players.",
-                FLinearColor.Gray);
-        });
+        WukongApi.Chat.ShowLocalMessage(
+            $"Boss HP is set to {scalingPercent}% and multiplied by {players} players.",
+            FLinearColor.Gray);
     }
 }
 ```
+
+:::note[Changed in 0.4.0]
+
+These handlers used to run on the network thread, so anything touching the game world had to be wrapped in `RunOnGameThread`. The scheduling is done for you now. `RunOnGameThread` still exists, but calling it from a handler is redundant, so you can unwrap those bodies.
+
+:::
 
 Calling the generated `Send...` method sends the request to the server:
 

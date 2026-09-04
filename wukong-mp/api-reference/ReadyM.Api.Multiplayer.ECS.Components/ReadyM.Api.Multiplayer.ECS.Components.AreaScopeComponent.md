@@ -13,7 +13,7 @@ public struct AreaScopeComponent : IIndexedComponent<AreaId>, IComponent, INetSe
 
 [IIndexedComponent<AreaId\>](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/Index/IIndexedComponent.cs), 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs)
+INetSerializable
 
 #### Inherited Members
 
@@ -34,7 +34,7 @@ public AreaId AreaId { get; set; }
 
 #### Property Value
 
- [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/AreaId.cs)
+ [AreaId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/AreaId.cs)
 
 ### <a id="ReadyM_Api_Multiplayer_ECS_Components_AreaScopeComponent_MasterClient"></a> MasterClient
 
@@ -44,9 +44,19 @@ public PlayerId MasterClient { get; set; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ## Methods
+
+### <a id="ReadyM_Api_Multiplayer_ECS_Components_AreaScopeComponent_AreaIdNotifyChanged_System_Int32_"></a> AreaIdNotifyChanged\(int\)
+
+```csharp
+public void AreaIdNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Api_Multiplayer_ECS_Components_AreaScopeComponent_Assign_ReadyM_Api_Multiplayer_ECS_Components_AreaScopeComponent__"></a> Assign\(in AreaScopeComponent\)
 
@@ -66,7 +76,17 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
+
+### <a id="ReadyM_Api_Multiplayer_ECS_Components_AreaScopeComponent_GetChangeComponent"></a> GetChangeComponent\(\)
+
+```csharp
+public Type GetChangeComponent()
+```
+
+#### Returns
+
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
 
 ### <a id="ReadyM_Api_Multiplayer_ECS_Components_AreaScopeComponent_GetIndexedValue"></a> GetIndexedValue\(\)
 
@@ -78,7 +98,17 @@ public AreaId GetIndexedValue()
 
 #### Returns
 
- [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/AreaId.cs)
+ [AreaId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/AreaId.cs)
+
+### <a id="ReadyM_Api_Multiplayer_ECS_Components_AreaScopeComponent_MasterClientNotifyChanged_System_Int32_"></a> MasterClientNotifyChanged\(int\)
+
+```csharp
+public void MasterClientNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Api_Multiplayer_ECS_Components_AreaScopeComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
@@ -88,6 +118,6 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 

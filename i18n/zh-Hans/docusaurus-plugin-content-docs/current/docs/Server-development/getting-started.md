@@ -6,7 +6,7 @@ sidebar_position: 1
 
 服务器端模组运行在 WukongMP 中继服务器内部。它们可以注册自己的网络化组件、把组件挂到已有的原型上、在服务器 tick 上运行游戏系统，以及处理客户端发来的 RPC。
 
-服务器端模组是一个引用了服务器 SDK 的 .NET 类库，其中定义一个继承 [ServerModBase](../../api-reference/ReadyM.Relay.Server.Sdk/ReadyM.Relay.Server.Sdk.ServerModBase) 的类。它的程序集直接放在服务器的 [`server_mods/` 目录](../Server/mod-management#server-side-mods)中，这与面向客户端的 `mods/` 文件夹是两个不同的位置。服务器启动时，模组加载器会在那里找到它并实例化该类。
+服务器端模组是一个引用了服务器 SDK 的 .NET 类库，其中定义一个继承 [ServerModBase](../../api-reference/ReadyM.Relay.Server.Sdk/ReadyM.Relay.Server.Sdk.ServerModBase) 的类。它的程序集放在[模组的 `server/` 文件夹](../Server/mod-management#server-side-mods)中，与 `client/` 文件夹和清单并列。服务器启动时会在那里找到它们，并实例化该类。
 
 ```csharp title="最简服务器模组类"
 using ReadyM.Relay.Server.Sdk;
@@ -30,7 +30,7 @@ public class MyServerMod : ServerModBase
 
 :::tip[从已发布的模组中学习]
 
-[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)基于这套 SDK 构建，并随服务器一同分发。它的 `WukongMp.Coop.Serverside` 项目是这几页内容的一个小而完整的示例：两个系统、一个 RPC 处理程序，以及一个共享契约项目。[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)还没有改用服务器端功能。
+两种官方模式都基于这套 SDK 构建，并随服务器一同分发。[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)的 `WukongMp.Coop.Serverside` 项目是较小的那个示例：几个系统、一个 RPC 处理程序，以及一个共享契约项目。[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)在 `0.4.0` 中被重写为服务器端模组，是较大的那个，涵盖了服务器事件、世界实体状态和一个配置文件。
 
 :::
 
@@ -40,7 +40,7 @@ public class MyServerMod : ServerModBase
 
 :::note
 
-服务器模组运行在 CoreCLR 上，而不是在 AOT 编译的服务器二进制文件内部，因此运行服务器的机器需要安装 .NET 10 运行时。参见[系统要求](../Server/installation)。
+服务器模组运行在 CoreCLR 上，而不是在 AOT 编译的服务器二进制文件内部，因此运行服务器的机器需要安装 .NET 10 运行时。参见[系统要求](../Server/installation#系统要求)。
 
 :::
 
@@ -50,7 +50,15 @@ public class MyServerMod : ServerModBase
 * 一个服务器端模组，目标框架 `net10.0`，引用共享项目。
 * 一个客户端模组，目标框架 `netstandard2.0`，引用共享项目。
 
-共享项目的目标框架是 `netstandard2.0`，这样另外两个项目都能引用它。在模板中，它引用 SDK 程序集时带上了 `Private="false"`，这样 `netstandard2.0` 的构建产物就不会进入服务器模组的输出目录，因为那里必须由 `net10.0` 的构建产物胜出。正是这种区分，让模板带了两个依赖文件夹：`Dependencies/SDK` 存放 `netstandard2.0` 程序集，`Dependencies/ServerSDK` 存放 `net10.0` 程序集。
+共享项目的目标框架是 `netstandard2.0`，这样另外两个项目都能引用它。每个项目都通过对应自己那一侧的 NuGet 包来引用 SDK：
+
+| 项目 | 包 |
+| --- | --- |
+| 共享 | `ReadyM.SDK.Wukong.Common` |
+| 客户端 | `ReadyM.SDK.Wukong.Client` |
+| 服务器 | `ReadyM.SDK.Wukong.Server` |
+
+客户端包和服务器包都依赖 Common，而两者互不依赖，因此从服务器模组里调用仅限客户端的 API 会是一个编译错误，而不是等到运行时才发现的问题。
 
 ## 注册组件与原型 {#registering-components-and-archetypes}
 
@@ -101,19 +109,15 @@ public class MyServerMod : ServerModBase
 protected override void Initialize(IDependencyContainer services)
 {
     services.Resolve<IComponentApi>().RegisterComponent<BountyComponent>();
-    services.RegisterSingleton<IArchetypeRegistration, BountyRegistration>();
+
+    RegisterArchetypes(registry =>
+    {
+        registry.ModifyArchetype(WukongApi.Archetypes.GlobalPlayerArchetype, b => b.Add<BountyComponent>());
+    });
 }
 ```
 
-```csharp title="BountyRegistration.cs"
-public class BountyRegistration : IArchetypeRegistration
-{
-    public void Register(IArchetypeRegistry registry)
-    {
-        registry.ModifyArchetype(WukongApi.Archetypes.GlobalPlayerArchetype, b => b.Add<BountyComponent>());
-    }
-}
-```
+`RegisterArchetypes` 取代了以前需要的那个单独的 `IArchetypeRegistration` 类。它接收一个回调，在构建 ECS 架构时运行一次，并且在两侧的模组基类上都有，所以两半现在长得一样。
 
 客户端一侧的完整说明请见[自定义组件](../Development/APIs/custom-components)。
 
@@ -158,7 +162,7 @@ protected override void Init()
 
 :::note
 
-每个组件最大 256 字节，本地组件和网络化组件都一样，而且服务器的组件槽位数量是固定的。超出任何一个限制时，注册都会明确报错。
+每个组件最大 256 字节，本地组件和网络化组件都一样，而且服务器的组件槽位数量是固定的。超出任何一个限制时，注册都会失败。
 
 :::
 
@@ -198,21 +202,20 @@ ecsApi.Query<HpComponent, int>(ref alive, static (ref hp, ref alive) =>
 
 来自服务器模组的写入具有权威性：SDK 会把它们标记为服务器写入，因此你的模组对某个有归属的组件所做的修改会同步回归属客户端，而不会被客户端覆盖。
 
-:::warning[已知问题]
+:::info[强制数值变更生效]
 
-当前版本存在一个已知问题：覆盖客户端每帧都会修改的数据（例如位置）通常不会生效。
+当前存在一个已知问题：覆盖客户端每帧都会修改的数据（例如位置）通常不会生效，因为客户端和服务器在网络上互相竞争。
 
-**这将在 SDK 的后续更新中解决。** 目前请改用 RPC 来更新这类组件。举例来说，不要试图在服务器端的查询中设置 `TransformComponent.Position` 来传送玩家，而应该发送一个 RPC，让客户端执行传送逻辑。
+在稳妥的方案落地之前，你目前可以使用一个**实验性的 "NotifyChanged" API**：
+
+```csharp
+ecs.QueryWithEntity<TransformComponent>((ref transform, id) =>
+{
+    transform.Position = ...;
+    transform.PositionNotifyChanged(id);
+});
+```
+
+这会强制持有该 `TransformComponent` 的客户端先应用这次服务器写入的更新，然后才发送它自己的位置。
 
 :::
-
-## 功能状态 {#feature-status}
-
-| 功能 | 状态 |
-|---|---|
-| 网络化组件 | :white_check_mark: [已完成](#registering-components-and-archetypes) |
-| 本地组件 | :white_check_mark: [已完成](#local-components) |
-| 游戏系统 | :white_check_mark: [已完成](systems) |
-| 服务器 RPC | :white_check_mark: [已完成](custom-rpc) |
-| 更高层的实体 API | :soon: 计划中，参见[原型与组件](archetypes)中的说明 |
-| 服务器模组清单 | :soon: 0.3.1 中未使用 |

@@ -25,41 +25,33 @@ public partial struct BountyComponent
 
 ## 在客户端注册 {#registering-it-on-the-client}
 
-在模组的 `Initialize` 中要做两件事：注册组件类型，以及注册一个把它挂到实体上的原型变更。
+在模组的 `Initialize` 中要做两件事：注册组件类型，以及把它挂到一个原型上。
 
 ```csharp title="Mod.cs"
 protected override void Initialize(IDependencyContainer services)
 {
     services.Resolve<IComponentApi>().RegisterComponent<BountyComponent>();
-    services.RegisterSingleton<IArchetypeRegistration, BountyRegistration>();
-}
-```
 
-[`IComponentApi.RegisterComponent<T>`](../../../api-reference/WukongMp.Api/WukongMp.Api.IComponentApi) 把类型声明给网络层。原型变更则写在一个实现 [`IArchetypeRegistration`](../../../api-reference/ReadyM.Api.ECS.Registry/ReadyM.Api.ECS.Registry.IArchetypeRegistration) 的类中，SDK 会在构建 ECS 世界时调用它：
-
-```csharp title="BountyRegistration.cs"
-using ReadyM.Api.ECS.Registry;
-using ReadyM.Api.ECS.Worlds;
-using WukongMp.Sdk.Api;
-
-public class BountyRegistration : IArchetypeRegistration
-{
-    public void Register(IArchetypeRegistry registry)
+    RegisterArchetypes(registry =>
     {
         registry.ModifyArchetype(WukongApi.Archetypes.GlobalPlayerArchetype, b => b.Add<BountyComponent>());
-    }
+    });
 }
 ```
+
+[`IComponentApi.RegisterComponent<T>`](../../../api-reference/WukongMp.Api/WukongMp.Api.IComponentApi) 把类型声明给网络层。`RegisterArchetypes` 接收一个回调，SDK 会在构建 ECS 世界时运行它一次，原型变更就该写在那里。
 
 `WukongApi.Archetypes` 用来指定内置原型，与服务器 SDK 以静态成员形式在 `WukongArchetypes` 上暴露的是同一套。每个原型带有哪些组件、你的数据该放在哪一个上，请参见[原型与组件](../../Server-development/archetypes)。
 
-:::note
+:::note[0.4.0 中的变化]
 
-`WukongApi.Archetypes` 是 `WukongApi` 中唯一可以在 `Register` 内部安全使用的部分。它自身没有依赖项，而其他 API 会在 ECS 世界还在构建时把它重新拉回容器。
+以前这需要一个单独的、实现 `IArchetypeRegistration` 的类，并注册到依赖注入容器中。该接口现在是 internal 的，请改用 `RegisterArchetypes` 并删掉那个类。
 
 :::
 
 注册是叠加式的，所以注册你自己的并不会顶替掉 SDK 的。`ModifyArchetype` 是挂到已有原型上；同一个接口上的 `RegisterArchetype` 则创建一个新原型，适用于你的模组要生成自己的实体种类的情况。
+
+如果你希望其他模组使用你的原型和组件，请把它们声明为 `public` 类型，并给依赖你的一方提供某种途径来取得分配给你自定义原型的 `ArchetypeId`。
 
 ## 让两边保持一致 {#keeping-the-two-sides-in-step}
 

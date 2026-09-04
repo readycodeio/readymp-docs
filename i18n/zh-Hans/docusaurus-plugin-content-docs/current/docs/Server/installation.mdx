@@ -59,8 +59,8 @@ DOTNET_ROOT=/opt/dotnet ./server
 
 | 平台      | 架构  | 下载                                                                                                              |
 | ------- | --- | --------------------------------------------------------------------------------------------------------------- |
-| Linux   | x64 | [Linux 版下载](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.3.1.zip) |
-| Windows | x64 | [Windows 版下载](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.3.1.zip) |
+| Linux   | x64 | [Linux 版下载](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.4.0.zip) |
+| Windows | x64 | [Windows 版下载](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.4.0.zip) |
 
 ### 安装
 
@@ -75,18 +75,14 @@ DOTNET_ROOT=/opt/dotnet ./server
 server/
 ├── server.exe                 # 主服务器二进制文件
 ├── config.json                # 配置文件
-├── mods/                      # 客户端模组目录
+├── mods/                      # 已安装的模组，每个模组一个文件夹
 |   ├── WukongMp.Sdk/          # SDK 模组
 |   └── WukongMp.Coop/         # 合作模组
 ├── optional_mods/             # 将其中任意模组移动到 "mods" 文件夹以启用
 |   └── WukongMp.PvP/          # 对战模组
-├── server_mods/               # 服务器端模组目录
-|   ├── WukongMp.Sdk.Serverside.dll  # 服务器端 SDK
-|   └── WukongMp.Coop.Serverside.dll # 合作模组，服务器端
 ├── saves/                     # 游戏存档目录（默认为空）
 ├── wwwroot/                   # 管理面板资源
-├── e_sqlite3.dll              # 依赖项
-└── aspnetcorev2_inprocess.dll # 依赖项
+└── 其他依赖文件……
 ```
 
 </TabItem>
@@ -96,33 +92,27 @@ server/
 server/
 ├── server                     # 主服务器二进制文件
 ├── config.json                # 配置文件
-├── mods/                      # 客户端模组目录
+├── mods/                      # 已安装的模组，每个模组一个文件夹
 |   ├── WukongMp.Sdk/          # SDK 模组
 |   └── WukongMp.Coop/         # 合作模组
 ├── optional_mods/             # 将其中任意模组移动到 "mods" 文件夹以启用
 |   └── WukongMp.PvP/          # 对战模组
-├── server_mods/               # 服务器端模组目录
-|   ├── WukongMp.Sdk.Serverside.dll  # 服务器端 SDK
-|   └── WukongMp.Coop.Serverside.dll # 合作模组，服务器端
 ├── saves/                     # 游戏存档目录（默认为空）
 ├── wwwroot/                   # 管理面板资源
-└── libe_sqlite3.so            # 依赖项
+└── 其他依赖文件……
 ```
 
 </TabItem>
 </Tabs>
 
-软件包已经带上了 SDK 和两种游戏模式，因此不需要再安装别的东西。**联机合作模式开箱即用**，它的客户端一半在 `mods/` 中，服务器一半在 `server_mods/` 中。
+软件包已经带上了 SDK 和两种游戏模式，因此不需要再安装别的东西。**联机合作模式开箱即用。**
 
 两种游戏模式互斥，所以换成对战模式意味着要移除联机合作模组：
 
 1. 把 `WukongMp.PvP` 从 `optional_mods/` 移动到 `mods/`。
 2. 从 `mods/` 中删除 `WukongMp.Coop` 文件夹。
-3. 从 `server_mods/` 中删除 `WukongMp.Coop.Serverside.dll` 和 `WukongMp.Coop.Common.dll`。其余文件请保留，它们属于 SDK。
 
-对战模组没有自己的服务器端一半，所以不需要往 `server_mods/` 里添加任何东西。
-
-两种游戏模式同样是开源的，所以你也可以自己构建，而不使用随包分发的构建产物：[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)和[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)。每个仓库都有一个 `MakeModFolder.ps1` 脚本，它会生成对应客户端一半的 `Output/mods/` 文件夹和对应服务器一半的 `Output/server_mods/` 文件夹，结构与上面一致。服务器如何加载它们，请参见[模组管理](mod-management)。
+两种游戏模式同样是开源的，所以你也可以自己构建，而不使用随包分发的构建产物：[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)和[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)。每个仓库都有一个 `MakeModFolder.ps1` 脚本，它会生成一个 `Output/mods/` 文件夹，其中装着完整的模组，结构与上面一致。服务器如何加载它，请参见[模组管理](mod-management)。
 
 ### 配置
 
@@ -160,13 +150,13 @@ server/
 从注册表拉取镜像：
 
 ```shell
-docker pull ghcr.io/readycodeio/wukongmp-server:0.3.1
+docker pull ghcr.io/readycodeio/wukongmp-server:0.4.0
 ```
 
 从镜像中复制配置文件：
 
 ```shell
-docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.3.1
+docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.4.0
 docker cp wukongmp-tmp:/app/config.json ./config.json
 docker rm wukongmp-tmp
 ```
@@ -181,11 +171,10 @@ docker run \
     -p 9050:9050/udp -p 9050:9050/tcp \
     -v ./data:/app/data \
     -v ./mods:/app/mods \
-    -v ./server_mods:/app/server_mods \
     -v ./saves:/app/saves \
     -v ./config.json:/app/config.json \
     --name wukongmp-server \
-    ghcr.io/readycodeio/wukongmp-server:0.3.1
+    ghcr.io/readycodeio/wukongmp-server:0.4.0
 ```
 
 </TabItem>
@@ -194,7 +183,7 @@ docker run \
 ```yaml title="docker-compose.yml"
 services:
   server:
-    image: ghcr.io/readycodeio/wukongmp-server:0.3.1
+    image: ghcr.io/readycodeio/wukongmp-server:0.4.0
     container_name: wukongmp-server
     restart: unless-stopped
     ports:
@@ -203,7 +192,6 @@ services:
     volumes:
       - ./data:/app/data
       - ./mods:/app/mods
-      - ./server_mods:/app/server_mods
       - ./saves:/app/saves
       - ./config.json:/app/config.json
 ```
@@ -213,12 +201,12 @@ services:
 
 :::important
 
-镜像 **不带模组**。在启动容器之前，请把 `WukongMp.Sdk` 和其中**一种**游戏模式放进你的 `mods/` 卷，并把对应的服务器端模组放进 `server_mods/` 卷。联机合作模式需要两半都有；对战模式没有服务器端一半。
+镜像 **不带模组**。在启动容器之前，请把 `WukongMp.Sdk` 文件夹和其中**恰好一种**游戏模式放进你的 `mods/` 卷。每个模组文件夹自带两侧的内容，所以不需要再放别的东西。
 
 获取它们有两种方式：
 
-* **从二进制软件包获取。** 下载上面的 ZIP 文件，把其中 `mods/`、`optional_mods/` 和 `server_mods/` 目录里的内容复制出来。
-* **从源码构建。** 两种游戏模式都是开源的：[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)和[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)。分别在各自仓库中以 `Release` 参数运行 `MakeModFolder.ps1` 脚本，然后把生成的 `Output/mods/` 和 `Output/server_mods/` 文件夹中的内容复制过去。
+* **从二进制软件包获取。** 下载上面的 ZIP 文件，把其中 `mods/` 和 `optional_mods/` 目录里的文件夹复制出来。
+* **从源码构建。** 两种游戏模式都是开源的：[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)和[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)。分别在各自仓库中以 `Release` 参数运行 `MakeModFolder.ps1` 脚本，然后把模组文件夹从生成的 `Output/mods/` 中复制出来。
 
 :::
 

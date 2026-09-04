@@ -12,7 +12,7 @@ public interface IServerDependencyContainer : IDependencyContainer
 
 #### Implements
 
-[IDependencyContainer](https://github.com/readycodeio/readym\-gameserver/blob/5cb8df5d89396468f833bf967ea2e9731c78dcf4/src/ReadyM.Api/DI/IDependencyContainer.cs)
+[IDependencyContainer](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/DI/IDependencyContainer.cs)
 
 ## Methods
 

@@ -13,7 +13,7 @@ Any class deriving from [ModSystemBase](../../api-reference/WukongMp.Sdk/WukongM
 
 :::info
 
-Systems are singletons — each system has only one instance running at a time.
+Systems are singletons: each system has only one instance running at a time.
 
 :::
 

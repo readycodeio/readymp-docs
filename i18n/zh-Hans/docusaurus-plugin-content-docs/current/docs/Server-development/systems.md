@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # 游戏系统
@@ -20,7 +20,7 @@ public class MySystem : ModSystemBase
 }
 ```
 
-传给 `OnUpdate` 的 [UpdateTick](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs.Systems/ReadyM.Relay.Server.Sdk.Ecs.Systems.ModSystemBase.UpdateTick) 提供 `deltaTime`（距上一个 tick 的秒数）和 `time`（服务器启动以来的秒数）。
+传给 `OnUpdate` 的 [UpdateTick](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs.Systems/ReadyM.Relay.Server.Sdk.Ecs.Systems.ModSystemBase.UpdateTick) 提供 `DeltaTime`（距上一个 tick 的秒数）和 `Time`（服务器启动以来的秒数）。
 
 :::important
 
@@ -57,7 +57,7 @@ public class BountySystem(EcsApi ecs, ILogger logger) : ModSystemBase
 ```csharp title="按玩家数量缩放精英与 Boss 的 HP"
 public class ScaleHpSystem(EcsApi ecs, ILogger logger) : ModSystemBase
 {
-    // 由 RPC 处理程序在网络线程上写入，在这里由服务器循环读取
+    // 由 RPC 处理程序写入，在这里由服务器循环读取
     public int ScalingPercent { get { ... } set { ... } }
 
     protected override void OnUpdate(UpdateTick tick)
@@ -114,9 +114,9 @@ public partial class RpcHandlers(ScaleHpSystem hpScaling) : ServerRpcHandlersBas
 }
 ```
 
-:::warning
+:::note[不需要同步]
 
-RPC 处理程序运行在网络线程上，而系统在服务器循环上 tick。凡是处理程序写入、系统读取的字段都应当视为共享状态：把它限制为一个可以安全地被读到中间值的单一数值，或者用 `Volatile` 访问器或锁保护它。
+从 `0.4.0` 起，RPC 处理程序和系统都运行在服务器的更新线程上，因此处理程序写入、系统读取的字段既不需要加锁，也不需要 `Volatile` 访问器。处理程序以前运行在网络线程上，那时确实需要这样的处理。
 
 :::
 

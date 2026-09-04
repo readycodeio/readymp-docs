@@ -10,7 +10,7 @@
 ```csharp showLineNumbers
 WukongApi.Input.RegisterKeyBind(Key.F1, () =>
 {
-    // toggle command window visibility
+    // 切换命令窗口的显示状态
 });
 ```
 
@@ -67,7 +67,7 @@ WukongApi.Input.RegisterKeyBind(Key.K, () =>
 {
     if (WukongApi.Input.CanApplyInput())
     {
-        // toggle chat window visibility
+        // 切换聊天窗口的显示状态
     }
 });
 ```

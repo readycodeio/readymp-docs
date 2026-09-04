@@ -1,11 +1,12 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 # 原型与组件
 
-**原型**是一个实体创建时所带的固定组件集合。WukongMP 提供了四个内置原型，你的服务器模组可以查询和扩展它们：
+**原型**是一个实体创建时所带的固定组件集合。WukongMP 提供了五个内置原型，你的服务器模组可以查询和扩展它们：
 
+- **世界**实体（每台服务器一个，用于不属于其他任何东西的状态），
 - **区域**实体（每个活动区域一个），
 - **全局玩家实体**（每个已连接玩家一个），
 - **驯化目标**（世界中的敌人），
@@ -14,6 +15,7 @@ sidebar_position: 4
 它们由 [WukongArchetypes](../../api-reference/WukongMp.Sdk.Serverside/WukongMp.Sdk.Serverside.WukongArchetypes) 命名，这是一个把每个原型映射到其 [ArchetypeId](../../api-reference/ReadyM.Api.Idents/ReadyM.Api.Idents.ArchetypeId) 的小类：
 
 ```csharp
+// WukongArchetypes.WorldArchetype
 // WukongArchetypes.AreaArchetype
 // WukongArchetypes.GlobalPlayerArchetype
 // WukongArchetypes.TamerArchetype
@@ -30,11 +32,19 @@ sidebar_position: 4
 
 在模组的 `Init` 中把你自己的组件挂到其中任意一个上，做法与[快速上手](getting-started#registering-components-and-archetypes)中的示例相同。下面的表格列出了每个原型已经带有的组件，方便你知道有哪些可供查询。
 
-:::warning[访问 API 是临时的]
+创建某个原型的实体，以及读写它们的组件，请参见[实体](entities)。
 
-目前你通过底层的 [`EcsApi`](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.EcsApi) 读写这些组件（原始的 `Query` 调用和 `ref` 组件访问）。这在 `0.3.1` 中是刻意保持简陋的。我们计划提供一套更高层、不那么原始的服务器 API，所以请预期访问实体数据的方式在后续版本中会有变化。
+## 世界实体 {#world-entity}
 
-:::
+整台服务器只有一个，在启动时创建一次。它适合存放属于整个会话、而不属于某个区域、某个玩家或某个 actor 的状态：比赛设置、全局模式开关、计分板。
+
+| 组件 | 说明 |
+| --- | --- |
+| `MetadataComponent` | SDK 用于标识该实体的簿记数据。 |
+
+默认情况下这里没有任何与游戏相关的内容，而这正是重点：它一开始就是空的，好让模组来占用。PvP 模组就把它的比赛设置和回合状态放在这个实体上。
+
+模组的 `Init` 运行时世界实体还不存在，所以如果你需要在启动时写入它，请订阅 `OnWorldEntityCreated`。参见[服务器事件](server-events)。
 
 ## 区域实体 {#area-entity}
 
@@ -46,12 +56,11 @@ sidebar_position: 4
 
 :::
 
-房间规则就存放在这里，所以需要知道是否允许作弊、或者某段过场动画是否已经播放过的系统，会在这里读取。
+需要知道本区域内某段过场动画是否已经播放过的系统，会在这里读取。房间和比赛规则以前也以 `RoomComponent` 的形式存放在这个实体上；由于只有 PvP 用到它们，它们在 `0.4.0` 中迁入了 PvP 模组。
 
 | 组件 | 说明 |
 | --- | --- |
 | [`AreaScopeComponent`](../../api-reference/ReadyM.Api.Multiplayer.ECS.Components/ReadyM.Api.Multiplayer.ECS.Components.AreaScopeComponent) | 该实体所属的 `AreaId`。 |
-| [`RoomComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.RoomComponent) | 房间配置：关卡、锦标赛回合数，是否允许葫芦、消耗品、定身、旋风冲刺、聊天和作弊，以及对战中生成敌人所对应的 NG+ 等级。 |
 | [`MovieComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.MovieComponent) | 本区域内哪些过场动画已开始、哪些已结束。 |
 
 `AreaScopeComponent` 是每个区域范围实体都会匹配到的组件。把它和你自己的组件配对，就是把查询限定到单个区域的方式，SDK 自己的过场动画处理程序就是这么做的。
@@ -94,15 +103,14 @@ sidebar_position: 4
 | [`HpComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.HpComponent) | 当前 HP、基础最大 HP、最大 HP 的百分比乘数，以及死亡状态。 |
 | [`NicknameComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.NicknameComponent) | 玩家的显示名称，在切换区域时从 `PlayerComponent` 复制而来。 |
 | [`TeamComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.TeamComponent) | 底层游戏 actor 的队伍 ID。 |
-| [`PvPComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.PvPComponent) | 玩家是否已准备好进行对战。 |
 
 当你需要按玩家区分的数据时，`MainCharacterComponent` 就是要配对的那个组件，因为它是在世界中携带 `PlayerId` 的组件。服务器模组里几乎每个查询都从它开始。
 
 以上全部都是游戏自带的网络化组件，定义在 `ReadyM.Wukong.Common` 中。
 
-:::note[对战状态]
+:::note[PvP 组件已迁移]
 
-对战模组另外添加了第五个全局原型，其中只有一个 [`PvpStateComponent`](../../api-reference/ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.PvpStateComponent)，承载比赛设置和回合状态。`WukongArchetypes.PvpStateArchetype` 仍然为它命名，但已标记为过时，并将迁移进对战模组，所以请把它当作对战模组内部的东西，而不是 SDK 对外接口的一部分。
+`PvPComponent`、`PvpStateComponent` 和 `RoomComponent` 以前随 `ReadyM.Wukong.Common` 一起发布，并出现在这些原型上。从 `0.4.0` 起它们归 PvP 模组所有，为它们所在原型命名的 `PvpStateArchetype` 也一并迁走。如果你曾引用其中任何一个，现在它们位于 [PvP 模组](https://github.com/readycodeio/WukongMP-PvP-mod)中，那里同时也是模组把自身状态放到世界实体上的现成示例。
 
 :::
 
@@ -140,14 +148,12 @@ public class Mod : ServerModBase
 
 两个调用都接受一个构建器，其中 `Add<T>()` 在原型上声明一个组件。游戏自带的组件按类型解析，所以你可以自由地把它们和自己的组件混用。
 
-拿到 `ArchetypeId` 之后，通过 `EcsApi` 用它创建实体：
-
-```csharp
-var entity = ecsApi.CreateEntity(Mod.ShrineArchetype);
-```
+把返回的 `ArchetypeId` 保存在你的模组类上。创建实体时需要用到它，具体参见[实体](entities)。
 
 :::important
 
-你的模组注册的原型也必须在客户端注册，顺序相同、组件集合相同，否则两边对该原型的实体包含什么会产生分歧。请在客户端把原型注册集中在一个 [`IArchetypeRegistration`](../../api-reference/ReadyM.Api.ECS.Registry/ReadyM.Api.ECS.Registry.IArchetypeRegistration) 中，这样顺序一目了然，也容易保持一致。参见[自定义组件](../Development/APIs/custom-components)。
+你的模组注册的原型也必须在客户端注册，顺序相同、组件集合相同，否则两边对该原型的实体包含什么会产生分歧。
+
+在客户端请用一次 `RegisterArchetypes` 调用完成注册，这样顺序一目了然，也容易保持一致。参见[自定义组件](../Development/APIs/custom-components)。
 
 :::

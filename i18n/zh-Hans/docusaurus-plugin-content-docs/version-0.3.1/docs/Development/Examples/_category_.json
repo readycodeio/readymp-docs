@@ -1,0 +1,11 @@
+{
+  "label": "Mod examples",
+  "key": "sdk-examples",
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "Mod examples",
+    "description": "Example mods built with WukongMP SDK"
+  }
+}

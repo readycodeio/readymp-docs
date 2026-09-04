@@ -119,6 +119,14 @@ The tip to display.
 
 Indicates whether the tip should automatically hide after a duration.
 
+### <a id="WukongMp_Sdk_Api_IWukongWidgetApi_ToggleChatVisibility"></a> ToggleChatVisibility\(\)
+
+Toggles the visibility of the in-game chat.
+
+```csharp
+void ToggleChatVisibility()
+```
+
 ### <a id="WukongMp_Sdk_Api_IWukongWidgetApi_ToggleCommandVisibility"></a> ToggleCommandVisibility\(\)
 
 Toggles the visibility of the command console.

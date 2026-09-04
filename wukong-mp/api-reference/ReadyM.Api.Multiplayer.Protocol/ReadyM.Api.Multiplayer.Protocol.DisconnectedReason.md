@@ -65,4 +65,10 @@ Player was banned from the server by an admin.
 
 
 
+`ServerBanned = 9` 
+
+The whole server was banned by ReadyM, so it refuses all players.
+
+
+
 

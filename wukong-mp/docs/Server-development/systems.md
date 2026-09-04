@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Gameplay systems
@@ -20,7 +20,7 @@ public class MySystem : ModSystemBase
 }
 ```
 
-The [UpdateTick](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs.Systems/ReadyM.Relay.Server.Sdk.Ecs.Systems.ModSystemBase.UpdateTick) passed to `OnUpdate` exposes `deltaTime` (seconds since the last tick) and `time` (seconds since server start).
+The [UpdateTick](../../api-reference/ReadyM.Relay.Server.Sdk.Ecs.Systems/ReadyM.Relay.Server.Sdk.Ecs.Systems.ModSystemBase.UpdateTick) passed to `OnUpdate` exposes `DeltaTime` (seconds since the last tick) and `Time` (seconds since server start).
 
 :::important
 
@@ -57,7 +57,7 @@ The most common reason to run a system rather than an RPC handler is that the an
 ```csharp title="Scaling elite and boss HP with player count"
 public class ScaleHpSystem(EcsApi ecs, ILogger logger) : ModSystemBase
 {
-    // written by an RPC handler on the network thread, read here on the server loop
+    // written by an RPC handler, read here on the server loop
     public int ScalingPercent { get { ... } set { ... } }
 
     protected override void OnUpdate(UpdateTick tick)
@@ -114,9 +114,9 @@ public partial class RpcHandlers(ScaleHpSystem hpScaling) : ServerRpcHandlersBas
 }
 ```
 
-:::warning
+:::note[No synchronisation needed]
 
-RPC handlers run on the network thread, while systems tick on the server loop. Any field a handler writes and a system reads should be treated as shared state: keep it to a single value that is safe to read torn, or guard it with `Volatile` accessors or locks.
+RPC handlers and systems both run on the server's update thread as of `0.4.0`, so a field a handler writes and a system reads needs no locking or `Volatile` accessors. Handlers used to run on the network thread, which did require that care.
 
 :::
 

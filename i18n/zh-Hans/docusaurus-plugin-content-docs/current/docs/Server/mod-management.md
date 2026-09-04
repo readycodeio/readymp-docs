@@ -4,88 +4,112 @@ sidebar_position: 3
 
 # 模组管理
 
-模组支持是 WukongMP 的核心功能，允许你通过自定义内容扩展服务器的功能。
+模组支持是 WukongMP 的核心功能，让你可以用自定义内容扩展服务器。
 
-## 客户端模组
+所有模组，无论运行在客户端、服务器端还是两侧，都放在 `mods/` 目录中。每个模组一个文件夹。
 
-WukongMP 支持对连接到服务器的客户端进行自动模组同步。客户端连接时，服务器会检查客户端是否安装了所需的模组。如果没有，[ReadyM
-Launcher](https://portal.ready.mp/pl/dashboard/launcher) 将下载并安装缺失的模组，才能加入游戏。
+## 模组文件夹结构
 
-要将模组添加到服务器，只需将模组文件夹放在 `mods/` 目录中。
+一个模组文件夹包含一份清单，以及最多两侧的内容：
 
-模组文件夹的预期结构如下。如果你使用我们的[官方模组模板](https://github.com/readycodeio/wukongmp-mod-template)，里面有一个`MakeModFolder.ps1`脚本，它将相应地打包模组。
-
-
-```text title="示例 mod 文件夹布局"
+```text title="模组文件夹结构示例"
 mods/
-└──MyModFolder/         # mod 的根目录，可以任意命名
-    ├── MyMod.dll       # mod 的主程序集
-    ├── manifest.json   # mod 清单文件
-    └── other_files...  # mod 所需的其他文件（可选）
+└── MyMod/               # 模组的根目录，名称可任意
+    ├── manifest.json    # 模组清单，两侧共用
+    ├── client/          # 游戏加载的程序集和资源
+    └── server/          # 中继服务器加载的程序集
 ```
 
-连接到服务器时，客户端将自动从 `mods/` 目录下载并安装任何缺失的模组，确保无缝的多人游戏体验。
+服务器读取 `manifest.json`，计算加载顺序，然后：
 
-:::danger[安全公告]
+* 把 `client/` 文件夹下发给连接进来的玩家，并且
+* 自己加载 `server/` 文件夹。
 
-WukongMP SDK 和服务器的抢先体验版本不包含任何针对模组的沙箱或安全机制。
+任何一侧都可以缺失。只有 `client/` 的模组是客户端模组，只有 `server/` 的模组根本不会到达玩家那里，而两侧都有的模组则是装在一个文件夹里的一个整体。
 
-仅使用来自可信来源的模组，因为它们可能在客户端执行任意代码。
+如果你使用我们的[官方模组模板](https://github.com/readycodeio/wukongmp-mod-template)，其中的 `MakeModFolder.ps1` 脚本会为你生成这种结构。
 
-请勿在服务器上运行不可信的模组，尤其是在服务器对公众可访问时。
+:::important
+
+任何玩家不该看到的东西都应放在 `server/` 中。服务器绝不会把该文件夹发送给客户端，所以仅供服务器使用的配置文件放在那里是安全的。而 `client/` 中的一切都会下发给每一名加入的玩家。
 
 :::
 
+## 配置模组
+
+模组可以在任意一侧附带 JSON 配置文件，你可以在服务器上就地编辑它们。`server/` 中的文件由服务器读取，永远不会被发送出去；`client/` 中的文件则会随该文件夹的其余内容一起下发给每一名玩家。
+
+SDK 模组本身就是这样工作的。从 `0.4.0` 起聊天默认关闭，你可以通过编辑 SDK 模组的客户端配置为自己的服务器开启它：
+
+```json title="mods/WukongMp.Sdk/client/config.json"
+{
+  // 如果你想启用游戏内聊天，把这里改为 true
+  "ChatEnabled": true
+}
+```
+
+编辑配置文件后请重启服务器。关于如何编写读取自身配置的模组，参见[模组配置文件](../Development/mod-config)。
+
+## 客户端模组
+
+WukongMP 支持为连接到服务器的客户端自动同步模组。
+当客户端连接时，服务器会检查该客户端是否已安装所需的模组。
+如果没有，[ReadyM 启动器](https://portal.ready.mp/pl/dashboard/launcher)会在玩家进入游戏之前下载并安装缺失的模组。
+
+要为服务器添加模组，把模组文件夹放进 `mods/` 即可。客户端会在连接时补齐所有缺失的内容。
+
 ### .pak 文件
 
-WukongMP 的模组可以包含用于游戏资源的 `.pak` 文件，这些文件将被游戏自动加载。
+WukongMP 模组可以包含用于游戏资源的 `.pak` 文件，它们会被游戏自动加载。
 
-要在你的模组中包含一个 `.pak` 文件，只需将它放在模组文件夹中的任意位置即可。只要模组中存在有效的 `manifest.json`
-文件，服务器就会将其识别为模组并分发给客户端，游戏在加载模组时会加载 `.pak` 文件。
+把 `.pak` 放进模组的 `client/` 文件夹，游戏就会在模组加载时加载它。这意味着你可以发布一个只有资源、完全没有代码的模组。
 
-特别是，这使你能够创建仅包含自定义资源且不包含任何代码的模组，这对于简单的内容模组非常有用。
-
-一个包含 `.pak` 文件的示例模组结构如下：
-
-```text title="Example mod folder layout with .pak file"
+```text title="包含 .pak 文件的模组文件夹结构示例"
 mods/
-└──MyModFolder/           # mod 的根目录，可以任意命名
-    ├── manifest.json     # mod 清单文件
-    ├── custom_assets.pak # 自定义资源包
-    └── other_files...    # mod 所需的其他文件（可选）
+└── MyAssets/
+    ├── manifest.json
+    └── client/
+        └── custom_assets.pak
 ```
 
 ## 服务器端模组 {#server-side-mods}
 
-除了客户端内容之外，WukongMP 模组也可以在服务器上运行逻辑。服务器端模组放在与 `mods/` 并列的**独立** `server_mods/` 目录中，加载方式也不同。
+服务器端模组就是带有 `server/` 文件夹的普通模组。它可以注册网络化 ECS 组件、在服务器 tick 上运行游戏逻辑系统，以及处理客户端发来的服务器 RPC。想了解如何编写，参见[服务器端开发](../Server-development/getting-started)文档。
 
-与客户端模组不同，服务器端模组不是带清单文件的文件夹。把模组的程序集（以及它的依赖项）直接放进 `server_mods/` 即可。服务器启动时会递归扫描该目录下的 `.dll` 文件，加载其中包含模组类的程序集。
+服务器端模组以前是散落在单独的 `server_mods/` 目录中的程序集。从 `0.4.0` 起该目录已被移除。现在服务器端模组拥有自己的文件夹和自己的清单，因此也和其他模组一样拥有 ID、版本和依赖。
 
-```text title="server_mods/ 目录结构示例"
-server_mods/
-├── WukongMp.Sdk.Serverside.dll     # 服务器端 SDK，随服务器一同分发
-├── ReadyM.Wukong.Common.dll        # 共享的组件与 RPC 定义
-├── WukongMp.Coop.Serverside.dll    # 联机合作模组，服务器端
-├── WukongMp.Coop.Common.dll        # 联机合作模组，共享契约
-└── MyServerMod.dll                 # 你的服务器端模组
+```text title="两侧都有的模组"
+mods/
+└── WukongMp.Coop/
+    ├── manifest.json
+    ├── client/
+    │   ├── WukongMp.Coop.dll
+    │   └── WukongMp.Coop.Common.dll
+    └── server/
+        ├── WukongMp.Coop.Serverside.dll
+        └── WukongMp.Coop.Common.dll
 ```
-
-除上面列出的模组之外，服务器本身不带任何游戏逻辑。你可以自己写一个服务器端模组，或者安装社区制作的模组。
 
 :::important
 
-服务器端模组和它对话的客户端模组是同一件东西的两半。它们的网络化组件形状和 RPC 契约必须一致，所以请把它们作为同一个包的同一版本一起发布：客户端一半放进 `mods/`，服务器端一半放进 `server_mods/`。
+服务器端模组和与它通信的客户端模组是同一个整体的两半。它们的网络化组件结构和 RPC 契约必须一致，所以请把它们放在同一个文件夹里，并一起进行版本管理。
 
 :::
 
-服务器端模组可以注册网络化 ECS 组件、在服务器 tick 上运行游戏系统，以及处理客户端发来的服务器 RPC。构建方法请参见[服务器端开发](../Server-development/getting-started)文档。
+### 依赖仅服务器端的模组
+
+模组可以声明对没有客户端部分的模组的依赖。共享的服务器逻辑可以独立成一个模组，并被正常依赖。
+
+客户端那一侧由服务器负责处理：在把清单发送给玩家之前，服务器会移除所有指向没有 `client/` 文件夹的模组的依赖。客户端根本不会知道这个仅服务器端模组的存在，它的加载器也不会因为寻找无法下载的东西而失败。
+
+## 安全性
 
 :::danger[安全提示]
 
-WukongMP SDK 与服务器的早期访问版本不包含任何针对模组的沙箱或安全机制。
+WukongMP SDK 与服务器的早期体验版本不包含任何针对模组的沙箱或安全机制。
 
 只使用来自可信来源的模组，因为它们可以在服务器和已连接的客户端上执行任意代码。
 
-绝不要在服务器上运行不可信的模组，尤其是当服务器可以公开访问时。
+绝对不要在服务器上运行不可信的模组，尤其是当服务器可以被公开访问时。
 
 :::

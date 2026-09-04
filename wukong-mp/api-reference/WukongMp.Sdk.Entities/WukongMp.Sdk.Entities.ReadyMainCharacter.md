@@ -108,7 +108,7 @@ public PlayerId PlayerId { get; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_RebirthPointId"></a> RebirthPointId
 
@@ -119,6 +119,16 @@ public int RebirthPointId { get; }
 #### Property Value
 
  [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_SpectatorReason"></a> SpectatorReason
+
+```csharp
+public SpectatorReason SpectatorReason { get; }
+```
+
+#### Property Value
+
+ [SpectatorReason](https://github.com/readycodeio/wukongmp\-sdk/blob/29ff28936c5326e1675ad7dcf354a210c52854d3/ReadyM.Wukong.Common/ECS/Values/SpectatorReason.cs)
 
 ### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_WaitingCutsceneId"></a> WaitingCutsceneId
 
@@ -141,6 +151,20 @@ public void EnableInteraction(bool enabled)
 #### Parameters
 
 `enabled` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_Get__1"></a> Get<T\>\(\)
+
+```csharp
+public ref T Get<T>() where T : struct, IComponent
+```
+
+#### Returns
+
+ T
+
+#### Type Parameters
+
+`T` 
 
 ### <a id="WukongMp_Sdk_Entities_ReadyMainCharacter_RebirthAtShrine_System_Int32_"></a> RebirthAtShrine\(int\)
 

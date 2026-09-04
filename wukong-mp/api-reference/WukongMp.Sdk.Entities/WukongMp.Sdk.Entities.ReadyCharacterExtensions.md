@@ -160,6 +160,22 @@ public static void set_HpMaxBase<TSelf>(TSelf obj, float value) where TSelf : st
 
 `TSelf` 
 
+### <a id="WukongMp_Sdk_Entities_ReadyCharacterExtensions_set_IsDead__1___0_System_Boolean_"></a> set\_IsDead<TSelf\>\(TSelf, bool\)
+
+```csharp
+public static void set_IsDead<TSelf>(TSelf obj, bool value) where TSelf : struct, IReadyEntity<TSelf>, IReadyConvertable<TSelf, ReadyCharacter>
+```
+
+#### Parameters
+
+`obj` TSelf
+
+`value` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`TSelf` 
+
 ### <a id="WukongMp_Sdk_Entities_ReadyCharacterExtensions_set_TeamId__1___0_System_Int32_"></a> set\_TeamId<TSelf\>\(TSelf, int\)
 
 ```csharp

@@ -20,25 +20,13 @@ Holds the state of the monster's animation.
 
  [MovieComponent](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.MovieComponent.md)
 
-Holds the state of the movie sequences that are currently playing or have finished playing in a given area.
+Holds the state of the movie sequences that have been started in a given area.
 
  [NicknameComponent](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.NicknameComponent.md)
 
 Holds the displayed nickname of an entity.
 
  [PlayerComponent](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.PlayerComponent.md)
-
- [PvPComponent](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.PvPComponent.md)
-
-Holds player PvP readiness flag.
-
- [PvpStateComponent](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.PvpStateComponent.md)
-
-Holds the state of the PvP mode, including settings and in-game state.
-
- [RoomComponent](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.RoomComponent.md)
-
-Holds room configuration.
 
  [TamerComponent](../ReadyM.Wukong.Common.ECS.Components/ReadyM.Wukong.Common.ECS.Components.TamerComponent.md)
 

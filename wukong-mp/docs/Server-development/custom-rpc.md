@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 7
 ---
 
 # Custom RPC
@@ -116,9 +116,13 @@ partial void OnGetBounty(RpcContext context)
 
 A client can only ask the server to act on its own behalf, but nothing stops a malformed or malicious request from naming someone else's entity or passing an out-of-range value. Always check `context.Sender` against the entity you are about to modify, and validate payloads before applying them.
 
-## Handlers run on the network thread
+## Handlers run on the game thread
 
-`On...` methods are invoked on the network thread as the packet is parsed, not on the server tick. Reading and writing components through `EcsApi` from a handler is supported, but long-running work is not: it blocks packet processing for every client. If the response depends on state that only a system can produce, store the request and let the system act on it, as shown in [Gameplay systems](systems#systems-and-rpc-handlers-together).
+`On...` methods are scheduled onto the server's update thread, the same one your systems tick on. You do not have to marshal anything: read and write components through `EcsApi` directly, and a handler can never see a half-updated entity because it does not run while a system is running.
+
+This changed in `0.4.0`. Handlers used to be invoked on the network thread as the packet was parsed, which meant handlers and systems could touch entity storage at the same time. If your handler wrapped its body in `RunOnGameThread`, you can unwrap it; the scheduling is done for you now.
+
+Long-running work is still the wrong thing to do here, for a different reason than before: a slow handler delays the tick for everyone. If the response depends on state that only a system can produce, store the request and let the system act on it, as shown in [Gameplay systems](systems#systems-and-rpc-handlers-together).
 
 ## Client side
 

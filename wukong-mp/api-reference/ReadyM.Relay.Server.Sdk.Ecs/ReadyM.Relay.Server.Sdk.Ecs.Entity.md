@@ -18,6 +18,20 @@ public readonly struct Entity
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
 
+## Properties
+
+### <a id="ReadyM_Relay_Server_Sdk_Ecs_Entity_Id"></a> Id
+
+The identifier of the entity.
+
+```csharp
+public int Id { get; }
+```
+
+#### Property Value
+
+ [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
 ## Methods
 
 ### <a id="ReadyM_Relay_Server_Sdk_Ecs_Entity_GetComponent__1"></a> GetComponent<T\>\(\)

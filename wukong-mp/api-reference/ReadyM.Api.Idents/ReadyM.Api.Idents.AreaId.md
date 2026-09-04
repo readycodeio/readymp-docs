@@ -13,7 +13,7 @@ public struct AreaId : INetSerializable, IEquatable<AreaId>
 
 #### Implements
 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs), 
+INetSerializable, 
 [IEquatable<AreaId\>](https://learn.microsoft.com/dotnet/api/system.iequatable-1)
 
 #### Inherited Members
@@ -35,7 +35,7 @@ public AreaId(NativeString256 id)
 
 #### Parameters
 
-`id` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/YooniCSharp/Native/Container/NativeString256.cs)
+`id` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Api_Idents_AreaId__ctor_System_String_"></a> AreaId\(string\)
 
@@ -79,7 +79,7 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
 
 ### <a id="ReadyM_Api_Idents_AreaId_Equals_ReadyM_Api_Idents_AreaId_"></a> Equals\(AreaId\)
 
@@ -127,7 +127,7 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 ### <a id="ReadyM_Api_Idents_AreaId_TextDeserialize_System_Text_Json_Utf8JsonReader__System_Text_Json_JsonSerializerOptions_"></a> TextDeserialize\(ref Utf8JsonReader, JsonSerializerOptions\)
 

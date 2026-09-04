@@ -33,7 +33,7 @@ IReadOnlyList<PlayerId> AllPlayers { get; }
 
 #### Property Value
 
- [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/PlayerId.cs)\>
+ [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)\>
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_AllTamers"></a> AllTamers
 
@@ -69,7 +69,7 @@ IReadOnlyList<PlayerId> AreaPlayers { get; }
 
 #### Property Value
 
- [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/PlayerId.cs)\>
+ [IReadOnlyList](https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1)<[PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)\>
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_AreaTamers"></a> AreaTamers
 
@@ -93,7 +93,7 @@ AreaId? CurrentAreaId { get; }
 
 #### Property Value
 
- [AreaId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/AreaId.cs)?
+ [AreaId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/AreaId.cs)?
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_InArea"></a> InArea
 
@@ -153,7 +153,7 @@ PlayerId? LocalPlayerId { get; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/PlayerId.cs)?
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)?
 
 ## Methods
 
@@ -185,7 +185,7 @@ void EnableSpectatorMode(ReadyMainCharacter character, SpectatorReason reason)
 
 The character to enable spectator mode for.
 
-`reason` [SpectatorReason](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Wukong.Common/ECS/Values/SpectatorReason.cs)
+`reason` [SpectatorReason](https://github.com/readycodeio/wukongmp\-sdk/blob/29ff28936c5326e1675ad7dcf354a210c52854d3/ReadyM.Wukong.Common/ECS/Values/SpectatorReason.cs)
 
 The reason for enabling spectator mode.
 
@@ -199,9 +199,26 @@ void GetDisconnectReasonAndInvoke(Action<DisconnectedReason> callback)
 
 #### Parameters
 
-`callback` [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[DisconnectedReason](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api.Multiplayer/Protocol/DisconnectedReason.cs)\>
+`callback` [Action](https://learn.microsoft.com/dotnet/api/system.action-1)<[DisconnectedReason](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api.Multiplayer/Protocol/DisconnectedReason.cs)\>
 
 The callback to invoke with the disconnect reason.
+
+### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_GetGlobalComponent__1"></a> GetGlobalComponent<T\>\(\)
+
+Gets a reference to a component on the global entity. Throws if there is no global entity, which is
+the case whenever the client is not in an area.
+
+```csharp
+ref T GetGlobalComponent<T>() where T : struct, IComponent
+```
+
+#### Returns
+
+ T
+
+#### Type Parameters
+
+`T` 
 
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_GetMainCharacterByPlayerId_ReadyM_Api_Idents_PlayerId_"></a> GetMainCharacterByPlayerId\(PlayerId\)
 
@@ -213,7 +230,7 @@ ReadyMainCharacter? GetMainCharacterByPlayerId(PlayerId playerId)
 
 #### Parameters
 
-`playerId` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/PlayerId.cs)
+`playerId` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 The player ID.
 
@@ -293,7 +310,7 @@ void SpawnEnemy(TamerKind kind, Vector3 position, int count = 1, int teamId = 2)
 
 #### Parameters
 
-`kind` [TamerKind](https://github.com/readycodeio/wukong\-csharp\-mod/blob/9c1d49d24be968cbb4a6601771b1c359274acb70/WukongMp.Api/Configuration/TamerKind.cs)
+`kind` [TamerKind](https://github.com/readycodeio/wukongmp\-sdk/blob/29ff28936c5326e1675ad7dcf354a210c52854d3/WukongMp.Api/Configuration/TamerKind.cs)
 
 The kind of enemy to spawn.
 
@@ -318,6 +335,27 @@ This should be called whenever the first player enters a new area.
 void SyncMonstersInArea()
 ```
 
+### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_TryGetGlobalComponent__1___0__"></a> TryGetGlobalComponent<T\>\(out T\)
+
+Copies a component off the global entity, returning false if there is no global entity. Safe to call
+from a system, which keeps ticking after a disconnect.
+
+```csharp
+bool TryGetGlobalComponent<T>(out T value) where T : struct, IComponent
+```
+
+#### Parameters
+
+`value` T
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
+
 ### <a id="WukongMp_Sdk_Api_IWukongSynchronizationApi_TryGetPlayerInfoById_ReadyM_Api_Idents_PlayerId_System_String__System_Nullable_System_Int32___"></a> TryGetPlayerInfoById\(PlayerId, out string?, out int?\)
 
 Tries to get player information by ID.
@@ -328,7 +366,7 @@ bool TryGetPlayerInfoById(PlayerId player, out string? nickname, out int? team)
 
 #### Parameters
 
-`player` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/4da3ee8d4824b61629dc7d12c5e97f68cf1764eb/src/ReadyM.Api/Idents/PlayerId.cs)
+`player` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/ad3650b22ddbb3da37eb303c534b48d50c9f224d/src/ReadyM.Api/Idents/PlayerId.cs)
 
 The player ID.
 

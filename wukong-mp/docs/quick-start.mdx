@@ -22,18 +22,18 @@ Skip this if you are using Docker, the image already includes it. See [Requireme
 <Tabs groupId="os">
 <TabItem value="windows" label="Windows">
 
-[⬇ Download for Windows (x64, v0.3.1)](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.3.1.zip)
+[⬇ Download for Windows (x64, v0.4.0)](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-win64-0.4.0.zip)
 
 </TabItem>
 <TabItem value="linux" label="Linux">
 
-[⬇ Download for Linux (x64, v0.3.1)](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.3.1.zip)
+[⬇ Download for Linux (x64, v0.4.0)](https://readycodestorage.blob.core.windows.net/wukong-server-releases/wukong-server-linux64-0.4.0.zip)
 
 </TabItem>
 <TabItem value="docker" label="Docker">
 
 ```shell
-docker pull ghcr.io/readycodeio/wukongmp-server:0.3.1
+docker pull ghcr.io/readycodeio/wukongmp-server:0.4.0
 ```
 
 </TabItem>
@@ -48,7 +48,7 @@ Extract the `.zip` to a folder of your choice. There is no installer to run.
 
 To change the port (default: `9050`), open `config.json` and edit `Server:Port`.
 
-The package already includes the SDK and both game modes, with co-op enabled by default. To play PvP instead, move `WukongMp.PvP` from `optional_mods/` into `mods/`, then delete `WukongMp.Coop` from `mods/` and the two `WukongMp.Coop.*` files from `server_mods/`. Both modes are open source too, if you would rather build them yourself: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod), [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod).
+The package already includes the SDK and both game modes, with co-op enabled by default. Each mode is one folder, so to play PvP instead, move `WukongMp.PvP` from `optional_mods/` into `mods/` and delete the `WukongMp.Coop` folder. Both modes are open source too, if you would rather build them yourself: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod), [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod).
 
 </TabItem>
 <TabItem value="linux" label="Linux">
@@ -57,7 +57,7 @@ Extract the `.zip` to a folder of your choice. There is no installer to run.
 
 To change the port (default: `9050`), open `config.json` and edit `Server:Port`.
 
-The package already includes the SDK and both game modes, with co-op enabled by default. To play PvP instead, move `WukongMp.PvP` from `optional_mods/` into `mods/`, then delete `WukongMp.Coop` from `mods/` and the two `WukongMp.Coop.*` files from `server_mods/`. Both modes are open source too, if you would rather build them yourself: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod), [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod).
+The package already includes the SDK and both game modes, with co-op enabled by default. Each mode is one folder, so to play PvP instead, move `WukongMp.PvP` from `optional_mods/` into `mods/` and delete the `WukongMp.Coop` folder. Both modes are open source too, if you would rather build them yourself: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod), [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod).
 
 </TabItem>
 <TabItem value="docker" label="Docker">
@@ -65,16 +65,16 @@ The package already includes the SDK and both game modes, with co-op enabled by 
 Copy the config file from the image:
 
 ```shell
-docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.3.1
+docker create --name wukongmp-tmp ghcr.io/readycodeio/wukongmp-server:0.4.0
 docker cp wukongmp-tmp:/app/config.json ./config.json
 docker rm wukongmp-tmp
 ```
 
-Port configuration is handled by remapping the container ports — see step 3.
+Port configuration is handled by remapping the container ports, see step 3.
 
 :::important
 
-The image ships **without mods**. Before starting the container, put `WukongMp.Sdk` and exactly one game mode (`WukongMp.Coop` or `WukongMp.PvP`) into your local `./mods/` folder. Co-op also needs its server half in `./server_mods/`; PvP has no server-side half.
+The image ships **without mods**. Before starting the container, put the `WukongMp.Sdk` folder and exactly one game mode (`WukongMp.Coop` or `WukongMp.PvP`) into your local `./mods/` folder. Each mod folder carries both its halves, so there is nothing else to place.
 
 Either download the binary package and copy them out of it, or build them from source: [co-op mod](https://github.com/readycodeio/WukongMP-co-op-mod), [PvP mod](https://github.com/readycodeio/WukongMP-PvP-mod).
 
@@ -109,11 +109,10 @@ docker run \
     -p 9050:9050/udp -p 9050:9050/tcp \
     -v ./data:/app/data \
     -v ./mods:/app/mods \
-    -v ./server_mods:/app/server_mods \
     -v ./saves:/app/saves \
     -v ./config.json:/app/config.json \
     --name wukongmp-server \
-    ghcr.io/readycodeio/wukongmp-server:0.3.1
+    ghcr.io/readycodeio/wukongmp-server:0.4.0
 ```
 
 Or with Docker Compose:
@@ -121,7 +120,7 @@ Or with Docker Compose:
 ```yaml title="docker-compose.yml"
 services:
   server:
-    image: ghcr.io/readycodeio/wukongmp-server:0.3.1
+    image: ghcr.io/readycodeio/wukongmp-server:0.4.0
     container_name: wukongmp-server
     restart: unless-stopped
     ports:
@@ -130,7 +129,6 @@ services:
     volumes:
       - ./data:/app/data
       - ./mods:/app/mods
-      - ./server_mods:/app/server_mods
       - ./saves:/app/saves
       - ./config.json:/app/config.json
 ```
@@ -150,7 +148,7 @@ From here you can manage players, configure mods, and monitor your server in rea
 
 ---
 
-🎉 **You're live!** Share your IP and port `:9050` with players — they'll need the ReadyM Launcher installed to connect.
+🎉 **You're live!** Share your IP and port `:9050` with players, they'll need the ReadyM Launcher installed to connect.
 
 ---
 
