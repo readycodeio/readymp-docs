@@ -9,7 +9,9 @@ sidebar_position: 1
 
 克隆仓库并按照
 [README](https://github.com/readycodeio/wukongmp-mod-template/blob/main/README.md)
-文件中提供的说明进行操作。
+文件中提供的说明进行操作。模板通过 NuGet 引用 SDK，所以没有任何东西需要手动下载或复制，而它的 `MakeModFolder.ps1` 脚本会把完成的模组打包成[服务器期望的结构](mod-manifest)。
+
+一个模组就是一个文件夹，里面最多装着两半：一个 `client/` 和一个 `server/`。**开发**下面的各页讲的是客户端这一半，[服务器端开发](../Server-development/getting-started)讲的是另一半。小型模组只需要客户端这一半。
 
 ## 功能状态
 
@@ -29,4 +31,5 @@ sidebar_position: 1
 | 自定义 RPC   | :white_check_mark: [已完成](../Development/custom-rpc)            |
 | 保存文件 API  | :construction: [部分](../Development/APIs/save-file-management)  |
 | 自定义数据同步   | :white_check_mark: [已完成](../Development/APIs/custom-components) |
+| 模组配置文件    | :white_check_mark: [已完成](../Development/mod-config)            |
 | 服务器端模组    | :white_check_mark: [已完成](../Server-development/getting-started) |

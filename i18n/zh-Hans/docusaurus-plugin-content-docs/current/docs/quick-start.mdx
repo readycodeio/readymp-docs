@@ -12,7 +12,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 运行服务器的机器上需要安装 [**.NET 10 运行时**](https://dotnet.microsoft.com/download/dotnet/10.0)。服务器在启动时会启动 CoreCLR 来运行服务器端模组，因此缺少运行时它会立即退出，并报出 `Cannot locate a .NET installation containing host/fxr`。装 `dotnet-runtime-10.0` 包就够了，不需要 SDK。
 
-如果你使用 Docker 就可以跳过这一步，镜像已经包含它了。各平台的具体说明请参见[系统要求](Server/installation)。
+如果你使用 Docker 就可以跳过这一步，镜像已经包含它了。各平台的具体说明请参见[系统要求](Server/installation#系统要求)。
 
 :::
 
@@ -49,7 +49,7 @@ docker pull ghcr.io/readycodeio/wukongmp-server:0.4.0
 
 如要更改端口（默认值：`9050`），打开 `config.json` 并编辑 `Server:Port`。
 
-软件包已经带上了 SDK 和两种游戏模式，其中联机合作模式默认启用。如果要改玩对战模式，请把 `WukongMp.PvP` 从 `optional_mods/` 移动到 `mods/`，然后从 `mods/` 中删除 `WukongMp.Coop`，并从 `server_mods/` 中删除两个 `WukongMp.Coop.*` 文件。两种模式同样是开源的，你也可以自己构建：[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)、[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)。
+软件包已经带上了 SDK 和两种游戏模式，其中联机合作模式默认启用。每种模式就是一个文件夹，所以如果要改玩对战模式，请把 `WukongMp.PvP` 从 `optional_mods/` 移动到 `mods/`，然后删除 `WukongMp.Coop` 文件夹。两种模式同样是开源的，你也可以自己构建：[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)、[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)。
 
 </TabItem>
 <TabItem value="linux" label="Linux">
@@ -58,7 +58,7 @@ docker pull ghcr.io/readycodeio/wukongmp-server:0.4.0
 
 如要更改端口（默认值：`9050`），打开 `config.json` 并编辑 `Server:Port`。
 
-软件包已经带上了 SDK 和两种游戏模式，其中联机合作模式默认启用。如果要改玩对战模式，请把 `WukongMp.PvP` 从 `optional_mods/` 移动到 `mods/`，然后从 `mods/` 中删除 `WukongMp.Coop`，并从 `server_mods/` 中删除两个 `WukongMp.Coop.*` 文件。两种模式同样是开源的，你也可以自己构建：[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)、[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)。
+软件包已经带上了 SDK 和两种游戏模式，其中联机合作模式默认启用。每种模式就是一个文件夹，所以如果要改玩对战模式，请把 `WukongMp.PvP` 从 `optional_mods/` 移动到 `mods/`，然后删除 `WukongMp.Coop` 文件夹。两种模式同样是开源的，你也可以自己构建：[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)、[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)。
 
 </TabItem>
 <TabItem value="docker" label="Docker">
@@ -71,11 +71,11 @@ docker cp wukongmp-tmp:/app/config.json ./config.json
 docker rm wukongmp-tmp
 ```
 
-端口配置通过重新映射容器端口来处理 — 请参见第3步。
+端口配置通过重新映射容器端口来处理，请参见第 3 步。
 
 :::important
 
-镜像 **不带模组**。在启动容器之前，请把 `WukongMp.Sdk` 和其中**一种**游戏模式（`WukongMp.Coop` 或 `WukongMp.PvP`）放进本地 `./mods/` 文件夹。联机合作模式还需要把它的服务器一半放进 `./server_mods/`；对战模式没有服务器端一半。
+镜像 **不带模组**。在启动容器之前，请把 `WukongMp.Sdk` 文件夹和其中**恰好一种**游戏模式（`WukongMp.Coop` 或 `WukongMp.PvP`）放进本地 `./mods/` 文件夹。每个模组文件夹自带两侧的内容，所以不需要再放别的东西。
 
 你可以下载二进制软件包并从其中复制，也可以从源码构建：[联机合作模组](https://github.com/readycodeio/WukongMP-co-op-mod)、[对战模组](https://github.com/readycodeio/WukongMP-PvP-mod)。
 
@@ -149,7 +149,7 @@ http://localhost:9050
 
 ---
 
-🎉 **你已上线！** 分享你的 IP 和端口 `:9050` 给玩家——他们需要安装 ReadyM Launcher 才能连接。
+🎉 **你已上线！** 分享你的 IP 和端口 `:9050` 给玩家，他们需要安装 ReadyM Launcher 才能连接。
 
 ---
 
