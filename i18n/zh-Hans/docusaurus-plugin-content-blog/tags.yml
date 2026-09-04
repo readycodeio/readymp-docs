@@ -2,6 +2,10 @@ wukongmp:
   label: 'WukongMP SDK'
   permalink: '/wukongmp'
   description: 'WukongMP 模组 SDK 的发布说明'
+oblivionmp:
+  label: 'OblivionMP SDK'
+  permalink: '/oblivionmp'
+  description: 'OblivionMP 模组 SDK 的发布说明'
 launcher:
   label: 'Launcher'
   permalink: '/launcher'
