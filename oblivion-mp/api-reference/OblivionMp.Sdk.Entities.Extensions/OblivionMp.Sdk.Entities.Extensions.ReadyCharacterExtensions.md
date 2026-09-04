@@ -1,6 +1,6 @@
-﻿# Class ReadyCharacterExtensions
+# Class ReadyCharacterExtensions
 
-Namespace: [OblivionMp.Sdk.Entities.Extensions](../OblivionMp.Sdk.Entities.DroppedItem/OblivionMp.Sdk.Entities.Extensions.md)  
+Namespace: [OblivionMp.Sdk.Entities.Extensions](../OblivionMp.Sdk.Entities.Extensions/OblivionMp.Sdk.Entities.Extensions.md)  
 Assembly: OblivionMp.Sdk.dll  
 
 ```csharp
@@ -26,6 +26,9 @@ public static class ReadyCharacterExtensions
 
 ### <a id="OblivionMp_Sdk_Entities_Extensions_ReadyCharacterExtensions_get_Fatigue__1___0_"></a> get\_Fatigue<TSelf\>\(TSelf\)
 
+Current Fatigue (Green bar) of the character.
+Does not impact MaxFatigue value.
+
 ```csharp
 public static float get_Fatigue<TSelf>(TSelf obj) where TSelf : struct, IReadyEntity<TSelf>, IReadyConvertable<TSelf, ReadyCharacter>
 ```
@@ -43,6 +46,9 @@ public static float get_Fatigue<TSelf>(TSelf obj) where TSelf : struct, IReadyEn
 `TSelf` 
 
 ### <a id="OblivionMp_Sdk_Entities_Extensions_ReadyCharacterExtensions_get_Hp__1___0_"></a> get\_Hp<TSelf\>\(TSelf\)
+
+Current Hp (HealthPoints) of the character. Unclear behavior as of now. Some actions reset it to MaxHp while some modify only this value.
+Does not impact MaxHp value.
 
 ```csharp
 public static float get_Hp<TSelf>(TSelf obj) where TSelf : struct, IReadyEntity<TSelf>, IReadyConvertable<TSelf, ReadyCharacter>
@@ -80,6 +86,9 @@ public static bool get_IsDead<TSelf>(TSelf obj) where TSelf : struct, IReadyEnti
 
 ### <a id="OblivionMp_Sdk_Entities_Extensions_ReadyCharacterExtensions_get_Magicka__1___0_"></a> get\_Magicka<TSelf\>\(TSelf\)
 
+Current Magicka (Mana) of the character.
+Does not impact MaxMagicka value.
+
 ```csharp
 public static float get_Magicka<TSelf>(TSelf obj) where TSelf : struct, IReadyEntity<TSelf>, IReadyConvertable<TSelf, ReadyCharacter>
 ```
@@ -98,6 +107,9 @@ public static float get_Magicka<TSelf>(TSelf obj) where TSelf : struct, IReadyEn
 
 ### <a id="OblivionMp_Sdk_Entities_Extensions_ReadyCharacterExtensions_set_Fatigue__1___0_System_Single_"></a> set\_Fatigue<TSelf\>\(TSelf, float\)
 
+Current Fatigue (Green bar) of the character.
+Does not impact MaxFatigue value.
+
 ```csharp
 public static void set_Fatigue<TSelf>(TSelf obj, float value) where TSelf : struct, IReadyEntity<TSelf>, IReadyConvertable<TSelf, ReadyCharacter>
 ```
@@ -114,6 +126,9 @@ public static void set_Fatigue<TSelf>(TSelf obj, float value) where TSelf : stru
 
 ### <a id="OblivionMp_Sdk_Entities_Extensions_ReadyCharacterExtensions_set_Hp__1___0_System_Single_"></a> set\_Hp<TSelf\>\(TSelf, float\)
 
+Current Hp (HealthPoints) of the character. Unclear behavior as of now. Some actions reset it to MaxHp while some modify only this value.
+Does not impact MaxHp value.
+
 ```csharp
 public static void set_Hp<TSelf>(TSelf obj, float value) where TSelf : struct, IReadyEntity<TSelf>, IReadyConvertable<TSelf, ReadyCharacter>
 ```
@@ -129,6 +144,9 @@ public static void set_Hp<TSelf>(TSelf obj, float value) where TSelf : struct, I
 `TSelf` 
 
 ### <a id="OblivionMp_Sdk_Entities_Extensions_ReadyCharacterExtensions_set_Magicka__1___0_System_Single_"></a> set\_Magicka<TSelf\>\(TSelf, float\)
+
+Current Magicka (Mana) of the character.
+Does not impact MaxMagicka value.
 
 ```csharp
 public static void set_Magicka<TSelf>(TSelf obj, float value) where TSelf : struct, IReadyEntity<TSelf>, IReadyConvertable<TSelf, ReadyCharacter>

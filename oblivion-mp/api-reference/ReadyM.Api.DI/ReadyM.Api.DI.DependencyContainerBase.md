@@ -1,4 +1,4 @@
-﻿# Class DependencyContainerBase
+# Class DependencyContainerBase
 
 Namespace: [ReadyM.Api.DI](../ReadyM.Api.DI/ReadyM.Api.DI.md)  
 Assembly: ReadyM.Api.dll  
@@ -61,15 +61,17 @@ public virtual void Dispose()
 public virtual void Init()
 ```
 
-### <a id="ReadyM_Api_DI_DependencyContainerBase_RegisterSingleton__2___1_"></a> RegisterSingleton<TService, TImplementation\>\(TImplementation\)
+### <a id="ReadyM_Api_DI_DependencyContainerBase_RegisterSingleton__2___1_System_Boolean_"></a> RegisterSingleton<TService, TImplementation\>\(TImplementation, bool\)
 
 ```csharp
-public void RegisterSingleton<TService, TImplementation>(TImplementation instance) where TImplementation : TService
+public void RegisterSingleton<TService, TImplementation>(TImplementation instance, bool replace = false) where TImplementation : TService
 ```
 
 #### Parameters
 
 `instance` TImplementation
+
+`replace` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 #### Type Parameters
 
@@ -77,49 +79,61 @@ public void RegisterSingleton<TService, TImplementation>(TImplementation instanc
 
 `TImplementation` 
 
-### <a id="ReadyM_Api_DI_DependencyContainerBase_RegisterSingleton__1"></a> RegisterSingleton<T\>\(\)
+### <a id="ReadyM_Api_DI_DependencyContainerBase_RegisterSingleton__1_System_Boolean_"></a> RegisterSingleton<T\>\(bool\)
 
 ```csharp
-public void RegisterSingleton<T>()
+public void RegisterSingleton<T>(bool replace = false)
 ```
+
+#### Parameters
+
+`replace` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 #### Type Parameters
 
 `T` 
 
-### <a id="ReadyM_Api_DI_DependencyContainerBase_RegisterSingleton__1___0_"></a> RegisterSingleton<T\>\(T\)
+### <a id="ReadyM_Api_DI_DependencyContainerBase_RegisterSingleton__1___0_System_Boolean_"></a> RegisterSingleton<T\>\(T, bool\)
 
 ```csharp
-public void RegisterSingleton<T>(T instance)
+public void RegisterSingleton<T>(T instance, bool replace = false)
 ```
 
 #### Parameters
 
 `instance` T
 
+`replace` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 #### Type Parameters
 
 `T` 
 
-### <a id="ReadyM_Api_DI_DependencyContainerBase_RegisterSingleton__1_System_Type_"></a> RegisterSingleton<TService\>\(Type\)
+### <a id="ReadyM_Api_DI_DependencyContainerBase_RegisterSingleton__1_System_Type_System_Boolean_"></a> RegisterSingleton<TService\>\(Type, bool\)
 
 ```csharp
-public void RegisterSingleton<TService>(Type type)
+public void RegisterSingleton<TService>(Type type, bool replace = false)
 ```
 
 #### Parameters
 
 `type` [Type](https://learn.microsoft.com/dotnet/api/system.type)
 
+`replace` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 #### Type Parameters
 
 `TService` 
 
-### <a id="ReadyM_Api_DI_DependencyContainerBase_RegisterSingleton__2"></a> RegisterSingleton<TService, TImplementation\>\(\)
+### <a id="ReadyM_Api_DI_DependencyContainerBase_RegisterSingleton__2_System_Boolean_"></a> RegisterSingleton<TService, TImplementation\>\(bool\)
 
 ```csharp
-public void RegisterSingleton<TService, TImplementation>() where TImplementation : TService
+public void RegisterSingleton<TService, TImplementation>(bool replace = false) where TImplementation : TService
 ```
+
+#### Parameters
+
+`replace` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 #### Type Parameters
 

@@ -1,4 +1,4 @@
-﻿# ReadyM.Api.DI
+# ReadyM.Api.DI
 
 ### Classes
 

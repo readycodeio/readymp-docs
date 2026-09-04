@@ -1,6 +1,6 @@
-﻿# Class ClientToServerAttribute
+# Class ClientToServerAttribute
 
-Namespace: [ReadyM.Api.Multiplayer](../ReadyM.Api.Multiplayer.Interop/ReadyM.Api.Multiplayer.md)  
+Namespace: [ReadyM.Api.Multiplayer](../ReadyM.Api.Multiplayer/ReadyM.Api.Multiplayer.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
 
 Client-to-server (request) leg of a contract method: generates a Send on the client and an

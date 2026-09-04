@@ -1,9 +1,9 @@
-﻿# Struct RpcContext
+# Struct RpcContext
 
-Namespace: [ReadyM.Relay.Server.Sdk.Rpc](../ReadyM.Relay.Server.Sdk/ReadyM.Relay.Server.Sdk.Rpc.md)  
+Namespace: [ReadyM.Relay.Server.Sdk.Rpc](../ReadyM.Relay.Server.Sdk.Rpc/ReadyM.Relay.Server.Sdk.Rpc.md)  
 Assembly: ReadyM.Relay.Server.Sdk.dll  
 
-Contextual information passed to every generated <code>HandleX</code> server RPC stub.
+Contextual information passed to every generated <code>OnX</code> server RPC stub.
 Wraps per-message metadata so handler signatures stay clean as the context grows.
 
 ```csharp
@@ -23,7 +23,7 @@ public readonly struct RpcContext
 
 ### <a id="ReadyM_Relay_Server_Sdk_Rpc_RpcContext__ctor_ReadyM_Api_Idents_PlayerId_"></a> RpcContext\(PlayerId\)
 
-Contextual information passed to every generated <code>HandleX</code> server RPC stub.
+Contextual information passed to every generated <code>OnX</code> server RPC stub.
 Wraps per-message metadata so handler signatures stay clean as the context grows.
 
 ```csharp
@@ -32,7 +32,7 @@ public RpcContext(PlayerId sender)
 
 #### Parameters
 
-`sender` [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/Idents/PlayerId.cs)
+`sender` [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Idents/PlayerId.cs)
 
 ## Properties
 
@@ -46,6 +46,6 @@ public PlayerId Sender { get; }
 
 #### Property Value
 
- [PlayerId](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/Idents/PlayerId.cs)
+ [PlayerId](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/Idents/PlayerId.cs)
 
 

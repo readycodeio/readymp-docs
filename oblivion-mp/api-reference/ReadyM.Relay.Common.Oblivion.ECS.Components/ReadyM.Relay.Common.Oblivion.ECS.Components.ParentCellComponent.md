@@ -1,4 +1,4 @@
-﻿# Struct ParentCellComponent
+# Struct ParentCellComponent
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Components](../ReadyM.Relay.Common.Oblivion.ECS.Components/ReadyM.Relay.Common.Oblivion.ECS.Components.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
@@ -12,7 +12,7 @@ public struct ParentCellComponent : IComponent, INetSerializable
 #### Implements
 
 [IComponent](https://github.com/readycodeio/Friflo.Engine.ECS/blob/1a45e3364ed58ecef9294b4024b79ec07ece0732/src/ECS/IComponent.cs), 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs)
+INetSerializable
 
 #### Inherited Members
 
@@ -25,15 +25,15 @@ public struct ParentCellComponent : IComponent, INetSerializable
 
 ## Properties
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_ParentCellComponent_IsExterior"></a> IsExterior
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_ParentCellComponent_Kind"></a> Kind
 
 ```csharp
-public byte IsExterior { get; set; }
+public ParentCellKind Kind { get; set; }
 ```
 
 #### Property Value
 
- [byte](https://learn.microsoft.com/dotnet/api/system.byte)
+ [ParentCellKind](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.ParentCellKind.md)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_ParentCellComponent_X"></a> X
 
@@ -75,17 +75,27 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_ParentCellComponent_GetIsExterior"></a> GetIsExterior\(\)
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_ParentCellComponent_GetChangeComponent"></a> GetChangeComponent\(\)
 
 ```csharp
-public bool GetIsExterior()
+public Type GetChangeComponent()
 ```
 
 #### Returns
 
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+ [Type](https://learn.microsoft.com/dotnet/api/system.type)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_ParentCellComponent_KindNotifyChanged_System_Int32_"></a> KindNotifyChanged\(int\)
+
+```csharp
+public void KindNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_ParentCellComponent_Serialize_LiteNetLib_Utils_NetDataWriter_"></a> Serialize\(NetDataWriter\)
 
@@ -95,16 +105,26 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_ParentCellComponent_SetIsExterior_System_Boolean_"></a> SetIsExterior\(bool\)
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_ParentCellComponent_XNotifyChanged_System_Int32_"></a> XNotifyChanged\(int\)
 
 ```csharp
-public void SetIsExterior(bool value)
+public void XNotifyChanged(int id)
 ```
 
 #### Parameters
 
-`value` [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_ParentCellComponent_YNotifyChanged_System_Int32_"></a> YNotifyChanged\(int\)
+
+```csharp
+public void YNotifyChanged(int id)
+```
+
+#### Parameters
+
+`id` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 

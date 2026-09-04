@@ -1,4 +1,4 @@
-﻿# ReadyM.Api.Idents
+# ReadyM.Api.Idents
 
 ### Structs
 
@@ -18,6 +18,7 @@ If going somewhere requires a loading screen, it's probably a different area.
 Identifies a cell within an area.
 **CellId** has to be unique within its parent area (identified by **AreaId**).
 The main difference between a cell and an area is that a player can be only in one area at once, but can have many cells active within that area.
+<remarks>Cells are only used in OblivionMP for now. WukongMP does not use cells.</remarks>
 
  [FullCellId](../ReadyM.Api.Idents/ReadyM.Api.Idents.FullCellId.md)
 

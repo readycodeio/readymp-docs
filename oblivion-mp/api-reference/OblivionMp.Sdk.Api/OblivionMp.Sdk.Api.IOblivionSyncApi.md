@@ -1,7 +1,9 @@
-﻿# Interface IOblivionSyncApi
+# Interface IOblivionSyncApi
 
 Namespace: [OblivionMp.Sdk.Api](../OblivionMp.Sdk.Api/OblivionMp.Sdk.Api.md)  
 Assembly: OblivionMp.Sdk.dll  
+
+Networked entity synchronization API. Provides access to the synchronized state of the game world.
 
 ```csharp
 public interface IOblivionSyncApi : ISynchronizationApi<ReadyMainCharacter>, ISynchronizationApi
@@ -9,12 +11,14 @@ public interface IOblivionSyncApi : ISynchronizationApi<ReadyMainCharacter>, ISy
 
 #### Implements
 
-[ISynchronizationApi<ReadyMainCharacter\>](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/Entities/ISynchronizationApi.cs), 
-[ISynchronizationApi](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Sdk.Common/Entities/ISynchronizationApi.cs)
+[ISynchronizationApi<ReadyMainCharacter\>](https://github.com/readycodeio/readym\-gameserver/blob/6fb11f3692d46ddd626b1f9523831647d30a9ca4/src/ReadyM.Sdk.Common/Entities/ISynchronizationApi.cs), 
+[ISynchronizationApi](https://github.com/readycodeio/readym\-gameserver/blob/6fb11f3692d46ddd626b1f9523831647d30a9ca4/src/ReadyM.Sdk.Common/Entities/ISynchronizationApi.cs)
 
 ## Properties
 
 ### <a id="OblivionMp_Sdk_Api_IOblivionSyncApi_AllDroppedItems"></a> AllDroppedItems
+
+Gets all dropped items in the game world.
 
 ```csharp
 IEnumerable<ReadyDroppedItem> AllDroppedItems { get; }
@@ -23,6 +27,18 @@ IEnumerable<ReadyDroppedItem> AllDroppedItems { get; }
 #### Property Value
 
  [IEnumerable](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1)<[ReadyDroppedItem](../OblivionMp.Sdk.Entities.DroppedItem/OblivionMp.Sdk.Entities.DroppedItem.ReadyDroppedItem.md)\>
+
+### <a id="OblivionMp_Sdk_Api_IOblivionSyncApi_AreaPlayers"></a> AreaPlayers
+
+Players in the local player's current area including the local player.
+
+```csharp
+IEnumerable<ReadyMainCharacter> AreaPlayers { get; }
+```
+
+#### Property Value
+
+ [IEnumerable](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1)<[ReadyMainCharacter](../OblivionMp.Sdk.Entities.Player/OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.md)\>
 
 ## Methods
 
@@ -34,7 +50,7 @@ void SpawnDroppedItem(FormId item, int stackSize, Vector3 position)
 
 #### Parameters
 
-`item` [FormId](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
+`item` [FormId](https://github.com/readycodeio/readym\-gameserver/blob/6fb11f3692d46ddd626b1f9523831647d30a9ca4/src/ReadyM.Relay.Common.Oblivion/FormId.cs)
 
 `stackSize` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 

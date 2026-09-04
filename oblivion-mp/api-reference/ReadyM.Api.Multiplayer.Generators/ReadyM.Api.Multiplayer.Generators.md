@@ -1,4 +1,4 @@
-﻿# ReadyM.Api.Multiplayer.Generators
+# ReadyM.Api.Multiplayer.Generators
 
 ### Classes
 

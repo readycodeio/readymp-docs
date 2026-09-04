@@ -1,4 +1,4 @@
-﻿# ReadyM.Relay.Common.Oblivion.ECS.Tags
+# ReadyM.Relay.Common.Oblivion.ECS.Tags
 
 ### Structs
 

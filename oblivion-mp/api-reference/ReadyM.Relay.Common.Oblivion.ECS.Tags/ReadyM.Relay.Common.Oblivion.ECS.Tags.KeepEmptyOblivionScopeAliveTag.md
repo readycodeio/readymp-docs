@@ -1,4 +1,4 @@
-﻿# Struct KeepEmptyOblivionScopeAliveTag
+# Struct KeepEmptyOblivionScopeAliveTag
 
 Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Tags](../ReadyM.Relay.Common.Oblivion.ECS.Tags/ReadyM.Relay.Common.Oblivion.ECS.Tags.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  

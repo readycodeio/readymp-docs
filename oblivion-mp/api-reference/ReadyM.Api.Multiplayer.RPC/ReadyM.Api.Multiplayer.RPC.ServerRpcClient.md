@@ -1,7 +1,9 @@
-﻿# Class ServerRpcClient
+# Class ServerRpcClient
 
 Namespace: [ReadyM.Api.Multiplayer.RPC](../ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.md)  
 Assembly: ReadyM.Api.Multiplayer.dll  
+
+Base class for server-defined RPC handlers.
 
 ```csharp
 public abstract class ServerRpcClient : RpcBase, IHostedService, IDisposable
@@ -15,17 +17,17 @@ public abstract class ServerRpcClient : RpcBase, IHostedService, IDisposable
 
 #### Implements
 
-[IHostedService](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Api/DI/IHostedService.cs), 
+[IHostedService](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/ReadyM.Api/DI/IHostedService.cs), 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members
 
-[RpcBase.InitRpc\(\)](ReadyM.Api.Multiplayer.RPC.RpcBase.md\#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_InitRpc), 
-[RpcBase.DeInitRpc\(\)](ReadyM.Api.Multiplayer.RPC.RpcBase.md\#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_DeInitRpc), 
-[RpcBase.OnScopeStart\(\)](ReadyM.Api.Multiplayer.RPC.RpcBase.md\#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_OnScopeStart), 
-[RpcBase.Dispose\(\)](ReadyM.Api.Multiplayer.RPC.RpcBase.md\#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_Dispose), 
-[RpcBase.RelayClient](ReadyM.Api.Multiplayer.RPC.RpcBase.md\#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_RelayClient), 
-[RpcBase.Serializer](ReadyM.Api.Multiplayer.RPC.RpcBase.md\#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_Serializer), 
+[RpcBase.InitRpc\(\)](../ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcBase.md#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_InitRpc), 
+[RpcBase.DeInitRpc\(\)](../ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcBase.md#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_DeInitRpc), 
+[RpcBase.OnScopeStart\(\)](../ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcBase.md#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_OnScopeStart), 
+[RpcBase.Dispose\(\)](../ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcBase.md#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_Dispose), 
+[RpcBase.RelayClient](../ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcBase.md#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_RelayClient), 
+[RpcBase.Serializer](../ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.RpcBase.md#ReadyM\_Api\_Multiplayer\_RPC\_RpcBase\_Serializer), 
 [object.GetType\(\)](https://learn.microsoft.com/dotnet/api/system.object.gettype), 
 [object.MemberwiseClone\(\)](https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone), 
 [object.ToString\(\)](https://learn.microsoft.com/dotnet/api/system.object.tostring), 

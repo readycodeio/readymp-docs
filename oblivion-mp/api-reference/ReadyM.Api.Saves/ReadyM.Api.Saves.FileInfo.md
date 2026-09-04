@@ -1,4 +1,4 @@
-﻿# Struct FileInfo
+# Struct FileInfo
 
 Namespace: [ReadyM.Api.Saves](../ReadyM.Api.Saves/ReadyM.Api.Saves.md)  
 Assembly: ReadyM.Api.dll  

@@ -1,7 +1,9 @@
-﻿# Struct Entity
+# Struct Entity
 
 Namespace: [ReadyM.Relay.Server.Sdk.Ecs](../ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.md)  
 Assembly: ReadyM.Relay.Server.Sdk.dll  
+
+Represents an entity in the ECS.
 
 ```csharp
 public readonly struct Entity
@@ -16,9 +18,25 @@ public readonly struct Entity
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
 
+## Properties
+
+### <a id="ReadyM_Relay_Server_Sdk_Ecs_Entity_Id"></a> Id
+
+The identifier of the entity.
+
+```csharp
+public int Id { get; }
+```
+
+#### Property Value
+
+ [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
 ## Methods
 
 ### <a id="ReadyM_Relay_Server_Sdk_Ecs_Entity_GetComponent__1"></a> GetComponent<T\>\(\)
+
+Gets a reference to the component of type T associated with this entity.
 
 ```csharp
 public ref T GetComponent<T>() where T : struct
@@ -28,8 +46,16 @@ public ref T GetComponent<T>() where T : struct
 
  T
 
+A mutable reference to the component.
+
 #### Type Parameters
 
 `T` 
+
+Type of the component
+
+#### Remarks
+
+Attempting to access a component that does not exist on the entity's archetype will crash your mod.
 
 

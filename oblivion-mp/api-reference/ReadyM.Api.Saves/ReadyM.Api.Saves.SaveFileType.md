@@ -1,4 +1,4 @@
-﻿# Enum SaveFileType
+# Enum SaveFileType
 
 Namespace: [ReadyM.Api.Saves](../ReadyM.Api.Saves/ReadyM.Api.Saves.md)  
 Assembly: ReadyM.Api.dll  

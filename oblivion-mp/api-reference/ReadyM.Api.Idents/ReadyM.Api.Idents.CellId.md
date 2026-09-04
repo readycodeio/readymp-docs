@@ -1,4 +1,4 @@
-﻿# Struct CellId
+# Struct CellId
 
 Namespace: [ReadyM.Api.Idents](../ReadyM.Api.Idents/ReadyM.Api.Idents.md)  
 Assembly: ReadyM.Api.dll  
@@ -6,6 +6,7 @@ Assembly: ReadyM.Api.dll
 Identifies a cell within an area.
 **CellId** has to be unique within its parent area (identified by **AreaId**).
 The main difference between a cell and an area is that a player can be only in one area at once, but can have many cells active within that area.
+<remarks>Cells are only used in OblivionMP for now. WukongMP does not use cells.</remarks>
 
 ```csharp
 public struct CellId : INetSerializable, IEquatable<CellId>
@@ -13,7 +14,7 @@ public struct CellId : INetSerializable, IEquatable<CellId>
 
 #### Implements
 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs), 
+INetSerializable, 
 [IEquatable<CellId\>](https://learn.microsoft.com/dotnet/api/system.iequatable-1)
 
 #### Inherited Members
@@ -35,7 +36,7 @@ public CellId(NativeString256 id)
 
 #### Parameters
 
-`id` [NativeString256](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/YooniCSharp/Native/Container/NativeString256.cs)
+`id` [NativeString256](https://github.com/readycodeio/readym\-core\-sdk/blob/3d50c891f9ae9373345cf44a0434fa50171dcc66/src/YooniCSharp/Native/Container/NativeString256.cs)
 
 ### <a id="ReadyM_Api_Idents_CellId__ctor_System_String_"></a> CellId\(string\)
 
@@ -79,7 +80,7 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
 
 ### <a id="ReadyM_Api_Idents_CellId_Equals_ReadyM_Api_Idents_CellId_"></a> Equals\(CellId\)
 
@@ -127,7 +128,7 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 ### <a id="ReadyM_Api_Idents_CellId_TextDeserialize_System_Text_Json_Utf8JsonReader__System_Text_Json_JsonSerializerOptions_"></a> TextDeserialize\(ref Utf8JsonReader, JsonSerializerOptions\)
 

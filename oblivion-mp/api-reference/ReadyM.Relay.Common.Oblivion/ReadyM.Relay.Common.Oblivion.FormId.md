@@ -1,4 +1,4 @@
-﻿# Struct FormId
+# Struct FormId
 
 Namespace: [ReadyM.Relay.Common.Oblivion](../ReadyM.Relay.Common.Oblivion/ReadyM.Relay.Common.Oblivion.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
@@ -12,7 +12,7 @@ public struct FormId : INetSerializable, IEquatable<FormId>
 
 #### Implements
 
-[INetSerializable](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/INetSerializable.cs), 
+INetSerializable, 
 [IEquatable<FormId\>](https://learn.microsoft.com/dotnet/api/system.iequatable-1)
 
 #### Inherited Members
@@ -23,6 +23,18 @@ public struct FormId : INetSerializable, IEquatable<FormId>
 [object.Equals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\-system\-object\)), 
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
+
+## Constructors
+
+### <a id="ReadyM_Relay_Common_Oblivion_FormId__ctor_System_UInt32_"></a> FormId\(uint\)
+
+```csharp
+public FormId(uint value)
+```
+
+#### Parameters
+
+`value` [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
 
 ## Properties
 
@@ -46,7 +58,7 @@ public void Deserialize(NetDataReader reader)
 
 #### Parameters
 
-`reader` [NetDataReader](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataReader.cs)
+`reader` NetDataReader
 
 ### <a id="ReadyM_Relay_Common_Oblivion_FormId_Equals_ReadyM_Relay_Common_Oblivion_FormId_"></a> Equals\(FormId\)
 
@@ -94,7 +106,7 @@ public void Serialize(NetDataWriter writer)
 
 #### Parameters
 
-`writer` [NetDataWriter](https://github.com/RevenantX/LiteNetLib/blob/dae6127eaf635e07d9ccfa8b3ecebb2f79094630/LiteNetLib/Utils/NetDataWriter.cs)
+`writer` NetDataWriter
 
 ## Operators
 

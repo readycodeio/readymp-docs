@@ -1,7 +1,9 @@
-﻿# Struct CustomSpell
+# Struct CustomSpell
 
 Namespace: [OblivionMp.Sdk](../OblivionMp.Sdk/OblivionMp.Sdk.md)  
 Assembly: OblivionMp.Sdk.dll  
+
+Properties of a custom spell.
 
 ```csharp
 public readonly struct CustomSpell
@@ -46,6 +48,6 @@ public required SpellType SpellType { get; init; }
 
 #### Property Value
 
- [SpellType](https://github.com/readycodeio/readym\-gameserver/blob/f6694da55b756c544ae0c677331170e78d9f909e/src/ReadyM.Relay.Common.Oblivion/ECS/Values/SpellType.cs)
+ [SpellType](https://github.com/readycodeio/readym\-gameserver/blob/6fb11f3692d46ddd626b1f9523831647d30a9ca4/src/ReadyM.Relay.Common.Oblivion/ECS/Values/SpellType.cs)
 
 

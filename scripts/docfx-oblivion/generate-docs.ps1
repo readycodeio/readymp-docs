@@ -38,15 +38,18 @@ Get-ChildItem -Path $docsSource -Filter *.md -File | ForEach-Object {
     }
 
     # extract namespace from 3rd line
-    if ($content[2] -notmatch '^Namespace:\s+\[(.+?)\]\([^)]+\)') {
-        # this is the namespace file, which just links to its members
+    if ($content[2] -match '^Namespace:\s+\[(.+?)\]\([^)]+\)') {
+        $namespace = $matches[1]
+    }
+    else {
+        # this is the namespace file, which just links to its members. A non-match leaves
+        # $matches holding the previous file's groups, so the name has to come from the file.
         $namespace = [System.IO.Path]::GetFileNameWithoutExtension($_.Name)
 
         # the first line matches "# Namespace NamespaceName", we need to remove the word "Namespace" in there
         $content[0] = $content[0] -replace '^# Namespace (.+)$', '# $1'
     }
 
-    $namespace = $matches[1]
     $fileNamespaceMap[$_.Name] = $namespace
 
     $targetDir = Join-Path $docsTarget $namespace
@@ -85,6 +88,10 @@ Get-ChildItem -Path $docsTarget -Filter *.md -Recurse -File | ForEach-Object {
 
             $text = $match.Groups[1].Value
             $link = $match.Groups[2].Value
+
+            # docfx escapes the anchor separator as "\#", which would hide the ".md#" shape
+            # from the checks below and leave the link pointing at the wrong folder
+            $link = $link -replace '\\#', '#'
 
             # leave absolute URLs, anchors, mailto, and non-md links unchanged
             if ($link -match '^(https?://|mailto:|#)' -or $link -notmatch '\.md($|#)') {

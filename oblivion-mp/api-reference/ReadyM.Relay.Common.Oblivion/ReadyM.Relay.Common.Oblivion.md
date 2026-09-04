@@ -1,8 +1,14 @@
-﻿# ReadyM.Relay.Common.Oblivion
+# ReadyM.Relay.Common.Oblivion
 
 ### Namespaces
 
  [ReadyM.Relay.Common.Oblivion.Data](../ReadyM.Relay.Common.Oblivion.Data/ReadyM.Relay.Common.Oblivion.Data.md)
+
+ [ReadyM.Relay.Common.Oblivion.Rpc](../ReadyM.Relay.Common.Oblivion.Rpc/ReadyM.Relay.Common.Oblivion.Rpc.md)
+
+### Classes
+
+ [OblivionMpServerRpcContracts](../ReadyM.Relay.Common.Oblivion/ReadyM.Relay.Common.Oblivion.OblivionMpServerRpcContracts.md)
 
 ### Structs
 

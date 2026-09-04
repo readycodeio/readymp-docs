@@ -1,4 +1,4 @@
-﻿# Class Items.Books
+# Class Items.Books
 
 Namespace: [ReadyM.Relay.Common.Oblivion.Data](../ReadyM.Relay.Common.Oblivion.Data/ReadyM.Relay.Common.Oblivion.Data.md)  
 Assembly: ReadyM.Relay.Common.Oblivion.dll  
