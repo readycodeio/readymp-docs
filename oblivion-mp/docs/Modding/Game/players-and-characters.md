@@ -6,8 +6,8 @@ sidebar_position: 1
 
 Every player on the server is two entities: a `Player`, which says who they are, and a `MainCharacter`, which is
 their body in the game world with its health, position, skills and inventory. The game's own people and creatures
-are `Npc` entities, and creatures a player summons are `ServerSummon` entities. This page shows what each one holds
-and how a mod reads and changes it.
+are `Npc` entities, and creatures a player summons are `ServerSummon` entities. `MainCharacter` and `Npc` are both a
+`Character`, the part they share. This page shows what each one holds and how a mod reads and changes it.
 
 ```csharp title="MyMod.Server/SecondWind.cs"
 using Microsoft.Extensions.Logging;
@@ -82,6 +82,26 @@ var sneaking = (main.CharacterStateFlags & CharacterStateFlags.IsSneaking) != 0;
 
 To work with one mixin on its own, for example to hand the inventory to a method that takes any inventory, ask the
 character for it: `main.As<Equipment>()`.
+
+### Character
+
+`Character` holds what every character has, player or NPC: `Transform`, `Vitals`, `LevelMixin`, `Equipment`,
+`ParentCell`, `BaseIdMixin` and the animation state. `MainCharacter` and `Npc` are built on it, so each converts to a
+`Character` wherever one is asked for, and a cast goes back, throwing `InvalidCastException` when the entity is the
+other kind:
+
+```csharp
+void Heal(Character character) => character.Hp = character.HpBase;
+
+Heal(main);
+Heal(npc);
+
+if (character.TryAs(out MainCharacter player))
+    logger.LogInformation("Healed player {Player}", player.PlayerId);
+```
+
+Take a `Character` in your own code, and in your own [networked events](../Concepts/networked-events.md), when it
+should work for both. The SDK's own events do, such as `HealthChangedEvent`'s `Attacker`.
 
 ### Attributes, skills and effects
 
@@ -206,6 +226,7 @@ Two client-only mixins add what only this game knows about each character it sho
 | --- | --- | --- |
 | `LocalVisibility` | `Hidden` | How hard the character is to see here: 0 in plain sight, 1 invisible. |
 | `MappedActor` | `Pawn` | The game actor that shows this character, or `IntPtr.Zero` while there is none. Use it only to notice that the actor changed, never to read memory through it. An `Npc` has it too. |
+| `LocalRefId` | `LocalRefId` | The reference id this game knows the character by. Dropped items, furniture, containers and flora have it too. |
 
 The MarkerMod in the SDK repository uses both to fade a name marker over each player as they hide.
 
@@ -222,6 +243,8 @@ the server's own interface, not the client's `IPlayers` above, and you ask for i
 | --- | --- |
 | `Kick(playerId)` | Disconnects the player at once. They cannot rejoin until they restart the game. |
 | `GetReadyMId(playerId)` | The id of the player's ReadyM account, or `null` if the server has not seen them since it started. |
+| `InArea(areaId)` | The players in an area. |
+| `InCell(fullCellId)` | The players who have a cell loaded. |
 
 A `PlayerId` is only good for one connection. The account id stays the same across reconnects, server restarts and
 servers, so key anything you keep on disk by it:
@@ -260,6 +283,7 @@ To run code when a player connects or leaves, see [Server events](server-events.
 * [MainCharacter](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.MainCharacter.md)
 * [Npc](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Npc.md)
 * [ServerSummon](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.ServerSummon.md)
+* [Character](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Character.md)
 * [Player](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Player.md)
 * [NicknameMixin](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.NicknameMixin.md)
 * [Transform](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Transform.md)
@@ -282,5 +306,6 @@ To run code when a player connects or leaves, see [Server events](server-events.
 * [MainCharacterExtensions](../../../api-reference/OblivionMp.Sdk.Archetypes.Extensions/OblivionMp.Sdk.Archetypes.Extensions.MainCharacterExtensions.md)
 * [LocalVisibility](../../../api-reference/OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.LocalVisibility.md)
 * [MappedActor](../../../api-reference/OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.MappedActor.md)
+* [LocalRefId](../../../api-reference/OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.LocalRefId.md)
 * [WriteExtensions](../../../api-reference/ReadyM.SDK.Client/ReadyM.SDK.Client.WriteExtensions.md)
 * [IPlayers](../../../api-reference/ReadyM.Relay.Server.Sdk.Players/ReadyM.Relay.Server.Sdk.Players.IPlayers.md) (server)

@@ -142,11 +142,34 @@ The text fields are fixed-size game strings: build them with `new NativeString64
 - **Spoken topics** only record topics a mod added through `Dialogue`. Spoken lines of the game's own dialogue are
   not recorded.
 
-:::note
-Not in 1.0 yet: world flags. They have no shape, so a mod can neither read nor write them, and the
-[`WorldFlagEntry`](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.WorldFlagEntry.md)
-values they hold are out of reach. A compass target's `GateFlag` can still name one that the Quests mod sets.
-:::
+### World flags
+
+World flags are named numbers the whole server shares, such as the ones a compass target's `GateFlag` names. They are
+a list of [`WorldFlagEntry`](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.WorldFlagEntry.md)
+values, a `Name` of up to 63 bytes and a `float` `Value`, held by the
+[`WorldState`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.WorldState.md)
+mixin on the `World`. The server writes them, and every player's game reads them:
+
+```csharp
+// On the server: raise the "mymod_bridge_repaired" flag, so a compass target gated on it shows.
+var flags = entities.World.As<WorldState>();
+
+for (var i = 0; i < flags.FlagsCount; i++)
+{
+    var entry = flags.GetFlags(i);
+    if (entry.Name == "mymod_bridge_repaired")
+    {
+        entry.Value = 1f;
+        flags.SetFlags(i, entry);
+        return;
+    }
+}
+
+flags.AddFlags(new WorldFlagEntry { Name = new NativeString64("mymod_bridge_repaired", false), Value = 1f });
+```
+
+The Quests mod keeps its own flags in the same list, so pick names that will not collide with another mod's, for
+example by starting them with your mod's name.
 
 ## On the client
 
@@ -178,4 +201,5 @@ It never changes them itself. The server writes `Journal` and `Dialogue`, and th
 - [`DialogueResponse`](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.DialogueResponse.md)
 - [`SpokenTopicEntry`](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SpokenTopicEntry.md)
 - [`WorldFlagEntry`](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.WorldFlagEntry.md)
+- [`WorldState`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.WorldState.md)
 - [`Player`](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Player.md)

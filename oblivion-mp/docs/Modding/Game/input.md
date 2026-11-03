@@ -13,8 +13,8 @@ This is the mod template's `WalletKeys.cs`. Each key sends a message to the serv
 
 ```csharp title="MyMod.Client/WalletKeys.cs"
 using OblivionMp.Sdk;
+using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
-using ReadyM.Sdk.Common.Input;
 
 namespace MyMod.Client;
 
@@ -41,10 +41,10 @@ IDisposable RegisterKeyBind(Key key, Action action, KeySource source = KeySource
 IDisposable RegisterKeyBind(ModifierKeys modifiers, Key key, Action action, KeySource source = KeySource.Polled);
 ```
 
-- [`Key`](../../../api-reference/ReadyM.Sdk.Common.Input/ReadyM.Sdk.Common.Input.Key.md) names keys in capitals:
+- [`Key`](../../../api-reference/OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.Key.md) names keys in capitals:
   `Key.A` to `Key.Z`, `Key.ZERO` to `Key.NINE`, `Key.F1` to `Key.F24`, `Key.NUM_ZERO` to `Key.NUM_NINE`,
   `Key.SPACE`, `Key.RETURN`, `Key.ESCAPE`, `Key.TAB` and so on.
-- [`ModifierKeys`](../../../api-reference/ReadyM.Sdk.Common.Input/ReadyM.Sdk.Common.Input.ModifierKeys.md) is `None`,
+- [`ModifierKeys`](../../../api-reference/OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.ModifierKeys.md) is `None`,
   `Alt`, `Control` or `Shift`. Combine them with `|`: `ModifierKeys.Control | ModifierKeys.Shift`.
 - Your action runs at the same point in the frame as a service's `Update`, so it can read and change entities
   directly.
@@ -56,8 +56,8 @@ You can also register keys from your mod entry's `Init`, as the Arena mod does f
 ```csharp title="MyMod.Client/Mod.cs"
 using Microsoft.Extensions.Logging;
 using OblivionMp.Sdk;
+using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
-using ReadyM.Sdk.Common.Input;
 
 namespace MyMod.Client;
 
@@ -77,7 +77,7 @@ public sealed partial class Mod(IInput input, IPlayers players, ILogger logger)
 
 ### Polled or only when the UI did not want it
 
-The last parameter, [`KeySource`](../../../api-reference/ReadyM.Sdk.Common.Input/ReadyM.Sdk.Common.Input.KeySource.md),
+The last parameter, [`KeySource`](../../../api-reference/OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.KeySource.md),
 decides which presses reach your binding:
 
 | `KeySource` | Fires | The press also reaches the game |
@@ -111,8 +111,8 @@ only while the player is picking a target, and other code calls it to start and 
 
 ```csharp title="MyMod.Client/TargetKeys.cs"
 using OblivionMp.Sdk;
+using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
-using ReadyM.Sdk.Common.Input;
 
 namespace MyMod.Client;
 
@@ -156,6 +156,6 @@ The game already uses many keys, and a `Polled` binding does not stop the game f
 ## Reference
 
 - [`IInput`](../../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.IInput.md)
-- [`Key`](../../../api-reference/ReadyM.Sdk.Common.Input/ReadyM.Sdk.Common.Input.Key.md)
-- [`ModifierKeys`](../../../api-reference/ReadyM.Sdk.Common.Input/ReadyM.Sdk.Common.Input.ModifierKeys.md)
-- [`KeySource`](../../../api-reference/ReadyM.Sdk.Common.Input/ReadyM.Sdk.Common.Input.KeySource.md)
+- [`Key`](../../../api-reference/OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.Key.md)
+- [`ModifierKeys`](../../../api-reference/OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.ModifierKeys.md)
+- [`KeySource`](../../../api-reference/OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.KeySource.md)

@@ -227,9 +227,9 @@ public readonly partial struct Emote
 ```csharp title="MyMod.Client/EmoteKeys.cs"
 using MyMod.Common;
 using OblivionMp.Sdk;
+using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Client;
-using ReadyM.Sdk.Common.Input;
 
 namespace MyMod.Client;
 

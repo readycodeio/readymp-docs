@@ -39,10 +39,10 @@ The C# side serves the folder, puts a browser on screen, and declares the two me
 
 ```csharp title="MyMod.Client/HelloPage.cs"
 using OblivionMp.Sdk;
+using OblivionMpCSharpMod.Input;
 using ReadyM.Cef;
 using ReadyM.Cef.Rpc;
 using ReadyM.SDK.Attributes;
-using ReadyM.Sdk.Common.Input;
 
 namespace MyMod.Client;
 
@@ -118,7 +118,7 @@ public sealed partial class Mod(IDependencyContainer services)
 ```
 
 :::important
-This registration is required in 1.0. A class with `[SendToCef]` or `[ReceiveFromCef]` methods only exchanges
+This registration is required in 1.1. A class with `[SendToCef]` or `[ReceiveFromCef]` methods only exchanges
 messages once it is registered as an
 [`ICefRpcHandler`](../../../api-reference/ReadyM.Cef.Rpc/ReadyM.Cef.Rpc.ICefRpcHandler.md) in your `Init`. Without
 it, nothing fails at build time: the page and the game never hear each other. The chat mod does the same in its own
@@ -199,7 +199,7 @@ Each viewport is decided by its own mode and its own page, so a page in front ne
 page behind it said. `SetFocusable` is about the keyboard only: to let clicks through a page, change its input mode.
 
 :::note
-Not in 1.0 yet: a supported way to give a page the mouse. The modes above decide where the pointer goes while the
+Not in 1.1 yet: a supported way to give a page the mouse. The modes above decide where the pointer goes while the
 game shows a cursor, for example in its own menus, so a page on screen does not block clicks meant for them. A page
 can take the keyboard with `SetFocused`, which is how chat works: it focuses its viewport when it opens and hands
 the keyboard back when it closes.

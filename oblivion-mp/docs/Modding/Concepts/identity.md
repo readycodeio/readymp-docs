@@ -177,7 +177,7 @@ if (what.FormId == new FormId(0x0000000F))
 
 `FormType` is the kind of record a form is: `Weapon`, `Armor`, `NPC`, `Creature`, `Container`, `Spell` and so on,
 following the record types of Oblivion's data files. The server's game data uses it, for example `Kind` on
-`LeveledListItem` and `BaseContainerItem` entries. 1.0 has no call that tells you the `FormType` of an arbitrary
+`LeveledListItem` and `BaseContainerItem` entries. 1.1 has no call that tells you the `FormType` of an arbitrary
 `FormId`.
 
 ### Compact numbers for your own messages

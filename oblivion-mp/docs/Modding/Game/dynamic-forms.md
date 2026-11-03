@@ -13,9 +13,9 @@ client makes its own copy of it in its game. Your mod reads these entities to fi
 using Microsoft.Extensions.Logging;
 using OblivionMp.Sdk;
 using OblivionMp.Sdk.Common.Archetypes;
+using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Client.Entities;
-using ReadyM.Sdk.Common.Input;
 
 namespace MyMod.Client;
 
@@ -84,7 +84,7 @@ whose `FormId` is 0, because it has no id from the game files. See
 [Items and inventories](items-and-inventories.md).
 
 :::note
-Not in 1.0 yet: going from such a `NetworkFormId` to the `AlchemyForm`, `SpellForm` or `EnchantedItemForm` it
+Not in 1.1 yet: going from such a `NetworkFormId` to the `AlchemyForm`, `SpellForm` or `EnchantedItemForm` it
 names, and creating a potion, spell or enchanted item from a mod.
 :::
 

@@ -113,7 +113,7 @@ game with `character.Push(Lantern.Field.IsLit, theirLantern)`.
 
 :::important
 
-Nothing finds an `IShapeMappings` class on its own in 1.0. Register it with
+Nothing finds an `IShapeMappings` class on its own in 1.1. Register it with
 `services.RegisterSingleton<IShapeMappings, YourMappings>()` in your client `[ModEntry]`'s `Init`. The mappings of
 every mod are collected once, after every entry point's `Init` has run. One registered later, for example from a
 service's `Start`, is never seen, and every `Pull` and `Push` through it returns `false`.

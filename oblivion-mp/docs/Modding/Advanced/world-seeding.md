@@ -133,7 +133,7 @@ public sealed partial class RespawnHold(IEntities entities, SessionClock clock)
 
 :::note
 
-Not in 1.0 yet: changing the respawn interval for the whole server, or seeding a cell from a mod. The interval is 72
+Not in 1.1 yet: changing the respawn interval for the whole server, or seeding a cell from a mod. The interval is 72
 game hours, as in the single-player game.
 
 :::

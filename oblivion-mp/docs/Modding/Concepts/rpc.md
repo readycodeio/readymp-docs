@@ -7,7 +7,8 @@ sidebar_position: 5
 An RPC is a message one half of your mod sends and the other half runs code for: a player presses a key and asks the
 server for something, the server announces a winner, a client pings the players around it. Use RPC for things that
 happen once. For a value that should stay the same for every player, such as a gold balance, use
-[replication](replication.md) instead.
+[replication](replication.md) instead. For something other mods should be able to refuse, change or watch, use a
+[networked event](networked-events.md).
 
 You list every message in the Common project, and each half gets a method to send the ones it sends and a place to
 handle the ones it receives.
@@ -77,7 +78,7 @@ public sealed partial class RpcHandlers(ILogger logger)
 
 ```csharp title="MyMod.Client/WalletKeys.cs"
 using OblivionMp.Sdk;
-using ReadyM.Sdk.Common.Input;
+using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Client;
