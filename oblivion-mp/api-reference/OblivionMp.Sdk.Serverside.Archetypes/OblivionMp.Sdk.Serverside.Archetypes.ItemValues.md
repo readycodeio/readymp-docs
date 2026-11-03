@@ -10,6 +10,8 @@ Assembly: OblivionMp.Sdk.Serverside.dll
 The base value of every item by form id, kept on the server only.
 
 ```csharp
+[Archetype(Networked = false)]
+[Include(typeof(ItemValuesMixin), "")]
 public readonly struct ItemValues : IArchetype, IArchetypeQueryable, IEntityShape
 ```
 
@@ -55,6 +57,7 @@ public int ValuesCount { get; }
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_ItemValues_AddValues_System_UInt32__ReadyM_Relay_Common_Oblivion_ECS_Values_ItemValue__"></a> AddValues\(in uint, in ItemValue\)
 
 ```csharp
+[Changes("ItemValuesMixin.Field.Values")]
 public bool AddValues(in uint key, in ItemValue value)
 ```
 
@@ -85,6 +88,7 @@ public T As<T>() where T : struct, IArchetypeQueryable
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_ItemValues_ClearValues"></a> ClearValues\(\)
 
 ```csharp
+[Changes("ItemValuesMixin.Field.Values")]
 public void ClearValues()
 ```
 
@@ -177,6 +181,7 @@ changes when an include does.
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_ItemValues_RemoveValues_System_UInt32__"></a> RemoveValues\(in uint\)
 
 ```csharp
+[Changes("ItemValuesMixin.Field.Values")]
 public bool RemoveValues(in uint key)
 ```
 
@@ -191,6 +196,7 @@ public bool RemoveValues(in uint key)
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_ItemValues_SetValues_Yooni_Native_Container_NativeDictionary_System_UInt32_ReadyM_Relay_Common_Oblivion_ECS_Values_ItemValue_Yooni_Native_Container_UIntHash___"></a> SetValues\(in NativeDictionary<uint, ItemValue, UIntHash\>\)
 
 ```csharp
+[Changes("ItemValuesMixin.Field.Values")]
 public void SetValues(in NativeDictionary<uint, ItemValue, UIntHash> value)
 ```
 
@@ -201,6 +207,7 @@ public void SetValues(in NativeDictionary<uint, ItemValue, UIntHash> value)
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_ItemValues_SetValues_System_UInt32__ReadyM_Relay_Common_Oblivion_ECS_Values_ItemValue__"></a> SetValues\(in uint, in ItemValue\)
 
 ```csharp
+[Changes("ItemValuesMixin.Field.Values")]
 public void SetValues(in uint key, in ItemValue value)
 ```
 

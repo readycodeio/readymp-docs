@@ -10,6 +10,13 @@ Assembly: OblivionMp.Sdk.Serverside.dll
 A leveled creature spawn point from the game, kept on the server only.
 
 ```csharp
+[Archetype(Networked = false)]
+[Include(typeof(RefIdMixin), "")]
+[Include(typeof(BaseIdMixin), "")]
+[Include(typeof(Transform), "")]
+[Include(typeof(ParentCell), "ParentCell")]
+[Include(typeof(LevelMixin), "")]
+[Include(typeof(SpawnerState), "")]
 public readonly struct Spawner : IArchetype, IArchetypeQueryable, IEntityShape
 ```
 

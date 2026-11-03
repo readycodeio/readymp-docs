@@ -10,6 +10,8 @@ Assembly: OblivionMp.Sdk.Serverside.dll
 An NPC's record from the game files, kept on the server only.
 
 ```csharp
+[Archetype(Networked = false)]
+[Include(typeof(NpcTemplateMixin), "")]
 public readonly struct NpcTemplate : IArchetype, IArchetypeQueryable, IEntityShape
 ```
 
@@ -105,6 +107,7 @@ public bool PcLevelOffset { get; set; }
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_NpcTemplate_AddItems_ReadyM_Relay_Common_Oblivion_ECS_Values_BaseContainerItem__"></a> AddItems\(in BaseContainerItem\)
 
 ```csharp
+[Changes("NpcTemplateMixin.Field.Items")]
 public void AddItems(in BaseContainerItem value)
 ```
 
@@ -129,6 +132,7 @@ public T As<T>() where T : struct, IArchetypeQueryable
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_NpcTemplate_ClearItems"></a> ClearItems\(\)
 
 ```csharp
+[Changes("NpcTemplateMixin.Field.Items")]
 public void ClearItems()
 ```
 
@@ -173,6 +177,7 @@ public BaseContainerItem GetItems(int index)
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_NpcTemplate_InsertItems_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_BaseContainerItem__"></a> InsertItems\(int, in BaseContainerItem\)
 
 ```csharp
+[Changes("NpcTemplateMixin.Field.Items")]
 public void InsertItems(int index, in BaseContainerItem value)
 ```
 
@@ -217,6 +222,7 @@ changes when an include does.
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_NpcTemplate_RemoveAtItems_System_Int32_"></a> RemoveAtItems\(int\)
 
 ```csharp
+[Changes("NpcTemplateMixin.Field.Items")]
 public BaseContainerItem RemoveAtItems(int index)
 ```
 
@@ -231,6 +237,7 @@ public BaseContainerItem RemoveAtItems(int index)
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_NpcTemplate_SetItems_Yooni_Native_Container_NativeList_ReadyM_Relay_Common_Oblivion_ECS_Values_BaseContainerItem___"></a> SetItems\(in NativeList<BaseContainerItem\>\)
 
 ```csharp
+[Changes("NpcTemplateMixin.Field.Items")]
 public void SetItems(in NativeList<BaseContainerItem> value)
 ```
 
@@ -241,6 +248,7 @@ public void SetItems(in NativeList<BaseContainerItem> value)
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_NpcTemplate_SetItems_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_BaseContainerItem__"></a> SetItems\(int, in BaseContainerItem\)
 
 ```csharp
+[Changes("NpcTemplateMixin.Field.Items")]
 public void SetItems(int index, in BaseContainerItem value)
 ```
 

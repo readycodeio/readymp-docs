@@ -7,17 +7,14 @@ Namespace: [OblivionMp.Sdk.Serverside.Events](../OblivionMp.Sdk.Serverside.Event
 Assembly: OblivionMp.Sdk.Serverside.dll  
 
 ```csharp
-public sealed class AreaEventsHandler : IService
+[Service]
+public sealed class AreaEventsHandler
 ```
 
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
 [AreaEventsHandler](../OblivionMp.Sdk.Serverside.Events/OblivionMp.Sdk.Serverside.Events.AreaEventsHandler.md)
-
-#### Implements
-
-IService
 
 #### Inherited Members
 
@@ -53,6 +50,7 @@ public bool Enabled { get; }
 ### <a id="OblivionMp_Sdk_Serverside_Events_AreaEventsHandler_OnTimeChange_OblivionMp_Sdk_Common_Events_TimeChangeEvent__"></a> OnTimeChange\(in TimeChangeEvent\)
 
 ```csharp
+[EventHandler(Stage.Apply)]
 public void OnTimeChange(in TimeChangeEvent ev)
 ```
 
@@ -63,6 +61,7 @@ public void OnTimeChange(in TimeChangeEvent ev)
 ### <a id="OblivionMp_Sdk_Serverside_Events_AreaEventsHandler_OnWeatherChange_OblivionMp_Sdk_Common_Events_WeatherChangeEvent__"></a> OnWeatherChange\(in WeatherChangeEvent\)
 
 ```csharp
+[EventHandler(Stage.Apply)]
 public void OnWeatherChange(in WeatherChangeEvent ev)
 ```
 

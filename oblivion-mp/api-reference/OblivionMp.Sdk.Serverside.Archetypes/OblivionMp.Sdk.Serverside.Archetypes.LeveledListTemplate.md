@@ -10,6 +10,8 @@ Assembly: OblivionMp.Sdk.Serverside.dll
 A leveled list from the game files, kept on the server only.
 
 ```csharp
+[Archetype(Networked = false)]
+[Include(typeof(LeveledListTemplateMixin), "")]
 public readonly struct LeveledListTemplate : IArchetype, IArchetypeQueryable, IEntityShape
 ```
 
@@ -105,6 +107,7 @@ public bool IsValid { get; }
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_LeveledListTemplate_AddEntries_ReadyM_Relay_Common_Oblivion_ECS_Values_LeveledListItem__"></a> AddEntries\(in LeveledListItem\)
 
 ```csharp
+[Changes("LeveledListTemplateMixin.Field.Entries")]
 public void AddEntries(in LeveledListItem value)
 ```
 
@@ -129,6 +132,7 @@ public T As<T>() where T : struct, IArchetypeQueryable
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_LeveledListTemplate_ClearEntries"></a> ClearEntries\(\)
 
 ```csharp
+[Changes("LeveledListTemplateMixin.Field.Entries")]
 public void ClearEntries()
 ```
 
@@ -173,6 +177,7 @@ public LeveledListItem GetEntries(int index)
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_LeveledListTemplate_InsertEntries_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_LeveledListItem__"></a> InsertEntries\(int, in LeveledListItem\)
 
 ```csharp
+[Changes("LeveledListTemplateMixin.Field.Entries")]
 public void InsertEntries(int index, in LeveledListItem value)
 ```
 
@@ -217,6 +222,7 @@ changes when an include does.
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_LeveledListTemplate_RemoveAtEntries_System_Int32_"></a> RemoveAtEntries\(int\)
 
 ```csharp
+[Changes("LeveledListTemplateMixin.Field.Entries")]
 public LeveledListItem RemoveAtEntries(int index)
 ```
 
@@ -231,6 +237,7 @@ public LeveledListItem RemoveAtEntries(int index)
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_LeveledListTemplate_SetEntries_Yooni_Native_Container_NativeList_ReadyM_Relay_Common_Oblivion_ECS_Values_LeveledListItem___"></a> SetEntries\(in NativeList<LeveledListItem\>\)
 
 ```csharp
+[Changes("LeveledListTemplateMixin.Field.Entries")]
 public void SetEntries(in NativeList<LeveledListItem> value)
 ```
 
@@ -241,6 +248,7 @@ public void SetEntries(in NativeList<LeveledListItem> value)
 ### <a id="OblivionMp_Sdk_Serverside_Archetypes_LeveledListTemplate_SetEntries_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_LeveledListItem__"></a> SetEntries\(int, in LeveledListItem\)
 
 ```csharp
+[Changes("LeveledListTemplateMixin.Field.Entries")]
 public void SetEntries(int index, in LeveledListItem value)
 ```
 
