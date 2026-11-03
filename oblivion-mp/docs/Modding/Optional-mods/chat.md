@@ -76,7 +76,7 @@ public sealed partial class ReadyCommand(IChat chat)
    ```json title="Content/manifest.json"
    "dependencies": [
      { "uniqueId": "OblivionMP.SDK", "minimumVersion": "1.1.0" },
-     { "uniqueId": "OblivionMP.Chat", "minimumVersion": "1.0.0" }
+     { "uniqueId": "OblivionMP.Chat", "minimumVersion": "1.1.0" }
    ]
    ```
 
