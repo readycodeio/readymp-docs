@@ -60,6 +60,20 @@ public bool AddValues(in uint key, in ItemValue value)
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_ItemValuesMixin_As__1"></a> As<T\>\(\)
+
+```csharp
+public T As<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ T
+
+#### Type Parameters
+
+`T` 
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_ItemValuesMixin_ClearValues"></a> ClearValues\(\)
 
 ```csharp
@@ -121,6 +135,20 @@ public ItemValue GetValues(in uint key)
 
  ItemValue
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_ItemValuesMixin_Is__1"></a> Is<T\>\(\)
+
+```csharp
+public bool Is<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_ItemValuesMixin_Keep"></a> Keep\(\)
 
 This entity, which it already is: a loop over this shape hands over the shape itself.
@@ -177,6 +205,24 @@ public void SetValues(in uint key, in ItemValue value)
 `key` [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
 
 `value` ItemValue
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_ItemValuesMixin_TryAs__1___0__"></a> TryAs<T\>\(out T\)
+
+```csharp
+public bool TryAs<T>(out T archetype) where T : struct, IArchetypeQueryable
+```
+
+#### Parameters
+
+`archetype` T
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
 
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_ItemValuesMixin_TryGetValuesValue_System_UInt32__ReadyM_Relay_Common_Oblivion_ECS_Values_ItemValue__"></a> TryGetValuesValue\(in uint, out ItemValue\)
 

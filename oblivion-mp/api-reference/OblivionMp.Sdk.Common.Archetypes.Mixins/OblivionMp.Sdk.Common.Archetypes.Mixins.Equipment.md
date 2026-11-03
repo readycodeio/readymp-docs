@@ -81,6 +81,20 @@ public void AddItems(in InventoryEntry value)
 
 `value` InventoryEntry
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Equipment_As__1"></a> As<T\>\(\)
+
+```csharp
+public T As<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ T
+
+#### Type Parameters
+
+`T` 
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Equipment_ClearItems"></a> ClearItems\(\)
 
 ```csharp
@@ -141,6 +155,20 @@ public void InsertItems(int index, in InventoryEntry value)
 
 `value` InventoryEntry
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Equipment_Is__1"></a> Is<T\>\(\)
+
+```csharp
+public bool Is<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Equipment_Keep"></a> Keep\(\)
 
 This entity, which it already is: a loop over this shape hands over the shape itself.
@@ -199,5 +227,23 @@ public void SetItems(int index, in InventoryEntry value)
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 `value` InventoryEntry
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Equipment_TryAs__1___0__"></a> TryAs<T\>\(out T\)
+
+```csharp
+public bool TryAs<T>(out T archetype) where T : struct, IArchetypeQueryable
+```
+
+#### Parameters
+
+`archetype` T
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
 
 

@@ -136,6 +136,10 @@ Where a quest stands.
 
 How the session picks the level leveled lists roll at.
 
+ [SitSleepState](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SitSleepState.md)
+
+Where a character is in sitting down on, sleeping in or getting up from furniture.
+
  [SpellType](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SpellType.md)
 
 The kind of a spell.

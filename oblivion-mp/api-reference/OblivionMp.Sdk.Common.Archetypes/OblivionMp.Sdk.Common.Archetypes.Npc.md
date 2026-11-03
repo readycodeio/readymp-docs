@@ -13,18 +13,11 @@ A person or creature from the game.
 [Archetype]
 [Tag(typeof(AllowOwnershipTransferOnScopeEnterTag))]
 [Tag(typeof(AllowOwnershipTransferOnScopeLeaveTag))]
-[Include(typeof(Transform), "")]
-[Include(typeof(AnimationMovement), "")]
-[Include(typeof(AnimationState), "")]
-[Include(typeof(ParentCell), "ParentCell")]
+[IncludeArchetype(typeof(Character))]
 [Include(typeof(CellHandoffTarget), "")]
 [Include(typeof(CombatTarget), "")]
 [Include(typeof(DoorFollow), "")]
 [Include(typeof(RefIdMixin), "")]
-[Include(typeof(BaseIdMixin), "")]
-[Include(typeof(Equipment), "")]
-[Include(typeof(Vitals), "")]
-[Include(typeof(LevelMixin), "")]
 [Include(typeof(SpawnOrigin), "")]
 [Include(typeof(AiIntent), "")]
 [Include(typeof(AiState), "")]
@@ -1664,6 +1657,18 @@ Here so taking something out of a loop reads the same whichever way the loop wal
 shape is walked by chunk follows from what it includes, which the call site cannot see and which
 changes when an include does.
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_Npc_PredictHp_System_Single_"></a> PredictHp\(float\)
+
+Guesses at the value, inside the callback handed to <code>.Predicting()</code>.
+
+```csharp
+public void PredictHp(float value)
+```
+
+#### Parameters
+
+`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Npc_RemoveAtAnimActionSamples_System_Int32_"></a> RemoveAtAnimActionSamples\(int\)
 
 ```csharp
@@ -2071,5 +2076,35 @@ public bool TryAs<T>(out T archetype) where T : struct, IArchetypeQueryable
 #### Type Parameters
 
 `T` 
+
+## Operators
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_Npc_op_Explicit_OblivionMp_Sdk_Common_Archetypes_Character__OblivionMp_Sdk_Common_Archetypes_Npc"></a> explicit operator Npc\(Character\)
+
+```csharp
+public static explicit operator Npc(Character value)
+```
+
+#### Parameters
+
+`value` [Character](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Character.md)
+
+#### Returns
+
+ [Npc](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Npc.md)
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_Npc_op_Implicit_OblivionMp_Sdk_Common_Archetypes_Npc__OblivionMp_Sdk_Common_Archetypes_Character"></a> implicit operator Character\(Npc\)
+
+```csharp
+public static implicit operator Character(Npc value)
+```
+
+#### Parameters
+
+`value` [Npc](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Npc.md)
+
+#### Returns
+
+ [Character](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Character.md)
 
 

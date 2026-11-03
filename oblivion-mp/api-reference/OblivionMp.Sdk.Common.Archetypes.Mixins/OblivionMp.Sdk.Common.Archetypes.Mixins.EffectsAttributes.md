@@ -60,6 +60,20 @@ public bool AddAttribute(in byte key, in float value)
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_EffectsAttributes_As__1"></a> As<T\>\(\)
+
+```csharp
+public T As<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ T
+
+#### Type Parameters
+
+`T` 
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_EffectsAttributes_ClearAttribute"></a> ClearAttribute\(\)
 
 ```csharp
@@ -121,6 +135,20 @@ public float GetAttribute(in byte key)
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_EffectsAttributes_Is__1"></a> Is<T\>\(\)
+
+```csharp
+public bool Is<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_EffectsAttributes_Keep"></a> Keep\(\)
 
 This entity, which it already is: a loop over this shape hands over the shape itself.
@@ -177,6 +205,24 @@ public void SetAttribute(in byte key, in float value)
 `key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_EffectsAttributes_TryAs__1___0__"></a> TryAs<T\>\(out T\)
+
+```csharp
+public bool TryAs<T>(out T archetype) where T : struct, IArchetypeQueryable
+```
+
+#### Parameters
+
+`archetype` T
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
 
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_EffectsAttributes_TryGetAttributeValue_System_Byte__System_Single__"></a> TryGetAttributeValue\(in byte, out float\)
 

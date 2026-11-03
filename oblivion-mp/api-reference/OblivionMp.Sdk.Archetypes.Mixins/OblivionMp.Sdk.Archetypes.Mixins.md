@@ -6,6 +6,12 @@ description: 'The types in the OblivionMp.Sdk.Archetypes.Mixins namespace.'
 
 ### Structs
 
+ [LocalRefId](../OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.LocalRefId.md)
+
+ [LocalRefIdView](../OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.LocalRefIdView.md)
+
+Walks this shape by chunk. Valid only inside the loop that produced it.
+
  [LocalVisibility](../OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.LocalVisibility.md)
 
 How visible a character is in this player's game.
@@ -16,7 +22,7 @@ Walks this shape by chunk. Valid only inside the loop that produced it.
 
  [MappedActor](../OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.MappedActor.md)
 
-The game actor that shows a character in this player's game.
+The game object that shows an entity in this player's game.
 
  [MappedActorView](../OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.MappedActorView.md)
 

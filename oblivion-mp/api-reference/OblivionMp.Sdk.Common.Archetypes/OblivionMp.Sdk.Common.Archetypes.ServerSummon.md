@@ -1722,6 +1722,18 @@ Here so taking something out of a loop reads the same whichever way the loop wal
 shape is walked by chunk follows from what it includes, which the call site cannot see and which
 changes when an include does.
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_ServerSummon_PredictHp_System_Single_"></a> PredictHp\(float\)
+
+Guesses at the value, inside the callback handed to <code>.Predicting()</code>.
+
+```csharp
+public void PredictHp(float value)
+```
+
+#### Parameters
+
+`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_ServerSummon_RemoveAtAnimActionSamples_System_Int32_"></a> RemoveAtAnimActionSamples\(int\)
 
 ```csharp

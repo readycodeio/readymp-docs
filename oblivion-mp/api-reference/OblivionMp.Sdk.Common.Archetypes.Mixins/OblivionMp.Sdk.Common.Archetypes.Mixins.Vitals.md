@@ -60,6 +60,7 @@ public float FatigueBase { get; set; }
 Current health.
 
 ```csharp
+[Predictable]
 public float Hp { get; set; }
 ```
 
@@ -117,6 +118,34 @@ public float MagickaBase { get; set; }
 
 ## Methods
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Vitals_As__1"></a> As<T\>\(\)
+
+```csharp
+public T As<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ T
+
+#### Type Parameters
+
+`T` 
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Vitals_Is__1"></a> Is<T\>\(\)
+
+```csharp
+public bool Is<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Vitals_Keep"></a> Keep\(\)
 
 This entity, which it already is: a loop over this shape hands over the shape itself.
@@ -134,5 +163,35 @@ public Vitals Keep()
 Here so taking something out of a loop reads the same whichever way the loop walks. Whether a
 shape is walked by chunk follows from what it includes, which the call site cannot see and which
 changes when an include does.
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Vitals_PredictHp_System_Single_"></a> PredictHp\(float\)
+
+Guesses at the value, inside the callback handed to <code>.Predicting()</code>.
+
+```csharp
+public void PredictHp(float value)
+```
+
+#### Parameters
+
+`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Vitals_TryAs__1___0__"></a> TryAs<T\>\(out T\)
+
+```csharp
+public bool TryAs<T>(out T archetype) where T : struct, IArchetypeQueryable
+```
+
+#### Parameters
+
+`archetype` T
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
 
 

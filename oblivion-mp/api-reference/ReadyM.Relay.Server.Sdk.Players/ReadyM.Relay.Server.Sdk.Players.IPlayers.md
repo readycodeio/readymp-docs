@@ -33,6 +33,38 @@ Guid? GetReadyMId(PlayerId player)
 
  [Guid](https://learn.microsoft.com/dotnet/api/system.guid)?
 
+### <a id="ReadyM_Relay_Server_Sdk_Players_IPlayers_InArea_ReadyM_Api_Idents_AreaId_"></a> InArea\(AreaId\)
+
+The players in an area.
+
+```csharp
+List<PlayerId> InArea(AreaId area)
+```
+
+#### Parameters
+
+`area` AreaId
+
+#### Returns
+
+ [List](https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1)<PlayerId\>
+
+### <a id="ReadyM_Relay_Server_Sdk_Players_IPlayers_InCell_ReadyM_Api_Idents_FullCellId_"></a> InCell\(FullCellId\)
+
+The players who have a cell active.
+
+```csharp
+List<PlayerId> InCell(FullCellId cell)
+```
+
+#### Parameters
+
+`cell` FullCellId
+
+#### Returns
+
+ [List](https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1)<PlayerId\>
+
 ### <a id="ReadyM_Relay_Server_Sdk_Players_IPlayers_Kick_ReadyM_Api_Idents_PlayerId_"></a> Kick\(PlayerId\)
 
 Kicks the player from the server. This is a hard disconnect, and the player will not be able to reconnect until

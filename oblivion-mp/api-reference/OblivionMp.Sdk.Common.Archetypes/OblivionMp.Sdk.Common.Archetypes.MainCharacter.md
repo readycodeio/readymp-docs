@@ -11,20 +11,13 @@ A player's character in the world.
 
 ```csharp
 [Archetype(Replication = Replication.OwnershipBased)]
-[Include(typeof(Transform), "")]
-[Include(typeof(AnimationMovement), "")]
-[Include(typeof(AnimationState), "")]
+[IncludeArchetype(typeof(Character))]
 [Include(typeof(Appearance), "")]
 [Include(typeof(CharacterIdentity), "")]
-[Include(typeof(Equipment), "")]
-[Include(typeof(Vitals), "")]
 [Include(typeof(PlayerActivity), "")]
 [Include(typeof(EffectsAttributes), "Effect")]
 [Include(typeof(SkillAttributes), "Skill")]
 [Include(typeof(SocialAttributes), "Social")]
-[Include(typeof(ParentCell), "ParentCell")]
-[Include(typeof(BaseIdMixin), "")]
-[Include(typeof(LevelMixin), "")]
 [Include(typeof(Quiver), "")]
 public readonly struct MainCharacter : IArchetype, IArchetypeQueryable, IEntityShape, IIndexed<PlayerId>
 ```
@@ -2583,6 +2576,18 @@ Here so taking something out of a loop reads the same whichever way the loop wal
 shape is walked by chunk follows from what it includes, which the call site cannot see and which
 changes when an include does.
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_MainCharacter_PredictHp_System_Single_"></a> PredictHp\(float\)
+
+Guesses at the value, inside the callback handed to <code>.Predicting()</code>.
+
+```csharp
+public void PredictHp(float value)
+```
+
+#### Parameters
+
+`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_MainCharacter_RemoveAtAnimActionSamples_System_Int32_"></a> RemoveAtAnimActionSamples\(int\)
 
 ```csharp
@@ -3430,5 +3435,35 @@ public bool TryGetSocialAttributeValue(in byte key, out float value)
 #### Returns
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+## Operators
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_MainCharacter_op_Explicit_OblivionMp_Sdk_Common_Archetypes_Character__OblivionMp_Sdk_Common_Archetypes_MainCharacter"></a> explicit operator MainCharacter\(Character\)
+
+```csharp
+public static explicit operator MainCharacter(Character value)
+```
+
+#### Parameters
+
+`value` [Character](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Character.md)
+
+#### Returns
+
+ [MainCharacter](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.MainCharacter.md)
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_MainCharacter_op_Implicit_OblivionMp_Sdk_Common_Archetypes_MainCharacter__OblivionMp_Sdk_Common_Archetypes_Character"></a> implicit operator Character\(MainCharacter\)
+
+```csharp
+public static implicit operator Character(MainCharacter value)
+```
+
+#### Parameters
+
+`value` [MainCharacter](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.MainCharacter.md)
+
+#### Returns
+
+ [Character](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Character.md)
 
 

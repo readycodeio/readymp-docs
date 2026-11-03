@@ -69,6 +69,34 @@ public int Y { get; set; }
 
 ## Methods
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_ParentCell_As__1"></a> As<T\>\(\)
+
+```csharp
+public T As<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ T
+
+#### Type Parameters
+
+`T` 
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_ParentCell_Is__1"></a> Is<T\>\(\)
+
+```csharp
+public bool Is<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_ParentCell_Keep"></a> Keep\(\)
 
 This entity, which it already is: a loop over this shape hands over the shape itself.
@@ -86,5 +114,23 @@ public ParentCell Keep()
 Here so taking something out of a loop reads the same whichever way the loop walks. Whether a
 shape is walked by chunk follows from what it includes, which the call site cannot see and which
 changes when an include does.
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_ParentCell_TryAs__1___0__"></a> TryAs<T\>\(out T\)
+
+```csharp
+public bool TryAs<T>(out T archetype) where T : struct, IArchetypeQueryable
+```
+
+#### Parameters
+
+`archetype` T
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
 
 

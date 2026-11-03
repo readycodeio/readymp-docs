@@ -4,8 +4,8 @@ description: 'A keyboard key or mouse button, by its Windows virtual-key code.'
 ---
 # Enum Key
 
-Namespace: [ReadyM.Sdk.Common.Input](../ReadyM.Sdk.Common.Input/ReadyM.Sdk.Common.Input.md)  
-Assembly: ReadyM.Sdk.Common.dll  
+Namespace: [OblivionMpCSharpMod.Input](../OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.md)  
+Assembly: OblivionMpCSharpMod.dll  
 
 A keyboard key or mouse button, by its Windows virtual-key code.
 

@@ -11,7 +11,6 @@
             "ReadyM.Api.dll",
             "ReadyM.Api.Multiplayer.dll",
             "ReadyM.SDK.Client.dll",
-            "ReadyM.Sdk.Common.dll",
             "ReadyM.Relay.Client.dll",
             "ReadyM.Cef.dll",
             "OblivionMpCSharpMod.dll",

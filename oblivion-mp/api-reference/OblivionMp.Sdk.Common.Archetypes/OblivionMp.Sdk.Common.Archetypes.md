@@ -10,25 +10,25 @@ description: 'The types in the OblivionMp.Sdk.Common.Archetypes namespace.'
 
 ### Classes
 
- [SpellForm.Field](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.SpellForm.Field.md)
+ [AlchemyForm.Field](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.AlchemyForm.Field.md)
 
-Tokens naming each of SpellForm's values, for mappings and overrides.
-
- [MainCharacter.Field](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.MainCharacter.Field.md)
-
-Tokens naming each of MainCharacter's values, for mappings and overrides.
-
- [EnchantedItemForm.Field](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.EnchantedItemForm.Field.md)
-
-Tokens naming each of EnchantedItemForm's values, for mappings and overrides.
+Tokens naming each of AlchemyForm's values, for mappings and overrides.
 
  [DroppedItem.Field](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.DroppedItem.Field.md)
 
 Tokens naming each of DroppedItem's values, for mappings and overrides.
 
- [AlchemyForm.Field](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.AlchemyForm.Field.md)
+ [MainCharacter.Field](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.MainCharacter.Field.md)
 
-Tokens naming each of AlchemyForm's values, for mappings and overrides.
+Tokens naming each of MainCharacter's values, for mappings and overrides.
+
+ [SpellForm.Field](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.SpellForm.Field.md)
+
+Tokens naming each of SpellForm's values, for mappings and overrides.
+
+ [EnchantedItemForm.Field](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.EnchantedItemForm.Field.md)
+
+Tokens naming each of EnchantedItemForm's values, for mappings and overrides.
 
 ### Structs
 
@@ -39,6 +39,8 @@ A potion a player brewed, shared with every client and the server.
  [AlchemyFormEffects](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.AlchemyFormEffects.md)
 
 The Effects collection of a AlchemyForm.
+
+ [Character](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Character.md)
 
  [Container](../OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Container.md)
 

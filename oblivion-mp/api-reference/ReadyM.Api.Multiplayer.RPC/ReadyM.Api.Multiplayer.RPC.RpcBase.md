@@ -41,32 +41,6 @@ IHostedService,
 protected RpcBase()
 ```
 
-## Properties
-
-### <a id="ReadyM_Api_Multiplayer_RPC_RpcBase_RelayClient"></a> RelayClient
-
-RPC client to use for sending RPCs. This is injected by the DI container.
-
-```csharp
-public IRpcClient RelayClient { protected get; set; }
-```
-
-#### Property Value
-
- IRpcClient
-
-### <a id="ReadyM_Api_Multiplayer_RPC_RpcBase_Serializer"></a> Serializer
-
-Serializer to use for serializing RPC parameters. This is injected by the DI container.
-
-```csharp
-public IRelaySerializer Serializer { protected get; set; }
-```
-
-#### Property Value
-
- IRelaySerializer
-
 ## Methods
 
 ### <a id="ReadyM_Api_Multiplayer_RPC_RpcBase_DeInitRpc"></a> DeInitRpc\(\)

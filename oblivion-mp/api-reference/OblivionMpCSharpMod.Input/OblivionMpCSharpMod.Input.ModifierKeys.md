@@ -4,8 +4,8 @@ description: 'Represents modifier keys that can be pressed in combination with o
 ---
 # Enum ModifierKeys
 
-Namespace: [ReadyM.Sdk.Common.Input](../ReadyM.Sdk.Common.Input/ReadyM.Sdk.Common.Input.md)  
-Assembly: ReadyM.Sdk.Common.dll  
+Namespace: [OblivionMpCSharpMod.Input](../OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.md)  
+Assembly: OblivionMpCSharpMod.dll  
 
 Represents modifier keys that can be pressed in combination with other keys.
 

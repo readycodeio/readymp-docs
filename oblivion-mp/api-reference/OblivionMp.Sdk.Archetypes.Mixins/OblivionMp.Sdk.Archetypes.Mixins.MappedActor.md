@@ -1,18 +1,19 @@
 ---
 title: 'Struct MappedActor'
-description: 'The game actor that shows a character in this player''s game.'
+description: 'The game object that shows an entity in this player''s game.'
 ---
 # Struct MappedActor
 
 Namespace: [OblivionMp.Sdk.Archetypes.Mixins](../OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.md)  
 Assembly: OblivionMp.Sdk.dll  
 
-The game actor that shows a character in this player's game.
+The game object that shows an entity in this player's game.
 
 ```csharp
 [ArchetypeMixin(Replication.None)]
 [Extends(typeof(MainCharacter), "")]
 [Extends(typeof(Npc), "")]
+[Extends(typeof(Furniture), "")]
 public readonly struct MappedActor : IArchetypeMixin, IArchetypeQueryable, IEntityShape, IIndexed<nint>
 ```
 
@@ -36,7 +37,7 @@ IIndexed<nint\>
 
 ### <a id="OblivionMp_Sdk_Archetypes_Mixins_MappedActor_Pawn"></a> Pawn
 
-The game actor that shows this character, or <code>IntPtr.Zero</code> while there is none.
+The game object that shows this entity, or <code>IntPtr.Zero</code> while there is none.
 
 ```csharp
 public nint Pawn { get; }
@@ -47,6 +48,34 @@ public nint Pawn { get; }
  [nint](https://learn.microsoft.com/dotnet/api/system.intptr)
 
 ## Methods
+
+### <a id="OblivionMp_Sdk_Archetypes_Mixins_MappedActor_As__1"></a> As<T\>\(\)
+
+```csharp
+public T As<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ T
+
+#### Type Parameters
+
+`T` 
+
+### <a id="OblivionMp_Sdk_Archetypes_Mixins_MappedActor_Is__1"></a> Is<T\>\(\)
+
+```csharp
+public bool Is<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
 
 ### <a id="OblivionMp_Sdk_Archetypes_Mixins_MappedActor_Keep"></a> Keep\(\)
 
@@ -65,5 +94,23 @@ public MappedActor Keep()
 Here so taking something out of a loop reads the same whichever way the loop walks. Whether a
 shape is walked by chunk follows from what it includes, which the call site cannot see and which
 changes when an include does.
+
+### <a id="OblivionMp_Sdk_Archetypes_Mixins_MappedActor_TryAs__1___0__"></a> TryAs<T\>\(out T\)
+
+```csharp
+public bool TryAs<T>(out T archetype) where T : struct, IArchetypeQueryable
+```
+
+#### Parameters
+
+`archetype` T
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
 
 

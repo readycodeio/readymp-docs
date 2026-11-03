@@ -10,6 +10,8 @@ description: 'The types in the OblivionMp.Sdk.Serverside namespace.'
 
  [OblivionMp.Sdk.Serverside.Archetypes](../OblivionMp.Sdk.Serverside.Archetypes/OblivionMp.Sdk.Serverside.Archetypes.md)
 
+ [OblivionMp.Sdk.Serverside.Events](../OblivionMp.Sdk.Serverside.Events/OblivionMp.Sdk.Serverside.Events.md)
+
  [OblivionMp.Sdk.Serverside.Items](../OblivionMp.Sdk.Serverside.Items/OblivionMp.Sdk.Serverside.Items.md)
 
  [OblivionMp.Sdk.Serverside.Spawners](../OblivionMp.Sdk.Serverside.Spawners/OblivionMp.Sdk.Serverside.Spawners.md)

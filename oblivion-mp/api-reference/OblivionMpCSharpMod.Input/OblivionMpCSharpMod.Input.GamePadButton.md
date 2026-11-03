@@ -4,8 +4,8 @@ description: 'Represents the buttons on a gamepad controller.'
 ---
 # Enum GamePadButton
 
-Namespace: [ReadyM.Sdk.Common.Input](../ReadyM.Sdk.Common.Input/ReadyM.Sdk.Common.Input.md)  
-Assembly: ReadyM.Sdk.Common.dll  
+Namespace: [OblivionMpCSharpMod.Input](../OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.md)  
+Assembly: OblivionMpCSharpMod.dll  
 
 Represents the buttons on a gamepad controller.
 

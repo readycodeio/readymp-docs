@@ -4,8 +4,8 @@ description: 'Where a character is in sitting down on, sleeping in or getting up
 ---
 # Enum SitSleepState
 
-Namespace: [OblivionMpCSharpMod.ECS.Values](../OblivionMpCSharpMod.ECS.Values/OblivionMpCSharpMod.ECS.Values.md)  
-Assembly: OblivionMpCSharpMod.dll  
+Namespace: [ReadyM.Relay.Common.Oblivion.ECS.Values](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.md)  
+Assembly: ReadyM.Relay.Common.Oblivion.dll  
 
 Where a character is in sitting down on, sleeping in or getting up from furniture.
 

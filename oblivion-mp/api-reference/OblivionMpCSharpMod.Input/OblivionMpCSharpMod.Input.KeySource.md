@@ -4,8 +4,8 @@ description: 'Where a key bind''s presses come from.'
 ---
 # Enum KeySource
 
-Namespace: [ReadyM.Sdk.Common.Input](../ReadyM.Sdk.Common.Input/ReadyM.Sdk.Common.Input.md)  
-Assembly: ReadyM.Sdk.Common.dll  
+Namespace: [OblivionMpCSharpMod.Input](../OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.md)  
+Assembly: OblivionMpCSharpMod.dll  
 
 Where a key bind's presses come from.
 

@@ -76,6 +76,20 @@ public void AddQuests(in QuestEntry value)
 
 `value` QuestEntry
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Journal_As__1"></a> As<T\>\(\)
+
+```csharp
+public T As<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ T
+
+#### Type Parameters
+
+`T` 
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Journal_ClearCompassTargets"></a> ClearCompassTargets\(\)
 
 ```csharp
@@ -192,6 +206,20 @@ public void InsertQuests(int index, in QuestEntry value)
 
 `value` QuestEntry
 
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Journal_Is__1"></a> Is<T\>\(\)
+
+```csharp
+public bool Is<T>() where T : struct, IArchetypeQueryable
+```
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
+
 ### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Journal_Keep"></a> Keep\(\)
 
 This entity, which it already is: a loop over this shape hands over the shape itself.
@@ -287,5 +315,23 @@ public void SetQuests(int index, in QuestEntry value)
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 `value` QuestEntry
+
+### <a id="OblivionMp_Sdk_Common_Archetypes_Mixins_Journal_TryAs__1___0__"></a> TryAs<T\>\(out T\)
+
+```csharp
+public bool TryAs<T>(out T archetype) where T : struct, IArchetypeQueryable
+```
+
+#### Parameters
+
+`archetype` T
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
 
 
