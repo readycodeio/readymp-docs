@@ -143,7 +143,7 @@ The text fields are fixed-size game strings: build them with `new NativeString64
   not recorded.
 
 :::note
-Not in 1.0 yet: world flags. They have no shape, so a mod can neither read nor write them, and the
+Not in 1.0.0 yet: world flags. They have no shape, so a mod can neither read nor write them, and the
 [`WorldFlagEntry`](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.WorldFlagEntry.md)
 values they hold are out of reach. A compass target's `GateFlag` can still name one that the Quests mod sets.
 :::

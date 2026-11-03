@@ -248,7 +248,7 @@ When they run:
 * A deletion inside a loop runs its handlers when the loop ends.
 
 :::note
-Not in 1.0 yet: a create handler on the client for an entity that arrives from the server. To react to one, look for
+Not in 1.0.0 yet: a create handler on the client for an entity that arrives from the server. To react to one, look for
 it in a service's `Update`.
 :::
 

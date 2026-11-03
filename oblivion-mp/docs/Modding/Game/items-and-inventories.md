@@ -149,7 +149,7 @@ The item lands in the cell the local player is in. `SpawnDroppedItem` throws an 
 the local character exists or while the player is in no area.
 
 :::note
-Not in 1.1 yet: dropping an item from the client with a specific condition or enchantment charge.
+Not in 1.1.0 yet: dropping an item from the client with a specific condition or enchantment charge.
 `IItems.SpawnDroppedItem` takes neither. The server can do it, by creating the `DroppedItem` itself (below).
 :::
 

@@ -160,7 +160,7 @@ foreach (var values in entities.Query<ItemValues>())
 ```
 
 :::note
-Not in 1.1 yet: giving an NPC your mod spawns the inventory its record would roll. NPCs from spawners and from the
+Not in 1.1.0 yet: giving an NPC your mod spawns the inventory its record would roll. NPCs from spawners and from the
 game files get theirs from the server, but that roll is not open to mods, so a mod-spawned NPC starts with an empty
 inventory unless you fill it with `Inventories` (see [Items and inventories](items-and-inventories.md)).
 :::

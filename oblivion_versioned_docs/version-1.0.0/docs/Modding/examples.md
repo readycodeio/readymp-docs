@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Example mods
 
-These mods are written against the 1.0 SDK and build from NuGet packages. Read them next to the docs: each page
+These mods are written against the 1.0.0 SDK and build from NuGet packages. Read them next to the docs: each page
 explains one idea, and these show the ideas working together in a real mod.
 
 ## Mod template

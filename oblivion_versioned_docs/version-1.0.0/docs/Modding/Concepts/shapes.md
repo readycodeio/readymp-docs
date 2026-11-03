@@ -235,7 +235,7 @@ public readonly partial struct Campfire;
 The other tags in the SDK are internal to the runtime and cannot be put on an archetype.
 
 :::note
-Not in 1.0 yet: checking or querying an entity by a tag. Tags are useful today for the SDK's own tags, which the
+Not in 1.0.0 yet: checking or querying an entity by a tag. Tags are useful today for the SDK's own tags, which the
 runtime reads.
 :::
 

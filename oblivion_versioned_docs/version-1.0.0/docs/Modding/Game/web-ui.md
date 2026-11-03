@@ -199,7 +199,7 @@ Each viewport is decided by its own mode and its own page, so a page in front ne
 page behind it said. `SetFocusable` is about the keyboard only: to let clicks through a page, change its input mode.
 
 :::note
-Not in 1.0 yet: a supported way to give a page the mouse. The modes above decide where the pointer goes while the
+Not in 1.0.0 yet: a supported way to give a page the mouse. The modes above decide where the pointer goes while the
 game shows a cursor, for example in its own menus, so a page on screen does not block clicks meant for them. A page
 can take the keyboard with `SetFocused`, which is how chat works: it focuses its viewport when it opens and hands
 the keyboard back when it closes.

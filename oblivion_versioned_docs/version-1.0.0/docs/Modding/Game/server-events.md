@@ -85,8 +85,8 @@ for an area, and `TryLookup(new FullCellId(areaId, cellId), out Cell cell)` for 
 [Entities and queries](../Concepts/entities-and-queries.md).
 
 :::note
-Not in 1.0 yet: turning the entity an event hands you into a shape. The events pass the server's raw
-[`Entity`](../../../api-reference/ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.Entity.md), and no 1.0
+Not in 1.0.0 yet: turning the entity an event hands you into a shape. The events pass the server's raw
+[`Entity`](../../../api-reference/ReadyM.Relay.Server.Sdk.Ecs/ReadyM.Relay.Server.Sdk.Ecs.Entity.md), and no 1.0.0
 API turns it into a `Player`, `Area`, `Cell` or `World`. Find the shape from the event's ids instead, as above.
 :::
 

@@ -121,7 +121,7 @@ These read as members of the `Npc`: `npc.ReportedSeq`, `npc.Procedure`. When `Re
 `Enqueue` gave you, `ReportedOutcome` is the result of that order.
 
 :::note
-Not in 1.1 yet: aiming an order at an entity rather than a ref id, such as a player's character, which has no ref id.
+Not in 1.1.0 yet: aiming an order at an entity rather than a ref id, such as a player's character, which has no ref id.
 `AiIntentEntryExtensions.Target` and `LocateAt` exist, but they take an entity handle that shapes do not hand out.
 :::
 
