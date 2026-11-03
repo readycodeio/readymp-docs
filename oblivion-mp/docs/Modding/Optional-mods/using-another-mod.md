@@ -23,7 +23,7 @@ Three things make a mod build on another one. First, list it as a dependency in 
   "dependencies": [
     {
       "uniqueId": "OblivionMP.SDK",
-      "minimumVersion": "1.0.0"
+      "minimumVersion": "1.1.0"
     },
     {
       "uniqueId": "OblivionMP.Chat",
@@ -128,7 +128,7 @@ or README which other mods it needs.
 
 :::note
 
-Not in 1.1 yet: optional dependencies. A mod that asks for another mod's API needs that mod on the server. There is
+Not in 1.1.0 yet: optional dependencies. A mod that asks for another mod's API needs that mod on the server. There is
 no way to declare "use chat if it is there, and work without it otherwise".
 
 :::

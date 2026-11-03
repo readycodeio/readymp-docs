@@ -122,7 +122,7 @@ $serverContentFiles = @(
   "dependencies": [
     {
       "uniqueId": "OblivionMP.SDK",
-      "minimumVersion": "1.0.0"
+      "minimumVersion": "1.1.0"
     }
   ]
 }

@@ -50,7 +50,7 @@ Every mod needs a `manifest.json` at the root of its folder. It is what makes th
   "dependencies": [
     {
       "uniqueId": "OblivionMP.SDK",
-      "minimumVersion": "1.0.0"
+      "minimumVersion": "1.1.0"
     }
   ]
 }

@@ -21,7 +21,7 @@ Any changes made to `config.json` require a **server restart** to take effect.
 | `Gamemode` | string | Game mode tag, shown next to the name. Maximum 15 characters. |
 | `Description` | string | Optional. Short plain-text description, shown in the server's Join panel in the Launcher when it has no [server card](branding#server-card) or the card can't be shown. Maximum 300 characters. |
 | `Country` | string | Optional. Two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code (e.g. `PL`, `US`, `DE`), used to show a flag on the server's card. |
-| `MaxPlayers` | integer | Maximum number of players. Must be between **1 and 64** (enforced when players connect). |
+| `MaxPlayers` | integer | Maximum number of players. Must be between **1 and 65535** (enforced when players connect). |
 | `PublicHost` | string | Publicly routable IP address or hostname (maximum 253 characters). See [Host Validation](#host-validation-rules). |
 | `PublicPort` | integer | The advertised port for players to connect to via the public IP. |
 | `LicenseKey` | string | License key used to obtain verification. See [Verified status](#verified-status). |
