@@ -46,7 +46,7 @@ only its client project gets the chat client package:
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="ReadyM.SDK.Oblivion.Client" Version="1.0.0" />
+        <PackageReference Include="ReadyM.SDK.Oblivion.Client" Version="1.1.0" />
     </ItemGroup>
 
     <!-- The chat mod's client API. Chat is a dependency in manifest.json, so it is loaded first
@@ -128,7 +128,7 @@ or README which other mods it needs.
 
 :::note
 
-Not in 1.0 yet: optional dependencies. A mod that asks for another mod's API needs that mod on the server. There is
+Not in 1.1 yet: optional dependencies. A mod that asks for another mod's API needs that mod on the server. There is
 no way to declare "use chat if it is there, and work without it otherwise".
 
 :::
