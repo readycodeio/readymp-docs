@@ -5,7 +5,7 @@ description: 'Writes and reads a string marked [Interned]. Called by generated c
 # Class InternedStringCodec
 
 Namespace: [ReadyM.Api.Multiplayer.Interning](../ReadyM.Api.Multiplayer.Interning/ReadyM.Api.Multiplayer.Interning.md)  
-Assembly: ReadyM.Api.Multiplayer.dll  
+Assembly: ReadyM.Api.dll  
 
 Writes and reads a string marked [Interned]. Called by generated code.
 
@@ -30,7 +30,7 @@ public static class InternedStringCodec
 
 ## Methods
 
-### <a id="ReadyM_Api_Multiplayer_Interning_InternedStringCodec_Read_LiteNetLib_Utils_NetDataReader_Yooni_Native_Container_NativeString256__"></a> Read\(NetDataReader, ref NativeString256\)
+### <a id="ReadyM_Api_Multiplayer_Interning_InternedStringCodec_Read_LiteNetLib_Utils_NetDataReader_ReadyM_Native_Container_NativeString256__"></a> Read\(NetDataReader, ref NativeString256\)
 
 ```csharp
 public static void Read(NetDataReader reader, ref NativeString256 value)
@@ -42,7 +42,7 @@ public static void Read(NetDataReader reader, ref NativeString256 value)
 
 `value` NativeString256
 
-### <a id="ReadyM_Api_Multiplayer_Interning_InternedStringCodec_Write_LiteNetLib_Utils_NetDataWriter_Yooni_Native_Container_NativeString256__"></a> Write\(NetDataWriter, in NativeString256\)
+### <a id="ReadyM_Api_Multiplayer_Interning_InternedStringCodec_Write_LiteNetLib_Utils_NetDataWriter_ReadyM_Native_Container_NativeString256__"></a> Write\(NetDataWriter, in NativeString256\)
 
 ```csharp
 public static void Write(NetDataWriter writer, in NativeString256 value)

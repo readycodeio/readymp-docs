@@ -44,7 +44,7 @@ clothing additionally has no health.
 
 ## Constructors
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_EnchantedItemFormComponent__ctor_Yooni_Native_LowLevel_AllocatorKind_"></a> EnchantedItemFormComponent\(AllocatorKind\)
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_EnchantedItemFormComponent__ctor_ReadyM_Native_LowLevel_AllocatorKind_"></a> EnchantedItemFormComponent\(AllocatorKind\)
 
 Everything needed to materialize one dynamic enchanted item form (created at runtime, like a weapon, armor or
 clothing the player enchanted). The engine makes such a form as a copy of an item from the game files with a new
@@ -575,7 +575,7 @@ public MagicEffectEntry RemoveAtEffects(int index)
 
  [MagicEffectEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md)
 
-### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_EnchantedItemFormComponent_SetEffects_Yooni_Native_Container_NativeList_ReadyM_Relay_Common_Oblivion_ECS_Values_MagicEffectEntry___"></a> SetEffects\(in NativeList<MagicEffectEntry\>\)
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Components_EnchantedItemFormComponent_SetEffects_ReadyM_Native_Container_NativeList_ReadyM_Relay_Common_Oblivion_ECS_Values_MagicEffectEntry___"></a> SetEffects\(in NativeList<MagicEffectEntry\>\)
 
 ```csharp
 public void SetEffects(in NativeList<MagicEffectEntry> value)

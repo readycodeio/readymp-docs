@@ -38,7 +38,7 @@ The page goes in a `web` folder of your client project:
 The C# side serves the folder, puts a browser on screen, and declares the two messages:
 
 ```csharp title="MyMod.Client/HelloPage.cs"
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using OblivionMpCSharpMod.Input;
 using ReadyM.Cef;
 using ReadyM.Cef.Rpc;

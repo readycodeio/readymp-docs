@@ -26,6 +26,14 @@ Marks the member naming the cell an event is in, a <code>FullCellId</code> or a 
 **Cell** event goes to it rather than to the subject's cell, and a
 **CellMaster** event is checked against its master.
 
+ [ClientToClientsAttribute](../ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.ClientToClientsAttribute.md)
+
+Generates a Send(...) and an On(...) handler on the client.
+
+ [ClientToServerAttribute](../ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.ClientToServerAttribute.md)
+
+Generates a Send(...) on the client and an On(...) handler on the server.
+
  [CreateHandlerAttribute](../ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.CreateHandlerAttribute.md)
 
 Runs this method on an entity right after it is created.
@@ -90,6 +98,10 @@ Each must be annotated with one of the direction attributes:<br />
 
 Binds a class to the [RpcContracts] set it implements.
 
+ [ServerToClientAttribute](../ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.ServerToClientAttribute.md)
+
+Generates a Send(...) on the server and an On(...) handler on the client.
+
  [ServiceAttribute](../ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.ServiceAttribute.md)
 
 Declares a service class.
@@ -125,6 +137,10 @@ Who receives a networked event.
  [Policy](../ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.Policy.md)
 
 Declares who can raise a network event. The server may always raise, so this applies only to clients.
+
+ [RelayMode](../ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.RelayMode.md)
+
+Indicates how a **ClientToClientsAttribute** message is relayed to other players in the game.
 
  [Replication](../ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.Replication.md)
 

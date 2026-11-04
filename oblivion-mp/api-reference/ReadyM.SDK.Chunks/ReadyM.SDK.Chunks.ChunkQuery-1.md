@@ -5,7 +5,7 @@ description: 'A query that walks chunks rather than entity IDs.'
 # Struct ChunkQuery<TView>
 
 Namespace: [ReadyM.SDK.Chunks](../ReadyM.SDK.Chunks/ReadyM.SDK.Chunks.md)  
-Assembly: ReadyM.SDK.Chunks.dll  
+Assembly: ReadyM.SDK.dll  
 
 A query that walks chunks rather than entity IDs.
 

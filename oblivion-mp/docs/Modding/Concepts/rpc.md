@@ -14,8 +14,6 @@ You list every message in the Common project, and each half gets a method to sen
 handle the ones it receives.
 
 ```csharp title="MyMod.Common/RpcContracts.cs"
-using ReadyM.Api.Multiplayer;
-using ReadyM.Api.Multiplayer.Protocol.Enums;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Common;
@@ -77,7 +75,7 @@ public sealed partial class RpcHandlers(ILogger logger)
 ```
 
 ```csharp title="MyMod.Client/WalletKeys.cs"
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
 
@@ -220,10 +218,10 @@ instead.
 ## Reference
 
 * [RpcContractsAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.RpcContractsAttribute.md)
-* [ClientToServerAttribute](../../../api-reference/ReadyM.Api.Multiplayer/ReadyM.Api.Multiplayer.ClientToServerAttribute.md)
-* [ServerToClientAttribute](../../../api-reference/ReadyM.Api.Multiplayer/ReadyM.Api.Multiplayer.ServerToClientAttribute.md)
-* [ClientToClientsAttribute](../../../api-reference/ReadyM.Api.Multiplayer/ReadyM.Api.Multiplayer.ClientToClientsAttribute.md)
-* [RelayMode](../../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md)
+* [ClientToServerAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.ClientToServerAttribute.md)
+* [ServerToClientAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.ServerToClientAttribute.md)
+* [ClientToClientsAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.ClientToClientsAttribute.md)
+* [RelayMode](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.RelayMode.md)
 * [RpcHandlersForAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.RpcHandlersForAttribute.md)
 * [RpcContext](../../../api-reference/ReadyM.Relay.Server.Sdk.Rpc/ReadyM.Relay.Server.Sdk.Rpc.RpcContext.md)
 * [DeriveINetSerializableAttribute](../../../api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute.md)

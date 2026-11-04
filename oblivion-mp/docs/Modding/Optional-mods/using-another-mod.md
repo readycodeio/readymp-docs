@@ -66,7 +66,7 @@ Third, ask for the other mod's API in a constructor, like anything the SDK gives
 
 ```csharp title="ArenaMod.Client/DetectDeadPlayerSystem.cs"
 using OblivionMp.ChatMod;
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using OblivionMpCSharpMod.Values;
 using ReadyM.SDK.Attributes;
 

@@ -11,8 +11,8 @@ what it is doing and whether your order worked. This page covers giving orders a
 ```csharp title="MyMod.Server/Errands.cs"
 using System.Numerics;
 using Microsoft.Extensions.Logging;
-using OblivionMp.Sdk.Common.Archetypes;
-using OblivionMp.Sdk.Serverside.Ai;
+using OblivionMP.SDK.Common.Archetypes;
+using OblivionMP.SDK.Serverside.Ai;
 using ReadyM.Relay.Common.Oblivion.ECS.Values;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Server.Entities;
@@ -132,12 +132,12 @@ nearby NPC is doing.
 
 ## Reference
 
-* [AiIntents](../../../api-reference/OblivionMp.Sdk.Serverside.Ai/OblivionMp.Sdk.Serverside.Ai.AiIntents.md)
+* [AiIntents](../../../api-reference/OblivionMP.SDK.Serverside.Ai/OblivionMP.SDK.Serverside.Ai.AiIntents.md)
 * [AiIntentEntry](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.AiIntentEntry.md)
 * [AiIntentFlags](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.AiIntentFlags.md)
 * [AiPackageType](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.AiPackageType.md)
-* [AiState](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.AiState.md)
+* [AiState](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.AiState.md)
 * [AiIntentOutcome](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.AiIntentOutcome.md)
 * [AiProcedure](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.AiProcedure.md)
-* [AiIntentEntryExtensions](../../../api-reference/OblivionMp.Sdk.Common.Ai/OblivionMp.Sdk.Common.Ai.AiIntentEntryExtensions.md)
-* [Npc](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Npc.md)
+* [AiIntentEntryExtensions](../../../api-reference/OblivionMP.SDK.Common.Ai/OblivionMP.SDK.Common.Ai.AiIntentEntryExtensions.md)
+* [Npc](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Npc.md)

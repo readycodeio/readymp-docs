@@ -27,9 +27,9 @@ public static partial class RpcContracts
 
 ```csharp title="MyMod.Server/RpcHandlers.cs"
 using MyMod.Common;
-using OblivionMp.Sdk.Common.Archetypes;
-using OblivionMp.Sdk.Common.Archetypes.Mixins;
-using OblivionMp.Sdk.Serverside.Spawners;
+using OblivionMP.SDK.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes.Mixins;
+using OblivionMP.SDK.Serverside.Spawners;
 using ReadyM.Api.Idents;
 using ReadyM.Relay.Common.Oblivion.ECS.Values;
 using ReadyM.Relay.Server.Sdk.Rpc;
@@ -213,6 +213,6 @@ partial void OnPickSlot(RpcContext context, VarUInt slot)
 * [FormType](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.FormType.md)
 * [RpcContext](../../../api-reference/ReadyM.Relay.Server.Sdk.Rpc/ReadyM.Relay.Server.Sdk.Rpc.RpcContext.md)
 * [IPlayers](../../../api-reference/ReadyM.Relay.Server.Sdk.Players/ReadyM.Relay.Server.Sdk.Players.IPlayers.md) (server)
-* [SpawnerCell](../../../api-reference/OblivionMp.Sdk.Serverside.Spawners/OblivionMp.Sdk.Serverside.Spawners.SpawnerCell.md)
+* [SpawnerCell](../../../api-reference/OblivionMP.SDK.Serverside.Spawners/OblivionMP.SDK.Serverside.Spawners.SpawnerCell.md)
 * [VarUInt](../../../api-reference/ReadyM.Api.Serialization/ReadyM.Api.Serialization.VarUInt.md),
   [VarUShort](../../../api-reference/ReadyM.Api.Serialization/ReadyM.Api.Serialization.VarUShort.md)

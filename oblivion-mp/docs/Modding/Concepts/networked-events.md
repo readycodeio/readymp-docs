@@ -14,7 +14,7 @@ stages, and every mod that cares about it gets a say in the order they run. Use 
 event when other mods should be able to see or shape what happened.
 
 ```csharp title="MyMod.Common/WaveEvent.cs"
-using OblivionMp.Sdk.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Common;
@@ -63,7 +63,7 @@ public sealed partial class WaveRules
 
 ```csharp title="MyMod.Client/Waves.cs"
 using MyMod.Common;
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Archetypes.Core;
 using ReadyM.SDK.Attributes;
@@ -263,7 +263,7 @@ and nothing more. The SDK's `Vitals.PredictHp` is guessed this way, and the SDK 
 
 ### The game's own events
 
-The SDK raises these for what happens in the game, in `OblivionMp.Sdk.Common.Events`. Your mod can handle any of
+The SDK raises these for what happens in the game, in `OblivionMP.SDK.Common.Events`. Your mod can handle any of
 them in any stage the table above allows:
 
 | Event | Scope | Raised by | When |
@@ -329,4 +329,4 @@ your client project. A `Validate` or `Filter` handler in a client project would 
 * [INetworkedEventRaise](../../../api-reference/ReadyM.SDK.Events/ReadyM.SDK.Events.INetworkedEventRaise.md)
 * [PredictableAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.PredictableAttribute.md)
 * [EventRaisedOffEcsThreadException](../../../api-reference/ReadyM.SDK.Events/ReadyM.SDK.Events.EventRaisedOffEcsThreadException.md)
-* [OblivionMp.Sdk.Common.Events](../../../api-reference/OblivionMp.Sdk.Common.Events/OblivionMp.Sdk.Common.Events.md)
+* [OblivionMP.SDK.Common.Events](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.md)

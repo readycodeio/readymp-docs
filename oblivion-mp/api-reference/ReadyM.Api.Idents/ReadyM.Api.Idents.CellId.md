@@ -32,7 +32,7 @@ INetSerializable,
 
 ## Constructors
 
-### <a id="ReadyM_Api_Idents_CellId__ctor_Yooni_Native_Container_NativeString256_"></a> CellId\(NativeString256\)
+### <a id="ReadyM_Api_Idents_CellId__ctor_ReadyM_Native_Container_NativeString256_"></a> CellId\(NativeString256\)
 
 ```csharp
 public CellId(NativeString256 id)

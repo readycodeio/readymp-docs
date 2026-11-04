@@ -5,7 +5,7 @@ description: 'The annotated float or vector will be serialized on the wire as 16
 # Class HalfPrecisionAttribute
 
 Namespace: [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)  
-Assembly: ReadyM.Api.Multiplayer.dll  
+Assembly: ReadyM.Api.dll  
 
 The annotated float or vector will be serialized on the wire as 16-bit floats, saving 2 bytes per float.
 

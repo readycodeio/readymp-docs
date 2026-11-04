@@ -10,10 +10,10 @@ comes from, how to roll a leveled list the way the game does, and the game data 
 
 ```csharp title="MyMod.Server/Ambush.cs"
 using System.Numerics;
-using OblivionMp.Sdk.Common.Archetypes;
-using OblivionMp.Sdk.Common.Archetypes.Mixins;
-using OblivionMp.Sdk.Serverside;
-using OblivionMp.Sdk.Serverside.Spawners;
+using OblivionMP.SDK.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes.Mixins;
+using OblivionMP.SDK.Serverside;
+using OblivionMP.SDK.Serverside.Spawners;
 using ReadyM.Api.Idents;
 using ReadyM.Relay.Common.Oblivion;
 using ReadyM.Relay.Common.Oblivion.ECS.Values;
@@ -173,24 +173,24 @@ inventory unless you fill it with `Inventories` (see [Items and inventories](ite
 
 ## Reference
 
-* [Npc](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Npc.md),
-  [ServerSummon](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.ServerSummon.md)
-* [SpawnOrigin](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.SpawnOrigin.md)
-* [SummonedBy](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.SummonedBy.md)
-* [LeveledListRoll](../../../api-reference/OblivionMp.Sdk.Serverside.Spawners/OblivionMp.Sdk.Serverside.Spawners.LeveledListRoll.md),
-  [LeveledListRollResult](../../../api-reference/OblivionMp.Sdk.Serverside.Spawners/OblivionMp.Sdk.Serverside.Spawners.LeveledListRollResult.md),
-  [RolledCreature](../../../api-reference/OblivionMp.Sdk.Serverside.Spawners/OblivionMp.Sdk.Serverside.Spawners.RolledCreature.md),
-  [RolledItem](../../../api-reference/OblivionMp.Sdk.Serverside.Spawners/OblivionMp.Sdk.Serverside.Spawners.RolledItem.md)
-* [LeveledListTemplate](../../../api-reference/OblivionMp.Sdk.Serverside.Archetypes/OblivionMp.Sdk.Serverside.Archetypes.LeveledListTemplate.md),
-  [LeveledListTemplateMixin](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.LeveledListTemplateMixin.md),
+* [Npc](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Npc.md),
+  [ServerSummon](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.ServerSummon.md)
+* [SpawnOrigin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SpawnOrigin.md)
+* [SummonedBy](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SummonedBy.md)
+* [LeveledListRoll](../../../api-reference/OblivionMP.SDK.Serverside.Spawners/OblivionMP.SDK.Serverside.Spawners.LeveledListRoll.md),
+  [LeveledListRollResult](../../../api-reference/OblivionMP.SDK.Serverside.Spawners/OblivionMP.SDK.Serverside.Spawners.LeveledListRollResult.md),
+  [RolledCreature](../../../api-reference/OblivionMP.SDK.Serverside.Spawners/OblivionMP.SDK.Serverside.Spawners.RolledCreature.md),
+  [RolledItem](../../../api-reference/OblivionMP.SDK.Serverside.Spawners/OblivionMP.SDK.Serverside.Spawners.RolledItem.md)
+* [LeveledListTemplate](../../../api-reference/OblivionMP.SDK.Serverside.Archetypes/OblivionMP.SDK.Serverside.Archetypes.LeveledListTemplate.md),
+  [LeveledListTemplateMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LeveledListTemplateMixin.md),
   [LeveledListItem](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.LeveledListItem.md)
-* [ContainerTemplate](../../../api-reference/OblivionMp.Sdk.Serverside.Archetypes/OblivionMp.Sdk.Serverside.Archetypes.ContainerTemplate.md),
-  [ContainerTemplateMixin](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.ContainerTemplateMixin.md),
+* [ContainerTemplate](../../../api-reference/OblivionMP.SDK.Serverside.Archetypes/OblivionMP.SDK.Serverside.Archetypes.ContainerTemplate.md),
+  [ContainerTemplateMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ContainerTemplateMixin.md),
   [BaseContainerItem](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.BaseContainerItem.md)
-* [NpcTemplate](../../../api-reference/OblivionMp.Sdk.Serverside.Archetypes/OblivionMp.Sdk.Serverside.Archetypes.NpcTemplate.md),
-  [NpcTemplateMixin](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.NpcTemplateMixin.md)
-* [ItemValues](../../../api-reference/OblivionMp.Sdk.Serverside.Archetypes/OblivionMp.Sdk.Serverside.Archetypes.ItemValues.md),
-  [ItemValuesMixin](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.ItemValuesMixin.md),
+* [NpcTemplate](../../../api-reference/OblivionMP.SDK.Serverside.Archetypes/OblivionMP.SDK.Serverside.Archetypes.NpcTemplate.md),
+  [NpcTemplateMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.NpcTemplateMixin.md)
+* [ItemValues](../../../api-reference/OblivionMP.SDK.Serverside.Archetypes/OblivionMP.SDK.Serverside.Archetypes.ItemValues.md),
+  [ItemValuesMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ItemValuesMixin.md),
   [ItemValue](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.ItemValue.md)
 * [FormType](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.FormType.md)
-* [ServerRefIds](../../../api-reference/OblivionMp.Sdk.Serverside/OblivionMp.Sdk.Serverside.ServerRefIds.md)
+* [ServerRefIds](../../../api-reference/OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.ServerRefIds.md)

@@ -11,9 +11,9 @@ places map to areas and cells, the world objects the SDK syncs, and how a server
 in it.
 
 ```csharp title="MyMod.Server/Whereabouts.cs"
-using OblivionMp.Sdk.Common.Archetypes;
-using OblivionMp.Sdk.Common.Archetypes.Mixins;
-using OblivionMp.Sdk.Serverside.Spawners;
+using OblivionMP.SDK.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes.Mixins;
+using OblivionMP.SDK.Serverside.Spawners;
 using ReadyM.Api.Idents;
 using ReadyM.Relay.Common.Oblivion.ECS.Values;
 using ReadyM.SDK.Archetypes.Core;
@@ -141,16 +141,16 @@ convention. `TesUnrealSpace` converts them:
 * [Area](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Area.md),
   [Cell](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Cell.md)
 * [OblivionCellIds](../../../api-reference/ReadyM.Relay.Common.Oblivion/ReadyM.Relay.Common.Oblivion.OblivionCellIds.md)
-* [ParentCell](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.ParentCell.md),
+* [ParentCell](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ParentCell.md),
   [ParentCellKind](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.ParentCellKind.md)
-* [SpawnerCell](../../../api-reference/OblivionMp.Sdk.Serverside.Spawners/OblivionMp.Sdk.Serverside.Spawners.SpawnerCell.md)
-* [Container](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Container.md)
-* [Flora](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Flora.md),
-  [FloraState](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.FloraState.md)
-* [Furniture](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Furniture.md)
-* [Presence](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Presence.md)
-* [RefIdMixin](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.RefIdMixin.md),
-  [BaseIdMixin](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.BaseIdMixin.md)
+* [SpawnerCell](../../../api-reference/OblivionMP.SDK.Serverside.Spawners/OblivionMP.SDK.Serverside.Spawners.SpawnerCell.md)
+* [Container](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Container.md)
+* [Flora](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Flora.md),
+  [FloraState](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.FloraState.md)
+* [Furniture](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Furniture.md)
+* [Presence](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Presence.md)
+* [RefIdMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.RefIdMixin.md),
+  [BaseIdMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.BaseIdMixin.md)
 * [TesUnrealSpace](../../../api-reference/ReadyM.Relay.Common.Oblivion/ReadyM.Relay.Common.Oblivion.TesUnrealSpace.md)
-* [ServerRefIds](../../../api-reference/OblivionMp.Sdk.Serverside/OblivionMp.Sdk.Serverside.ServerRefIds.md)
+* [ServerRefIds](../../../api-reference/OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.ServerRefIds.md)
 * [IEntities (server)](../../../api-reference/ReadyM.SDK.Server.Entities/ReadyM.SDK.Server.Entities.IEntities.md)

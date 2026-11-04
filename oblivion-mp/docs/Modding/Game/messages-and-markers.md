@@ -4,14 +4,13 @@ sidebar_position: 10
 
 # On-screen messages and markers
 
-Two client services put text in front of the player. [`IUserInterface`](../../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.IUserInterface.md)
+Two client services put text in front of the player. [`IUserInterface`](../../../api-reference/OblivionMP.SDK/OblivionMP.SDK.IUserInterface.md)
 drives the game's own message widgets, so what you show looks like the rest of Oblivion's UI.
-[`IMarkers`](../../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.IMarkers.md) floats a line of text over another
+[`IMarkers`](../../../api-reference/OblivionMP.SDK/OblivionMP.SDK.IMarkers.md) floats a line of text over another
 player's character or an NPC. Both only change what this one player sees. To show something to everyone, send an
 [RPC](../Concepts/rpc.md) and have each client show it, as the Arena mod does:
 
 ```csharp title="MyMod.Common/RpcContracts.cs"
-using ReadyM.Api.Multiplayer;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Common;
@@ -27,7 +26,7 @@ public static partial class RpcContracts
 
 ```csharp title="MyMod.Client/RpcHandlers.cs"
 using MyMod.Common;
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using OblivionMpCSharpMod;
 using ReadyM.SDK.Attributes;
 
@@ -76,9 +75,9 @@ A marker is a line of text above another player's character or an NPC, in a colo
 a nameplate over every other player in your area, a smaller version of the `OblivionMp.MarkerMod` example:
 
 ```csharp title="MyMod.Client/Nameplates.cs"
-using OblivionMp.Sdk;
-using OblivionMp.Sdk.Common.Archetypes.Mixins;
-using OblivionMp.Sdk.Values;
+using OblivionMP.SDK;
+using OblivionMP.SDK.Common.Archetypes.Mixins;
+using OblivionMP.SDK.Values;
 using ReadyM.Api.Idents;
 using ReadyM.SDK.Archetypes.Core;
 using ReadyM.SDK.Attributes;
@@ -133,21 +132,21 @@ public sealed partial class Nameplates(IEntities entities, IPlayers players, IMa
 
 | Method | What it does |
 |---|---|
-| `CreateMarker(target, text, color)` | Puts a marker over a [`MainCharacter`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.MainCharacter.md) or an [`Npc`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Npc.md) and returns its [`MarkerHandle`](../../../api-reference/OblivionMp.Sdk.Values/OblivionMp.Sdk.Values.MarkerHandle.md). |
-| `CreateMarker(target, text, color, style)` | The same, with a [`MarkerStyle`](../../../api-reference/OblivionMp.Sdk.Values/OblivionMp.Sdk.Values.MarkerStyle.md) (see below). Without one, a marker gets `MarkerStyle.Default`. |
+| `CreateMarker(target, text, color)` | Puts a marker over a [`MainCharacter`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.MainCharacter.md) or an [`Npc`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Npc.md) and returns its [`MarkerHandle`](../../../api-reference/OblivionMP.SDK.Values/OblivionMP.SDK.Values.MarkerHandle.md). |
+| `CreateMarker(target, text, color, style)` | The same, with a [`MarkerStyle`](../../../api-reference/OblivionMP.SDK.Values/OblivionMP.SDK.Values.MarkerStyle.md) (see below). Without one, a marker gets `MarkerStyle.Default`. |
 | `SetMarkerText(handle, text, color)` | Changes the text and color. |
 | `SetMarkerStyle(handle, style)` | Changes the style, including the socket it follows. |
 | `SetMarkerVisible(handle, visible)` | Hides or shows it, keeping it. |
 | `SetMarkerOpacity(handle, opacity)` | From 0 (invisible) to 1 (solid). |
 | `DestroyMarker(handle)` | Removes it. |
 
-A [`MarkerColor`](../../../api-reference/OblivionMp.Sdk.Values/OblivionMp.Sdk.Values.MarkerColor.md) is red, green,
+A [`MarkerColor`](../../../api-reference/OblivionMP.SDK.Values/OblivionMP.SDK.Values.MarkerColor.md) is red, green,
 blue and an optional alpha, each from 0 to 1: `new MarkerColor(1f, 0f, 0f)` is red, and `MarkerColor.White` is
 there for the common case. `Color` and `MarkerColor` are separate types for now, with the same meaning.
 
 ### Marker style
 
-A [`MarkerStyle`](../../../api-reference/OblivionMp.Sdk.Values/OblivionMp.Sdk.Values.MarkerStyle.md) sets the size of
+A [`MarkerStyle`](../../../api-reference/OblivionMP.SDK.Values/OblivionMP.SDK.Values.MarkerStyle.md) sets the size of
 the text, the box behind it, its outline, and where the marker sits. Start from `MarkerStyle.Default`, the look a
 marker has without a style, and change only what you need:
 
@@ -185,7 +184,7 @@ is 0, so use `MarkerStyle.Default`.
 
 ### Markers over NPCs
 
-The same methods take an [`Npc`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Npc.md).
+The same methods take an [`Npc`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Npc.md).
 Query the NPCs the client knows about with `entities.Query<Npc>()`, and key your handles by the NPC's `RefId`
 rather than by `PlayerId`. As with players, `CreateMarker` returns `MarkerHandle.None` while the NPC is not in the world.
 
@@ -200,20 +199,20 @@ rather than by `PlayerId`. As with players, `CreateMarker` returns `MarkerHandle
 
 `OblivionMp.MarkerMod` goes further: it notices when a player's character is replaced, and fades the marker as
 the player sneaks out of sight. It does that with two client values on every `MainCharacter`, `Pawn` from
-[`MappedActor`](../../../api-reference/OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.MappedActor.md),
+[`MappedActor`](../../../api-reference/OblivionMP.SDK.Archetypes.Mixins/OblivionMP.SDK.Archetypes.Mixins.MappedActor.md),
 which changes when the character is replaced (an `Npc` has it too), and `Hidden` from
-[`LocalVisibility`](../../../api-reference/OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.LocalVisibility.md),
+[`LocalVisibility`](../../../api-reference/OblivionMP.SDK.Archetypes.Mixins/OblivionMP.SDK.Archetypes.Mixins.LocalVisibility.md),
 from 0 for a player in plain sight to 1 for an invisible one. See
 [Players and characters](players-and-characters.md).
 
 ## Reference
 
-- [`IUserInterface`](../../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.IUserInterface.md)
+- [`IUserInterface`](../../../api-reference/OblivionMP.SDK/OblivionMP.SDK.IUserInterface.md)
 - [`MessagePosition`](../../../api-reference/OblivionMpCSharpMod/OblivionMpCSharpMod.MessagePosition.md)
 - [`Color`](../../../api-reference/OblivionMpCSharpMod.Values/OblivionMpCSharpMod.Values.Color.md)
-- [`IMarkers`](../../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.IMarkers.md)
-- [`MarkerHandle`](../../../api-reference/OblivionMp.Sdk.Values/OblivionMp.Sdk.Values.MarkerHandle.md)
-- [`MarkerColor`](../../../api-reference/OblivionMp.Sdk.Values/OblivionMp.Sdk.Values.MarkerColor.md)
-- [`MarkerStyle`](../../../api-reference/OblivionMp.Sdk.Values/OblivionMp.Sdk.Values.MarkerStyle.md)
-- [`MainCharacter`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.MainCharacter.md)
-- [`Npc`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Npc.md)
+- [`IMarkers`](../../../api-reference/OblivionMP.SDK/OblivionMP.SDK.IMarkers.md)
+- [`MarkerHandle`](../../../api-reference/OblivionMP.SDK.Values/OblivionMP.SDK.Values.MarkerHandle.md)
+- [`MarkerColor`](../../../api-reference/OblivionMP.SDK.Values/OblivionMP.SDK.Values.MarkerColor.md)
+- [`MarkerStyle`](../../../api-reference/OblivionMP.SDK.Values/OblivionMP.SDK.Values.MarkerStyle.md)
+- [`MainCharacter`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.MainCharacter.md)
+- [`Npc`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Npc.md)

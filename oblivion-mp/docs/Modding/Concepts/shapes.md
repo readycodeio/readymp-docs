@@ -150,8 +150,8 @@ Oblivion shapes (`MainCharacter`, `Npc`, `DroppedItem` and the rest, see
 half uses can extend a shape too; this one keeps a map marker per character on the client:
 
 ```csharp title="MyMod.Client/Marker.cs"
-using OblivionMp.Sdk.Common.Archetypes;
-using OblivionMp.Sdk.Values;
+using OblivionMP.SDK.Common.Archetypes;
+using OblivionMP.SDK.Values;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Client;
@@ -357,9 +357,9 @@ The errors about replicating a shape (`READYM009`, `READYM014` and others) are l
   [Area](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Area.md),
   [Cell](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Cell.md),
   [World](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.World.md)
-* [MainCharacter](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.MainCharacter.md),
-  [Npc](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Npc.md),
-  [ServerSummon](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.ServerSummon.md)
+* [MainCharacter](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.MainCharacter.md),
+  [Npc](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Npc.md),
+  [ServerSummon](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.ServerSummon.md)
 * [AllowOwnershipTransferOnScopeEnterTag](../../../api-reference/ReadyM.Api.Multiplayer.ECS.Tags/ReadyM.Api.Multiplayer.ECS.Tags.AllowOwnershipTransferOnScopeEnterTag.md),
   [AllowOwnershipTransferOnScopeLeaveTag](../../../api-reference/ReadyM.Api.Multiplayer.ECS.Tags/ReadyM.Api.Multiplayer.ECS.Tags.AllowOwnershipTransferOnScopeLeaveTag.md),
   [KeepOwnerOnScopeLeaveTag](../../../api-reference/ReadyM.Api.Multiplayer.ECS.Tags/ReadyM.Api.Multiplayer.ECS.Tags.KeepOwnerOnScopeLeaveTag.md)

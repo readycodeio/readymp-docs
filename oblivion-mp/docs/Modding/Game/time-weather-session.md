@@ -9,7 +9,7 @@ player in it sees the same. The server also sets two things for the whole sessio
 and the level the game's leveled lists roll at. This page covers reading and setting all four.
 
 ```csharp title="MyMod.Server/SessionSettings.cs"
-using OblivionMp.Sdk.Serverside;
+using OblivionMP.SDK.Serverside;
 using ReadyM.Relay.Common.Oblivion.ECS.Values;
 using ReadyM.SDK.Archetypes.Core;
 using ReadyM.SDK.Attributes;
@@ -55,15 +55,15 @@ members of that scope:
 
 Read them from the scope, for example `area.GameHour` or `entities.World.DamageTaken`, or query the mixin itself,
 for example `entities.Query<Difficulty>()`. The members come with
-`using OblivionMp.Sdk.Common.Archetypes.Mixins;`.
+`using OblivionMP.SDK.Common.Archetypes.Mixins;`.
 
 :::tip
 Inside a [service](../Getting-started/services.md), `Time` is the service's own clock (`Time.DeltaTime`), not this
-mixin. To name the mixin there, write its full name, `OblivionMp.Sdk.Common.Archetypes.Mixins.Time`, or give it
+mixin. To name the mixin there, write its full name, `OblivionMP.SDK.Common.Archetypes.Mixins.Time`, or give it
 another name at the top of the file:
 
 ```csharp
-using GameTime = OblivionMp.Sdk.Common.Archetypes.Mixins.Time;
+using GameTime = OblivionMP.SDK.Common.Archetypes.Mixins.Time;
 
 foreach (var clock in entities.Query<GameTime>())
     logger.LogInformation("It is {Hour:0.0} o'clock", clock.GameHour);
@@ -93,7 +93,7 @@ To hear about every change a master reports, handle the event on the server. Its
 
 ```csharp title="MyMod.Server/WeatherLog.cs"
 using Microsoft.Extensions.Logging;
-using OblivionMp.Sdk.Common.Events;
+using OblivionMP.SDK.Common.Events;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Server;
@@ -141,8 +141,8 @@ also takes over the game's creature spawners; see [Spawning](spawning.md).
 The client reads the same values. This shows a message when night falls where the local player is:
 
 ```csharp title="MyMod.Client/Nightfall.cs"
-using OblivionMp.Sdk;
-using OblivionMp.Sdk.Common.Archetypes.Mixins;
+using OblivionMP.SDK;
+using OblivionMP.SDK.Common.Archetypes.Mixins;
 using ReadyM.SDK.Archetypes.Core;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Client.Entities;
@@ -178,17 +178,17 @@ Clients do not set any of these values; time and weather come from the area's ma
 
 ## Reference
 
-* [Time](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Time.md)
-* [Weather](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Weather.md)
-* [Difficulty](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Difficulty.md),
+* [Time](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Time.md)
+* [Weather](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Weather.md)
+* [Difficulty](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Difficulty.md),
   [DifficultyTier](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.DifficultyTier.md)
-* [LevelScaling](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.LevelScaling.md),
+* [LevelScaling](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LevelScaling.md),
   [ScalingPolicy](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.ScalingPolicy.md)
-* [SessionClock](../../../api-reference/OblivionMp.Sdk.Serverside/OblivionMp.Sdk.Serverside.SessionClock.md)
-* [SessionDifficulty](../../../api-reference/OblivionMp.Sdk.Serverside/OblivionMp.Sdk.Serverside.SessionDifficulty.md)
-* [SessionScaling](../../../api-reference/OblivionMp.Sdk.Serverside/OblivionMp.Sdk.Serverside.SessionScaling.md)
+* [SessionClock](../../../api-reference/OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionClock.md)
+* [SessionDifficulty](../../../api-reference/OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionDifficulty.md)
+* [SessionScaling](../../../api-reference/OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionScaling.md)
 * [Area](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Area.md),
   [World](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.World.md)
 * [IServerEvents](../../../api-reference/ReadyM.SDK.Server.Events/ReadyM.SDK.Server.Events.IServerEvents.md)
-* [TimeChangeEvent](../../../api-reference/OblivionMp.Sdk.Common.Events/OblivionMp.Sdk.Common.Events.TimeChangeEvent.md),
-  [WeatherChangeEvent](../../../api-reference/OblivionMp.Sdk.Common.Events/OblivionMp.Sdk.Common.Events.WeatherChangeEvent.md)
+* [TimeChangeEvent](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.TimeChangeEvent.md),
+  [WeatherChangeEvent](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.WeatherChangeEvent.md)

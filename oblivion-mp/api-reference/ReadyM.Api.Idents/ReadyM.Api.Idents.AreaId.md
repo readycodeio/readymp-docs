@@ -29,7 +29,7 @@ INetSerializable,
 
 ## Constructors
 
-### <a id="ReadyM_Api_Idents_AreaId__ctor_Yooni_Native_Container_NativeString256_"></a> AreaId\(NativeString256\)
+### <a id="ReadyM_Api_Idents_AreaId__ctor_ReadyM_Native_Container_NativeString256_"></a> AreaId\(NativeString256\)
 
 An area id from its native string.
 

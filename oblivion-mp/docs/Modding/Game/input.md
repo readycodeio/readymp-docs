@@ -5,14 +5,14 @@ sidebar_position: 9
 # Input and key bindings
 
 A key binding runs your code when the player presses a key, alone or with Ctrl, Alt or Shift held. Bindings live on
-the client, through [`IInput`](../../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.IInput.md): ask for it in the
+the client, through [`IInput`](../../../api-reference/OblivionMP.SDK/OblivionMP.SDK.IInput.md): ask for it in the
 constructor of a service or of your mod entry, and register your keys once when the mod starts.
 
 This is the mod template's `WalletKeys.cs`. Each key sends a message to the server through the template's
 `RpcHandlers` (see [RPC](../Concepts/rpc.md)):
 
 ```csharp title="MyMod.Client/WalletKeys.cs"
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
 
@@ -55,7 +55,7 @@ You can also register keys from your mod entry's `Init`, as the Arena mod does f
 
 ```csharp title="MyMod.Client/Mod.cs"
 using Microsoft.Extensions.Logging;
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
 
@@ -110,7 +110,7 @@ Keep what `RegisterKeyBind` returns and dispose it when the key should stop doin
 only while the player is picking a target, and other code calls it to start and stop:
 
 ```csharp title="MyMod.Client/TargetKeys.cs"
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
 
@@ -155,7 +155,7 @@ The game already uses many keys, and a `Polled` binding does not stop the game f
 
 ## Reference
 
-- [`IInput`](../../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.IInput.md)
+- [`IInput`](../../../api-reference/OblivionMP.SDK/OblivionMP.SDK.IInput.md)
 - [`Key`](../../../api-reference/OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.Key.md)
 - [`ModifierKeys`](../../../api-reference/OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.ModifierKeys.md)
 - [`KeySource`](../../../api-reference/OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.KeySource.md)

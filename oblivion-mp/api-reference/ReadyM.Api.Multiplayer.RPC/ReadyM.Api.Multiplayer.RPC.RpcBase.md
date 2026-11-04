@@ -5,7 +5,7 @@ description: 'Base class for all RPC handlers, client and server.'
 # Class RpcBase
 
 Namespace: [ReadyM.Api.Multiplayer.RPC](../ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.md)  
-Assembly: ReadyM.Api.Multiplayer.dll  
+Assembly: ReadyM.Api.dll  
 
 Base class for all RPC handlers, client and server.
 
@@ -20,7 +20,7 @@ public abstract class RpcBase : IHostedService, IDisposable
 
 #### Implements
 
-IHostedService, 
+[IHostedService](../ReadyM.Api.DI/ReadyM.Api.DI.IHostedService.md), 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members

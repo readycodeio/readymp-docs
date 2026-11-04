@@ -5,7 +5,7 @@ description: 'A networked component with a field marked [Interned]. Added by the
 # Interface IInternedComponent
 
 Namespace: [ReadyM.Api.Multiplayer.Interning](../ReadyM.Api.Multiplayer.Interning/ReadyM.Api.Multiplayer.Interning.md)  
-Assembly: ReadyM.Api.Multiplayer.dll  
+Assembly: ReadyM.Api.dll  
 
 A networked component with a field marked [Interned]. Added by the generator.
 
