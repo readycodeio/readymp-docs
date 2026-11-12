@@ -75,6 +75,8 @@ on the server `SpawnerCell.ToFullCellId(area)` turns it into a `FullCellId`, as 
 | `Container` | A chest, barrel, sack or other container, with its contents in `ContainerItems` | The server seeds the world from the game files |
 | `Flora` | A plant or other harvestable object | The server seeds the world |
 | `Furniture` | A chair, bed or other furniture | The master client loads its cell, or the server seeds the world |
+| `Door` | A door, with its lock in `LockState` and whether it stands open in `Doorway` | The server seeds the world from the game files, and restores saved doors at startup |
+| `WorldActivator` | A lever, button or other activator a script hangs off | The server seeds the world from the game files |
 
 Seeding is done by a server-side mod; see [World seeding](../Advanced/world-seeding.md). Each world object has:
 
@@ -148,6 +150,10 @@ convention. `TesUnrealSpace` converts them:
 * [Flora](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Flora.md),
   [FloraState](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.FloraState.md)
 * [Furniture](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Furniture.md)
+* [Door](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Door.md),
+  [LockState](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LockState.md),
+  [Doorway](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Doorway.md)
+* [WorldActivator](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.WorldActivator.md)
 * [Presence](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Presence.md)
 * [RefIdMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.RefIdMixin.md),
   [BaseIdMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.BaseIdMixin.md)

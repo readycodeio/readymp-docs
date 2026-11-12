@@ -263,22 +263,61 @@ and nothing more. The SDK's `Vitals.PredictHp` is guessed this way, and the SDK 
 
 ### The game's own events
 
-The SDK raises these for what happens in the game, in `OblivionMP.SDK.Common.Events`. Your mod can handle any of
-them in any stage the table above allows:
+The SDK raises these for what happens in the game. They all live in
+[`OblivionMP.SDK.Common.Events`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.md),
+and your mod can handle any of them in any stage the table above allows.
+**Policy** is the client the event may come from, and the server may always raise. **Refuse with** is the reason type
+`ctx.Cancel(reason)` takes in `Validate` or `Filter`, and the second parameter of a `Rejected` handler.
 
-| Event | Scope | Raised by | When |
-| --- | --- | --- | --- |
-| `HealthChangedEvent` | `Server` | the game that simulates the victim or attacker | A character's health changed. The server applies it to `Hp`. |
-| `ItemTransferEvent` | `Server` | the player's game | An item moved between holders: picked up, dropped, taken, bought or sold. The server applies it to the inventories. |
-| `TimeChangeEvent` | `Server` | the area's master | The area's clock changed. The server applies it to the area's `Time`. |
-| `WeatherChangeEvent` | `Server` | the area's master | The area's weather changed. The server applies it to the area's `Weather`. |
-| `DockEvent`, `UndockEvent` | `Area` | the character's owner | A character sat down or lay down on furniture, or got up. |
-| `SpellCastEvent`, `SpellReleaseCastEvent` | `Area` | the caster's owner | A character started casting, or released the cast. |
-| `PlayerConsumeEvent` | `Area` | the character's owner | A character ate or drank something. |
+| Event | Scope | Policy | Refuse with | What it reports |
+| --- | --- | --- | --- | --- |
+| [`HealthChangedEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.HealthChangedEvent.md) | `Server` | `Anyone` | `ctx.Cancel()` | A character's health changed. The server applies it to `Hp`. |
+| [`ItemTransferEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ItemTransferEvent.md) | `Server` | `Anyone` | `ctx.Cancel()` | An item moved between holders: picked up, dropped, taken, bought or sold. The server applies it to the inventories. |
+| [`TimeChangeEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.TimeChangeEvent.md) | `Server` | `AreaMaster` | `ctx.Cancel()` | The area's clock changed. The server applies it to the area's `Time`. |
+| [`WeatherChangeEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.WeatherChangeEvent.md) | `Server` | `AreaMaster` | `ctx.Cancel()` | The area's weather changed. The server applies it to the area's `Weather`. |
+| [`DockEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.DockEvent.md) | `Area` | `SubjectOwner` | `ctx.Cancel()` | A character sat down on, or lay down in, a piece of furniture. |
+| [`UndockEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.UndockEvent.md) | `Area` | `SubjectOwner` | `ctx.Cancel()` | A character got up from the furniture it was docked to. |
+| [`SpellCastEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.SpellCastEvent.md) | `Area` | `SubjectOwner` | `ctx.Cancel()` | A character started casting a spell. |
+| [`SpellReleaseCastEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.SpellReleaseCastEvent.md) | `Area` | `SubjectOwner` | `ctx.Cancel()` | A character released the spell it was casting, or fired a staff. |
+| [`PlayerConsumeEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.PlayerConsumeEvent.md) | `Area` | `SubjectOwner` | `ctx.Cancel()` | A character ate or drank an item. |
+| [`ShieldBashEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ShieldBashEvent.md) | `Area` | `SubjectOwner` | `ctx.Cancel()` | A character bashed another with its shield. The other games replay the hit, the basher's own game has done it already. |
+| [`HorseMountRequestedEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.HorseMountRequestedEvent.md) | `Server` | `SubjectOwner` | [`HorseMountReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.HorseMountReject.md) | A character is getting on a horse. The server names it as the rider and moves the horse to the rider's client. A horse that already has a rider refuses. |
+| [`HorseDismountedEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.HorseDismountedEvent.md) | `Server` | `SubjectOwner` | `ctx.Cancel()` | A character got off its horse. |
+| [`DoorTransitionEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.DoorTransitionEvent.md) | `Server` | `SubjectOwner` | [`DoorTransitionReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.DoorTransitionReject.md) | A door was opened or closed. A refused transition puts the actor's game back to the door's state. |
+| [`LockChangeEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.LockChangeEvent.md) | `Server` | `SubjectOwner` | [`LockChangeReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.LockChangeReject.md) | A lock was locked or unlocked. A refused change puts the actor's game back to the lock's state. |
+| [`LockpickClaimEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.LockpickClaimEvent.md) | `Area` | `SubjectOwner` | [`LockpickReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.LockpickReject.md) | A player starts picking a lock. One picker per lock: the picker's own game opens the menu once the server agrees. |
+| [`LockpickReleaseEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.LockpickReleaseEvent.md) | `Area` | `SubjectOwner` | `ctx.Cancel()` | A player stopped picking a lock, picked or not. |
+| [`ScriptActivationEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptActivationEvent.md) | `Area` | `SubjectOwner` | [`ScriptEventReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptEventReject.md) | A scripted ref was activated. The other games replay the activation on their copy. |
+| [`ScriptHitEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptHitEvent.md) | `Area` | `SubjectOwner` | [`ScriptEventReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptEventReject.md) | A scripted ref was hit by an actor. |
+| [`ScriptHitWithEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptHitWithEvent.md) | `Area` | `SubjectOwner` | [`ScriptEventReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptEventReject.md) | A scripted ref was hit with a weapon. |
+| [`ScriptTriggerEnteredEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptTriggerEnteredEvent.md) | `Area` | `SubjectOwner` | [`ScriptEventReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptEventReject.md) | An actor stepped into a scripted trigger. The others raise the trigger on their copy every tick until it leaves. |
+| [`ScriptTriggerLeftEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptTriggerLeftEvent.md) | `Area` | `SubjectOwner` | [`ScriptEventReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptEventReject.md) | An actor stepped out of a scripted trigger. |
+| [`ScriptDialogueResultEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptDialogueResultEvent.md) | `Area` | `SubjectOwner` | [`ScriptEventReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptEventReject.md) | A dialogue response ran its result script. The others run the same script with the talker's copy as the player. |
+| [`ScriptButtonChosenEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptButtonChosenEvent.md) | `Area` | `SubjectOwner` | [`ScriptEventReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptEventReject.md) | A player picked a button in a script's message box. The others hand the same button to their copy of the script. |
+| [`ScriptVariablesChangeEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptVariablesChangeEvent.md) | `Server` | `Anyone` | [`ScriptVariablesChangeReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.ScriptVariablesChangeReject.md) | A script wrote its variables on a ref, as the owner of the script block reports them. |
+| [`SequenceChangeEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.SequenceChangeEvent.md) | `Server` | `Anyone` | [`SequenceChangeReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.SequenceChangeReject.md) | A ref plays an animation sequence. The result is the ref's last finished sequence. |
+| [`PlacementChangeEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.PlacementChangeEvent.md) | `Server` | `Anyone` | [`PlacementChangeReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.PlacementChangeReject.md) | A script moved a ref within its cell. The result is the ref's transform. |
+| [`PresenceChangeEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.PresenceChangeEvent.md) | `Server` | `Anyone` | [`PresenceChangeReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.PresenceChangeReject.md) | A script enabled, disabled or destroyed a ref. |
+| [`LinkedPathPointsChangeEvent`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.LinkedPathPointsChangeEvent.md) | `Server` | `Anyone` | [`LinkedPathPointsChangeReject`](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.LinkedPathPointsChangeReject.md) | A script enabled or disabled the path points a ref links. |
 
 These report what a game already did. Refusing `HealthChangedEvent` takes the change back, since the SDK guesses at
 `Hp` while it waits; for the others, refusing stops the server or the other players from applying it, but the raising
 game keeps what it did. To react to them, prefer `Observe`.
+
+### Who runs the game's scripts
+
+The script events are how one of Oblivion's own scripts reaches the rest of the server. Which client runs a given
+script, and whether a script may change a ref at all, is set by a server mod. The client reads neither rule itself;
+it gets them through the sync like any other replicated state.
+
+There are two places to write one. `ScriptPolicyDefault` on `World` holds a default per kind of script, as `Quests`,
+`DialogueResults`, `Actors`, `Objects` and `Targets`. `ScriptPolicy` on an entity overrides that default for that one
+ref, through its `Run` and `Target` members. `WorldActivator`, `Door`, `Container`, `Furniture`, `Flora`,
+`DroppedItem` and `Npc` carry it.
+
+The SDK writes neither. A session that sets no rules of its own runs quests, dialogue results, actors and objects the
+way the game does, with `Run`, and lets script commands change a ref `Everywhere`. To have one client run a script and
+the rest take the outcome through the sync, a server mod sets `OwnerOnly` itself.
 
 ## On the client and on the server
 
@@ -330,3 +369,7 @@ your client project. A `Validate` or `Filter` handler in a client project would 
 * [PredictableAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.PredictableAttribute.md)
 * [EventRaisedOffEcsThreadException](../../../api-reference/ReadyM.SDK.Events/ReadyM.SDK.Events.EventRaisedOffEcsThreadException.md)
 * [OblivionMP.SDK.Common.Events](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.md)
+* [ScriptPolicyDefault](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ScriptPolicyDefault.md), [ScriptPolicy](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ScriptPolicy.md)
+* [ObjectScriptPolicy](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting.ObjectScriptPolicy.md), [ActorScriptPolicy](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting.ActorScriptPolicy.md), [QuestScriptPolicy](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting.QuestScriptPolicy.md),
+  [DialogueResultPolicy](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting.DialogueResultPolicy.md)
+* [ScriptRunPolicy](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting.ScriptRunPolicy.md), [ScriptTargetPolicy](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting.ScriptTargetPolicy.md)
