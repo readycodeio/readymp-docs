@@ -5,26 +5,53 @@ on:
     branches:
       - master
 
+# No token permissions by default. Each job below asks for exactly what it needs, so a job that forgets gets
+# nothing rather than whatever the repository's default token allows, which can include writing to the repository.
+permissions: {}
+
+# One deploy at a time, in the order they were pushed. Without this, two quick pushes to master build in parallel
+# and the slower, older build can finish last and overwrite the newer site. Not cancelled in progress, so a deploy
+# that has started always finishes rather than leaving Pages half updated.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     name: Build Docusaurus
     runs-on: ubuntu-latest
+    # `yarn install` runs the install scripts of every dependency, so this job holds a read-only token and nothing
+    # else: a compromised package can read the repository, which is public anyway, and change nothing.
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v4
+      # checkout v7 and setup-node v7 run on Node 24; the v4 releases ran on Node 20, which is end of life.
+      #
+      # `persist-credentials: false` keeps the token out of the workspace's git config. Nothing here pushes, and a
+      # token left on disk is readable by every install script that runs afterwards.
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+          persist-credentials: false
+      # Node 24 is the active LTS line. Node 20, used until now, reached end of life in April 2026 and gets no
+      # security fixes.
+      #
+      # No dependency cache, deliberately. Actions caches are scoped by branch, and a docs preview builds a pull
+      # request's code in a run scoped to master, where that code can write cache entries. Restoring master's yarn
+      # cache here would let a poisoned entry into the live site. A fresh install costs about a minute per deploy.
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
-          cache: yarn
+          node-version: 24
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build website
         run: yarn build
 
+      # v5 runs on Node 24. Since v4 it leaves dotfiles out of the artifact; the only one in this site is
+      # static/.nojekyll, which matters only to branch-based Pages builds and does nothing for a deploy from Actions.
       - name: Upload Build Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: build
 
@@ -44,12 +71,24 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
+      # v5 runs on Node 24.
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
-      # Every link in the deployed llms.txt files has to resolve. The root file links the guides; the per-product
-      # files also link every API reference page.
+  # Every link in the deployed llms.txt files has to resolve. The root file links the guides; the per-product files
+  # also link every API reference page.
+  #
+  # A job of its own, with no permissions at all. It used to run inside the deploy job, which holds the right to
+  # publish this site, and `npx` downloads the checker and resolves its dependencies fresh on every run, so a
+  # compromised package anywhere in that tree could have published anything to docs.ready.mp. Here it can only
+  # fail the check.
+  check-llms:
+    name: Check llms.txt
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
       - name: Check llms.txt
         run: |
           npx --yes llms-txt-check@0.1.5 https://docs.ready.mp/llms.txt
