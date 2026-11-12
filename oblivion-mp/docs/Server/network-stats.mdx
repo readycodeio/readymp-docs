@@ -13,6 +13,14 @@ Viewing it requires the **Dashboard access** permission.
   alt="Network tab in admin panel"
 />
 
+:::info[New in 1.1.0]
+
+The charts filter and the tables sort. Click a legend entry on **UDP throughput** or **Server tick duration** to hide that series; the y-axis rescales to what is left, so hiding p99 lets p50 fill the chart. Click a column header in either traffic table to sort by it. Both tables start sorted by **In**, descending.
+
+The tick figures cover a whole tick now rather than the ECS update alone, there is a **Tick budget** tile beside them, and a mod's own RPCs and networked events appear by name instead of `Custom(code)`.
+
+:::
+
 ## How sampling works
 
 The server closes one measurement window per second and pushes it to the panel over an event stream. It retains the last 300 windows; the charts and tables show the most recent 120, which is what the `last 120s` label next to the **LIVE** badge means.
@@ -46,9 +54,10 @@ Egress is counted per recipient. One delta composed once and relayed to five pee
 | **Ingress** | Wire bytes per second received, with packets per second underneath. Latest window only. |
 | **Egress** | Wire bytes per second sent, with packets per second underneath. Latest window only. |
 | **Connected peers** | Peers LiteNetLib currently holds a connection to. |
-| **Server tick p99** | 99th percentile tick duration in the latest window, with the achieved network loop rate underneath. |
+| **Server tick p99** | 99th percentile whole-tick duration in the latest window, with the achieved network loop rate underneath. A whole tick is everything the loop does between waking up and waiting again, not the ECS update alone. |
 | **Protocol overhead** | Wire egress minus payload egress, as a rate. Shows a percentage of egress only once payload passes 16 KB over the window, otherwise it says so instead of printing a confident number off a near zero denominator. |
 | **Link egress** | Wire egress plus 28 bytes per datagram. Many small packets are cheap in payload and expensive here. |
+| **Tick budget** | The share of its tick budget the loop used over the window. At 100% it can no longer hold 120 Hz. |
 
 ## UDP throughput
 
@@ -56,7 +65,9 @@ Wire bytes per second in and out, one point per window. Excludes IP and UDP head
 
 ## Server tick duration
 
-p50 and p99 of how long one server tick takes, measured around the whole system root update. Systems your mod registers run inside this, so this chart is where a system that does too much per tick shows up first.
+p50 and p99 of how long one server tick takes, measured from the loop waking up to it waiting again. That covers the ECS update, the callbacks that apply whatever the receive thread queued, and resumed async work. Systems your mod registers run inside it, so this chart is where a system that does too much per tick shows up first.
+
+Click **p50** or **p99** in the legend to hide that line. The y-axis rescales to what is left, so hiding p99 lets p50 fill the chart instead of sitting flat along the bottom. The same works on the two areas of **UDP throughput**.
 
 Durations are histogrammed in 1 microsecond buckets, so the percentiles are exact rather than interpolated. Anything slower than 20 ms clamps into the top bucket; if you see a flat line at 20 ms, the real value is worse.
 
@@ -66,7 +77,7 @@ A rising p99 with a flat p50 is the usual shape of a system that occasionally do
 
 The eight components with the highest payload egress rate. Everything below that folds into a single `Other (n)` row rather than being dropped, so the bars always account for the full total.
 
-The axis labels drop a trailing `Component` suffix to save width, so `AnimationStateComponent` charts as `AnimationState`. The table below keeps the full name.
+The axis labels drop a trailing `Component` suffix to save width, so `AnimationStateComponent` charts as `AnimationState`. The table below names them the same way, with the full name on hover.
 
 ## Traffic by ECS component
 
@@ -86,12 +97,16 @@ A yellow `!` on a per message column means the average payload is smaller than t
 
 **Fan-out** shows `-` when the component saw no ingress at all in the window. That is undefined, not zero, and it is the expected reading for server authored components that clients never send.
 
-The sort tabs (`total`, `egress`, `ingress`, `fan-out`) only reorder the rows. Components with undefined fan-out sort last rather than as zero.
+Click a column header to sort by it: once for descending, again for ascending, a third time back to the table's own order by total bytes. Clicking a different column sorts by that one instead. The table starts sorted by **In**, descending. A row with no value, such as fan-out with no ingress, sorts last whichever direction you pick.
 
 ## Traffic by message type
 
 The same payload bytes, grouped by wire message code instead of by component. Use it to separate ECS state replication from RPC and from one shot events.
 
-Built in codes appear under their protocol names: `EcsDelta`, `EcsSnapshot`, `EcsCreateEntity`, `EcsDeleteEntity`, `EcsChangeOwnership`, `AreaEvent`, `HandshakeConnected` and so on. Custom RPC codes have no name to look up and appear as `ServerRpc(n)` and `ClientRpc(n)`, numbered by their wire code.
+Built in codes appear under their protocol names: `EcsDelta`, `EcsSnapshot`, `EcsCreateEntity`, `EcsDeleteEntity`, `EcsChangeOwnership`, `AreaEvent`, `HandshakeConnected` and so on.
+
+A mod's own RPCs and networked events appear by name, as `Name (Mod)`, read from the manifest the mod loader assigned its code block. A code nobody named stays `Custom(code)`; between-clients RPCs are the usual case.
+
+This table sorts by its headers the same way the component table does, and starts sorted by **In**, descending.
 
 If `EcsSnapshot` is a large share of egress, players are crossing scope boundaries often. Snapshots are sent reliably and in full, so they are much more expensive than the deltas that follow.
