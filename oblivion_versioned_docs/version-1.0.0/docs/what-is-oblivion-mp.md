@@ -21,7 +21,7 @@ OblivionMP is built and maintained by the [ReadyM](https://www.ready.mp) team. I
 
 ### As a server owner
 
-- **Run your own server.** Download the server binary or Docker image and host on any machine or cloud provider
+- **Run your own server.** Download the server binary and host on any machine or cloud provider
 - **A blank canvas.** The base server replicates players and world state, but ships with no gameplay logic of its own; use the C# SDK to build your own co-op quests, PvP arenas, roleplaying servers, or anything else
 - **Web-based admin panel.** Manage players and server settings without touching the command line
 
@@ -37,7 +37,7 @@ OblivionMP is built and maintained by the [ReadyM](https://www.ready.mp) team. I
 
 ### For server owners
 
-1. **Download the server binary** (Windows or Linux) or pull the Docker image, see the [Installation guide](Server/installation)
+1. **Download the server binary** (Windows or Linux), see the [Installation guide](Server/installation)
 2. **Configure.** Edit `config.json` to set your port
 3. **Build your game mode.** The server ships with no mods installed; write your own with the [C# SDK](Modding/Getting-started/your-first-mod.md), or install a mod built by the community
 4. **Launch and manage.** Start the server and use the built-in web admin panel to manage players, mods, and settings
@@ -67,7 +67,6 @@ OblivionMP is in **active development**. The server is out as **1.0.1**, and the
 | Area | Status |
 |---|---|
 | Server binary (Windows & Linux) | ✅ Available |
-| Docker image | 🔜 Coming soon |
 | SDK (C# scripting) | ✅ Available |
 | Client-side mods | ✅ Available |
 | Server-side mods | ✅ Available |

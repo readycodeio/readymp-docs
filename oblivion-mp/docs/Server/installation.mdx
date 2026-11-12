@@ -8,10 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Installation
 
-The OblivionMP server is distributed in the following formats:
-
-- Binary package
-- [Docker image](#docker) (available later)
+The OblivionMP server is distributed as a binary package, for Windows and Linux.
 
 :::info[1.1.0]
 
@@ -61,8 +58,6 @@ If the runtime is missing, the server exits at startup with `Cannot locate a .NE
 | --- | --- | --- |
 | Linux | x64 | [Download for Linux (1.1.0)](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-linux64-1.1.0.zip) |
 | Windows | x64 | [Download for Windows (1.1.0)](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-win64-1.1.0.zip) |
-
-1.1.0 ships as these binary packages only. The [Docker image](#docker) will be available later.
 
 ## Installation
 
@@ -153,7 +148,3 @@ Unless changed in `config.json`, the server listens on the following ports:
 | --- | --- | --- |
 | 9050 | UDP | Game traffic (player connections, game state synchronization, etc.) |
 | 9050 | HTTP | [Admin panel](admin-panel) |
-
-## Docker
-
-A Linux-based x64 Docker image will be available later. Until then, use the [binary package](#downloads).

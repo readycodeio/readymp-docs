@@ -66,7 +66,7 @@ When configuring your server network layout, it is important to distinguish betw
 * **`Server.Port`**: The local port the server software binds to on your host machine.
 * **`ServerList.PublicPort`**: The external port advertised to the public internet that players will use to connect to your server.
 
-> These two ports can be different if your server operates behind a router using **Port Forwarding**, a network address translation (**NAT**) layer, or inside a virtualized environment like **Docker**. Ensure your external firewall routes incoming traffic from the `PublicPort` to your local `Server.Port`.
+> These two ports can be different if your server operates behind a router using **Port Forwarding**, a network address translation (**NAT**) layer, or inside a virtualized environment such as a container. Ensure your external firewall routes incoming traffic from the `PublicPort` to your local `Server.Port`.
 
 ---
 
