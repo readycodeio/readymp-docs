@@ -5,7 +5,7 @@ description: 'Indicates a float field holding an angle in degrees as bits bits (
 # Class QuantizeAngleAttribute
 
 Namespace: [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)  
-Assembly: ReadyM.Api.Multiplayer.dll  
+Assembly: ReadyM.Api.dll  
 
 Indicates a float field holding an angle in degrees as <code>bits</code> bits (8 or 16), splitting the full circle into
 2^bits steps.

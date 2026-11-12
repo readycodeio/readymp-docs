@@ -10,9 +10,9 @@ and the server checks and applies each move. A server mod can give, take and mov
 page is mostly about.
 
 ```csharp title="MyMod.Server/GoldIncome.cs"
-using OblivionMp.Sdk.Common.Archetypes;
-using OblivionMp.Sdk.Common.Archetypes.Mixins;
-using OblivionMp.Sdk.Serverside.Items;
+using OblivionMP.SDK.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes.Mixins;
+using OblivionMP.SDK.Serverside.Items;
 using ReadyM.Relay.Common.Oblivion.ECS.Values;
 using ReadyM.Relay.Common.Oblivion.Items;
 using ReadyM.SDK.Attributes;
@@ -128,7 +128,7 @@ directly; ask the server to, with an [RPC](../Concepts/rpc.md).
 
 ```csharp title="MyMod.Client/PotionDrop.cs"
 using System.Numerics;
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using ReadyM.Relay.Common.Oblivion.Items;
 using ReadyM.SDK.Attributes;
 
@@ -149,7 +149,7 @@ The item lands in the cell the local player is in. `SpawnDroppedItem` throws an 
 the local character exists or while the player is in no area.
 
 :::note
-Not in 1.0 yet: dropping an item from the client with a specific condition or enchantment charge.
+Not in 1.1.0 yet: dropping an item from the client with a specific condition or enchantment charge.
 `IItems.SpawnDroppedItem` takes neither. The server can do it, by creating the `DroppedItem` itself (below).
 :::
 
@@ -209,12 +209,12 @@ what the container already holds. The templates are described in [Spawning](spaw
 
 ## Reference
 
-* [Equipment](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Equipment.md)
-* [ContainerItems](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.ContainerItems.md)
-* [IInventory](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.IInventory.md)
+* [Equipment](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Equipment.md)
+* [ContainerItems](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ContainerItems.md)
+* [IInventory](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.IInventory.md)
 * [InventoryEntry](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.InventoryEntry.md)
-* [DroppedItem](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.DroppedItem.md)
-* [ItemExtraData](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.ItemExtraData.md)
+* [DroppedItem](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.DroppedItem.md)
+* [ItemExtraData](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ItemExtraData.md)
 * [Items](../../../api-reference/ReadyM.Relay.Common.Oblivion.Items/ReadyM.Relay.Common.Oblivion.Items.Items.md):
   [Ammunition](../../../api-reference/ReadyM.Relay.Common.Oblivion.Items/ReadyM.Relay.Common.Oblivion.Items.Items.Ammunition.md),
   [Armors](../../../api-reference/ReadyM.Relay.Common.Oblivion.Items/ReadyM.Relay.Common.Oblivion.Items.Items.Armors.md),
@@ -226,7 +226,7 @@ what the container already holds. The templates are described in [Spawning](spaw
   [Scrolls](../../../api-reference/ReadyM.Relay.Common.Oblivion.Items/ReadyM.Relay.Common.Oblivion.Items.Items.Scrolls.md),
   [SoulGems](../../../api-reference/ReadyM.Relay.Common.Oblivion.Items/ReadyM.Relay.Common.Oblivion.Items.Items.SoulGems.md),
   [Weapons](../../../api-reference/ReadyM.Relay.Common.Oblivion.Items/ReadyM.Relay.Common.Oblivion.Items.Items.Weapons.md)
-* [IItems](../../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.IItems.md)
-* [Inventories](../../../api-reference/OblivionMp.Sdk.Serverside.Items/OblivionMp.Sdk.Serverside.Items.Inventories.md)
+* [IItems](../../../api-reference/OblivionMP.SDK/OblivionMP.SDK.IItems.md)
+* [Inventories](../../../api-reference/OblivionMP.SDK.Serverside.Items/OblivionMP.SDK.Serverside.Items.Inventories.md)
 * [ItemStackData](../../../api-reference/ReadyM.Relay.Common.Oblivion.Rpc/ReadyM.Relay.Common.Oblivion.Rpc.ItemStackData.md)
-* [ContainerRoll](../../../api-reference/OblivionMp.Sdk.Serverside.Items/OblivionMp.Sdk.Serverside.Items.ContainerRoll.md)
+* [ContainerRoll](../../../api-reference/OblivionMP.SDK.Serverside.Items/OblivionMP.SDK.Serverside.Items.ContainerRoll.md)

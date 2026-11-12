@@ -110,14 +110,14 @@ template's wallet does.
 
 ### Lists and dictionaries
 
-A replicated shape can hold a list, `NativeList<T>` from `Yooni.Native.Container`, where `T` is a plain struct or a
+A replicated shape can hold a list, `NativeList<T>` from `ReadyM.Native.Container`, where `T` is a plain struct or a
 number (a dictionary, `NativeDictionary`, works the same way). Declare it `private`; the SDK generates the members you
 use instead:
 
 ```csharp title="MyMod.Common/Achievements.cs"
 using ReadyM.SDK.Archetypes.Core;
 using ReadyM.SDK.Attributes;
-using Yooni.Native.Container;
+using ReadyM.Native.Container;
 
 namespace MyMod.Common;
 
@@ -210,7 +210,7 @@ To change a replicated value from a client, override it with `Override`, from `R
 value's [field token](shapes.md#what-every-shape-can-do):
 
 ```csharp title="MyMod.Common/Emote.cs"
-using OblivionMp.Sdk.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Common;
@@ -226,10 +226,10 @@ public readonly partial struct Emote
 
 ```csharp title="MyMod.Client/EmoteKeys.cs"
 using MyMod.Common;
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
+using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Client;
-using ReadyM.Sdk.Common.Input;
 
 namespace MyMod.Client;
 

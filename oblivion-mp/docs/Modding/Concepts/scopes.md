@@ -11,7 +11,7 @@ sent every dropped item in the Imperial City.
 
 ```csharp title="MyMod.Server/AreaCensus.cs"
 using Microsoft.Extensions.Logging;
-using OblivionMp.Sdk.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes;
 using ReadyM.SDK.Archetypes.Core;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Server.Entities;
@@ -179,12 +179,12 @@ client. See [Entities and queries](entities-and-queries.md).
 * [IScope](../../../api-reference/ReadyM.SDK.Archetypes/ReadyM.SDK.Archetypes.IScope.md)
 * [IEntitiesBase](../../../api-reference/ReadyM.SDK.Entities/ReadyM.SDK.Entities.IEntitiesBase.md)
 * [ExtendsAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.ExtendsAttribute.md)
-* [Difficulty](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Difficulty.md),
-  [LevelScaling](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.LevelScaling.md),
-  [Time](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Time.md),
-  [Weather](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Weather.md),
-  [CellSeeding](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.CellSeeding.md),
-  [NicknameMixin](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.NicknameMixin.md),
-  [Journal](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Journal.md),
-  [Dialogue](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Dialogue.md),
-  [SpokenTopics](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.SpokenTopics.md)
+* [Difficulty](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Difficulty.md),
+  [LevelScaling](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LevelScaling.md),
+  [Time](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Time.md),
+  [Weather](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Weather.md),
+  [CellSeeding](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.CellSeeding.md),
+  [NicknameMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.NicknameMixin.md),
+  [Journal](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Journal.md),
+  [Dialogue](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Dialogue.md),
+  [SpokenTopics](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SpokenTopics.md)

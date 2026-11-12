@@ -5,7 +5,7 @@ description: 'The entity''s owner keeps it after leaving its area or cell, and n
 # Struct KeepOwnerOnScopeLeaveTag
 
 Namespace: [ReadyM.Api.Multiplayer.ECS.Tags](../ReadyM.Api.Multiplayer.ECS.Tags/ReadyM.Api.Multiplayer.ECS.Tags.md)  
-Assembly: ReadyM.Api.Multiplayer.dll  
+Assembly: ReadyM.Api.dll  
 
 The entity's owner keeps it after leaving its area or cell, and no player arriving takes it while the owner is
 connected. It takes precedence over the two ownership transfer tags.

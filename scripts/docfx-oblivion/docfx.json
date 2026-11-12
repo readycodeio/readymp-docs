@@ -4,28 +4,27 @@
     {
       "src": [
         {
-          "src": "../../../../oblivion-mod/OblivionMp.Sdk/bin/Debug/net10.0",
+          "src": "../../../../oblivion-mod/OblivionMP.SDK/bin/Debug/net10.0",
           "files": [
             "ReadyM.SDK.dll",
             "ReadyM.SDK.Chunks.dll",
             "ReadyM.Api.dll",
             "ReadyM.Api.Multiplayer.dll",
             "ReadyM.SDK.Client.dll",
-            "ReadyM.Sdk.Common.dll",
             "ReadyM.Relay.Client.dll",
             "ReadyM.Cef.dll",
             "OblivionMpCSharpMod.dll",
-            "OblivionMp.Sdk.dll",
-            "OblivionMp.Sdk.Common.dll",
+            "OblivionMP.SDK.dll",
+            "OblivionMP.SDK.Common.dll",
             "ReadyM.Relay.Common.Oblivion.dll"
           ]
         },
         {
-          "src": "../../../../oblivion-mod/OblivionMp.Sdk.Serverside/bin/Debug/net10.0",
+          "src": "../../../../oblivion-mod/OblivionMP.SDK.Serverside/bin/Debug/net10.0",
           "files": [
             "ReadyM.SDK.Server.dll",
             "ReadyM.Relay.Server.Sdk.dll",
-            "OblivionMp.Sdk.Serverside.dll"
+            "OblivionMP.SDK.Serverside.dll"
           ]
         }
       ],

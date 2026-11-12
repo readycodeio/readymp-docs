@@ -54,6 +54,12 @@ and every copy reads and writes the same entity. A list or dictionary is the one
 Shapes go directly in a namespace, not nested inside a class. Put the shapes both halves use in `MyMod.Common`
 (see [Project layout](../Getting-started/project-layout.md)).
 
+A networked archetype always goes in `MyMod.Common`. It crosses the wire as a number, which the SDK hands out on each
+side by the archetypes' full names, so both sides have to load the same networked archetypes. One declared only in
+the client or the server project shifts the number of every archetype after it, and their entities arrive on the
+other side as something else. An archetype with `Networked = false` never crosses the wire, so it can live in either
+half. There can be at most 256 archetypes in all, the game's own included.
+
 A shape that only one project uses can be `internal`. Everything the SDK writes for it stays internal too, and a
 public archetype may include an internal mixin.
 
@@ -144,8 +150,8 @@ Oblivion shapes (`MainCharacter`, `Npc`, `DroppedItem` and the rest, see
 half uses can extend a shape too; this one keeps a map marker per character on the client:
 
 ```csharp title="MyMod.Client/Marker.cs"
-using OblivionMp.Sdk.Common.Archetypes;
-using OblivionMp.Sdk.Values;
+using OblivionMP.SDK.Common.Archetypes;
+using OblivionMP.SDK.Values;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Client;
@@ -235,7 +241,7 @@ public readonly partial struct Campfire;
 The other tags in the SDK are internal to the runtime and cannot be put on an archetype.
 
 :::note
-Not in 1.0 yet: checking or querying an entity by a tag. Tags are useful today for the SDK's own tags, which the
+Not in 1.1.0 yet: checking or querying an entity by a tag. Tags are useful today for the SDK's own tags, which the
 runtime reads.
 :::
 
@@ -284,9 +290,9 @@ On top of its fields, the SDK gives every shape a few members:
 | Member | Archetype | Mixin | What it does |
 | --- | --- | --- | --- |
 | `IsValid` | yes | `IsValid()` | Whether the entity still exists. On a mixin, and in generic code, it is the extension method `IsValid()`. |
-| `Is<T>()` | yes | | Whether the entity also carries the shape `T`. |
-| `As<T>()` | yes | | The same entity as the shape `T`. Throws [`InvalidEntityException`](entities-and-queries.md) when it does not carry `T`. |
-| `TryAs<T>(out T)` | yes | | The same, returning `false` instead of throwing. |
+| `Is<T>()` | yes | yes | Whether the entity also carries the shape `T`. |
+| `As<T>()` | yes | yes | The same entity as the shape `T`. Throws [`InvalidEntityException`](entities-and-queries.md) when it does not carry `T`. |
+| `TryAs<T>(out T)` | yes | yes | The same, returning `false` instead of throwing. |
 | `Keep()` | yes | yes | The entity as a shape you can store. See below. |
 | `Field` | replicated only | replicated only | A nested class naming each field, such as `Wallet.Field.Balance`. |
 
@@ -351,9 +357,9 @@ The errors about replicating a shape (`READYM009`, `READYM014` and others) are l
   [Area](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Area.md),
   [Cell](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Cell.md),
   [World](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.World.md)
-* [MainCharacter](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.MainCharacter.md),
-  [Npc](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Npc.md),
-  [ServerSummon](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.ServerSummon.md)
+* [MainCharacter](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.MainCharacter.md),
+  [Npc](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Npc.md),
+  [ServerSummon](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.ServerSummon.md)
 * [AllowOwnershipTransferOnScopeEnterTag](../../../api-reference/ReadyM.Api.Multiplayer.ECS.Tags/ReadyM.Api.Multiplayer.ECS.Tags.AllowOwnershipTransferOnScopeEnterTag.md),
   [AllowOwnershipTransferOnScopeLeaveTag](../../../api-reference/ReadyM.Api.Multiplayer.ECS.Tags/ReadyM.Api.Multiplayer.ECS.Tags.AllowOwnershipTransferOnScopeLeaveTag.md),
   [KeepOwnerOnScopeLeaveTag](../../../api-reference/ReadyM.Api.Multiplayer.ECS.Tags/ReadyM.Api.Multiplayer.ECS.Tags.KeepOwnerOnScopeLeaveTag.md)

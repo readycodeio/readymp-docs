@@ -62,7 +62,7 @@ ReadyM is designed to do for community-run game servers what FiveM did for *Gran
 
 ## Current status
 
-OblivionMP is in **active development**. The server is out as **1.0.1**, and the SDK as **1.0.0**.
+OblivionMP is in **active development**. The server and the SDK are out as **1.1.0**.
 
 | Area | Status |
 |---|---|
@@ -79,7 +79,7 @@ OblivionMP is in **active development**. The server is out as **1.0.1**, and the
 | Bundled game modes | ✅ PvP Arena mod |
 | Save file API | 🚧 Sync implemented, no public API yet |
 
-To start writing mods, see [Your first mod](Modding/Getting-started/your-first-mod.md). If you maintain a mod written for OblivionMP 0.2, its documentation is in the 0.2.0 version of these docs, in the version menu at the top of the page.
+To start writing mods, see [Your first mod](Modding/Getting-started/your-first-mod.md). If you maintain a mod written for an earlier OblivionMP, such as 1.0.0 or 0.2, its documentation is in that version of these docs, in the version menu at the top of the page.
 
 ---
 

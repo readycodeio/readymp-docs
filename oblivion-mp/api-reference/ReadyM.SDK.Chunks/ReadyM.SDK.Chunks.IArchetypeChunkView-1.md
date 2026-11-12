@@ -5,7 +5,7 @@ description: 'The chunk-backed twin of an archetype or mixin: the same propertie
 # Interface IArchetypeChunkView<TSelf>
 
 Namespace: [ReadyM.SDK.Chunks](../ReadyM.SDK.Chunks/ReadyM.SDK.Chunks.md)  
-Assembly: ReadyM.SDK.Chunks.dll  
+Assembly: ReadyM.SDK.dll  
 
 The chunk-backed twin of an archetype or mixin: the same properties, reached straight off the
 chunk rather than by asking where the entity lives on every access.
@@ -20,7 +20,7 @@ public interface IArchetypeChunkView<out TSelf> : IEntityShape where TSelf : IAr
 
 #### Implements
 
-IEntityShape
+[IEntityShape](../ReadyM.SDK.Archetypes/ReadyM.SDK.Archetypes.IEntityShape.md)
 
 ## Remarks
 

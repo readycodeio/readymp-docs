@@ -9,11 +9,11 @@ player in it sees the same. The server also sets two things for the whole sessio
 and the level the game's leveled lists roll at. This page covers reading and setting all four.
 
 ```csharp title="MyMod.Server/SessionSettings.cs"
-using OblivionMp.Sdk.Serverside;
+using OblivionMP.SDK.Serverside;
 using ReadyM.Relay.Common.Oblivion.ECS.Values;
-using ReadyM.Relay.Server.Sdk.Ecs;
-using ReadyM.Relay.Server.Sdk.Events;
+using ReadyM.SDK.Archetypes.Core;
 using ReadyM.SDK.Attributes;
+using ReadyM.SDK.Server.Events;
 
 namespace MyMod.Server;
 
@@ -25,12 +25,12 @@ public sealed partial class SessionSettings(
     IServerEvents events)
 {
     private void Start()
-        => events.OnWorldEntityCreated += OnWorldCreated;
+        => events.OnWorldCreated += OnWorldCreated;
 
     private void Stop()
-        => events.OnWorldEntityCreated -= OnWorldCreated;
+        => events.OnWorldCreated -= OnWorldCreated;
 
-    private void OnWorldCreated(Entity world)
+    private void OnWorldCreated(World world)
     {
         difficulty.Set(DifficultyTier.Expert, DifficultyTier.Expert);
         scaling.SetToMidLevel();
@@ -39,7 +39,7 @@ public sealed partial class SessionSettings(
 ```
 
 The session settings live on the server's world entity, so the example waits for it to exist before it sets them.
-[Server events](server-events.md) covers `OnWorldEntityCreated` and the other events.
+[Server events](server-events.md) covers `OnWorldCreated` and the other events.
 
 ## How it works
 
@@ -55,15 +55,15 @@ members of that scope:
 
 Read them from the scope, for example `area.GameHour` or `entities.World.DamageTaken`, or query the mixin itself,
 for example `entities.Query<Difficulty>()`. The members come with
-`using OblivionMp.Sdk.Common.Archetypes.Mixins;`.
+`using OblivionMP.SDK.Common.Archetypes.Mixins;`.
 
 :::tip
 Inside a [service](../Getting-started/services.md), `Time` is the service's own clock (`Time.DeltaTime`), not this
-mixin. To name the mixin there, write its full name, `OblivionMp.Sdk.Common.Archetypes.Mixins.Time`, or give it
+mixin. To name the mixin there, write its full name, `OblivionMP.SDK.Common.Archetypes.Mixins.Time`, or give it
 another name at the top of the file:
 
 ```csharp
-using GameTime = OblivionMp.Sdk.Common.Archetypes.Mixins.Time;
+using GameTime = OblivionMP.SDK.Common.Archetypes.Mixins.Time;
 
 foreach (var clock in entities.Query<GameTime>())
     logger.LogInformation("It is {Hour:0.0} o'clock", clock.GameHour);
@@ -75,9 +75,10 @@ Reading `area.GameHour` from an `Area` has no such clash.
 ### Time and weather
 
 Every interior and every exterior world space is its own area (see [World and cells](world-and-cells.md)), with its
-own clock and weather. The area's master client runs the clock and the weather in its game and reports them; the
-server stores them on the area, and every player's game in the area applies what the area holds. A server mod can
-set them the same way, and that wins:
+own clock and weather. The area's master client runs the clock and the weather in its game and reports each change
+as a [networked event](../Concepts/networked-events.md), `TimeChangeEvent` or `WeatherChangeEvent`; the server
+stores it on the area, and every player's game in the area applies what the area holds. A server mod can set them
+directly, and that wins:
 
 ```csharp
 foreach (var area in entities.Query<Area>())
@@ -87,6 +88,24 @@ foreach (var area in entities.Query<Area>())
 Inside a loop over a query, a value from a mixin that extends another shape is written with its `Set...` method
 (`SetGameHour`, `SetWeatherFormId`, ...). Outside a loop, `area.GameHour = 12f` does the same. A `TimeScale` of 0 or
 less is ignored by the games.
+
+To hear about every change a master reports, handle the event on the server. Its `Area` member is the area it is for:
+
+```csharp title="MyMod.Server/WeatherLog.cs"
+using Microsoft.Extensions.Logging;
+using OblivionMP.SDK.Common.Events;
+using ReadyM.SDK.Attributes;
+
+namespace MyMod.Server;
+
+[Service]
+public sealed partial class WeatherLog(ILogger logger)
+{
+    [EventHandler(Stage.Observe)]
+    public void OnWeatherChange(in WeatherChangeEvent e)
+        => logger.LogInformation("Area {Area} turns to weather {Weather}", e.Area.AreaId, e.WeatherFormId);
+}
+```
 
 `SessionClock.NowGameHours()` gives the game time as one number of hours since the game started,
 `GameDaysPassed * 24 + GameHour`. It reads one area's clock, so with players in several areas it is the time of one
@@ -122,8 +141,8 @@ also takes over the game's creature spawners; see [Spawning](spawning.md).
 The client reads the same values. This shows a message when night falls where the local player is:
 
 ```csharp title="MyMod.Client/Nightfall.cs"
-using OblivionMp.Sdk;
-using OblivionMp.Sdk.Common.Archetypes.Mixins;
+using OblivionMP.SDK;
+using OblivionMP.SDK.Common.Archetypes.Mixins;
 using ReadyM.SDK.Archetypes.Core;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Client.Entities;
@@ -159,15 +178,17 @@ Clients do not set any of these values; time and weather come from the area's ma
 
 ## Reference
 
-* [Time](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Time.md)
-* [Weather](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Weather.md)
-* [Difficulty](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Difficulty.md),
+* [Time](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Time.md)
+* [Weather](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Weather.md)
+* [Difficulty](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Difficulty.md),
   [DifficultyTier](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.DifficultyTier.md)
-* [LevelScaling](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.LevelScaling.md),
+* [LevelScaling](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LevelScaling.md),
   [ScalingPolicy](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.ScalingPolicy.md)
-* [SessionClock](../../../api-reference/OblivionMp.Sdk.Serverside/OblivionMp.Sdk.Serverside.SessionClock.md)
-* [SessionDifficulty](../../../api-reference/OblivionMp.Sdk.Serverside/OblivionMp.Sdk.Serverside.SessionDifficulty.md)
-* [SessionScaling](../../../api-reference/OblivionMp.Sdk.Serverside/OblivionMp.Sdk.Serverside.SessionScaling.md)
+* [SessionClock](../../../api-reference/OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionClock.md)
+* [SessionDifficulty](../../../api-reference/OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionDifficulty.md)
+* [SessionScaling](../../../api-reference/OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionScaling.md)
 * [Area](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Area.md),
   [World](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.World.md)
-* [IServerEvents](../../../api-reference/ReadyM.Relay.Server.Sdk.Events/ReadyM.Relay.Server.Sdk.Events.IServerEvents.md)
+* [IServerEvents](../../../api-reference/ReadyM.SDK.Server.Events/ReadyM.SDK.Server.Events.IServerEvents.md)
+* [TimeChangeEvent](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.TimeChangeEvent.md),
+  [WeatherChangeEvent](../../../api-reference/OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.WeatherChangeEvent.md)

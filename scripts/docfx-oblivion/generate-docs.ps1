@@ -57,6 +57,12 @@ foreach ($source in $config.metadata[0].src) {
         }
     }
 
+    # every other assembly beside them goes along too, unlisted, so docfx can resolve what the listed ones
+    # reference; left unresolved, a value type reads as a class and every type argument comes out nullable
+    Get-ChildItem -Path $source.src -Filter *.dll -File |
+        Where-Object { $source.files -notcontains $_.Name } |
+        Copy-Item -Destination $target
+
     $source.src = $target
     $index++
 }

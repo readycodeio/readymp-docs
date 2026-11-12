@@ -79,7 +79,7 @@ with its payout timer.
 :::note
 Inside a service, `Time` always means the service's clock. To name the Oblivion `Time` mixin there (the game's time
 of day, see [Time, weather and session](../Game/time-weather-session.md)), write its full name,
-`OblivionMp.Sdk.Common.Archetypes.Mixins.Time`.
+`OblivionMP.SDK.Common.Archetypes.Mixins.Time`.
 :::
 
 ### Switching services on and off

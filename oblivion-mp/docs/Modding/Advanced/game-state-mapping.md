@@ -20,7 +20,7 @@ A mod that shows whether each player carries a lit lantern. The value lives on e
 replicated, and each player's client owns its own:
 
 ```csharp title="MyMod.Common/Lantern.cs"
-using OblivionMp.Sdk.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Common;
@@ -91,7 +91,7 @@ Then pull wherever your mod looks at the game. This service reads the local play
 
 ```csharp title="MyMod.Client/LanternSync.cs"
 using MyMod.Common;
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Client.Mapping;
 
@@ -113,7 +113,7 @@ game with `character.Push(Lantern.Field.IsLit, theirLantern)`.
 
 :::important
 
-Nothing finds an `IShapeMappings` class on its own in 1.0. Register it with
+Nothing finds an `IShapeMappings` class on its own in 1.1. Register it with
 `services.RegisterSingleton<IShapeMappings, YourMappings>()` in your client `[ModEntry]`'s `Init`. The mappings of
 every mod are collected once, after every entry point's `Init` has run. One registered later, for example from a
 service's `Start`, is never seen, and every `Pull` and `Push` through it returns `false`.
@@ -135,7 +135,7 @@ class.
 | `Lantern.Field.All` | `Shape<Lantern>` | Every value of the shape at once. |
 
 The SDK's own shapes have tokens too, for example
-[`DroppedItem.Field`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.DroppedItem.Field.md).
+[`DroppedItem.Field`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.DroppedItem.Field.md).
 The same tokens are what an override write takes on the client, see [Replication](../Concepts/replication.md).
 
 ### Declaring mappings
@@ -152,7 +152,7 @@ Each `Map` call returns the same builder, so you can chain several. There are th
 
 The push handler is optional. Leave it out when the game owns the value and is never told about it. For a
 collection, the handler gets the shape's collection wrapper (for `Equipment.Items` that is
-[`EquipmentItems`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.EquipmentItems.md),
+[`EquipmentItems`](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.EquipmentItems.md),
 with `Count`, `Get`, `Add`, `Clear` and the rest), so what it changes is what the entity holds. Use the whole-shape
 form when the values only make sense together, such as a position and a rotation read in one call.
 

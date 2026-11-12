@@ -23,11 +23,11 @@ Three things make a mod build on another one. First, list it as a dependency in 
   "dependencies": [
     {
       "uniqueId": "OblivionMP.SDK",
-      "minimumVersion": "1.0.0"
+      "minimumVersion": "1.1.0"
     },
     {
       "uniqueId": "OblivionMP.Chat",
-      "minimumVersion": "1.0.0"
+      "minimumVersion": "1.1.0"
     }
   ]
 }
@@ -46,13 +46,13 @@ only its client project gets the chat client package:
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="ReadyM.SDK.Oblivion.Client" Version="1.0.0" />
+        <PackageReference Include="ReadyM.SDK.Oblivion.Client" Version="1.1.0" />
     </ItemGroup>
 
     <!-- The chat mod's client API. Chat is a dependency in manifest.json, so it is loaded first
          and provides IChat; its assemblies stay out of this mod's folder. -->
     <ItemGroup>
-        <PackageReference Include="ReadyM.Oblivion.Chat.Client" Version="1.0.0-rc.3" />
+        <PackageReference Include="ReadyM.Oblivion.Chat.Client" Version="1.1.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -66,7 +66,7 @@ Third, ask for the other mod's API in a constructor, like anything the SDK gives
 
 ```csharp title="ArenaMod.Client/DetectDeadPlayerSystem.cs"
 using OblivionMp.ChatMod;
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using OblivionMpCSharpMod.Values;
 using ReadyM.SDK.Attributes;
 
@@ -128,7 +128,7 @@ or README which other mods it needs.
 
 :::note
 
-Not in 1.0 yet: optional dependencies. A mod that asks for another mod's API needs that mod on the server. There is
+Not in 1.1.0 yet: optional dependencies. A mod that asks for another mod's API needs that mod on the server. There is
 no way to declare "use chat if it is there, and work without it otherwise".
 
 :::

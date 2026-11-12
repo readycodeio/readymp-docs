@@ -7,14 +7,13 @@ sidebar_position: 5
 An RPC is a message one half of your mod sends and the other half runs code for: a player presses a key and asks the
 server for something, the server announces a winner, a client pings the players around it. Use RPC for things that
 happen once. For a value that should stay the same for every player, such as a gold balance, use
-[replication](replication.md) instead.
+[replication](replication.md) instead. For something other mods should be able to refuse, change or watch, use a
+[networked event](networked-events.md).
 
 You list every message in the Common project, and each half gets a method to send the ones it sends and a place to
 handle the ones it receives.
 
 ```csharp title="MyMod.Common/RpcContracts.cs"
-using ReadyM.Api.Multiplayer;
-using ReadyM.Api.Multiplayer.Protocol.Enums;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Common;
@@ -76,8 +75,8 @@ public sealed partial class RpcHandlers(ILogger logger)
 ```
 
 ```csharp title="MyMod.Client/WalletKeys.cs"
-using OblivionMp.Sdk;
-using ReadyM.Sdk.Common.Input;
+using OblivionMP.SDK;
+using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Client;
@@ -219,10 +218,10 @@ instead.
 ## Reference
 
 * [RpcContractsAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.RpcContractsAttribute.md)
-* [ClientToServerAttribute](../../../api-reference/ReadyM.Api.Multiplayer/ReadyM.Api.Multiplayer.ClientToServerAttribute.md)
-* [ServerToClientAttribute](../../../api-reference/ReadyM.Api.Multiplayer/ReadyM.Api.Multiplayer.ServerToClientAttribute.md)
-* [ClientToClientsAttribute](../../../api-reference/ReadyM.Api.Multiplayer/ReadyM.Api.Multiplayer.ClientToClientsAttribute.md)
-* [RelayMode](../../../api-reference/ReadyM.Api.Multiplayer.Protocol.Enums/ReadyM.Api.Multiplayer.Protocol.Enums.RelayMode.md)
+* [ClientToServerAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.ClientToServerAttribute.md)
+* [ServerToClientAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.ServerToClientAttribute.md)
+* [ClientToClientsAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.ClientToClientsAttribute.md)
+* [RelayMode](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.RelayMode.md)
 * [RpcHandlersForAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.RpcHandlersForAttribute.md)
 * [RpcContext](../../../api-reference/ReadyM.Relay.Server.Sdk.Rpc/ReadyM.Relay.Server.Sdk.Rpc.RpcContext.md)
 * [DeriveINetSerializableAttribute](../../../api-reference/ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.DeriveINetSerializableAttribute.md)

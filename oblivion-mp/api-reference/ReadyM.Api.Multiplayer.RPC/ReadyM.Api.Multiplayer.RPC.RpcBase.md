@@ -5,7 +5,7 @@ description: 'Base class for all RPC handlers, client and server.'
 # Class RpcBase
 
 Namespace: [ReadyM.Api.Multiplayer.RPC](../ReadyM.Api.Multiplayer.RPC/ReadyM.Api.Multiplayer.RPC.md)  
-Assembly: ReadyM.Api.Multiplayer.dll  
+Assembly: ReadyM.Api.dll  
 
 Base class for all RPC handlers, client and server.
 
@@ -20,7 +20,7 @@ public abstract class RpcBase : IHostedService, IDisposable
 
 #### Implements
 
-IHostedService, 
+[IHostedService](../ReadyM.Api.DI/ReadyM.Api.DI.IHostedService.md), 
 [IDisposable](https://learn.microsoft.com/dotnet/api/system.idisposable)
 
 #### Inherited Members
@@ -40,32 +40,6 @@ IHostedService,
 ```csharp
 protected RpcBase()
 ```
-
-## Properties
-
-### <a id="ReadyM_Api_Multiplayer_RPC_RpcBase_RelayClient"></a> RelayClient
-
-RPC client to use for sending RPCs. This is injected by the DI container.
-
-```csharp
-public IRpcClient RelayClient { protected get; set; }
-```
-
-#### Property Value
-
- IRpcClient
-
-### <a id="ReadyM_Api_Multiplayer_RPC_RpcBase_Serializer"></a> Serializer
-
-Serializer to use for serializing RPC parameters. This is injected by the DI container.
-
-```csharp
-public IRelaySerializer Serializer { protected get; set; }
-```
-
-#### Property Value
-
- IRelaySerializer
 
 ## Methods
 

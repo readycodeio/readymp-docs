@@ -22,7 +22,7 @@ On the client, show a line only this player sees. This is how Arena tells a play
 
 ```csharp title="MyMod.Client/RespawnHint.cs"
 using OblivionMp.ChatMod;
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using OblivionMpCSharpMod.Values;
 using ReadyM.SDK.Attributes;
 
@@ -75,8 +75,8 @@ public sealed partial class ReadyCommand(IChat chat)
 
    ```json title="Content/manifest.json"
    "dependencies": [
-     { "uniqueId": "OblivionMP.SDK", "minimumVersion": "1.0.0" },
-     { "uniqueId": "OblivionMP.Chat", "minimumVersion": "1.0.0" }
+     { "uniqueId": "OblivionMP.SDK", "minimumVersion": "1.1.0" },
+     { "uniqueId": "OblivionMP.Chat", "minimumVersion": "1.1.0" }
    ]
    ```
 
@@ -201,4 +201,4 @@ Types from the SDK used on this page:
 
 * [Color](../../../api-reference/OblivionMpCSharpMod.Values/OblivionMpCSharpMod.Values.Color.md)
 * [PlayerId](../../../api-reference/ReadyM.Api.Idents/ReadyM.Api.Idents.PlayerId.md)
-* [IPlayers](../../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.IPlayers.md)
+* [IPlayers](../../../api-reference/OblivionMP.SDK/OblivionMP.SDK.IPlayers.md)

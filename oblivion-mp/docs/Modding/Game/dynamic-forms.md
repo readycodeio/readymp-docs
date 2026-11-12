@@ -11,11 +11,11 @@ client makes its own copy of it in its game. Your mod reads these entities to fi
 
 ```csharp title="MyMod.Client/PotionList.cs"
 using Microsoft.Extensions.Logging;
-using OblivionMp.Sdk;
-using OblivionMp.Sdk.Common.Archetypes;
+using OblivionMP.SDK;
+using OblivionMP.SDK.Common.Archetypes;
+using OblivionMpCSharpMod.Input;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Client.Entities;
-using ReadyM.Sdk.Common.Input;
 
 namespace MyMod.Client;
 
@@ -50,9 +50,9 @@ There are three shapes, one per kind of form. All are shared, so the same code w
 
 | Shape | Values | Effects |
 |---|---|---|
-| [`AlchemyForm`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.AlchemyForm.md), a potion | `Name`, `Value` (gold), `Weight`, `ModelPath` (the 3D model, in the inventory and on the ground), `IconPath` (the inventory icon), `Flags` (the game's flags, as a raw byte) | `EffectsCount`, `GetEffects()`, `GetEffects(index)` |
-| [`SpellForm`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.SpellForm.md), a spell | `MagickaCost`, `SpellType` ([`SpellType`](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SpellType.md): `Spell`, `Power`, `Ability`, ...), `Flags` | `EffectsCount`, `GetEffects()`, `GetEffects(index)` |
-| [`EnchantedItemForm`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.EnchantedItemForm.md), a weapon, armor or clothing enchanted at an Altar of Enchanting | `ItemFormType` (armor `0x14`, clothing `0x16` or weapon `0x21`), `Name`, `Value`, `Weight`, `Health`, `AttackDamage`, `ArmorRating`, the weapon's `WeaponType`, `WeaponSpeed` and `WeaponReach`, models and icons, `MaxCharge`, and the enchantment's `EnchantmentType`, `EnchantmentCharge` and `EnchantmentCost` | `EffectsCount`, `GetEffects()`, `GetEffects(index)` |
+| [`AlchemyForm`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.AlchemyForm.md), a potion | `Name`, `Value` (gold), `Weight`, `ModelPath` (the 3D model, in the inventory and on the ground), `IconPath` (the inventory icon), `Flags` (the game's flags, as a raw byte) | `EffectsCount`, `GetEffects()`, `GetEffects(index)` |
+| [`SpellForm`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.SpellForm.md), a spell | `MagickaCost`, `SpellType` ([`SpellType`](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SpellType.md): `Spell`, `Power`, `Ability`, ...), `Flags` | `EffectsCount`, `GetEffects()`, `GetEffects(index)` |
+| [`EnchantedItemForm`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.EnchantedItemForm.md), a weapon, armor or clothing enchanted at an Altar of Enchanting | `ItemFormType` (armor `0x14`, clothing `0x16` or weapon `0x21`), `Name`, `Value`, `Weight`, `Health`, `AttackDamage`, `ArmorRating`, the weapon's `WeaponType`, `WeaponSpeed` and `WeaponReach`, models and icons, `MaxCharge`, and the enchantment's `EnchantmentType`, `EnchantmentCharge` and `EnchantmentCost` | `EffectsCount`, `GetEffects()`, `GetEffects(index)` |
 
 Each effect is a [`MagicEffectEntry`](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md):
 
@@ -84,7 +84,7 @@ whose `FormId` is 0, because it has no id from the game files. See
 [Items and inventories](items-and-inventories.md).
 
 :::note
-Not in 1.0 yet: going from such a `NetworkFormId` to the `AlchemyForm`, `SpellForm` or `EnchantedItemForm` it
+Not in 1.1.0 yet: going from such a `NetworkFormId` to the `AlchemyForm`, `SpellForm` or `EnchantedItemForm` it
 names, and creating a potion, spell or enchanted item from a mod.
 :::
 
@@ -97,9 +97,9 @@ names, and creating a potion, spell or enchanted item from a mod.
 
 ## Reference
 
-- [`AlchemyForm`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.AlchemyForm.md)
-- [`SpellForm`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.SpellForm.md)
-- [`EnchantedItemForm`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.EnchantedItemForm.md)
+- [`AlchemyForm`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.AlchemyForm.md)
+- [`SpellForm`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.SpellForm.md)
+- [`EnchantedItemForm`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.EnchantedItemForm.md)
 - [`MagicEffectEntry`](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry.md)
 - [`MagicEffectRange`](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectRange.md)
 - [`SpellType`](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SpellType.md)

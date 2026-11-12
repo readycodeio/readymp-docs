@@ -6,13 +6,13 @@ sidebar_position: 1
 
 Every player on the server is two entities: a `Player`, which says who they are, and a `MainCharacter`, which is
 their body in the game world with its health, position, skills and inventory. The game's own people and creatures
-are `Npc` entities, and creatures a player summons are `ServerSummon` entities. This page shows what each one holds
-and how a mod reads and changes it.
+are `Npc` entities, and creatures a player summons are `ServerSummon` entities. `MainCharacter` and `Npc` are both a
+`Character`, the part they share. This page shows what each one holds and how a mod reads and changes it.
 
 ```csharp title="MyMod.Server/SecondWind.cs"
 using Microsoft.Extensions.Logging;
-using OblivionMp.Sdk.Common.Archetypes;
-using OblivionMp.Sdk.Common.Archetypes.Mixins;
+using OblivionMP.SDK.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes.Mixins;
 using ReadyM.SDK.Archetypes.Core;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Server.Entities;
@@ -83,6 +83,26 @@ var sneaking = (main.CharacterStateFlags & CharacterStateFlags.IsSneaking) != 0;
 To work with one mixin on its own, for example to hand the inventory to a method that takes any inventory, ask the
 character for it: `main.As<Equipment>()`.
 
+### Character
+
+`Character` holds what every character has, player or NPC: `Transform`, `Vitals`, `LevelMixin`, `Equipment`,
+`ParentCell`, `BaseIdMixin` and the animation state. `MainCharacter` and `Npc` are built on it, so each converts to a
+`Character` wherever one is asked for, and a cast goes back, throwing `InvalidCastException` when the entity is the
+other kind:
+
+```csharp
+void Heal(Character character) => character.Hp = character.HpBase;
+
+Heal(main);
+Heal(npc);
+
+if (character.TryAs(out MainCharacter player))
+    logger.LogInformation("Healed player {Player}", player.PlayerId);
+```
+
+Take a `Character` in your own code, and in your own [networked events](../Concepts/networked-events.md), when it
+should work for both. The SDK's own events do, such as `HealthChangedEvent`'s `Attacker`.
+
 ### Attributes, skills and effects
 
 A character has three maps of numbers, each keyed by an enum cast to `byte`:
@@ -147,7 +167,7 @@ Ask for `IPlayers` to reach the local player:
 | `AreaPlayers` | Every character in the area the local player is in, theirs included. Empty while they are in none. |
 
 ```csharp title="MyMod.Client/LowHealthWarning.cs"
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Client;
@@ -175,7 +195,7 @@ A client changes a value of its own character with `Override` and the value's fi
 build on the client (see below). `Override` returns `false`, and changes nothing, on a character that is not yours:
 
 ```csharp
-using OblivionMp.Sdk.Common.Archetypes.Mixins;
+using OblivionMP.SDK.Common.Archetypes.Mixins;
 using ReadyM.SDK.Client;
 
 if (players.LocalMainCharacter is { } me)
@@ -193,19 +213,20 @@ logs a warning and does nothing on anyone else's:
 | `OpenBirthSignMenu()` | Opens the birthsign menu. |
 
 ```csharp
-using OblivionMp.Sdk.Archetypes.Extensions;
+using OblivionMP.SDK.Archetypes.Extensions;
 
 if (players.LocalMainCharacter is { IsDead: true } me)
     me.ResurrectLocalPlayer();
 ```
 
 Two client-only mixins add what only this game knows about each character it shows (with
-`using OblivionMp.Sdk.Archetypes.Mixins;`):
+`using OblivionMP.SDK.Archetypes.Mixins;`):
 
 | Mixin | Member | Meaning |
 | --- | --- | --- |
 | `LocalVisibility` | `Hidden` | How hard the character is to see here: 0 in plain sight, 1 invisible. |
 | `MappedActor` | `Pawn` | The game actor that shows this character, or `IntPtr.Zero` while there is none. Use it only to notice that the actor changed, never to read memory through it. An `Npc` has it too. |
+| `LocalRefId` | `LocalRefId` | The reference id this game knows the character by. Dropped items, furniture, containers and flora have it too. |
 
 The MarkerMod in the SDK repository uses both to fade a name marker over each player as they hide.
 
@@ -222,6 +243,8 @@ the server's own interface, not the client's `IPlayers` above, and you ask for i
 | --- | --- |
 | `Kick(playerId)` | Disconnects the player at once. They cannot rejoin until they restart the game. |
 | `GetReadyMId(playerId)` | The id of the player's ReadyM account, or `null` if the server has not seen them since it started. |
+| `InArea(areaId)` | The players in an area. |
+| `InCell(fullCellId)` | The players who have a cell loaded. |
 
 A `PlayerId` is only good for one connection. The account id stays the same across reconnects, server restarts and
 servers, so key anything you keep on disk by it:
@@ -257,30 +280,32 @@ To run code when a player connects or leaves, see [Server events](server-events.
 
 ## Reference
 
-* [MainCharacter](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.MainCharacter.md)
-* [Npc](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Npc.md)
-* [ServerSummon](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.ServerSummon.md)
+* [MainCharacter](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.MainCharacter.md)
+* [Npc](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Npc.md)
+* [ServerSummon](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.ServerSummon.md)
+* [Character](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Character.md)
 * [Player](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Player.md)
-* [NicknameMixin](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.NicknameMixin.md)
-* [Transform](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Transform.md)
-* [Vitals](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Vitals.md)
-  and its [field tokens](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Vitals.Field.md)
-* [LevelMixin](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.LevelMixin.md)
-* [Appearance](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Appearance.md)
-* [PlayerActivity](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.PlayerActivity.md)
-* [Quiver](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.Quiver.md)
-* [SkillAttributes](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.SkillAttributes.md),
-  [EffectsAttributes](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.EffectsAttributes.md),
-  [SocialAttributes](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.SocialAttributes.md)
+* [NicknameMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.NicknameMixin.md)
+* [Transform](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Transform.md)
+* [Vitals](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Vitals.md)
+  and its [field tokens](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Vitals.Field.md)
+* [LevelMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LevelMixin.md)
+* [Appearance](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Appearance.md)
+* [PlayerActivity](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.PlayerActivity.md)
+* [Quiver](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Quiver.md)
+* [SkillAttributes](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SkillAttributes.md),
+  [EffectsAttributes](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.EffectsAttributes.md),
+  [SocialAttributes](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SocialAttributes.md)
 * [CharacterAttribute](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterAttribute.md),
   [CharacterEffect](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterEffect.md),
   [CharacterSocialAttribute](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterSocialAttribute.md),
   [CharacterSex](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterSex.md),
   [CharacterStateFlags](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterStateFlags.md)
-* [SummonedBy](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.SummonedBy.md)
-* [IPlayers](../../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.IPlayers.md) (client)
-* [MainCharacterExtensions](../../../api-reference/OblivionMp.Sdk.Archetypes.Extensions/OblivionMp.Sdk.Archetypes.Extensions.MainCharacterExtensions.md)
-* [LocalVisibility](../../../api-reference/OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.LocalVisibility.md)
-* [MappedActor](../../../api-reference/OblivionMp.Sdk.Archetypes.Mixins/OblivionMp.Sdk.Archetypes.Mixins.MappedActor.md)
+* [SummonedBy](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SummonedBy.md)
+* [IPlayers](../../../api-reference/OblivionMP.SDK/OblivionMP.SDK.IPlayers.md) (client)
+* [MainCharacterExtensions](../../../api-reference/OblivionMP.SDK.Archetypes.Extensions/OblivionMP.SDK.Archetypes.Extensions.MainCharacterExtensions.md)
+* [LocalVisibility](../../../api-reference/OblivionMP.SDK.Archetypes.Mixins/OblivionMP.SDK.Archetypes.Mixins.LocalVisibility.md)
+* [MappedActor](../../../api-reference/OblivionMP.SDK.Archetypes.Mixins/OblivionMP.SDK.Archetypes.Mixins.MappedActor.md)
+* [LocalRefId](../../../api-reference/OblivionMP.SDK.Archetypes.Mixins/OblivionMP.SDK.Archetypes.Mixins.LocalRefId.md)
 * [WriteExtensions](../../../api-reference/ReadyM.SDK.Client/ReadyM.SDK.Client.WriteExtensions.md)
 * [IPlayers](../../../api-reference/ReadyM.Relay.Server.Sdk.Players/ReadyM.Relay.Server.Sdk.Players.IPlayers.md) (server)

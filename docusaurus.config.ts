@@ -156,7 +156,8 @@ const config: Config = {
         {
           type: 'docsVersionDropdown',
           versions: {
-            'current': { label: '1.0.1' },
+            'current': { label: '1.1.0' },
+            '1.0.0': { label: '1.0.0' },
             '0.2.0': { label: '0.2.0' },
             '0.1.1': { label: '0.1.1' },
           },
@@ -280,8 +281,11 @@ const config: Config = {
         lastVersion: 'current',
         versions: {
           current: {
-            label: '1.0.1',
+            label: '1.1.0',
             badge: true
+          },
+          '1.0.0': {
+            label: '1.0.0',
           },
           '0.2.0': {
             label: '0.2.0',

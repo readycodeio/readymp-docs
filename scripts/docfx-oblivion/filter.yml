@@ -1,5 +1,5 @@
 apiRules:
-# v0 API stays public for source compatibility, but the 1.0 reference leaves it out
+# Obsolete API stays public for source compatibility, but the reference leaves it out
 - exclude:
     hasAttribute:
       uid: System.ObsoleteAttribute
@@ -10,3 +10,7 @@ apiRules:
 # IntelliSense, but on every value type they would bury what the page is about
 - exclude:
     uidRegex: '\.(Serialize|Deserialize)\((LiteNetLib\.Utils\.)?NetData(Writer|Reader)\)$'
+# What the generators write beside a mod's own code, such as each event's handler set, is wired up by the SDK and
+# never called by a mod
+- exclude:
+    uidRegex: '\.Generated(\.|$)'

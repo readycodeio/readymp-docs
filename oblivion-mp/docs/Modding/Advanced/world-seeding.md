@@ -17,7 +17,7 @@ A server service that keeps loot from ever coming back. Seeded items are marked 
 are never respawned:
 
 ```csharp title="MyMod.Server/NoLootRespawn.cs"
-using OblivionMp.Sdk.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Server.Entities;
 
@@ -51,17 +51,17 @@ object whose base form is one of the types in `SeededFormTypes.All` becomes an e
 
 | Base form type | Becomes |
 | --- | --- |
-| `Furniture` | a [`Furniture`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Furniture.md) |
-| `Container` | a [`Container`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Container.md), with its contents rolled from the game's container data |
-| `Flora` | a [`Flora`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.Flora.md), if harvesting it gives an ingredient |
-| `Weapon`, `Armor`, `Clothing`, `Misc`, `Ingredient`, `Key`, `Book`, `AlchemyItem`, `Ammo`, `SoulGem`, `SigilStone`, `Apparatus`, `Light` | a [`DroppedItem`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.DroppedItem.md) |
+| `Furniture` | a [`Furniture`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Furniture.md) |
+| `Container` | a [`Container`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Container.md), with its contents rolled from the game's container data |
+| `Flora` | a [`Flora`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Flora.md), if harvesting it gives an ingredient |
+| `Weapon`, `Armor`, `Clothing`, `Misc`, `Ingredient`, `Key`, `Book`, `AlchemyItem`, `Ammo`, `SoulGem`, `SigilStone`, `Apparatus`, `Light` | a [`DroppedItem`](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.DroppedItem.md) |
 
 Each seeded entity gets the object's ref id, base id, position, rotation and whether it starts disabled. An object
 that already has an entity, found by its ref id, is left alone, so a cell is never seeded twice. Everything else in
 the cell (doors, NPCs, statics and the rest) stays the game's.
 
 A seeded `DroppedItem` also records where it came from, in two values it takes from the
-[`SeedOrigin`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.SeedOrigin.md)
+[`SeedOrigin`](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SeedOrigin.md)
 mixin:
 
 | Value | Meaning |
@@ -70,7 +70,7 @@ mixin:
 | `IsPersistent` | Whether the game data marks the object persistent. Persistent items are never respawned. |
 
 One server tick after a cell's entities are created, the cell is marked seeded. The
-[`CellSeeding`](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.CellSeeding.md)
+[`CellSeeding`](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.CellSeeding.md)
 mixin adds two values to every [`Cell`](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Cell.md):
 
 | Value | Meaning |
@@ -90,7 +90,7 @@ respawns them, whether or not anyone is there:
 * The cell's spawn points are reset, so their creatures spawn again.
 
 The cell's `RespawnedAtGameHours` is then set to now. Game hours come from the world's clock, the same one
-[`SessionClock`](../../../api-reference/OblivionMp.Sdk.Serverside/OblivionMp.Sdk.Serverside.SessionClock.md)`.NowGameHours()`
+[`SessionClock`](../../../api-reference/OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionClock.md)`.NowGameHours()`
 reads.
 
 ## What a mod can change
@@ -110,8 +110,8 @@ Change seeding values on the server. On a client they are read only.
 extends another shape:
 
 ```csharp title="MyMod.Server/RespawnHold.cs"
-using OblivionMp.Sdk.Common.Archetypes.Mixins;
-using OblivionMp.Sdk.Serverside;
+using OblivionMP.SDK.Common.Archetypes.Mixins;
+using OblivionMP.SDK.Serverside;
 using ReadyM.Api.Idents;
 using ReadyM.SDK.Archetypes.Core;
 using ReadyM.SDK.Attributes;
@@ -133,7 +133,7 @@ public sealed partial class RespawnHold(IEntities entities, SessionClock clock)
 
 :::note
 
-Not in 1.0 yet: changing the respawn interval for the whole server, or seeding a cell from a mod. The interval is 72
+Not in 1.1.0 yet: changing the respawn interval for the whole server, or seeding a cell from a mod. The interval is 72
 game hours, as in the single-player game.
 
 :::
@@ -146,10 +146,10 @@ game hours, as in the single-player game.
 
 ## Reference
 
-* [CellSeeding](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.CellSeeding.md)
-* [SeedOrigin](../../../api-reference/OblivionMp.Sdk.Common.Archetypes.Mixins/OblivionMp.Sdk.Common.Archetypes.Mixins.SeedOrigin.md)
+* [CellSeeding](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.CellSeeding.md)
+* [SeedOrigin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SeedOrigin.md)
 * [SeededFormTypes](../../../api-reference/ReadyM.Relay.Common.Oblivion/ReadyM.Relay.Common.Oblivion.SeededFormTypes.md)
 * [FormType](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.FormType.md)
-* [DroppedItem](../../../api-reference/OblivionMp.Sdk.Common.Archetypes/OblivionMp.Sdk.Common.Archetypes.DroppedItem.md)
+* [DroppedItem](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.DroppedItem.md)
 * [Cell](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Cell.md)
-* [SessionClock](../../../api-reference/OblivionMp.Sdk.Serverside/OblivionMp.Sdk.Serverside.SessionClock.md)
+* [SessionClock](../../../api-reference/OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionClock.md)

@@ -15,7 +15,7 @@ public interface INativeInit
 
 ## Methods
 
-### <a id="ReadyM_Api_ECS_Components_INativeInit_Init_Yooni_Native_LowLevel_AllocatorKind_"></a> Init\(AllocatorKind\)
+### <a id="ReadyM_Api_ECS_Components_INativeInit_Init_ReadyM_Native_LowLevel_AllocatorKind_"></a> Init\(AllocatorKind\)
 
 ```csharp
 void Init(AllocatorKind allocatorKind)

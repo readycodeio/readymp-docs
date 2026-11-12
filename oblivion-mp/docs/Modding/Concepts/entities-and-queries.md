@@ -10,7 +10,7 @@ over every entity of a shape, looking one up by its id, creating and deleting th
 or goes.
 
 ```csharp title="MyMod.Server/Medic.cs"
-using OblivionMp.Sdk.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Server.Entities;
 
@@ -217,7 +217,7 @@ Name the shape in the attribute and take it as the only parameter:
 
 ```csharp title="MyMod.Server/Arrivals.cs"
 using Microsoft.Extensions.Logging;
-using OblivionMp.Sdk.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes;
 using ReadyM.SDK.Attributes;
 
 namespace MyMod.Server;
@@ -248,7 +248,7 @@ When they run:
 * A deletion inside a loop runs its handlers when the loop ends.
 
 :::note
-Not in 1.0 yet: a create handler on the client for an entity that arrives from the server. To react to one, look for
+Not in 1.1.0 yet: a create handler on the client for an entity that arrives from the server. To react to one, look for
 it in a service's `Update`.
 :::
 
@@ -261,7 +261,7 @@ it in a service's `Update`.
 | Who owns what you create | This player. | The server, or the player you pass to `Create<T>(scope, owner)`. |
 | Holding a query | A query is a value you can keep in a field or return from a property. | A query only lives inside the method that asked for it. Ask for a new one each time. |
 
-On the client, `using OblivionMp.Sdk;` adds shortcuts to `IEntities`: `entities.AllPlayers`,
+On the client, `using OblivionMP.SDK;` adds shortcuts to `IEntities`: `entities.AllPlayers`,
 `entities.AllMainCharacters` and `entities.AllDroppedItems` are the same as the matching `Query<T>()`. For the local
 player and the players around them, ask for `IPlayers`; see [Players and characters](../Game/players-and-characters.md).
 
@@ -286,7 +286,7 @@ player and the players around them, ask for `IPlayers`; see [Players and charact
   [ScopedQuery (client)](../../../api-reference/ReadyM.SDK.Client.Entities/ReadyM.SDK.Client.Entities.ScopedQuery-1.md)
 * [EntityQuery (server)](../../../api-reference/ReadyM.SDK.Server.Entities/ReadyM.SDK.Server.Entities.EntityQuery-1.md),
   [ScopedQuery (server)](../../../api-reference/ReadyM.SDK.Server.Entities/ReadyM.SDK.Server.Entities.ScopedQuery-1.md)
-* [IEntitiesExtensions](../../../api-reference/OblivionMp.Sdk/OblivionMp.Sdk.IEntitiesExtensions.md)
+* [IEntitiesExtensions](../../../api-reference/OblivionMP.SDK/OblivionMP.SDK.IEntitiesExtensions.md)
 * [ArchetypeExtensions](../../../api-reference/ReadyM.SDK.Archetypes/ReadyM.SDK.Archetypes.ArchetypeExtensions.md)
 * [IArchetypeQueryable](../../../api-reference/ReadyM.SDK.Archetypes/ReadyM.SDK.Archetypes.IArchetypeQueryable.md),
   [IArchetypeMixin](../../../api-reference/ReadyM.SDK.Archetypes/ReadyM.SDK.Archetypes.IArchetypeMixin.md),

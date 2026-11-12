@@ -28,7 +28,7 @@ Each project references exactly one package, and both halves reference the share
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="ReadyM.SDK.Oblivion.Common" Version="1.0.0" />
+        <PackageReference Include="ReadyM.SDK.Oblivion.Common" Version="1.1.0" />
     </ItemGroup>
 
 </Project>
@@ -44,7 +44,7 @@ Each project references exactly one package, and both halves reference the share
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="ReadyM.SDK.Oblivion.Client" Version="1.0.0" />
+        <PackageReference Include="ReadyM.SDK.Oblivion.Client" Version="1.1.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -122,7 +122,7 @@ $serverContentFiles = @(
   "dependencies": [
     {
       "uniqueId": "OblivionMP.SDK",
-      "minimumVersion": "1.0.0"
+      "minimumVersion": "1.1.0"
     }
   ]
 }

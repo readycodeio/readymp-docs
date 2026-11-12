@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 # Identity values
@@ -27,9 +27,9 @@ public static partial class RpcContracts
 
 ```csharp title="MyMod.Server/RpcHandlers.cs"
 using MyMod.Common;
-using OblivionMp.Sdk.Common.Archetypes;
-using OblivionMp.Sdk.Common.Archetypes.Mixins;
-using OblivionMp.Sdk.Serverside.Spawners;
+using OblivionMP.SDK.Common.Archetypes;
+using OblivionMP.SDK.Common.Archetypes.Mixins;
+using OblivionMP.SDK.Serverside.Spawners;
 using ReadyM.Api.Idents;
 using ReadyM.Relay.Common.Oblivion.ECS.Values;
 using ReadyM.Relay.Server.Sdk.Rpc;
@@ -177,7 +177,7 @@ if (what.FormId == new FormId(0x0000000F))
 
 `FormType` is the kind of record a form is: `Weapon`, `Armor`, `NPC`, `Creature`, `Container`, `Spell` and so on,
 following the record types of Oblivion's data files. The server's game data uses it, for example `Kind` on
-`LeveledListItem` and `BaseContainerItem` entries. 1.0 has no call that tells you the `FormType` of an arbitrary
+`LeveledListItem` and `BaseContainerItem` entries. 1.1.0 has no call that tells you the `FormType` of an arbitrary
 `FormId`.
 
 ### Compact numbers for your own messages
@@ -213,6 +213,6 @@ partial void OnPickSlot(RpcContext context, VarUInt slot)
 * [FormType](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.FormType.md)
 * [RpcContext](../../../api-reference/ReadyM.Relay.Server.Sdk.Rpc/ReadyM.Relay.Server.Sdk.Rpc.RpcContext.md)
 * [IPlayers](../../../api-reference/ReadyM.Relay.Server.Sdk.Players/ReadyM.Relay.Server.Sdk.Players.IPlayers.md) (server)
-* [SpawnerCell](../../../api-reference/OblivionMp.Sdk.Serverside.Spawners/OblivionMp.Sdk.Serverside.Spawners.SpawnerCell.md)
+* [SpawnerCell](../../../api-reference/OblivionMP.SDK.Serverside.Spawners/OblivionMP.SDK.Serverside.Spawners.SpawnerCell.md)
 * [VarUInt](../../../api-reference/ReadyM.Api.Serialization/ReadyM.Api.Serialization.VarUInt.md),
   [VarUShort](../../../api-reference/ReadyM.Api.Serialization/ReadyM.Api.Serialization.VarUShort.md)
