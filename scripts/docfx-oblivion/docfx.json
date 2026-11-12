@@ -7,11 +7,9 @@
           "src": "../../../../oblivion-mod/OblivionMP.SDK/bin/Debug/net10.0",
           "files": [
             "ReadyM.SDK.dll",
-            "ReadyM.SDK.Chunks.dll",
             "ReadyM.Api.dll",
             "ReadyM.Api.Multiplayer.dll",
             "ReadyM.SDK.Client.dll",
-            "ReadyM.Relay.Client.dll",
             "ReadyM.Cef.dll",
             "OblivionMpCSharpMod.dll",
             "OblivionMP.SDK.dll",

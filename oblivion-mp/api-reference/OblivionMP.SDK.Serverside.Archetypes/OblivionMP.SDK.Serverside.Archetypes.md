@@ -18,6 +18,8 @@ The base value of every item by form id, kept on the server only.
 
 A leveled list from the game files, kept on the server only.
 
+ [LockpickAttempt](../OblivionMP.SDK.Serverside.Archetypes/OblivionMP.SDK.Serverside.Archetypes.LockpickAttempt.md)
+
  [NpcTemplate](../OblivionMP.SDK.Serverside.Archetypes/OblivionMP.SDK.Serverside.Archetypes.NpcTemplate.md)
 
 An NPC's record from the game files, kept on the server only.

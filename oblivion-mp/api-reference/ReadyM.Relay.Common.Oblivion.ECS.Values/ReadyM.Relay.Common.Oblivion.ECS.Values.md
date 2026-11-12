@@ -4,6 +4,10 @@ description: 'The types in the ReadyM.Relay.Common.Oblivion.ECS.Values namespace
 ---
 # ReadyM.Relay.Common.Oblivion.ECS.Values
 
+### Namespaces
+
+ [ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting](../ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting/ReadyM.Relay.Common.Oblivion.ECS.Values.Scripting.md)
+
 ### Structs
 
  [AiIntentEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.AiIntentEntry.md)
@@ -53,6 +57,8 @@ A compass marker for a quest stage.
  [QuestEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.QuestEntry.md)
 
 A quest in a player's journal.
+
+ [ScriptVariable](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.ScriptVariable.md)
 
  [SpokenTopicEntry](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.SpokenTopicEntry.md)
 
@@ -120,6 +126,8 @@ The kind of item an enchantment is made for (the engine's ENIT type field).
 
 The kind of a record in the game files.
 
+ [LinkedPathPoints](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.LinkedPathPoints.md)
+
  [MagicEffectRange](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectRange.md)
 
 Whom a magic effect reaches.
@@ -127,6 +135,8 @@ Whom a magic effect reaches.
  [ParentCellKind](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.ParentCellKind.md)
 
 Whether a cell is an interior or an exterior.
+
+ [PresenceFlag](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.PresenceFlag.md)
 
  [QuestPhase](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.QuestPhase.md)
 

@@ -6,38 +6,6 @@ description: 'The types in the OblivionMP.SDK.Common.Archetypes.Mixins namespace
 
 ### Classes
 
- [Vitals.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Vitals.Field.md)
-
-Tokens naming each of Vitals's values, for mappings and overrides.
-
- [SummonedBy.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SummonedBy.Field.md)
-
-Tokens naming each of SummonedBy's values, for mappings and overrides.
-
- [Time.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Time.Field.md)
-
-Tokens naming each of Time's values, for mappings and overrides.
-
- [AiState.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.AiState.Field.md)
-
-Tokens naming each of AiState's values, for mappings and overrides.
-
- [Transform.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Transform.Field.md)
-
-Tokens naming each of Transform's values, for mappings and overrides.
-
- [SpokenTopics.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SpokenTopics.Field.md)
-
-Tokens naming each of SpokenTopics's values, for mappings and overrides.
-
- [AnimationState.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.AnimationState.Field.md)
-
-Tokens naming each of AnimationState's values, for mappings and overrides.
-
- [Quiver.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Quiver.Field.md)
-
-Tokens naming each of Quiver's values, for mappings and overrides.
-
  [Appearance.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Appearance.Field.md)
 
 Tokens naming each of Appearance's values, for mappings and overrides.
@@ -46,69 +14,37 @@ Tokens naming each of Appearance's values, for mappings and overrides.
 
 Tokens naming each of ItemValuesMixin's values, for mappings and overrides.
 
- [SpawnOrigin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SpawnOrigin.Field.md)
-
-Tokens naming each of SpawnOrigin's values, for mappings and overrides.
-
- [Journal.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Journal.Field.md)
-
-Tokens naming each of Journal's values, for mappings and overrides.
-
- [LevelMixin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LevelMixin.Field.md)
-
-Tokens naming each of LevelMixin's values, for mappings and overrides.
-
- [LevelScaling.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LevelScaling.Field.md)
-
-Tokens naming each of LevelScaling's values, for mappings and overrides.
-
- [SkillAttributes.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SkillAttributes.Field.md)
-
-Tokens naming each of SkillAttributes's values, for mappings and overrides.
-
  [ItemExtraData.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ItemExtraData.Field.md)
 
 Tokens naming each of ItemExtraData's values, for mappings and overrides.
-
- [ServerRefIdMark.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ServerRefIdMark.Field.md)
-
-Tokens naming each of ServerRefIdMark's values, for mappings and overrides.
-
- [LeveledListTemplateMixin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LeveledListTemplateMixin.Field.md)
-
-Tokens naming each of LeveledListTemplateMixin's values, for mappings and overrides.
-
- [NicknameMixin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.NicknameMixin.Field.md)
-
-Tokens naming each of NicknameMixin's values, for mappings and overrides.
-
- [NpcTemplateMixin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.NpcTemplateMixin.Field.md)
-
-Tokens naming each of NpcTemplateMixin's values, for mappings and overrides.
-
- [ParentCell.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ParentCell.Field.md)
-
-Tokens naming each of ParentCell's values, for mappings and overrides.
-
- [PlayerActivity.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.PlayerActivity.Field.md)
-
-Tokens naming each of PlayerActivity's values, for mappings and overrides.
-
- [Presence.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Presence.Field.md)
-
-Tokens naming each of Presence's values, for mappings and overrides.
-
- [SeedOrigin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SeedOrigin.Field.md)
-
-Tokens naming each of SeedOrigin's values, for mappings and overrides.
 
  [FloraState.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.FloraState.Field.md)
 
 Tokens naming each of FloraState's values, for mappings and overrides.
 
- [Weather.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Weather.Field.md)
+ [Equipment.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Equipment.Field.md)
 
-Tokens naming each of Weather's values, for mappings and overrides.
+Tokens naming each of Equipment's values, for mappings and overrides.
+
+ [EffectsAttributes.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.EffectsAttributes.Field.md)
+
+Tokens naming each of EffectsAttributes's values, for mappings and overrides.
+
+ [DoorwaySeedOrigin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.DoorwaySeedOrigin.Field.md)
+
+Tokens naming each of DoorwaySeedOrigin's values, for mappings and overrides.
+
+ [Doorway.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Doorway.Field.md)
+
+Tokens naming each of Doorway's values, for mappings and overrides.
+
+ [Difficulty.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Difficulty.Field.md)
+
+Tokens naming each of Difficulty's values, for mappings and overrides.
+
+ [AnimationState.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.AnimationState.Field.md)
+
+Tokens naming each of AnimationState's values, for mappings and overrides.
 
  [Dialogue.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Dialogue.Field.md)
 
@@ -118,22 +54,6 @@ Tokens naming each of Dialogue's values, for mappings and overrides.
 
 Tokens naming each of ContainerTemplateMixin's values, for mappings and overrides.
 
- [CharacterIdentity.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.CharacterIdentity.Field.md)
-
-Tokens naming each of CharacterIdentity's values, for mappings and overrides.
-
- [SocialAttributes.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SocialAttributes.Field.md)
-
-Tokens naming each of SocialAttributes's values, for mappings and overrides.
-
- [WorldState.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.WorldState.Field.md)
-
-Tokens naming each of WorldState's values, for mappings and overrides.
-
- [Difficulty.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Difficulty.Field.md)
-
-Tokens naming each of Difficulty's values, for mappings and overrides.
-
  [ContainerItems.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ContainerItems.Field.md)
 
 Tokens naming each of ContainerItems's values, for mappings and overrides.
@@ -142,21 +62,145 @@ Tokens naming each of ContainerItems's values, for mappings and overrides.
 
 Tokens naming each of CellSeeding's values, for mappings and overrides.
 
- [EffectsAttributes.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.EffectsAttributes.Field.md)
-
-Tokens naming each of EffectsAttributes's values, for mappings and overrides.
-
  [BaseIdMixin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.BaseIdMixin.Field.md)
 
 Tokens naming each of BaseIdMixin's values, for mappings and overrides.
 
- [Equipment.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Equipment.Field.md)
+ [AiState.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.AiState.Field.md)
 
-Tokens naming each of Equipment's values, for mappings and overrides.
+Tokens naming each of AiState's values, for mappings and overrides.
+
+ [Journal.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Journal.Field.md)
+
+Tokens naming each of Journal's values, for mappings and overrides.
+
+ [CharacterIdentity.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.CharacterIdentity.Field.md)
+
+Tokens naming each of CharacterIdentity's values, for mappings and overrides.
+
+ [LevelMixin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LevelMixin.Field.md)
+
+Tokens naming each of LevelMixin's values, for mappings and overrides.
+
+ [LevelScaling.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LevelScaling.Field.md)
+
+Tokens naming each of LevelScaling's values, for mappings and overrides.
 
  [RefIdMixin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.RefIdMixin.Field.md)
 
 Tokens naming each of RefIdMixin's values, for mappings and overrides.
+
+ [ScriptPolicy.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ScriptPolicy.Field.md)
+
+Tokens naming each of ScriptPolicy's values, for mappings and overrides.
+
+ [ScriptPolicyDefault.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ScriptPolicyDefault.Field.md)
+
+Tokens naming each of ScriptPolicyDefault's values, for mappings and overrides.
+
+ [ScriptVariables.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ScriptVariables.Field.md)
+
+Tokens naming each of ScriptVariables's values, for mappings and overrides.
+
+ [SeedOrigin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SeedOrigin.Field.md)
+
+Tokens naming each of SeedOrigin's values, for mappings and overrides.
+
+ [Sequence.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Sequence.Field.md)
+
+Tokens naming each of Sequence's values, for mappings and overrides.
+
+ [ServerRefIdMark.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ServerRefIdMark.Field.md)
+
+Tokens naming each of ServerRefIdMark's values, for mappings and overrides.
+
+ [Quiver.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Quiver.Field.md)
+
+Tokens naming each of Quiver's values, for mappings and overrides.
+
+ [SkillAttributes.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SkillAttributes.Field.md)
+
+Tokens naming each of SkillAttributes's values, for mappings and overrides.
+
+ [SpawnOrigin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SpawnOrigin.Field.md)
+
+Tokens naming each of SpawnOrigin's values, for mappings and overrides.
+
+ [SpokenTopics.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SpokenTopics.Field.md)
+
+Tokens naming each of SpokenTopics's values, for mappings and overrides.
+
+ [SummonedBy.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SummonedBy.Field.md)
+
+Tokens naming each of SummonedBy's values, for mappings and overrides.
+
+ [Time.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Time.Field.md)
+
+Tokens naming each of Time's values, for mappings and overrides.
+
+ [Transform.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Transform.Field.md)
+
+Tokens naming each of Transform's values, for mappings and overrides.
+
+ [Vitals.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Vitals.Field.md)
+
+Tokens naming each of Vitals's values, for mappings and overrides.
+
+ [Weather.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Weather.Field.md)
+
+Tokens naming each of Weather's values, for mappings and overrides.
+
+ [SocialAttributes.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SocialAttributes.Field.md)
+
+Tokens naming each of SocialAttributes's values, for mappings and overrides.
+
+ [Presence.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Presence.Field.md)
+
+Tokens naming each of Presence's values, for mappings and overrides.
+
+ [WorldState.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.WorldState.Field.md)
+
+Tokens naming each of WorldState's values, for mappings and overrides.
+
+ [LinkedPathPointsState.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LinkedPathPointsState.Field.md)
+
+Tokens naming each of LinkedPathPointsState's values, for mappings and overrides.
+
+ [PlayerActivity.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.PlayerActivity.Field.md)
+
+Tokens naming each of PlayerActivity's values, for mappings and overrides.
+
+ [LockSeedOrigin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LockSeedOrigin.Field.md)
+
+Tokens naming each of LockSeedOrigin's values, for mappings and overrides.
+
+ [ParentCell.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ParentCell.Field.md)
+
+Tokens naming each of ParentCell's values, for mappings and overrides.
+
+ [LockState.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LockState.Field.md)
+
+Tokens naming each of LockState's values, for mappings and overrides.
+
+ [LoadOrder.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LoadOrder.Field.md)
+
+Tokens naming each of LoadOrder's values, for mappings and overrides.
+
+ [LeveledListTemplateMixin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LeveledListTemplateMixin.Field.md)
+
+Tokens naming each of LeveledListTemplateMixin's values, for mappings and overrides.
+
+ [NpcTemplateMixin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.NpcTemplateMixin.Field.md)
+
+Tokens naming each of NpcTemplateMixin's values, for mappings and overrides.
+
+ [NicknameMixin.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.NicknameMixin.Field.md)
+
+Tokens naming each of NicknameMixin's values, for mappings and overrides.
+
+ [LockpickClaim.Field](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LockpickClaim.Field.md)
+
+Tokens naming each of LockpickClaim's values, for mappings and overrides.
 
 ### Structs
 
@@ -272,6 +316,10 @@ The Topics collection of a Dialogue.
 
 The difficulty every player's game runs at.
 
+ [Doorway](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Doorway.md)
+
+ [DoorwaySeedOrigin](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.DoorwaySeedOrigin.md)
+
  [EffectsAttributes](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.EffectsAttributes.md)
 
 A character's active effect values, keyed by **CharacterEffect** cast to <code>byte</code>.
@@ -332,6 +380,24 @@ A leveled list from the game files.
 
 The Entries collection of a LeveledListTemplateMixin.
 
+ [LinkedPathPointsState](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LinkedPathPointsState.md)
+
+What a script last did to the path grid points a world object links.
+
+ [LoadOrder](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LoadOrder.md)
+
+The plugins the world was seeded from, in load order.
+
+ [LoadOrderPlugins](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LoadOrderPlugins.md)
+
+The Plugins collection of a LoadOrder.
+
+ [LockSeedOrigin](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LockSeedOrigin.md)
+
+ [LockState](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LockState.md)
+
+ [LockpickClaim](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LockpickClaim.md)
+
  [NicknameMixin](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.NicknameMixin.md)
 
 A player's display name.
@@ -354,7 +420,7 @@ What a player's character is doing.
 
  [Presence](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Presence.md)
 
-Whether a world object is in the world.
+Whether a world object is in the world and whether a script destroyed it.
 
  [Quiver](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Quiver.md)
 
@@ -364,9 +430,29 @@ The arrows a character has equipped.
 
 The reference id the game knows an entity by.
 
+ [ScriptPolicy](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ScriptPolicy.md)
+
+How this ref's own scripts run and whether scripts may change it, where not the session's default.
+
+ [ScriptPolicyDefault](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ScriptPolicyDefault.md)
+
+How the session runs each kind of the game's scripts for every ref that has no rule of its own.
+
+ [ScriptVariables](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ScriptVariables.md)
+
+The variables of a world object's script and how many random rolls the script made.
+
+ [ScriptVariablesVariables](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ScriptVariablesVariables.md)
+
+The Variables collection of a ScriptVariables.
+
  [SeedOrigin](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SeedOrigin.md)
 
 How a dropped item was seeded from the game files.
+
+ [Sequence](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Sequence.md)
+
+The animation sequence a world object last finished, such as a lever's pull or a gate's rise.
 
  [ServerRefIdMark](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ServerRefIdMark.md)
 

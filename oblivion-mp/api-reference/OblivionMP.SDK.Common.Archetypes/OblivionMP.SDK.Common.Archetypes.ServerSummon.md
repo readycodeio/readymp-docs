@@ -452,6 +452,30 @@ public bool IsDead { get; }
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
+### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_IsDestroyed"></a> IsDestroyed
+
+Whether a script marked the object destroyed, which keeps it from activating.
+
+```csharp
+public bool IsDestroyed { get; set; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_IsDisabled"></a> IsDisabled
+
+Whether a seeded ref is enabled in the world. Starts from the game files and only the server writes it.
+
+```csharp
+public bool IsDisabled { get; set; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_IsMoving"></a> IsMoving
 
 Whether the character is moving.
@@ -864,6 +888,18 @@ public float Rotation { get; set; }
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
 
+### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_Run"></a> Run
+
+How the ref's own script blocks run, **SessionDefault** for the session's rule of its kind.
+
+```csharp
+public ScriptRunPolicy Run { get; set; }
+```
+
+#### Property Value
+
+ ScriptRunPolicy
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_ShieldHandPoseAnimLayerClassName"></a> ShieldHandPoseAnimLayerClassName
 
 The class name of the animation layer for the shield hand pose.
@@ -911,6 +947,18 @@ public NativeString256 StaggerAnimLayerClassName { get; set; }
 #### Property Value
 
  NativeString256
+
+### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_Target"></a> Target
+
+How script commands that change the ref run, **SessionDefault** for the session's rule.
+
+```csharp
+public ScriptTargetPolicy Target { get; set; }
+```
+
+#### Property Value
+
+ ScriptTargetPolicy
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_TorchAnimLayerClassName"></a> TorchAnimLayerClassName
 

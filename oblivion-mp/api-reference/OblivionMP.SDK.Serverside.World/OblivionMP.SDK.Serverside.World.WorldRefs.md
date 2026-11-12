@@ -139,6 +139,22 @@ public bool TryFindContainer(uint refId, out Container container)
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
+### <a id="OblivionMP_SDK_Serverside_World_WorldRefs_TryFindDoor_System_UInt32_OblivionMP_SDK_Common_Archetypes_Door__"></a> TryFindDoor\(uint, out Door\)
+
+```csharp
+public bool TryFindDoor(uint refId, out Door door)
+```
+
+#### Parameters
+
+`refId` [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
+
+`door` Door
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 ### <a id="OblivionMP_SDK_Serverside_World_WorldRefs_TryFindFlora_System_UInt32_OblivionMP_SDK_Common_Archetypes_Flora__"></a> TryFindFlora\(uint, out Flora\)
 
 ```csharp
@@ -150,6 +166,40 @@ public bool TryFindFlora(uint refId, out Flora flora)
 `refId` [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
 
 `flora` Flora
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="OblivionMP_SDK_Serverside_World_WorldRefs_TryFindLinkedDoor_ReadyM_SDK_Entities_EntityHandle_OblivionMP_SDK_Common_Archetypes_Door__"></a> TryFindLinkedDoor\(EntityHandle, out Door\)
+
+The other door of a load door pair, which shares its lock.
+
+```csharp
+public bool TryFindLinkedDoor(EntityHandle door, out Door partner)
+```
+
+#### Parameters
+
+`door` EntityHandle
+
+`partner` Door
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="OblivionMP_SDK_Serverside_World_WorldRefs_TryFindLock_System_UInt32_ReadyM_SDK_Entities_EntityHandle__"></a> TryFindLock\(uint, out EntityHandle\)
+
+```csharp
+public bool TryFindLock(uint refId, out EntityHandle holder)
+```
+
+#### Parameters
+
+`refId` [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
+
+`holder` EntityHandle
 
 #### Returns
 

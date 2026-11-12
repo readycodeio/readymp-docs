@@ -1,13 +1,13 @@
 ---
 title: 'Class SessionClock'
-description: 'The session''s game time, read from an area''s clock.'
+description: 'The game time of an area, read from its clock.'
 ---
 # Class SessionClock
 
 Namespace: [OblivionMP.SDK.Serverside](../OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.md)  
 Assembly: OblivionMP.SDK.Serverside.dll  
 
-The session's game time, read from an area's clock.
+The game time of an area, read from its clock.
 
 ```csharp
 public sealed class SessionClock
@@ -31,7 +31,7 @@ public sealed class SessionClock
 
 ### <a id="OblivionMP_SDK_Serverside_SessionClock__ctor_ReadyM_SDK_Server_Entities_IEntities_"></a> SessionClock\(IEntities\)
 
-The session's game time, read from an area's clock.
+The game time of an area, read from its clock.
 
 ```csharp
 public SessionClock(IEntities entities)
@@ -43,13 +43,17 @@ public SessionClock(IEntities entities)
 
 ## Methods
 
-### <a id="OblivionMP_SDK_Serverside_SessionClock_NowGameHours"></a> NowGameHours\(\)
+### <a id="OblivionMP_SDK_Serverside_SessionClock_NowGameHours_ReadyM_Api_Idents_AreaId_"></a> NowGameHours\(AreaId\)
 
-Game hours since the game started, or 0 before any area exists.
+Game hours since the game started in <code class="paramref">area</code>, or 0 before the area has a clock.
 
 ```csharp
-public float NowGameHours()
+public float NowGameHours(AreaId area)
 ```
+
+#### Parameters
+
+`area` AreaId
 
 #### Returns
 

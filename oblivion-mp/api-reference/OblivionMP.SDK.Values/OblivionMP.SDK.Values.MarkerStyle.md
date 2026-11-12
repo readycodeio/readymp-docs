@@ -132,6 +132,19 @@ public int OutlineSize { get; init; }
 
  [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
+### <a id="OblivionMP_SDK_Values_MarkerStyle_ShowWhenOccluded"></a> ShowWhenOccluded
+
+Keep the marker shown while its character is not being drawn. Off by default: the marker
+fades out while its character is hidden.
+
+```csharp
+public bool ShowWhenOccluded { get; init; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 ### <a id="OblivionMP_SDK_Values_MarkerStyle_Socket"></a> Socket
 
 Bone or socket on the character's mesh to follow, such as <code>head</code> for humanoids. Skeletons name their bones

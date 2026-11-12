@@ -5,7 +5,7 @@ description: 'Denotes a reason for being disconnected from the server.'
 # Enum DisconnectedReason
 
 Namespace: [ReadyM.Api.Multiplayer.Protocol](../ReadyM.Api.Multiplayer.Protocol/ReadyM.Api.Multiplayer.Protocol.md)  
-Assembly: ReadyM.Api.dll  
+Assembly: ReadyM.Api.Multiplayer.dll  
 
 Denotes a reason for being disconnected from the server.
 

@@ -6,6 +6,8 @@ description: 'The types in the OblivionMpCSharpMod namespace.'
 
 ### Namespaces
 
+ [OblivionMpCSharpMod.GameEvents](../OblivionMpCSharpMod.GameEvents/OblivionMpCSharpMod.GameEvents.md)
+
  [OblivionMpCSharpMod.Input](../OblivionMpCSharpMod.Input/OblivionMpCSharpMod.Input.md)
 
  [OblivionMpCSharpMod.SnippetRuntime](../OblivionMpCSharpMod.SnippetRuntime/OblivionMpCSharpMod.SnippetRuntime.md)

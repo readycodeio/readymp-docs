@@ -5,7 +5,7 @@ description: 'Sends a NativeString256, or a NativeList of them, as a small id on
 # Class InternedAttribute
 
 Namespace: [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)  
-Assembly: ReadyM.Api.dll  
+Assembly: ReadyM.Api.Multiplayer.dll  
 
 Sends a NativeString256, or a NativeList of them, as a small id once the server has seen the string.
 

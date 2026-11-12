@@ -5,7 +5,7 @@ description: 'The float or vector field is sent over the wire as a fixed-point n
 # Class QuantizeAttribute
 
 Namespace: [ReadyM.Api.Multiplayer.Generators](../ReadyM.Api.Multiplayer.Generators/ReadyM.Api.Multiplayer.Generators.md)  
-Assembly: ReadyM.Api.dll  
+Assembly: ReadyM.Api.Multiplayer.dll  
 
 The float or vector field is sent over the wire as a fixed-point number in <code>bits</code> bits (8, 16 or 24) between <code>min</code> and
 <code>max</code>, instead of a 4-byte float per number.

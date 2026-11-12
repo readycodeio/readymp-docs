@@ -20,6 +20,7 @@ An item lying on the ground.
 [Include(typeof(Presence), "")]
 [Include(typeof(SeedOrigin), "")]
 [Include(typeof(ParentCell), "ParentCell")]
+[Include(typeof(ScriptPolicy), "")]
 public readonly struct DroppedItem : IArchetype, IArchetypeQueryable, IEntityShape
 ```
 
@@ -75,6 +76,18 @@ public float Durability { get; set; }
 #### Property Value
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_DroppedItem_IsDestroyed"></a> IsDestroyed
+
+Whether a script marked the object destroyed, which keeps it from activating.
+
+```csharp
+public bool IsDestroyed { get; set; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_DroppedItem_IsDisabled"></a> IsDisabled
 
@@ -182,6 +195,18 @@ public float Rotation { get; set; }
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
 
+### <a id="OblivionMP_SDK_Common_Archetypes_DroppedItem_Run"></a> Run
+
+How the ref's own script blocks run, **SessionDefault** for the session's rule of its kind.
+
+```csharp
+public ScriptRunPolicy Run { get; set; }
+```
+
+#### Property Value
+
+ ScriptRunPolicy
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_DroppedItem_SeededCount"></a> SeededCount
 
 How many items the stack held when the server seeded it, or 0 when it was not seeded.
@@ -205,6 +230,18 @@ public int StackSize { get; set; }
 #### Property Value
 
  [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_DroppedItem_Target"></a> Target
+
+How script commands that change the ref run, **SessionDefault** for the session's rule.
+
+```csharp
+public ScriptTargetPolicy Target { get; set; }
+```
+
+#### Property Value
+
+ ScriptTargetPolicy
 
 ## Methods
 

@@ -14,4 +14,16 @@ description: 'The types in the ReadyM.Relay.Common.Oblivion.Rpc namespace.'
 
 A stack of one kind of item, matched by form, durability and charge together.
 
+ [ScriptVariablesData](../ReadyM.Relay.Common.Oblivion.Rpc/ReadyM.Relay.Common.Oblivion.Rpc.ScriptVariablesData.md)
+
+### Enums
+
+ [DoorTransition](../ReadyM.Relay.Common.Oblivion.Rpc/ReadyM.Relay.Common.Oblivion.Rpc.DoorTransition.md)
+
+ [DoorTransitionSource](../ReadyM.Relay.Common.Oblivion.Rpc/ReadyM.Relay.Common.Oblivion.Rpc.DoorTransitionSource.md)
+
+ [LockChangeSource](../ReadyM.Relay.Common.Oblivion.Rpc/ReadyM.Relay.Common.Oblivion.Rpc.LockChangeSource.md)
+
+ [ScriptEventKind](../ReadyM.Relay.Common.Oblivion.Rpc/ReadyM.Relay.Common.Oblivion.Rpc.ScriptEventKind.md)
+
 

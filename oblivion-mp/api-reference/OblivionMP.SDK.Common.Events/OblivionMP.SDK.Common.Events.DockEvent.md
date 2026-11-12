@@ -58,6 +58,16 @@ public Furniture Furniture { readonly get; set; }
 
  [Furniture](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Furniture.md)
 
+### <a id="OblivionMP_SDK_Common_Events_DockEvent_HorseEntryPoint"></a> HorseEntryPoint
+
+```csharp
+public uint HorseEntryPoint { readonly get; set; }
+```
+
+#### Property Value
+
+ [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
+
 ### <a id="OblivionMP_SDK_Common_Events_DockEvent_MarkerIndex"></a> MarkerIndex
 
 ```csharp

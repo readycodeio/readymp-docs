@@ -55,6 +55,26 @@ public void Add<T>(T inventory, InventoryEntry item) where T : struct, IInventor
 
 `T` 
 
+### <a id="OblivionMP_SDK_Serverside_Items_Inventories_Carries__1___0_ReadyM_Relay_Common_Oblivion_FormId_"></a> Carries<T\>\(T, FormId\)
+
+```csharp
+public bool Carries<T>(T inventory, FormId item) where T : struct, IInventory
+```
+
+#### Parameters
+
+`inventory` T
+
+`item` FormId
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+#### Type Parameters
+
+`T` 
+
 ### <a id="OblivionMP_SDK_Serverside_Items_Inventories_CountCarried__1___0_ReadyM_Relay_Common_Oblivion_Rpc_ItemStackData__"></a> CountCarried<T\>\(T, in ItemStackData\)
 
 How many items of the stack the inventory holds, not counting worn ones.

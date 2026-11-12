@@ -1,13 +1,13 @@
 ---
 title: 'Struct Presence'
-description: 'Whether a world object is in the world.'
+description: 'Whether a world object is in the world and whether a script destroyed it.'
 ---
 # Struct Presence
 
 Namespace: [OblivionMP.SDK.Common.Archetypes.Mixins](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.md)  
 Assembly: OblivionMP.SDK.Common.dll  
 
-Whether a world object is in the world.
+Whether a world object is in the world and whether a script destroyed it.
 
 ```csharp
 [ArchetypeMixin(Replication.ServerAuthoritative)]
@@ -30,6 +30,18 @@ IEntityShape
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
 
 ## Properties
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_Presence_IsDestroyed"></a> IsDestroyed
+
+Whether a script marked the object destroyed, which keeps it from activating.
+
+```csharp
+public bool IsDestroyed { get; set; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_Presence_IsDisabled"></a> IsDisabled
 

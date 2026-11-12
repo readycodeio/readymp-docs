@@ -14,21 +14,21 @@ description: 'The types in the OblivionMP.SDK.Common.Archetypes namespace.'
 
 Tokens naming each of SpellForm's values, for mappings and overrides.
 
- [MainCharacter.Field](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.MainCharacter.Field.md)
-
-Tokens naming each of MainCharacter's values, for mappings and overrides.
-
  [EnchantedItemForm.Field](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.EnchantedItemForm.Field.md)
 
 Tokens naming each of EnchantedItemForm's values, for mappings and overrides.
+
+ [AlchemyForm.Field](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.AlchemyForm.Field.md)
+
+Tokens naming each of AlchemyForm's values, for mappings and overrides.
 
  [DroppedItem.Field](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.DroppedItem.Field.md)
 
 Tokens naming each of DroppedItem's values, for mappings and overrides.
 
- [AlchemyForm.Field](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.AlchemyForm.Field.md)
+ [MainCharacter.Field](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.MainCharacter.Field.md)
 
-Tokens naming each of AlchemyForm's values, for mappings and overrides.
+Tokens naming each of MainCharacter's values, for mappings and overrides.
 
 ### Structs
 
@@ -45,6 +45,8 @@ The Effects collection of a AlchemyForm.
  [Container](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Container.md)
 
 A container placed in the world, such as a chest, barrel or sack.
+
+ [Door](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Door.md)
 
  [DroppedItem](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.DroppedItem.md)
 
@@ -87,5 +89,9 @@ A spell a player made, shared with every client and the server.
  [SpellFormEffects](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.SpellFormEffects.md)
 
 The Effects collection of a SpellForm.
+
+ [WorldActivator](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.WorldActivator.md)
+
+A lever, gate, trap, trigger or other activator placed in the world.
 
 

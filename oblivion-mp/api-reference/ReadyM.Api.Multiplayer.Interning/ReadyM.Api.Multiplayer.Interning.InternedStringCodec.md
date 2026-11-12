@@ -5,7 +5,7 @@ description: 'Writes and reads a string marked [Interned]. Called by generated c
 # Class InternedStringCodec
 
 Namespace: [ReadyM.Api.Multiplayer.Interning](../ReadyM.Api.Multiplayer.Interning/ReadyM.Api.Multiplayer.Interning.md)  
-Assembly: ReadyM.Api.dll  
+Assembly: ReadyM.Api.Multiplayer.dll  
 
 Writes and reads a string marked [Interned]. Called by generated code.
 

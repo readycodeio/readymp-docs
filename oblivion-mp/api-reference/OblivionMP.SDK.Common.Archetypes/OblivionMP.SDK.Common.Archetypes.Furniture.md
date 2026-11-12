@@ -17,6 +17,8 @@ A chair, bed or other piece of furniture placed in the world.
 [Include(typeof(BaseIdMixin), "")]
 [Include(typeof(Transform), "")]
 [Include(typeof(Presence), "")]
+[Include(typeof(ParentCell), "")]
+[Include(typeof(ScriptPolicy), "")]
 public readonly struct Furniture : IArchetype, IArchetypeQueryable, IEntityShape
 ```
 
@@ -49,6 +51,18 @@ public NetworkFormId BaseId { get; set; }
 
  NetworkFormId
 
+### <a id="OblivionMP_SDK_Common_Archetypes_Furniture_IsDestroyed"></a> IsDestroyed
+
+Whether a script marked the object destroyed, which keeps it from activating.
+
+```csharp
+public bool IsDestroyed { get; set; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_Furniture_IsDisabled"></a> IsDisabled
 
 Whether a seeded ref is enabled in the world. Starts from the game files and only the server writes it.
@@ -70,6 +84,18 @@ public bool IsValid { get; }
 #### Property Value
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Furniture_Kind"></a> Kind
+
+Whether the cell is an interior or an exterior, or <code>Unknown</code> before the game has said.
+
+```csharp
+public ParentCellKind Kind { get; set; }
+```
+
+#### Property Value
+
+ ParentCellKind
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_Furniture_Position"></a> Position
 
@@ -106,6 +132,54 @@ public float Rotation { get; set; }
 #### Property Value
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Furniture_Run"></a> Run
+
+How the ref's own script blocks run, **SessionDefault** for the session's rule of its kind.
+
+```csharp
+public ScriptRunPolicy Run { get; set; }
+```
+
+#### Property Value
+
+ ScriptRunPolicy
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Furniture_Target"></a> Target
+
+How script commands that change the ref run, **SessionDefault** for the session's rule.
+
+```csharp
+public ScriptTargetPolicy Target { get; set; }
+```
+
+#### Property Value
+
+ ScriptTargetPolicy
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Furniture_X"></a> X
+
+The X coordinate of the exterior grid square.
+
+```csharp
+public int X { get; set; }
+```
+
+#### Property Value
+
+ [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Furniture_Y"></a> Y
+
+The Y coordinate of the exterior grid square.
+
+```csharp
+public int Y { get; set; }
+```
+
+#### Property Value
+
+ [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ## Methods
 

@@ -18,6 +18,10 @@ A container placed in the world, such as a chest, barrel or sack.
 [Include(typeof(Transform), "")]
 [Include(typeof(Presence), "")]
 [Include(typeof(ContainerItems), "")]
+[Include(typeof(LockState), "")]
+[Include(typeof(LockSeedOrigin), "")]
+[Include(typeof(ScriptVariables), "")]
+[Include(typeof(ScriptPolicy), "")]
 public readonly struct Container : IArchetype, IArchetypeQueryable, IEntityShape
 ```
 
@@ -50,12 +54,44 @@ public NetworkFormId BaseId { get; set; }
 
  NetworkFormId
 
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_IsDestroyed"></a> IsDestroyed
+
+Whether a script marked the object destroyed, which keeps it from activating.
+
+```csharp
+public bool IsDestroyed { get; set; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_Container_IsDisabled"></a> IsDisabled
 
 Whether a seeded ref is enabled in the world. Starts from the game files and only the server writes it.
 
 ```csharp
 public bool IsDisabled { get; set; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_IsLeveled"></a> IsLeveled
+
+```csharp
+public bool IsLeveled { get; set; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_IsLocked"></a> IsLocked
+
+```csharp
+public bool IsLocked { get; set; }
 ```
 
 #### Property Value
@@ -76,6 +112,26 @@ public bool IsValid { get; }
 
 ```csharp
 public int ItemsCount { get; }
+```
+
+#### Property Value
+
+ [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_Key"></a> Key
+
+```csharp
+public FormId Key { get; set; }
+```
+
+#### Property Value
+
+ FormId
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_Level"></a> Level
+
+```csharp
+public int Level { get; set; }
 ```
 
 #### Property Value
@@ -106,6 +162,18 @@ public uint RefId { get; set; }
 
  [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
 
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_RollIndex"></a> RollIndex
+
+How many random rolls the script made, so every client continues the same sequence.
+
+```csharp
+public uint RollIndex { get; set; }
+```
+
+#### Property Value
+
+ [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_Container_Rotation"></a> Rotation
 
 The yaw, in degrees.
@@ -117,6 +185,40 @@ public float Rotation { get; set; }
 #### Property Value
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_Run"></a> Run
+
+How the ref's own script blocks run, **SessionDefault** for the session's rule of its kind.
+
+```csharp
+public ScriptRunPolicy Run { get; set; }
+```
+
+#### Property Value
+
+ ScriptRunPolicy
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_Target"></a> Target
+
+How script commands that change the ref run, **SessionDefault** for the session's rule.
+
+```csharp
+public ScriptTargetPolicy Target { get; set; }
+```
+
+#### Property Value
+
+ ScriptTargetPolicy
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_VariablesCount"></a> VariablesCount
+
+```csharp
+public int VariablesCount { get; }
+```
+
+#### Property Value
+
+ [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ## Methods
 
@@ -130,6 +232,17 @@ public void AddItems(in InventoryEntry value)
 #### Parameters
 
 `value` InventoryEntry
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_AddVariables_ReadyM_Relay_Common_Oblivion_ECS_Values_ScriptVariable__"></a> AddVariables\(in ScriptVariable\)
+
+```csharp
+[Changes("ScriptVariables.Field.Variables")]
+public void AddVariables(in ScriptVariable value)
+```
+
+#### Parameters
+
+`value` ScriptVariable
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_Container_As__1"></a> As<T\>\(\)
 
@@ -152,6 +265,13 @@ public T As<T>() where T : struct, IArchetypeQueryable
 public void ClearItems()
 ```
 
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_ClearVariables"></a> ClearVariables\(\)
+
+```csharp
+[Changes("ScriptVariables.Field.Variables")]
+public void ClearVariables()
+```
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_Container_ContainsItems_ReadyM_Relay_Common_Oblivion_ECS_Values_InventoryEntry__"></a> ContainsItems\(in InventoryEntry\)
 
 ```csharp
@@ -161,6 +281,20 @@ public bool ContainsItems(in InventoryEntry value)
 #### Parameters
 
 `value` InventoryEntry
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_ContainsVariables_ReadyM_Relay_Common_Oblivion_ECS_Values_ScriptVariable__"></a> ContainsVariables\(in ScriptVariable\)
+
+```csharp
+public bool ContainsVariables(in ScriptVariable value)
+```
+
+#### Parameters
+
+`value` ScriptVariable
 
 #### Returns
 
@@ -190,6 +324,30 @@ public InventoryEntry GetItems(int index)
 
  InventoryEntry
 
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_GetVariables"></a> GetVariables\(\)
+
+```csharp
+public NativeList<ScriptVariable>.ReadOnly GetVariables()
+```
+
+#### Returns
+
+ NativeList<ScriptVariable\>.ReadOnly
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_GetVariables_System_Int32_"></a> GetVariables\(int\)
+
+```csharp
+public ScriptVariable GetVariables(int index)
+```
+
+#### Parameters
+
+`index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+#### Returns
+
+ ScriptVariable
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_Container_InsertItems_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_InventoryEntry__"></a> InsertItems\(int, in InventoryEntry\)
 
 ```csharp
@@ -202,6 +360,19 @@ public void InsertItems(int index, in InventoryEntry value)
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 `value` InventoryEntry
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_InsertVariables_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_ScriptVariable__"></a> InsertVariables\(int, in ScriptVariable\)
+
+```csharp
+[Changes("ScriptVariables.Field.Variables")]
+public void InsertVariables(int index, in ScriptVariable value)
+```
+
+#### Parameters
+
+`index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+`value` ScriptVariable
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_Container_Is__1"></a> Is<T\>\(\)
 
@@ -250,6 +421,21 @@ public InventoryEntry RemoveAtItems(int index)
 
  InventoryEntry
 
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_RemoveAtVariables_System_Int32_"></a> RemoveAtVariables\(int\)
+
+```csharp
+[Changes("ScriptVariables.Field.Variables")]
+public ScriptVariable RemoveAtVariables(int index)
+```
+
+#### Parameters
+
+`index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+#### Returns
+
+ ScriptVariable
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_Container_SetItems_ReadyM_Native_Container_NativeList_ReadyM_Relay_Common_Oblivion_ECS_Values_InventoryEntry___"></a> SetItems\(in NativeList<InventoryEntry\>\)
 
 ```csharp
@@ -273,6 +459,30 @@ public void SetItems(int index, in InventoryEntry value)
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 `value` InventoryEntry
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_SetVariables_ReadyM_Native_Container_NativeList_ReadyM_Relay_Common_Oblivion_ECS_Values_ScriptVariable___"></a> SetVariables\(in NativeList<ScriptVariable\>\)
+
+```csharp
+[Changes("ScriptVariables.Field.Variables")]
+public void SetVariables(in NativeList<ScriptVariable> value)
+```
+
+#### Parameters
+
+`value` NativeList<ScriptVariable\>
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Container_SetVariables_System_Int32_ReadyM_Relay_Common_Oblivion_ECS_Values_ScriptVariable__"></a> SetVariables\(int, in ScriptVariable\)
+
+```csharp
+[Changes("ScriptVariables.Field.Variables")]
+public void SetVariables(int index, in ScriptVariable value)
+```
+
+#### Parameters
+
+`index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
+
+`value` ScriptVariable
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_Container_TryAs__1___0__"></a> TryAs<T\>\(out T\)
 

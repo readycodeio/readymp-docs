@@ -18,6 +18,7 @@ A plant or other harvestable object placed in the world.
 [Include(typeof(Transform), "")]
 [Include(typeof(Presence), "")]
 [Include(typeof(FloraState), "")]
+[Include(typeof(ScriptPolicy), "")]
 public readonly struct Flora : IArchetype, IArchetypeQueryable, IEntityShape
 ```
 
@@ -61,6 +62,18 @@ public PlayerId HarvestedBy { get; set; }
 #### Property Value
 
  PlayerId
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Flora_IsDestroyed"></a> IsDestroyed
+
+Whether a script marked the object destroyed, which keeps it from activating.
+
+```csharp
+public bool IsDestroyed { get; set; }
+```
+
+#### Property Value
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_Flora_IsDisabled"></a> IsDisabled
 
@@ -131,6 +144,30 @@ public float Rotation { get; set; }
 #### Property Value
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Flora_Run"></a> Run
+
+How the ref's own script blocks run, **SessionDefault** for the session's rule of its kind.
+
+```csharp
+public ScriptRunPolicy Run { get; set; }
+```
+
+#### Property Value
+
+ ScriptRunPolicy
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Flora_Target"></a> Target
+
+How script commands that change the ref run, **SessionDefault** for the session's rule.
+
+```csharp
+public ScriptTargetPolicy Target { get; set; }
+```
+
+#### Property Value
+
+ ScriptTargetPolicy
 
 ## Methods
 

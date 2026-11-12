@@ -42,6 +42,18 @@ public static Shape<Presence> All { get; }
 
  Shape<[Presence](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Presence.md)\>
 
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_Presence_Field_IsDestroyed"></a> IsDestroyed
+
+Names Presence.IsDestroyed.
+
+```csharp
+public static Value<Presence, bool> IsDestroyed { get; }
+```
+
+#### Property Value
+
+ Value<[Presence](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Presence.md), [bool](https://learn.microsoft.com/dotnet/api/system.boolean)\>
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_Presence_Field_IsDisabled"></a> IsDisabled
 
 Names Presence.IsDisabled.

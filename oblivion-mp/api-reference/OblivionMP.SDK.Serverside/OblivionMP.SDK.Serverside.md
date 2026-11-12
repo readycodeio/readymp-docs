@@ -25,7 +25,7 @@ Hands out ref ids for entities the server creates (dropped items, spawned npcs).
 
  [SessionClock](../OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionClock.md)
 
-The session's game time, read from an area's clock.
+The game time of an area, read from its clock.
 
  [SessionDifficulty](../OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionDifficulty.md)
 
