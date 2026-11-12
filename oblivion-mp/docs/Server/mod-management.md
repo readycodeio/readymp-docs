@@ -112,6 +112,10 @@ Mods can ship JSON config files on either side, and you can edit them in place o
 
 Edit a config file and restart the server. For how to write a mod that reads its own config, see [Mod entry and config](../Modding/Getting-started/mod-entry-and-config.md#config-files).
 
+The seed loader that comes with the server ships one. `mods/OblivionMp.SeedLoader/server/config.json` sets when the
+game's scheduled doors unlock and lock, or turns the schedule off: see [the seed loader's
+settings](../Modding/Advanced/world-seeding.md#seed-loader-settings).
+
 ## Security
 
 :::danger[Security notice]
