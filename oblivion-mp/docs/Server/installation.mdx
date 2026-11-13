@@ -142,9 +142,47 @@ Start the server by running the `server.exe` binary.
 On first launch, the server creates a `data/` directory inside the server folder. 
 This directory contains the `web.db` database file, where persistent data is stored.
 
-Unless changed in `config.json`, the server listens on the following ports:
+Unless changed in `config.json`, the server listens on one port, 9050, over both protocols:
 
 | Port | Protocol | Purpose |
 | --- | --- | --- |
-| 9050 | UDP | Game traffic (player connections, game state synchronization, etc.) |
-| 9050 | HTTP | [Admin panel](admin-panel) |
+| 9050 | TCP | Joining and mod sync over HTTP, and the [admin panel](admin-panel) |
+| 9050 | UDP | Game traffic: player connections, game state synchronization and the rest |
+
+:::important[A server other people join needs both]
+
+Joining starts over HTTP. The launcher asks the server for a connection ticket and for the mod manifest, and only once
+it has them does the game connect over UDP. So **TCP and UDP both have to reach the server on the game port**, and if
+you remap the port on the way in, remap it the same way for both. A port forward or tunnel that carries UDP alone ends
+in [Server did not respond](#server-did-not-respond).
+
+:::
+
+Opening TCP also makes the admin panel reachable at that address. It sits behind the setup PIN and a ReadyM sign-in, so
+it is not open to anyone who finds it, but it is no longer only yours to see.
+
+## Troubleshooting
+
+### Server did not respond
+
+The launcher shows this when its first request to your server, the HTTP one, goes unanswered. The game has not tried
+UDP yet at that point, so the cause is almost always that nothing outside your network can reach the server, rather
+than anything the server itself did.
+
+The admin panel being up proves only that the server is running on that machine. It says nothing about whether a player
+can reach it.
+
+- **Forward both protocols.** The game port needs TCP and UDP pointed at the machine running the server. A rule for UDP
+  alone fails here every time, and it is the single most common cause.
+- **Check the firewall on the server's own machine**, not only the router. Windows asks once, when the server first
+  binds the port, and a prompt that was dismissed leaves inbound traffic blocked.
+- **Tunnels and VPNs have to carry both protocols.** A TCP-only tunnel cannot pass game traffic and a UDP-only one
+  cannot pass the join, so use a tunnel that forwards TCP and UDP together on one port, or put your players on the same
+  virtual network with something like Tailscale or ZeroTier and have them join the address the server has on it.
+- **Carrier-grade NAT.** If your router's WAN address is in `100.64.0.0/10`, your connection is shared with other
+  subscribers and no port forward can work, because nothing of yours is reachable from outside. A tunnel or a virtual
+  network is the way around it.
+- **Joining your own server from inside your own network.** Some routers refuse to loop a connection on the public
+  address back to a machine on the LAN. Use the server's local address from home, and the public one from outside.
+- **Join the address the server actually listens on.** What you advertise on the public list is not checked against
+  what the server binds: see [Publishing your server](publishing-your-server#network-configuration).
