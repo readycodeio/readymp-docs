@@ -68,7 +68,7 @@ When configuring your server network layout, it is important to distinguish betw
 
 > These two ports can be different if your server operates behind a router using **Port Forwarding**, a network address translation (**NAT**) layer, or inside a virtualized environment such as a container. Ensure your external firewall routes incoming traffic from the `PublicPort` to your local `Server.Port`.
 
-`PublicHost` and `PublicPort` are advertised exactly as you write them. The server does not work out its own public address, and nothing fills one in for it, so whatever stands in the config is what the launcher hands to players. Get it wrong and the list entry points somewhere that does not answer. Leave it out, or point it at a loopback address, and the server does not list itself at all, with the reason in its log.
+Set `PublicHost` and `PublicPort` yourself. They are advertised exactly as written, so whatever stands in the config is what the launcher hands to players, and an address that is wrong sends them somewhere that does not answer. Leave them out, or point them at a loopback address, and the server does not list itself at all and says why in its console output at startup.
 
 Behind a tunnel, the tunnel's public address and port go in `PublicHost` and `PublicPort`, while `Server.Port` stays the port the server binds locally. The tunnel has to carry **TCP and UDP** on that port, since a player's launcher joins over HTTP before the game connects over UDP. A tunnel that carries one protocol leaves players with [Server did not respond](installation#server-did-not-respond).
 

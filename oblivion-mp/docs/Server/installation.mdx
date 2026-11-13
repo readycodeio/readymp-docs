@@ -158,21 +158,21 @@ port on the way in, remap it the same way for both. A port forward or tunnel tha
 
 :::
 
-Opening TCP also makes the admin panel reachable at that address. It sits behind the setup PIN and a ReadyM sign-in, so
-a stranger cannot get in, but it does answer there.
+Opening TCP also puts the [admin panel](admin-panel) on the public address, at `http://<your-server>:9050`, where it
+answers the same way it does at `http://localhost:9050`. It asks anyone who opens it for the setup PIN the server
+prints on its first launch, and then for a ReadyM sign-in.
 
 ## Troubleshooting
 
 ### Server did not respond
 
 The launcher shows this when its first request to your server, the HTTP one, goes unanswered. The game has not tried
-UDP yet at that point, so the usual cause is that the request never arrived, rather than anything the server did with
-it.
+UDP yet at that point, so the usual cause is that the request never reached the server.
 
 The admin panel being up proves only that the server is running on that machine, not that a player can reach it.
 
-- **Forward both protocols.** The game port needs TCP and UDP pointed at the machine running the server. A rule for UDP
-  alone fails here every time, however well the rest is set up.
+- **Forward both protocols.** Check the router's rule covers TCP as well as UDP, and that both point at the machine
+  running the server.
 - **Check the firewall on the server's own machine**, not only the router. Windows asks once, when the server first
   binds the port, and a prompt that was dismissed leaves inbound traffic blocked.
 - **Tunnels and VPNs have to carry both protocols.** A TCP-only tunnel cannot pass game traffic, and a UDP-only one
