@@ -89,8 +89,53 @@ jobs:
     runs-on: ubuntu-latest
     permissions: {}
     steps:
+      # The three files list about 800 URLs between them, and this job runs seconds after a deploy, so none of
+      # them are in the CDN cache yet and every request reaches the GitHub Pages origin. The origin answers some
+      # of that burst with 503, which failed this job on 2026-11-16 on a page that serves fine before and after.
+      #
+      # llms-txt-check has no retry of its own, so the retry is here, and it reads the JSON report to decide: a
+      # 429, a 5xx or a network error is the site being busy and gets another attempt, while a 404 is a link that
+      # is really broken and fails the job on the first one. Parallel requests went from the default 8 down to 4,
+      # which asks less of the origin while its cache is cold.
       - name: Check llms.txt
         run: |
-          npx --yes llms-txt-check@0.1.5 https://docs.ready.mp/llms.txt
-          npx --yes llms-txt-check@0.1.5 https://docs.ready.mp/oblivion-mp/llms.txt
-          npx --yes llms-txt-check@0.1.5 https://docs.ready.mp/wukong-mp/llms.txt
+          check() {
+            local url="$1" attempt
+            for attempt in 1 2 3; do
+              if npx --yes llms-txt-check@0.1.5 --concurrency 4 --json "$url" > result.json; then
+                jq -r '
+                  "\(.source): \(.checked | length) of \(.totalLinks) links checked, all serving",
+                  (.lint[] | "  lint/\(.rule) (line \(.line)): \(.message)")
+                ' result.json
+                return 0
+              fi
+
+              if jq -e . result.json > /dev/null 2>&1; then
+                jq -r '
+                  (if (.sourceProblems | length) > 0 then "  \(.source) -> \(.sourceProblems | join(", "))" else empty end),
+                  (.failures[] | "  \(.url) -> \(.problems | join(", "))")
+                ' result.json
+
+                if ! jq -e '
+                  [ if (.sourceProblems | length) > 0 then .sourceStatus else empty end ]
+                    + [ .failures[].status ]
+                  | length > 0 and all(. == null or . == 429 or . >= 500)
+                ' result.json > /dev/null; then
+                  echo "::error::$url: a URL above does not serve"
+                  return 1
+                fi
+              fi
+
+              if [ "$attempt" -lt 3 ]; then
+                echo "::warning::$url: the site was busy on attempt $attempt of 3, trying again"
+                sleep $((attempt * 20))
+              fi
+            done
+
+            echo "::error::$url: still busy after 3 attempts"
+            return 1
+          }
+
+          check https://docs.ready.mp/llms.txt
+          check https://docs.ready.mp/oblivion-mp/llms.txt
+          check https://docs.ready.mp/wukong-mp/llms.txt
