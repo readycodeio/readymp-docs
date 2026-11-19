@@ -4,16 +4,14 @@ sidebar_position: 2
 
 # Known issues
 
-We are aware of the following issues in the current release, and we're working on fixing them.
+We are aware of the following issues in the current release, and we're working on fixing them. Anything not listed here, report on the [OblivionMP Discord](https://discord.gg/obmp).
 
 ## Gameplay
 
-* Perk special abilities are synchronized when one Player attacks, but are not synchronized when other Player attacks
 * Dead NPCs' positions may reset to default after server restart.
 * Weather is decided by a random player, so it can change abruptly, for example when they move between a city and the open world.
 * Physics and ragdolls of items and of NPC and player bodies make their positions go out of sync.
 * After using the `Rebirth` command a player may become invisible to others.
-* An equipped weapon is duplicated when it is dropped with a bare-handed power attack.
 * Custom spells are not kept after a rebirth.
 * A bound weapon or bound armor conjured before a rebirth stays on the character permanently.
 * Quitting or using `Rebirth` while an item's buff is running makes the buff permanent.

@@ -45,12 +45,6 @@ Blindness.
 
 
 
-`Silence = 49` 
-
-Silence.
-
-
-
 `Confusion = 50` 
 
 Confusion.

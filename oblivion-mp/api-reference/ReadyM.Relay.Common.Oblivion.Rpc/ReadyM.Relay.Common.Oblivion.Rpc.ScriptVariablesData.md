@@ -38,11 +38,11 @@ public uint RollIndex
 ### <a id="ReadyM_Relay_Common_Oblivion_Rpc_ScriptVariablesData_Variables"></a> Variables
 
 ```csharp
-public List<ScriptVariable> Variables
+public List<ScriptVariable>? Variables
 ```
 
 #### Field Value
 
- [List](https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1)<[ScriptVariable](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.ScriptVariable.md)\>
+ [List](https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1)<[ScriptVariable](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.ScriptVariable.md)\>?
 
 
