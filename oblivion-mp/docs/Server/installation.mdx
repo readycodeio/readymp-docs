@@ -10,12 +10,6 @@ import TabItem from '@theme/TabItem';
 
 The OblivionMP server is distributed as a binary package, for Windows and Linux.
 
-:::info[1.1.0]
-
-**1.1.0** ships with SDK 1.1.0, which adds [networked events](../Modding/Concepts/networked-events.md) and drops old APIs, so mods built for 1.0.0 need rebuilding against it. OblivionMP is still a work in progress, so expect rough edges, and report them on [Discord](https://discord.gg/obmp).
-
-:::
-
 ## Requirements
 
 The server binary itself is self-contained, but [server-side mods](mod-management) run on CoreCLR, which the server starts at launch. That means the [**.NET 10 runtime**](https://dotnet.microsoft.com/download/dotnet/10.0) has to be installed on the machine, even if you do not intend to install any mods of your own. The `dotnet-runtime-10.0` package is enough, you do not need the SDK.
@@ -56,8 +50,20 @@ If the runtime is missing, the server exits at startup with `Cannot locate a .NE
 
 | Platform | Architecture | Download |
 | --- | --- | --- |
+| Linux | x64 | [Download for Linux (1.1.1)](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-linux64-1.1.1.zip) |
+| Windows | x64 | [Download for Windows (1.1.1)](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-win64-1.1.1.zip) |
+
+<details>
+<summary>Earlier releases</summary>
+
+While 1.1.1 has major performance improvements and a number of bug fixes, you can still download the previous 1.1.0 build here, which is 100% API-compatible.
+
+| Platform | Architecture | Download |
+| --- | --- | --- |
 | Linux | x64 | [Download for Linux (1.1.0)](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-linux64-1.1.0.zip) |
 | Windows | x64 | [Download for Windows (1.1.0)](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-win64-1.1.0.zip) |
+
+</details>
 
 ## Installation
 
