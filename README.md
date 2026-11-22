@@ -89,6 +89,9 @@ pull request when it is ready, after a few minutes.
 - **Merged too.** On a merged or closed pull request, `/preview` deploys its last head, and the comment says so.
 - **Read it first.** A preview builds the pull request's code. On a pull request from outside the team, read the
   change before you type `/preview`.
+- **Commit status.** An accepted `/preview` sets the commit status `preview-ok` on the head it builds: pending while
+  it runs, then success once the preview is up or failure. The fleet's issue tracker comments `/preview` on its fix
+  pull requests and reads `preview-ok` to learn whether the preview passed, as it reads `build-ok` in oblivion-mod.
 
 How it is kept safe in a public repository is explained at the top of `.github/workflows/preview.yml`.
 

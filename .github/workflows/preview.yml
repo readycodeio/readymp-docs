@@ -5,6 +5,13 @@
 # /clearpreviews to delete every docs preview for the pull request. Each preview is deleted anyway by the first
 # daily sweep (preview-sweep.yml) once it is three days old, whether or not the pull request is still open.
 #
+# A /preview that is accepted also sets the commit status `preview-ok` on the head it builds: pending when the gate
+# accepts it, success once the preview is up, failure when the build or the deploy fails, is refused or is cancelled.
+# A run is not attached to the pull request's checks, so this is what tools read to learn whether a preview passed:
+# the fleet's issue tracker comments /preview on its fix pull requests and waits for `preview-ok`, the way it waits
+# for oblivion-mod's `build-ok` after /build. A command the gate skips or refuses sets nothing, as it posts nothing
+# else on the pull request either.
+#
 # It runs on the ReadyM server's preview infrastructure: the same Azure resource group, Container Apps environment,
 # registry and DNS suffix. Docs stacks are named `doc-...` and server stacks `srv-...`, so clearing or sweeping in
 # one repository can never reach the other's.
@@ -60,6 +67,9 @@ env:
   PREVIEW_REGISTRY: readycodepreview
   PREVIEW_DNS_SUFFIX: preview.readymod.io
 
+  # The commit status a /preview sets on the head it builds. A name, not a secret.
+  PREVIEW_STATUS_CONTEXT: preview-ok
+
   # Where the deploy job's two inputs land: the default branch's `.github`, and the built site.
   CI_DIR: .ci
   SITE_DIR: site
@@ -75,6 +85,8 @@ jobs:
       contents: read
       # Reacting to the command on the pull request.
       pull-requests: write
+      # Setting `preview-ok` pending on the head an accepted /preview builds.
+      statuses: write
     outputs:
       decision: ${{ steps.decision.outputs.decision }}
       pull-request: ${{ steps.resolve.outputs.pull-request }}
@@ -321,6 +333,21 @@ jobs:
             echo "${delimiter}"
           } >> "$GITHUB_OUTPUT"
 
+      # The commit status tools wait on, set pending as soon as the command is accepted, so a reader never takes an
+      # earlier run's result for this one. Whichever job ends the run sets it to success or failure.
+      - name: Set preview-ok pending on the commit
+        if: steps.resolve.outputs.sha != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ steps.resolve.outputs.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${SHA}" \
+            --field state=pending \
+            --field context="$PREVIEW_STATUS_CONTEXT" \
+            --field description="Docs preview building and deploying" \
+            --field target_url="$RUN_URL" > /dev/null
+
   # **Runs the pull request's code. Holds nothing.** No secret, no environment, a read-only token, a fresh machine
   # that is thrown away afterwards. check-preview-workflow.sh fails the gate if any of that changes.
   #
@@ -379,6 +406,8 @@ jobs:
       pull-requests: write
       # A deployment per stack is how the address surfaces on the pull request.
       deployments: write
+      # Setting `preview-ok` to success or failure on the head it deployed.
+      statuses: write
     timeout-minutes: 20
 
     steps:
@@ -672,6 +701,20 @@ jobs:
             --field log_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
             > /dev/null
 
+      # Last, so success means everything above is done and the preview is up.
+      - name: Set preview-ok success on the commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ needs.gate.outputs.sha }}
+          NAME: ${{ steps.stack.outputs.name }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${SHA}" \
+            --field state=success \
+            --field context="$PREVIEW_STATUS_CONTEXT" \
+            --field description="Docs preview up as ${NAME}" \
+            --field target_url="$RUN_URL" > /dev/null
+
       # A run that ends early may have created the app without finishing, and nothing later would know to collect
       # an app that was never tagged. Deletes by name, which is known before anything exists. Best effort: the sweep
       # is the backstop.
@@ -701,6 +744,25 @@ jobs:
             --field state=failure \
             --field log_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
             > /dev/null
+
+      # Whatever ended the job, stage two's refusals included, the commit status says it did not pass.
+      - name: Set preview-ok failure on the commit
+        if: failure() || cancelled()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ needs.gate.outputs.sha }}
+          JOB_STATUS: ${{ job.status }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          case "$JOB_STATUS" in
+            cancelled) description="Docs preview deploy cancelled" ;;
+            *) description="Docs preview deploy failed or was refused; the run has the reason" ;;
+          esac
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${SHA}" \
+            --field state=failure \
+            --field context="$PREVIEW_STATUS_CONTEXT" \
+            --field description="$description" \
+            --field target_url="$RUN_URL" > /dev/null
 
       # Say so on the pull request, in the gate's status comment. A comment-triggered run is not attached to the pull
       # request's checks, so otherwise the comment would say "deploying" forever.
@@ -745,29 +807,56 @@ jobs:
               --field body=@"$RUNNER_TEMP/status.md" > /dev/null
           fi
 
-  # A failed build never reaches the deploy job, so it says so here, from a job that holds no secret.
+  # A build that fails or is cancelled never reaches the deploy job, so it says so here, from a job that holds no
+  # secret. Also a gate that failed after it accepted the command, which leaves the build skipped. Not `failure()`
+  # alone: a run cancelled during the build would then end with nothing reporting it, and `preview-ok` pending.
   build-failed:
     name: Report a failed build
     needs: [gate, build]
-    if: failure() && needs.gate.outputs.sha != ''
+    if: always() && needs.gate.outputs.sha != '' && needs.build.result != 'success'
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
+      # Setting `preview-ok` to failure on the head that did not build.
+      statuses: write
     steps:
+      - name: Set preview-ok failure on the commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ needs.gate.outputs.sha }}
+          BUILD_RESULT: ${{ needs.build.result }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          case "$BUILD_RESULT" in
+            cancelled) description="Docs preview build cancelled" ;;
+            skipped) description="Docs preview failed before building; the run has the reason" ;;
+            *) description="Docs preview failed to build; the run has the reason" ;;
+          esac
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${SHA}" \
+            --field state=failure \
+            --field context="$PREVIEW_STATUS_CONTEXT" \
+            --field description="$description" \
+            --field target_url="$RUN_URL" > /dev/null
+
       - name: Report the failure on the pull request
+        if: always()
         env:
           GH_TOKEN: ${{ github.token }}
           NUMBER: ${{ needs.gate.outputs.pull-request }}
           COMMENT_ID: ${{ needs.gate.outputs.status-comment }}
           STATUS_DETAILS: ${{ needs.gate.outputs.status-details }}
+          BUILD_RESULT: ${{ needs.build.result }}
         run: |
-          mark="❌"
+          case "$BUILD_RESULT" in
+            cancelled) heading="### ⏹️ Finished: docs preview build cancelled"; mark="⏹️" ;;
+            *) heading="### ❌ Finished: docs preview failed to build"; mark="❌" ;;
+          esac
           # The status row says when it finished, in place of "in progress".
           finished="$(date -u '+%H:%M UTC')"
           details="$(printf '%s\n' "$STATUS_DETAILS" | sed -E "s/^\| status \| .*, started (.*) \|$/| status | ${mark} finished at ${finished}, started \1 |/")"
 
           {
-            echo "### ❌ Finished: docs preview failed to build"
+            echo "$heading"
             echo
             echo "$details"
             echo
