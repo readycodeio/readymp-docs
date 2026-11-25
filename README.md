@@ -74,6 +74,17 @@ yarn serve --locale zh-Hans # Chinese
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+## Search
+
+The search box in the navbar and the `/search` page search the guides, the API reference and the release notes, in
+both languages. They use [`@easyops-cn/docusaurus-search-local`](https://github.com/easyops-cn/docusaurus-search-local),
+which builds a search index into the static site at `yarn build`, and the browser downloads it the first time the
+reader searches, so it works on GitHub Pages with no search service. The newest docs and the release notes share one
+index, about 2 MB gzipped per language; each older docs version has its own.
+
+Search works only in a build: under `yarn start` the box shows, but there is no index to search. Use `yarn build` and
+`yarn serve` to try it. Its settings are under `themes` in `docusaurus.config.ts`.
+
 ## Preview a pull request
 
 Comment `/preview` on a pull request to build its current head and serve it at
