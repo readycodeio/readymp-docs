@@ -63,14 +63,14 @@ when you use it.
 | --- | --- |
 | `Transform` | `Position` (a `Vector3`, in centimeters) and `Rotation` (yaw, in degrees) |
 | `Vitals` | `Hp`, `Magicka`, `Fatigue`, their maximums `HpBase`, `MagickaBase`, `FatigueBase`, and `IsDead`, which is worked out from `Hp` |
-| `LevelMixin` | `Level` |
+| `LevelMixin` | `Level`, and `LevelExperience`, the progress towards the next one |
 | `PlayerActivity` | `InCombat`, `InDialogue`, and `DetectedByOtherPlayer`: the player is sneaking and another player's character can see them |
 | `Appearance` | `Sex` (a `CharacterSex`), the race, hair, eye and face asset paths, and the face morph and skin collections |
 | `Quiver` | `HasQuiver` and `ArrowCount` |
-| `Equipment` | The inventory and `CurrentPoison`. See [Items and inventories](items-and-inventories.md). |
+| `Equipment` | The inventory. See [Items and inventories](items-and-inventories.md). |
 | `ParentCell` | `ParentCellKind`, `ParentCellX`, `ParentCellY`: the cell the character stands in. See [World and cells](world-and-cells.md). |
 | `BaseIdMixin` | `BaseId`, the game form the character is made from |
-| `SkillAttributes`, `EffectsAttributes`, `SocialAttributes` | The attribute maps, below |
+| `BaseSkillAttributes`, `SkillAttributes`, `EffectsAttributes`, `SocialAttributes` | The attribute maps, below |
 
 A few flags from the game's animation state are useful too: `WeaponDrawn`, `IsMoving`, and `CharacterStateFlags`,
 which says whether the character is running, sneaking, swimming, jumping, blocking, staggered, falling, dodging or
@@ -109,19 +109,36 @@ A character has three maps of numbers, each keyed by an enum cast to `byte`:
 
 | Map | Key | Read | Write |
 | --- | --- | --- | --- |
-| Attributes and skills | `CharacterAttribute` (`Strength` to `Luck`, then `Armorer` to `Speechcraft`) | `TryGetSkillAttributeValue`, `GetSkillAttribute` | `SetSkillAttribute` |
+| Attributes and skills | `CharacterAttribute` (`Strength` to `Luck`, then `Armorer` to `Speechcraft`) | `TryGetBaseSkillAttributeValue`, `GetBaseSkillAttribute` | `SetBaseSkillAttribute` |
 | Active effects | `CharacterEffect` (`ResistFire`, `NightEyeBonus`, `WaterBreathing`, ...) | `TryGetEffectAttributeValue`, `GetEffectAttribute` | `SetEffectAttribute` |
 | Social values | `CharacterSocialAttribute` (`Bounty`, `Fame`, `Infamy`, ...) | `TryGetSocialAttributeValue`, `GetSocialAttribute` | `SetSocialAttribute` |
 
 ```csharp
-if (main.TryGetSkillAttributeValue((byte)CharacterAttribute.Blade, out var blade) && blade < 25f)
-    main.SetSkillAttribute((byte)CharacterAttribute.Blade, 25f);
+if (main.TryGetBaseSkillAttributeValue((byte)CharacterAttribute.Blade, out var blade) && blade < 25f)
+    main.SetBaseSkillAttribute((byte)CharacterAttribute.Blade, 25f);
 
 main.SetSocialAttribute((byte)CharacterSocialAttribute.Bounty, 0f);
 ```
 
 A map only holds the keys the game has reported, so prefer the `TryGet...Value` form, or check with
-`ContainsSkillAttributeKey` (and its `Effect` and `Social` twins) first.
+`ContainsBaseSkillAttributeKey` (and its `Effect` and `Social` twins) first.
+
+#### Base and effective skills
+
+The attributes and skills above are the character's **base** values, which is what a save file keeps. What the
+character is actually fighting at is the base plus whatever fortify or drain effects are running, and that is the
+`SkillAttributes` mixin. It is read-only, because its values belong to the owner's game:
+
+```csharp
+var blade = main.As<SkillAttributes>().GetEffective(CharacterAttribute.Blade);
+```
+
+Note the key: the `...BaseSkillAttribute` members above take a `byte`, so they need the cast, while `GetEffective`
+and `TryGetEffective` take the `CharacterAttribute` itself. `GetEffective` throws if the owner's game has not
+reported that attribute yet; `TryGetEffective` returns `false` instead.
+
+Write `BaseSkillAttributes` and the effective values follow. Only the base is saved, so a bonus you write there is
+permanent, and one the game puts in `SkillAttributes` goes when its effect ends.
 
 ### NPCs and summons
 
@@ -293,7 +310,8 @@ To run code when a player connects or leaves, see [Server events](server-events.
 * [Appearance](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Appearance.md)
 * [PlayerActivity](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.PlayerActivity.md)
 * [Quiver](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Quiver.md)
-* [SkillAttributes](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SkillAttributes.md),
+* [BaseSkillAttributes](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.BaseSkillAttributes.md),
+  [SkillAttributes](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SkillAttributes.md),
   [EffectsAttributes](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.EffectsAttributes.md),
   [SocialAttributes](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SocialAttributes.md)
 * [CharacterAttribute](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterAttribute.md),

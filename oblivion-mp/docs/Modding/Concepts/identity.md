@@ -166,7 +166,7 @@ client can resolve, whichever kind it is:
   [Dynamic forms](../Game/dynamic-forms.md)). Such a `NetworkFormId` is only good for the current session.
 
 Shapes that point at a form use `NetworkFormId`: `BaseId` on `BaseIdMixin` (what an NPC or a dropped item is),
-`InventoryEntry.FormId` in inventories, `CurrentPoison` on `Equipment`.
+`InventoryEntry.FormId` and `InventoryEntry.Poison` in inventories, `Poison` on `ItemExtraData`.
 
 ```csharp
 // item is a DroppedItem, which includes BaseIdMixin.
@@ -177,7 +177,7 @@ if (what.FormId == new FormId(0x0000000F))
 
 `FormType` is the kind of record a form is: `Weapon`, `Armor`, `NPC`, `Creature`, `Container`, `Spell` and so on,
 following the record types of Oblivion's data files. The server's game data uses it, for example `Kind` on
-`LeveledListItem` and `BaseContainerItem` entries. 1.1.1 has no call that tells you the `FormType` of an arbitrary
+`LeveledListItem` and `BaseContainerItem` entries. 1.2.0 has no call that tells you the `FormType` of an arbitrary
 `FormId`.
 
 ### Compact numbers for your own messages

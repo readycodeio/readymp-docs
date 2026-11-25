@@ -50,7 +50,7 @@ An inventory is a list of `InventoryEntry` values. Two mixins hold one:
 
 | Mixin | On | Also holds |
 | --- | --- | --- |
-| `Equipment` | `MainCharacter`, `Npc`, `ServerSummon` | `CurrentPoison`, the poison on the equipped weapon |
+| `Equipment` | `MainCharacter`, `Npc`, `ServerSummon` | |
 | `ContainerItems` | `Container` (see [World and cells](world-and-cells.md)) | |
 
 Both implement `IInventory`, so the same code works on a player, a corpse and a chest. Ask the entity for the mixin
@@ -65,8 +65,21 @@ Each entry is one stack:
 | `Worn` | Not 0 while the item is equipped. |
 | `Health` | This stack's condition, or `InventoryEntry.NoInstanceOverride` (-1) when it has the item's default or no condition at all. |
 | `Charge` | This stack's enchantment charge, or -1 the same way. |
+| `Poison` | The poison applied to this stack, as a `NetworkFormId`. `default` means no poison. |
 
-`new InventoryEntry(formId, count, worn)` makes an entry with the default condition and charge.
+`new InventoryEntry(formId, count, worn)` makes an entry with the default condition and charge, and no poison.
+
+Poison travels with the stack it is on, not with the character holding it, so a poisoned weapon stays poisoned when it
+is traded, stored or dropped:
+
+```csharp
+var poisoned = 0;
+for (var i = 0; i < main.ItemsCount; i++)
+{
+    if (main.GetItems(i).Poison != default)
+        poisoned++;
+}
+```
 
 To read an inventory, walk it by index:
 
@@ -109,7 +122,7 @@ An item on the ground is a `DroppedItem`:
 | `BaseId` | What the item is. |
 | `StackSize` | How many lie there. |
 | `Position`, `Rotation` | Where, and which way it faces. |
-| `Durability`, `Charge` | Its condition and enchantment charge, or -1 for the defaults. These come from `ItemExtraData`. |
+| `Durability`, `Charge`, `Poison` | Its condition, enchantment charge and applied poison. The first two are -1 for the defaults, and `Poison` is `default` for no poison. These come from `ItemExtraData`. |
 | `RefId` | The reference the game knows it by. |
 | `IsDisabled` | Set while the item is out of the world: it starts disabled in the game files, or a player took it. |
 | `ParentCellKind`, `ParentCellX`, `ParentCellY` | The cell it lies in. |
@@ -149,7 +162,7 @@ The item lands in the cell the local player is in. `SpawnDroppedItem` throws an 
 the local character exists or while the player is in no area.
 
 :::note
-Not in 1.1.1 yet: dropping an item from the client with a specific condition or enchantment charge.
+Not in 1.2.0 yet: dropping an item from the client with a specific condition or enchantment charge.
 `IItems.SpawnDroppedItem` takes neither. The server can do it, by creating the `DroppedItem` itself (below).
 :::
 

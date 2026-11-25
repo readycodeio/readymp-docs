@@ -50,18 +50,20 @@ If the runtime is missing, the server exits at startup with `Cannot locate a .NE
 
 | Platform | Architecture | Download |
 | --- | --- | --- |
-| Linux | x64 | [Download for Linux (1.1.1)](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-linux64-1.1.1.zip) |
-| Windows | x64 | [Download for Windows (1.1.1)](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-win64-1.1.1.zip) |
+| Linux | x64 | [Download for Linux (1.2.0)](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-linux64-1.2.0.zip) |
+| Windows | x64 | [Download for Windows (1.2.0)](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-win64-1.2.0.zip) |
 
 <details>
 <summary>Earlier releases</summary>
 
-While 1.1.1 has major performance improvements and a number of bug fixes, you can still download the previous 1.1.0 build here, which is 100% API-compatible.
+A mod built against the 1.2.0 SDK will not load on these, and a player's install has to match the server's version either way.
 
-| Platform | Architecture | Download |
+| Version | Platform | Download |
 | --- | --- | --- |
-| Linux | x64 | [Download for Linux (1.1.0)](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-linux64-1.1.0.zip) |
-| Windows | x64 | [Download for Windows (1.1.0)](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-win64-1.1.0.zip) |
+| 1.1.1 | Linux x64 | [Download](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-linux64-1.1.1.zip) |
+| 1.1.1 | Windows x64 | [Download](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-win64-1.1.1.zip) |
+| 1.1.0 | Linux x64 | [Download](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-linux64-1.1.0.zip) |
+| 1.1.0 | Windows x64 | [Download](https://readycodestorage.blob.core.windows.net/oblivion-server-releases/oblivion-server-win64-1.1.0.zip) |
 
 </details>
 
@@ -122,6 +124,9 @@ server/
 </Tabs>
 
 The package ships the SDK and the mods above, so there is nothing else to install.
+
+The SDK reads a `config.json` of its own from each of its two folders. Those settings decide whether players can
+wait and sleep; see [Time, weather and session](../Modding/Game/time-weather-session.md#waiting-and-sleeping).
 
 ## Configuration
 

@@ -14,7 +14,6 @@ We are aware of the following issues in the current release, and we're working o
 * After using the `Rebirth` command a player may become invisible to others.
 * Custom spells are not kept after a rebirth.
 * A bound weapon or bound armor conjured before a rebirth stays on the character permanently.
-* Quitting or using `Rebirth` while an item's buff is running makes the buff permanent.
 * An NPC riding a horse may sit in the saddle in a T-pose. A player riding one is not affected.
 
 ## SDK
