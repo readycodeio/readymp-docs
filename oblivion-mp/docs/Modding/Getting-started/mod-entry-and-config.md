@@ -51,7 +51,7 @@ service can rely on everything every mod set up in `Init`.
 
 ## Config files
 
-A config is a class with defaults, marked `[ModConfig]`:
+A config is a class with defaults, marked `[ModConfig]` and declared `partial`:
 
 ```csharp title="MyMod.Server/RewardsConfig.cs"
 using ReadyM.SDK.Attributes;
@@ -59,7 +59,7 @@ using ReadyM.SDK.Attributes;
 namespace MyMod.Server;
 
 [ModConfig]
-public sealed class RewardsConfig
+public sealed partial class RewardsConfig
 {
     public int Reward { get; set; } = 100;
     public float PayoutSeconds { get; set; } = 10f;
@@ -67,8 +67,8 @@ public sealed class RewardsConfig
 }
 ```
 
-The SDK reads `config.json` from the mod's folder into it when the mod loads, and anything can ask for it in its
-constructor:
+Like the entry point, the class has to be `partial`: the SDK writes the other part. The SDK reads `config.json` from
+the mod's folder into it when the mod loads, and anything can ask for it in its constructor:
 
 ```csharp title="MyMod.Server/PassiveIncome.cs"
 [Service]
@@ -99,10 +99,10 @@ Pass a file name to read a different file. Each class is read and registered on 
 
 ```csharp
 [ModConfig]                // config.json
-public sealed class RewardsConfig { /* ... */ }
+public sealed partial class RewardsConfig { /* ... */ }
 
 [ModConfig("arenas.json")] // arenas.json
-public sealed class ArenaConfig { /* ... */ }
+public sealed partial class ArenaConfig { /* ... */ }
 ```
 
 ### When the file is wrong
@@ -136,6 +136,7 @@ project only if both halves really need the same settings, and remember each hal
 | `READYM032` | `[ModConfig]` names no file. | Leave the name out for `config.json`, or give a file name. |
 | `READYM044` | The `[ModEntry]` class is not `sealed`. | Add `sealed`. |
 | `READYM045` | `Init` cannot be called by the loader. | Make it `private void Init()` with no parameters; ask for everything else in the constructor. |
+| `CS0260` | The `[ModConfig]` class is not `partial`. This one comes from the C# compiler ("Missing partial modifier"), not the SDK. | Add `partial`. |
 
 ## Reference
 
