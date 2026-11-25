@@ -125,8 +125,9 @@ server/
 
 The package ships the SDK and the mods above, so there is nothing else to install.
 
-The SDK reads a `config.json` of its own from each of its two folders. Those settings decide whether players can
-wait and sleep; see [Time, weather and session](../Modding/Game/time-weather-session.md#waiting-and-sleeping).
+The SDK reads a `config.json` of its own from `mods/OblivionMp.Sdk/server/` and `mods/OblivionMp.Sdk/client/`,
+separately from the server's `config.json` below. Those two decide whether players can wait and sleep; see
+[Time, weather and session](../Modding/Game/time-weather-session.md#waiting-and-sleeping).
 
 ## Configuration
 

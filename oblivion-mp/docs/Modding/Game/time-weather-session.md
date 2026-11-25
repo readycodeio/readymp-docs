@@ -49,7 +49,7 @@ members of that scope:
 
 | Mixin | On | Members | Who sets it |
 | --- | --- | --- | --- |
-| `GameTime` | the `World` | `TimeOfDay` and `TimeOfDayMinutes` (minutes since midnight), `GameDay`, `Date`, `Timescale` (game time per real time) | The server only |
+| `GameTime` | the `World` | `TimeOfDay` and `TimeOfDayMinutes` (minutes since midnight), `GameDay`, `Date`, `Timescale` (game time per real time), and `Advance(TimeSpan)` | The server only |
 | `Weather` | each `Area` | `WeatherFormId` (the weather form), `TransitionRatio` (how far the change to it has got, 0 to 1) | The area's master client, and the server |
 | `Difficulty` | the `World` | `DamageDealt`, `DamageTaken` | The server only |
 | `LevelScaling` | the `World` | `Policy`, `LevelBlend` | The server only |
@@ -111,10 +111,13 @@ to `GameTime.GameDay`.
 #### Waiting and sleeping
 
 One clock for the server means one player's six-hour nap is everyone's six hours, so waiting and sleeping are off out
-of the box. The wait key does nothing, and a bed opens the level-up menu when the player has a level-up ready and
+of the box. The wait key, `T` by default, does nothing, and a bed opens the level-up menu when the player has a
+level-up ready and
 does nothing otherwise.
 
-Two settings in the SDK's own `config.json` bring it back, one on each side:
+Two settings bring it back, one on each side. Both live in the SDK mod's own folder on the server, at
+`mods/OblivionMp.Sdk/server/config.json` and `mods/OblivionMp.Sdk/client/config.json`. The client half is handed
+out to players when they connect, so you edit it on the server too.
 
 | Side | Key | Default | What it does |
 | --- | --- | --- | --- |
