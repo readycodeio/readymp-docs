@@ -36,12 +36,39 @@ The server half has its own, in the server project, written the same way.
   [RPC handler classes](../Concepts/rpc.md) and APIs from [other mods](../Optional-mods/using-another-mod.md) you depend on.
 * `Init` is optional. If you declare it, it has to be `private void Init()` with no parameters, and it runs once,
   right after the class is created.
-* `ModDirectory` is the folder your half was loaded from: the mod's `server/` folder on the server, its client folder
-  in the game. It is set by the time `Init` runs.
+* `ModDirectory` is the folder your half was loaded from: the mod's `server/` folder on the server, its `client/`
+  folder in the game. It is set by the time `Init` runs. See [Where ModDirectory points](#where-moddirectory-points).
 
 Most mods need very little here. Services and RPC handler classes are found and created on their own, so you do not
 list them anywhere. The template's entry points only log that the mod loaded. Use `Init` for one-time setup that
 does not belong to any service.
+
+### Where ModDirectory points {#where-moddirectory-points}
+
+`ModDirectory` is the folder of the half that is running, not the root of the mod. For a mod installed as
+`mods/MyMod/` (see [the mod folder](project-layout.md#the-mod-folder)):
+
+| Half | `ModDirectory` |
+| --- | --- |
+| Server | The mod's `server/` folder, inside the server's install folder: `mods/MyMod/server/` |
+| Client | The player's copy of the mod's `client/` folder, as the launcher installed it |
+
+Everything you ship in that half, your [config file](#config-files) included, sits directly in it. Join file names
+onto `ModDirectory` as they are, without adding `server/` or `client/` again:
+
+```csharp title="MyMod.Server/Mod.cs"
+private void Init()
+{
+    // mods/MyMod/server/arenas.csv
+    var arenasFile = Path.Combine(ModDirectory, "arenas.csv");
+
+    // Wrong: mods/MyMod/server/server/arenas.csv, which does not exist
+    // Path.Combine(ModDirectory, "server", "arenas.csv")
+}
+```
+
+Use `ModDirectory` rather than a path of your own: where the mod is installed differs from server to server, and
+from player to player.
 
 ### When it runs
 
@@ -78,7 +105,8 @@ public sealed partial class PassiveIncome(IEntities entities, RewardsConfig conf
 }
 ```
 
-The file goes in the half that reads it, so a server config sits in the mod's `server/` folder:
+The file goes in the half that reads it, directly in that half's [`ModDirectory`](#where-moddirectory-points). A
+server config sits in the mod's `server/` folder, at `mods/MyMod/server/config.json`:
 
 ```json title="server/config.json"
 {
