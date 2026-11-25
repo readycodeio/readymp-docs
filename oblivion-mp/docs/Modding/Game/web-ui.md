@@ -228,7 +228,7 @@ registered:
   bytes whatever the type. A module script (`type="module"`, as three.js uses) runs only when it is sent as
   JavaScript, so give scripts a `.js` or `.mjs` name.
 
-The folder from the start of this page, with a 3D model and a settings file next to the page:
+A page that spins a 3D die, with the model and a settings file next to it in the `web` folder:
 
 ```text
 MyMod.Client/web/
@@ -239,6 +239,10 @@ MyMod.Client/web/
 └── three/
     ├── build/            three.js's build folder
     └── examples/jsm/     three.js's add-ons, GLTFLoader among them
+```
+
+```json title="MyMod.Client/web/dice.json"
+{ "cameraDistance": 4 }
 ```
 
 ```html title="MyMod.Client/web/index.html"
@@ -294,8 +298,9 @@ in the folder, subfolders included.
 
 **Other mods' files.** Each host is its own origin: `readym://mymod/` and `readym://othermod/` are as separate as
 two websites, so the browser's cross-origin rules apply between them. Do not count on fetching another host's
-files. To use a file from another mod, serve it under your own host with `RegisterFile(host, path, file)`, and the
-page loads it like its own. Two mods that register the same host share one origin, as the
+files. To use a file from another mod, serve it under your own host with `RegisterFile(host, path, file)`, where
+`file` is its path on disk, and the page loads it like its own. Two mods that register the same host share one
+origin, as the
 [`RegisterFolder`](../../../api-reference/ReadyM.Cef/ReadyM.Cef.CefHost.md#ReadyM_Cef_CefHost_RegisterFolder_System_String_System_String_)
 remarks say.
 
