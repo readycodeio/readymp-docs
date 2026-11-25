@@ -144,7 +144,7 @@ You can adjust server settings by editing the `config.json` file. In the followi
 | `Save:RootPath` | string | `saves` | The folder the world and player saves are written to. A relative path is relative to the server folder. |
 | `Save:Format` | string | `Json` | The format of the save data. `Json` is the only format this release accepts. |
 | `Save:Compression` | string | `Fastest` | How hard the save files are compressed: `Fastest`, `Optimal`, `SmallestSize` or `NoCompression`. Smaller files take longer to write. |
-| `Save:AutosaveInterval` | duration | `00:05:00` | How often the server saves the world and the players, as `hh:mm:ss`. `00:00:00` turns autosave off, and the server then saves only when it shuts down. |
+| `Save:AutosaveInterval` | duration | `00:05:00` | How often the server saves the world and the players, as `hh:mm:ss`. `00:00:00` turns autosave off; the server still saves when it shuts down cleanly. |
 | `Save:ShutdownDrainTimeout` | duration | `00:00:30` | How long the server waits at shutdown for saves still in progress to finish writing, as `hh:mm:ss`. Saves that have not finished by then may be lost. |
 | `Save:SegmentBackups` | boolean | `false` | Set to `true` to keep a `.bak` copy of the previous version of each area and cell save file as well. The world's global save file keeps one either way. |
 
@@ -154,7 +154,7 @@ You can adjust server settings by editing the `config.json` file. In the followi
 
 :::
 
-The `ServerList` settings only matter when `ServerList:Enabled` is `true`. Their limits and how the server checks them are described in [Publishing your server](publishing-your-server).
+The limits on the `ServerList` settings, and how the server checks them before listing itself, are described in [Publishing your server](publishing-your-server).
 
 An unknown `Save:Format` or `Save:Compression` value stops the server at startup, with `Failed to convert configuration value` in its console output. Changes to `config.json` take effect when the server is restarted.
 
