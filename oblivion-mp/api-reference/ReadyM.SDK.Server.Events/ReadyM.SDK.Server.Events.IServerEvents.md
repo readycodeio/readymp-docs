@@ -102,12 +102,12 @@ event Action<PlayerId, FullCellId>? OnPlayerDeactivatedCell
 Fires when a player has left or dropped, after they left their area.
 
 ```csharp
-event Action<Player, Guid, DisconnectReason?>? OnPlayerDisconnected
+event Action<Player, Guid, DisconnectReason>? OnPlayerDisconnected
 ```
 
 #### Event Type
 
- [Action](https://learn.microsoft.com/dotnet/api/system.action-3)<Player, [Guid](https://learn.microsoft.com/dotnet/api/system.guid), DisconnectReason?\>?
+ [Action](https://learn.microsoft.com/dotnet/api/system.action-3)<Player, [Guid](https://learn.microsoft.com/dotnet/api/system.guid), DisconnectReason\>?
 
 ### <a id="ReadyM_SDK_Server_Events_IServerEvents_OnPlayerJoinedArea"></a> OnPlayerJoinedArea
 
