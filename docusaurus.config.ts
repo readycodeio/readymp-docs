@@ -282,13 +282,15 @@ const config: Config = {
     [
       '@easyops-cn/docusaurus-search-local',
       {
-        // The index file name carries a content hash, so a deploy is never searched with the previous index that
-        // the GitHub Pages cache still holds.
+        // The index file name carries a hash of every markdown file in `docsDir` and `blogDir`, so a deploy that
+        // changes the docs is not searched with the previous index that the GitHub Pages cache still holds.
         hashed: 'filename',
         language: ['en', 'zh'],
         indexDocs: true,
         docsRouteBasePath: ['oblivion-mp', 'wukong-mp'],
-        docsDir: ['oblivion-mp', 'wukong-mp'],
+        // Only used for the hash above, so it lists every folder whose markdown is indexed: older versions and
+        // the translations too.
+        docsDir: ['oblivion-mp', 'wukong-mp', 'oblivion_versioned_docs', 'versioned_docs', 'i18n'],
         docsPluginIdForPreferredVersion: 'oblivion',
         indexBlog: true,
         blogRouteBasePath: 'releases',
