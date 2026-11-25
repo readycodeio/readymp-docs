@@ -32,18 +32,6 @@ IEntityShape
 
 ## Properties
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_Equipment_CurrentPoison"></a> CurrentPoison
-
-The poison on the equipped weapon.
-
-```csharp
-public NetworkFormId CurrentPoison { get; set; }
-```
-
-#### Property Value
-
- NetworkFormId
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_Equipment_IsServerSeeded"></a> IsServerSeeded
 
 Set by the server when it writes an npc's items, so the owner client follows the list even when it is empty.

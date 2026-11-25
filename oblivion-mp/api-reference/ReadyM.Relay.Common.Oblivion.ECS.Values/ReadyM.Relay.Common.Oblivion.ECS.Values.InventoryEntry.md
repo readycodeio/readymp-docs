@@ -106,6 +106,18 @@ public const float NoInstanceOverride = -1
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
 
+### <a id="ReadyM_Relay_Common_Oblivion_ECS_Values_InventoryEntry_Poison"></a> Poison
+
+The poison applied to this item instance, or a default form id when it carries none.
+
+```csharp
+public NetworkFormId Poison
+```
+
+#### Field Value
+
+ [NetworkFormId](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.NetworkFormId.md)
+
 ### <a id="ReadyM_Relay_Common_Oblivion_ECS_Values_InventoryEntry_Worn"></a> Worn
 
 Not 0 while the item is equipped.

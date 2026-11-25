@@ -77,9 +77,8 @@ Use `DeltaTime` for anything that should happen at the same speed however fast t
 with its payout timer.
 
 :::note
-Inside a service, `Time` always means the service's clock. To name the Oblivion `Time` mixin there (the game's time
-of day, see [Time, weather and session](../Game/time-weather-session.md)), write its full name,
-`OblivionMP.SDK.Common.Archetypes.Mixins.Time`.
+This `Time` is the service's own clock, not the game's time of day. That one is the `GameTime` mixin, on the world
+scope; see [Time, weather and session](../Game/time-weather-session.md).
 :::
 
 ### Switching services on and off

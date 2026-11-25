@@ -159,6 +159,18 @@ public int ParentCellY { get; set; }
 
  [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
+### <a id="OblivionMP_SDK_Common_Archetypes_DroppedItem_Poison"></a> Poison
+
+The poison applied to the item, or a default form id for none.
+
+```csharp
+public NetworkFormId Poison { get; set; }
+```
+
+#### Property Value
+
+ NetworkFormId
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_DroppedItem_Position"></a> Position
 
 The position in the game's world space, in centimeters.

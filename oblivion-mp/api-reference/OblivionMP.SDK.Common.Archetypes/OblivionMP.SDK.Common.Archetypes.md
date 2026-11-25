@@ -14,21 +14,21 @@ description: 'The types in the OblivionMP.SDK.Common.Archetypes namespace.'
 
 Tokens naming each of SpellForm's values, for mappings and overrides.
 
+ [MainCharacter.Field](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.MainCharacter.Field.md)
+
+Tokens naming each of MainCharacter's values, for mappings and overrides.
+
  [EnchantedItemForm.Field](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.EnchantedItemForm.Field.md)
 
 Tokens naming each of EnchantedItemForm's values, for mappings and overrides.
-
- [AlchemyForm.Field](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.AlchemyForm.Field.md)
-
-Tokens naming each of AlchemyForm's values, for mappings and overrides.
 
  [DroppedItem.Field](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.DroppedItem.Field.md)
 
 Tokens naming each of DroppedItem's values, for mappings and overrides.
 
- [MainCharacter.Field](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.MainCharacter.Field.md)
+ [AlchemyForm.Field](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.AlchemyForm.Field.md)
 
-Tokens naming each of MainCharacter's values, for mappings and overrides.
+Tokens naming each of AlchemyForm's values, for mappings and overrides.
 
 ### Structs
 

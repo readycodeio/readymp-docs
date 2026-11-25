@@ -12,7 +12,14 @@ A creature a player summoned with a spell, created and deleted by the server.
 ```csharp
 [Archetype]
 [Tag(typeof(KeepOwnerOnScopeLeaveTag))]
-[IncludeArchetype(typeof(Npc))]
+[Tag(typeof(AllowOwnershipTransferOnScopeEnterTag))]
+[Tag(typeof(AllowOwnershipTransferOnScopeLeaveTag))]
+[IncludeArchetype(typeof(Character))]
+[Include(typeof(CellHandoffTarget), "")]
+[Include(typeof(CombatTarget), "")]
+[Include(typeof(DoorFollow), "")]
+[Include(typeof(RiddenBy), "")]
+[Include(typeof(RefIdMixin), "")]
 [Include(typeof(SummonedBy), "")]
 public readonly struct ServerSummon : IArchetype, IArchetypeQueryable, IEntityShape
 ```
@@ -31,6 +38,12 @@ IEntityShape
 [object.Equals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\-system\-object\)), 
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
+
+## Remarks
+
+Not an **Npc**: the server gives a summon no spawn origin, AI intent or state, presence or script
+policy, and a query only finds entities that hold every component of the shape it asks for. The parts below are
+the ones a summon and an npc share.
 
 ## Properties
 
@@ -252,18 +265,6 @@ public NativeString256 CurrentGait { get; set; }
 
  NativeString256
 
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_CurrentPoison"></a> CurrentPoison
-
-The poison on the equipped weapon.
-
-```csharp
-public NetworkFormId CurrentPoison { get; set; }
-```
-
-#### Property Value
-
- NetworkFormId
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_DodgeAnimLayerClassName"></a> DodgeAnimLayerClassName
 
 The class name of the animation layer for dodging.
@@ -452,30 +453,6 @@ public bool IsDead { get; }
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_IsDestroyed"></a> IsDestroyed
-
-Whether a script marked the object destroyed, which keeps it from activating.
-
-```csharp
-public bool IsDestroyed { get; set; }
-```
-
-#### Property Value
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_IsDisabled"></a> IsDisabled
-
-Whether a seeded ref is enabled in the world. Starts from the game files and only the server writes it.
-
-```csharp
-public bool IsDisabled { get; set; }
-```
-
-#### Property Value
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_IsMoving"></a> IsMoving
 
 Whether the character is moving.
@@ -565,6 +542,18 @@ public ushort Level { get; set; }
 #### Property Value
 
  [ushort](https://learn.microsoft.com/dotnet/api/system.uint16)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_LevelExperience"></a> LevelExperience
+
+A player's experience toward a level-up, which skill increases add to. Always 0 for an NPC.
+
+```csharp
+public float LevelExperience { get; set; }
+```
+
+#### Property Value
+
+ [float](https://learn.microsoft.com/dotnet/api/system.single)
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_Magicka"></a> Magicka
 
@@ -684,42 +673,6 @@ public bool OrientRotationToMovement { get; set; }
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_Overridden"></a> Overridden
-
-Whether the NPC runs a package laid over its schedule, such as a server order, rather than its own.
-
-```csharp
-public bool Overridden { get; set; }
-```
-
-#### Property Value
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_PackageFormId"></a> PackageFormId
-
-The form id of the AI package the NPC is running now.
-
-```csharp
-public uint PackageFormId { get; set; }
-```
-
-#### Property Value
-
- [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
-
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_PackageType"></a> PackageType
-
-The type of that package.
-
-```csharp
-public AiPackageType PackageType { get; set; }
-```
-
-#### Property Value
-
- AiPackageType
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_ParentCellKind"></a> ParentCellKind
 
 Whether the cell is an interior or an exterior, or <code>Unknown</code> before the game has said.
@@ -768,30 +721,6 @@ public Vector3 Position { get; set; }
 
  [Vector3](https://learn.microsoft.com/dotnet/api/system.numerics.vector3)
 
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_Procedure"></a> Procedure
-
-The step of the package the NPC is on.
-
-```csharp
-public AiProcedure Procedure { get; set; }
-```
-
-#### Property Value
-
- AiProcedure
-
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_ProcedureIndex"></a> ProcedureIndex
-
-The index of that step within the package.
-
-```csharp
-public int ProcedureIndex { get; set; }
-```
-
-#### Property Value
-
- [int](https://learn.microsoft.com/dotnet/api/system.int32)
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_RecoilAnimLayerClassName"></a> RecoilAnimLayerClassName
 
 The class name of the animation layer for recoiling.
@@ -827,30 +756,6 @@ public uint RefId { get; set; }
 #### Property Value
 
  [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
-
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_ReportedOutcome"></a> ReportedOutcome
-
-How that order ended, or **None** before any has ended.
-
-```csharp
-public AiIntentOutcome ReportedOutcome { get; set; }
-```
-
-#### Property Value
-
- AiIntentOutcome
-
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_ReportedSeq"></a> ReportedSeq
-
-The sequence number of the last order the NPC finished.
-
-```csharp
-public ushort ReportedSeq { get; set; }
-```
-
-#### Property Value
-
- [ushort](https://learn.microsoft.com/dotnet/api/system.uint16)
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_RequestId"></a> RequestId
 
@@ -888,18 +793,6 @@ public float Rotation { get; set; }
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
 
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_Run"></a> Run
-
-How the ref's own script blocks run, **SessionDefault** for the session's rule of its kind.
-
-```csharp
-public ScriptRunPolicy Run { get; set; }
-```
-
-#### Property Value
-
- ScriptRunPolicy
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_ShieldHandPoseAnimLayerClassName"></a> ShieldHandPoseAnimLayerClassName
 
 The class name of the animation layer for the shield hand pose.
@@ -911,18 +804,6 @@ public NativeString256 ShieldHandPoseAnimLayerClassName { get; set; }
 #### Property Value
 
  NativeString256
-
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_SpawnerRefId"></a> SpawnerRefId
-
-The ref id of the spawner that made this NPC, or 0.
-
-```csharp
-public uint SpawnerRefId { get; set; }
-```
-
-#### Property Value
-
- [uint](https://learn.microsoft.com/dotnet/api/system.uint32)
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_SpellCastAnimLayerClassName"></a> SpellCastAnimLayerClassName
 
@@ -947,18 +828,6 @@ public NativeString256 StaggerAnimLayerClassName { get; set; }
 #### Property Value
 
  NativeString256
-
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_Target"></a> Target
-
-How script commands that change the ref run, **SessionDefault** for the session's rule.
-
-```csharp
-public ScriptTargetPolicy Target { get; set; }
-```
-
-#### Property Value
-
- ScriptTargetPolicy
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_TorchAnimLayerClassName"></a> TorchAnimLayerClassName
 
@@ -2192,24 +2061,24 @@ public bool TryAs<T>(out T archetype) where T : struct, IArchetypeQueryable
 
 ## Operators
 
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_op_Explicit_OblivionMP_SDK_Common_Archetypes_Npc__OblivionMP_SDK_Common_Archetypes_ServerSummon"></a> explicit operator ServerSummon\(Npc\)
+### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_op_Explicit_OblivionMP_SDK_Common_Archetypes_Character__OblivionMP_SDK_Common_Archetypes_ServerSummon"></a> explicit operator ServerSummon\(Character\)
 
 ```csharp
-public static explicit operator ServerSummon(Npc value)
+public static explicit operator ServerSummon(Character value)
 ```
 
 #### Parameters
 
-`value` [Npc](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Npc.md)
+`value` [Character](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Character.md)
 
 #### Returns
 
  [ServerSummon](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.ServerSummon.md)
 
-### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_op_Implicit_OblivionMP_SDK_Common_Archetypes_ServerSummon__OblivionMP_SDK_Common_Archetypes_Npc"></a> implicit operator Npc\(ServerSummon\)
+### <a id="OblivionMP_SDK_Common_Archetypes_ServerSummon_op_Implicit_OblivionMP_SDK_Common_Archetypes_ServerSummon__OblivionMP_SDK_Common_Archetypes_Character"></a> implicit operator Character\(ServerSummon\)
 
 ```csharp
-public static implicit operator Npc(ServerSummon value)
+public static implicit operator Character(ServerSummon value)
 ```
 
 #### Parameters
@@ -2218,6 +2087,6 @@ public static implicit operator Npc(ServerSummon value)
 
 #### Returns
 
- [Npc](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Npc.md)
+ [Character](../OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.Character.md)
 
 

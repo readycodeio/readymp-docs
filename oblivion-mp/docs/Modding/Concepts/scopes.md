@@ -151,8 +151,8 @@ OblivionMP adds its own values to the built-in scopes the same way:
 
 | Scope | Values Oblivion adds | Page |
 | --- | --- | --- |
-| `World` | `Difficulty`, `LevelScaling` | [Time, weather and session](../Game/time-weather-session.md) |
-| `Area` | `Time` (time of day), `Weather` | [Time, weather and session](../Game/time-weather-session.md) |
+| `World` | `GameTime` (the time of day and the date), `Difficulty`, `LevelScaling` | [Time, weather and session](../Game/time-weather-session.md) |
+| `Area` | `Weather` | [Time, weather and session](../Game/time-weather-session.md) |
 | `Cell` | `CellSeeding` | [World seeding](../Advanced/world-seeding.md) |
 | `Player` | `NicknameMixin` (`player.Nickname`), `Journal`, `Dialogue`, `SpokenTopics` | [Players and characters](../Game/players-and-characters.md), [Quests and dialogue](../Game/quests-and-dialogue.md) |
 
@@ -181,7 +181,7 @@ client. See [Entities and queries](entities-and-queries.md).
 * [ExtendsAttribute](../../../api-reference/ReadyM.SDK.Attributes/ReadyM.SDK.Attributes.ExtendsAttribute.md)
 * [Difficulty](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Difficulty.md),
   [LevelScaling](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LevelScaling.md),
-  [Time](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Time.md),
+  [GameTime](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.GameTime.md),
   [Weather](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Weather.md),
   [CellSeeding](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.CellSeeding.md),
   [NicknameMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.NicknameMixin.md),

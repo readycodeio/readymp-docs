@@ -14,18 +14,20 @@ description: 'The types in the OblivionMP.SDK.Serverside namespace.'
 
  [OblivionMP.SDK.Serverside.Spawners](../OblivionMP.SDK.Serverside.Spawners/OblivionMP.SDK.Serverside.Spawners.md)
 
+ [OblivionMP.SDK.Serverside.Systems](../OblivionMP.SDK.Serverside.Systems/OblivionMP.SDK.Serverside.Systems.md)
+
  [OblivionMP.SDK.Serverside.World](../OblivionMP.SDK.Serverside.World/OblivionMP.SDK.Serverside.World.md)
 
 ### Classes
+
+ [ServerConfig](../OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.ServerConfig.md)
+
+The SDK's server settings, from <code>config.json</code> in its server folder.
 
  [ServerRefIds](../OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.ServerRefIds.md)
 
 Hands out ref ids for entities the server creates (dropped items, spawned npcs). The next one is kept on the World
 (**ServerRefIdMark**), which is saved in Global, so cells that are not loaded keep their ids.
-
- [SessionClock](../OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionClock.md)
-
-The game time of an area, read from its clock.
 
  [SessionDifficulty](../OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionDifficulty.md)
 

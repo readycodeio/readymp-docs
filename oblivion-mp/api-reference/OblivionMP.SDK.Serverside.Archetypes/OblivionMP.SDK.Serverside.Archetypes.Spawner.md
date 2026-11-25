@@ -67,6 +67,16 @@ public ushort Level { get; set; }
 
  [ushort](https://learn.microsoft.com/dotnet/api/system.uint16)
 
+### <a id="OblivionMP_SDK_Serverside_Archetypes_Spawner_LevelExperience"></a> LevelExperience
+
+```csharp
+public float LevelExperience { get; set; }
+```
+
+#### Property Value
+
+ [float](https://learn.microsoft.com/dotnet/api/system.single)
+
 ### <a id="OblivionMP_SDK_Serverside_Archetypes_Spawner_ParentCellKind"></a> ParentCellKind
 
 ```csharp

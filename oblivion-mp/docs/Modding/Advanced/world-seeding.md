@@ -101,9 +101,8 @@ schedule belongs to the seed loader, so a shop opens for everyone whether or not
 owns it.
 
 The seed lists the doors the game schedules. Once a second the seed loader looks over those of them that exist as
-entities and follows the schedule: unlocked at the opening hour, locked at the closing hour, by the clock of the door's
-own area. A load door pair goes by the later of its two clocks, because an area nobody is in keeps the time it had when
-the last player left it. An area no player has been in yet has no clock of its own, and its doors wait for one.
+entities and follows the schedule: unlocked at the opening hour, locked at the closing hour, by the server's
+clock. Every door in the world goes by the same hour, whether or not a player is near it.
 
 Each opening and each closing is applied once. A player who picks a scheduled door open keeps it open until the next
 closing, and a mod that locks one keeps it locked until the next opening. The change itself is a
@@ -125,7 +124,7 @@ respawns them, whether or not anyone is there:
 * The cell's spawn points are reset, so their creatures spawn again.
 
 The cell's `RespawnedAtGameHours` is then set to now. Game hours come from the world's clock, the same one
-[`SessionClock`](../../../api-reference/OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionClock.md)`.NowGameHours()`
+[`WorldClock`](../../../api-reference/OblivionMP.SDK.Serverside.Systems/OblivionMP.SDK.Serverside.Systems.WorldClock.md)`.NowGameHours()`
 reads.
 
 ## The seed loader's settings {#seed-loader-settings}
@@ -172,6 +171,7 @@ extends another shape:
 using OblivionMP.SDK.Common.Archetypes.Mixins;
 using OblivionMP.SDK.Serverside;
 using ReadyM.Api.Idents;
+using OblivionMP.SDK.Serverside.Systems;
 using ReadyM.SDK.Archetypes.Core;
 using ReadyM.SDK.Attributes;
 using ReadyM.SDK.Server.Entities;
@@ -179,7 +179,7 @@ using ReadyM.SDK.Server.Entities;
 namespace MyMod.Server;
 
 [Service]
-public sealed partial class RespawnHold(IEntities entities, SessionClock clock)
+public sealed partial class RespawnHold(IEntities entities, WorldClock clock)
 {
     // Restarts the cell's 72 game hours, for example while players are still fighting in it.
     public void PutOffRespawn(FullCellId id)
@@ -192,7 +192,7 @@ public sealed partial class RespawnHold(IEntities entities, SessionClock clock)
 
 :::note
 
-Not in 1.1.1 yet: changing the respawn interval for the whole server, or seeding a cell from a mod. The interval is 72
+Not in 1.2.0 yet: changing the respawn interval for the whole server, or seeding a cell from a mod. The interval is 72
 game hours, as in the single-player game.
 
 :::
@@ -218,4 +218,4 @@ game hours, as in the single-player game.
 * [FormType](../../../api-reference/ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.FormType.md)
 * [DroppedItem](../../../api-reference/OblivionMP.SDK.Common.Archetypes/OblivionMP.SDK.Common.Archetypes.DroppedItem.md)
 * [Cell](../../../api-reference/ReadyM.SDK.Archetypes.Core/ReadyM.SDK.Archetypes.Core.Cell.md)
-* [SessionClock](../../../api-reference/OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionClock.md)
+* [WorldClock](../../../api-reference/OblivionMP.SDK.Serverside.Systems/OblivionMP.SDK.Serverside.Systems.WorldClock.md)

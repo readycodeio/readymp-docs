@@ -66,4 +66,16 @@ public static Value<ItemExtraData, float> Durability { get; }
 
  Value<[ItemExtraData](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ItemExtraData.md), [float](https://learn.microsoft.com/dotnet/api/system.single)\>
 
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_ItemExtraData_Field_Poison"></a> Poison
+
+Names ItemExtraData.Poison.
+
+```csharp
+public static Value<ItemExtraData, NetworkFormId> Poison { get; }
+```
+
+#### Property Value
+
+ Value<[ItemExtraData](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.ItemExtraData.md), NetworkFormId\>
+
 

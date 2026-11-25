@@ -1,13 +1,14 @@
 ---
 title: 'Struct SkillAttributes'
-description: 'A character''s attributes and skills, keyed by CharacterAttribute cast to byte.'
+description: 'A character''s attributes and skills with active effects applied, as the owner''s game has them. Read-only: to change one, write BaseSkillAttributes.'
 ---
 # Struct SkillAttributes
 
 Namespace: [OblivionMP.SDK.Common.Archetypes.Mixins](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.md)  
 Assembly: OblivionMP.SDK.Common.dll  
 
-A character's attributes and skills, keyed by **CharacterAttribute** cast to <code>byte</code>.
+A character's attributes and skills with active effects applied, as the owner's game has them. Read-only: to change
+one, write **BaseSkillAttributes**.
 
 ```csharp
 [ArchetypeMixin(Replication.OwnershipBased)]
@@ -29,36 +30,7 @@ IEntityShape
 [object.ReferenceEquals\(object?, object?\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.GetHashCode\(\)](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
 
-## Properties
-
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_AttributeCount"></a> AttributeCount
-
-```csharp
-public int AttributeCount { get; }
-```
-
-#### Property Value
-
- [int](https://learn.microsoft.com/dotnet/api/system.int32)
-
 ## Methods
-
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_AddAttribute_System_Byte__System_Single__"></a> AddAttribute\(in byte, in float\)
-
-```csharp
-[Changes("SkillAttributes.Field.Attribute")]
-public bool AddAttribute(in byte key, in float value)
-```
-
-#### Parameters
-
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
-
-`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
-
-#### Returns
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_As__1"></a> As<T\>\(\)
 
@@ -74,66 +46,27 @@ public T As<T>() where T : struct, IArchetypeQueryable
 
 `T` 
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_ClearAttribute"></a> ClearAttribute\(\)
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_GetEffective_ReadyM_Relay_Common_Oblivion_ECS_Values_CharacterAttribute_"></a> GetEffective\(CharacterAttribute\)
+
+The attribute's or skill's value with active effects applied.
 
 ```csharp
-[Changes("SkillAttributes.Field.Attribute")]
-public void ClearAttribute()
-```
-
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_ContainsAttribute_System_Byte__System_Single__"></a> ContainsAttribute\(in byte, in float\)
-
-```csharp
-public bool ContainsAttribute(in byte key, in float value)
+public float GetEffective(CharacterAttribute attribute)
 ```
 
 #### Parameters
 
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
-
-`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
-
-#### Returns
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_ContainsAttributeKey_System_Byte__"></a> ContainsAttributeKey\(in byte\)
-
-```csharp
-public bool ContainsAttributeKey(in byte key)
-```
-
-#### Parameters
-
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
-
-#### Returns
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_GetAttribute"></a> GetAttribute\(\)
-
-```csharp
-public NativeDictionary<byte, float, ByteHash>.ReadOnly GetAttribute()
-```
-
-#### Returns
-
- NativeDictionary<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), ByteHash\>.ReadOnly
-
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_GetAttribute_System_Byte__"></a> GetAttribute\(in byte\)
-
-```csharp
-public float GetAttribute(in byte key)
-```
-
-#### Parameters
-
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
+`attribute` CharacterAttribute
 
 #### Returns
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+#### Exceptions
+
+ [InvalidOperationException](https://learn.microsoft.com/dotnet/api/system.invalidoperationexception)
+
+The owner's game has not reported it yet.
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_Is__1"></a> Is<T\>\(\)
 
@@ -167,45 +100,6 @@ Here so taking something out of a loop reads the same whichever way the loop wal
 shape is walked by chunk follows from what it includes, which the call site cannot see and which
 changes when an include does.
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_RemoveAttribute_System_Byte__"></a> RemoveAttribute\(in byte\)
-
-```csharp
-[Changes("SkillAttributes.Field.Attribute")]
-public bool RemoveAttribute(in byte key)
-```
-
-#### Parameters
-
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
-
-#### Returns
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_SetAttribute_ReadyM_Native_Container_NativeDictionary_System_Byte_System_Single_ReadyM_Native_Container_ByteHash___"></a> SetAttribute\(in NativeDictionary<byte, float, ByteHash\>\)
-
-```csharp
-[Changes("SkillAttributes.Field.Attribute")]
-public void SetAttribute(in NativeDictionary<byte, float, ByteHash> value)
-```
-
-#### Parameters
-
-`value` NativeDictionary<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), ByteHash\>
-
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_SetAttribute_System_Byte__System_Single__"></a> SetAttribute\(in byte, in float\)
-
-```csharp
-[Changes("SkillAttributes.Field.Attribute")]
-public void SetAttribute(in byte key, in float value)
-```
-
-#### Parameters
-
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
-
-`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_TryAs__1___0__"></a> TryAs<T\>\(out T\)
 
 ```csharp
@@ -224,15 +118,17 @@ public bool TryAs<T>(out T archetype) where T : struct, IArchetypeQueryable
 
 `T` 
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_TryGetAttributeValue_System_Byte__System_Single__"></a> TryGetAttributeValue\(in byte, out float\)
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributes_TryGetEffective_ReadyM_Relay_Common_Oblivion_ECS_Values_CharacterAttribute_System_Single__"></a> TryGetEffective\(CharacterAttribute, out float\)
+
+The attribute's or skill's value with active effects applied, if the owner's game has reported it.
 
 ```csharp
-public bool TryGetAttributeValue(in byte key, out float value)
+public bool TryGetEffective(CharacterAttribute attribute, out float value)
 ```
 
 #### Parameters
 
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
+`attribute` CharacterAttribute
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
