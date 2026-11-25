@@ -12,6 +12,10 @@ description: 'The types in the OblivionMP.SDK namespace.'
 
 ### Classes
 
+ [ClientConfig](../OblivionMP.SDK/OblivionMP.SDK.ClientConfig.md)
+
+The SDK's client settings, from <code>config.json</code> in its client folder.
+
  [IEntitiesExtensions](../OblivionMP.SDK/OblivionMP.SDK.IEntitiesExtensions.md)
 
 Shortcuts on **IEntities** for common client queries.

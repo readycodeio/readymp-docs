@@ -105,7 +105,10 @@ A character started casting a spell.
 
 A character released a spell it was casting, or fired a staff.
 
- [TimeChangeEvent](../OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.TimeChangeEvent.md)
+ [TimeSkipRequestEvent](../OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.TimeSkipRequestEvent.md)
+
+A player confirmed the wait menu, by waiting or sleeping in a bed. The SDK skips the world's time for it only when
+the server's <code>AllowTimeSkip</code> is on; a server mod may handle it either way.
 
  [UndockEvent](../OblivionMP.SDK.Common.Events/OblivionMP.SDK.Common.Events.UndockEvent.md)
 

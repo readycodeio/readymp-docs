@@ -17,6 +17,7 @@ A player's character in the world.
 [Include(typeof(PlayerActivity), "")]
 [Include(typeof(EffectsAttributes), "Effect")]
 [Include(typeof(SkillAttributes), "Skill")]
+[Include(typeof(BaseSkillAttributes), "BaseSkill")]
 [Include(typeof(SocialAttributes), "Social")]
 [Include(typeof(Quiver), "")]
 public readonly struct MainCharacter : IArchetype, IArchetypeQueryable, IEntityShape, IIndexed<PlayerId>
@@ -117,6 +118,16 @@ public NetworkFormId BaseId { get; set; }
 #### Property Value
 
  NetworkFormId
+
+### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_BaseSkillAttributeCount"></a> BaseSkillAttributeCount
+
+```csharp
+public int BaseSkillAttributeCount { get; }
+```
+
+#### Property Value
+
+ [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_BeardPath"></a> BeardPath
 
@@ -315,18 +326,6 @@ public NativeString256 CurrentGait { get; set; }
 #### Property Value
 
  NativeString256
-
-### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_CurrentPoison"></a> CurrentPoison
-
-The poison on the equipped weapon.
-
-```csharp
-public NetworkFormId CurrentPoison { get; set; }
-```
-
-#### Property Value
-
- NetworkFormId
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_CustomisationBeardIndex"></a> CustomisationBeardIndex
 
@@ -792,6 +791,18 @@ public ushort Level { get; set; }
 
  [ushort](https://learn.microsoft.com/dotnet/api/system.uint16)
 
+### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_LevelExperience"></a> LevelExperience
+
+A player's experience toward a level-up, which skill increases add to. Always 0 for an NPC.
+
+```csharp
+public float LevelExperience { get; set; }
+```
+
+#### Property Value
+
+ [float](https://learn.microsoft.com/dotnet/api/system.single)
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_Magicka"></a> Magicka
 
 Current magicka.
@@ -1066,16 +1077,6 @@ public NativeString256 ShieldHandPoseAnimLayerClassName { get; set; }
 
  NativeString256
 
-### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_SkillAttributeCount"></a> SkillAttributeCount
-
-```csharp
-public int SkillAttributeCount { get; }
-```
-
-#### Property Value
-
- [int](https://learn.microsoft.com/dotnet/api/system.int32)
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_SkinColorCount"></a> SkinColorCount
 
 ```csharp
@@ -1249,6 +1250,23 @@ public void AddAttackingTags(in NativeString256 value)
 
 `value` NativeString256
 
+### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_AddBaseSkillAttribute_System_Byte__System_Single__"></a> AddBaseSkillAttribute\(in byte, in float\)
+
+```csharp
+[Changes("BaseSkillAttributes.Field.Attribute")]
+public bool AddBaseSkillAttribute(in byte key, in float value)
+```
+
+#### Parameters
+
+`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
+
+`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_AddBlockingTags_ReadyM_Native_Container_NativeString256__"></a> AddBlockingTags\(in NativeString256\)
 
 ```csharp
@@ -1394,23 +1412,6 @@ public void AddMeleeMontageSamples(in SequencedSample value)
 
 `value` SequencedSample
 
-### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_AddSkillAttribute_System_Byte__System_Single__"></a> AddSkillAttribute\(in byte, in float\)
-
-```csharp
-[Changes("SkillAttributes.Field.Attribute")]
-public bool AddSkillAttribute(in byte key, in float value)
-```
-
-#### Parameters
-
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
-
-`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
-
-#### Returns
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_AddSkinColor_ReadyM_Native_Container_NativeString256__System_Numerics_Vector4__"></a> AddSkinColor\(in NativeString256, in Vector4\)
 
 ```csharp
@@ -1497,6 +1498,13 @@ public void ClearAnimTags()
 public void ClearAttackingTags()
 ```
 
+### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_ClearBaseSkillAttribute"></a> ClearBaseSkillAttribute\(\)
+
+```csharp
+[Changes("BaseSkillAttributes.Field.Attribute")]
+public void ClearBaseSkillAttribute()
+```
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_ClearBlockingTags"></a> ClearBlockingTags\(\)
 
 ```csharp
@@ -1574,13 +1582,6 @@ public void ClearLastAnimTags()
 public void ClearMeleeMontageSamples()
 ```
 
-### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_ClearSkillAttribute"></a> ClearSkillAttribute\(\)
-
-```csharp
-[Changes("SkillAttributes.Field.Attribute")]
-public void ClearSkillAttribute()
-```
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_ClearSkinColor"></a> ClearSkinColor\(\)
 
 ```csharp
@@ -1639,6 +1640,36 @@ public bool ContainsAttackingTags(in NativeString256 value)
 #### Parameters
 
 `value` NativeString256
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_ContainsBaseSkillAttribute_System_Byte__System_Single__"></a> ContainsBaseSkillAttribute\(in byte, in float\)
+
+```csharp
+public bool ContainsBaseSkillAttribute(in byte key, in float value)
+```
+
+#### Parameters
+
+`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
+
+`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_ContainsBaseSkillAttributeKey_System_Byte__"></a> ContainsBaseSkillAttributeKey\(in byte\)
+
+```csharp
+public bool ContainsBaseSkillAttributeKey(in byte key)
+```
+
+#### Parameters
+
+`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
 
 #### Returns
 
@@ -1862,36 +1893,6 @@ public bool ContainsMeleeMontageSamples(in SequencedSample value)
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
-### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_ContainsSkillAttribute_System_Byte__System_Single__"></a> ContainsSkillAttribute\(in byte, in float\)
-
-```csharp
-public bool ContainsSkillAttribute(in byte key, in float value)
-```
-
-#### Parameters
-
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
-
-`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
-
-#### Returns
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
-### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_ContainsSkillAttributeKey_System_Byte__"></a> ContainsSkillAttributeKey\(in byte\)
-
-```csharp
-public bool ContainsSkillAttributeKey(in byte key)
-```
-
-#### Parameters
-
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
-
-#### Returns
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_ContainsSkinColor_ReadyM_Native_Container_NativeString256__System_Numerics_Vector4__"></a> ContainsSkinColor\(in NativeString256, in Vector4\)
 
 ```csharp
@@ -2053,6 +2054,30 @@ public NativeString256 GetAttackingTags(int index)
 #### Returns
 
  NativeString256
+
+### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_GetBaseSkillAttribute"></a> GetBaseSkillAttribute\(\)
+
+```csharp
+public NativeDictionary<byte, float, ByteHash>.ReadOnly GetBaseSkillAttribute()
+```
+
+#### Returns
+
+ NativeDictionary<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), ByteHash\>.ReadOnly
+
+### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_GetBaseSkillAttribute_System_Byte__"></a> GetBaseSkillAttribute\(in byte\)
+
+```csharp
+public float GetBaseSkillAttribute(in byte key)
+```
+
+#### Parameters
+
+`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
+
+#### Returns
+
+ [float](https://learn.microsoft.com/dotnet/api/system.single)
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_GetBlockingTags"></a> GetBlockingTags\(\)
 
@@ -2317,30 +2342,6 @@ public SequencedSample GetMeleeMontageSamples(int index)
 #### Returns
 
  SequencedSample
-
-### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_GetSkillAttribute"></a> GetSkillAttribute\(\)
-
-```csharp
-public NativeDictionary<byte, float, ByteHash>.ReadOnly GetSkillAttribute()
-```
-
-#### Returns
-
- NativeDictionary<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), ByteHash\>.ReadOnly
-
-### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_GetSkillAttribute_System_Byte__"></a> GetSkillAttribute\(in byte\)
-
-```csharp
-public float GetSkillAttribute(in byte key)
-```
-
-#### Parameters
-
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
-
-#### Returns
-
- [float](https://learn.microsoft.com/dotnet/api/system.single)
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_GetSkinColor"></a> GetSkinColor\(\)
 
@@ -2738,6 +2739,21 @@ public SequencedSample RemoveAtMeleeMontageSamples(int index)
 
  SequencedSample
 
+### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_RemoveBaseSkillAttribute_System_Byte__"></a> RemoveBaseSkillAttribute\(in byte\)
+
+```csharp
+[Changes("BaseSkillAttributes.Field.Attribute")]
+public bool RemoveBaseSkillAttribute(in byte key)
+```
+
+#### Parameters
+
+`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_RemoveBoneScaling_ReadyM_Native_Container_NativeString256__"></a> RemoveBoneScaling\(in NativeString256\)
 
 ```csharp
@@ -2793,21 +2809,6 @@ public bool RemoveFaceMorph(in NativeString256 key)
 #### Parameters
 
 `key` NativeString256
-
-#### Returns
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
-### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_RemoveSkillAttribute_System_Byte__"></a> RemoveSkillAttribute\(in byte\)
-
-```csharp
-[Changes("SkillAttributes.Field.Attribute")]
-public bool RemoveSkillAttribute(in byte key)
-```
-
-#### Parameters
-
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
 
 #### Returns
 
@@ -2929,6 +2930,30 @@ public void SetAttackingTags(int index, in NativeString256 value)
 `index` [int](https://learn.microsoft.com/dotnet/api/system.int32)
 
 `value` NativeString256
+
+### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_SetBaseSkillAttribute_ReadyM_Native_Container_NativeDictionary_System_Byte_System_Single_ReadyM_Native_Container_ByteHash___"></a> SetBaseSkillAttribute\(in NativeDictionary<byte, float, ByteHash\>\)
+
+```csharp
+[Changes("BaseSkillAttributes.Field.Attribute")]
+public void SetBaseSkillAttribute(in NativeDictionary<byte, float, ByteHash> value)
+```
+
+#### Parameters
+
+`value` NativeDictionary<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), ByteHash\>
+
+### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_SetBaseSkillAttribute_System_Byte__System_Single__"></a> SetBaseSkillAttribute\(in byte, in float\)
+
+```csharp
+[Changes("BaseSkillAttributes.Field.Attribute")]
+public void SetBaseSkillAttribute(in byte key, in float value)
+```
+
+#### Parameters
+
+`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
+
+`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_SetBlockingTags_ReadyM_Native_Container_NativeList_ReadyM_Native_Container_NativeString256___"></a> SetBlockingTags\(in NativeList<NativeString256\>\)
 
@@ -3194,30 +3219,6 @@ public void SetMeleeMontageSamples(int index, in SequencedSample value)
 
 `value` SequencedSample
 
-### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_SetSkillAttribute_ReadyM_Native_Container_NativeDictionary_System_Byte_System_Single_ReadyM_Native_Container_ByteHash___"></a> SetSkillAttribute\(in NativeDictionary<byte, float, ByteHash\>\)
-
-```csharp
-[Changes("SkillAttributes.Field.Attribute")]
-public void SetSkillAttribute(in NativeDictionary<byte, float, ByteHash> value)
-```
-
-#### Parameters
-
-`value` NativeDictionary<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), ByteHash\>
-
-### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_SetSkillAttribute_System_Byte__System_Single__"></a> SetSkillAttribute\(in byte, in float\)
-
-```csharp
-[Changes("SkillAttributes.Field.Attribute")]
-public void SetSkillAttribute(in byte key, in float value)
-```
-
-#### Parameters
-
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
-
-`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_SetSkinColor_ReadyM_Native_Container_NativeDictionary_ReadyM_Native_Container_NativeString256_System_Numerics_Vector4_ReadyM_Native_Container_NativeStringHash256___"></a> SetSkinColor\(in NativeDictionary<NativeString256, Vector4, NativeStringHash256\>\)
 
 ```csharp
@@ -3308,6 +3309,22 @@ public bool TryAs<T>(out T archetype) where T : struct, IArchetypeQueryable
 
 `T` 
 
+### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_TryGetBaseSkillAttributeValue_System_Byte__System_Single__"></a> TryGetBaseSkillAttributeValue\(in byte, out float\)
+
+```csharp
+public bool TryGetBaseSkillAttributeValue(in byte key, out float value)
+```
+
+#### Parameters
+
+`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
+
+`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
+
+#### Returns
+
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
+
 ### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_TryGetBoneScalingValue_ReadyM_Native_Container_NativeString256__System_Single__"></a> TryGetBoneScalingValue\(in NativeString256, out float\)
 
 ```csharp
@@ -3365,22 +3382,6 @@ public bool TryGetFaceMorphValue(in NativeString256 key, out float value)
 #### Parameters
 
 `key` NativeString256
-
-`value` [float](https://learn.microsoft.com/dotnet/api/system.single)
-
-#### Returns
-
- [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
-
-### <a id="OblivionMP_SDK_Common_Archetypes_MainCharacter_TryGetSkillAttributeValue_System_Byte__System_Single__"></a> TryGetSkillAttributeValue\(in byte, out float\)
-
-```csharp
-public bool TryGetSkillAttributeValue(in byte key, out float value)
-```
-
-#### Parameters
-
-`key` [byte](https://learn.microsoft.com/dotnet/api/system.byte)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 

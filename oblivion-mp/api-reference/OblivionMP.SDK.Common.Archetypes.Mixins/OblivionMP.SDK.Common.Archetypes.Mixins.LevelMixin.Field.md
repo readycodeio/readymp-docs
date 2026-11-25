@@ -54,4 +54,16 @@ public static Value<LevelMixin, ushort> Level { get; }
 
  Value<[LevelMixin](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LevelMixin.md), [ushort](https://learn.microsoft.com/dotnet/api/system.uint16)\>
 
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_LevelMixin_Field_LevelExperience"></a> LevelExperience
+
+Names LevelMixin.LevelExperience.
+
+```csharp
+public static Value<LevelMixin, float> LevelExperience { get; }
+```
+
+#### Property Value
+
+ Value<[LevelMixin](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LevelMixin.md), [float](https://learn.microsoft.com/dotnet/api/system.single)\>
+
 

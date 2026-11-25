@@ -262,18 +262,6 @@ public NativeString256 CurrentGait { get; set; }
 
  NativeString256
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Npc_CurrentPoison"></a> CurrentPoison
-
-The poison on the equipped weapon.
-
-```csharp
-public NetworkFormId CurrentPoison { get; set; }
-```
-
-#### Property Value
-
- NetworkFormId
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_Npc_DodgeAnimLayerClassName"></a> DodgeAnimLayerClassName
 
 The class name of the animation layer for dodging.
@@ -551,6 +539,18 @@ public ushort Level { get; set; }
 #### Property Value
 
  [ushort](https://learn.microsoft.com/dotnet/api/system.uint16)
+
+### <a id="OblivionMP_SDK_Common_Archetypes_Npc_LevelExperience"></a> LevelExperience
+
+A player's experience toward a level-up, which skill increases add to. Always 0 for an NPC.
+
+```csharp
+public float LevelExperience { get; set; }
+```
+
+#### Property Value
+
+ [float](https://learn.microsoft.com/dotnet/api/system.single)
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_Npc_Magicka"></a> Magicka
 

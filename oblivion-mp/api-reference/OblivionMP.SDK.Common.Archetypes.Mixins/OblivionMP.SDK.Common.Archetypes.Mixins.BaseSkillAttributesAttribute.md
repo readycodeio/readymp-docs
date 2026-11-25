@@ -1,16 +1,16 @@
 ---
-title: 'Struct SkillAttributesAttribute'
-description: 'The Attribute collection of a SkillAttributes.'
+title: 'Struct BaseSkillAttributesAttribute'
+description: 'The Attribute collection of a BaseSkillAttributes.'
 ---
-# Struct SkillAttributesAttribute
+# Struct BaseSkillAttributesAttribute
 
 Namespace: [OblivionMP.SDK.Common.Archetypes.Mixins](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.md)  
 Assembly: OblivionMP.SDK.Common.dll  
 
-The Attribute collection of a SkillAttributes.
+The Attribute collection of a BaseSkillAttributes.
 
 ```csharp
-public readonly ref struct SkillAttributesAttribute
+public readonly ref struct BaseSkillAttributesAttribute
 ```
 
 #### Inherited Members
@@ -24,7 +24,7 @@ public readonly ref struct SkillAttributesAttribute
 
 ## Properties
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributesAttribute_Count"></a> Count
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_BaseSkillAttributesAttribute_Count"></a> Count
 
 ```csharp
 public int Count { get; }
@@ -36,7 +36,7 @@ public int Count { get; }
 
 ## Methods
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributesAttribute_Add_System_Byte__System_Single__"></a> Add\(in byte, in float\)
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_BaseSkillAttributesAttribute_Add_System_Byte__System_Single__"></a> Add\(in byte, in float\)
 
 ```csharp
 public bool Add(in byte key, in float value)
@@ -52,13 +52,13 @@ public bool Add(in byte key, in float value)
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributesAttribute_Clear"></a> Clear\(\)
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_BaseSkillAttributesAttribute_Clear"></a> Clear\(\)
 
 ```csharp
 public void Clear()
 ```
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributesAttribute_Contains_System_Byte__System_Single__"></a> Contains\(in byte, in float\)
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_BaseSkillAttributesAttribute_Contains_System_Byte__System_Single__"></a> Contains\(in byte, in float\)
 
 ```csharp
 public bool Contains(in byte key, in float value)
@@ -74,7 +74,7 @@ public bool Contains(in byte key, in float value)
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributesAttribute_ContainsKey_System_Byte__"></a> ContainsKey\(in byte\)
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_BaseSkillAttributesAttribute_ContainsKey_System_Byte__"></a> ContainsKey\(in byte\)
 
 ```csharp
 public bool ContainsKey(in byte key)
@@ -88,7 +88,7 @@ public bool ContainsKey(in byte key)
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributesAttribute_Get"></a> Get\(\)
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_BaseSkillAttributesAttribute_Get"></a> Get\(\)
 
 ```csharp
 public NativeDictionary<byte, float, ByteHash>.ReadOnly Get()
@@ -98,7 +98,7 @@ public NativeDictionary<byte, float, ByteHash>.ReadOnly Get()
 
  NativeDictionary<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), ByteHash\>.ReadOnly
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributesAttribute_Get_System_Byte__"></a> Get\(in byte\)
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_BaseSkillAttributesAttribute_Get_System_Byte__"></a> Get\(in byte\)
 
 ```csharp
 public float Get(in byte key)
@@ -112,7 +112,7 @@ public float Get(in byte key)
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributesAttribute_Remove_System_Byte__"></a> Remove\(in byte\)
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_BaseSkillAttributesAttribute_Remove_System_Byte__"></a> Remove\(in byte\)
 
 ```csharp
 public bool Remove(in byte key)
@@ -126,7 +126,7 @@ public bool Remove(in byte key)
 
  [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributesAttribute_Set_ReadyM_Native_Container_NativeDictionary_System_Byte_System_Single_ReadyM_Native_Container_ByteHash___"></a> Set\(in NativeDictionary<byte, float, ByteHash\>\)
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_BaseSkillAttributesAttribute_Set_ReadyM_Native_Container_NativeDictionary_System_Byte_System_Single_ReadyM_Native_Container_ByteHash___"></a> Set\(in NativeDictionary<byte, float, ByteHash\>\)
 
 ```csharp
 public void Set(in NativeDictionary<byte, float, ByteHash> value)
@@ -136,7 +136,7 @@ public void Set(in NativeDictionary<byte, float, ByteHash> value)
 
 `value` NativeDictionary<[byte](https://learn.microsoft.com/dotnet/api/system.byte), [float](https://learn.microsoft.com/dotnet/api/system.single), ByteHash\>
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributesAttribute_Set_System_Byte__System_Single__"></a> Set\(in byte, in float\)
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_BaseSkillAttributesAttribute_Set_System_Byte__System_Single__"></a> Set\(in byte, in float\)
 
 ```csharp
 public void Set(in byte key, in float value)
@@ -148,7 +148,7 @@ public void Set(in byte key, in float value)
 
 `value` [float](https://learn.microsoft.com/dotnet/api/system.single)
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_SkillAttributesAttribute_TryGetValue_System_Byte__System_Single__"></a> TryGetValue\(in byte, out float\)
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_BaseSkillAttributesAttribute_TryGetValue_System_Byte__System_Single__"></a> TryGetValue\(in byte, out float\)
 
 ```csharp
 public bool TryGetValue(in byte key, out float value)

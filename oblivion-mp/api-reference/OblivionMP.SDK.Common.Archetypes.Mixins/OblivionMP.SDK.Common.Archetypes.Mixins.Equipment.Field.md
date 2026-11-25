@@ -42,18 +42,6 @@ public static Shape<Equipment> All { get; }
 
  Shape<[Equipment](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Equipment.md)\>
 
-### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_Equipment_Field_CurrentPoison"></a> CurrentPoison
-
-Names Equipment.CurrentPoison.
-
-```csharp
-public static Value<Equipment, NetworkFormId> CurrentPoison { get; }
-```
-
-#### Property Value
-
- Value<[Equipment](../OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Equipment.md), NetworkFormId\>
-
 ### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_Equipment_Field_IsServerSeeded"></a> IsServerSeeded
 
 Names Equipment.IsServerSeeded.

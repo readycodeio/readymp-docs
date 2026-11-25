@@ -43,6 +43,18 @@ public ushort Level { get; set; }
 
  [ushort](https://learn.microsoft.com/dotnet/api/system.uint16)
 
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_LevelMixin_LevelExperience"></a> LevelExperience
+
+A player's experience toward a level-up, which skill increases add to. Always 0 for an NPC.
+
+```csharp
+public float LevelExperience { get; set; }
+```
+
+#### Property Value
+
+ [float](https://learn.microsoft.com/dotnet/api/system.single)
+
 ## Methods
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_LevelMixin_As__1"></a> As<T\>\(\)

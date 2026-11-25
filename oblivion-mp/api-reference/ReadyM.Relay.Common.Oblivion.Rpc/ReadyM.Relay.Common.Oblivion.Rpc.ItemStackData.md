@@ -76,4 +76,16 @@ public float Durability
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
 
+### <a id="ReadyM_Relay_Common_Oblivion_Rpc_ItemStackData_Poison"></a> Poison
+
+The poison applied to the items, or a default form id when they carry none.
+
+```csharp
+public NetworkFormId Poison
+```
+
+#### Field Value
+
+ [NetworkFormId](../ReadyM.Relay.Common.Oblivion.ECS.Values/ReadyM.Relay.Common.Oblivion.ECS.Values.NetworkFormId.md)
+
 

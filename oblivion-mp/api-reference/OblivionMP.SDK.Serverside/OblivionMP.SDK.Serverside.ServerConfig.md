@@ -1,22 +1,23 @@
 ---
-title: 'Class SessionClock'
-description: 'The game time of an area, read from its clock.'
+title: 'Class ServerConfig'
+description: 'The SDK''s server settings, from config.json in its server folder.'
 ---
-# Class SessionClock
+# Class ServerConfig
 
 Namespace: [OblivionMP.SDK.Serverside](../OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.md)  
 Assembly: OblivionMP.SDK.Serverside.dll  
 
-The game time of an area, read from its clock.
+The SDK's server settings, from <code>config.json</code> in its server folder.
 
 ```csharp
-public sealed class SessionClock
+[ModConfig("config.json")]
+public sealed class ServerConfig
 ```
 
 #### Inheritance
 
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
-[SessionClock](../OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.SessionClock.md)
+[ServerConfig](../OblivionMP.SDK.Serverside/OblivionMP.SDK.Serverside.ServerConfig.md)
 
 #### Inherited Members
 
@@ -29,34 +30,25 @@ public sealed class SessionClock
 
 ## Constructors
 
-### <a id="OblivionMP_SDK_Serverside_SessionClock__ctor_ReadyM_SDK_Server_Entities_IEntities_"></a> SessionClock\(IEntities\)
-
-The game time of an area, read from its clock.
+### <a id="OblivionMP_SDK_Serverside_ServerConfig__ctor"></a> ServerConfig\(\)
 
 ```csharp
-public SessionClock(IEntities entities)
+public ServerConfig()
 ```
 
-#### Parameters
+## Properties
 
-`entities` IEntities
+### <a id="OblivionMP_SDK_Serverside_ServerConfig_AllowTimeSkip"></a> AllowTimeSkip
 
-## Methods
-
-### <a id="OblivionMP_SDK_Serverside_SessionClock_NowGameHours_ReadyM_Api_Idents_AreaId_"></a> NowGameHours\(AreaId\)
-
-Game hours since the game started in <code class="paramref">area</code>, or 0 before the area has a clock.
+Skips the world's time when a player waits or sleeps. Off leaves the request to server mods. Always on in a
+debug build.
 
 ```csharp
-public float NowGameHours(AreaId area)
+public bool AllowTimeSkip { get; set; }
 ```
 
-#### Parameters
+#### Property Value
 
-`area` AreaId
-
-#### Returns
-
- [float](https://learn.microsoft.com/dotnet/api/system.single)
+ [bool](https://learn.microsoft.com/dotnet/api/system.boolean)
 
 

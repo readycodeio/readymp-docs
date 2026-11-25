@@ -55,6 +55,18 @@ public float Durability { get; set; }
 
  [float](https://learn.microsoft.com/dotnet/api/system.single)
 
+### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_ItemExtraData_Poison"></a> Poison
+
+The poison applied to the item, or a default form id for none.
+
+```csharp
+public NetworkFormId Poison { get; set; }
+```
+
+#### Property Value
+
+ NetworkFormId
+
 ## Methods
 
 ### <a id="OblivionMP_SDK_Common_Archetypes_Mixins_ItemExtraData_As__1"></a> As<T\>\(\)
