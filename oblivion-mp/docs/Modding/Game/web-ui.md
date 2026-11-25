@@ -221,8 +221,8 @@ registered:
   `readym://mymod/`, `models/d20.glb` is `readym://mymod/models/d20.glb`, which is `web/models/d20.glb` on disk.
 - **`fetch` and `XMLHttpRequest`.** Both work. For binary files, read the response with `arrayBuffer()` or
   `blob()` (with XHR, set `responseType = 'arraybuffer'`). There is no need to inline files as base64.
-- **Loaders.** Libraries that load with `fetch` or XHR, such as three.js's `GLTFLoader` and `TextureLoader`, take a
-  relative URL like any other.
+- **Loaders.** Library loaders take a relative URL like any other: three.js's `GLTFLoader` (which uses `fetch`) and
+  `TextureLoader` (which uses an image) both work on files in your folder.
 - **MIME types.** The type comes from the file's extension, with CEF's table of known types. A file with an extension
   CEF does not know is sent as `application/octet-stream`. That is fine for `fetch` and for loaders, which read the
   bytes whatever the type. A module script (`type="module"`, as three.js uses) runs only when it is sent as
