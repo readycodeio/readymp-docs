@@ -211,6 +211,99 @@ browser installed, every `CefHost` call does nothing, so your mod needs no speci
 
 While you work on a page, **Ctrl+Shift+F5** in game reloads every page from disk.
 
+### Loading files
+
+A page loads its own files the way a page on a website does. `readym://` is a secure, standard scheme with
+`fetch` turned on, and each host is one origin. So everything below works with any file in the folder you
+registered:
+
+- **Relative paths.** `src`, `href`, `url(...)` in CSS and `fetch` resolve against the page. On
+  `readym://mymod/`, `models/d20.glb` is `readym://mymod/models/d20.glb`, which is `web/models/d20.glb` on disk.
+- **`fetch` and `XMLHttpRequest`.** Both work. For binary files, read the response with `arrayBuffer()` or
+  `blob()` (with XHR, set `responseType = 'arraybuffer'`). There is no need to inline files as base64.
+- **Loaders.** Library loaders take a relative URL like any other: three.js's `GLTFLoader` (which uses `fetch`) and
+  `TextureLoader` (which uses an image) both work on files in your folder.
+- **MIME types.** The type comes from the file's extension, with CEF's table of known types. A file with an extension
+  CEF does not know is sent as `application/octet-stream`. That is fine for `fetch` and for loaders, which read the
+  bytes whatever the type. A module script (`type="module"`, as three.js uses) runs only when it is sent as
+  JavaScript, so give scripts a `.js` or `.mjs` name.
+
+A page that spins a 3D die, with the model and a settings file next to it in the `web` folder:
+
+```text
+MyMod.Client/web/
+├── index.html
+├── dice.json
+├── models/
+│   └── d20.glb
+└── three/
+    ├── build/            three.js's build folder
+    └── examples/jsm/     three.js's add-ons, GLTFLoader among them
+```
+
+```json title="MyMod.Client/web/dice.json"
+{ "cameraDistance": 4 }
+```
+
+```html title="MyMod.Client/web/index.html"
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./three/build/three.module.js",
+        "three/addons/": "./three/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body style="margin: 0">
+  <script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+    // A JSON file from the same folder.
+    const response = await fetch('dice.json');
+    if (!response.ok)
+      throw new Error(`dice.json: ${response.status}`);
+    const settings = await response.json();
+
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    const scene = new THREE.Scene();
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 3));
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 0, settings.cameraDistance);
+
+    // A binary model, loaded by relative path.
+    const gltf = await new GLTFLoader().loadAsync('models/d20.glb');
+    scene.add(gltf.scene);
+
+    renderer.setAnimationLoop(() => {
+      gltf.scene.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    });
+  </script>
+</body>
+</html>
+```
+
+Copy three.js into `web` rather than loading it from a CDN, so the page works without the internet. The `web\**\*`
+item in your `.csproj` and the `"web"` entry in `ModFiles.ps1` from the start of this page already ship every file
+in the folder, subfolders included.
+
+**Other mods' files.** Each host is its own origin: `readym://mymod/` and `readym://othermod/` are as separate as
+two websites, so the browser's cross-origin rules apply between them. Do not count on fetching another host's
+files. To use a file from another mod, serve it under your own host with `RegisterFile(host, path, file)`, where
+`file` is its path on disk, and the page loads it like its own. Two mods that register the same host share one
+origin, as the
+[`RegisterFolder`](../../../api-reference/ReadyM.Cef/ReadyM.Cef.CefHost.md#ReadyM_Cef_CefHost_RegisterFolder_System_String_System_String_)
+remarks say.
+
 ### Typed messages
 
 The quickest way to talk to a page is a class that declares its messages:
