@@ -66,6 +66,7 @@ when you use it.
 | `LevelMixin` | `Level` |
 | `PlayerActivity` | `InCombat`, `InDialogue`, and `DetectedByOtherPlayer`: the player is sneaking and another player's character can see them |
 | `Appearance` | `Sex` (a `CharacterSex`), the race, hair, eye and face asset paths, and the face morph and skin collections |
+| `CharacterIdentity` | `Name`, `Race`, `IsFemale`, `Class` and `Birthsign`: who the character is, as picked in character creation. `Race`, `Class` and `Birthsign` are form ids. See [Changing who a character is](#changing-who-a-character-is). |
 | `Quiver` | `HasQuiver` and `ArrowCount` |
 | `Equipment` | The inventory and `CurrentPoison`. See [Items and inventories](items-and-inventories.md). |
 | `ParentCell` | `ParentCellKind`, `ParentCellX`, `ParentCellY`: the cell the character stands in. See [World and cells](world-and-cells.md). |
@@ -122,6 +123,30 @@ main.SetSocialAttribute((byte)CharacterSocialAttribute.Bounty, 0f);
 
 A map only holds the keys the game has reported, so prefer the `TryGet...Value` form, or check with
 `ContainsSkillAttributeKey` (and its `Effect` and `Social` twins) first.
+
+### Changing who a character is
+
+When the server writes a `CharacterIdentity` value, the player's own game applies it on its next frame. Nothing waits
+for a reload or a Rebirth:
+
+| Field | What the game does |
+| --- | --- |
+| `Name` | Takes the new name. An empty name leaves the old one. |
+| `Race` | Takes away the old race's spells, abilities and powers and gives the new race's, in effect at once. |
+| `IsFemale` | Sets the character's sex. |
+| `Class` | Takes the new class. `0` leaves the old one. |
+| `Birthsign` | Takes away the old sign's spells, abilities and powers and gives the new sign's, in effect at once. `0` leaves the old one. |
+
+A write only changes those, which is not all that the game's race, class and birthsign menus change:
+
+* The model does not change. How the character looks is `Appearance`, its race and sex included; write it too.
+* Attributes and skills keep their values: no racial or class bonus is added or taken away. Write them as well when
+  you restore a saved character.
+* While `Race` is `0`, the game ignores the whole write.
+
+A form id the game has not loaded yet is applied once it is. A form id of the wrong kind, such as a class id in
+`Race`, leaves that field as it was and logs a warning in the game's log. The values are saved with the player, and the
+game applies them again whenever the character is loaded.
 
 ### NPCs and summons
 
@@ -291,6 +316,7 @@ To run code when a player connects or leaves, see [Server events](server-events.
   and its [field tokens](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Vitals.Field.md)
 * [LevelMixin](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.LevelMixin.md)
 * [Appearance](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Appearance.md)
+* [CharacterIdentity](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.CharacterIdentity.md)
 * [PlayerActivity](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.PlayerActivity.md)
 * [Quiver](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.Quiver.md)
 * [SkillAttributes](../../../api-reference/OblivionMP.SDK.Common.Archetypes.Mixins/OblivionMP.SDK.Common.Archetypes.Mixins.SkillAttributes.md),
