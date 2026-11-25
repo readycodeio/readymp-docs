@@ -1,0 +1,112 @@
+---
+sidebar_position: 5
+---
+
+# Network stats
+
+The **Network** view in the [admin panel](./admin-panel) is a live breakdown of what the relay is actually sending. It is the fastest way to answer "how much does my mod cost on the wire", so it is worth knowing how to read before you ship a component that replicates every tick.
+
+Viewing it requires the **Dashboard access** permission.
+
+<img
+  src={require('/img/docs/network-tab.png').default}
+  alt="Network tab in admin panel"
+/>
+
+:::info[New in 1.1.0]
+
+The charts filter and the tables sort. Click a legend entry on **UDP throughput** or **Server tick duration** to hide that series; the y-axis rescales to what is left, so hiding p99 lets p50 fill the chart. Click a column header in either traffic table to sort by it. Both tables start sorted by **In**, descending.
+
+The tick figures cover a whole tick now rather than the ECS update alone, there is a **Tick budget** tile beside them, and a mod's own RPCs and networked events appear by name instead of `Custom(code)`.
+
+:::
+
+## How sampling works
+
+The server closes one measurement window per second and pushes it to the panel over an event stream. It retains the last 300 windows; the charts and tables show the most recent 120, which is what the `last 120s` label next to the **LIVE** badge means.
+
+Windows do not overlap and nothing is smoothed across them. Every counter is snapshotted and zeroed at the window boundary. A burst of traffic therefore stays in the aggregate until it falls off the back of the 120 window view, then drops out on its own. That is normal, not a stat resetting.
+
+The stream is only reported as broken after five seconds pass with no sample. A dropped connection retries by itself and the server replays its retained history on reconnect, so short interruptions leave no gap in the charts.
+
+## Wire bytes and payload bytes
+
+Almost every confusion about this page comes from mixing up the two accounting layers, which are deliberately kept separate and will never agree.
+
+**Wire** is ground truth from LiteNetLib: every byte it actually put on the socket, including channel headers, acks, pings and reliable retransmits. This feeds the Ingress, Egress and UDP throughput figures.
+
+**Payload** is application bytes only, counted where the server composes and parses packets. This is what the per component and per message type tables show, and it is the only layer that can attribute bytes to your mod.
+
+Payload always sums to less than wire. The difference is the **Protocol overhead** tile, and it is a useful signal in itself: a large gap means acks and retransmits, not your data.
+
+Neither layer counts the 28 bytes of IP and UDP headers that every datagram carries. **Link egress** adds those back, and it is the only figure that reflects what your host actually bills you for.
+
+:::note
+
+Egress is counted per recipient. One delta composed once and relayed to five peers is five times the egress, because that is what leaves the box. This is why fan-out matters more than payload size for anything replicated to a busy area.
+
+:::
+
+## Summary tiles
+
+| Tile | What it shows |
+| --- | --- |
+| **Ingress** | Wire bytes per second received, with packets per second underneath. Latest window only. |
+| **Egress** | Wire bytes per second sent, with packets per second underneath. Latest window only. |
+| **Connected peers** | Peers LiteNetLib currently holds a connection to. |
+| **Server tick p99** | 99th percentile whole-tick duration in the latest window, with the achieved network loop rate underneath. A whole tick is everything the loop does between waking up and waiting again, not the ECS update alone. |
+| **Protocol overhead** | Wire egress minus payload egress, as a rate. Shows a percentage of egress only once payload passes 16 KB over the window, otherwise it says so instead of printing a confident number off a near zero denominator. |
+| **Link egress** | Wire egress plus 28 bytes per datagram. Many small packets are cheap in payload and expensive here. |
+| **Tick budget** | The share of its tick budget the loop used over the window. At 100% it can no longer hold 120 Hz. |
+
+## UDP throughput
+
+Wire bytes per second in and out, one point per window. Excludes IP and UDP headers, so compare it against **Link egress** rather than against your host's bandwidth graph.
+
+## Server tick duration
+
+p50 and p99 of how long one server tick takes, measured from the loop waking up to it waiting again. That covers the ECS update, the callbacks that apply whatever the receive thread queued, and resumed async work. Systems your mod registers run inside it, so this chart is where a system that does too much per tick shows up first.
+
+Click **p50** or **p99** in the legend to hide that line. The y-axis rescales to what is left, so hiding p99 lets p50 fill the chart instead of sitting flat along the bottom. The same works on the two areas of **UDP throughput**.
+
+Durations are histogrammed in 1 microsecond buckets, so the percentiles are exact rather than interpolated. Anything slower than 20 ms clamps into the top bucket; if you see a flat line at 20 ms, the real value is worse.
+
+A rising p99 with a flat p50 is the usual shape of a system that occasionally does heavy work, for example one that scans every entity on a timer instead of reacting to a change.
+
+## Top components by egress
+
+The eight components with the highest payload egress rate. Everything below that folds into a single `Other (n)` row rather than being dropped, so the bars always account for the full total.
+
+The axis labels drop a trailing `Component` suffix to save width, so `AnimationStateComponent` charts as `AnimationState`. The table below names them the same way, with the full name on hover.
+
+## Traffic by ECS component
+
+Per component payload, aggregated across the visible windows.
+
+| Column | Meaning |
+| --- | --- |
+| **Component** | Type name of the component. |
+| **In** / **Out** | Payload bytes per second, averaged over the whole visible window. |
+| **In msgs** / **Out msgs** | Message counts. These are totals over the window, not rates, unlike the byte columns beside them. |
+| **In/msg** / **Out/msg** | Average payload bytes per message. |
+| **Fan-out** | Egress divided by ingress, over the aggregate. How far one client update spreads. |
+
+Every row is divided by the same total window duration, so a one shot 6 KB join payload reports a small per second figure rather than looking like sustained load. Rows are comparable against each other by design.
+
+A yellow `!` on a per message column means the average payload is smaller than the 28 bytes of framing each datagram costs, so most of the link cost is headers rather than data. Batching more state per packet is the fix, not shrinking the payload further.
+
+**Fan-out** shows `-` when the component saw no ingress at all in the window. That is undefined, not zero, and it is the expected reading for server authored components that clients never send.
+
+Click a column header to sort by it: once for descending, again for ascending, a third time back to the table's own order by total bytes. Clicking a different column sorts by that one instead. The table starts sorted by **In**, descending. A row with no value, such as fan-out with no ingress, sorts last whichever direction you pick.
+
+## Traffic by message type
+
+The same payload bytes, grouped by wire message code instead of by component. Use it to separate ECS state replication from RPC and from one shot events.
+
+Built in codes appear under their protocol names: `EcsDelta`, `EcsSnapshot`, `EcsCreateEntity`, `EcsDeleteEntity`, `EcsChangeOwnership`, `AreaEvent`, `HandshakeConnected` and so on.
+
+A mod's own RPCs and networked events appear by name, as `Name (Mod)`, read from the manifest the mod loader assigned its code block. A code nobody named stays `Custom(code)`; between-clients RPCs are the usual case.
+
+This table sorts by its headers the same way the component table does, and starts sorted by **In**, descending.
+
+If `EcsSnapshot` is a large share of egress, players are crossing scope boundaries often. Snapshots are sent reliably and in full, so they are much more expensive than the deltas that follow.
