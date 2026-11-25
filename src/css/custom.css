@@ -27,3 +27,18 @@
   --ifm-color-primary-lightest: #e35068;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/*
+ * The navbar is full on a laptop screen, so there the search box is a search icon until it is focused, as the
+ * search plugin itself does on phones (below 577px). Its Ctrl+K hint is hidden there too; the shortcut still works.
+ * From 1440px the whole box fits beside the navbar links.
+ */
+@media (min-width: 997px) and (max-width: 1439px) {
+  .navbar__search-input:not(:focus) {
+    width: 2rem;
+  }
+
+  .navbar__search kbd {
+    display: none;
+  }
+}

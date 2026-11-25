@@ -1,6 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type { PluginOptions as SearchLocalOptions } from '@easyops-cn/docusaurus-search-local';
 import llmsTxtPlugin, { type LlmsTxtOptions } from './plugins/llms-txt';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -269,6 +270,41 @@ const config: Config = {
       additionalLanguages: ['csharp'],
     },
   } satisfies Preset.ThemeConfig,
+
+  // Full-text search over the guides, the API reference and the release notes. The index is built into the static
+  // site at `yarn build`, and the browser searches it, so it needs no search server and works on GitHub Pages. It
+  // does not exist under `yarn start`; use `yarn build && yarn serve` to try it.
+  //
+  // The newest version of both SDKs and the release notes share the index at the site root. Every older docs
+  // version gets an index of its own, release notes included, which its pages search. Pages outside the docs, such
+  // as the release notes, search the index of the OblivionMP version the reader last picked, the newest by default.
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        // The index file name carries a hash of every markdown file in `docsDir` and `blogDir`, so a deploy that
+        // changes the docs is not searched with the previous index that the GitHub Pages cache still holds.
+        hashed: 'filename',
+        language: ['en', 'zh'],
+        indexDocs: true,
+        docsRouteBasePath: ['oblivion-mp', 'wukong-mp'],
+        // Only used for the hash above, so it lists every folder whose markdown is indexed: older versions and
+        // the translations too.
+        docsDir: ['oblivion-mp', 'wukong-mp', 'oblivion_versioned_docs', 'versioned_docs', 'i18n'],
+        docsPluginIdForPreferredVersion: 'oblivion',
+        indexBlog: true,
+        blogRouteBasePath: 'releases',
+        blogDir: 'blog',
+        // API names such as `Get` or `On` are English stop words, but searching for them is what the reference is for.
+        removeDefaultStopWordFilter: true,
+        // Results show their page's place in the docs, so an OblivionMP page and a WukongMP page of the same name
+        // can be told apart.
+        explicitSearchResultPath: true,
+        highlightSearchTermsOnTargetPage: true,
+        searchResultLimits: 10,
+      } satisfies SearchLocalOptions,
+    ],
+  ],
 
   plugins: [
     [
