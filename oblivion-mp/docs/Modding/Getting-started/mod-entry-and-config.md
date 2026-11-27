@@ -36,12 +36,39 @@ The server half has its own, in the server project, written the same way.
   [RPC handler classes](../Concepts/rpc.md) and APIs from [other mods](../Optional-mods/using-another-mod.md) you depend on.
 * `Init` is optional. If you declare it, it has to be `private void Init()` with no parameters, and it runs once,
   right after the class is created.
-* `ModDirectory` is the folder your half was loaded from: the mod's `server/` folder on the server, its client folder
-  in the game. It is set by the time `Init` runs.
+* `ModDirectory` is the folder your half was loaded from: the mod's `server/` folder on the server, its `client/`
+  folder in the game. It is set by the time `Init` runs. See [Where ModDirectory points](#where-moddirectory-points).
 
 Most mods need very little here. Services and RPC handler classes are found and created on their own, so you do not
 list them anywhere. The template's entry points only log that the mod loaded. Use `Init` for one-time setup that
 does not belong to any service.
+
+### Where ModDirectory points {#where-moddirectory-points}
+
+`ModDirectory` is the folder of the half that is running, not the root of the mod. For a mod installed as
+`mods/MyMod/` (see [the mod folder](project-layout.md#the-mod-folder)):
+
+| Half | `ModDirectory` |
+| --- | --- |
+| Server | The mod's `server/` folder, inside the server's install folder: `mods/MyMod/server/` |
+| Client | The player's copy of the mod's `client/` folder, as the launcher installed it |
+
+Everything you ship in that half, your [config file](#config-files) included, sits directly in it. Join file names
+onto `ModDirectory` as they are, without adding `server/` or `client/` again:
+
+```csharp title="MyMod.Server/Mod.cs"
+private void Init()
+{
+    // mods/MyMod/server/arenas.csv
+    var arenasFile = Path.Combine(ModDirectory, "arenas.csv");
+
+    // Wrong: mods/MyMod/server/server/arenas.csv, which does not exist
+    // Path.Combine(ModDirectory, "server", "arenas.csv")
+}
+```
+
+Use `ModDirectory` rather than a path of your own: where the mod is installed differs from server to server, and
+from player to player.
 
 ### When it runs
 
@@ -51,7 +78,7 @@ service can rely on everything every mod set up in `Init`.
 
 ## Config files
 
-A config is a class with defaults, marked `[ModConfig]`:
+A config is a class with defaults, marked `[ModConfig]` and declared `partial`:
 
 ```csharp title="MyMod.Server/RewardsConfig.cs"
 using ReadyM.SDK.Attributes;
@@ -59,7 +86,7 @@ using ReadyM.SDK.Attributes;
 namespace MyMod.Server;
 
 [ModConfig]
-public sealed class RewardsConfig
+public sealed partial class RewardsConfig
 {
     public int Reward { get; set; } = 100;
     public float PayoutSeconds { get; set; } = 10f;
@@ -67,8 +94,8 @@ public sealed class RewardsConfig
 }
 ```
 
-The SDK reads `config.json` from the mod's folder into it when the mod loads, and anything can ask for it in its
-constructor:
+Like the entry point, the class has to be `partial`: the SDK writes the other part. The SDK reads `config.json` from
+the mod's folder into it when the mod loads, and anything can ask for it in its constructor:
 
 ```csharp title="MyMod.Server/PassiveIncome.cs"
 [Service]
@@ -78,7 +105,8 @@ public sealed partial class PassiveIncome(IEntities entities, RewardsConfig conf
 }
 ```
 
-The file goes in the half that reads it, so a server config sits in the mod's `server/` folder:
+The file goes in the half that reads it, directly in that half's [`ModDirectory`](#where-moddirectory-points). A
+server config sits in the mod's `server/` folder, at `mods/MyMod/server/config.json`:
 
 ```json title="server/config.json"
 {
@@ -99,10 +127,10 @@ Pass a file name to read a different file. Each class is read and registered on 
 
 ```csharp
 [ModConfig]                // config.json
-public sealed class RewardsConfig { /* ... */ }
+public sealed partial class RewardsConfig { /* ... */ }
 
 [ModConfig("arenas.json")] // arenas.json
-public sealed class ArenaConfig { /* ... */ }
+public sealed partial class ArenaConfig { /* ... */ }
 ```
 
 ### When the file is wrong
@@ -136,6 +164,7 @@ project only if both halves really need the same settings, and remember each hal
 | `READYM032` | `[ModConfig]` names no file. | Leave the name out for `config.json`, or give a file name. |
 | `READYM044` | The `[ModEntry]` class is not `sealed`. | Add `sealed`. |
 | `READYM045` | `Init` cannot be called by the loader. | Make it `private void Init()` with no parameters; ask for everything else in the constructor. |
+| `CS0260` | The `[ModConfig]` class is not `partial`. This one comes from the C# compiler ("Missing partial modifier"), not the SDK. | Add `partial`. |
 
 ## Reference
 

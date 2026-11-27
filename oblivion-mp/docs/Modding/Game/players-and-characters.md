@@ -242,7 +242,7 @@ Two client-only mixins add what only this game knows about each character it sho
 | Mixin | Member | Meaning |
 | --- | --- | --- |
 | `LocalVisibility` | `Hidden` | How hard the character is to see here: 0 in plain sight, 1 invisible. |
-| `MappedActor` | `Pawn` | The game actor that shows this character, or `IntPtr.Zero` while there is none. Use it only to notice that the actor changed, never to read memory through it. An `Npc` has it too. |
+| `MappedActor` | `Pawn` | The address of the Unreal `AActor` that shows this character, as UE4SS's `UObject:GetAddress()` gives it (not the TES actor), or `IntPtr.Zero` while there is none. Use it to match that actor or to notice that it changed, never to read memory through it. An `Npc` has it too. |
 | `LocalRefId` | `LocalRefId` | The reference id this game knows the character by. Dropped items, furniture, containers and flora have it too. |
 
 The MarkerMod in the SDK repository uses both to fade a name marker over each player as they hide.
