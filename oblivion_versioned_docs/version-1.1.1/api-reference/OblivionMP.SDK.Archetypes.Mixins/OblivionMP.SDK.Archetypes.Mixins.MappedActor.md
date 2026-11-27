@@ -37,7 +37,7 @@ IIndexed<nint\>
 
 ### <a id="OblivionMP_SDK_Archetypes_Mixins_MappedActor_Pawn"></a> Pawn
 
-The game object that shows this entity, or <code>IntPtr.Zero</code> while there is none.
+The address of the Unreal <code>AActor</code> that shows this entity, as UE4SS's <code>UObject:GetAddress()</code> gives it (not the TES actor), or <code>IntPtr.Zero</code> while there is none.
 
 ```csharp
 public nint Pawn { get; }

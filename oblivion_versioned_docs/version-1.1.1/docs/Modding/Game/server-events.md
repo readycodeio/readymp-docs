@@ -11,6 +11,7 @@ use, and when a player moves between them. They come from
 which you ask for in the constructor of a server service.
 
 ```csharp title="MyMod.Server/Greeter.cs"
+using LiteNetLib;
 using Microsoft.Extensions.Logging;
 using MyMod.Common;
 using ReadyM.Api.Idents;
@@ -30,6 +31,7 @@ public sealed partial class Greeter(IServerEvents events, ILogger logger)
     {
         events.OnPlayerConnected += OnPlayerConnected;
         events.OnPlayerJoinedArea += OnPlayerJoinedArea;
+        events.OnPlayerDisconnected += OnPlayerDisconnected;
     }
 
     // ...and unsubscribe when it stops.
@@ -37,6 +39,7 @@ public sealed partial class Greeter(IServerEvents events, ILogger logger)
     {
         events.OnPlayerConnected -= OnPlayerConnected;
         events.OnPlayerJoinedArea -= OnPlayerJoinedArea;
+        events.OnPlayerDisconnected -= OnPlayerDisconnected;
     }
 
     private void OnPlayerConnected(Player player, Guid readyMId)
@@ -44,10 +47,19 @@ public sealed partial class Greeter(IServerEvents events, ILogger logger)
 
     private void OnPlayerJoinedArea(PlayerId playerId, AreaId areaId)
         => logger.LogInformation("{Player} entered {Area}.", playerId, areaId);
+
+    private void OnPlayerDisconnected(Player player, Guid readyMId, DisconnectReason reason)
+        => logger.LogInformation("Account {Account} left: {Reason}.", readyMId, reason);
 }
 ```
 
 `Balance` is the mod template's `Wallet` mixin on every player (see [Shapes](../Concepts/shapes.md)).
+
+The `Guid` that `OnPlayerConnected` and `OnPlayerDisconnected` hand you is the id of the player's ReadyM account,
+the same value `IPlayers.GetReadyMId` returns. Unlike a `PlayerId`, it stays the same across reconnects and server
+restarts, so use it to key anything you keep about a player (see
+[Players and characters](players-and-characters.md)). `DisconnectReason` is LiteNetLib's enum, so the handler
+needs `using LiteNetLib;`.
 
 ## How it works
 
@@ -59,7 +71,7 @@ delays the whole tick, so keep them short. If a handler throws, the server logs 
 |---|---|---|
 | `OnWorldCreated` | the `World` | Once, when the world exists. Your `Init` runs before that, so this is the earliest point at which values on the world can be written. |
 | `OnPlayerConnected` | the `Player`, and their ReadyM account id | A player has connected and their player entity exists. |
-| `OnPlayerDisconnected` | the `Player`, and the reason | A player has left or dropped. A player still in an area leaves it first, so `OnPlayerLeftArea` comes before this. |
+| `OnPlayerDisconnected` | the `Player`, their ReadyM account id, and the `DisconnectReason` | A player has left or dropped. A player still in an area leaves it first, so `OnPlayerLeftArea` comes before this. |
 | `OnAreaCreated` | the `Area` | An area comes into use: the first player enters it. |
 | `OnPlayerJoinedArea` | player, area | Any player enters an area, the first one included. For the first one it comes after `OnAreaCreated`. |
 | `OnPlayerLeftArea` | player, area | Any player leaves an area. |
