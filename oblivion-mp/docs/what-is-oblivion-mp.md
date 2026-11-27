@@ -35,6 +35,9 @@ OblivionMP is built and maintained by the [ReadyM](https://www.ready.mp) team. I
 2. **Download the launcher.** It handles mod sync automatically when you join a server
 3. **Pick a server and play.** Browse the server list, click join, and the launcher takes care of the rest
 
+The server saves your character for you, so there is nothing to save or load in the game. See
+[Joining a server and saving](joining-and-saving.md).
+
 ### For server owners
 
 1. **Download the server binary** (Windows or Linux), see the [Installation guide](Server/installation)
@@ -84,7 +87,7 @@ To start writing mods, see [Your first mod](Modding/Getting-started/your-first-m
 
 ## Get started
 
-- 👾 **Player?** [Create a ReadyM account](https://portal.ready.mp/signup) and download the launcher
+- 👾 **Player?** [Create a ReadyM account](https://portal.ready.mp/signup), download the launcher, and read [Joining a server and saving](joining-and-saving.md)
 - 🖥️ **Server owner?** Follow the [Installation guide](Server/installation) to get your server set up
 - ⚡ **Developer?** See [Your first mod](Modding/Getting-started/your-first-mod.md) to build a mod and run it on your own server
 - 💬 **Questions?** Join the [OblivionMP Discord](https://discord.gg/obmp)
