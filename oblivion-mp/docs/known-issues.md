@@ -18,17 +18,13 @@ We are aware of the following issues in the current release, and we're working o
 
 ## Saving
 
-The server keeps your character, but not all of it yet. [Joining a server and saving](joining-and-saving.md) explains
-what is kept.
+The server keeps your character, but not all of it yet. [Joining a server and saving](joining-and-saving.md) explains what is kept.
 
-* Your position is not saved. Every time you join, you start at the starting spot of the world save OblivionMP ships
-  with, not where you left.
+* Your position is not saved. Every time you join, you start at the starting spot of the world save OblivionMP ships with, not where you left.
 * Custom spells are not saved.
 * A custom class made in the class menu is not saved. The standard classes are.
-* A change to your name, race, sex, class or birthsign is only saved when it is made in the race, class or birthsign
-  menu.
-* Every player's first join on a server starts as the same preset character from the world save, with its name, race,
-  items and starting spot, unless the server's mods change that.
+* A change to your name, race, sex, class or birthsign is only saved when it is made in the race, class or birthsign menu.
+* Every player's first join on a server starts as the same preset character from the world save, with its name, race, items and starting spot, unless the server's mods change that.
 
 ## SDK
 

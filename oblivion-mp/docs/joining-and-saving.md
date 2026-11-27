@@ -44,8 +44,8 @@ What that means in the game:
 | Name, race, sex, class and birthsign | See [what is not kept yet](#what-is-not-kept-yet) for the exceptions. |
 | Appearance | Your face, hair and the rest of what you chose in the race menu. |
 | Level, attributes and skills | Including the progress you made since your last level-up. |
-| Active effects | |
-| Bounty, fame and infamy | |
+| Active effects | Resistances and the other effects running on your character. |
+| Bounty, fame and infamy | Your standing with the guards and the people of Cyrodiil. |
 | Inventory | The items you carry, what you have equipped, and your arrows. |
 
 ### What is not kept yet
